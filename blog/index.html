@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — ProSystem Sistemas</title>
+  <meta name="description" content="O blog da ProSystem Sistemas — conteúdo prático para gestores de farmácia, drogaria e varejo sobre ERP, fiscal, SNGPC e operação.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #4A7AB8;
+      --color-accent:  #2E5A8F;
+      --color-dark:    #1F2937;
+      --color-light:   #ffffff;
+      --color-bg:      #F8FAFC;
+      --color-text:    #1F2937;
+      --color-muted:   #6B7280;
+      --color-border:  #E5E7EB;
+      --font-title: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+      --font-body:  'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --max-width: 1100px;
+      --radius: 10px;
+      --transition: 0.2s ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); background: var(--color-bg); color: var(--color-text); }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .site-header { background: var(--color-primary); padding: 14px 32px; }
+    .site-header__inner { max-width: var(--max-width); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo img { height: 64px; width: auto; filter: brightness(0) invert(1); }
+    .site-header__tag { font-size: 12px; color: rgba(255,255,255,0.8); letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
+
+    .hero { position: relative; min-height: 360px; display: flex; align-items: center; justify-content: center; overflow: hidden; background: var(--color-primary); }
+    .hero__image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.32; }
+    .hero__content { position: relative; z-index: 2; max-width: 760px; text-align: center; padding: 60px 24px; color: var(--color-light); }
+    .hero__title { font-family: var(--font-title); font-size: clamp(28px, 4.5vw, 46px); font-weight: 700; line-height: 1.15; margin-bottom: 16px; }
+    .hero__sub { font-size: 17px; line-height: 1.6; color: rgba(255,255,255,0.92); max-width: 620px; margin: 0 auto; }
+
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 56px 24px 80px; }
+
+    .section-title { font-family: var(--font-title); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 2.5px; color: var(--color-primary); margin-bottom: 18px; }
+
+    .card-featured { display: grid; grid-template-columns: 1.1fr 1fr; background: var(--color-light); border-radius: var(--radius); overflow: hidden; box-shadow: 0 6px 24px rgba(31, 41, 55, 0.06); margin-bottom: 56px; }
+    .card-featured__image { width: 100%; height: 100%; min-height: 320px; object-fit: cover; }
+    .card-featured__body { padding: 36px 38px; display: flex; flex-direction: column; justify-content: center; }
+    .card-featured__tag { display: inline-block; background: #EEF4FB; color: var(--color-primary); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; padding: 4px 10px; border-radius: 4px; margin-bottom: 14px; align-self: flex-start; }
+    .card-featured__title { font-family: var(--font-title); font-weight: 700; font-size: 26px; line-height: 1.25; color: var(--color-dark); margin-bottom: 14px; }
+    .card-featured__excerpt { font-size: 15px; line-height: 1.7; color: var(--color-muted); margin-bottom: 20px; }
+    .card-featured__meta { display: flex; gap: 16px; font-size: 12px; color: var(--color-muted); margin-bottom: 22px; }
+    .card-featured__link { color: var(--color-primary); font-weight: 700; font-size: 14px; align-self: flex-start; }
+    .card-featured__link:hover { text-decoration: underline; }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .card { background: var(--color-light); border-radius: var(--radius); overflow: hidden; transition: transform var(--transition), box-shadow var(--transition); display: flex; flex-direction: column; }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(31, 41, 55, 0.08); }
+    .card__image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #EEF4FB; }
+    .card__body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .card__tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--color-accent); }
+    .card__title { font-family: var(--font-title); font-weight: 600; font-size: 17px; line-height: 1.35; color: var(--color-dark); }
+    .card__meta { font-size: 12px; color: var(--color-muted); margin-top: auto; padding-top: 8px; }
+    .card--empty { background: #EEF4FB; display: flex; align-items: center; justify-content: center; text-align: center; padding: 40px 24px; color: var(--color-muted); font-size: 14px; min-height: 240px; border: 1px dashed var(--color-border); box-shadow: none; }
+
+    .site-footer { background: var(--color-primary); color: var(--color-light); text-align: center; padding: 56px 24px 32px; }
+    .site-footer__title { font-family: var(--font-title); font-size: clamp(22px, 4vw, 34px); font-weight: 700; margin-bottom: 14px; line-height: 1.2; }
+    .site-footer__title span { color: #FFD66E; }
+    .site-footer__sub { font-size: 15px; color: rgba(255,255,255,0.82); max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+    .btn { display: inline-block; background: var(--color-accent); color: var(--color-light); font-weight: 700; font-size: 14px; padding: 12px 26px; border-radius: var(--radius); transition: background var(--transition), transform var(--transition); }
+    .btn:hover { background: #243f66; transform: translateY(-1px); text-decoration: none; }
+    .site-footer__copy { margin-top: 40px; font-size: 12px; color: rgba(255,255,255,0.45); }
+
+    @media (max-width: 900px) {
+      .card-featured { grid-template-columns: 1fr; }
+      .card-featured__image { min-height: 220px; }
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo">
+        <img src="assets/logo/logo-branco.png" alt="ProSystem Sistemas">
+      </a>
+      <span class="site-header__tag">Blog</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <img class="hero__image" src="https://images.pexels.com/photos/8657287/pexels-photo-8657287.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Farmacêuticos interagindo no balcão de drogaria com prateleiras de medicamentos ao fundo">
+    <div class="hero__content">
+      <h1 class="hero__title">Gestão de varejo sem dor de cabeça</h1>
+      <p class="hero__sub">Conteúdo prático para gestores de farmácia, drogaria e padaria — fiscal, SNGPC, PDV e operação no dia a dia.</p>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <div class="section-title">Artigo em destaque</div>
+
+    <a href="sngpc-farmacia-como-evitar-multa-2026.html" class="card-featured">
+      <img class="card-featured__image" src="https://images.pexels.com/photos/8657287/pexels-photo-8657287.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Farmacêuticos interagindo no balcão de drogaria com prateleiras de medicamentos ao fundo">
+      <div class="card-featured__body">
+        <span class="card-featured__tag">Conformidade e Fiscal</span>
+        <h2 class="card-featured__title">SNGPC: como sua farmácia evita multa em 2026 (guia rápido)</h2>
+        <p class="card-featured__excerpt">Desde 2 de janeiro, todas as regiões do Brasil estão obrigadas a transmitir XML ao SNGPC. Veja os prazos, as multas e os 5 passos práticos para não ser autuado.</p>
+        <div class="card-featured__meta">
+          <span>📅 12/05/2026</span>
+          <span>⏱ 5 min de leitura</span>
+        </div>
+        <span class="card-featured__link">Ler artigo →</span>
+      </div>
+    </a>
+
+    <div class="section-title">Mais artigos</div>
+
+    <div class="grid">
+      <div class="card card--empty">Em breve: NF-e na farmácia — como configurar sem erro</div>
+      <div class="card card--empty">Em breve: PDV rápido x fila do caixa: o que muda no faturamento</div>
+      <div class="card card--empty">Em breve: Integração com PBM — guia para drogarias</div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__title">Sua farmácia merece <span>menos burocracia</span></div>
+    <p class="site-footer__sub">ERP integrado para farmácias e drogarias. SNGPC, NF-e e PDV no mesmo sistema, com suporte 24/7.</p>
+    <a href="https://wa.me/5527997521370" class="btn" target="_blank" rel="noopener">Falar no WhatsApp →</a>
+    <div class="site-footer__copy">© 2026 ProSystem Sistemas — Todos os direitos reservados</div>
+  </footer>
+
+</body>
+</html>
