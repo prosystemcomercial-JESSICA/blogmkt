@@ -1,138 +1,642 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog — ProSystem Sistemas</title>
+  <title>Blog — ProSystem Sistemas | Gestão para Farmácias e Drogarias</title>
   <meta name="description" content="O blog da ProSystem Sistemas — conteúdo prático para gestores de farmácia, drogaria e varejo sobre ERP, fiscal, SNGPC e operação.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --color-primary: #4A7AB8;
-      --color-accent:  #2E5A8F;
-      --color-dark:    #1F2937;
-      --color-light:   #ffffff;
-      --color-bg:      #F8FAFC;
-      --color-text:    #1F2937;
-      --color-muted:   #6B7280;
-      --color-border:  #E5E7EB;
-      --font-title: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
-      --font-body:  'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-      --max-width: 1100px;
-      --radius: 10px;
-      --transition: 0.2s ease;
+      --blue:        #4A7AB8;
+      --blue-dark:   #2E5A8F;
+      --blue-deeper: #1D3A5F;
+      --blue-tint:   #EEF4FB;
+      --dark:        #111827;
+      --text:        #374151;
+      --muted:       #6B7280;
+      --border:      #E5E7EB;
+      --bg:          #F8FAFC;
+      --white:       #ffffff;
+      --gold:        #F59E0B;
+      --font-title:  'Montserrat', 'Segoe UI', system-ui, sans-serif;
+      --font-body:   'Inter', 'Segoe UI', system-ui, sans-serif;
+      --max-width:   1140px;
+      --radius:      12px;
+      --shadow-sm:   0 1px 3px rgba(0,0,0,.07);
+      --shadow-md:   0 6px 24px rgba(0,0,0,.09);
+      --ease:        0.2s ease;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: var(--font-body); background: var(--color-bg); color: var(--color-text); }
+    body { font-family: var(--font-body); background: var(--bg); color: var(--text); }
     img { max-width: 100%; height: auto; display: block; }
     a { text-decoration: none; color: inherit; }
 
-    .site-header { background: var(--color-primary); padding: 14px 32px; }
-    .site-header__inner { max-width: var(--max-width); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-    .logo img { height: 64px; width: auto; filter: brightness(0) invert(1); }
-    .site-header__tag { font-size: 12px; color: rgba(255,255,255,0.8); letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
+    /* ── HEADER ── */
+    .site-header {
+      background: var(--blue);
+      padding: 0 32px;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,.2);
+    }
+    .site-header__inner {
+      max-width: var(--max-width); margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 80px;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo img { height: 56px; max-width: 180px; width: auto; filter: brightness(0) invert(1); }
+    .logo-divider { width: 1px; height: 32px; background: rgba(255,255,255,.3); }
+    .logo-blog-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: rgba(255,255,255,.75);
+    }
+    .header-nav { display: flex; align-items: center; gap: 20px; }
+    .header-nav a {
+      font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8);
+      transition: color var(--ease);
+    }
+    .header-nav a:hover { color: #fff; }
+    .btn-nav {
+      background: var(--gold); color: var(--dark) !important;
+      padding: 8px 18px; border-radius: 8px; font-weight: 700;
+    }
+    .btn-nav:hover { background: #e08c00; }
 
-    .hero { position: relative; min-height: 360px; display: flex; align-items: center; justify-content: center; overflow: hidden; background: var(--color-primary); }
-    .hero__image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.32; }
-    .hero__content { position: relative; z-index: 2; max-width: 760px; text-align: center; padding: 60px 24px; color: var(--color-light); }
-    .hero__title { font-family: var(--font-title); font-size: clamp(28px, 4.5vw, 46px); font-weight: 700; line-height: 1.15; margin-bottom: 16px; }
-    .hero__sub { font-size: 17px; line-height: 1.6; color: rgba(255,255,255,0.92); max-width: 620px; margin: 0 auto; }
+    /* ── HERO ── */
+    .hero {
+      position: relative; min-height: 400px;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; background: var(--blue-deeper);
+    }
+    .hero__image {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; opacity: 0.35;
+    }
+    .hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(17,24,39,.3) 0%, rgba(17,24,39,.7) 100%);
+    }
+    .hero__content {
+      position: relative; z-index: 2;
+      max-width: 760px; text-align: center;
+      padding: 72px 32px; color: var(--white);
+    }
+    .hero__eyebrow {
+      display: inline-block;
+      font-size: 11px; font-weight: 800; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 18px;
+    }
+    .hero__title {
+      font-family: var(--font-title);
+      font-size: clamp(28px, 5vw, 50px);
+      font-weight: 800; line-height: 1.1; margin-bottom: 18px;
+      letter-spacing: -.5px;
+    }
+    .hero__sub {
+      font-size: 17px; line-height: 1.65;
+      color: rgba(255,255,255,.85); max-width: 580px; margin: 0 auto 28px;
+    }
+    .hero__topics {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+    }
+    .hero__topic {
+      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+      color: rgba(255,255,255,.85); font-size: 12px; font-weight: 600;
+      padding: 6px 14px; border-radius: 20px;
+    }
 
-    .container { max-width: var(--max-width); margin: 0 auto; padding: 56px 24px 80px; }
+    /* ── CONTAINER ── */
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 64px 32px 96px; }
 
-    .section-title { font-family: var(--font-title); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 2.5px; color: var(--color-primary); margin-bottom: 18px; }
+    /* ── SECTION HEADER ── */
+    .section-header {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 28px;
+    }
+    .section-header__label {
+      font-family: var(--font-title); font-size: 11px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 2.5px; color: var(--blue);
+      white-space: nowrap;
+    }
+    .section-header__line { flex: 1; height: 1px; background: var(--border); }
 
-    .card-featured { display: grid; grid-template-columns: 1.1fr 1fr; background: var(--color-light); border-radius: var(--radius); overflow: hidden; box-shadow: 0 6px 24px rgba(31, 41, 55, 0.06); margin-bottom: 56px; }
-    .card-featured__image { width: 100%; height: 100%; min-height: 320px; object-fit: cover; }
-    .card-featured__body { padding: 36px 38px; display: flex; flex-direction: column; justify-content: center; }
-    .card-featured__tag { display: inline-block; background: #EEF4FB; color: var(--color-primary); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; padding: 4px 10px; border-radius: 4px; margin-bottom: 14px; align-self: flex-start; }
-    .card-featured__title { font-family: var(--font-title); font-weight: 700; font-size: 26px; line-height: 1.25; color: var(--color-dark); margin-bottom: 14px; }
-    .card-featured__excerpt { font-size: 15px; line-height: 1.7; color: var(--color-muted); margin-bottom: 20px; }
-    .card-featured__meta { display: flex; gap: 16px; font-size: 12px; color: var(--color-muted); margin-bottom: 22px; }
-    .card-featured__link { color: var(--color-primary); font-weight: 700; font-size: 14px; align-self: flex-start; }
-    .card-featured__link:hover { text-decoration: underline; }
+    /* ── FEATURED CARD ── */
+    .card-featured {
+      display: grid; grid-template-columns: 1.15fr 1fr;
+      background: var(--white); border-radius: var(--radius);
+      overflow: hidden; box-shadow: var(--shadow-md);
+      margin-bottom: 72px; transition: transform var(--ease), box-shadow var(--ease);
+    }
+    .card-featured:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,.12); }
+    .card-featured__image-wrap { overflow: hidden; min-height: 340px; }
+    .card-featured__image { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+    .card-featured:hover .card-featured__image { transform: scale(1.03); }
+    .card-featured__body {
+      padding: 44px 42px; display: flex; flex-direction: column; justify-content: center;
+    }
+    .card-featured__tag {
+      display: inline-block; background: var(--blue-tint);
+      color: var(--blue); font-size: 10px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 2px;
+      padding: 5px 12px; border-radius: 6px;
+      margin-bottom: 18px; align-self: flex-start;
+    }
+    .card-featured__title {
+      font-family: var(--font-title); font-weight: 800;
+      font-size: 26px; line-height: 1.22; color: var(--dark); margin-bottom: 16px;
+    }
+    .card-featured__excerpt {
+      font-size: 15px; line-height: 1.72; color: var(--muted); margin-bottom: 24px;
+    }
+    .card-featured__meta {
+      display: flex; gap: 18px; font-size: 12px; color: var(--muted); margin-bottom: 28px;
+      align-items: center;
+    }
+    .card-featured__meta span { display: flex; align-items: center; gap: 5px; }
+    .card-featured__cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue); color: var(--white);
+      font-weight: 700; font-size: 14px;
+      padding: 12px 24px; border-radius: 9px;
+      align-self: flex-start; transition: background var(--ease);
+    }
+    .card-featured__cta:hover { background: var(--blue-dark); }
 
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    .card { background: var(--color-light); border-radius: var(--radius); overflow: hidden; transition: transform var(--transition), box-shadow var(--transition); display: flex; flex-direction: column; }
-    .card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(31, 41, 55, 0.08); }
-    .card__image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #EEF4FB; }
-    .card__body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
-    .card__tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--color-accent); }
-    .card__title { font-family: var(--font-title); font-weight: 600; font-size: 17px; line-height: 1.35; color: var(--color-dark); }
-    .card__meta { font-size: 12px; color: var(--color-muted); margin-top: auto; padding-top: 8px; }
-    .card--empty { background: #EEF4FB; display: flex; align-items: center; justify-content: center; text-align: center; padding: 40px 24px; color: var(--color-muted); font-size: 14px; min-height: 240px; border: 1px dashed var(--color-border); box-shadow: none; }
+    /* ── GRID ── */
+    .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
 
-    .site-footer { background: var(--color-primary); color: var(--color-light); text-align: center; padding: 56px 24px 32px; }
-    .site-footer__title { font-family: var(--font-title); font-size: clamp(22px, 4vw, 34px); font-weight: 700; margin-bottom: 14px; line-height: 1.2; }
-    .site-footer__title span { color: #FFD66E; }
-    .site-footer__sub { font-size: 15px; color: rgba(255,255,255,0.82); max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
-    .btn { display: inline-block; background: var(--color-accent); color: var(--color-light); font-weight: 700; font-size: 14px; padding: 12px 26px; border-radius: var(--radius); transition: background var(--transition), transform var(--transition); }
-    .btn:hover { background: #243f66; transform: translateY(-1px); text-decoration: none; }
-    .site-footer__copy { margin-top: 40px; font-size: 12px; color: rgba(255,255,255,0.45); }
+    .card {
+      background: var(--white); border-radius: var(--radius);
+      overflow: hidden; box-shadow: var(--shadow-sm);
+      transition: transform var(--ease), box-shadow var(--ease);
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .card__image-wrap { overflow: hidden; }
+    .card__image { width: 100%; aspect-ratio: 16/9; object-fit: cover; transition: transform .35s ease; }
+    .card:hover .card__image { transform: scale(1.04); }
+    .card__body { padding: 24px 26px 28px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .card__tag { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: var(--blue); }
+    .card__title { font-family: var(--font-title); font-weight: 700; font-size: 16px; line-height: 1.38; color: var(--dark); }
+    .card__excerpt { font-size: 13px; line-height: 1.65; color: var(--muted); }
+    .card__meta { font-size: 12px; color: var(--muted); margin-top: auto; padding-top: 10px; border-top: 1px solid var(--border); display: flex; gap: 14px; }
+    .card__read-more { font-size: 13px; font-weight: 700; color: var(--blue); margin-top: 4px; }
 
-    @media (max-width: 900px) {
+    /* Empty card placeholder */
+    .card--coming {
+      background: var(--white); border: 2px dashed var(--border);
+      box-shadow: none; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+      padding: 44px 28px; min-height: 280px; border-radius: var(--radius);
+      transition: border-color var(--ease), background var(--ease);
+    }
+    .card--coming:hover { border-color: var(--blue); background: var(--blue-tint); transform: none; box-shadow: none; }
+    .card--coming__icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: var(--blue-tint); display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 14px;
+    }
+    .card--coming__icon svg { width: 24px; height: 24px; color: var(--blue); }
+    .card--coming__badge {
+      font-size: 10px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 1.5px; color: var(--gold); margin-bottom: 8px;
+    }
+    .card--coming__title { font-size: 14px; font-weight: 700; color: var(--dark); line-height: 1.45; }
+
+    /* ── NEWSLETTER ── */
+    .newsletter {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-deeper) 100%);
+      border-radius: var(--radius); padding: 56px 48px;
+      text-align: center; margin-top: 72px;
+      box-shadow: 0 8px 40px rgba(46,90,143,.25);
+    }
+    .newsletter__eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .newsletter__title { font-family: var(--font-title); font-size: clamp(22px, 3.5vw, 34px); font-weight: 800; color: var(--white); margin-bottom: 12px; line-height: 1.2; }
+    .newsletter__sub { font-size: 15px; color: rgba(255,255,255,.8); max-width: 460px; margin: 0 auto 28px; line-height: 1.6; }
+    .newsletter__form { display: flex; gap: 10px; max-width: 440px; margin: 0 auto; }
+    .newsletter__input {
+      flex: 1; padding: 13px 18px; border-radius: 9px;
+      border: none; font-family: var(--font-body); font-size: 14px;
+      outline: none;
+    }
+    .newsletter__btn {
+      background: var(--gold); color: var(--dark);
+      font-weight: 800; font-size: 14px; padding: 13px 22px;
+      border: none; border-radius: 9px; cursor: pointer;
+      white-space: nowrap; transition: background var(--ease);
+      font-family: var(--font-body);
+    }
+    .newsletter__btn:hover { background: #e08c00; }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--blue-deeper); color: var(--white);
+      text-align: center; padding: 64px 24px 36px;
+    }
+    .site-footer__logo { height: 62px; margin: 0 auto 32px; filter: brightness(0) invert(1); }
+    .site-footer__title {
+      font-family: var(--font-title); font-size: clamp(20px, 4vw, 34px);
+      font-weight: 800; margin-bottom: 14px; line-height: 1.2;
+    }
+    .site-footer__title span { color: var(--gold); }
+    .site-footer__sub { font-size: 15px; color: rgba(255,255,255,.72); max-width: 480px; margin: 0 auto 32px; line-height: 1.65; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: var(--dark);
+      font-weight: 800; font-size: 14px; padding: 13px 28px;
+      border-radius: 9px; transition: background var(--ease), transform var(--ease);
+    }
+    .btn:hover { background: #e08c00; transform: translateY(-1px); }
+    .site-footer__copy { margin-top: 44px; font-size: 12px; color: rgba(255,255,255,.35); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
       .card-featured { grid-template-columns: 1fr; }
-      .card-featured__image { min-height: 220px; }
-      .grid { grid-template-columns: repeat(2, 1fr); }
+      .card-featured__image-wrap { min-height: 240px; }
+      .articles-grid { grid-template-columns: repeat(2, 1fr); }
+      .newsletter { padding: 40px 28px; }
+      .newsletter__form { flex-direction: column; }
     }
     @media (max-width: 600px) {
-      .grid { grid-template-columns: 1fr; }
+      .articles-grid { grid-template-columns: 1fr; }
+      .container { padding: 44px 20px 72px; }
+      .header-nav .btn-nav { display: none; }
     }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header class="site-header">
     <div class="site-header__inner">
       <a href="index.html" class="logo">
         <img src="assets/logo/logo-branco.png" alt="ProSystem Sistemas">
+        <span class="logo-divider"></span>
+        <span class="logo-blog-tag">Blog</span>
       </a>
-      <span class="site-header__tag">Blog</span>
+      <nav class="header-nav">
+        <a href="https://prosystemnet.com" target="_blank" rel="noopener">← Site ProSystem</a>
+        <a href="https://wa.me/5527997521370" class="btn-nav" target="_blank" rel="noopener">Falar com a equipe</a>
+      </nav>
     </div>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
-    <img class="hero__image" src="https://images.pexels.com/photos/8657287/pexels-photo-8657287.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Farmacêuticos interagindo no balcão de drogaria com prateleiras de medicamentos ao fundo">
+    <img class="hero__image" src="assets/images/farm-prateleira-medicamentos.jpg" alt="Farmacêutico de jaleco branco organizando medicamentos nas prateleiras" loading="eager" style="object-position:50% 30%">
+    <div class="hero__overlay"></div>
     <div class="hero__content">
+      <div class="hero__eyebrow">Blog ProSystem Sistemas</div>
       <h1 class="hero__title">Gestão de varejo sem dor de cabeça</h1>
       <p class="hero__sub">Conteúdo prático para gestores de farmácia, drogaria e padaria — fiscal, SNGPC, PDV e operação no dia a dia.</p>
+      <div class="hero__topics">
+        <span class="hero__topic">SNGPC</span>
+        <span class="hero__topic">NF-e e Fiscal</span>
+        <span class="hero__topic">PDV</span>
+        <span class="hero__topic">Estoque</span>
+        <span class="hero__topic">PBM e Convênios</span>
+        <span class="hero__topic">Gestão Farmácias</span>
+      </div>
     </div>
   </section>
 
+  <!-- MAIN -->
   <main class="container">
 
-    <div class="section-title">Artigo em destaque</div>
+    <!-- Artigo destaque -->
+    <div class="section-header">
+      <span class="section-header__label">Artigo em destaque</span>
+      <span class="section-header__line"></span>
+    </div>
 
-    <a href="sngpc-farmacia-como-evitar-multa-2026.html" class="card-featured">
-      <img class="card-featured__image" src="https://images.pexels.com/photos/8657287/pexels-photo-8657287.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Farmacêuticos interagindo no balcão de drogaria com prateleiras de medicamentos ao fundo">
+    <a href="reforma-tributaria-2026-farmacia-padaria-nfce.html" class="card-featured">
+      <div class="card-featured__image-wrap">
+        <img class="card-featured__image" src="assets/images/farm-farmaceutica-oculos-prateleira.jpg" alt="Farmacêutica de óculos e jaleco branco verificando medicamentos nas prateleiras" loading="lazy" style="object-position:50% 25%">
+      </div>
       <div class="card-featured__body">
-        <span class="card-featured__tag">Conformidade e Fiscal</span>
-        <h2 class="card-featured__title">SNGPC: como sua farmácia evita multa em 2026 (guia rápido)</h2>
-        <p class="card-featured__excerpt">Desde 2 de janeiro, todas as regiões do Brasil estão obrigadas a transmitir XML ao SNGPC. Veja os prazos, as multas e os 5 passos práticos para não ser autuado.</p>
+        <span class="card-featured__tag">Fiscal · Reforma 2026</span>
+        <h2 class="card-featured__title">Reforma tributária 2026: o que muda na NF-e e NFC-e da sua farmácia ou padaria</h2>
+        <p class="card-featured__excerpt">IBS, CBS, novos campos obrigatórios na nota fiscal, quem já é obrigado e o checklist do que fazer agora para não ter nota rejeitada pela Receita Federal.</p>
         <div class="card-featured__meta">
-          <span>📅 12/05/2026</span>
-          <span>⏱ 5 min de leitura</span>
+          <span>📅 22/06/2026</span>
+          <span>⏱ 6 min de leitura</span>
         </div>
-        <span class="card-featured__link">Ler artigo →</span>
+        <span class="card-featured__cta">
+          Ler artigo completo
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
       </div>
     </a>
 
-    <div class="section-title">Mais artigos</div>
+    <!-- Mais artigos -->
+    <div class="section-header">
+      <span class="section-header__label">Mais artigos</span>
+      <span class="section-header__line"></span>
+    </div>
 
-    <div class="grid">
-      <div class="card card--empty">Em breve: NF-e na farmácia — como configurar sem erro</div>
-      <div class="card card--empty">Em breve: PDV rápido x fila do caixa: o que muda no faturamento</div>
-      <div class="card card--empty">Em breve: Integração com PBM — guia para drogarias</div>
+    <div class="articles-grid">
+
+      <a href="pdv-rapido-fila-caixa-faturamento-farmacia.html" class="card">
+        <div class="card__image-wrap">
+          <img class="card__image" src="assets/images/farm-prateleira-medicamentos.jpg" alt="Farmacêutico de jaleco branco organizando medicamentos nas prateleiras" loading="lazy" style="object-position:50% 30%">
+        </div>
+        <div class="card__body">
+          <span class="card__tag">PDV e Operação</span>
+          <div class="card__title">PDV rápido x fila do caixa: o que muda no faturamento da sua farmácia</div>
+          <div class="card__excerpt">Quando o caixa trava, o cliente vai embora — e você não tem como medir. Veja como um PDV integrado transforma o faturamento no pico de movimento.</div>
+          <div class="card__meta">
+            <span>📅 12/05/2026</span>
+            <span>⏱ 6 min</span>
+          </div>
+          <span class="card__read-more">Ler artigo →</span>
+        </div>
+      </a>
+
+      <a href="controle-estoque-farmacia-evitar-perdas-vencimento.html" class="card">
+        <div class="card__image-wrap">
+          <img class="card__image" src="assets/images/farm-farmaceutica-medicamentos.jpg" alt="Farmacêutica de jaleco branco conferindo medicamentos" loading="lazy" style="object-position:50% 20%">
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Estoque</span>
+          <div class="card__title">Controle de estoque em farmácias: como evitar perdas por vencimento</div>
+          <div class="card__excerpt">38% das perdas em farmácias vêm de produtos vencidos que poderiam ser evitados. Veja o método PEPS, alertas por prazo e os 5 passos para acabar com esse problema.</div>
+          <div class="card__meta">
+            <span>📅 19/05/2026</span>
+            <span>⏱ 6 min</span>
+          </div>
+          <span class="card__read-more">Ler artigo →</span>
+        </div>
+      </a>
+
+      <a href="precificacao-farmacia-markup-margem-lucratividade.html" class="card">
+        <div class="card__image-wrap">
+          <img class="card__image" src="assets/images/farm-balcao-farmacia-popular.jpg" alt="Farmacêutica no balcão de farmácia atendendo cliente" loading="lazy" style="object-position:50% 8%;filter:saturate(0.5) brightness(0.85)">
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Gestão Financeira</span>
+          <div class="card__title">Precificação em farmácias: como calcular markup e margem sem perder lucratividade</div>
+          <div class="card__excerpt">Markup não é margem — confundir os dois pode destruir a lucratividade. Saiba como calcular corretamente, respeitar o teto CMED e montar uma estratégia por categoria.</div>
+          <div class="card__meta">
+            <span>📅 19/05/2026</span>
+            <span>⏱ 7 min</span>
+          </div>
+          <span class="card__read-more">Ler artigo →</span>
+        </div>
+      </a>
+
+      <a href="pbm-farmacia-como-aumentar-ticket-medio-convenios.html" class="card">
+        <div class="card__image-wrap">
+          <img class="card__image" src="assets/images/farm-estoque-jaleco.jpg" alt="Farmacêutica de jaleco branco no estoque da farmácia" loading="lazy" style="object-position:50% 30%">
+        </div>
+        <div class="card__body">
+          <span class="card__tag">PDV e Operação</span>
+          <div class="card__title">PBM na farmácia: como funciona e como aumentar o ticket médio com convênios</div>
+          <div class="card__excerpt">Vendas via PBM têm ticket médio 43% maior que o balcão convencional. Veja como credenciar, integrar ao ERP e evitar glosas que drenam o faturamento.</div>
+          <div class="card__meta">
+            <span>📅 27/05/2026</span>
+            <span>⏱ 7 min</span>
+          </div>
+          <span class="card__read-more">Ler artigo →</span>
+        </div>
+      </a>
+
+      <a href="kpis-indicadores-gestao-farmacia.html" class="card">
+        <div class="card__image-wrap">
+          <img class="card__image" src="assets/images/farm-farmaceutica-oculos-prateleira.jpg" alt="Farmacêutica de óculos e jaleco branco verificando produto" loading="lazy" style="object-position:50% 28%">
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Gestão</span>
+          <div class="card__title">10 KPIs para gestores de farmácia: os indicadores que separam farmácias lucrativas das que sobrevivem no aperto</div>
+          <div class="card__excerpt">68% dos gestores operam sem nenhum indicador formal. Com esses 10 KPIs — ticket médio, giro de estoque, CMV%, ruptura e mais — você tem visão completa do negócio.</div>
+          <div class="card__meta">
+            <span>📅 27/05/2026</span>
+            <span>⏱ 8 min</span>
+          </div>
+          <span class="card__read-more">Ler artigo →</span>
+        </div>
+      </a>
+
+      <a href="sngpc-farmacia-como-evitar-multa-2026.html" class="card">
+        <div class="card__image-wrap">
+          <img class="card__image" src="assets/images/farm-farmaceutica-medicamentos.jpg" alt="Farmacêutica de jaleco branco conferindo medicamentos no estoque" loading="lazy" style="object-position:50% 20%">
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Conformidade e Fiscal</span>
+          <div class="card__title">SNGPC: como sua farmácia evita multa em 2026 (guia rápido)</div>
+          <div class="card__excerpt">Desde 2 de janeiro, todas as regiões do Brasil estão obrigadas a transmitir XML ao SNGPC. Os 5 passos práticos para não ser autuado.</div>
+          <div class="card__meta">
+            <span>📅 12/05/2026</span>
+            <span>⏱ 5 min</span>
+          </div>
+          <span class="card__read-more">Ler artigo →</span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Segunda linha de artigos: novos de junho 2026 -->
+    <div class="section-header" style="margin-top:64px;">
+      <span class="section-header__label">Publicados em junho 2026</span>
+      <span class="section-header__line"></span>
+    </div>
+
+    <div class="articles-grid">
+
+      <a href="controle-producao-padaria-evitar-desperdicio.html" class="card">
+        <div class="card__image-wrap">
+          <img class="card__image" src="https://images.pexels.com/photos/1387070/pexels-photo-1387070.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Baguetes artesanais com farinha em padaria — controle de produção" loading="lazy" style="object-position:50% 40%">
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Padaria · Produção</span>
+          <div class="card__title">Controle de produção em padaria: como evitar desperdício e aumentar sua margem</div>
+          <div class="card__excerpt">8 a 15% do que a padaria produz vai para o lixo — segundo o Sebrae. Ficha técnica, planejamento diário e controle por turno para cortar esse número.</div>
+          <div class="card__meta">
+            <span>📅 22/06/2026</span>
+            <span>⏱ 7 min</span>
+          </div>
+          <span class="card__read-more">Ler artigo →</span>
+        </div>
+      </a>
+
+      <a href="fluxo-de-caixa-farmacia-controle-financeiro.html" class="card">
+        <div class="card__image-wrap">
+          <img class="card__image" src="assets/images/farm-estoque-jaleco.jpg" alt="Farmacêutica de jaleco branco no estoque da farmácia" loading="lazy" style="object-position:50% 30%">
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Farmácia · Financeiro</span>
+          <div class="card__title">Fluxo de caixa na farmácia: como controlar e não ficar no vermelho</div>
+          <div class="card__excerpt">21% dos donos de farmácia independentes citam dificuldades de fluxo de caixa como principal causa da queda no resultado. Veja como mudar isso.</div>
+          <div class="card__meta">
+            <span>📅 22/06/2026</span>
+            <span>⏱ 6 min</span>
+          </div>
+          <span class="card__read-more">Ler artigo →</span>
+        </div>
+      </a>
+
+      <a href="gestao-financeira-padaria-custo-produto.html" class="card">
+        <div class="card__image-wrap">
+          <img class="card__image" src="https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pão artesanal fatiado em padaria — custo de produto e gestão financeira" loading="lazy" style="object-position:50% 50%">
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Padaria · Custo</span>
+          <div class="card__title">Gestão financeira de padaria: como calcular o custo real de cada produto</div>
+          <div class="card__excerpt">Você vende o pão mais popular da sua padaria sabendo a margem real? Matéria-prima, mão de obra, energia e rateio — o cálculo completo que muda o jogo.</div>
+          <div class="card__meta">
+            <span>📅 22/06/2026</span>
+            <span>⏱ 7 min</span>
+          </div>
+          <span class="card__read-more">Ler artigo →</span>
+        </div>
+      </a>
+
+      <a href="abertura-fechamento-caixa-farmacia-processo.html" class="card">
+        <div class="card__image-wrap">
+          <img class="card__image" src="assets/images/farm-prateleira-medicamentos.jpg" alt="Farmacêutico de jaleco branco organizando medicamentos nas prateleiras" loading="lazy" style="object-position:50% 30%">
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Farmácia · Processos</span>
+          <div class="card__title">Como montar um processo de abertura e fechamento de caixa na farmácia</div>
+          <div class="card__excerpt">Caixa com diferença no fechamento? Passo a passo para documentar o processo, controlar suprimentos, sangrias e proteger sua equipe de acusações injustas.</div>
+          <div class="card__meta">
+            <span>📅 22/06/2026</span>
+            <span>⏱ 6 min</span>
+          </div>
+          <span class="card__read-more">Ler artigo →</span>
+        </div>
+      </a>
+
+      <a href="reforma-tributaria-2026-farmacia-padaria-nfce.html" class="card">
+        <div class="card__image-wrap">
+          <img class="card__image" src="assets/images/farm-estoque-jaleco.jpg" alt="Farmacêutica de jaleco no estoque verificando produto" loading="lazy" style="object-position:50% 30%">
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Fiscal · Reforma 2026</span>
+          <div class="card__title">Reforma tributária 2026: o que muda na NF-e e NFC-e da sua farmácia ou padaria</div>
+          <div class="card__excerpt">IBS, CBS, novos campos obrigatórios. Quem já é obrigado, o que precisa mudar no sistema e o checklist para não ter nota rejeitada.</div>
+          <div class="card__meta">
+            <span>📅 22/06/2026</span>
+            <span>⏱ 6 min</span>
+          </div>
+          <span class="card__read-more">Ler artigo →</span>
+        </div>
+      </a>
+
+      <a href="pdv-para-padaria-o-que-e-por-que-precisa.html" class="card">
+        <div class="card__image-wrap">
+          <img class="card__image" src="https://images.pexels.com/photos/1387070/pexels-photo-1387070.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pães artesanais com farinha em padaria brasileira" loading="lazy" style="object-position:50% 40%">
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Padaria · PDV</span>
+          <div class="card__title">PDV para padaria: o que é e por que sua padaria precisa de um</div>
+          <div class="card__excerpt">Mais da metade das padarias ainda opera com caixa registradora. Veja o que um PDV faz, como difere da registradora e quando sua padaria precisa de um.</div>
+          <div class="card__meta">
+            <span>📅 22/06/2026</span>
+            <span>⏱ 7 min</span>
+          </div>
+          <span class="card__read-more">Ler artigo →</span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Terceira linha: padaria especial -->
+    <div class="section-header" style="margin-top:64px;">
+      <span class="section-header__label">Padaria — guias completos</span>
+      <span class="section-header__line"></span>
+    </div>
+
+    <div class="articles-grid">
+
+      <a href="erp-para-padaria-o-que-e-quando-contratar.html" class="card">
+        <div class="card__image-wrap">
+          <img class="card__image" src="https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pão artesanal fatiado em padaria" loading="lazy" style="object-position:50% 50%">
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Padaria · ERP</span>
+          <div class="card__title">ERP para padaria: o que é, o que faz e quando vale contratar</div>
+          <div class="card__excerpt">PDV registra a venda. ERP conecta tudo — estoque, produção, financeiro e fiscal. Entenda a diferença e saiba quando sua padaria precisa de cada um.</div>
+          <div class="card__meta">
+            <span>📅 22/06/2026</span>
+            <span>⏱ 8 min</span>
+          </div>
+          <span class="card__read-more">Ler artigo →</span>
+        </div>
+      </a>
+
+      <a href="reduzir-desperdicio-insumos-pequena-padaria.html" class="card">
+        <div class="card__image-wrap">
+          <img class="card__image" src="https://images.pexels.com/photos/1387070/pexels-photo-1387070.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pães artesanais com farinha — controle de insumos em padaria" loading="lazy" style="object-position:50% 35%">
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Pequena Padaria · Insumos</span>
+          <div class="card__title">Como reduzir o desperdício de insumos em pequenas padarias</div>
+          <div class="card__excerpt">Padaria de R$ 30 mil/mês pode perder até R$ 3.600 todo mês em insumos desperdiçados. Ficha técnica e planejamento de produção resolvem sem grande investimento.</div>
+          <div class="card__meta">
+            <span>📅 22/06/2026</span>
+            <span>⏱ 7 min</span>
+          </div>
+          <span class="card__read-more">Ler artigo →</span>
+        </div>
+      </a>
+
+      <a href="precificacao-padaria-calcular-preco-pao-margem.html" class="card">
+        <div class="card__image-wrap">
+          <img class="card__image" src="https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pão artesanal fatiado — precificação e margem em padaria" loading="lazy" style="object-position:50% 45%">
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Padaria · Precificação</span>
+          <div class="card__title">Como precificar pão e salgados na padaria sem perder margem</div>
+          <div class="card__excerpt">Padaria que dobrou o movimento e lucra menos do que antes. O motivo quase sempre é preço calculado no cheiro. Os 4 componentes do custo real e o exemplo do pão francês.</div>
+          <div class="card__meta">
+            <span>📅 22/06/2026</span>
+            <span>⏱ 8 min</span>
+          </div>
+          <span class="card__read-more">Ler artigo →</span>
+        </div>
+      </a>
+
+      <a href="gestao-multiplas-unidades-padaria-centralizar.html" class="card">
+        <div class="card__image-wrap">
+          <img class="card__image" src="https://images.pexels.com/photos/1387070/pexels-photo-1387070.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pães artesanais — gestão de múltiplas unidades de padaria" loading="lazy" style="object-position:50% 40%">
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Padaria · Multi-unidade</span>
+          <div class="card__title">Gestão de múltiplas unidades de padaria: como centralizar sem perder controle</div>
+          <div class="card__excerpt">Abriu a segunda unidade e perdeu o controle das duas? Estoque, produção, receitas padronizadas e financeiro consolidado — como redes de padaria operam com um sistema só.</div>
+          <div class="card__meta">
+            <span>📅 22/06/2026</span>
+            <span>⏱ 8 min</span>
+          </div>
+          <span class="card__read-more">Ler artigo →</span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Newsletter -->
+    <div class="newsletter">
+      <div class="newsletter__eyebrow">Fique por dentro</div>
+      <div class="newsletter__title">Novidades direto para você</div>
+      <p class="newsletter__sub">Receba nossos artigos sobre gestão de farmácias, conformidade fiscal e novidades do ProSystem. Sem spam.</p>
+      <form class="newsletter__form" onsubmit="event.preventDefault(); this.innerHTML='<p style=\'color:#fff;font-weight:700\'>✓ Inscrição confirmada! Em breve você receberá nossos conteúdos.</p>'">
+        <input class="newsletter__input" type="email" placeholder="seu@email.com.br" required>
+        <button class="newsletter__btn" type="submit">Inscrever →</button>
+      </form>
     </div>
 
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
+    <img class="site-footer__logo" src="assets/logo/logo-branco.png" alt="ProSystem Sistemas">
     <div class="site-footer__title">Sua farmácia merece <span>menos burocracia</span></div>
     <p class="site-footer__sub">ERP integrado para farmácias e drogarias. SNGPC, NF-e e PDV no mesmo sistema, com suporte 24/7.</p>
-    <a href="https://wa.me/5527997521370" class="btn" target="_blank" rel="noopener">Falar no WhatsApp →</a>
+    <a href="https://wa.me/5527997521370" class="btn" style="font-size: 15px; padding: 14px 36px;" target="_blank" rel="noopener">Falar no WhatsApp →</a>
     <div class="site-footer__copy">© 2026 ProSystem Sistemas — Todos os direitos reservados</div>
   </footer>
 

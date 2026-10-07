@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como montar um processo de abertura e fechamento de caixa na farmácia — Blog ProSystem</title>
+  <meta name="description" content="Passo a passo para montar o processo de abertura e fechamento de caixa na farmácia: conferência de saldo, relatórios, suprimento e o que fazer quando o caixa não fecha.">
+  <link rel="canonical" href="https://prosystemnet.com.br/blog/abertura-fechamento-caixa-farmacia-processo">
+  <meta property="og:title" content="Como montar um processo de abertura e fechamento de caixa na farmácia">
+  <meta property="og:description" content="Passo a passo para montar o processo de abertura e fechamento de caixa na farmácia.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --blue:#4A7AB8; --blue-dark:#2E5A8F; --blue-deeper:#1D3A5F; --blue-tint:#EEF4FB; --dark:#111827; --text:#374151; --muted:#6B7280; --border:#E5E7EB; --bg:#F8FAFC; --white:#ffffff; --gold:#F59E0B; --font-title:'Montserrat','Segoe UI',system-ui,sans-serif; --font-body:'Inter','Segoe UI',system-ui,sans-serif; --site-width:1140px; --radius:12px; --shadow-sm:0 1px 3px rgba(0,0,0,.08); --ease:0.2s ease; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth} body{font-family:var(--font-body);font-size:18px;line-height:1.78;color:var(--text);background:var(--bg)} img{max-width:100%;height:auto;display:block} a{color:var(--blue);text-decoration:none} a:hover{text-decoration:underline}
+    #progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:var(--gold);z-index:9999;transition:width .1s linear}
+    .site-header{background:var(--blue);padding:0 32px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.18)} .site-header__inner{max-width:var(--site-width);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:80px} .logo{display:flex;align-items:center;gap:12px;text-decoration:none} .logo img{height:56px;max-width:180px;width:auto;filter:brightness(0) invert(1)} .logo-divider{width:1px;height:32px;background:rgba(255,255,255,.3)} .logo-blog-tag{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.75)} .header-nav{display:flex;align-items:center;gap:24px} .header-nav a{font-size:13px;font-weight:600;color:rgba(255,255,255,.8);text-decoration:none} .header-nav a:hover{color:#fff} .btn-header{background:var(--gold);color:var(--dark)!important;padding:8px 18px;border-radius:8px;font-weight:700;font-size:13px}
+    .breadcrumb{background:var(--white);border-bottom:1px solid var(--border);padding:10px 32px} .breadcrumb__inner{max-width:var(--site-width);margin:0 auto;display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)} .breadcrumb__inner a{color:var(--blue);font-weight:500}
+    .article-hero{position:relative;min-height:460px;display:flex;align-items:flex-end;overflow:hidden;background:var(--blue-deeper)} .article-hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.38;transform:scale(1.03)} .article-hero__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(17,24,39,.85) 0%,rgba(17,24,39,.35) 55%,transparent 100%)} .article-hero__content{position:relative;z-index:2;max-width:var(--site-width);margin:0 auto;padding:0 32px 52px;width:100%} .article-hero__badge{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--dark);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:2px;padding:5px 12px;border-radius:6px;margin-bottom:20px} .article-hero__title{font-family:var(--font-title);font-size:clamp(26px,4.2vw,48px);font-weight:800;line-height:1.12;color:var(--white);max-width:860px;margin-bottom:24px} .article-hero__title em{font-style:normal;color:var(--gold)} .article-hero__meta{display:flex;flex-wrap:wrap;align-items:center;gap:20px;font-size:13px;color:rgba(255,255,255,.72)}
+    .site-main{max-width:var(--site-width);margin:0 auto;padding:56px 32px 96px;display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:start}
+    .article-body{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden} .article-content{padding:48px 52px} .article-content .lead{font-size:20px;line-height:1.65;color:var(--dark);font-weight:400;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border)} .article-content h2{font-family:var(--font-title);font-weight:800;font-size:22px;color:var(--dark);margin:48px 0 16px;padding-left:16px;border-left:4px solid var(--blue);line-height:1.3;scroll-margin-top:88px} .article-content h3{font-family:var(--font-title);font-weight:700;font-size:17px;color:var(--blue-dark);margin:32px 0 12px} .article-content p{margin-bottom:22px;font-size:17px;line-height:1.8;color:var(--text)} .article-content ul,.article-content ol{margin:0 0 22px 24px} .article-content li{margin-bottom:10px;font-size:17px;line-height:1.7} .article-content strong{font-weight:700;color:var(--dark)} .article-content table{width:100%;border-collapse:collapse;margin:24px 0 32px;font-size:15px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm)} .article-content thead tr{background:var(--blue);color:var(--white)} .article-content th{padding:14px 16px;text-align:left;font-weight:700;font-size:13px} .article-content td{padding:13px 16px;border-bottom:1px solid var(--border)} .article-content tbody tr:nth-child(even){background:var(--blue-tint)} .article-content tbody tr:last-child td{border-bottom:none} .article-content blockquote{background:var(--blue-tint);border-left:5px solid var(--blue);padding:22px 28px;margin:36px 0;border-radius:0 var(--radius) var(--radius) 0} .article-content blockquote p{font-size:16px;font-weight:600;color:var(--dark);margin:0 0 8px;line-height:1.6} .article-content blockquote p:last-child{margin-bottom:0}
+    .callout{background:#FFFBEB;border:1px solid #FCD34D;border-left:5px solid var(--gold);border-radius:0 var(--radius) var(--radius) 0;padding:18px 22px;margin:28px 0} .callout__label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#92400E;margin-bottom:6px} .callout p{margin:0;font-size:15px;color:#78350F;line-height:1.6}
+    .cta-inline{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-dark) 100%);border-radius:var(--radius);padding:36px 38px;margin:40px 0;text-align:center;box-shadow:0 8px 32px rgba(46,90,143,.3)} .cta-inline__eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px} .cta-inline__title{font-family:var(--font-title);font-size:24px;font-weight:800;color:var(--white);margin-bottom:12px;line-height:1.2} .cta-inline p{font-size:15px;color:rgba(255,255,255,.85);margin-bottom:24px;line-height:1.6}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--dark);font-weight:800;font-size:14px;padding:13px 28px;border-radius:9px;transition:background var(--ease),transform var(--ease);text-decoration:none} .btn:hover{background:#e08c00;transform:translateY(-1px);text-decoration:none}
+    .share-bar{display:flex;align-items:center;gap:10px;padding:24px 52px;border-top:1px solid var(--border);background:var(--bg)} .share-bar__label{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-right:4px} .share-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;transition:opacity var(--ease)} .share-btn:hover{opacity:.85;text-decoration:none} .share-btn--wa{background:#25D366;color:#fff} .share-btn--li{background:#0A66C2;color:#fff}
+    .author-bio{display:flex;align-items:center;gap:20px;padding:28px 52px;border-top:1px solid var(--border)} .author-bio__avatar{width:56px;height:56px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--white);font-weight:800;font-size:22px;font-family:var(--font-title)} .author-bio__name{font-weight:700;font-size:15px;color:var(--dark)} .author-bio__desc{font-size:13px;color:var(--muted);line-height:1.5;margin-top:2px}
+    .sidebar{display:flex;flex-direction:column;gap:24px;position:sticky;top:88px} .sidebar-toc{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden} .sidebar-toc__header{background:var(--blue);padding:14px 20px;font-family:var(--font-title);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--white)} .sidebar-toc__list{list-style:none;padding:16px 0} .sidebar-toc__item a{display:block;padding:7px 20px;font-size:13px;color:var(--text);line-height:1.4;border-left:3px solid transparent;transition:color var(--ease),border-color var(--ease),background var(--ease)} .sidebar-toc__item a:hover{color:var(--blue);border-left-color:var(--blue);background:var(--blue-tint);text-decoration:none}
+    .sidebar-cta{background:linear-gradient(145deg,var(--blue) 0%,var(--blue-deeper) 100%);border-radius:var(--radius);padding:28px 22px;text-align:center;box-shadow:0 6px 24px rgba(46,90,143,.25)} .sidebar-cta__logo{margin:0 auto 16px;filter:brightness(0) invert(1);height:52px} .sidebar-cta__title{font-family:var(--font-title);font-size:17px;font-weight:800;color:var(--white);margin-bottom:8px;line-height:1.25} .sidebar-cta__title span{color:var(--gold)} .sidebar-cta p{font-size:13px;color:rgba(255,255,255,.78);margin-bottom:20px;line-height:1.55} .sidebar-cta .btn{width:100%;justify-content:center;font-size:13px}
+    .sidebar-widget{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden} .sidebar-widget__title{padding:12px 18px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:var(--blue);border-bottom:2px solid var(--blue-tint);background:var(--bg)} .related-item{display:flex;gap:12px;padding:14px 18px;border-bottom:1px solid var(--border);align-items:flex-start} .related-item:last-child{border-bottom:none} .related-item__dot{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:6px} .related-item__text{font-size:13px;font-weight:600;color:var(--dark);line-height:1.4}
+    .site-footer{background:var(--blue-deeper);color:var(--white);text-align:center;padding:64px 24px 36px} .site-footer__logo{height:62px;margin:0 auto 32px;filter:brightness(0) invert(1)} .site-footer__title{font-family:var(--font-title);font-size:clamp(22px,4vw,36px);font-weight:800;margin-bottom:14px;line-height:1.2} .site-footer__title span{color:var(--gold)} .site-footer__sub{font-size:15px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.65} .site-footer__copy{margin-top:44px;font-size:12px;color:rgba(255,255,255,.35)}
+    .float-cta{position:fixed;bottom:28px;right:28px;z-index:500;display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:13px 20px;border-radius:50px;font-weight:700;font-size:14px;box-shadow:0 6px 24px rgba(0,0,0,.2);text-decoration:none;transition:transform var(--ease),box-shadow var(--ease)} .float-cta:hover{transform:translateY(-2px);text-decoration:none;color:#fff}
+    @media(max-width:960px){.site-main{grid-template-columns:1fr;padding:36px 20px 72px}.sidebar{position:static}.sidebar-toc{display:none}} @media(max-width:640px){.article-content{padding:28px 22px}.share-bar{padding:20px 22px;flex-wrap:wrap}.author-bio{padding:22px 22px}.float-cta span{display:none}.float-cta{padding:14px;border-radius:50%}}
+  </style>
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="logo">
+      <img src="assets/logo/logo-branco.png" alt="ProSystem Sistemas">
+      <span class="logo-divider"></span>
+      <span class="logo-blog-tag">Blog</span>
+    </a>
+    <nav class="header-nav">
+      <a href="index.html">Blog</a>
+      <a href="https://prosystemnet.com.br" target="_blank">Site</a>
+      <a href="https://wa.me/5527997798103" class="btn-header" target="_blank">Falar com consultor</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="breadcrumb">
+  <div class="breadcrumb__inner">
+    <a href="index.html">Blog</a>
+    <span>›</span>
+    <a href="#">Processos</a>
+    <span>›</span>
+    <span>Abertura e fechamento de caixa</span>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <img class="article-hero__img" src="assets/images/farm-balcao-farmacia-popular.jpg" alt="Farmacêutica no balcão de farmácia atendendo cliente" loading="eager" style="object-position:50% 8%;filter:saturate(0.5) brightness(0.85)">
+  <div class="article-hero__overlay"></div>
+  <div class="article-hero__content">
+    <span class="article-hero__badge">Farmácia · Processos · Caixa</span>
+    <h1 class="article-hero__title">
+      Como montar um processo de<br>
+      <em>abertura e fechamento de caixa</em> na farmácia
+    </h1>
+    <div class="article-hero__meta">
+      <span>ProSystem Sistemas</span>
+      <span>22 de junho de 2026</span>
+      <span>6 min de leitura</span>
+    </div>
+  </div>
+</section>
+
+<main class="site-main">
+  <article class="article-body">
+    <div class="article-content">
+
+      <p class="lead">
+        Caixa com diferença no fechamento, funcionário que não sabe qual saldo inicial colocar, gerente que descobre uma divergência no dia seguinte. Esses problemas quase sempre têm a mesma causa: ausência de um processo documentado de abertura e fechamento.
+      </p>
+
+      <h2 id="por-que-importa">Por que o processo de caixa importa além da contagem de dinheiro</h2>
+      <p>
+        O caixa é o ponto de contato entre o cliente e as finanças da farmácia. Cada operação que acontece ali — venda, desconto, cancelamento, sangria, suprimento — precisa ter rastro. Sem processo, você não sabe onde um problema começou, não consegue auditar e não protege os funcionários de acusações injustas.
+      </p>
+      <p>
+        Farmácias com processo bem definido de caixa têm menos divergências, menos conflitos com equipe e mais confiança nos dados financeiros.
+      </p>
+
+      <h2 id="abertura">Processo de abertura de caixa: passo a passo</h2>
+      <p>
+        A abertura deve ser feita sempre pelo operador responsável pelo turno, antes de atender o primeiro cliente.
+      </p>
+
+      <ol>
+        <li><strong>Conferir o troco inicial (fundo de caixa):</strong> contar as cédulas e moedas do envelope de troco recebido do turno anterior ou do cofre. Comparar com o valor registrado no sistema.</li>
+        <li><strong>Registrar a abertura no sistema:</strong> o PDV solicita o valor de abertura. Inserir o valor físico contado — nunca o valor "que deveria estar lá".</li>
+        <li><strong>Verificar impressora e bobina:</strong> checar se a impressora de cupom está funcionando e se há bobina suficiente para o turno.</li>
+        <li><strong>Testar conexão fiscal:</strong> emitir um teste de NFC-e em homologação para confirmar que o emissor está funcionando antes de iniciar o atendimento.</li>
+        <li><strong>Assinar o livro ou registro de abertura</strong> (digital ou físico), confirmando o saldo inicial.</li>
+      </ol>
+
+      <div class="callout">
+        <div class="callout__label">Boas práticas</div>
+        <p>O fundo de caixa ideal para uma farmácia é de R$ 200 a R$ 500 em pequenas cédulas e moedas. Mantenha esse valor fixo — toda sangria e suprimento deve buscar restaurar esse patamar.</p>
+      </div>
+
+      <h2 id="durante">Durante o turno: operações que precisam de controle</h2>
+      <p>
+        Além das vendas normais, três operações durante o turno exigem registro obrigatório:
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Operação</th>
+            <th>O que é</th>
+            <th>Como registrar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Suprimento</td><td>Entrada de dinheiro no caixa (ex: reposição de troco)</td><td>Registrar no PDV com valor e motivo</td></tr>
+          <tr><td>Sangria</td><td>Retirada de dinheiro do caixa (ex: depósito bancário)</td><td>Registrar no PDV; operador e gerente assinam</td></tr>
+          <tr><td>Cancelamento/desconto</td><td>Alteração de venda já lançada</td><td>Registrar motivo no sistema; gerente autoriza acima de R$ X</td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        O PDV deve exigir autenticação do gerente para cancelamentos e descontos acima de um limite definido pela farmácia. Isso não é desconfiança — é controle.
+      </p>
+
+      <h2 id="fechamento">Processo de fechamento de caixa: passo a passo</h2>
+      <p>
+        O fechamento deve acontecer ao final de cada turno, com o operador presente e o gerente ou supervisor disponível para conferir.
+      </p>
+
+      <ol>
+        <li><strong>Parar de atender</strong> e sinalizar o caixa como fechado para clientes.</li>
+        <li><strong>Gerar o relatório de fechamento no PDV</strong> — o sistema mostra o total de vendas por forma de pagamento (dinheiro, cartão débito, cartão crédito, PIX, convênio).</li>
+        <li><strong>Contar o dinheiro físico</strong> — separado do fundo de caixa. O valor contado deve corresponder ao total de vendas em dinheiro +/- suprimentos e sangrias registrados.</li>
+        <li><strong>Conferir com o relatório do sistema</strong> — se o valor físico for diferente do sistema, registrar a divergência imediatamente (não "ajustar" o valor).</li>
+        <li><strong>Separar o fundo de caixa para o próximo turno</strong> — colocar em envelope lacrado com o valor anotado.</li>
+        <li><strong>Assinar o fechamento</strong> — operador e gerente assinar o relatório (físico ou digital), confirmando os valores.</li>
+      </ol>
+
+      <blockquote>
+        <p>Toda divergência, por menor que seja, deve ser registrada — não corrigida sem explicação. Divergências pequenas e frequentes num mesmo operador são sinal de alerta que só aparecem quando há histórico.</p>
+      </blockquote>
+
+      <h2 id="divergencias">O que fazer quando o caixa não fecha</h2>
+      <p>
+        Sobra ou falta de dinheiro em relação ao sistema é uma ocorrência que acontece em toda farmácia em algum momento. O que diferencia uma gestão profissional é o que se faz quando ela ocorre.
+      </p>
+
+      <ul>
+        <li><strong>Divergência até R$ 5:</strong> provável erro de troco. Registrar, investigar com calma, não tratar como roubo.</li>
+        <li><strong>Divergência de R$ 5 a R$ 50:</strong> revisar todas as operações do turno no sistema. Verificar cancelamentos, trocas, sangrias e suprimentos.</li>
+        <li><strong>Divergência acima de R$ 50:</strong> obrigatório revisar com o gerente antes de liberar o operador. Analisar as câmeras se necessário.</li>
+        <li><strong>Divergência recorrente no mesmo operador:</strong> investigação formal com RH.</li>
+      </ul>
+
+      <div class="cta-inline">
+        <div class="cta-inline__eyebrow">ProSystem Farmácia</div>
+        <div class="cta-inline__title">Controle de caixa completo com histórico de operadores</div>
+        <p>Cada suprimento, sangria, cancelamento e desconto fica registrado com nome do operador e horário. Auditoria em tempo real — sem papel, sem burocracia.</p>
+        <a href="https://wa.me/5527997798103" class="btn" target="_blank">Conhecer o ProSystem PDV</a>
+      </div>
+
+      <h2 id="documentar">A importância de documentar o processo</h2>
+      <p>
+        Processo que existe só na cabeça do gerente não é processo — é dependência. Quando esse gerente tira férias ou sai, o controle vai junto.
+      </p>
+      <p>
+        Documente o processo em uma folha A4 plastificada fixada no próprio caixa. Inclua: horário de abertura, quem tem acesso, limite para cancelamentos sem autorização, e o telefone do gerente para emergências. Simples, visível, funcional.
+      </p>
+
+      <h2 id="conclusao">Processo de caixa é proteção — para a farmácia e para a equipe</h2>
+      <p>
+        Um processo bem definido de abertura e fechamento protege todo mundo: a farmácia de perdas não rastreadas, o gerente de responsabilidade por erros alheios, e o operador de acusações injustas. É uma das melhorias de processo com maior retorno e menor custo de implantação.
+      </p>
+      <p>
+        Se a sua farmácia ainda não tem esse processo formalizado, esse é o primeiro passo. Leva menos de uma hora para montar — e economiza horas de dor de cabeça ao longo do ano.
+      </p>
+
+      <div class="cta-inline">
+        <div class="cta-inline__eyebrow">Quer estruturar os processos da sua farmácia?</div>
+        <div class="cta-inline__title">Fale com um consultor ProSystem</div>
+        <p>Ajudamos farmácias a montar processos operacionais eficientes integrados ao sistema de gestão — PDV, estoque e financeiro em um só lugar.</p>
+        <a href="https://wa.me/5527997798103" class="btn" target="_blank">Agendar conversa</a>
+      </div>
+
+    </div>
+
+    <div class="share-bar">
+      <span class="share-bar__label">Compartilhar</span>
+      <a href="https://wa.me/?text=Como%20montar%20um%20processo%20de%20abertura%20e%20fechamento%20de%20caixa%20na%20farmácia%20https://prosystemnet.com.br/blog/abertura-fechamento-caixa-farmacia-processo" class="share-btn share-btn--wa" target="_blank">WhatsApp</a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://prosystemnet.com.br/blog/abertura-fechamento-caixa-farmacia-processo" class="share-btn share-btn--li" target="_blank">LinkedIn</a>
+    </div>
+
+    <div class="author-bio">
+      <div class="author-bio__avatar">P</div>
+      <div>
+        <div class="author-bio__name">Equipe ProSystem</div>
+        <div class="author-bio__desc">Especialistas em gestão de varejo, farmácias e padarias há mais de 16 anos.</div>
+      </div>
+    </div>
+  </article>
+
+  <aside class="sidebar">
+    <nav class="sidebar-toc">
+      <div class="sidebar-toc__header">Neste artigo</div>
+      <ul class="sidebar-toc__list">
+        <li class="sidebar-toc__item"><a href="#por-que-importa">Por que o processo importa</a></li>
+        <li class="sidebar-toc__item"><a href="#abertura">Abertura de caixa</a></li>
+        <li class="sidebar-toc__item"><a href="#durante">Durante o turno</a></li>
+        <li class="sidebar-toc__item"><a href="#fechamento">Fechamento de caixa</a></li>
+        <li class="sidebar-toc__item"><a href="#divergencias">Quando o caixa não fecha</a></li>
+        <li class="sidebar-toc__item"><a href="#documentar">Documentar o processo</a></li>
+        <li class="sidebar-toc__item"><a href="#conclusao">Conclusão</a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-cta">
+      <img src="assets/logo/logo-branco.png" alt="ProSystem" class="sidebar-cta__logo">
+      <div class="sidebar-cta__title">PDV com <span>controle total</span> de caixa</div>
+      <p>Abertura, fechamento, sangria e suprimento registrados com nome do operador e horário. Sua farmácia mais segura.</p>
+      <a href="https://wa.me/5527997798103" class="btn" target="_blank">Ver demonstração</a>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="sidebar-widget__title">Leia também</div>
+      <div class="related-item">
+        <div class="related-item__dot"></div>
+        <a href="fluxo-de-caixa-farmacia-controle-financeiro.html" class="related-item__text">Fluxo de caixa na farmácia: como controlar</a>
+      </div>
+      <div class="related-item">
+        <div class="related-item__dot"></div>
+        <a href="pdv-rapido-fila-caixa-faturamento-farmacia.html" class="related-item__text">PDV rápido: como reduzir fila e aumentar faturamento</a>
+      </div>
+      <div class="related-item">
+        <div class="related-item__dot"></div>
+        <a href="kpis-indicadores-gestao-farmacia.html" class="related-item__text">KPIs essenciais para gestão da farmácia</a>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<footer class="site-footer">
+  <img src="assets/logo/logo-branco.png" alt="ProSystem Sistemas" class="site-footer__logo">
+  <div class="site-footer__title">Gestão que <span>transforma</span> seu negócio</div>
+  <div class="site-footer__sub">Sistemas ERP e PDV para farmácias, padarias e varejo há mais de 16 anos.</div>
+  <a href="https://wa.me/5527997798103" class="btn" target="_blank">Falar com um consultor</a>
+  <div class="site-footer__copy">© 2026 ProSystem Sistemas · Vitória, ES · (27) 3327-6739</div>
+</footer>
+
+<a href="https://wa.me/5527997798103" class="float-cta" target="_blank">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.099 1.51 5.82L0 24l6.337-1.48A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.37l-.36-.214-3.727.870.936-3.619-.236-.373A9.818 9.818 0 1112 21.818z"/></svg>
+  <span>Falar no WhatsApp</span>
+</a>
+
+<script>
+  const bar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+  });
+</script>
+</body>
+</html>

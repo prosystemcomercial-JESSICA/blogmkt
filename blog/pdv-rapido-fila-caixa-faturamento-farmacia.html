@@ -1,0 +1,474 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDV rápido x fila do caixa: o que muda no faturamento da sua farmácia — Blog ProSystem</title>
+  <meta name="description" content="Entenda como um PDV lento cria filas que derrubam o faturamento da sua farmácia — e o que muda quando a frente de caixa é realmente rápida e integrada.">
+  <link rel="canonical" href="https://prosystemnet.com/blog/pdv-rapido-fila-caixa-faturamento-farmacia">
+  <meta property="og:title" content="PDV rápido x fila do caixa: o que muda no faturamento da sua farmácia">
+  <meta property="og:description" content="Entenda como um PDV lento cria filas que derrubam o faturamento — e o que muda quando a frente de caixa é rápida e integrada.">
+  <meta property="og:image" content="assets/images/pdv-hero.jpg">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue:        #4A7AB8;
+      --blue-dark:   #2E5A8F;
+      --blue-deeper: #1D3A5F;
+      --blue-tint:   #EEF4FB;
+      --dark:        #111827;
+      --text:        #374151;
+      --muted:       #6B7280;
+      --border:      #E5E7EB;
+      --bg:          #F8FAFC;
+      --white:       #ffffff;
+      --gold:        #F59E0B;
+      --font-title:  'Montserrat', 'Segoe UI', system-ui, sans-serif;
+      --font-body:   'Inter', 'Segoe UI', system-ui, sans-serif;
+      --site-width:  1140px;
+      --radius:      12px;
+      --shadow-sm:   0 1px 3px rgba(0,0,0,.08);
+      --shadow-md:   0 4px 16px rgba(0,0,0,.1);
+      --ease:        0.2s ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-size: 18px; line-height: 1.78; color: var(--text); background: var(--bg); }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    #progress-bar { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: var(--gold); z-index: 9999; transition: width .1s linear; }
+
+    .site-header { background: var(--blue); padding: 0 32px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,.18); }
+    .site-header__inner { max-width: var(--site-width); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo img { height: 56px; max-width: 180px; width: auto; filter: brightness(0) invert(1); }
+    .logo-divider { width: 1px; height: 32px; background: rgba(255,255,255,.3); }
+    .logo-blog-tag { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,.75); }
+    .header-nav { display: flex; align-items: center; gap: 24px; }
+    .header-nav a { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8); transition: color var(--ease); text-decoration: none; }
+    .header-nav a:hover { color: #fff; }
+    .btn-header { background: var(--gold); color: var(--dark) !important; padding: 8px 18px; border-radius: 8px; font-weight: 700; font-size: 13px; white-space: nowrap; }
+    .btn-header:hover { background: #e08c00; }
+
+    .breadcrumb { background: var(--white); border-bottom: 1px solid var(--border); padding: 10px 32px; }
+    .breadcrumb__inner { max-width: var(--site-width); margin: 0 auto; display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+    .breadcrumb__inner a { color: var(--blue); font-weight: 500; }
+    .breadcrumb__sep { color: var(--border); }
+
+    .article-hero { position: relative; min-height: 460px; display: flex; align-items: flex-end; overflow: hidden; background: var(--blue-deeper); }
+    .article-hero__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.38; transform: scale(1.03); }
+    .article-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(17,24,39,.85) 0%, rgba(17,24,39,.35) 55%, transparent 100%); }
+    .article-hero__content { position: relative; z-index: 2; max-width: var(--site-width); margin: 0 auto; padding: 0 32px 52px; width: 100%; }
+    .article-hero__badge { display: inline-flex; align-items: center; gap: 6px; background: var(--gold); color: var(--dark); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; padding: 5px 12px; border-radius: 6px; margin-bottom: 20px; }
+    .article-hero__title { font-family: var(--font-title); font-size: clamp(26px, 4.2vw, 48px); font-weight: 800; line-height: 1.12; color: var(--white); max-width: 860px; margin-bottom: 24px; letter-spacing: -.3px; }
+    .article-hero__title em { font-style: normal; color: var(--gold); }
+    .article-hero__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; font-size: 13px; color: rgba(255,255,255,.72); }
+    .article-hero__meta-item { display: flex; align-items: center; gap: 6px; }
+    .article-hero__meta-item svg { width: 14px; height: 14px; opacity: .7; }
+
+    .site-main { max-width: var(--site-width); margin: 0 auto; padding: 56px 32px 96px; display: grid; grid-template-columns: 1fr 300px; gap: 56px; align-items: start; }
+
+    .article-body { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow-sm); overflow: hidden; }
+    .article-content { padding: 48px 52px; }
+
+    .article-content .lead { font-size: 20px; line-height: 1.65; color: var(--dark); font-weight: 400; margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+
+    .article-content h2 { font-family: var(--font-title); font-weight: 800; font-size: 22px; color: var(--dark); margin: 48px 0 16px; padding-left: 16px; border-left: 4px solid var(--blue); line-height: 1.3; scroll-margin-top: 88px; }
+    .article-content h3 { font-family: var(--font-title); font-weight: 700; font-size: 17px; color: var(--blue-dark); margin: 32px 0 12px; }
+    .article-content p { margin-bottom: 22px; font-size: 17px; line-height: 1.8; color: var(--text); }
+    .article-content ul, .article-content ol { margin: 0 0 22px 24px; }
+    .article-content li { margin-bottom: 10px; font-size: 17px; line-height: 1.7; }
+    .article-content strong { font-weight: 700; color: var(--dark); }
+
+    .article-content table { width: 100%; border-collapse: collapse; margin: 24px 0 32px; font-size: 15px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); }
+    .article-content thead tr { background: var(--blue); color: var(--white); }
+    .article-content th { padding: 14px 16px; text-align: left; font-weight: 700; font-size: 13px; }
+    .article-content td { padding: 13px 16px; border-bottom: 1px solid var(--border); }
+    .article-content tbody tr:nth-child(even) { background: var(--blue-tint); }
+    .article-content tbody tr:last-child td { border-bottom: none; }
+
+    .article-content blockquote { background: var(--blue-tint); border-left: 5px solid var(--blue); padding: 22px 28px; margin: 36px 0; border-radius: 0 var(--radius) var(--radius) 0; }
+    .article-content blockquote p { font-size: 16px; font-weight: 600; color: var(--dark); margin: 0 0 8px; line-height: 1.6; }
+    .article-content blockquote p:last-child { margin-bottom: 0; }
+
+    .callout { background: #FFFBEB; border: 1px solid #FCD34D; border-left: 5px solid var(--gold); border-radius: 0 var(--radius) var(--radius) 0; padding: 18px 22px; margin: 28px 0; }
+    .callout__label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #92400E; margin-bottom: 6px; }
+    .callout p { margin: 0; font-size: 15px; color: #78350F; line-height: 1.6; }
+
+    /* stat cards */
+    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; }
+    .stat-card { background: var(--blue-tint); border-radius: var(--radius); padding: 22px 20px; text-align: center; border-top: 4px solid var(--blue); }
+    .stat-card__number { font-family: var(--font-title); font-size: 36px; font-weight: 800; color: var(--blue); line-height: 1; margin-bottom: 6px; }
+    .stat-card__label { font-size: 13px; color: var(--text); line-height: 1.4; font-weight: 500; }
+
+    .cta-inline { background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%); border-radius: var(--radius); padding: 36px 38px; margin: 40px 0; text-align: center; box-shadow: 0 8px 32px rgba(46,90,143,.3); }
+    .cta-inline__eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .cta-inline__title { font-family: var(--font-title); font-size: 24px; font-weight: 800; color: var(--white); margin-bottom: 12px; line-height: 1.2; }
+    .cta-inline p { font-size: 15px; color: rgba(255,255,255,.85); margin-bottom: 24px; line-height: 1.6; }
+
+    .btn { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--dark); font-weight: 800; font-size: 14px; padding: 13px 28px; border-radius: 9px; transition: background var(--ease), transform var(--ease); text-decoration: none; }
+    .btn:hover { background: #e08c00; transform: translateY(-1px); text-decoration: none; }
+
+    .article-figure { margin: 36px -52px; }
+    .article-figure img { width: 100%; max-height: 440px; object-fit: cover; }
+    .article-figure figcaption { padding: 10px 52px 0; font-size: 13px; color: var(--muted); font-style: italic; text-align: center; }
+
+    .share-bar { display: flex; align-items: center; gap: 10px; padding: 24px 52px; border-top: 1px solid var(--border); background: var(--bg); flex-wrap: wrap; }
+    .share-bar__label { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-right: 4px; }
+    .share-btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 8px; font-size: 12px; font-weight: 700; text-decoration: none; transition: opacity var(--ease); }
+    .share-btn:hover { opacity: .85; text-decoration: none; }
+    .share-btn--wa  { background: #25D366; color: #fff; }
+    .share-btn--li  { background: #0A66C2; color: #fff; }
+    .share-btn--copy { background: var(--border); color: var(--dark); cursor: pointer; border: none; font-family: var(--font-body); }
+
+    .author-bio { display: flex; align-items: center; gap: 20px; padding: 28px 52px; border-top: 1px solid var(--border); }
+    .author-bio__avatar { width: 56px; height: 56px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--white); font-weight: 800; font-size: 22px; font-family: var(--font-title); }
+    .author-bio__name { font-weight: 700; font-size: 15px; color: var(--dark); }
+    .author-bio__desc { font-size: 13px; color: var(--muted); line-height: 1.5; margin-top: 2px; }
+
+    .sidebar { display: flex; flex-direction: column; gap: 24px; position: sticky; top: 96px; }
+
+    .sidebar-toc { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow-sm); overflow: hidden; }
+    .sidebar-toc__header { background: var(--blue); padding: 14px 20px; font-family: var(--font-title); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--white); }
+    .sidebar-toc__list { list-style: none; padding: 16px 0; }
+    .sidebar-toc__item a { display: block; padding: 7px 20px; font-size: 13px; color: var(--text); line-height: 1.4; border-left: 3px solid transparent; transition: color var(--ease), border-color var(--ease), background var(--ease); }
+    .sidebar-toc__item a:hover { color: var(--blue); border-left-color: var(--blue); background: var(--blue-tint); text-decoration: none; }
+
+    .sidebar-cta { background: linear-gradient(145deg, var(--blue) 0%, var(--blue-deeper) 100%); border-radius: var(--radius); padding: 28px 22px; text-align: center; box-shadow: 0 6px 24px rgba(46,90,143,.25); }
+    .sidebar-cta__logo { margin: 0 auto 16px; filter: brightness(0) invert(1); height: 52px; }
+    .sidebar-cta__title { font-family: var(--font-title); font-size: 17px; font-weight: 800; color: var(--white); margin-bottom: 8px; line-height: 1.25; }
+    .sidebar-cta__title span { color: var(--gold); }
+    .sidebar-cta p { font-size: 13px; color: rgba(255,255,255,.78); margin-bottom: 20px; line-height: 1.55; }
+    .sidebar-cta .btn { width: 100%; justify-content: center; font-size: 13px; }
+
+    .sidebar-widget { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow-sm); overflow: hidden; }
+    .sidebar-widget__title { padding: 12px 18px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: var(--blue); border-bottom: 2px solid var(--blue-tint); background: var(--bg); }
+    .related-item { display: flex; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--border); align-items: flex-start; }
+    .related-item:last-child { border-bottom: none; }
+    .related-item__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 6px; }
+    .related-item__text { font-size: 13px; font-weight: 600; color: var(--dark); line-height: 1.4; }
+    .related-item a { text-decoration: none; color: var(--dark); }
+    .related-item a:hover { color: var(--blue); }
+
+    .site-footer { background: var(--blue-deeper); color: var(--white); text-align: center; padding: 64px 24px 36px; }
+    .site-footer__logo { height: 62px; margin: 0 auto 32px; filter: brightness(0) invert(1); }
+    .site-footer__title { font-family: var(--font-title); font-size: clamp(22px, 4vw, 36px); font-weight: 800; margin-bottom: 14px; line-height: 1.2; }
+    .site-footer__title span { color: var(--gold); }
+    .site-footer__sub { font-size: 15px; color: rgba(255,255,255,.72); max-width: 480px; margin: 0 auto 32px; line-height: 1.65; }
+    .site-footer__copy { margin-top: 44px; font-size: 12px; color: rgba(255,255,255,.35); }
+
+    .float-cta { position: fixed; bottom: 28px; right: 28px; z-index: 500; display: flex; align-items: center; gap: 10px; background: #25D366; color: #fff; padding: 13px 20px; border-radius: 50px; font-weight: 700; font-size: 14px; box-shadow: 0 6px 24px rgba(0,0,0,.2); text-decoration: none; transition: transform var(--ease), box-shadow var(--ease); }
+    .float-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(0,0,0,.25); text-decoration: none; color: #fff; }
+    .float-cta svg { width: 20px; height: 20px; }
+
+    @media (max-width: 960px) {
+      .site-main { grid-template-columns: 1fr; padding: 36px 20px 72px; }
+      .sidebar { position: static; }
+      .sidebar-toc { display: none; }
+      .article-figure { margin: 28px -28px; }
+      .article-figure figcaption { padding: 10px 28px 0; }
+      .stat-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .article-content { padding: 28px 22px; }
+      .share-bar { padding: 20px 22px; }
+      .author-bio { padding: 22px 22px; }
+      .article-hero { min-height: 380px; }
+      .header-nav .btn-header { display: none; }
+      .float-cta span { display: none; }
+      .float-cta { padding: 14px; border-radius: 50%; }
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo">
+        <img src="assets/logo/logo-branco.png" alt="ProSystem Sistemas">
+        <span class="logo-divider"></span>
+        <span class="logo-blog-tag">Blog</span>
+      </a>
+      <nav class="header-nav">
+        <a href="index.html">← Todos os artigos</a>
+        <a href="https://prosystemnet.com" target="_blank" rel="noopener">Site ProSystem</a>
+        <a href="https://wa.me/5527997521370" class="btn-header" target="_blank" rel="noopener">Falar com a equipe</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb__inner">
+      <a href="https://prosystemnet.com">ProSystem</a>
+      <span class="breadcrumb__sep">›</span>
+      <a href="index.html">Blog</a>
+      <span class="breadcrumb__sep">›</span>
+      <span>PDV e Operação</span>
+      <span class="breadcrumb__sep">›</span>
+      <span>PDV rápido x fila do caixa</span>
+    </div>
+  </div>
+
+  <section class="article-hero">
+    <img class="article-hero__img" src="assets/images/farm-prateleira-medicamentos.jpg" alt="Farmacêutico de jaleco branco pegando medicamentos nas prateleiras" loading="eager" style="object-position:50% 30%">
+    <div class="article-hero__overlay"></div>
+    <div class="article-hero__content">
+      <div class="article-hero__badge">
+        <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="currentColor" opacity=".3"/><circle cx="5" cy="5" r="3" fill="currentColor"/></svg>
+        PDV e Operação
+      </div>
+      <h1 class="article-hero__title">
+        PDV rápido x fila do caixa: o que muda no <em>faturamento</em> da sua farmácia
+      </h1>
+      <div class="article-hero__meta">
+        <span class="article-hero__meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          12 de maio de 2026
+        </span>
+        <span class="article-hero__meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          6 min de leitura
+        </span>
+        <span class="article-hero__meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          ProSystem Sistemas
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <main class="site-main">
+
+    <article class="article-body" id="article">
+      <div class="article-content">
+
+        <p class="lead"><strong>Fila no caixa não é só incômodo — é faturamento embora.</strong> Quando o PDV trava, demora para abrir a venda ou não integra com o convênio do plano de saúde, o cliente desiste. Silenciosamente. E você não tem como medir o quanto está perdendo.</p>
+
+        <p>Este artigo mostra o que um PDV lento custa na prática, o que muda quando a frente de caixa é rápida e integrada — e por que isso vai muito além de "atender mais rápido".</p>
+
+        <h2 id="custo-da-fila">O custo invisível da fila no caixa</h2>
+
+        <p>Toda farmácia tem horários de pico: logo cedo, na hora do almoço e no fim da tarde. Nesses momentos, o PDV é o gargalo. Se ele demora 40 segundos a mais por transação, e você tem 60 clientes naquele período, perdeu <strong>40 minutos de capacidade</strong> — sem perceber.</p>
+
+        <p>Mas o prejuízo vai além do tempo. Pesquisas de comportamento de varejo mostram que:</p>
+
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-card__number">67%</div>
+            <div class="stat-card__label">dos clientes desistem da compra ao ver fila longa no caixa</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number">3x</div>
+            <div class="stat-card__label">mais chance de trocar de farmácia após uma experiência ruim no caixa</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number">-18%</div>
+            <div class="stat-card__label">de ticket médio quando o cliente está com pressa e simplifica a compra</div>
+          </div>
+        </div>
+
+        <p>O pior: esse cliente que foi embora não reclama. Ele simplesmente não volta. E você não tem dado nenhum para entender por que o faturamento de sexta-feira foi menor do que o da semana passada.</p>
+
+        <h2 id="onde-o-pdv-trava">Onde o PDV lento realmente trava a operação</h2>
+
+        <figure class="article-figure">
+          <img src="assets/images/pdv-section1.jpg" alt="Profissional de saúde usando sistema digital no balcão" loading="lazy">
+          <figcaption>No pico do movimento, cada segundo no caixa conta para o faturamento do dia.</figcaption>
+        </figure>
+
+        <p>Não é só a velocidade de digitação do operador. O PDV lento aparece em pontos específicos que travam a fila toda:</p>
+
+        <p><strong>Consulta de convênio demorada.</strong> Drogaria que atende plano de saúde ou PBM precisa consultar elegibilidade em tempo real. Se o sistema não integra direto, o operador abre outra janela, digita o CPF manualmente, espera — e o cliente atrás na fila já está olhando para o relógio.</p>
+
+        <p><strong>Preço divergente entre sistema e etiqueta.</strong> O operador precisa chamar o gerente para autorizar. A fila para. Três clientes resolvem pegar só o que está na mão e ir embora com uma compra menor.</p>
+
+        <p><strong>Receituário de controlado sem integração SNGPC.</strong> Se o PDV não registra automaticamente a baixa do controlado na escrituração, alguém precisa fazer isso depois — e durante a venda, o processo fica mais lento enquanto o operador confere os campos manualmente.</p>
+
+        <p><strong>Sistema sem atalho de teclado.</strong> PDV que exige mouse para cada etapa dobra o tempo por transação. Em 8 horas de operação, isso representa dezenas de atendimentos a menos.</p>
+
+        <h2 id="o-que-muda-com-pdv-rapido">O que muda quando o PDV é rápido de verdade</h2>
+
+        <p>Um PDV bem implementado não é só uma tela que abre mais rápido. É uma cadeia de integrações que elimina os atritos um por um:</p>
+
+        <table>
+          <thead>
+            <tr><th>Situação</th><th>PDV lento / sem integração</th><th>PDV rápido e integrado</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Consulta de convênio PBM</td><td>Janela separada, digitação manual</td><td>Automático ao ler o CPF no caixa</td></tr>
+            <tr><td>Venda de controlado</td><td>Operador confere campos na mão</td><td>Integração direta com SNGPC, baixa automática</td></tr>
+            <tr><td>Divergência de preço</td><td>Chama gerente, fila para</td><td>Preço sincronizado em tempo real com o estoque</td></tr>
+            <tr><td>Emissão de NFC-e</td><td>Sistema separado, dupla digitação</td><td>NFC-e emitida ao finalizar a venda</td></tr>
+            <tr><td>Fechamento de caixa</td><td>Conferência manual, retrabalho</td><td>Automático, lança direto no financeiro</td></tr>
+          </tbody>
+        </table>
+
+        <p>O resultado prático: <strong>mais clientes atendidos por hora, ticket médio maior e zero retrabalho no fechamento</strong>. Não porque o operador ficou mais rápido — mas porque o sistema parou de atrapalhar.</p>
+
+        <h2 id="ticket-medio">PDV rápido também aumenta o ticket médio</h2>
+
+        <p>Aqui está um ponto que poucos gestores conectam: o PDV não serve só para finalizar a venda. Serve para <strong>completar</strong> ela.</p>
+
+        <p>Um sistema moderno exibe sugestões de produto no momento certo — quando o operador já leu o item principal. "Esse antibiótico costuma ser levado com esse probiótico" aparece na tela antes de o cliente chegar no total. Sem pressão, sem argumento forçado — só uma sugestão no momento certo.</p>
+
+        <div class="callout">
+          <div class="callout__label">💡 Na prática</div>
+          <p>Farmácias que ativam sugestão de produtos complementares no PDV registram aumento médio de 12% a 18% no ticket médio — sem nenhuma mudança na equipe ou no mix de produtos.</p>
+        </div>
+
+        <p>Além disso, PDV integrado com programa de fidelidade permite que o operador informe o saldo de pontos do cliente antes de fechar a venda — o que aumenta a recorrência e reduz o churn silencioso de quem comprava todo mês e sumiu.</p>
+
+        <h2 id="integracao-estoque-financeiro">A venda no PDV que não termina no PDV</h2>
+
+        <p>O caixa fechou. A venda foi registrada. Mas o trabalho não acabou — a menos que o sistema seja integrado.</p>
+
+        <p>Sem integração, alguém precisa:</p>
+        <ul>
+          <li>Dar baixa manual no estoque</li>
+          <li>Lançar a receita no financeiro</li>
+          <li>Conferir se a NFC-e foi emitida corretamente</li>
+          <li>Registrar controlados no livro de escrituração do SNGPC</li>
+        </ul>
+
+        <p>Com um PDV integrado ao ERP, <strong>tudo isso acontece automaticamente no momento da venda</strong>. A baixa de estoque é imediata. A NFC-e sai junto. O controlado já entra na escrituração. E o financeiro reflete o faturamento do dia em tempo real, sem esperar o fechamento manual de caixa.</p>
+
+        <p>Isso libera o gerente para gerenciar — não para corrigir erros de digitação das 18h às 20h toda sexta-feira.</p>
+
+        <h2 id="como-saber-se-seu-pdv-esta-travando">Como saber se o seu PDV está travando o faturamento</h2>
+
+        <p>Três perguntas simples para diagnosticar:</p>
+
+        <ol>
+          <li><strong>Quantos clientes saem da fila sem comprar no seu pico de movimento?</strong> Se você não sabe responder, seu sistema não mede isso — e já é um problema.</li>
+          <li><strong>Quanto tempo leva uma transação com PBM do início ao fim?</strong> Se passar de 90 segundos, você tem margem de melhoria significativa.</li>
+          <li><strong>Seu operador usa mouse para cada etapa da venda?</strong> PDV profissional opera 100% por teclado nos fluxos principais.</li>
+        </ol>
+
+        <div class="cta-inline">
+          <div class="cta-inline__eyebrow">PDV ProSystem</div>
+          <div class="cta-inline__title">Quer ver o PDV do ProSystem em ação?</div>
+          <p>30 minutos de demonstração e você vê na prática como a frente de caixa integrada reduz o tempo por transação, elimina retrabalho e aumenta o ticket médio.</p>
+          <a href="https://wa.me/5527997521370?text=Quero%20ver%20o%20PDV%20do%20ProSystem%20em%20demonstra%C3%A7%C3%A3o" class="btn" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            Ver demonstração gratuita
+          </a>
+        </div>
+
+        <h2 id="conclusao">Conclusão</h2>
+
+        <p>Fila no caixa é sintoma, não problema. O problema é um PDV que não integra, não automatiza e não foi pensado para o ritmo de uma drogaria no horário de pico.</p>
+
+        <p>Quando a frente de caixa funciona bem — rápida, integrada com estoque, financeiro, SNGPC e PBM — o faturamento sobe não porque você contratou mais gente, mas porque parou de perder clientes que você nem sabia que estava perdendo.</p>
+
+        <blockquote>
+          <p>O ProSystem tem PDV desenvolvido especificamente para farmácias e drogarias, com integração nativa a NFC-e, SNGPC, PBM e controle de estoque.</p>
+          <p>Fale com nosso time pelo WhatsApp <strong>(27) 99752-1370</strong> — demonstração gratuita em 30 minutos.</p>
+        </blockquote>
+
+      </div>
+
+      <!-- SHARE BAR -->
+      <div class="share-bar">
+        <span class="share-bar__label">Compartilhar</span>
+        <a class="share-btn share-btn--wa" href="https://wa.me/?text=PDV%20r%C3%A1pido%20x%20fila%20do%20caixa%20%E2%80%94%20leia%20este%20artigo%20da%20ProSystem%3A%20https%3A%2F%2Fprosystemnet.com%2Fblog%2Fpdv-rapido-fila-caixa-faturamento-farmacia" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          WhatsApp
+        </a>
+        <a class="share-btn share-btn--li" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fprosystemnet.com%2Fblog%2Fpdv-rapido-fila-caixa-faturamento-farmacia" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <button class="share-btn share-btn--copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='✓ Copiado!'});setTimeout(()=>{this.textContent='Copiar link'},2500)">Copiar link</button>
+      </div>
+
+      <!-- AUTHOR BIO -->
+      <div class="author-bio">
+        <div class="author-bio__avatar">P</div>
+        <div>
+          <div class="author-bio__name">ProSystem Sistemas</div>
+          <div class="author-bio__desc">Há mais de 16 anos desenvolvendo ERP para farmácias, drogarias e padarias no Brasil. Especialistas em PDV, conformidade fiscal, SNGPC e gestão de varejo.</div>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <nav class="sidebar-toc">
+        <div class="sidebar-toc__header">Neste artigo</div>
+        <ul class="sidebar-toc__list">
+          <li class="sidebar-toc__item"><a href="#custo-da-fila">O custo invisível da fila</a></li>
+          <li class="sidebar-toc__item"><a href="#onde-o-pdv-trava">Onde o PDV lento trava</a></li>
+          <li class="sidebar-toc__item"><a href="#o-que-muda-com-pdv-rapido">O que muda com PDV rápido</a></li>
+          <li class="sidebar-toc__item"><a href="#ticket-medio">PDV rápido e ticket médio</a></li>
+          <li class="sidebar-toc__item"><a href="#integracao-estoque-financeiro">Integração com estoque e financeiro</a></li>
+          <li class="sidebar-toc__item"><a href="#como-saber-se-seu-pdv-esta-travando">Como diagnosticar seu PDV</a></li>
+          <li class="sidebar-toc__item"><a href="#conclusao">Conclusão</a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-cta">
+        <img class="sidebar-cta__logo" src="assets/logo/logo-branco.png" alt="ProSystem">
+        <div class="sidebar-cta__title">PDV <span>ProSystem</span></div>
+        <p>Frente de caixa integrada com SNGPC, NF-e, estoque e PBM. Suporte humanizado 24/7.</p>
+        <a href="https://wa.me/5527997521370?text=Quero%20ver%20o%20PDV%20do%20ProSystem" class="btn" target="_blank" rel="noopener">Ver demonstração →</a>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="sidebar-widget__title">Leia também</div>
+        <div class="related-item">
+          <div class="related-item__dot"></div>
+          <div class="related-item__text">
+            <a href="sngpc-farmacia-como-evitar-multa-2026.html">SNGPC: como sua farmácia evita multa em 2026</a>
+          </div>
+        </div>
+        <div class="related-item">
+          <div class="related-item__dot"></div>
+          <div class="related-item__text">Em breve: Integração com PBM — guia para drogarias</div>
+        </div>
+        <div class="related-item">
+          <div class="related-item__dot"></div>
+          <div class="related-item__text">Em breve: NF-e na farmácia — como configurar sem erro</div>
+        </div>
+      </div>
+
+    </aside>
+
+  </main>
+
+  <footer class="site-footer">
+    <img class="site-footer__logo" src="assets/logo/logo-branco.png" alt="ProSystem Sistemas">
+    <div class="site-footer__title">Sua farmácia merece <span>menos burocracia</span></div>
+    <p class="site-footer__sub">ERP integrado para farmácias e drogarias. PDV, SNGPC, NF-e e estoque no mesmo sistema, com suporte 24/7.</p>
+    <a href="https://wa.me/5527997521370" class="btn" style="font-size: 15px; padding: 14px 36px;" target="_blank" rel="noopener">Falar no WhatsApp →</a>
+    <div class="site-footer__copy">© 2026 ProSystem Sistemas — Todos os direitos reservados</div>
+  </footer>
+
+  <a class="float-cta" href="https://wa.me/5527997521370?text=Olá!%20Quero%20ver%20o%20PDV%20do%20ProSystem" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    <span>Falar no WhatsApp</span>
+  </a>
+
+  <script>
+    const bar = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+      const article = document.getElementById('article');
+      const start = article.offsetTop;
+      const end = start + article.offsetHeight - window.innerHeight;
+      const progress = Math.min(Math.max((window.scrollY - start) / (end - start) * 100, 0), 100);
+      bar.style.width = progress + '%';
+    }, { passive: true });
+  </script>
+
+</body>
+</html>

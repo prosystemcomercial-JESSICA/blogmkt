@@ -1,0 +1,747 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10 KPIs para gestores de farmácia: os indicadores que separam farmácias lucrativas das que sobrevivem no aperto | Blog ProSystem</title>
+  <meta name="description" content="Descubra os 10 principais KPIs para farmácias — como calcular, qual a meta ideal, o que fazer quando o número sai do controle e como automatizar o acompanhamento no ERP.">
+  <meta name="keywords" content="KPIs farmácia, indicadores desempenho farmácia, métricas drogaria, dashboard farmácia, gestão financeira farmácia, ticket médio, giro estoque farmácia">
+  <meta property="og:title" content="10 KPIs para gestores de farmácia: os indicadores que separam farmácias lucrativas das que sobrevivem no aperto">
+  <meta property="og:description" content="Com 10 indicadores bem escolhidos, você tem visão completa da saúde da sua farmácia. Veja como calcular, qual a meta e como melhorar cada um.">
+  <meta property="og:image" content="https://images.pexels.com/photos/8657287/pexels-photo-8657287.jpeg?auto=compress&cs=tinysrgb&w=1200">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://prosystemnet.com/blog/kpis-indicadores-gestao-farmacia.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue:        #4A7AB8;
+      --blue-dark:   #2E5A8F;
+      --blue-deeper: #1D3A5F;
+      --blue-tint:   #EEF4FB;
+      --dark:        #111827;
+      --text:        #374151;
+      --muted:       #6B7280;
+      --border:      #E5E7EB;
+      --bg:          #F8FAFC;
+      --white:       #ffffff;
+      --gold:        #F59E0B;
+      --green:       #10B981;
+      --green-tint:  #D1FAE5;
+      --red:         #EF4444;
+      --red-tint:    #FEE2E2;
+      --font-title:  'Montserrat', 'Segoe UI', system-ui, sans-serif;
+      --font-body:   'Inter', 'Segoe UI', system-ui, sans-serif;
+      --site-width:  1140px;
+      --radius:      12px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.7; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* PROGRESS BAR */
+    #progress-bar {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: linear-gradient(90deg, var(--gold), #f97316);
+      z-index: 9999; transition: width .1s linear;
+    }
+
+    /* HEADER */
+    .site-header {
+      background: var(--blue); padding: 0 32px;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,.2);
+    }
+    .site-header__inner {
+      max-width: var(--site-width); margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 80px;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo img { height: 56px; max-width: 180px; width: auto; filter: brightness(0) invert(1); }
+    .logo-divider { width: 1px; height: 32px; background: rgba(255,255,255,.3); }
+    .logo-blog-tag { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,.75); }
+    .header-nav { display: flex; align-items: center; gap: 20px; }
+    .header-nav a { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8); transition: color .2s; }
+    .header-nav a:hover { color: #fff; }
+    .btn-nav { background: var(--gold); color: var(--dark) !important; padding: 8px 18px; border-radius: 8px; font-weight: 700 !important; }
+    .btn-nav:hover { background: #e08c00; }
+
+    /* BREADCRUMB */
+    .breadcrumb { max-width: var(--site-width); margin: 0 auto; padding: 18px 32px 0; font-size: 12px; color: var(--muted); display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--blue); }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* HERO */
+    .hero { position: relative; overflow: hidden; background: var(--blue-deeper); }
+    .hero__image { width: 100%; height: 420px; object-fit: cover; opacity: .35; }
+    .hero__overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(17,24,39,.25) 0%, rgba(17,24,39,.75) 100%); }
+    .hero__content {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      justify-content: center; align-items: flex-start;
+      max-width: var(--site-width); padding: 0 32px;
+      left: 50%; transform: translateX(-50%); width: 100%;
+    }
+    .hero__tag {
+      display: inline-block; background: var(--gold); color: var(--dark);
+      font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 20px; margin-bottom: 18px;
+    }
+    .hero__title {
+      font-family: var(--font-title); font-size: clamp(22px, 3.8vw, 40px);
+      font-weight: 800; line-height: 1.15; color: var(--white);
+      max-width: 720px; margin-bottom: 16px; letter-spacing: -.5px;
+    }
+    .hero__meta { display: flex; gap: 20px; font-size: 13px; color: rgba(255,255,255,.75); flex-wrap: wrap; }
+    .hero__meta span { display: flex; align-items: center; gap: 5px; }
+
+    /* STAT CARDS */
+    .stats-row {
+      max-width: var(--site-width); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+      padding: 36px 32px 0;
+    }
+    .stat-card {
+      background: var(--white); border-radius: var(--radius);
+      border: 1px solid var(--border); padding: 26px 28px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .stat-card__value { font-family: var(--font-title); font-size: 36px; font-weight: 800; color: var(--blue); line-height: 1; }
+    .stat-card__value.gold { color: var(--gold); }
+    .stat-card__value.green { color: var(--green); }
+    .stat-card__value.red { color: var(--red); }
+    .stat-card__label { font-size: 13px; color: var(--muted); line-height: 1.45; }
+
+    /* LAYOUT */
+    .article-layout {
+      max-width: var(--site-width); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 300px; gap: 48px;
+      padding: 40px 32px 80px; align-items: start;
+    }
+
+    /* ARTICLE BODY */
+    .article-body h2 {
+      font-family: var(--font-title); font-size: 22px; font-weight: 800;
+      color: var(--dark); margin: 40px 0 16px; line-height: 1.3;
+    }
+    .article-body h3 {
+      font-family: var(--font-title); font-size: 17px; font-weight: 700;
+      color: var(--blue-dark); margin: 28px 0 10px;
+    }
+    .article-body p { font-size: 16px; line-height: 1.78; margin-bottom: 18px; }
+    .article-body ul, .article-body ol { padding-left: 22px; margin-bottom: 18px; }
+    .article-body li { font-size: 15px; line-height: 1.7; margin-bottom: 8px; }
+    .article-body strong { color: var(--dark); font-weight: 700; }
+
+    .lead {
+      font-size: 18px; line-height: 1.78; color: var(--muted);
+      border-left: 4px solid var(--blue); padding-left: 20px;
+      margin-bottom: 32px; font-style: italic;
+    }
+
+    /* KPI CARD */
+    .kpi-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px 28px;
+      margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,.04);
+      position: relative; overflow: hidden;
+    }
+    .kpi-card::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 4px; background: var(--blue);
+    }
+    .kpi-card--gold::before { background: var(--gold); }
+    .kpi-card--green::before { background: var(--green); }
+    .kpi-card__number {
+      position: absolute; right: 24px; top: 18px;
+      font-family: var(--font-title); font-size: 48px; font-weight: 800;
+      color: rgba(74,122,184,.08); line-height: 1;
+    }
+    .kpi-card__name { font-family: var(--font-title); font-size: 16px; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
+    .kpi-formula {
+      font-family: 'Courier New', 'Consolas', monospace;
+      font-size: 13px; background: var(--bg); border: 1px solid var(--border);
+      border-radius: 7px; padding: 10px 14px; color: var(--blue-dark);
+      margin: 10px 0; display: inline-block;
+    }
+    .kpi-meta { display: flex; gap: 20px; margin-top: 12px; flex-wrap: wrap; }
+    .kpi-meta-item { display: flex; flex-direction: column; gap: 2px; }
+    .kpi-meta-item__label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+    .kpi-meta-item__value { font-size: 14px; font-weight: 700; color: var(--dark); }
+    .kpi-tip { font-size: 13px; color: var(--text); line-height: 1.6; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+    .kpi-tip strong { color: var(--blue-dark); }
+
+    /* INFO BOX */
+    .info-box {
+      background: var(--blue-tint); border-left: 4px solid var(--blue);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 22px 26px; margin: 28px 0;
+    }
+    .info-box__title { font-family: var(--font-title); font-size: 13px; font-weight: 800; color: var(--blue-dark); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+    .info-box p { font-size: 14px; margin-bottom: 8px; color: var(--text); }
+    .info-box p:last-child { margin-bottom: 0; }
+
+    /* DASHBOARD BOX */
+    .dashboard-box {
+      background: var(--dark); border-radius: var(--radius);
+      padding: 30px 32px; margin: 28px 0;
+    }
+    .dashboard-box__title { font-family: var(--font-title); font-size: 15px; font-weight: 800; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 18px; }
+    .dashboard-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .dashboard-item { background: rgba(255,255,255,.06); border-radius: 9px; padding: 16px; }
+    .dashboard-item__freq { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); margin-bottom: 8px; }
+    .dashboard-item__list { font-size: 12px; color: rgba(255,255,255,.8); line-height: 1.8; }
+
+    /* INLINE CTA */
+    .cta-inline {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-deeper) 100%);
+      border-radius: var(--radius); padding: 32px 36px; margin: 36px 0; text-align: center;
+    }
+    .cta-inline__title { font-family: var(--font-title); font-size: 20px; font-weight: 800; color: var(--white); margin-bottom: 10px; line-height: 1.3; }
+    .cta-inline__sub { font-size: 14px; color: rgba(255,255,255,.8); margin-bottom: 22px; }
+    .cta-inline__btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: var(--dark);
+      font-weight: 800; font-size: 14px; padding: 13px 28px;
+      border-radius: 9px; transition: background .2s;
+    }
+    .cta-inline__btn:hover { background: #e08c00; }
+
+    /* SIDEBAR */
+    .sidebar { display: flex; flex-direction: column; gap: 24px; position: sticky; top: 100px; }
+
+    .toc-box {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px 26px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    }
+    .toc-box__title { font-family: var(--font-title); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-bottom: 16px; }
+    .toc-box nav a {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 13px; color: var(--text); padding: 7px 0;
+      border-bottom: 1px solid var(--border); line-height: 1.45; transition: color .2s;
+    }
+    .toc-box nav a:last-child { border-bottom: none; }
+    .toc-box nav a:hover { color: var(--blue); }
+    .toc-box nav a span { color: var(--blue); font-weight: 700; flex-shrink: 0; font-size: 12px; margin-top: 1px; }
+
+    .sidebar-cta {
+      background: linear-gradient(160deg, var(--blue) 0%, var(--blue-deeper) 100%);
+      border-radius: var(--radius); padding: 28px 26px; text-align: center;
+    }
+    .sidebar-cta__logo { height: 52px; margin: 0 auto 16px; filter: brightness(0) invert(1); }
+    .sidebar-cta__title { font-family: var(--font-title); font-size: 16px; font-weight: 800; color: var(--white); margin-bottom: 10px; line-height: 1.3; }
+    .sidebar-cta__sub { font-size: 13px; color: rgba(255,255,255,.8); margin-bottom: 18px; line-height: 1.55; }
+    .sidebar-cta__btn {
+      display: flex; align-items: center; justify-content: center; gap: 7px;
+      background: var(--gold); color: var(--dark);
+      font-weight: 800; font-size: 13px; padding: 12px 20px;
+      border-radius: 9px; transition: background .2s;
+    }
+    .sidebar-cta__btn:hover { background: #e08c00; }
+
+    .related-box {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px 26px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    }
+    .related-box__title { font-family: var(--font-title); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-bottom: 16px; }
+    .related-box a {
+      display: flex; gap: 12px; padding: 10px 0;
+      border-bottom: 1px solid var(--border); transition: color .2s; align-items: flex-start;
+    }
+    .related-box a:last-child { border-bottom: none; padding-bottom: 0; }
+    .related-box a:hover .related-box__art-title { color: var(--blue); }
+    .related-box__art-img { width: 60px; height: 44px; object-fit: cover; border-radius: 7px; flex-shrink: 0; }
+    .related-box__art-title { font-size: 13px; font-weight: 600; color: var(--dark); line-height: 1.4; }
+
+    /* SHARE BAR */
+    .share-bar {
+      max-width: var(--site-width); margin: 0 auto 48px; padding: 0 32px;
+      display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    }
+    .share-bar__label { font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+    .share-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 13px; font-weight: 700; padding: 9px 18px;
+      border-radius: 8px; border: 1.5px solid var(--border); color: var(--text);
+      transition: all .2s; background: var(--white);
+    }
+    .share-btn:hover { border-color: var(--blue); color: var(--blue); }
+    .share-btn--wa { background: #25D366; color: #fff; border-color: #25D366; }
+    .share-btn--wa:hover { background: #1eb858; border-color: #1eb858; color: #fff; }
+
+    /* AUTHOR BIO */
+    .author-bio {
+      background: var(--white); border-radius: var(--radius); border: 1px solid var(--border);
+      padding: 28px 36px; display: flex; gap: 24px; align-items: flex-start;
+    }
+    .author-bio__avatar {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--blue-deeper));
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-family: var(--font-title); font-weight: 800; font-size: 22px;
+      flex-shrink: 0;
+    }
+    .author-bio__name { font-family: var(--font-title); font-size: 15px; font-weight: 800; color: var(--dark); margin-bottom: 4px; }
+    .author-bio__role { font-size: 12px; color: var(--blue); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+    .author-bio__text { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+    /* FOOTER */
+    .site-footer { background: var(--blue-deeper); color: var(--white); text-align: center; padding: 64px 24px 36px; }
+    .site-footer__logo { height: 62px; margin: 0 auto 32px; filter: brightness(0) invert(1); }
+    .site-footer__title { font-family: var(--font-title); font-size: clamp(20px, 4vw, 34px); font-weight: 800; margin-bottom: 14px; line-height: 1.2; }
+    .site-footer__title span { color: var(--gold); }
+    .site-footer__sub { font-size: 15px; color: rgba(255,255,255,.72); max-width: 480px; margin: 0 auto 32px; line-height: 1.65; }
+    .btn-footer {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: var(--dark);
+      font-weight: 800; font-size: 14px; padding: 14px 36px;
+      border-radius: 9px; transition: background .2s, transform .2s;
+    }
+    .btn-footer:hover { background: #e08c00; transform: translateY(-1px); }
+    .site-footer__copy { margin-top: 44px; font-size: 12px; color: rgba(255,255,255,.35); }
+
+    /* FLOATING WHATSAPP */
+    .float-wa {
+      position: fixed; bottom: 28px; right: 28px; z-index: 200;
+      background: #25D366; color: #fff;
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px 22px; border-radius: 50px;
+      font-weight: 700; font-size: 14px;
+      box-shadow: 0 6px 24px rgba(37,211,102,.45);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .float-wa:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(37,211,102,.5); }
+
+    @media (max-width: 960px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .stats-row { grid-template-columns: 1fr; }
+      .dashboard-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .hero__image { height: 280px; }
+      .article-layout { padding: 28px 20px 60px; }
+      .breadcrumb { padding: 14px 20px 0; }
+      .share-bar { padding: 0 20px; }
+      .author-bio { flex-direction: column; padding: 24px; }
+      .float-wa span { display: none; }
+      .float-wa { padding: 14px; border-radius: 50%; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="logo">
+      <img src="assets/logo/logo-branco.png" alt="ProSystem Sistemas">
+      <span class="logo-divider"></span>
+      <span class="logo-blog-tag">Blog</span>
+    </a>
+    <nav class="header-nav">
+      <a href="index.html">← Voltar ao blog</a>
+      <a href="https://wa.me/5527997521370" class="btn-nav" target="_blank" rel="noopener">Falar com a equipe</a>
+    </nav>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="index.html">Blog</a>
+  <span>›</span>
+  <span>Gestão</span>
+  <span>›</span>
+  <span>KPIs para farmácias</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero__image" src="assets/images/farm-prateleira-medicamentos.jpg" alt="Farmacêutico de jaleco branco organizando medicamentos nas prateleiras" loading="eager" style="object-position:50% 35%">
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <span class="hero__tag">Gestão</span>
+    <h1 class="hero__title">10 KPIs para gestores de farmácia: os indicadores que separam farmácias lucrativas das que sobrevivem no aperto</h1>
+    <div class="hero__meta">
+      <span>📅 27/05/2026</span>
+      <span>⏱ 8 min de leitura</span>
+      <span>✍️ Equipe ProSystem</span>
+    </div>
+  </div>
+</section>
+
+<!-- STAT CARDS -->
+<div class="stats-row">
+  <div class="stat-card">
+    <div class="stat-card__value red">68%</div>
+    <div class="stat-card__label">dos donos de farmácia independente não acompanham nenhum indicador financeiro regularmente</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-card__value green">+28%</div>
+    <div class="stat-card__label">de margem bruta em farmácias que utilizam dashboard de indicadores versus as que operam "no sentimento"</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-card__value gold">10</div>
+    <div class="stat-card__label">indicadores são suficientes para ter visão completa da saúde financeira e operacional da sua farmácia</div>
+  </div>
+</div>
+
+<!-- LAYOUT ARTIGO + SIDEBAR -->
+<div class="article-layout">
+
+  <article class="article-body">
+
+    <p class="lead">Vendas parecem boas, mas o lucro não aparece. O estoque ocupa espaço mas os produtos certos faltam. O caixa aperta no fim do mês sem causa aparente. Esses três cenários têm a mesma raiz: falta de indicadores. Aqui estão os 10 KPIs que mudam esse quadro.</p>
+
+    <h2 id="por-que-kpis">Por que KPIs importam — o custo real de operar no sentimento</h2>
+
+    <p>A frase "o que não é medido não é gerenciado" virou clichê, mas ela se materializa de formas muito concretas em uma farmácia: estoque vencendo porque o giro nunca foi monitorado; margem caindo porque o CMV subiu gradualmente e ninguém percebeu; custo operacional consumindo o lucro porque as despesas não eram rastreadas contra o faturamento.</p>
+
+    <p>Segundo dados do setor, 68% dos gestores de farmácias independentes operam sem nenhum indicador formal. O resultado aparece na conta bancária — ou melhor, na falta de resultado ao final do mês, mesmo com volume de vendas crescente.</p>
+
+    <p>A boa notícia: você não precisa de 40 planilhas, 3 consultores e um MBA para medir o que importa. Com 10 KPIs bem escolhidos, você tem visão completa da saúde financeira e operacional do negócio.</p>
+
+    <h2 id="kpis-financeiros">KPIs financeiros: onde o dinheiro vai parar</h2>
+
+    <div class="kpi-card" id="kpi-ticket">
+      <div class="kpi-card__number">01</div>
+      <div class="kpi-card__name">Ticket Médio</div>
+      <div class="kpi-formula">Faturamento total ÷ Número de vendas</div>
+      <div class="kpi-meta">
+        <div class="kpi-meta-item">
+          <span class="kpi-meta-item__label">Meta típica</span>
+          <span class="kpi-meta-item__value">R$ 85 – R$ 150</span>
+        </div>
+        <div class="kpi-meta-item">
+          <span class="kpi-meta-item__label">Frequência</span>
+          <span class="kpi-meta-item__value">Diária</span>
+        </div>
+      </div>
+      <div class="kpi-tip"><strong>Como melhorar:</strong> treinamento para sugestão de complementares, ativação de PBM/convênio, criação de combos sazonais e abordagem consultiva no balcão.</div>
+    </div>
+
+    <div class="kpi-card kpi-card--gold" id="kpi-margem">
+      <div class="kpi-card__number">02</div>
+      <div class="kpi-card__name">Margem Bruta</div>
+      <div class="kpi-formula">(Faturamento – CMV) ÷ Faturamento × 100</div>
+      <div class="kpi-meta">
+        <div class="kpi-meta-item">
+          <span class="kpi-meta-item__label">Meta típica</span>
+          <span class="kpi-meta-item__value">25% a 35%</span>
+        </div>
+        <div class="kpi-meta-item">
+          <span class="kpi-meta-item__label">Frequência</span>
+          <span class="kpi-meta-item__value">Semanal / Mensal</span>
+        </div>
+      </div>
+      <div class="kpi-tip"><strong>Como melhorar:</strong> revisar precificação de similares, ampliar mix de correlatos e dermocosméticos (margem de 35–50%), negociar melhores condições com distribuidores.</div>
+    </div>
+
+    <div class="kpi-card" id="kpi-cmv">
+      <div class="kpi-card__number">03</div>
+      <div class="kpi-card__name">CMV% (Custo das Mercadorias Vendidas)</div>
+      <div class="kpi-formula">Custo total dos produtos vendidos ÷ Faturamento × 100</div>
+      <div class="kpi-meta">
+        <div class="kpi-meta-item">
+          <span class="kpi-meta-item__label">Meta típica</span>
+          <span class="kpi-meta-item__value">Abaixo de 70%</span>
+        </div>
+        <div class="kpi-meta-item">
+          <span class="kpi-meta-item__label">Frequência</span>
+          <span class="kpi-meta-item__value">Mensal</span>
+        </div>
+      </div>
+      <div class="kpi-tip"><strong>Como melhorar:</strong> comprar com base em curva de demanda real, reduzir perdas por vencimento, ajustar markup em categorias com CMV elevado.</div>
+    </div>
+
+    <div class="kpi-card kpi-card--gold" id="kpi-custo-op">
+      <div class="kpi-card__number">04</div>
+      <div class="kpi-card__name">Custo Operacional (%)</div>
+      <div class="kpi-formula">Total de despesas operacionais ÷ Faturamento × 100</div>
+      <div class="kpi-meta">
+        <div class="kpi-meta-item">
+          <span class="kpi-meta-item__label">Meta típica</span>
+          <span class="kpi-meta-item__value">Abaixo de 20%</span>
+        </div>
+        <div class="kpi-meta-item">
+          <span class="kpi-meta-item__label">Frequência</span>
+          <span class="kpi-meta-item__value">Mensal</span>
+        </div>
+      </div>
+      <div class="kpi-tip"><strong>Como melhorar:</strong> negociar aluguel e utilities, otimizar escala de funcionários, automatizar processos manuais (reduz horas extras e erros de retrabalho).</div>
+    </div>
+
+    <h2 id="kpis-estoque">KPIs de estoque: onde o dinheiro fica parado</h2>
+
+    <div class="kpi-card kpi-card--green" id="kpi-giro">
+      <div class="kpi-card__number">05</div>
+      <div class="kpi-card__name">Giro de Estoque</div>
+      <div class="kpi-formula">CMV anual (ou do período) ÷ Estoque médio</div>
+      <div class="kpi-meta">
+        <div class="kpi-meta-item">
+          <span class="kpi-meta-item__label">Meta típica</span>
+          <span class="kpi-meta-item__value">6 a 12 vezes/ano</span>
+        </div>
+        <div class="kpi-meta-item">
+          <span class="kpi-meta-item__label">Significado</span>
+          <span class="kpi-meta-item__value">30 a 60 dias de cobertura</span>
+        </div>
+        <div class="kpi-meta-item">
+          <span class="kpi-meta-item__label">Frequência</span>
+          <span class="kpi-meta-item__value">Mensal</span>
+        </div>
+      </div>
+      <div class="kpi-tip"><strong>Como melhorar:</strong> implementar curva ABC por velocidade de saída, configurar compras por demanda real no ERP, eliminar itens parados há mais de 90 dias.</div>
+    </div>
+
+    <div class="kpi-card" id="kpi-ruptura">
+      <div class="kpi-card__number">06</div>
+      <div class="kpi-card__name">Ruptura de Estoque</div>
+      <div class="kpi-formula">Itens em falta ÷ Total de SKUs ativos × 100</div>
+      <div class="kpi-meta">
+        <div class="kpi-meta-item">
+          <span class="kpi-meta-item__label">Meta típica</span>
+          <span class="kpi-meta-item__value">Abaixo de 3%</span>
+        </div>
+        <div class="kpi-meta-item">
+          <span class="kpi-meta-item__label">Frequência</span>
+          <span class="kpi-meta-item__value">Diária / Semanal</span>
+        </div>
+      </div>
+      <div class="kpi-tip"><strong>Como melhorar:</strong> configurar estoque mínimo e ponto de reposição automáticos no ERP, comprar com base em histórico de saída, monitorar os top 50 SKUs diariamente.</div>
+    </div>
+
+    <div class="kpi-card kpi-card--green" id="kpi-pme">
+      <div class="kpi-card__number">07</div>
+      <div class="kpi-card__name">Prazo Médio de Estoque (PME)</div>
+      <div class="kpi-formula">Estoque atual (R$) ÷ CMV diário médio</div>
+      <div class="kpi-meta">
+        <div class="kpi-meta-item">
+          <span class="kpi-meta-item__label">Meta típica</span>
+          <span class="kpi-meta-item__value">30 a 45 dias</span>
+        </div>
+        <div class="kpi-meta-item">
+          <span class="kpi-meta-item__label">Frequência</span>
+          <span class="kpi-meta-item__value">Mensal</span>
+        </div>
+      </div>
+      <div class="kpi-tip"><strong>Como melhorar:</strong> reduzir compras de cobertura excessiva, negociar entregas menores e mais frequentes com distribuidores, priorizar produtos de alta rotatividade.</div>
+    </div>
+
+    <div class="info-box">
+      <div class="info-box__title">Por que giro de estoque e PME parecem redundantes — mas não são</div>
+      <p>O giro mostra quantas vezes o estoque foi "renovado" em um período. O PME mostra quantos dias, em média, um produto fica parado antes de ser vendido. Os dois juntos revelam não apenas se o estoque gira bem, mas onde o capital está retido — e quais categorias precisam de ajuste urgente na política de compras.</p>
+    </div>
+
+    <h2 id="kpis-atendimento">KPIs de atendimento: onde o faturamento é perdido</h2>
+
+    <div class="kpi-card" id="kpi-conversao">
+      <div class="kpi-card__number">08</div>
+      <div class="kpi-card__name">Taxa de Conversão</div>
+      <div class="kpi-formula">Número de vendas concluídas ÷ Número de atendimentos × 100</div>
+      <div class="kpi-meta">
+        <div class="kpi-meta-item">
+          <span class="kpi-meta-item__label">Meta típica</span>
+          <span class="kpi-meta-item__value">Acima de 75%</span>
+        </div>
+        <div class="kpi-meta-item">
+          <span class="kpi-meta-item__label">Frequência</span>
+          <span class="kpi-meta-item__value">Semanal</span>
+        </div>
+      </div>
+      <div class="kpi-tip"><strong>Como melhorar:</strong> treinamento de equipe para oferta de similares e genéricos, gestão rígida de ruptura, tempo de atendimento no PDV abaixo de 3 minutos.</div>
+    </div>
+
+    <div class="kpi-card kpi-card--gold" id="kpi-crescimento">
+      <div class="kpi-card__number">09</div>
+      <div class="kpi-card__name">Crescimento de Faturamento (MoM e YoY)</div>
+      <div class="kpi-formula">(Faturamento atual – Faturamento anterior) ÷ Faturamento anterior × 100</div>
+      <div class="kpi-meta">
+        <div class="kpi-meta-item">
+          <span class="kpi-meta-item__label">Meta mínima</span>
+          <span class="kpi-meta-item__value">Acima do IPCA saúde</span>
+        </div>
+        <div class="kpi-meta-item">
+          <span class="kpi-meta-item__label">Frequência</span>
+          <span class="kpi-meta-item__value">Mensal</span>
+        </div>
+      </div>
+      <div class="kpi-tip"><strong>Como melhorar:</strong> acompanhar sazonalidade e criar campanhas para os picos (gripe, diabetes em novembro, etc.), expandir convênios e PBM, lançar serviços farmacêuticos com cobrança.</div>
+    </div>
+
+    <div class="kpi-card kpi-card--green" id="kpi-fidelizacao">
+      <div class="kpi-card__number">10</div>
+      <div class="kpi-card__name">Taxa de Retorno de Clientes (Fidelização)</div>
+      <div class="kpi-formula">Clientes que compraram mais de uma vez ÷ Total de clientes únicos × 100</div>
+      <div class="kpi-meta">
+        <div class="kpi-meta-item">
+          <span class="kpi-meta-item__label">Meta típica</span>
+          <span class="kpi-meta-item__value">Acima de 40%</span>
+        </div>
+        <div class="kpi-meta-item">
+          <span class="kpi-meta-item__label">Frequência</span>
+          <span class="kpi-meta-item__value">Mensal</span>
+        </div>
+      </div>
+      <div class="kpi-tip"><strong>Como melhorar:</strong> programa de fidelidade com pontos, lembretes de renovação de medicação crônica via WhatsApp, cadastro ativo de CPF em todas as vendas para rastreabilidade.</div>
+    </div>
+
+    <h2 id="dashboard">Como montar seu dashboard sem complicar</h2>
+
+    <p>O segredo não é ter mais dados — é ter os dados certos no momento certo. Um bom dashboard de farmácia tem três camadas de frequência:</p>
+
+    <div class="dashboard-box">
+      <div class="dashboard-box__title">Estrutura de dashboard recomendada</div>
+      <div class="dashboard-row">
+        <div class="dashboard-item">
+          <div class="dashboard-item__freq">Visão diária</div>
+          <div class="dashboard-item__list">
+            Faturamento do dia<br>
+            Ticket médio<br>
+            Nº de vendas<br>
+            Ruptura de estoque
+          </div>
+        </div>
+        <div class="dashboard-item">
+          <div class="dashboard-item__freq">Visão semanal</div>
+          <div class="dashboard-item__list">
+            CMV%<br>
+            Taxa de conversão<br>
+            Performance por turno<br>
+            Alertas de vencimento
+          </div>
+        </div>
+        <div class="dashboard-item">
+          <div class="dashboard-item__freq">Visão mensal</div>
+          <div class="dashboard-item__list">
+            DRE resumida<br>
+            Margem bruta<br>
+            Giro de estoque<br>
+            Crescimento vs. mês anterior<br>
+            Taxa de fidelização
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p>Se você usa o ProSystem, esses indicadores são gerados automaticamente nos relatórios gerenciais e financeiros — sem planilha, sem consolidação manual, sem depender de uma pessoa específica para "fechar os números".</p>
+
+    <div class="cta-inline">
+      <div class="cta-inline__title">Quer ver esses KPIs automatizados na sua farmácia?</div>
+      <div class="cta-inline__sub">O ProSystem gera todos os relatórios gerenciais em tempo real. Sem planilha, sem digitação dupla — os números sempre atualizados para você tomar decisão com segurança.</div>
+      <a href="https://wa.me/5527997521370?text=Olá!%20Quero%20ver%20como%20o%20ProSystem%20gera%20os%20KPIs%20da%20minha%20farmácia%20automaticamente" class="cta-inline__btn" target="_blank" rel="noopener">
+        Ver demonstração →
+      </a>
+    </div>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="toc-box">
+      <div class="toc-box__title">Neste artigo</div>
+      <nav>
+        <a href="#por-que-kpis"><span>→</span> Por que KPIs importam</a>
+        <a href="#kpis-financeiros"><span>→</span> KPIs financeiros (1–4)</a>
+        <a href="#kpis-estoque"><span>→</span> KPIs de estoque (5–7)</a>
+        <a href="#kpis-atendimento"><span>→</span> KPIs de atendimento (8–10)</a>
+        <a href="#dashboard"><span>→</span> Como montar o dashboard</a>
+      </nav>
+    </div>
+
+    <div class="sidebar-cta">
+      <img class="sidebar-cta__logo" src="assets/logo/logo-branco.png" alt="ProSystem Sistemas">
+      <div class="sidebar-cta__title">Dashboards automáticos no ProSystem</div>
+      <p class="sidebar-cta__sub">Todos os KPIs deste artigo gerados automaticamente. Sem planilha, sem retrabalho — gestão de verdade.</p>
+      <a href="https://wa.me/5527997521370?text=Olá!%20Quero%20conhecer%20os%20relatórios%20gerenciais%20do%20ProSystem" class="sidebar-cta__btn" target="_blank" rel="noopener">
+        Quero ver uma demo →
+      </a>
+    </div>
+
+    <div class="related-box">
+      <div class="related-box__title">Leia também</div>
+      <a href="precificacao-farmacia-markup-margem-lucratividade.html">
+        <img class="related-box__art-img" src="https://images.pexels.com/photos/19471013/pexels-photo-19471013.jpeg?auto=compress&cs=tinysrgb&w=120" alt="Precificação farmácia">
+        <span class="related-box__art-title">Precificação: como calcular markup e margem sem perder lucratividade</span>
+      </a>
+      <a href="pbm-farmacia-como-aumentar-ticket-medio-convenios.html">
+        <img class="related-box__art-img" src="https://images.pexels.com/photos/8657294/pexels-photo-8657294.jpeg?auto=compress&cs=tinysrgb&w=120" alt="PBM farmácia">
+        <span class="related-box__art-title">PBM na farmácia: como funciona e como aumentar o ticket médio</span>
+      </a>
+      <a href="controle-estoque-farmacia-evitar-perdas-vencimento.html">
+        <img class="related-box__art-img" src="https://images.pexels.com/photos/8657287/pexels-photo-8657287.jpeg?auto=compress&cs=tinysrgb&w=120" alt="Controle de estoque">
+        <span class="related-box__art-title">Controle de estoque: como evitar perdas por vencimento</span>
+      </a>
+      <a href="pdv-rapido-fila-caixa-faturamento-farmacia.html">
+        <img class="related-box__art-img" src="https://images.pexels.com/photos/8657294/pexels-photo-8657294.jpeg?auto=compress&cs=tinysrgb&w=120" alt="PDV rápido">
+        <span class="related-box__art-title">PDV rápido x fila do caixa: o que muda no faturamento</span>
+      </a>
+    </div>
+
+  </aside>
+</div>
+
+<!-- SHARE BAR -->
+<div class="share-bar">
+  <span class="share-bar__label">Compartilhar:</span>
+  <a class="share-btn share-btn--wa" href="https://wa.me/?text=10%20KPIs%20para%20gestores%20de%20farmácia%20https%3A%2F%2Fprosystemnet.com%2Fblog%2Fkpis-indicadores-gestao-farmacia.html" target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.994 0C5.368 0 0 5.368 0 11.994c0 2.122.558 4.116 1.529 5.845L0 24l6.347-1.493A11.928 11.928 0 0 0 11.994 24C18.62 24 24 18.632 24 11.994 24 5.368 18.62 0 11.994 0zm0 21.818a9.815 9.815 0 0 1-5.007-1.365l-.357-.213-3.762.985.998-3.666-.233-.376A9.801 9.801 0 0 1 2.182 12c0-5.413 4.407-9.818 9.812-9.818 5.413 0 9.824 4.405 9.824 9.818 0 5.407-4.411 9.818-9.824 9.818z"/></svg>
+    WhatsApp
+  </a>
+  <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fprosystemnet.com%2Fblog%2Fkpis-indicadores-gestao-farmacia.html" target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    LinkedIn
+  </a>
+  <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fprosystemnet.com%2Fblog%2Fkpis-indicadores-gestao-farmacia.html" target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    Facebook
+  </a>
+</div>
+
+<!-- AUTHOR BIO -->
+<div style="max-width: 1140px; margin: 0 auto 72px; padding: 0 32px;">
+  <div class="author-bio">
+    <div class="author-bio__avatar">P</div>
+    <div>
+      <div class="author-bio__name">Equipe ProSystem Sistemas</div>
+      <div class="author-bio__role">Especialistas em ERP para Farmácias e Drogarias</div>
+      <p class="author-bio__text">Com mais de 16 anos de experiência no setor farmacêutico, a equipe ProSystem produz conteúdo prático sobre gestão, conformidade e tecnologia para donos de farmácia, gestores e farmacêuticos responsáveis em todo o Brasil.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <img class="site-footer__logo" src="assets/logo/logo-branco.png" alt="ProSystem Sistemas">
+  <div class="site-footer__title">Sua farmácia merece <span>menos burocracia</span></div>
+  <p class="site-footer__sub">ERP integrado para farmácias e drogarias. Relatórios gerenciais em tempo real, SNGPC, NF-e e PDV no mesmo sistema.</p>
+  <a href="https://wa.me/5527997521370" class="btn-footer" target="_blank" rel="noopener">Falar no WhatsApp →</a>
+  <div class="site-footer__copy">© 2026 ProSystem Sistemas — Todos os direitos reservados</div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a class="float-wa" href="https://wa.me/5527997521370?text=Olá!%20Li%20o%20artigo%20sobre%20KPIs%20e%20quero%20ver%20o%20dashboard%20do%20ProSystem" target="_blank" rel="noopener">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.994 0C5.368 0 0 5.368 0 11.994c0 2.122.558 4.116 1.529 5.845L0 24l6.347-1.493A11.928 11.928 0 0 0 11.994 24C18.62 24 24 18.632 24 11.994 24 5.368 18.62 0 11.994 0zm0 21.818a9.815 9.815 0 0 1-5.007-1.365l-.357-.213-3.762.985.998-3.666-.233-.376A9.801 9.801 0 0 1 2.182 12c0-5.413 4.407-9.818 9.812-9.818 5.413 0 9.824 4.405 9.824 9.818 0 5.407-4.411 9.818-9.824 9.818z"/></svg>
+  <span>Falar com a equipe</span>
+</a>
+
+<script>
+  const bar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    const scrollHeight = doc.scrollHeight - doc.clientHeight;
+    bar.style.width = scrollHeight > 0 ? (scrollTop / scrollHeight * 100) + '%' : '0%';
+  });
+</script>
+</body>
+</html>

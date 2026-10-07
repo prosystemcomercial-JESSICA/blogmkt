@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestão financeira de padaria: como calcular o custo real de cada produto — Blog ProSystem</title>
+  <meta name="description" content="Aprenda a calcular o custo real de cada produto da sua padaria, encontrar o preço de venda correto e parar de vender sem saber se está lucrando.">
+  <link rel="canonical" href="https://prosystemnet.com.br/blog/gestao-financeira-padaria-custo-produto">
+  <meta property="og:title" content="Gestão financeira de padaria: como calcular o custo real de cada produto">
+  <meta property="og:description" content="Aprenda a calcular o custo real de cada produto da sua padaria e encontrar o preço de venda correto.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --blue:#4A7AB8; --blue-dark:#2E5A8F; --blue-deeper:#1D3A5F; --blue-tint:#EEF4FB; --dark:#111827; --text:#374151; --muted:#6B7280; --border:#E5E7EB; --bg:#F8FAFC; --white:#ffffff; --gold:#F59E0B; --font-title:'Montserrat','Segoe UI',system-ui,sans-serif; --font-body:'Inter','Segoe UI',system-ui,sans-serif; --site-width:1140px; --radius:12px; --shadow-sm:0 1px 3px rgba(0,0,0,.08); --ease:0.2s ease; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth} body{font-family:var(--font-body);font-size:18px;line-height:1.78;color:var(--text);background:var(--bg)} img{max-width:100%;height:auto;display:block} a{color:var(--blue);text-decoration:none} a:hover{text-decoration:underline}
+    #progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:var(--gold);z-index:9999;transition:width .1s linear}
+    .site-header{background:var(--blue);padding:0 32px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.18)} .site-header__inner{max-width:var(--site-width);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:80px} .logo{display:flex;align-items:center;gap:12px;text-decoration:none} .logo img{height:56px;max-width:180px;width:auto;filter:brightness(0) invert(1)} .logo-divider{width:1px;height:32px;background:rgba(255,255,255,.3)} .logo-blog-tag{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.75)} .header-nav{display:flex;align-items:center;gap:24px} .header-nav a{font-size:13px;font-weight:600;color:rgba(255,255,255,.8);text-decoration:none} .header-nav a:hover{color:#fff} .btn-header{background:var(--gold);color:var(--dark)!important;padding:8px 18px;border-radius:8px;font-weight:700;font-size:13px}
+    .breadcrumb{background:var(--white);border-bottom:1px solid var(--border);padding:10px 32px} .breadcrumb__inner{max-width:var(--site-width);margin:0 auto;display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)} .breadcrumb__inner a{color:var(--blue);font-weight:500}
+    .article-hero{position:relative;min-height:460px;display:flex;align-items:flex-end;overflow:hidden;background:var(--blue-deeper)} .article-hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.38;transform:scale(1.03)} .article-hero__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(17,24,39,.85) 0%,rgba(17,24,39,.35) 55%,transparent 100%)} .article-hero__content{position:relative;z-index:2;max-width:var(--site-width);margin:0 auto;padding:0 32px 52px;width:100%} .article-hero__badge{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--dark);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:2px;padding:5px 12px;border-radius:6px;margin-bottom:20px} .article-hero__title{font-family:var(--font-title);font-size:clamp(26px,4.2vw,48px);font-weight:800;line-height:1.12;color:var(--white);max-width:860px;margin-bottom:24px} .article-hero__title em{font-style:normal;color:var(--gold)} .article-hero__meta{display:flex;flex-wrap:wrap;align-items:center;gap:20px;font-size:13px;color:rgba(255,255,255,.72)}
+    .site-main{max-width:var(--site-width);margin:0 auto;padding:56px 32px 96px;display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:start}
+    .article-body{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden} .article-content{padding:48px 52px} .article-content .lead{font-size:20px;line-height:1.65;color:var(--dark);font-weight:400;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border)} .article-content h2{font-family:var(--font-title);font-weight:800;font-size:22px;color:var(--dark);margin:48px 0 16px;padding-left:16px;border-left:4px solid var(--blue);line-height:1.3;scroll-margin-top:88px} .article-content h3{font-family:var(--font-title);font-weight:700;font-size:17px;color:var(--blue-dark);margin:32px 0 12px} .article-content p{margin-bottom:22px;font-size:17px;line-height:1.8;color:var(--text)} .article-content ul,.article-content ol{margin:0 0 22px 24px} .article-content li{margin-bottom:10px;font-size:17px;line-height:1.7} .article-content strong{font-weight:700;color:var(--dark)} .article-content table{width:100%;border-collapse:collapse;margin:24px 0 32px;font-size:15px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm)} .article-content thead tr{background:var(--blue);color:var(--white)} .article-content th{padding:14px 16px;text-align:left;font-weight:700;font-size:13px} .article-content td{padding:13px 16px;border-bottom:1px solid var(--border)} .article-content tbody tr:nth-child(even){background:var(--blue-tint)} .article-content tbody tr:last-child td{border-bottom:none} .article-content blockquote{background:var(--blue-tint);border-left:5px solid var(--blue);padding:22px 28px;margin:36px 0;border-radius:0 var(--radius) var(--radius) 0} .article-content blockquote p{font-size:16px;font-weight:600;color:var(--dark);margin:0 0 8px;line-height:1.6} .article-content blockquote p:last-child{margin-bottom:0}
+    .callout{background:#FFFBEB;border:1px solid #FCD34D;border-left:5px solid var(--gold);border-radius:0 var(--radius) var(--radius) 0;padding:18px 22px;margin:28px 0} .callout__label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#92400E;margin-bottom:6px} .callout p{margin:0;font-size:15px;color:#78350F;line-height:1.6}
+    .cta-inline{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-dark) 100%);border-radius:var(--radius);padding:36px 38px;margin:40px 0;text-align:center;box-shadow:0 8px 32px rgba(46,90,143,.3)} .cta-inline__eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px} .cta-inline__title{font-family:var(--font-title);font-size:24px;font-weight:800;color:var(--white);margin-bottom:12px;line-height:1.2} .cta-inline p{font-size:15px;color:rgba(255,255,255,.85);margin-bottom:24px;line-height:1.6}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--dark);font-weight:800;font-size:14px;padding:13px 28px;border-radius:9px;transition:background var(--ease),transform var(--ease);text-decoration:none} .btn:hover{background:#e08c00;transform:translateY(-1px);text-decoration:none}
+    .share-bar{display:flex;align-items:center;gap:10px;padding:24px 52px;border-top:1px solid var(--border);background:var(--bg)} .share-bar__label{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-right:4px} .share-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;transition:opacity var(--ease)} .share-btn:hover{opacity:.85;text-decoration:none} .share-btn--wa{background:#25D366;color:#fff} .share-btn--li{background:#0A66C2;color:#fff}
+    .author-bio{display:flex;align-items:center;gap:20px;padding:28px 52px;border-top:1px solid var(--border)} .author-bio__avatar{width:56px;height:56px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--white);font-weight:800;font-size:22px;font-family:var(--font-title)} .author-bio__name{font-weight:700;font-size:15px;color:var(--dark)} .author-bio__desc{font-size:13px;color:var(--muted);line-height:1.5;margin-top:2px}
+    .sidebar{display:flex;flex-direction:column;gap:24px;position:sticky;top:88px} .sidebar-toc{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden} .sidebar-toc__header{background:var(--blue);padding:14px 20px;font-family:var(--font-title);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--white)} .sidebar-toc__list{list-style:none;padding:16px 0} .sidebar-toc__item a{display:block;padding:7px 20px;font-size:13px;color:var(--text);line-height:1.4;border-left:3px solid transparent;transition:color var(--ease),border-color var(--ease),background var(--ease)} .sidebar-toc__item a:hover{color:var(--blue);border-left-color:var(--blue);background:var(--blue-tint);text-decoration:none}
+    .sidebar-cta{background:linear-gradient(145deg,var(--blue) 0%,var(--blue-deeper) 100%);border-radius:var(--radius);padding:28px 22px;text-align:center;box-shadow:0 6px 24px rgba(46,90,143,.25)} .sidebar-cta__logo{margin:0 auto 16px;filter:brightness(0) invert(1);height:52px} .sidebar-cta__title{font-family:var(--font-title);font-size:17px;font-weight:800;color:var(--white);margin-bottom:8px;line-height:1.25} .sidebar-cta__title span{color:var(--gold)} .sidebar-cta p{font-size:13px;color:rgba(255,255,255,.78);margin-bottom:20px;line-height:1.55} .sidebar-cta .btn{width:100%;justify-content:center;font-size:13px}
+    .sidebar-widget{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden} .sidebar-widget__title{padding:12px 18px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:var(--blue);border-bottom:2px solid var(--blue-tint);background:var(--bg)} .related-item{display:flex;gap:12px;padding:14px 18px;border-bottom:1px solid var(--border);align-items:flex-start} .related-item:last-child{border-bottom:none} .related-item__dot{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:6px} .related-item__text{font-size:13px;font-weight:600;color:var(--dark);line-height:1.4}
+    .site-footer{background:var(--blue-deeper);color:var(--white);text-align:center;padding:64px 24px 36px} .site-footer__logo{height:62px;margin:0 auto 32px;filter:brightness(0) invert(1)} .site-footer__title{font-family:var(--font-title);font-size:clamp(22px,4vw,36px);font-weight:800;margin-bottom:14px;line-height:1.2} .site-footer__title span{color:var(--gold)} .site-footer__sub{font-size:15px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.65} .site-footer__copy{margin-top:44px;font-size:12px;color:rgba(255,255,255,.35)}
+    .float-cta{position:fixed;bottom:28px;right:28px;z-index:500;display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:13px 20px;border-radius:50px;font-weight:700;font-size:14px;box-shadow:0 6px 24px rgba(0,0,0,.2);text-decoration:none;transition:transform var(--ease),box-shadow var(--ease)} .float-cta:hover{transform:translateY(-2px);text-decoration:none;color:#fff}
+    @media(max-width:960px){.site-main{grid-template-columns:1fr;padding:36px 20px 72px}.sidebar{position:static}.sidebar-toc{display:none}} @media(max-width:640px){.article-content{padding:28px 22px}.share-bar{padding:20px 22px;flex-wrap:wrap}.author-bio{padding:22px 22px}.float-cta span{display:none}.float-cta{padding:14px;border-radius:50%}}
+  </style>
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="logo">
+      <img src="assets/logo/logo-branco.png" alt="ProSystem Sistemas">
+      <span class="logo-divider"></span>
+      <span class="logo-blog-tag">Blog</span>
+    </a>
+    <nav class="header-nav">
+      <a href="index.html">Blog</a>
+      <a href="https://prosystemnet.com.br" target="_blank">Site</a>
+      <a href="https://wa.me/5527997798103" class="btn-header" target="_blank">Falar com consultor</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="breadcrumb">
+  <div class="breadcrumb__inner">
+    <a href="index.html">Blog</a>
+    <span>›</span>
+    <a href="#">Padarias</a>
+    <span>›</span>
+    <span>Gestão financeira de padaria</span>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <img class="article-hero__img" src="https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Pão artesanal fatiado em padaria — custo de produto e gestão financeira" loading="eager" style="object-position:50% 50%">
+  <div class="article-hero__overlay"></div>
+  <div class="article-hero__content">
+    <span class="article-hero__badge">Padaria · Financeiro · Custo</span>
+    <h1 class="article-hero__title">
+      Gestão financeira de padaria:<br>
+      <em>como calcular o custo real</em> de cada produto
+    </h1>
+    <div class="article-hero__meta">
+      <span>ProSystem Sistemas</span>
+      <span>22 de junho de 2026</span>
+      <span>7 min de leitura</span>
+    </div>
+  </div>
+</section>
+
+<main class="site-main">
+  <article class="article-body">
+    <div class="article-content">
+
+      <p class="lead">
+        O pão de sal mais vendido da sua padaria — você sabe exatamente quanto ele custa para produzir? E quanto sobra de margem depois de descontar farinha, fermento, energia, mão de obra e embalagem? Se a resposta for "mais ou menos", você tem um problema financeiro silencioso.
+      </p>
+
+      <h2 id="por-que-calcular">Por que a maioria das padarias não sabe o custo real</h2>
+      <p>
+        É comum padeiros experientes definirem preço de venda com base no que a concorrência cobra — ou no que "parece justo". O problema é que cada padaria tem custos diferentes. Equipamento, localização, quadro de pessoal, fornecedores, energia — tudo isso varia.
+      </p>
+      <p>
+        Sem calcular o custo real de cada produto, você pode estar vendendo o pão mais popular com margem negativa sem perceber. O faturamento sobe, o movimento é bom — e a conta bancária nunca fecha no azul.
+      </p>
+
+      <blockquote>
+        <p>Segundo o Sebrae, 40% das padarias e confeitarias fecham nos primeiros 2 anos. A má gestão financeira — especialmente a ausência de controle de custos por produto — é uma das principais causas.</p>
+      </blockquote>
+
+      <h2 id="componentes">Os 4 componentes do custo real de um produto de padaria</h2>
+      <p>
+        O custo de produção de um item de padaria tem quatro componentes. Ignorar qualquer um deles distorce o preço de venda e corrói a margem.
+      </p>
+
+      <ol>
+        <li><strong>Custo de matéria-prima (CMV)</strong> — farinha, açúcar, fermento, ovos, manteiga, recheios. Tudo o que entra na receita.</li>
+        <li><strong>Custo de embalagem</strong> — saco, etiqueta, bandeja. Parece pequeno, mas em escala faz diferença.</li>
+        <li><strong>Custo de mão de obra direta</strong> — o quanto do tempo do padeiro foi gasto naquele produto. Rateado por volume de produção.</li>
+        <li><strong>Custos indiretos de fabricação (CIF)</strong> — energia elétrica do forno, depreciação do equipamento, aluguel proporcional da área de produção.</li>
+      </ol>
+
+      <h2 id="ficha-tecnica">A ficha técnica: o instrumento central do controle</h2>
+      <p>
+        A <strong>ficha técnica</strong> é o documento que detalha todos os ingredientes, quantidades e custos de uma receita. Ela é o ponto de partida para qualquer cálculo de custo confiável.
+      </p>
+      <p>
+        Uma boa ficha técnica deve ter: ingredientes com gramagem precisa, custo unitário de cada ingrediente (por kg ou litro), rendimento da receita (quantas unidades saem por batelada) e o custo de matéria-prima por unidade.
+      </p>
+
+      <h3>Exemplo: ficha técnica do pão de sal (batelada de 100 unidades)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Ingrediente</th>
+            <th>Qtd/batelada</th>
+            <th>Custo/kg</th>
+            <th>Custo total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Farinha de trigo</td><td>5 kg</td><td>R$ 4,20</td><td>R$ 21,00</td></tr>
+          <tr><td>Fermento biológico</td><td>200 g</td><td>R$ 18,00</td><td>R$ 3,60</td></tr>
+          <tr><td>Sal</td><td>80 g</td><td>R$ 2,50</td><td>R$ 0,20</td></tr>
+          <tr><td>Água</td><td>3 L</td><td>R$ 0,01</td><td>R$ 0,03</td></tr>
+          <tr><td>Margarina</td><td>200 g</td><td>R$ 9,00</td><td>R$ 1,80</td></tr>
+          <tr><td><strong>Total CMV</strong></td><td></td><td></td><td><strong>R$ 26,63</strong></td></tr>
+          <tr><td>Por unidade</td><td></td><td></td><td><strong>R$ 0,27</strong></td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        Custo de matéria-prima: R$ 0,27 por pão. Mas ainda faltam embalagem, mão de obra e CIF.
+      </p>
+
+      <h2 id="rateio">Como ratear mão de obra e custos indiretos</h2>
+      <p>
+        Ratear significa dividir o custo proporcional de cada recurso pelos produtos que o consomem. É uma estimativa — mas muito melhor do que ignorar esses custos.
+      </p>
+
+      <h3>Mão de obra direta — exemplo simples:</h3>
+      <ul>
+        <li>Padeiro recebe R$ 3.000/mês + encargos ≈ R$ 3.900 mês</li>
+        <li>Trabalha 176 horas/mês → custo por hora: R$ 22,16</li>
+        <li>Batelada de pão de sal leva 1,5h → custo MO por batelada: R$ 33,24</li>
+        <li>Por unidade (100 pães): R$ 0,33</li>
+      </ul>
+
+      <h3>Custos indiretos — exemplo simplificado:</h3>
+      <ul>
+        <li>Energia elétrica do forno (batelada): R$ 4,50 → R$ 0,045/unidade</li>
+        <li>Embalagem (saco): R$ 0,08/unidade</li>
+        <li>Rateio de aluguel (área produção, proporcional): R$ 0,02/unidade</li>
+      </ul>
+
+      <h3>Custo total real do pão de sal:</h3>
+      <table>
+        <thead>
+          <tr><th>Componente</th><th>Custo/unidade</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Matéria-prima</td><td>R$ 0,27</td></tr>
+          <tr><td>Mão de obra direta</td><td>R$ 0,33</td></tr>
+          <tr><td>Energia elétrica</td><td>R$ 0,05</td></tr>
+          <tr><td>Embalagem</td><td>R$ 0,08</td></tr>
+          <tr><td>Rateio aluguel</td><td>R$ 0,02</td></tr>
+          <tr><td><strong>Custo real total</strong></td><td><strong>R$ 0,75</strong></td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <div class="callout__label">Impacto no preço</div>
+        <p>Se você vende o pão de sal a R$ 0,80, sua margem real é apenas 6,3% — não os "quase 66% de lucro" que parece quando você só olha o custo de farinha (R$ 0,27). É a diferença entre lucrar e sobreviver na ilusão.</p>
+      </div>
+
+      <h2 id="precificacao">De custo a preço de venda: o markup</h2>
+      <p>
+        Com o custo real calculado, o preço de venda correto é definido aplicando um <strong>markup</strong> que cubra os custos fixos da loja (salários de balcão, aluguel, sistema, marketing) e gere a margem de lucro desejada.
+      </p>
+      <p>
+        Uma referência comum para padaria: markup entre 2,2x e 2,8x sobre o custo de produção, dependendo do produto, da margem desejada e do preço de mercado da região.
+      </p>
+      <p>
+        Para o pão de sal com custo real de R$ 0,75, um markup de 2,4x daria um preço de venda de R$ 1,80. Se o mercado local pratica R$ 0,80, esse produto pode estar sendo vendido abaixo do ponto de equilíbrio — e você precisa saber disso para decidir: renegociar insumos, aumentar volume para diluir CIF, ou ajustar o preço.
+      </p>
+
+      <div class="cta-inline">
+        <div class="cta-inline__eyebrow">ProSystem Padaria</div>
+        <div class="cta-inline__title">Ficha técnica e custo por produto automatizados no ERP</div>
+        <p>Cadastre suas receitas uma vez — o ProSystem calcula o custo atualizado automaticamente cada vez que o preço do fornecedor muda.</p>
+        <a href="https://wa.me/5527997798103" class="btn" target="_blank">Agendar demonstração</a>
+      </div>
+
+      <h2 id="sistema">Por que planilha não escala — e quando o sistema resolve</h2>
+      <p>
+        Planilha funciona para uma padaria com 10 produtos. Quando você tem 80 itens entre pães, bolos, salgados, frios e bebidas, manter todas as fichas técnicas atualizadas manualmente vira trabalho de contador em tempo integral.
+      </p>
+      <p>
+        Em um sistema integrado como o ProSystem Padaria, o preço de cada insumo no cadastro de fornecedores atualiza automaticamente o custo de todos os produtos que usam aquele insumo. Quando a farinha sobe 5%, você vê em tempo real quais produtos foram afetados — e decide se ajusta o preço de venda ou renegocia com o fornecedor.
+      </p>
+
+      <h2 id="conclusao">Precificar certo é a base da gestão financeira saudável</h2>
+      <p>
+        Calcular o custo real de cada produto não é burocracia — é o alicerce da lucratividade. Uma padaria que sabe o custo de tudo que produz toma decisões melhores: quais produtos empurrar, quais reformular e quais descontinuar.
+      </p>
+      <p>
+        O passo de hoje: escolha o produto mais vendido da sua padaria e monte a ficha técnica completa. Você vai se surpreender — para o bem ou para o mal.
+      </p>
+
+      <div class="cta-inline">
+        <div class="cta-inline__eyebrow">Quer ajuda para montar as fichas técnicas?</div>
+        <div class="cta-inline__title">Converse com um especialista ProSystem</div>
+        <p>Mostre sua operação e veja como o ProSystem Padaria organiza custos, fichas técnicas e precificação em um único sistema.</p>
+        <a href="https://wa.me/5527997798103" class="btn" target="_blank">Falar com consultor</a>
+      </div>
+
+    </div>
+
+    <div class="share-bar">
+      <span class="share-bar__label">Compartilhar</span>
+      <a href="https://wa.me/?text=Gestão%20financeira%20de%20padaria%3A%20como%20calcular%20o%20custo%20real%20de%20cada%20produto%20https://prosystemnet.com.br/blog/gestao-financeira-padaria-custo-produto" class="share-btn share-btn--wa" target="_blank">WhatsApp</a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://prosystemnet.com.br/blog/gestao-financeira-padaria-custo-produto" class="share-btn share-btn--li" target="_blank">LinkedIn</a>
+    </div>
+
+    <div class="author-bio">
+      <div class="author-bio__avatar">P</div>
+      <div>
+        <div class="author-bio__name">Equipe ProSystem</div>
+        <div class="author-bio__desc">Especialistas em gestão de varejo, farmácias e padarias há mais de 16 anos.</div>
+      </div>
+    </div>
+  </article>
+
+  <aside class="sidebar">
+    <nav class="sidebar-toc">
+      <div class="sidebar-toc__header">Neste artigo</div>
+      <ul class="sidebar-toc__list">
+        <li class="sidebar-toc__item"><a href="#por-que-calcular">Por que calcular o custo real</a></li>
+        <li class="sidebar-toc__item"><a href="#componentes">4 componentes do custo</a></li>
+        <li class="sidebar-toc__item"><a href="#ficha-tecnica">A ficha técnica</a></li>
+        <li class="sidebar-toc__item"><a href="#rateio">Rateio de MO e custos indiretos</a></li>
+        <li class="sidebar-toc__item"><a href="#precificacao">De custo a preço de venda</a></li>
+        <li class="sidebar-toc__item"><a href="#sistema">Quando o sistema resolve</a></li>
+        <li class="sidebar-toc__item"><a href="#conclusao">Conclusão</a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-cta">
+      <img src="assets/logo/logo-branco.png" alt="ProSystem" class="sidebar-cta__logo">
+      <div class="sidebar-cta__title">Custo por produto <span>automático</span></div>
+      <p>Fichas técnicas, ficha de custo e precificação integrados no ERP para sua padaria.</p>
+      <a href="https://wa.me/5527997798103" class="btn" target="_blank">Quero uma demo</a>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="sidebar-widget__title">Leia também</div>
+      <div class="related-item">
+        <div class="related-item__dot"></div>
+        <a href="controle-producao-padaria-evitar-desperdicio.html" class="related-item__text">Controle de produção: como evitar desperdício na padaria</a>
+      </div>
+      <div class="related-item">
+        <div class="related-item__dot"></div>
+        <a href="fluxo-de-caixa-farmacia-controle-financeiro.html" class="related-item__text">Fluxo de caixa: como controlar e não ficar no vermelho</a>
+      </div>
+      <div class="related-item">
+        <div class="related-item__dot"></div>
+        <a href="reforma-tributaria-2026-farmacia-padaria-nfce.html" class="related-item__text">Reforma tributária 2026: o que muda na NF-e</a>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<footer class="site-footer">
+  <img src="assets/logo/logo-branco.png" alt="ProSystem Sistemas" class="site-footer__logo">
+  <div class="site-footer__title">Gestão que <span>transforma</span> seu negócio</div>
+  <div class="site-footer__sub">Sistemas ERP e PDV para farmácias, padarias e varejo há mais de 16 anos.</div>
+  <a href="https://wa.me/5527997798103" class="btn" target="_blank">Falar com um consultor</a>
+  <div class="site-footer__copy">© 2026 ProSystem Sistemas · Vitória, ES · (27) 3327-6739</div>
+</footer>
+
+<a href="https://wa.me/5527997798103" class="float-cta" target="_blank">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.099 1.51 5.82L0 24l6.337-1.48A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.37l-.36-.214-3.727.870.936-3.619-.236-.373A9.818 9.818 0 1112 21.818z"/></svg>
+  <span>Falar no WhatsApp</span>
+</a>
+
+<script>
+  const bar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+  });
+</script>
+</body>
+</html>

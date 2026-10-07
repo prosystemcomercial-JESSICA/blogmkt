@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestão de múltiplas unidades de padaria: como centralizar sem perder controle — Blog ProSystem</title>
+  <meta name="description" content="Abriu a segunda unidade e perdeu o controle das duas? Veja como centralizar estoque, produção e financeiro de redes de padaria com sistema integrado.">
+  <link rel="canonical" href="https://prosystemnet.com.br/blog/gestao-multiplas-unidades-padaria-centralizar">
+  <meta property="og:title" content="Gestão de múltiplas unidades de padaria: como centralizar sem perder controle">
+  <meta property="og:description" content="Abriu a segunda unidade e perdeu o controle das duas? Veja como centralizar estoque, produção e financeiro de redes de padaria com sistema integrado.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--blue:#4A7AB8;--blue-dark:#2E5A8F;--blue-deeper:#1D3A5F;--blue-tint:#EEF4FB;--dark:#111827;--text:#374151;--muted:#6B7280;--border:#E5E7EB;--bg:#F8FAFC;--white:#ffffff;--gold:#F59E0B;--font-title:'Montserrat','Segoe UI',system-ui,sans-serif;--font-body:'Inter','Segoe UI',system-ui,sans-serif;--site-width:1140px;--radius:12px;--shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow-md:0 4px 16px rgba(0,0,0,.1);--ease:0.2s ease}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font-body);font-size:18px;line-height:1.78;color:var(--text);background:var(--bg)}img{max-width:100%;height:auto;display:block}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+    #progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:var(--gold);z-index:9999;transition:width .1s linear}
+    .site-header{background:var(--blue);padding:0 32px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.18)}.site-header__inner{max-width:var(--site-width);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:80px}.logo{display:flex;align-items:center;gap:12px;text-decoration:none}.logo img{height:56px;max-width:180px;width:auto;filter:brightness(0) invert(1)}.logo-divider{width:1px;height:32px;background:rgba(255,255,255,.3)}.logo-blog-tag{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.75)}.header-nav{display:flex;align-items:center;gap:24px}.header-nav a{font-size:13px;font-weight:600;color:rgba(255,255,255,.8);transition:color var(--ease);text-decoration:none}.header-nav a:hover{color:#fff}.btn-header{background:var(--gold);color:var(--dark)!important;padding:8px 18px;border-radius:8px;font-weight:700;font-size:13px;white-space:nowrap}
+    .breadcrumb{background:var(--white);border-bottom:1px solid var(--border);padding:10px 32px}.breadcrumb__inner{max-width:var(--site-width);margin:0 auto;display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}.breadcrumb__inner a{color:var(--blue);font-weight:500}
+    .article-hero{position:relative;min-height:460px;display:flex;align-items:flex-end;overflow:hidden;background:var(--blue-deeper)}.article-hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.38;transform:scale(1.03)}.article-hero__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(17,24,39,.85) 0%,rgba(17,24,39,.35) 55%,transparent 100%)}.article-hero__content{position:relative;z-index:2;max-width:var(--site-width);margin:0 auto;padding:0 32px 52px;width:100%}.article-hero__badge{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--dark);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:2px;padding:5px 12px;border-radius:6px;margin-bottom:20px}.article-hero__title{font-family:var(--font-title);font-size:clamp(26px,4.2vw,48px);font-weight:800;line-height:1.12;color:var(--white);max-width:860px;margin-bottom:24px;letter-spacing:-.3px}.article-hero__title em{font-style:normal;color:var(--gold)}.article-hero__meta{display:flex;flex-wrap:wrap;align-items:center;gap:20px;font-size:13px;color:rgba(255,255,255,.72)}.article-hero__meta-item{display:flex;align-items:center;gap:6px}
+    .site-main{max-width:var(--site-width);margin:0 auto;padding:56px 32px 96px;display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:start}.article-body{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden}.article-content{padding:48px 52px}.article-content .lead{font-size:20px;line-height:1.65;color:var(--dark);font-weight:400;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border)}.article-content h2{font-family:var(--font-title);font-weight:800;font-size:22px;color:var(--dark);margin:48px 0 16px;padding-left:16px;border-left:4px solid var(--blue);line-height:1.3;scroll-margin-top:88px}.article-content h3{font-family:var(--font-title);font-weight:700;font-size:17px;color:var(--blue-dark);margin:32px 0 12px}.article-content p{margin-bottom:22px;font-size:17px;line-height:1.8;color:var(--text)}.article-content ul,.article-content ol{margin:0 0 22px 24px}.article-content li{margin-bottom:10px;font-size:17px;line-height:1.7}.article-content strong{font-weight:700;color:var(--dark)}.article-content table{width:100%;border-collapse:collapse;margin:24px 0 32px;font-size:15px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm)}.article-content thead tr{background:var(--blue);color:var(--white)}.article-content th{padding:14px 16px;text-align:left;font-weight:700;font-size:13px}.article-content td{padding:13px 16px;border-bottom:1px solid var(--border)}.article-content tbody tr:nth-child(even){background:var(--blue-tint)}.article-content tbody tr:last-child td{border-bottom:none}.article-content blockquote{background:var(--blue-tint);border-left:5px solid var(--blue);padding:22px 28px;margin:36px 0;border-radius:0 var(--radius) var(--radius) 0}.article-content blockquote p{font-size:16px;font-weight:600;color:var(--dark);margin:0 0 8px;line-height:1.6}.article-content blockquote p:last-child{margin-bottom:0}
+    .callout{background:#FFFBEB;border:1px solid #FCD34D;border-left:5px solid var(--gold);border-radius:0 var(--radius) var(--radius) 0;padding:18px 22px;margin:28px 0}.callout__label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#92400E;margin-bottom:6px}.callout p{margin:0;font-size:15px;color:#78350F;line-height:1.6}
+    .cta-inline{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-dark) 100%);border-radius:var(--radius);padding:36px 38px;margin:40px 0;text-align:center;box-shadow:0 8px 32px rgba(46,90,143,.3)}.cta-inline__eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}.cta-inline__title{font-family:var(--font-title);font-size:24px;font-weight:800;color:var(--white);margin-bottom:12px;line-height:1.2}.cta-inline p{font-size:15px;color:rgba(255,255,255,.85);margin-bottom:24px;line-height:1.6}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--dark);font-weight:800;font-size:14px;padding:13px 28px;border-radius:9px;transition:background var(--ease),transform var(--ease);text-decoration:none}.btn:hover{background:#e08c00;transform:translateY(-1px);text-decoration:none}
+    .share-bar{display:flex;align-items:center;gap:10px;padding:24px 52px;border-top:1px solid var(--border);background:var(--bg)}.share-bar__label{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-right:4px}.share-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;transition:opacity var(--ease)}.share-btn:hover{opacity:.85;text-decoration:none}.share-btn--wa{background:#25D366;color:#fff}.share-btn--li{background:#0A66C2;color:#fff}
+    .author-bio{display:flex;align-items:center;gap:20px;padding:28px 52px;border-top:1px solid var(--border)}.author-bio__avatar{width:56px;height:56px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--white);font-weight:800;font-size:22px;font-family:var(--font-title)}.author-bio__name{font-weight:700;font-size:15px;color:var(--dark)}.author-bio__desc{font-size:13px;color:var(--muted);line-height:1.5;margin-top:2px}
+    .sidebar{display:flex;flex-direction:column;gap:24px;position:sticky;top:88px}.sidebar-toc{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden}.sidebar-toc__header{background:var(--blue);padding:14px 20px;font-family:var(--font-title);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--white)}.sidebar-toc__list{list-style:none;padding:16px 0}.sidebar-toc__item a{display:block;padding:7px 20px;font-size:13px;color:var(--text);line-height:1.4;border-left:3px solid transparent;transition:color var(--ease),border-color var(--ease),background var(--ease)}.sidebar-toc__item a:hover{color:var(--blue);border-left-color:var(--blue);background:var(--blue-tint);text-decoration:none}
+    .sidebar-cta{background:linear-gradient(145deg,var(--blue) 0%,var(--blue-deeper) 100%);border-radius:var(--radius);padding:28px 22px;text-align:center;box-shadow:0 6px 24px rgba(46,90,143,.25)}.sidebar-cta__logo{margin:0 auto 16px;filter:brightness(0) invert(1);height:52px}.sidebar-cta__title{font-family:var(--font-title);font-size:17px;font-weight:800;color:var(--white);margin-bottom:8px;line-height:1.25}.sidebar-cta__title span{color:var(--gold)}.sidebar-cta p{font-size:13px;color:rgba(255,255,255,.78);margin-bottom:20px;line-height:1.55}.sidebar-cta .btn{width:100%;justify-content:center;font-size:13px}
+    .sidebar-widget{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden}.sidebar-widget__title{padding:12px 18px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:var(--blue);border-bottom:2px solid var(--blue-tint);background:var(--bg)}.related-item{display:flex;gap:12px;padding:14px 18px;border-bottom:1px solid var(--border);align-items:flex-start}.related-item:last-child{border-bottom:none}.related-item__dot{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:6px}.related-item__text{font-size:13px;font-weight:600;color:var(--dark);line-height:1.4}
+    .site-footer{background:var(--blue-deeper);color:var(--white);text-align:center;padding:64px 24px 36px}.site-footer__logo{height:62px;margin:0 auto 32px;filter:brightness(0) invert(1)}.site-footer__title{font-family:var(--font-title);font-size:clamp(22px,4vw,36px);font-weight:800;margin-bottom:14px;line-height:1.2}.site-footer__title span{color:var(--gold)}.site-footer__sub{font-size:15px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.65}.site-footer__copy{margin-top:44px;font-size:12px;color:rgba(255,255,255,.35)}
+    .float-cta{position:fixed;bottom:28px;right:28px;z-index:500;display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:13px 20px;border-radius:50px;font-weight:700;font-size:14px;box-shadow:0 6px 24px rgba(0,0,0,.2);text-decoration:none;transition:transform var(--ease),box-shadow var(--ease)}.float-cta:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(0,0,0,.25);text-decoration:none;color:#fff}
+    @media(max-width:960px){.site-main{grid-template-columns:1fr;padding:36px 20px 72px}.sidebar{position:static}.sidebar-toc{display:none}}@media(max-width:640px){.article-content{padding:28px 22px}.share-bar{padding:20px 22px;flex-wrap:wrap}.author-bio{padding:22px 22px}.article-hero{min-height:380px}.float-cta span{display:none}.float-cta{padding:14px;border-radius:50%}}
+  </style>
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="logo">
+      <img src="assets/logo/logo-branco.png" alt="ProSystem Sistemas">
+      <span class="logo-divider"></span>
+      <span class="logo-blog-tag">Blog</span>
+    </a>
+    <nav class="header-nav">
+      <a href="index.html">Blog</a>
+      <a href="https://prosystemnet.com.br" target="_blank">Site</a>
+      <a href="https://wa.me/5527997798103" class="btn-header" target="_blank">Falar com consultor</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="breadcrumb">
+  <div class="breadcrumb__inner">
+    <a href="index.html">Blog</a>
+    <span>›</span>
+    <a href="#">Padarias</a>
+    <span>›</span>
+    <span>Gestão de múltiplas unidades</span>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <img class="article-hero__img" src="https://images.pexels.com/photos/1387070/pexels-photo-1387070.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Pães artesanais em padaria — gestão de múltiplas unidades" loading="eager" style="object-position:50% 40%">
+  <div class="article-hero__overlay"></div>
+  <div class="article-hero__content">
+    <span class="article-hero__badge">Padaria · Multi-unidade · Gestão</span>
+    <h1 class="article-hero__title">
+      Gestão de múltiplas unidades de padaria:<br>
+      <em>como centralizar sem perder controle</em>
+    </h1>
+    <div class="article-hero__meta">
+      <span class="article-hero__meta-item">ProSystem Sistemas</span>
+      <span class="article-hero__meta-item">22 de junho de 2026</span>
+      <span class="article-hero__meta-item">8 min de leitura</span>
+    </div>
+  </div>
+</section>
+
+<main class="site-main">
+  <article class="article-body">
+    <div class="article-content">
+
+      <p class="lead">
+        Abrir a segunda unidade parece o passo natural de quem cresceu. Mas muitos donos de padaria descobrem da pior forma que administrar duas lojas sem sistema integrado é como cuidar de dois negócios completamente separados — com o dobro do trabalho e menos controle do que tinham quando tinham só uma.
+      </p>
+
+      <h2 id="desafios-multi-unidade">Os principais desafios de quem tem mais de uma padaria</h2>
+      <p>
+        O problema não é ter duas unidades. O problema é tentar gerenciar duas operações com ferramentas feitas para uma. Os desafios que mais aparecem:
+      </p>
+      <ul>
+        <li><strong>Visibilidade zero:</strong> para saber o que está acontecendo na segunda unidade, o dono precisa estar lá — ou ligar para o gerente</li>
+        <li><strong>Estoques descoordenados:</strong> uma unidade compra em excesso enquanto a outra está com falta do mesmo insumo</li>
+        <li><strong>Receitas que variam por unidade:</strong> cada forneiro tem uma versão da mesma receita — o produto fica diferente de uma loja para outra</li>
+        <li><strong>Financeiro fragmentado:</strong> resultado de cada unidade registrado de forma diferente, sem consolidação real</li>
+        <li><strong>Compras duplicadas:</strong> cada unidade negocia separado com o mesmo fornecedor, perdendo poder de compra centralizado</li>
+        <li><strong>Dificuldade de escalar:</strong> se o modelo não funciona com duas, não vai funcionar com três</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout__label">Realidade do mercado</div>
+        <p>Redes de padaria que crescem com controle centralizado conseguem abrir novas unidades em metade do tempo porque o modelo operacional já está testado e documentado — estoque, produção, financeiro e receitas padronizadas em um único sistema.</p>
+      </div>
+
+      <h2 id="estoque-central-por-unidade">Estoque central vs. estoque por unidade</h2>
+      <p>
+        A primeira decisão estratégica de quem tem duas ou mais unidades é onde centralizar o estoque de insumos.
+      </p>
+
+      <h3>Modelo centralizado</h3>
+      <p>
+        Um único almoxarifado abastece todas as unidades. As compras são feitas de forma centralizada, com maior poder de negociação. Cada unidade solicita insumos para o central — que distribui conforme a necessidade. Funciona bem quando as unidades ficam próximas geograficamente.
+      </p>
+      <p>
+        Vantagem: menor custo de compra, controle de estoque unificado, menor risco de vencimento por excesso em uma unidade.
+      </p>
+
+      <h3>Modelo por unidade com visibilidade central</h3>
+      <p>
+        Cada unidade mantém seu próprio estoque, mas o sistema permite que o dono veja o estoque de todas as lojas em tempo real — em uma única tela. Compras são feitas por unidade, mas o dono consegue comparar o consumo entre elas e identificar desvios.
+      </p>
+      <p>
+        Vantagem: mais autonomia para gerentes de loja, sem depender de logística interna entre unidades.
+      </p>
+      <p>
+        O sistema integrado suporta os dois modelos — e permite que você escolha o que faz mais sentido para a estrutura atual da sua rede.
+      </p>
+
+      <h2 id="padronizar-receitas">Como padronizar receitas e produção entre unidades</h2>
+      <p>
+        O croissant da sua padaria tem que ter o mesmo sabor na unidade do centro e na unidade do bairro. Quando o cliente vai à segunda loja pela primeira vez e encontra um produto diferente, a percepção de qualidade cai — e a confiança na marca vai junto.
+      </p>
+      <p>
+        A padronização passa por três elementos:
+      </p>
+
+      <h3>1. Fichas técnicas centralizadas no sistema</h3>
+      <p>
+        Cada receita registrada no ERP é a versão oficial — com ingredientes, quantidades e modo de preparo. O forneiro de qualquer unidade acessa a mesma ficha. Não existe "receita da tia do forneiro" ou "versão que a gente faz aqui".
+      </p>
+
+      <h3>2. Planejamento de produção por unidade</h3>
+      <p>
+        O sistema gera a programação de produção de cada unidade com base no histórico de vendas daquela loja — respeitando as diferenças de demanda entre bairros. A segunda unidade pode vender mais croissant pela manhã e a primeira vender mais salgado no almoço.
+      </p>
+
+      <h3>3. Controle de qualidade por produto</h3>
+      <p>
+        Registro de rendimento por lote permite identificar quando uma unidade está consumindo mais insumo do que o esperado para a mesma receita — sinal de desperdício ou de execução fora do padrão.
+      </p>
+
+      <h2 id="financeiro-consolidado">Controle financeiro consolidado: ver tudo em um lugar</h2>
+      <p>
+        Com duas unidades, a pergunta mais importante do dono não é "quanto a unidade A vendeu hoje?" — é "qual foi o resultado consolidado das duas unidades este mês?"
+      </p>
+      <p>
+        Sem sistema integrado, essa resposta exige juntar dois relatórios diferentes, fazer a matemática na mão e torcer para que os critérios sejam os mesmos. Com ERP multi-unidade, você tem:
+      </p>
+      <ul>
+        <li><strong>DRE consolidado:</strong> receita, custos e lucro das duas unidades em uma única demonstração</li>
+        <li><strong>Comparativo entre unidades:</strong> qual loja tem melhor margem, qual tem maior ticket médio, qual precisa de atenção</li>
+        <li><strong>Fluxo de caixa integrado:</strong> projeção de entradas e saídas das duas operações juntas</li>
+        <li><strong>Metas por unidade:</strong> acompanhamento de desempenho individual de cada loja com alertas quando uma fica abaixo do esperado</li>
+      </ul>
+
+      <blockquote>
+        <p>Com o sistema multi-unidade, o dono passa de "eu preciso ir lá ver o que está acontecendo" para "eu olho o painel e já sei qual unidade precisa de atenção antes de sair de casa".</p>
+      </blockquote>
+
+      <h2 id="sistema-integrado">Como o sistema integrado resolve esses problemas</h2>
+      <p>
+        O ProSystem foi desenvolvido com suporte nativo a multi-unidade — não como uma funcionalidade adicionada depois, mas como parte da arquitetura do sistema.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Desafio</th>
+            <th>Sem sistema integrado</th>
+            <th>Com ProSystem multi-unidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Ver estoque das duas unidades</td><td>Ligar para o gerente de cada loja</td><td>Painel único em tempo real</td></tr>
+          <tr><td>Padronizar receitas</td><td>Cada forneiro tem sua versão</td><td>Ficha técnica central, mesma receita em todas as unidades</td></tr>
+          <tr><td>Resultado financeiro consolidado</td><td>Somar planilhas separadas</td><td>DRE consolidado automático</td></tr>
+          <tr><td>Compra centralizada</td><td>Cada unidade negocia separado</td><td>Pedido de compra unificado por fornecedor</td></tr>
+          <tr><td>Comparar desempenho entre unidades</td><td>Impossível sem retrabalho</td><td>Relatório comparativo por loja, produto, turno</td></tr>
+          <tr><td>Abrir nova unidade</td><td>Reconfigurar tudo do zero</td><td>Nova unidade no mesmo sistema, já com fichas e fornecedores cadastrados</td></tr>
+        </tbody>
+      </table>
+
+      <div class="cta-inline">
+        <div class="cta-inline__eyebrow">ProSystem para Redes de Padaria</div>
+        <div class="cta-inline__title">Gestão centralizada para todas as suas unidades</div>
+        <p>Estoque, produção, financeiro e fiscal de todas as unidades em um único sistema — com visibilidade em tempo real e relatórios consolidados.</p>
+        <a href="https://wa.me/5527997798103" class="btn" target="_blank">Quero uma demonstração gratuita →</a>
+      </div>
+
+      <h2 id="conclusao">Crescer com controle é possível</h2>
+      <p>
+        Redes de padaria que conseguem escalar para 3, 5 ou 10 unidades têm uma coisa em comum: pararam de gerenciar cada loja como um negócio independente e passaram a operar como uma rede — com processos padronizados, compras centralizadas e visibilidade de todas as operações em um único lugar.
+      </p>
+      <p>
+        O sistema não substitui o dono. Mas ele permite que o dono tome decisões com informação real — sem precisar estar fisicamente em cada unidade para saber o que está acontecendo.
+      </p>
+      <p>
+        O ProSystem tem módulo completo para redes de padaria, com demonstração gratuita. Entre em contato e veja como o sistema funciona para a sua estrutura atual — seja você com duas unidades ou planejando a próxima expansão.
+      </p>
+
+    </div>
+
+    <div class="share-bar">
+      <span class="share-bar__label">Compartilhar:</span>
+      <a href="https://wa.me/?text=Gest%C3%A3o%20de%20m%C3%BAltiplas%20unidades%20de%20padaria%3A%20como%20centralizar%20https%3A%2F%2Fprosystemnet.com.br%2Fblog%2Fgestao-multiplas-unidades-padaria-centralizar" class="share-btn share-btn--wa" target="_blank">WhatsApp</a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fprosystemnet.com.br%2Fblog%2Fgestao-multiplas-unidades-padaria-centralizar" class="share-btn share-btn--li" target="_blank">LinkedIn</a>
+    </div>
+
+    <div class="author-bio">
+      <div class="author-bio__avatar">P</div>
+      <div>
+        <div class="author-bio__name">Equipe ProSystem</div>
+        <div class="author-bio__desc">Especialistas em gestão de varejo com mais de 16 anos desenvolvendo sistemas ERP e PDV para padarias, farmácias e varejistas no Brasil.</div>
+      </div>
+    </div>
+  </article>
+
+  <aside class="sidebar">
+    <nav class="sidebar-toc">
+      <div class="sidebar-toc__header">Neste artigo</div>
+      <ul class="sidebar-toc__list">
+        <li class="sidebar-toc__item"><a href="#desafios-multi-unidade">Desafios de múltiplas unidades</a></li>
+        <li class="sidebar-toc__item"><a href="#estoque-central-por-unidade">Estoque central vs. por unidade</a></li>
+        <li class="sidebar-toc__item"><a href="#padronizar-receitas">Padronizar receitas e produção</a></li>
+        <li class="sidebar-toc__item"><a href="#financeiro-consolidado">Financeiro consolidado</a></li>
+        <li class="sidebar-toc__item"><a href="#sistema-integrado">Como o sistema resolve</a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-cta">
+      <img class="sidebar-cta__logo" src="assets/logo/logo-branco.png" alt="ProSystem">
+      <div class="sidebar-cta__title">Gestão <span>multi-unidade</span> para padarias</div>
+      <p>Demonstração gratuita — veja o painel centralizado em funcionamento.</p>
+      <a href="https://wa.me/5527997798103" class="btn" target="_blank">Falar agora →</a>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="sidebar-widget__title">Artigos relacionados</div>
+      <div class="related-item">
+        <span class="related-item__dot"></span>
+        <a href="erp-para-padaria-o-que-e-quando-contratar.html" class="related-item__text">ERP para padaria: o que é e quando contratar</a>
+      </div>
+      <div class="related-item">
+        <span class="related-item__dot"></span>
+        <a href="gestao-financeira-padaria-custo-produto.html" class="related-item__text">Gestão financeira de padaria: custo real de cada produto</a>
+      </div>
+      <div class="related-item">
+        <span class="related-item__dot"></span>
+        <a href="controle-producao-padaria-evitar-desperdicio.html" class="related-item__text">Controle de produção em padaria: como evitar desperdício</a>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<footer class="site-footer">
+  <img class="site-footer__logo" src="assets/logo/logo-branco.png" alt="ProSystem Sistemas">
+  <div class="site-footer__title">Sua padaria gerenciada com <span>inteligência</span></div>
+  <div class="site-footer__sub">ProSystem — mais de 16 anos desenvolvendo sistemas ERP e PDV para padarias e varejo alimentar no Brasil.</div>
+  <a href="https://wa.me/5527997798103" class="btn" target="_blank">Falar com um consultor</a>
+  <div class="site-footer__copy">© 2026 ProSystem Sistemas. Todos os direitos reservados.</div>
+</footer>
+
+<a href="https://wa.me/5527997798103" class="float-cta" target="_blank">
+  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span>Falar com consultor</span>
+</a>
+
+<script>
+  const bar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    bar.style.width = pct + '%';
+  });
+</script>
+</body>
+</html>

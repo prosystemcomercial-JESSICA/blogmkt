@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Precificação em farmácias: como calcular markup e margem sem perder lucratividade — Blog ProSystem</title>
+  <meta name="description" content="Medicamentos respondem por até 76% do lucro de farmácias independentes. Aprenda a calcular markup, respeitar a CMED e precificar sem perder competitividade.">
+  <link rel="canonical" href="https://prosystemnet.com/blog/precificacao-farmacia-markup-margem-lucratividade">
+  <meta property="og:title" content="Precificação em farmácias: markup, margem e lucratividade">
+  <meta property="og:description" content="Como calcular markup, respeitar a CMED e precificar medicamentos sem perder margem nem competitividade.">
+  <meta property="og:image" content="https://images.pexels.com/photos/19471013/pexels-photo-19471013.jpeg?auto=compress&cs=tinysrgb&w=1200">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--blue:#4A7AB8;--blue-dark:#2E5A8F;--blue-deeper:#1D3A5F;--blue-tint:#EEF4FB;--dark:#111827;--text:#374151;--muted:#6B7280;--border:#E5E7EB;--bg:#F8FAFC;--white:#ffffff;--gold:#F59E0B;--font-title:'Montserrat','Segoe UI',system-ui,sans-serif;--font-body:'Inter','Segoe UI',system-ui,sans-serif;--site-width:1140px;--radius:12px;--shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow-md:0 4px 16px rgba(0,0,0,.1);--ease:0.2s ease}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-body);font-size:18px;line-height:1.78;color:var(--text);background:var(--bg)}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+    #progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:var(--gold);z-index:9999;transition:width .1s linear}
+    .site-header{background:var(--blue);padding:0 32px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.18)}
+    .site-header__inner{max-width:var(--site-width);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:80px}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .logo img{height:56px;max-width:180px;width:auto;filter:brightness(0) invert(1)}
+    .logo-divider{width:1px;height:32px;background:rgba(255,255,255,.3)}
+    .logo-blog-tag{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.75)}
+    .header-nav{display:flex;align-items:center;gap:24px}
+    .header-nav a{font-size:13px;font-weight:600;color:rgba(255,255,255,.8);transition:color var(--ease);text-decoration:none}
+    .header-nav a:hover{color:#fff}
+    .btn-header{background:var(--gold);color:var(--dark)!important;padding:8px 18px;border-radius:8px;font-weight:700;font-size:13px;white-space:nowrap}
+    .btn-header:hover{background:#e08c00}
+    .breadcrumb{background:var(--white);border-bottom:1px solid var(--border);padding:10px 32px}
+    .breadcrumb__inner{max-width:var(--site-width);margin:0 auto;display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}
+    .breadcrumb__inner a{color:var(--blue);font-weight:500}
+    .breadcrumb__sep{color:var(--border)}
+    .article-hero{position:relative;min-height:460px;display:flex;align-items:flex-end;overflow:hidden;background:var(--blue-deeper)}
+    .article-hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.38;transform:scale(1.03)}
+    .article-hero__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(17,24,39,.85) 0%,rgba(17,24,39,.35) 55%,transparent 100%)}
+    .article-hero__content{position:relative;z-index:2;max-width:var(--site-width);margin:0 auto;padding:0 32px 52px;width:100%}
+    .article-hero__badge{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--dark);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:2px;padding:5px 12px;border-radius:6px;margin-bottom:20px}
+    .article-hero__title{font-family:var(--font-title);font-size:clamp(26px,4.2vw,48px);font-weight:800;line-height:1.12;color:var(--white);max-width:860px;margin-bottom:24px;letter-spacing:-.3px}
+    .article-hero__title em{font-style:normal;color:var(--gold)}
+    .article-hero__meta{display:flex;flex-wrap:wrap;align-items:center;gap:20px;font-size:13px;color:rgba(255,255,255,.72)}
+    .article-hero__meta-item{display:flex;align-items:center;gap:6px}
+    .article-hero__meta-item svg{width:14px;height:14px;opacity:.7}
+    .site-main{max-width:var(--site-width);margin:0 auto;padding:56px 32px 96px;display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:start}
+    .article-body{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden}
+    .article-content{padding:48px 52px}
+    .article-content .lead{font-size:20px;line-height:1.65;color:var(--dark);font-weight:400;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border)}
+    .article-content h2{font-family:var(--font-title);font-weight:800;font-size:22px;color:var(--dark);margin:48px 0 16px;padding-left:16px;border-left:4px solid var(--blue);line-height:1.3;scroll-margin-top:88px}
+    .article-content h3{font-family:var(--font-title);font-weight:700;font-size:17px;color:var(--blue-dark);margin:32px 0 12px}
+    .article-content p{margin-bottom:22px;font-size:17px;line-height:1.8;color:var(--text)}
+    .article-content ul,.article-content ol{margin:0 0 22px 24px}
+    .article-content li{margin-bottom:10px;font-size:17px;line-height:1.7}
+    .article-content strong{font-weight:700;color:var(--dark)}
+    .article-content table{width:100%;border-collapse:collapse;margin:24px 0 32px;font-size:15px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm)}
+    .article-content thead tr{background:var(--blue);color:var(--white)}
+    .article-content th{padding:14px 16px;text-align:left;font-weight:700;font-size:13px}
+    .article-content td{padding:13px 16px;border-bottom:1px solid var(--border)}
+    .article-content tbody tr:nth-child(even){background:var(--blue-tint)}
+    .article-content tbody tr:last-child td{border-bottom:none}
+    .article-content blockquote{background:var(--blue-tint);border-left:5px solid var(--blue);padding:22px 28px;margin:36px 0;border-radius:0 var(--radius) var(--radius) 0}
+    .article-content blockquote p{font-size:16px;font-weight:600;color:var(--dark);margin:0 0 8px;line-height:1.6}
+    .article-content blockquote p:last-child{margin-bottom:0}
+    .callout{background:#FFFBEB;border:1px solid #FCD34D;border-left:5px solid var(--gold);border-radius:0 var(--radius) var(--radius) 0;padding:18px 22px;margin:28px 0}
+    .callout__label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#92400E;margin-bottom:6px}
+    .callout p{margin:0;font-size:15px;color:#78350F;line-height:1.6}
+    .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:32px 0}
+    .stat-card{background:var(--blue-tint);border-radius:var(--radius);padding:22px 20px;text-align:center;border-top:4px solid var(--blue)}
+    .stat-card__number{font-family:var(--font-title);font-size:36px;font-weight:800;color:var(--blue);line-height:1;margin-bottom:6px}
+    .stat-card__label{font-size:13px;color:var(--text);line-height:1.4;font-weight:500}
+    .formula-box{background:var(--dark);color:var(--white);border-radius:var(--radius);padding:24px 28px;margin:28px 0;font-family:'Courier New',monospace;font-size:15px;line-height:1.8}
+    .formula-box .f-label{font-family:var(--font-body);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:10px}
+    .formula-box .f-result{color:var(--gold);font-weight:700}
+    .cta-inline{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-dark) 100%);border-radius:var(--radius);padding:36px 38px;margin:40px 0;text-align:center;box-shadow:0 8px 32px rgba(46,90,143,.3)}
+    .cta-inline__eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+    .cta-inline__title{font-family:var(--font-title);font-size:24px;font-weight:800;color:var(--white);margin-bottom:12px;line-height:1.2}
+    .cta-inline p{font-size:15px;color:rgba(255,255,255,.85);margin-bottom:24px;line-height:1.6}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--dark);font-weight:800;font-size:14px;padding:13px 28px;border-radius:9px;transition:background var(--ease),transform var(--ease);text-decoration:none}
+    .btn:hover{background:#e08c00;transform:translateY(-1px);text-decoration:none}
+    .article-figure{margin:36px -52px}
+    .article-figure img{width:100%;max-height:440px;object-fit:cover}
+    .article-figure figcaption{padding:10px 52px 0;font-size:13px;color:var(--muted);font-style:italic;text-align:center}
+    .share-bar{display:flex;align-items:center;gap:10px;padding:24px 52px;border-top:1px solid var(--border);background:var(--bg);flex-wrap:wrap}
+    .share-bar__label{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-right:4px}
+    .share-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;transition:opacity var(--ease)}
+    .share-btn:hover{opacity:.85;text-decoration:none}
+    .share-btn--wa{background:#25D366;color:#fff}
+    .share-btn--li{background:#0A66C2;color:#fff}
+    .share-btn--copy{background:var(--border);color:var(--dark);cursor:pointer;border:none;font-family:var(--font-body)}
+    .author-bio{display:flex;align-items:center;gap:20px;padding:28px 52px;border-top:1px solid var(--border)}
+    .author-bio__avatar{width:56px;height:56px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--white);font-weight:800;font-size:22px;font-family:var(--font-title)}
+    .author-bio__name{font-weight:700;font-size:15px;color:var(--dark)}
+    .author-bio__desc{font-size:13px;color:var(--muted);line-height:1.5;margin-top:2px}
+    .sidebar{display:flex;flex-direction:column;gap:24px;position:sticky;top:96px}
+    .sidebar-toc{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden}
+    .sidebar-toc__header{background:var(--blue);padding:14px 20px;font-family:var(--font-title);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--white)}
+    .sidebar-toc__list{list-style:none;padding:16px 0}
+    .sidebar-toc__item a{display:block;padding:7px 20px;font-size:13px;color:var(--text);line-height:1.4;border-left:3px solid transparent;transition:color var(--ease),border-color var(--ease),background var(--ease)}
+    .sidebar-toc__item a:hover{color:var(--blue);border-left-color:var(--blue);background:var(--blue-tint);text-decoration:none}
+    .sidebar-cta{background:linear-gradient(145deg,var(--blue) 0%,var(--blue-deeper) 100%);border-radius:var(--radius);padding:28px 22px;text-align:center;box-shadow:0 6px 24px rgba(46,90,143,.25)}
+    .sidebar-cta__logo{margin:0 auto 16px;filter:brightness(0) invert(1);height:52px}
+    .sidebar-cta__title{font-family:var(--font-title);font-size:17px;font-weight:800;color:var(--white);margin-bottom:8px;line-height:1.25}
+    .sidebar-cta__title span{color:var(--gold)}
+    .sidebar-cta p{font-size:13px;color:rgba(255,255,255,.78);margin-bottom:20px;line-height:1.55}
+    .sidebar-cta .btn{width:100%;justify-content:center;font-size:13px}
+    .sidebar-widget{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden}
+    .sidebar-widget__title{padding:12px 18px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:var(--blue);border-bottom:2px solid var(--blue-tint);background:var(--bg)}
+    .related-item{display:flex;gap:12px;padding:14px 18px;border-bottom:1px solid var(--border);align-items:flex-start}
+    .related-item:last-child{border-bottom:none}
+    .related-item__dot{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:6px}
+    .related-item__text{font-size:13px;font-weight:600;color:var(--dark);line-height:1.4}
+    .related-item a{text-decoration:none;color:var(--dark)}
+    .related-item a:hover{color:var(--blue)}
+    .site-footer{background:var(--blue-deeper);color:var(--white);text-align:center;padding:64px 24px 36px}
+    .site-footer__logo{height:62px;margin:0 auto 32px;filter:brightness(0) invert(1)}
+    .site-footer__title{font-family:var(--font-title);font-size:clamp(22px,4vw,36px);font-weight:800;margin-bottom:14px;line-height:1.2}
+    .site-footer__title span{color:var(--gold)}
+    .site-footer__sub{font-size:15px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.65}
+    .site-footer__copy{margin-top:44px;font-size:12px;color:rgba(255,255,255,.35)}
+    .float-cta{position:fixed;bottom:28px;right:28px;z-index:500;display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:13px 20px;border-radius:50px;font-weight:700;font-size:14px;box-shadow:0 6px 24px rgba(0,0,0,.2);text-decoration:none;transition:transform var(--ease),box-shadow var(--ease)}
+    .float-cta:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(0,0,0,.25);text-decoration:none;color:#fff}
+    .float-cta svg{width:20px;height:20px}
+    @media(max-width:960px){.site-main{grid-template-columns:1fr;padding:36px 20px 72px}.sidebar{position:static}.sidebar-toc{display:none}.article-figure{margin:28px -28px}.article-figure figcaption{padding:10px 28px 0}.stat-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:640px){.article-content{padding:28px 22px}.share-bar{padding:20px 22px}.author-bio{padding:22px 22px}.article-hero{min-height:380px}.header-nav .btn-header{display:none}.float-cta span{display:none}.float-cta{padding:14px;border-radius:50%}}
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo">
+        <img src="assets/logo/logo-branco.png" alt="ProSystem Sistemas">
+        <span class="logo-divider"></span>
+        <span class="logo-blog-tag">Blog</span>
+      </a>
+      <nav class="header-nav">
+        <a href="index.html">← Todos os artigos</a>
+        <a href="https://prosystemnet.com" target="_blank" rel="noopener">Site ProSystem</a>
+        <a href="https://wa.me/5527997521370" class="btn-header" target="_blank" rel="noopener">Falar com a equipe</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb__inner">
+      <a href="https://prosystemnet.com">ProSystem</a>
+      <span class="breadcrumb__sep">›</span>
+      <a href="index.html">Blog</a>
+      <span class="breadcrumb__sep">›</span>
+      <span>Gestão Financeira</span>
+    </div>
+  </div>
+
+  <section class="article-hero">
+    <img class="article-hero__img" src="assets/images/farm-balcao-farmacia-popular.jpg" alt="Farmacêutica no balcão de farmácia atendendo cliente" loading="eager" style="object-position:50% 8%;filter:saturate(0.5) brightness(0.85)">
+    <div class="article-hero__overlay"></div>
+    <div class="article-hero__content">
+      <div class="article-hero__badge">Gestão Financeira</div>
+      <h1 class="article-hero__title">Precificação em farmácias: como calcular <em>markup e margem</em> sem perder lucratividade</h1>
+      <div class="article-hero__meta">
+        <span class="article-hero__meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          27 de maio de 2026
+        </span>
+        <span class="article-hero__meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          8 min de leitura
+        </span>
+        <span class="article-hero__meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          ProSystem Sistemas
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <main class="site-main">
+    <article class="article-body" id="article">
+      <div class="article-content">
+
+        <p class="lead"><strong>Medicamentos respondem por até 76% do lucro de farmácias independentes.</strong> Isso significa que errar na precificação — cobrar pouco ou muito — tem impacto direto e imediato na saúde financeira do negócio. E a maioria dos donos de farmácia ainda precifica "no feeling", sem uma metodologia clara.</p>
+
+        <p>Este artigo explica como calcular markup de forma correta, o que a CMED regula, a diferença entre margem e markup (que confunde muito gestor), e como um sistema integrado elimina o risco de precificar errado.</p>
+
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-card__number">76%</div>
+            <div class="stat-card__label">do lucro de farmácias independentes vem de medicamentos</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number">15-30%</div>
+            <div class="stat-card__label">é a faixa de margem líquida típica no varejo farmacêutico</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number">CMED</div>
+            <div class="stat-card__label">define o teto de preço para medicamentos — descumprir gera infração</div>
+          </div>
+        </div>
+
+        <h2 id="markup-vs-margem">Markup e margem: a diferença que todo gestor precisa saber</h2>
+
+        <p>Essa confusão é mais comum do que parece — e já causou prejuízo para muita farmácia.</p>
+
+        <p><strong>Margem de lucro</strong> é calculada sobre o preço de venda: se você vende um produto por R$ 100 e o custo foi R$ 70, sua margem é 30% (30/100).</p>
+
+        <p><strong>Markup</strong> é calculado sobre o custo: o mesmo produto custou R$ 70 e foi vendido por R$ 100, então o markup é 42,8% (30/70). Ou, em formato de índice: 1,428.</p>
+
+        <div class="formula-box">
+          <div class="f-label">Fórmula do Markup (índice)</div>
+          Markup = 100 ÷ [100 – (Despesas Variáveis% + Despesas Fixas% + Lucro Desejado%)]<br><br>
+          <strong>Exemplo prático:</strong><br>
+          Despesas variáveis: 10% | Despesas fixas: 25% | Lucro desejado: 15%<br>
+          Markup = 100 ÷ (100 – 50) = <span class="f-result">2,00</span><br><br>
+          → Produto que custou R$ 40 deve ser vendido por <span class="f-result">R$ 80,00</span>
+        </div>
+
+        <p>O erro clássico: o gestor aplica markup de 30% achando que vai ter 30% de margem. Mas 30% de markup sobre o custo equivale a 23% de margem sobre o preço de venda. Se os custos fixos consomem 25% do faturamento, ele está no prejuízo sem saber.</p>
+
+        <h2 id="cmed">A CMED e o teto de preço dos medicamentos</h2>
+
+        <p>A <strong>CMED</strong> (Câmara de Regulação do Mercado de Medicamentos) define anualmente o Preço Máximo ao Consumidor (PMC) de todos os medicamentos regulados no Brasil. Vender acima do PMC é infração com multa.</p>
+
+        <p>O que muitos gestores não sabem:</p>
+        <ul>
+          <li>O PMC já considera o estado (ICMS varia por UF) — o mesmo produto tem PMC diferente no ES e em SP</li>
+          <li>A lista é atualizada com frequência — precificação manual aumenta o risco de erro</li>
+          <li>Genéricos têm PMC próprio, independente do referência</li>
+          <li>Medicamentos similares e referência podem ter PMC diferentes mesmo com o mesmo princípio ativo</li>
+        </ul>
+
+        <div class="callout">
+          <div class="callout__label">⚠️ Atenção</div>
+          <p>Seu sistema de gestão deve ser atualizado sempre que a CMED publicar nova lista. Uma farmácia que não atualiza os preços automaticamente corre risco de cobrar acima do PMC — mesmo sem intenção.</p>
+        </div>
+
+        <figure class="article-figure">
+          <img src="https://images.pexels.com/photos/12332074/pexels-photo-12332074.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Atendimento no balcão da farmácia com consulta ao sistema" loading="lazy">
+          <figcaption>Precificação atualizada é proteção legal e vantagem competitiva ao mesmo tempo.</figcaption>
+        </figure>
+
+        <h2 id="estrategia-por-categoria">Estratégia de preço por categoria de produto</h2>
+
+        <p>Nem todo produto na farmácia deve ter a mesma política de margem. Uma precificação inteligente divide o mix em pelo menos três categorias:</p>
+
+        <table>
+          <thead><tr><th>Categoria</th><th>Estratégia</th><th>Exemplo</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Gerador de tráfego</strong></td><td>Margem baixa — cliente vem por preço</td><td>Dipirona, Paracetamol genérico</td></tr>
+            <tr><td><strong>Rentabilidade</strong></td><td>Margem média-alta — cliente já decidiu comprar</td><td>Vitaminas, suplementos, dermocosméticos</td></tr>
+            <tr><td><strong>Fidelização</strong></td><td>Preço competitivo + programa de pontos</td><td>Medicamentos de uso contínuo (hipertensão, diabetes)</td></tr>
+            <tr><td><strong>Conveniência</strong></td><td>Margem alta — compra por impulso ou urgência</td><td>Itens de higiene, fraldas, cosméticos premium</td></tr>
+          </tbody>
+        </table>
+
+        <p>Medicamentos de uso contínuo merecem atenção especial: o cliente volta todo mês. Uma margem menor nesse segmento compensa com volume e fidelidade — e é justamente aqui que perder para a concorrência ou para o delivery online dói mais.</p>
+
+        <h2 id="generico-vs-referencia">Genérico vs. referência: onde está a margem real</h2>
+
+        <p>O PMC do medicamento de referência é sempre maior que o do genérico — mas isso não significa que o de referência é mais rentável. Depende do preço de compra negociado com o distribuidor.</p>
+
+        <p>Na prática, farmácias bem geridas trabalham com as três categorias em paralelo:</p>
+        <ul>
+          <li><strong>Referência:</strong> para clientes que pedem pelo nome da marca — margem maior, volume menor</li>
+          <li><strong>Similar:</strong> alternativa intermediária — boa margem, fácil de recomendar</li>
+          <li><strong>Genérico:</strong> gerador de volume — margem menor, mas contribui para o ticket e para o PMC</li>
+        </ul>
+
+        <p>O balconista precisa conhecer essa lógica. Quando ele oferece o genérico "mais barato" sem saber a margem de cada opção, pode estar prejudicando o resultado sem perceber — mesmo ajudando o cliente.</p>
+
+        <h2 id="precificacao-automatizada">Por que precificação manual falha e o que fazer</h2>
+
+        <p>Uma farmácia típica tem entre 3.000 e 8.000 SKUs ativos. Fazer a atualização de preços manualmente a cada publicação da CMED, cada reajuste de custo do fornecedor e cada mudança de alíquota de ICMS é inviável — e perigoso.</p>
+
+        <p>Um ERP integrado para farmácias deve:</p>
+        <ul>
+          <li>Importar a tabela CMED e bloquear venda acima do PMC automaticamente</li>
+          <li>Recalcular preço de venda ao registrar nova nota de entrada com custo diferente</li>
+          <li>Permitir criar políticas de markup por categoria — e aplicar em lote</li>
+          <li>Alertar quando a margem cair abaixo do mínimo configurado</li>
+          <li>Mostrar, na hora da compra, qual será a margem estimada com o preço negociado</li>
+        </ul>
+
+        <div class="cta-inline">
+          <div class="cta-inline__eyebrow">ProSystem Financeiro</div>
+          <div class="cta-inline__title">Precificação automática integrada ao seu ERP</div>
+          <p>O ProSystem importa a tabela CMED, recalcula preços na entrada da nota e alerta quando a margem cai abaixo do seu mínimo. Tudo sem planilha.</p>
+          <a href="https://wa.me/5527997521370?text=Quero%20ver%20a%20precifica%C3%A7%C3%A3o%20do%20ProSystem" class="btn" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            Ver demonstração gratuita
+          </a>
+        </div>
+
+        <h2 id="conclusao">Conclusão</h2>
+        <p>Precificar bem em farmácia é equilibrar três forças ao mesmo tempo: a regulação da CMED, a competitividade do mercado local e a necessidade de margem para sustentar o negócio. Fazer isso manualmente, com planilha ou no feeling, é um risco que cresce junto com o volume do mix.</p>
+        <p>A saída é um sistema que automatiza o que pode ser automatizado — importação da CMED, cálculo de markup por categoria, recalcular ao entrar nota nova — e deixa o gestor focado nas decisões que realmente exigem julgamento: mix, negociação com fornecedores e posicionamento de preço frente à concorrência.</p>
+
+        <blockquote>
+          <p>O ProSystem integra tabela CMED, cálculo de markup e alertas de margem no mesmo sistema do PDV e estoque.</p>
+          <p>Fale com nosso time pelo WhatsApp <strong>(27) 99752-1370</strong> e veja na prática como funciona.</p>
+        </blockquote>
+
+      </div>
+
+      <div class="share-bar">
+        <span class="share-bar__label">Compartilhar</span>
+        <a class="share-btn share-btn--wa" href="https://wa.me/?text=Precifica%C3%A7%C3%A3o%20em%20farm%C3%A1cias%20%E2%80%94%20leia%20este%20guia%3A%20https%3A%2F%2Fprosystemnet.com%2Fblog%2Fprecificacao-farmacia-markup-margem-lucratividade" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          WhatsApp
+        </a>
+        <a class="share-btn share-btn--li" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fprosystemnet.com%2Fblog%2Fprecificacao-farmacia-markup-margem-lucratividade" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <button class="share-btn share-btn--copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='✓ Copiado!'});setTimeout(()=>{this.textContent='Copiar link'},2500)">Copiar link</button>
+      </div>
+
+      <div class="author-bio">
+        <div class="author-bio__avatar">P</div>
+        <div>
+          <div class="author-bio__name">ProSystem Sistemas</div>
+          <div class="author-bio__desc">Há mais de 16 anos desenvolvendo ERP para farmácias, drogarias e padarias no Brasil. Especialistas em gestão financeira, precificação e conformidade CMED.</div>
+        </div>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <nav class="sidebar-toc">
+        <div class="sidebar-toc__header">Neste artigo</div>
+        <ul class="sidebar-toc__list">
+          <li class="sidebar-toc__item"><a href="#markup-vs-margem">Markup vs. margem</a></li>
+          <li class="sidebar-toc__item"><a href="#cmed">CMED e teto de preço</a></li>
+          <li class="sidebar-toc__item"><a href="#estrategia-por-categoria">Estratégia por categoria</a></li>
+          <li class="sidebar-toc__item"><a href="#generico-vs-referencia">Genérico vs. referência</a></li>
+          <li class="sidebar-toc__item"><a href="#precificacao-automatizada">Precificação automatizada</a></li>
+          <li class="sidebar-toc__item"><a href="#conclusao">Conclusão</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-cta">
+        <img class="sidebar-cta__logo" src="assets/logo/logo-branco.png" alt="ProSystem">
+        <div class="sidebar-cta__title">ProSystem <span>Financeiro</span></div>
+        <p>Tabela CMED integrada, markup por categoria e alertas de margem — tudo no mesmo ERP.</p>
+        <a href="https://wa.me/5527997521370?text=Quero%20ver%20a%20precifica%C3%A7%C3%A3o%20do%20ProSystem" class="btn" target="_blank" rel="noopener">Ver demonstração →</a>
+      </div>
+      <div class="sidebar-widget">
+        <div class="sidebar-widget__title">Leia também</div>
+        <div class="related-item">
+          <div class="related-item__dot"></div>
+          <div class="related-item__text"><a href="controle-estoque-farmacia-evitar-perdas-vencimento.html">Controle de estoque: evitar perdas por vencimento</a></div>
+        </div>
+        <div class="related-item">
+          <div class="related-item__dot"></div>
+          <div class="related-item__text"><a href="pdv-rapido-fila-caixa-faturamento-farmacia.html">PDV rápido x fila do caixa</a></div>
+        </div>
+        <div class="related-item">
+          <div class="related-item__dot"></div>
+          <div class="related-item__text"><a href="sngpc-farmacia-como-evitar-multa-2026.html">SNGPC: como evitar multa em 2026</a></div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <img class="site-footer__logo" src="assets/logo/logo-branco.png" alt="ProSystem Sistemas">
+    <div class="site-footer__title">Sua farmácia merece <span>menos burocracia</span></div>
+    <p class="site-footer__sub">ERP integrado para farmácias e drogarias. PDV, SNGPC, estoque e financeiro no mesmo sistema.</p>
+    <a href="https://wa.me/5527997521370" class="btn" style="font-size:15px;padding:14px 36px" target="_blank" rel="noopener">Falar no WhatsApp →</a>
+    <div class="site-footer__copy">© 2026 ProSystem Sistemas — Todos os direitos reservados</div>
+  </footer>
+
+  <a class="float-cta" href="https://wa.me/5527997521370" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    <span>Falar no WhatsApp</span>
+  </a>
+
+  <script>
+    const bar=document.getElementById('progress-bar');
+    window.addEventListener('scroll',()=>{const a=document.getElementById('article');const s=a.offsetTop;const e=s+a.offsetHeight-window.innerHeight;bar.style.width=Math.min(Math.max((window.scrollY-s)/(e-s)*100,0),100)+'%'},{passive:true});
+  </script>
+</body>
+</html>

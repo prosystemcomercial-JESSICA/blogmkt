@@ -1,0 +1,300 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como precificar pão e salgados na padaria sem perder margem — Blog ProSystem</title>
+  <meta name="description" content="Aprenda a calcular o preço real de pão e salgados em padaria: matéria-prima, mão de obra, energia, markup e margem de contribuição. Exemplo prático com pão francês.">
+  <link rel="canonical" href="https://prosystemnet.com.br/blog/precificacao-padaria-calcular-preco-pao-margem">
+  <meta property="og:title" content="Como precificar pão e salgados na padaria sem perder margem">
+  <meta property="og:description" content="Aprenda a calcular o preço real de pão e salgados em padaria: matéria-prima, mão de obra, energia, markup e margem de contribuição. Exemplo prático.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--blue:#4A7AB8;--blue-dark:#2E5A8F;--blue-deeper:#1D3A5F;--blue-tint:#EEF4FB;--dark:#111827;--text:#374151;--muted:#6B7280;--border:#E5E7EB;--bg:#F8FAFC;--white:#ffffff;--gold:#F59E0B;--font-title:'Montserrat','Segoe UI',system-ui,sans-serif;--font-body:'Inter','Segoe UI',system-ui,sans-serif;--site-width:1140px;--radius:12px;--shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow-md:0 4px 16px rgba(0,0,0,.1);--ease:0.2s ease}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font-body);font-size:18px;line-height:1.78;color:var(--text);background:var(--bg)}img{max-width:100%;height:auto;display:block}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+    #progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:var(--gold);z-index:9999;transition:width .1s linear}
+    .site-header{background:var(--blue);padding:0 32px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.18)}.site-header__inner{max-width:var(--site-width);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:80px}.logo{display:flex;align-items:center;gap:12px;text-decoration:none}.logo img{height:56px;max-width:180px;width:auto;filter:brightness(0) invert(1)}.logo-divider{width:1px;height:32px;background:rgba(255,255,255,.3)}.logo-blog-tag{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.75)}.header-nav{display:flex;align-items:center;gap:24px}.header-nav a{font-size:13px;font-weight:600;color:rgba(255,255,255,.8);transition:color var(--ease);text-decoration:none}.header-nav a:hover{color:#fff}.btn-header{background:var(--gold);color:var(--dark)!important;padding:8px 18px;border-radius:8px;font-weight:700;font-size:13px;white-space:nowrap}
+    .breadcrumb{background:var(--white);border-bottom:1px solid var(--border);padding:10px 32px}.breadcrumb__inner{max-width:var(--site-width);margin:0 auto;display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}.breadcrumb__inner a{color:var(--blue);font-weight:500}
+    .article-hero{position:relative;min-height:460px;display:flex;align-items:flex-end;overflow:hidden;background:var(--blue-deeper)}.article-hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.38;transform:scale(1.03)}.article-hero__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(17,24,39,.85) 0%,rgba(17,24,39,.35) 55%,transparent 100%)}.article-hero__content{position:relative;z-index:2;max-width:var(--site-width);margin:0 auto;padding:0 32px 52px;width:100%}.article-hero__badge{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--dark);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:2px;padding:5px 12px;border-radius:6px;margin-bottom:20px}.article-hero__title{font-family:var(--font-title);font-size:clamp(26px,4.2vw,48px);font-weight:800;line-height:1.12;color:var(--white);max-width:860px;margin-bottom:24px;letter-spacing:-.3px}.article-hero__title em{font-style:normal;color:var(--gold)}.article-hero__meta{display:flex;flex-wrap:wrap;align-items:center;gap:20px;font-size:13px;color:rgba(255,255,255,.72)}.article-hero__meta-item{display:flex;align-items:center;gap:6px}
+    .site-main{max-width:var(--site-width);margin:0 auto;padding:56px 32px 96px;display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:start}.article-body{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden}.article-content{padding:48px 52px}.article-content .lead{font-size:20px;line-height:1.65;color:var(--dark);font-weight:400;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border)}.article-content h2{font-family:var(--font-title);font-weight:800;font-size:22px;color:var(--dark);margin:48px 0 16px;padding-left:16px;border-left:4px solid var(--blue);line-height:1.3;scroll-margin-top:88px}.article-content h3{font-family:var(--font-title);font-weight:700;font-size:17px;color:var(--blue-dark);margin:32px 0 12px}.article-content p{margin-bottom:22px;font-size:17px;line-height:1.8;color:var(--text)}.article-content ul,.article-content ol{margin:0 0 22px 24px}.article-content li{margin-bottom:10px;font-size:17px;line-height:1.7}.article-content strong{font-weight:700;color:var(--dark)}.article-content table{width:100%;border-collapse:collapse;margin:24px 0 32px;font-size:15px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm)}.article-content thead tr{background:var(--blue);color:var(--white)}.article-content th{padding:14px 16px;text-align:left;font-weight:700;font-size:13px}.article-content td{padding:13px 16px;border-bottom:1px solid var(--border)}.article-content tbody tr:nth-child(even){background:var(--blue-tint)}.article-content tbody tr:last-child td{border-bottom:none}.article-content blockquote{background:var(--blue-tint);border-left:5px solid var(--blue);padding:22px 28px;margin:36px 0;border-radius:0 var(--radius) var(--radius) 0}.article-content blockquote p{font-size:16px;font-weight:600;color:var(--dark);margin:0 0 8px;line-height:1.6}.article-content blockquote p:last-child{margin-bottom:0}
+    .callout{background:#FFFBEB;border:1px solid #FCD34D;border-left:5px solid var(--gold);border-radius:0 var(--radius) var(--radius) 0;padding:18px 22px;margin:28px 0}.callout__label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#92400E;margin-bottom:6px}.callout p{margin:0;font-size:15px;color:#78350F;line-height:1.6}
+    .cta-inline{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-dark) 100%);border-radius:var(--radius);padding:36px 38px;margin:40px 0;text-align:center;box-shadow:0 8px 32px rgba(46,90,143,.3)}.cta-inline__eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}.cta-inline__title{font-family:var(--font-title);font-size:24px;font-weight:800;color:var(--white);margin-bottom:12px;line-height:1.2}.cta-inline p{font-size:15px;color:rgba(255,255,255,.85);margin-bottom:24px;line-height:1.6}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--dark);font-weight:800;font-size:14px;padding:13px 28px;border-radius:9px;transition:background var(--ease),transform var(--ease);text-decoration:none}.btn:hover{background:#e08c00;transform:translateY(-1px);text-decoration:none}
+    .share-bar{display:flex;align-items:center;gap:10px;padding:24px 52px;border-top:1px solid var(--border);background:var(--bg)}.share-bar__label{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-right:4px}.share-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;transition:opacity var(--ease)}.share-btn:hover{opacity:.85;text-decoration:none}.share-btn--wa{background:#25D366;color:#fff}.share-btn--li{background:#0A66C2;color:#fff}
+    .author-bio{display:flex;align-items:center;gap:20px;padding:28px 52px;border-top:1px solid var(--border)}.author-bio__avatar{width:56px;height:56px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--white);font-weight:800;font-size:22px;font-family:var(--font-title)}.author-bio__name{font-weight:700;font-size:15px;color:var(--dark)}.author-bio__desc{font-size:13px;color:var(--muted);line-height:1.5;margin-top:2px}
+    .sidebar{display:flex;flex-direction:column;gap:24px;position:sticky;top:88px}.sidebar-toc{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden}.sidebar-toc__header{background:var(--blue);padding:14px 20px;font-family:var(--font-title);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--white)}.sidebar-toc__list{list-style:none;padding:16px 0}.sidebar-toc__item a{display:block;padding:7px 20px;font-size:13px;color:var(--text);line-height:1.4;border-left:3px solid transparent;transition:color var(--ease),border-color var(--ease),background var(--ease)}.sidebar-toc__item a:hover{color:var(--blue);border-left-color:var(--blue);background:var(--blue-tint);text-decoration:none}
+    .sidebar-cta{background:linear-gradient(145deg,var(--blue) 0%,var(--blue-deeper) 100%);border-radius:var(--radius);padding:28px 22px;text-align:center;box-shadow:0 6px 24px rgba(46,90,143,.25)}.sidebar-cta__logo{margin:0 auto 16px;filter:brightness(0) invert(1);height:52px}.sidebar-cta__title{font-family:var(--font-title);font-size:17px;font-weight:800;color:var(--white);margin-bottom:8px;line-height:1.25}.sidebar-cta__title span{color:var(--gold)}.sidebar-cta p{font-size:13px;color:rgba(255,255,255,.78);margin-bottom:20px;line-height:1.55}.sidebar-cta .btn{width:100%;justify-content:center;font-size:13px}
+    .sidebar-widget{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden}.sidebar-widget__title{padding:12px 18px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:var(--blue);border-bottom:2px solid var(--blue-tint);background:var(--bg)}.related-item{display:flex;gap:12px;padding:14px 18px;border-bottom:1px solid var(--border);align-items:flex-start}.related-item:last-child{border-bottom:none}.related-item__dot{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:6px}.related-item__text{font-size:13px;font-weight:600;color:var(--dark);line-height:1.4}
+    .site-footer{background:var(--blue-deeper);color:var(--white);text-align:center;padding:64px 24px 36px}.site-footer__logo{height:62px;margin:0 auto 32px;filter:brightness(0) invert(1)}.site-footer__title{font-family:var(--font-title);font-size:clamp(22px,4vw,36px);font-weight:800;margin-bottom:14px;line-height:1.2}.site-footer__title span{color:var(--gold)}.site-footer__sub{font-size:15px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.65}.site-footer__copy{margin-top:44px;font-size:12px;color:rgba(255,255,255,.35)}
+    .float-cta{position:fixed;bottom:28px;right:28px;z-index:500;display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:13px 20px;border-radius:50px;font-weight:700;font-size:14px;box-shadow:0 6px 24px rgba(0,0,0,.2);text-decoration:none;transition:transform var(--ease),box-shadow var(--ease)}.float-cta:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(0,0,0,.25);text-decoration:none;color:#fff}
+    @media(max-width:960px){.site-main{grid-template-columns:1fr;padding:36px 20px 72px}.sidebar{position:static}.sidebar-toc{display:none}}@media(max-width:640px){.article-content{padding:28px 22px}.share-bar{padding:20px 22px;flex-wrap:wrap}.author-bio{padding:22px 22px}.article-hero{min-height:380px}.float-cta span{display:none}.float-cta{padding:14px;border-radius:50%}}
+  </style>
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="logo">
+      <img src="assets/logo/logo-branco.png" alt="ProSystem Sistemas">
+      <span class="logo-divider"></span>
+      <span class="logo-blog-tag">Blog</span>
+    </a>
+    <nav class="header-nav">
+      <a href="index.html">Blog</a>
+      <a href="https://prosystemnet.com.br" target="_blank">Site</a>
+      <a href="https://wa.me/5527997798103" class="btn-header" target="_blank">Falar com consultor</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="breadcrumb">
+  <div class="breadcrumb__inner">
+    <a href="index.html">Blog</a>
+    <span>›</span>
+    <a href="#">Padarias</a>
+    <span>›</span>
+    <span>Precificação em padaria</span>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <img class="article-hero__img" src="https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Pão artesanal fatiado — precificação e margem em padaria" loading="eager" style="object-position:50% 45%">
+  <div class="article-hero__overlay"></div>
+  <div class="article-hero__content">
+    <span class="article-hero__badge">Padaria · Precificação · Margem</span>
+    <h1 class="article-hero__title">
+      Como precificar pão e salgados<br>
+      <em>na padaria sem perder margem</em>
+    </h1>
+    <div class="article-hero__meta">
+      <span class="article-hero__meta-item">ProSystem Sistemas</span>
+      <span class="article-hero__meta-item">22 de junho de 2026</span>
+      <span class="article-hero__meta-item">8 min de leitura</span>
+    </div>
+  </div>
+</section>
+
+<main class="site-main">
+  <article class="article-body">
+    <div class="article-content">
+
+      <p class="lead">
+        Tem padaria que dobrou o movimento nos últimos dois anos e está lucrando menos do que antes. O motivo quase sempre é o mesmo: preço calculado no cheiro, sem considerar custo real de produção. Precificar errado é o erro silencioso que corrói a margem sem que o dono perceba — até o caixa não fechar.
+      </p>
+
+      <h2 id="erro-precificacao">Por que precificar errado é o maior erro de uma padaria</h2>
+      <p>
+        O pão francês a R$ 0,90 parece lucrativo porque custa barato para produzir. Mas quando você soma farinha, ovos, fermento, sal, energia do forno, gás, mão de obra do forneiro e rateio do aluguel proporcional — o custo real por unidade pode ser bem diferente da sua estimativa.
+      </p>
+      <p>
+        O erro mais comum: precificar com base no que o concorrente cobra. Se o vizinho cobra R$ 0,90, você cobra R$ 0,90. O problema é que você não sabe o custo estrutural do vizinho. Se o custo dele é R$ 0,55 e o seu é R$ 0,72, você está perdendo margem em cada pão vendido — e vendendo volume alto faz a situação piorar.
+      </p>
+      <p>
+        Crescer faturamento com preço abaixo do custo real é receita para falência lenta.
+      </p>
+
+      <div class="callout">
+        <div class="callout__label">Alerta</div>
+        <p>Precificação baseada no concorrente sem conhecer seu próprio custo é um dos principais motivos de fechamento de padarias no Brasil — especialmente as que acabaram de abrir e querem competir por preço.</p>
+      </div>
+
+      <h2 id="quatro-componentes">Os 4 componentes do preço real de um produto de padaria</h2>
+      <p>
+        Para calcular o preço correto de qualquer produto, você precisa considerar quatro grupos de custo:
+      </p>
+
+      <h3>1. Matéria-prima (custo direto)</h3>
+      <p>
+        Todos os ingredientes que entram na receita, medidos com precisão. Farinha, ovos, manteiga, recheio, embalagem. Esse custo é calculado via ficha técnica — cada ingrediente, quantidade e custo unitário.
+      </p>
+
+      <h3>2. Mão de obra direta</h3>
+      <p>
+        O tempo do forneiro para produzir aquele produto. Se o forneiro ganha R$ 2.500/mês e trabalha 200 horas, seu custo por hora é R$ 12,50. Se um lote de 100 croissants leva 2 horas para produzir, o custo de mão de obra por unidade é R$ 0,25.
+      </p>
+
+      <h3>3. Custos de energia e insumos de produção</h3>
+      <p>
+        Energia elétrica, gás, embalagens, descartáveis. Esses custos são rateados pela produção total do mês — divididos pela quantidade de itens produzidos para chegar ao custo por unidade.
+      </p>
+
+      <h3>4. Rateio de custos fixos</h3>
+      <p>
+        Aluguel, internet, contador, sistemas, licenças. Divididos pelo total de produtos vendidos no mês, resultam no custo fixo por unidade. Uma padaria com R$ 8.000 de custo fixo mensal e 40.000 itens vendidos tem R$ 0,20 de custo fixo por item.
+      </p>
+
+      <h2 id="exemplo-pao-frances">Como calcular o custo de produção do pão francês (exemplo prático)</h2>
+      <p>
+        Tomando como base um lote de 50 unidades de pão francês (30g cada):
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Componente</th>
+            <th>Quantidade</th>
+            <th>Custo unitário</th>
+            <th>Custo no lote</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Farinha de trigo</td><td>1.000g</td><td>R$ 0,006/g</td><td>R$ 6,00</td></tr>
+          <tr><td>Água</td><td>600ml</td><td>—</td><td>R$ 0,10</td></tr>
+          <tr><td>Fermento biológico</td><td>15g</td><td>R$ 0,08/g</td><td>R$ 1,20</td></tr>
+          <tr><td>Sal</td><td>18g</td><td>R$ 0,003/g</td><td>R$ 0,05</td></tr>
+          <tr><td>Margarina</td><td>20g</td><td>R$ 0,025/g</td><td>R$ 0,50</td></tr>
+          <tr><td><strong>Subtotal matéria-prima</strong></td><td></td><td></td><td><strong>R$ 7,85</strong></td></tr>
+          <tr><td>Mão de obra (40 min)</td><td>0,67h × R$12,50</td><td></td><td>R$ 8,33</td></tr>
+          <tr><td>Energia/gás (rateio)</td><td></td><td></td><td>R$ 2,50</td></tr>
+          <tr><td>Custo fixo (rateio)</td><td></td><td></td><td>R$ 3,00</td></tr>
+          <tr><td><strong>Custo total do lote</strong></td><td></td><td></td><td><strong>R$ 21,68</strong></td></tr>
+          <tr><td><strong>Custo por unidade (50 pães)</strong></td><td></td><td></td><td><strong>R$ 0,43</strong></td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        Com custo de R$ 0,43 por unidade, um preço de venda de R$ 0,90 representa margem bruta de 52%. Se você cobra R$ 0,70, sua margem cai para 39% — e se o custo subir (farinha mais cara, energia reajustada), você pode chegar a vender no prejuízo sem perceber.
+      </p>
+
+      <h2 id="markup-margem">Markup vs. margem de contribuição — qual usar na padaria</h2>
+      <p>
+        Duas formas de calcular o preço mínimo de venda:
+      </p>
+      <p>
+        <strong>Markup</strong> é um multiplicador aplicado sobre o custo: se o custo é R$ 0,43 e você quer 100% de markup, o preço é R$ 0,86. Simples e rápido — mas não considera o percentual de lucro real.
+      </p>
+      <p>
+        <strong>Margem de contribuição</strong> é a diferença entre o preço de venda e os custos variáveis, expressa em percentual do preço. Uma margem de 40% sobre o preço de R$ 0,90 significa que R$ 0,36 de cada pão vendido contribui para pagar os custos fixos e gerar lucro.
+      </p>
+      <p>
+        Para gestão de padaria, a margem de contribuição é mais útil porque permite calcular quantos itens você precisa vender para cobrir os custos fixos do mês — o chamado ponto de equilíbrio.
+      </p>
+
+      <blockquote>
+        <p>Padaria que conhece o custo real de cada produto consegue tomar decisões de precificação com segurança — aumentar preço onde tem margem, reduzir onde precisa competir, sem comprometer o resultado.</p>
+      </blockquote>
+
+      <h2 id="reajustar-preco">Dicas para reajustar preços sem perder cliente</h2>
+      <p>
+        Quando os custos sobem (e sobem todo ano), você precisa repassar ao preço de venda. Fazer isso sem perder clientela exige estratégia:
+      </p>
+      <ul>
+        <li><strong>Reajuste gradual:</strong> aumentar R$ 0,05 ou R$ 0,10 de cada vez causa menos resistência do que um aumento único grande</li>
+        <li><strong>Foque nos produtos com menor elasticidade:</strong> salgados especiais e produtos com recheio têm menos resistência a reajuste do que o pão francês</li>
+        <li><strong>Mude o tamanho antes de mudar o preço:</strong> reduzir levemente o tamanho do produto antes de aumentar o preço é uma prática comum — mas use com moderação</li>
+        <li><strong>Comunique valor, não preço:</strong> se você usa ingredientes de qualidade ou tem diferenciais, comunique isso — cliente que conhece o valor aceita melhor o preço</li>
+        <li><strong>Revise toda a tabela, não só um produto:</strong> reajuste isolado de um item chama mais atenção do que um reajuste geral da tabela</li>
+      </ul>
+
+      <h2 id="sistema-precificacao">Sistema ajuda a manter a precificação atualizada</h2>
+      <p>
+        O problema da precificação manual é que ela envelhece. A farinha subiu 15% — mas você não refez o cálculo. O gás encareceu — você não recalculou. Três meses depois, está vendendo produtos que custam mais do que antes sem ter ajustado o preço.
+      </p>
+      <p>
+        Um ERP com módulo de fichas técnicas resolve isso: quando o custo de um insumo é atualizado, o sistema recalcula automaticamente o custo de todos os produtos que o usam — e alerta quando o preço de venda ficou abaixo da margem mínima configurada.
+      </p>
+      <p>
+        Você sabe na hora que o pão de queijo está sendo vendido com margem inferior à meta — sem precisar refazer a planilha.
+      </p>
+
+      <div class="cta-inline">
+        <div class="cta-inline__eyebrow">ProSystem Padaria</div>
+        <div class="cta-inline__title">Fichas técnicas e precificação automática</div>
+        <p>Cadastre o custo dos insumos uma vez. O sistema calcula o custo de cada produto e alerta quando o preço de venda está comprometendo sua margem.</p>
+        <a href="https://wa.me/5527997798103" class="btn" target="_blank">Ver demonstração gratuita →</a>
+      </div>
+
+      <h2 id="conclusao">Preço certo é a base da padaria lucrativa</h2>
+      <p>
+        Padaria que não sabe o custo real dos seus produtos não consegue crescer de forma sustentável. Vende muito, trabalha muito — e o resultado não aparece no caixa.
+      </p>
+      <p>
+        Com ficha técnica, cálculo correto dos quatro componentes de custo e um sistema que mantém os números atualizados, você cobra o preço certo — com confiança, sem medo de perder cliente por preço justo.
+      </p>
+      <p>
+        O ProSystem oferece demonstração gratuita para padarias. Entre em contato e veja como o módulo de fichas técnicas e precificação funciona na prática.
+      </p>
+
+    </div>
+
+    <div class="share-bar">
+      <span class="share-bar__label">Compartilhar:</span>
+      <a href="https://wa.me/?text=Como%20precificar%20p%C3%A3o%20e%20salgados%20na%20padaria%20sem%20perder%20margem%20https%3A%2F%2Fprosystemnet.com.br%2Fblog%2Fprecificacao-padaria-calcular-preco-pao-margem" class="share-btn share-btn--wa" target="_blank">WhatsApp</a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fprosystemnet.com.br%2Fblog%2Fprecificacao-padaria-calcular-preco-pao-margem" class="share-btn share-btn--li" target="_blank">LinkedIn</a>
+    </div>
+
+    <div class="author-bio">
+      <div class="author-bio__avatar">P</div>
+      <div>
+        <div class="author-bio__name">Equipe ProSystem</div>
+        <div class="author-bio__desc">Especialistas em gestão de varejo com mais de 16 anos desenvolvendo sistemas ERP e PDV para padarias, farmácias e varejistas no Brasil.</div>
+      </div>
+    </div>
+  </article>
+
+  <aside class="sidebar">
+    <nav class="sidebar-toc">
+      <div class="sidebar-toc__header">Neste artigo</div>
+      <ul class="sidebar-toc__list">
+        <li class="sidebar-toc__item"><a href="#erro-precificacao">Por que precificar errado é o maior erro</a></li>
+        <li class="sidebar-toc__item"><a href="#quatro-componentes">Os 4 componentes do preço real</a></li>
+        <li class="sidebar-toc__item"><a href="#exemplo-pao-frances">Exemplo: custo do pão francês</a></li>
+        <li class="sidebar-toc__item"><a href="#markup-margem">Markup vs. margem de contribuição</a></li>
+        <li class="sidebar-toc__item"><a href="#reajustar-preco">Reajustar sem perder cliente</a></li>
+        <li class="sidebar-toc__item"><a href="#sistema-precificacao">Sistema e precificação automática</a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-cta">
+      <img class="sidebar-cta__logo" src="assets/logo/logo-branco.png" alt="ProSystem">
+      <div class="sidebar-cta__title">Precificação <span>automática</span> para padaria</div>
+      <p>Demonstração gratuita — veja o módulo de fichas técnicas em ação.</p>
+      <a href="https://wa.me/5527997798103" class="btn" target="_blank">Falar agora →</a>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="sidebar-widget__title">Artigos relacionados</div>
+      <div class="related-item">
+        <span class="related-item__dot"></span>
+        <a href="gestao-financeira-padaria-custo-produto.html" class="related-item__text">Gestão financeira de padaria: custo real de cada produto</a>
+      </div>
+      <div class="related-item">
+        <span class="related-item__dot"></span>
+        <a href="reduzir-desperdicio-insumos-pequena-padaria.html" class="related-item__text">Como reduzir o desperdício de insumos em pequenas padarias</a>
+      </div>
+      <div class="related-item">
+        <span class="related-item__dot"></span>
+        <a href="erp-para-padaria-o-que-e-quando-contratar.html" class="related-item__text">ERP para padaria: o que é e quando contratar</a>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<footer class="site-footer">
+  <img class="site-footer__logo" src="assets/logo/logo-branco.png" alt="ProSystem Sistemas">
+  <div class="site-footer__title">Sua padaria gerenciada com <span>inteligência</span></div>
+  <div class="site-footer__sub">ProSystem — mais de 16 anos desenvolvendo sistemas ERP e PDV para padarias e varejo alimentar no Brasil.</div>
+  <a href="https://wa.me/5527997798103" class="btn" target="_blank">Falar com um consultor</a>
+  <div class="site-footer__copy">© 2026 ProSystem Sistemas. Todos os direitos reservados.</div>
+</footer>
+
+<a href="https://wa.me/5527997798103" class="float-cta" target="_blank">
+  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span>Falar com consultor</span>
+</a>
+
+<script>
+  const bar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    bar.style.width = pct + '%';
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,634 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PBM na farmácia: como funciona e como aumentar o ticket médio com convênios | Blog ProSystem</title>
+  <meta name="description" content="Saiba como o Programa de Benefício em Medicamentos funciona, quais são as principais operadoras e como integrar ao ERP para aumentar o ticket médio da sua drogaria.">
+  <meta name="keywords" content="PBM farmácia, programa benefício medicamento, convênio farmácia, integração PBM ERP, ticket médio farmácia, operadoras PBM Brasil">
+  <meta property="og:title" content="PBM na farmácia: como funciona e como aumentar o ticket médio com convênios">
+  <meta property="og:description" content="Programa de Benefício em Medicamentos: entenda como funciona, quais operadoras credenciar e como seu ERP impacta o resultado.">
+  <meta property="og:image" content="https://images.pexels.com/photos/8657294/pexels-photo-8657294.jpeg?auto=compress&cs=tinysrgb&w=1200">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://prosystemnet.com/blog/pbm-farmacia-como-aumentar-ticket-medio-convenios.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue:        #4A7AB8;
+      --blue-dark:   #2E5A8F;
+      --blue-deeper: #1D3A5F;
+      --blue-tint:   #EEF4FB;
+      --dark:        #111827;
+      --text:        #374151;
+      --muted:       #6B7280;
+      --border:      #E5E7EB;
+      --bg:          #F8FAFC;
+      --white:       #ffffff;
+      --gold:        #F59E0B;
+      --green:       #10B981;
+      --green-tint:  #D1FAE5;
+      --font-title:  'Montserrat', 'Segoe UI', system-ui, sans-serif;
+      --font-body:   'Inter', 'Segoe UI', system-ui, sans-serif;
+      --site-width:  1140px;
+      --radius:      12px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.7; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* PROGRESS BAR */
+    #progress-bar {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: linear-gradient(90deg, var(--gold), #f97316);
+      z-index: 9999; transition: width .1s linear;
+    }
+
+    /* HEADER */
+    .site-header {
+      background: var(--blue); padding: 0 32px;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,.2);
+    }
+    .site-header__inner {
+      max-width: var(--site-width); margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 80px;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo img { height: 56px; max-width: 180px; width: auto; filter: brightness(0) invert(1); }
+    .logo-divider { width: 1px; height: 32px; background: rgba(255,255,255,.3); }
+    .logo-blog-tag { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,.75); }
+    .header-nav { display: flex; align-items: center; gap: 20px; }
+    .header-nav a { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8); transition: color .2s; }
+    .header-nav a:hover { color: #fff; }
+    .btn-nav { background: var(--gold); color: var(--dark) !important; padding: 8px 18px; border-radius: 8px; font-weight: 700 !important; }
+    .btn-nav:hover { background: #e08c00; }
+
+    /* BREADCRUMB */
+    .breadcrumb { max-width: var(--site-width); margin: 0 auto; padding: 18px 32px 0; font-size: 12px; color: var(--muted); display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--blue); }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* HERO */
+    .hero { position: relative; overflow: hidden; background: var(--blue-deeper); }
+    .hero__image { width: 100%; height: 420px; object-fit: cover; opacity: .35; }
+    .hero__overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(17,24,39,.25) 0%, rgba(17,24,39,.75) 100%); }
+    .hero__content {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      justify-content: center; align-items: flex-start;
+      max-width: var(--site-width); margin: 0 auto; padding: 0 32px;
+      left: 50%; transform: translateX(-50%); width: 100%;
+    }
+    .hero__tag {
+      display: inline-block; background: var(--gold); color: var(--dark);
+      font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 20px; margin-bottom: 18px;
+    }
+    .hero__title {
+      font-family: var(--font-title); font-size: clamp(24px, 4vw, 42px);
+      font-weight: 800; line-height: 1.15; color: var(--white);
+      max-width: 680px; margin-bottom: 16px; letter-spacing: -.5px;
+    }
+    .hero__meta { display: flex; gap: 20px; font-size: 13px; color: rgba(255,255,255,.75); flex-wrap: wrap; }
+    .hero__meta span { display: flex; align-items: center; gap: 5px; }
+
+    /* STAT CARDS */
+    .stats-row {
+      max-width: var(--site-width); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+      padding: 36px 32px 0;
+    }
+    .stat-card {
+      background: var(--white); border-radius: var(--radius);
+      border: 1px solid var(--border); padding: 26px 28px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .stat-card__value { font-family: var(--font-title); font-size: 36px; font-weight: 800; color: var(--blue); line-height: 1; }
+    .stat-card__value.gold { color: var(--gold); }
+    .stat-card__value.green { color: var(--green); }
+    .stat-card__label { font-size: 13px; color: var(--muted); line-height: 1.45; }
+
+    /* LAYOUT */
+    .article-layout {
+      max-width: var(--site-width); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 300px; gap: 48px;
+      padding: 40px 32px 80px; align-items: start;
+    }
+
+    /* ARTICLE BODY */
+    .article-body h2 {
+      font-family: var(--font-title); font-size: 22px; font-weight: 800;
+      color: var(--dark); margin: 40px 0 16px; line-height: 1.3;
+    }
+    .article-body h3 {
+      font-family: var(--font-title); font-size: 17px; font-weight: 700;
+      color: var(--blue-dark); margin: 28px 0 10px;
+    }
+    .article-body p { font-size: 16px; line-height: 1.78; margin-bottom: 18px; }
+    .article-body ul, .article-body ol { padding-left: 22px; margin-bottom: 18px; }
+    .article-body li { font-size: 15px; line-height: 1.7; margin-bottom: 8px; }
+    .article-body strong { color: var(--dark); font-weight: 700; }
+
+    .lead {
+      font-size: 18px; line-height: 1.78; color: var(--muted);
+      border-left: 4px solid var(--blue); padding-left: 20px;
+      margin-bottom: 32px; font-style: italic;
+    }
+
+    /* TABLE */
+    .table-wrap { overflow-x: auto; margin: 28px 0; border-radius: var(--radius); box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+    table { width: 100%; border-collapse: collapse; background: var(--white); font-size: 14px; }
+    thead th {
+      background: var(--blue); color: var(--white);
+      font-family: var(--font-title); font-size: 11px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      padding: 14px 18px; text-align: left;
+    }
+    tbody tr { border-bottom: 1px solid var(--border); }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:nth-child(even) { background: var(--bg); }
+    tbody td { padding: 13px 18px; color: var(--text); vertical-align: middle; line-height: 1.5; }
+    .badge {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px;
+      padding: 3px 9px; border-radius: 20px;
+    }
+    .badge-green { background: var(--green-tint); color: #059669; }
+    .badge-blue { background: var(--blue-tint); color: var(--blue-dark); }
+
+    /* INFO BOX */
+    .info-box {
+      background: var(--blue-tint); border-left: 4px solid var(--blue);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 22px 26px; margin: 28px 0;
+    }
+    .info-box__title { font-family: var(--font-title); font-size: 13px; font-weight: 800; color: var(--blue-dark); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+    .info-box p { font-size: 14px; margin-bottom: 8px; color: var(--text); }
+    .info-box p:last-child { margin-bottom: 0; }
+
+    /* CHECKLIST */
+    .checklist { list-style: none; padding: 0; margin: 20px 0; }
+    .checklist li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 15px; line-height: 1.6; margin-bottom: 12px; color: var(--text);
+    }
+    .checklist li::before {
+      content: "☐";
+      font-size: 18px; color: var(--blue); flex-shrink: 0; margin-top: -2px;
+    }
+
+    /* INLINE CTA */
+    .cta-inline {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-deeper) 100%);
+      border-radius: var(--radius); padding: 32px 36px; margin: 36px 0; text-align: center;
+    }
+    .cta-inline__title { font-family: var(--font-title); font-size: 20px; font-weight: 800; color: var(--white); margin-bottom: 10px; line-height: 1.3; }
+    .cta-inline__sub { font-size: 14px; color: rgba(255,255,255,.8); margin-bottom: 22px; }
+    .cta-inline__btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: var(--dark);
+      font-weight: 800; font-size: 14px; padding: 13px 28px;
+      border-radius: 9px; transition: background .2s;
+    }
+    .cta-inline__btn:hover { background: #e08c00; }
+
+    /* SIDEBAR */
+    .sidebar { display: flex; flex-direction: column; gap: 24px; position: sticky; top: 100px; }
+
+    .toc-box {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px 26px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    }
+    .toc-box__title { font-family: var(--font-title); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-bottom: 16px; }
+    .toc-box nav a {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 13px; color: var(--text); padding: 7px 0;
+      border-bottom: 1px solid var(--border); line-height: 1.45; transition: color .2s;
+    }
+    .toc-box nav a:last-child { border-bottom: none; }
+    .toc-box nav a:hover { color: var(--blue); }
+    .toc-box nav a span { color: var(--blue); font-weight: 700; flex-shrink: 0; font-size: 12px; margin-top: 1px; }
+
+    .sidebar-cta {
+      background: linear-gradient(160deg, var(--blue) 0%, var(--blue-deeper) 100%);
+      border-radius: var(--radius); padding: 28px 26px; text-align: center;
+    }
+    .sidebar-cta__logo { height: 52px; margin: 0 auto 16px; filter: brightness(0) invert(1); }
+    .sidebar-cta__title { font-family: var(--font-title); font-size: 16px; font-weight: 800; color: var(--white); margin-bottom: 10px; line-height: 1.3; }
+    .sidebar-cta__sub { font-size: 13px; color: rgba(255,255,255,.8); margin-bottom: 18px; line-height: 1.55; }
+    .sidebar-cta__btn {
+      display: flex; align-items: center; justify-content: center; gap: 7px;
+      background: var(--gold); color: var(--dark);
+      font-weight: 800; font-size: 13px; padding: 12px 20px;
+      border-radius: 9px; transition: background .2s;
+    }
+    .sidebar-cta__btn:hover { background: #e08c00; }
+
+    .related-box {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px 26px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    }
+    .related-box__title { font-family: var(--font-title); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-bottom: 16px; }
+    .related-box a {
+      display: flex; gap: 12px; padding: 10px 0;
+      border-bottom: 1px solid var(--border); transition: color .2s; align-items: flex-start;
+    }
+    .related-box a:last-child { border-bottom: none; padding-bottom: 0; }
+    .related-box a:hover .related-box__art-title { color: var(--blue); }
+    .related-box__art-img { width: 60px; height: 44px; object-fit: cover; border-radius: 7px; flex-shrink: 0; }
+    .related-box__art-title { font-size: 13px; font-weight: 600; color: var(--dark); line-height: 1.4; }
+
+    /* SHARE BAR */
+    .share-bar {
+      max-width: var(--site-width); margin: 0 auto 48px; padding: 0 32px;
+      display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    }
+    .share-bar__label { font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+    .share-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 13px; font-weight: 700; padding: 9px 18px;
+      border-radius: 8px; border: 1.5px solid var(--border); color: var(--text);
+      transition: all .2s; background: var(--white);
+    }
+    .share-btn:hover { border-color: var(--blue); color: var(--blue); }
+    .share-btn--wa { background: #25D366; color: #fff; border-color: #25D366; }
+    .share-btn--wa:hover { background: #1eb858; border-color: #1eb858; color: #fff; }
+
+    /* AUTHOR BIO */
+    .author-bio {
+      max-width: var(--site-width); margin: 0 auto 72px; padding: 0 32px;
+      background: var(--white); border-radius: var(--radius); border: 1px solid var(--border);
+      padding: 28px 36px; display: flex; gap: 24px; align-items: flex-start;
+    }
+    .author-bio__avatar {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--blue-deeper));
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-family: var(--font-title); font-weight: 800; font-size: 22px;
+      flex-shrink: 0;
+    }
+    .author-bio__name { font-family: var(--font-title); font-size: 15px; font-weight: 800; color: var(--dark); margin-bottom: 4px; }
+    .author-bio__role { font-size: 12px; color: var(--blue); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+    .author-bio__text { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+    /* FOOTER */
+    .site-footer { background: var(--blue-deeper); color: var(--white); text-align: center; padding: 64px 24px 36px; }
+    .site-footer__logo { height: 62px; margin: 0 auto 32px; filter: brightness(0) invert(1); }
+    .site-footer__title { font-family: var(--font-title); font-size: clamp(20px, 4vw, 34px); font-weight: 800; margin-bottom: 14px; line-height: 1.2; }
+    .site-footer__title span { color: var(--gold); }
+    .site-footer__sub { font-size: 15px; color: rgba(255,255,255,.72); max-width: 480px; margin: 0 auto 32px; line-height: 1.65; }
+    .btn-footer {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: var(--dark);
+      font-weight: 800; font-size: 14px; padding: 14px 36px;
+      border-radius: 9px; transition: background .2s, transform .2s;
+    }
+    .btn-footer:hover { background: #e08c00; transform: translateY(-1px); }
+    .site-footer__copy { margin-top: 44px; font-size: 12px; color: rgba(255,255,255,.35); }
+
+    /* FLOATING WHATSAPP */
+    .float-wa {
+      position: fixed; bottom: 28px; right: 28px; z-index: 200;
+      background: #25D366; color: #fff;
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px 22px; border-radius: 50px;
+      font-weight: 700; font-size: 14px;
+      box-shadow: 0 6px 24px rgba(37,211,102,.45);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .float-wa:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(37,211,102,.5); }
+
+    @media (max-width: 960px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .stats-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .hero__image { height: 280px; }
+      .article-layout { padding: 28px 20px 60px; }
+      .breadcrumb { padding: 14px 20px 0; }
+      .share-bar { padding: 0 20px; }
+      .author-bio { flex-direction: column; padding: 24px; }
+      .float-wa span { display: none; }
+      .float-wa { padding: 14px; border-radius: 50%; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="logo">
+      <img src="assets/logo/logo-branco.png" alt="ProSystem Sistemas">
+      <span class="logo-divider"></span>
+      <span class="logo-blog-tag">Blog</span>
+    </a>
+    <nav class="header-nav">
+      <a href="index.html">← Voltar ao blog</a>
+      <a href="https://wa.me/5527997521370" class="btn-nav" target="_blank" rel="noopener">Falar com a equipe</a>
+    </nav>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="index.html">Blog</a>
+  <span>›</span>
+  <span>PDV e Operação</span>
+  <span>›</span>
+  <span>PBM na farmácia</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero__image" src="assets/images/farm-estoque-jaleco.jpg" alt="Farmacêutica de jaleco branco atuando no estoque da farmácia" loading="eager" style="object-position:50% 30%">
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <span class="hero__tag">PDV e Operação</span>
+    <h1 class="hero__title">PBM na farmácia: como funciona e como aumentar o ticket médio com convênios</h1>
+    <div class="hero__meta">
+      <span>📅 27/05/2026</span>
+      <span>⏱ 7 min de leitura</span>
+      <span>✍️ Equipe ProSystem</span>
+    </div>
+  </div>
+</section>
+
+<!-- STAT CARDS -->
+<div class="stats-row">
+  <div class="stat-card">
+    <div class="stat-card__value">43%</div>
+    <div class="stat-card__label">a mais de ticket médio em vendas via PBM versus venda balcão convencional</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-card__value gold">35%</div>
+    <div class="stat-card__label">das vendas em drogarias integradas passam por PBM ou convênio corporativo</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-card__value green">7+</div>
+    <div class="stat-card__label">operadoras de PBM ativas no Brasil com credenciamento aberto para farmácias</div>
+  </div>
+</div>
+
+<!-- LAYOUT ARTIGO + SIDEBAR -->
+<div class="article-layout">
+
+  <article class="article-body">
+
+    <p class="lead">Para muitas farmácias, o PBM ainda é tratado como um diferencial. Na prática, em mercados competitivos, é um requisito mínimo — e quem não se credencia está perdendo uma fatia relevante de faturamento todos os dias.</p>
+
+    <h2 id="o-que-e-pbm">O que é PBM — e por que ele representa uma das maiores oportunidades para sua farmácia</h2>
+
+    <p>PBM (Programa de Benefício em Medicamentos) é um sistema de administração de benefícios farmacêuticos pelo qual empresas, planos de saúde ou operadoras custeiam total ou parcialmente a compra de medicamentos para seus beneficiários.</p>
+
+    <p>Na prática: uma empresa tem 300 funcionários com convênio de medicamentos. Cada funcionário vai a uma farmácia credenciada, apresenta o cartão do benefício e paga apenas a parcela de coparticipação. O restante é faturado diretamente da operadora para a farmácia — em prazo fixo e sem inadimplência.</p>
+
+    <p>Para o dono de farmácia, o PBM representa quatro vantagens concretas:</p>
+
+    <ul>
+      <li><strong>Vendas garantidas</strong> — o beneficiário usa o convênio disponível; a farmácia credenciada está no caminho natural de compra</li>
+      <li><strong>Ticket médio maior</strong> — quando o custo é subsidiado, o paciente compra 30 dias de tratamento em vez de 15, aceita marcas premium e leva os complementos indicados pelo farmacêutico</li>
+      <li><strong>Volume previsível</strong> — medicamentos crônicos geram recorrência mensal quase automática</li>
+      <li><strong>Fidelização involuntária</strong> — o beneficiário só usa o desconto nas farmácias credenciadas da rede</li>
+    </ul>
+
+    <h2 id="principais-operadoras">As principais operadoras de PBM no Brasil</h2>
+
+    <p>Credenciar-se nas operadoras corretas faz diferença. O perfil de cada operadora varia — algumas atendem grandes empresas nacionais, outras focam em PMEs ou benefícios de saúde populares.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Operadora</th>
+            <th>Modalidade principal</th>
+            <th>Cobertura</th>
+            <th>Perfil</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Funcional Health</strong></td>
+            <td>Coparticipação corporativa</td>
+            <td>Nacional</td>
+            <td><span class="badge badge-blue">Grande empresa</span></td>
+          </tr>
+          <tr>
+            <td><strong>Epharma</strong></td>
+            <td>Desconto progressivo + corporate</td>
+            <td>Nacional</td>
+            <td><span class="badge badge-blue">Multi-perfil</span></td>
+          </tr>
+          <tr>
+            <td><strong>Orizon</strong></td>
+            <td>Corporativo + genéricos</td>
+            <td>Nacional</td>
+            <td><span class="badge badge-blue">Saúde corporativa</span></td>
+          </tr>
+          <tr>
+            <td><strong>Careplus</strong></td>
+            <td>Premium corporativo</td>
+            <td>SP / RJ / MG</td>
+            <td><span class="badge badge-blue">Alta renda</span></td>
+          </tr>
+          <tr>
+            <td><strong>TEM Saúde</strong></td>
+            <td>MEI e pequenas empresas</td>
+            <td>Nacional</td>
+            <td><span class="badge badge-green">PME</span></td>
+          </tr>
+          <tr>
+            <td><strong>Wex (Ticket Saúde)</strong></td>
+            <td>Cartão benefício multi-uso</td>
+            <td>Nacional</td>
+            <td><span class="badge badge-green">Amplo acesso</span></td>
+          </tr>
+          <tr>
+            <td><strong>Vidalink</strong></td>
+            <td>RH e benefícios saúde</td>
+            <td>Nacional</td>
+            <td><span class="badge badge-blue">Corporativo</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Para se credenciar, entre em contato diretamente com cada operadora ou verifique se o seu sistema ERP já possui integração nativa — o que reduz drasticamente o tempo de implantação e elimina o retrabalho manual no caixa.</p>
+
+    <h2 id="impacto-ticket">Como o PBM afeta (positivamente) o ticket médio</h2>
+
+    <p>O cliente que compra via PBM tem um comportamento de compra estruturalmente diferente do cliente balcão:</p>
+
+    <ul>
+      <li><strong>Compra mais quantidade</strong> — o co-custo reduzido diminui a resistência em comprar 30 dias de tratamento em vez de 15 comprimidos avulsos</li>
+      <li><strong>Aceita similares e genéricos incluídos no benefício</strong> — aumentando volume sem comprometer margem da farmácia</li>
+      <li><strong>Aproveita para comprar correlatos e higiene pessoal</strong> — o benefício é pago em separado, mas o cliente já está no caixa e tende a incrementar o carrinho</li>
+      <li><strong>Retorna mensalmente</strong> — o ciclo de recorrência do medicamento crônico fideliza automaticamente, sem necessidade de programas de pontos</li>
+    </ul>
+
+    <div class="info-box">
+      <div class="info-box__title">Como funciona no PDV integrado</div>
+      <p>Com integração PBM ativa no sistema, ao digitar o CPF ou passar o cartão do beneficiário, o PDV consulta a elegibilidade em tempo real, aplica o desconto correspondente ao convênio e separa automaticamente o valor da coparticipação (pago pelo cliente) do valor a faturar para a operadora.</p>
+      <p>O farmacêutico não precisa calcular nada manualmente. O sistema registra, gera o voucher e alimenta o contas a receber com o prazo correto de pagamento da operadora.</p>
+    </div>
+
+    <h2 id="erros-comuns">Os erros mais comuns na gestão de PBM</h2>
+
+    <p>Farmácias que trabalham com PBM sem processo estruturado frequentemente enfrentam os mesmos problemas:</p>
+
+    <p><strong>Credenciamento sem integração ao ERP.</strong> A farmácia aceita o cartão mas registra manualmente — abrindo espaço para erros de apuração, glosas (cobranças recusadas pela operadora) e atrasos no recebimento. Uma glosa de 5% sobre o faturamento PBM pode representar milhares de reais por mês.</p>
+
+    <p><strong>Não controlar o prazo de repasse por operadora.</strong> Cada operadora tem prazo diferente: algumas pagam em 7 dias úteis, outras em 28 a 30 dias. Sem visibilidade no financeiro, o fluxo de caixa fica distorcido e o gestor não sabe exatamente quando vai receber.</p>
+
+    <p><strong>Aceitar PBM sem calcular a margem por operadora.</strong> Cada operadora tem tabela de desconto diferente e repassa valor diferente para a farmácia. Sem análise por convênio, a farmácia pode estar subsidiando vendas sem retorno real — especialmente em medicamentos de referência com margem reduzida.</p>
+
+    <p><strong>Não treinar a equipe para identificar o benefício.</strong> Se o atendente não pergunta se o cliente tem convênio, a venda é realizada no balcão e a farmácia perde tanto a oportunidade de processar via PBM quanto os dados de histórico do paciente para gestão de recorrência.</p>
+
+    <h2 id="integracao-erp">Integração PBM × ERP: o que seu sistema precisa entregar</h2>
+
+    <p>Para que o PBM funcione sem retrabalho e sem perda de receita, seu sistema ERP precisa garantir:</p>
+
+    <ul>
+      <li>Consulta de elegibilidade do beneficiário em tempo real no PDV</li>
+      <li>Aplicação automática do desconto da operadora sem intervenção manual</li>
+      <li>Separação do faturamento: balcão vs. convênio vs. PBM na DRE</li>
+      <li>Geração de relatório de glosas e pendências para contestação em prazo</li>
+      <li>Integração ao contas a receber com controle por operadora e data prevista de pagamento</li>
+      <li>Histórico de compras por beneficiário para gestão de recorrência e programa de fidelidade</li>
+    </ul>
+
+    <p>O ProSystem tem módulo PBM nativo, integrado ao PDV e ao financeiro. Na hora da venda, o sistema identifica automaticamente se o medicamento está coberto pelo benefício do cliente, valida e registra o crédito a receber da operadora — sem planilha, sem digitação dupla.</p>
+
+    <div class="cta-inline">
+      <div class="cta-inline__title">Sua farmácia ainda não tem PBM integrado ao sistema?</div>
+      <div class="cta-inline__sub">Nossos consultores mostram como ativar em menos de uma semana — sem migração de dados e sem parar a operação.</div>
+      <a href="https://wa.me/5527997521370?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20integração%20PBM%20no%20ProSystem" class="cta-inline__btn" target="_blank" rel="noopener">
+        Quero ativar o PBM →
+      </a>
+    </div>
+
+    <h2 id="checklist">Checklist: sua farmácia está aproveitando o PBM ao máximo?</h2>
+
+    <p>Responda honestamente. Se você marcou "não" em mais de três itens, há faturamento não capturado acontecendo hoje:</p>
+
+    <ul class="checklist">
+      <li>Estou credenciado em pelo menos 2 operadoras de PBM?</li>
+      <li>Meu PDV identifica automaticamente beneficiários conveniados sem intervenção da equipe?</li>
+      <li>Eu controlo o prazo de repasse de cada operadora no contas a receber?</li>
+      <li>Monitoro a taxa de glosas mensalmente e contesto as pendências dentro do prazo?</li>
+      <li>Minha equipe pergunta sobre convênio em cada atendimento, inclusive para clientes recorrentes?</li>
+      <li>Tenho relatório separando margem por canal — balcão, PBM, convênio corporativo?</li>
+      <li>Meu ERP lança automaticamente o recebível da operadora no contas a receber?</li>
+    </ul>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="toc-box">
+      <div class="toc-box__title">Neste artigo</div>
+      <nav>
+        <a href="#o-que-e-pbm"><span>01</span> O que é PBM e por que importa</a>
+        <a href="#principais-operadoras"><span>02</span> Principais operadoras no Brasil</a>
+        <a href="#impacto-ticket"><span>03</span> Como o PBM eleva o ticket médio</a>
+        <a href="#erros-comuns"><span>04</span> Erros comuns na gestão de PBM</a>
+        <a href="#integracao-erp"><span>05</span> Integração PBM × ERP</a>
+        <a href="#checklist"><span>06</span> Checklist de aproveitamento</a>
+      </nav>
+    </div>
+
+    <div class="sidebar-cta">
+      <img class="sidebar-cta__logo" src="assets/logo/logo-branco.png" alt="ProSystem Sistemas">
+      <div class="sidebar-cta__title">Integre PBM ao seu PDV hoje</div>
+      <p class="sidebar-cta__sub">O ProSystem conecta sua farmácia às principais operadoras. Sem planilha, sem retrabalho — tudo no mesmo sistema.</p>
+      <a href="https://wa.me/5527997521370?text=Olá!%20Quero%20saber%20sobre%20a%20integração%20PBM%20no%20ProSystem" class="sidebar-cta__btn" target="_blank" rel="noopener">
+        Falar com especialista →
+      </a>
+    </div>
+
+    <div class="related-box">
+      <div class="related-box__title">Leia também</div>
+      <a href="pdv-rapido-fila-caixa-faturamento-farmacia.html">
+        <img class="related-box__art-img" src="https://images.pexels.com/photos/8657294/pexels-photo-8657294.jpeg?auto=compress&cs=tinysrgb&w=120" alt="PDV rápido">
+        <span class="related-box__art-title">PDV rápido x fila do caixa: o que muda no faturamento</span>
+      </a>
+      <a href="precificacao-farmacia-markup-margem-lucratividade.html">
+        <img class="related-box__art-img" src="https://images.pexels.com/photos/19471013/pexels-photo-19471013.jpeg?auto=compress&cs=tinysrgb&w=120" alt="Precificação farmácia">
+        <span class="related-box__art-title">Precificação: como calcular markup e margem sem perder lucratividade</span>
+      </a>
+      <a href="controle-estoque-farmacia-evitar-perdas-vencimento.html">
+        <img class="related-box__art-img" src="https://images.pexels.com/photos/8657287/pexels-photo-8657287.jpeg?auto=compress&cs=tinysrgb&w=120" alt="Controle de estoque">
+        <span class="related-box__art-title">Controle de estoque: como evitar perdas por vencimento</span>
+      </a>
+      <a href="sngpc-farmacia-como-evitar-multa-2026.html">
+        <img class="related-box__art-img" src="https://images.pexels.com/photos/8657287/pexels-photo-8657287.jpeg?auto=compress&cs=tinysrgb&w=120" alt="SNGPC farmácia">
+        <span class="related-box__art-title">SNGPC 2026: como evitar multa e manter a conformidade</span>
+      </a>
+    </div>
+
+  </aside>
+</div>
+
+<!-- SHARE BAR -->
+<div class="share-bar">
+  <span class="share-bar__label">Compartilhar:</span>
+  <a class="share-btn share-btn--wa" href="https://wa.me/?text=PBM%20na%20farmácia%3A%20como%20aumentar%20o%20ticket%20médio%20com%20convênios%20https%3A%2F%2Fprosystemnet.com%2Fblog%2Fpbm-farmacia-como-aumentar-ticket-medio-convenios.html" target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.994 0C5.368 0 0 5.368 0 11.994c0 2.122.558 4.116 1.529 5.845L0 24l6.347-1.493A11.928 11.928 0 0 0 11.994 24C18.62 24 24 18.632 24 11.994 24 5.368 18.62 0 11.994 0zm0 21.818a9.815 9.815 0 0 1-5.007-1.365l-.357-.213-3.762.985.998-3.666-.233-.376A9.801 9.801 0 0 1 2.182 12c0-5.413 4.407-9.818 9.812-9.818 5.413 0 9.824 4.405 9.824 9.818 0 5.407-4.411 9.818-9.824 9.818z"/></svg>
+    WhatsApp
+  </a>
+  <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fprosystemnet.com%2Fblog%2Fpbm-farmacia-como-aumentar-ticket-medio-convenios.html" target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    LinkedIn
+  </a>
+  <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fprosystemnet.com%2Fblog%2Fpbm-farmacia-como-aumentar-ticket-medio-convenios.html" target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    Facebook
+  </a>
+</div>
+
+<!-- AUTHOR BIO -->
+<div class="author-bio" style="max-width: 1140px; margin: 0 auto 72px; padding: 28px 36px;">
+  <div class="author-bio__avatar">P</div>
+  <div>
+    <div class="author-bio__name">Equipe ProSystem Sistemas</div>
+    <div class="author-bio__role">Especialistas em ERP para Farmácias e Drogarias</div>
+    <p class="author-bio__text">Com mais de 16 anos de experiência no setor farmacêutico, a equipe ProSystem produz conteúdo prático sobre gestão, conformidade e tecnologia para donos de farmácia, gestores e farmacêuticos responsáveis em todo o Brasil.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <img class="site-footer__logo" src="assets/logo/logo-branco.png" alt="ProSystem Sistemas">
+  <div class="site-footer__title">Sua farmácia merece <span>menos burocracia</span></div>
+  <p class="site-footer__sub">ERP integrado para farmácias e drogarias. SNGPC, NF-e, PDV e PBM no mesmo sistema, com suporte 24/7.</p>
+  <a href="https://wa.me/5527997521370" class="btn-footer" target="_blank" rel="noopener">Falar no WhatsApp →</a>
+  <div class="site-footer__copy">© 2026 ProSystem Sistemas — Todos os direitos reservados</div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a class="float-wa" href="https://wa.me/5527997521370?text=Olá!%20Li%20o%20artigo%20sobre%20PBM%20e%20quero%20saber%20mais%20sobre%20o%20ProSystem" target="_blank" rel="noopener">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.994 0C5.368 0 0 5.368 0 11.994c0 2.122.558 4.116 1.529 5.845L0 24l6.347-1.493A11.928 11.928 0 0 0 11.994 24C18.62 24 24 18.632 24 11.994 24 5.368 18.62 0 11.994 0zm0 21.818a9.815 9.815 0 0 1-5.007-1.365l-.357-.213-3.762.985.998-3.666-.233-.376A9.801 9.801 0 0 1 2.182 12c0-5.413 4.407-9.818 9.812-9.818 5.413 0 9.824 4.405 9.824 9.818 0 5.407-4.411 9.818-9.824 9.818z"/></svg>
+  <span>Fale com a equipe</span>
+</a>
+
+<script>
+  const bar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    const scrollHeight = doc.scrollHeight - doc.clientHeight;
+    bar.style.width = scrollHeight > 0 ? (scrollTop / scrollHeight * 100) + '%' : '0%';
+  });
+</script>
+</body>
+</html>

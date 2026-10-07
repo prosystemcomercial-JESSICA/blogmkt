@@ -1,0 +1,68 @@
+.psb-home { --navy:#0A2E87; --navy-deep:#071F5E; --cyan:#11B8FF; --orange:#F58220; --whats:#1DA851; --whats-dark:#168A42;
+  --ink:#101828; --text:#344054; --muted:#667085; --rule:#E4E7EC; --paper:#FFFFFF; --sand:#F8F7F4;
+  --serif:"Source Serif 4", Georgia, serif; --sans:"Source Sans 3","Segoe UI",system-ui,sans-serif; color-scheme: light; }
+.psb-home * { box-sizing:border-box; }
+.psb-home { margin:0; background:var(--paper); color:var(--text); font-family:var(--sans); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased; }
+.psb-home img { max-width:100%; height:auto; display:block; }
+.psb-home a { color:inherit; }
+.psb-home :focus-visible { outline:3px solid var(--cyan); outline-offset:3px; }
+.psb-home .topo__in { max-width:1120px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.psb-home .botao { display:inline-flex; align-items:center; gap:10px; font-weight:700; font-size:16px; text-decoration:none; padding:12px 18px; border-radius:6px; background:var(--whats); color:#fff !important; white-space:nowrap; transition:background-color .2s ease; }
+.psb-home .botao:hover { background:var(--whats-dark); }
+.psb-home .botao--peq { font-size:15px; padding:9px 14px; }
+.psb-home .abre { display:grid; gap:10px; padding-bottom:26px; border-bottom:2px solid var(--ink); }
+.psb-home .chamada { font-weight:700; color:var(--navy); font-size:15px; }
+.psb-home .chamada::before { content:""; display:inline-block; width:10px; height:10px; background:var(--cyan); margin-right:8px; vertical-align:1px; }
+.psb-home h1 { font-family:var(--serif); color:var(--ink); font-size:clamp(34px,5vw,54px); line-height:1.08; margin:0; letter-spacing:-.01em; text-wrap:balance; }
+.psb-home .abre p { margin:0; font-size:20px; color:var(--muted); max-width:60ch; }
+.psb-home .destaque a { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:32px; align-items:center; padding:30px 0; border-bottom:1px solid var(--rule); text-decoration:none; }
+.psb-home .destaque img { border-radius:4px; }
+.psb-home .destaque .rotulo { display:inline-block; font-size:13px; font-weight:700; color:#fff; background:var(--orange); padding:3px 8px; border-radius:3px; margin-right:8px; }
+.psb-home .destaque h2 { font-family:var(--serif); color:var(--ink); font-size:clamp(26px,3.2vw,36px); line-height:1.15; margin:10px 0 12px; text-wrap:balance; }
+.psb-home .destaque p { margin:0 0 12px; font-size:18px; }
+.psb-home .destaque a:hover h2, .psb-home .card a:hover h3 { text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:2px; }
+.psb-home .filtro { display:flex; flex-wrap:wrap; gap:8px; align-items:center; padding:24px 0 8px; }
+.psb-home .filtro span { font-weight:700; color:var(--ink); margin-right:6px; }
+.psb-home .filtro button { font:inherit; font-size:15px; font-weight:700; padding:7px 14px; border-radius:4px; border:1px solid var(--rule); background:var(--paper); color:var(--text); cursor:pointer; }
+.psb-home .filtro button[aria-pressed="true"] { background:var(--navy); border-color:var(--navy); color:#fff; }
+.psb-home .grade { list-style:none; margin:0; padding:18px 0 0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:36px 28px; }
+.psb-home .card[hidden] { display:none; }
+.psb-home .card a { display:grid; gap:8px; text-decoration:none; }
+.psb-home .card img { border-radius:4px; margin-bottom:6px; }
+.psb-home .card__cat { font-size:14px; font-weight:700; color:var(--navy); }
+.psb-home .card h3 { font-family:var(--serif); color:var(--ink); font-size:21px; line-height:1.25; margin:0; text-wrap:balance; }
+.psb-home .card p { margin:0; font-size:16px; line-height:1.55; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.psb-home .card__meta { font-size:14px; color:var(--muted); }
+.psb-home .faixa { margin:56px 0 0; background:var(--navy-deep); color:rgba(255,255,255,.82); border-radius:6px; padding:32px; display:flex; flex-wrap:wrap; gap:20px 32px; align-items:center; justify-content:space-between; }
+.psb-home .faixa b { display:block; font-family:var(--serif); color:#fff; font-size:26px; line-height:1.25; margin-bottom:6px; }
+.psb-home .faixa p { margin:0; max-width:52ch; }
+@media (max-width:900px) {
+.psb-home .grade { grid-template-columns:1fr 1fr; }
+.psb-home .destaque a { grid-template-columns:1fr; gap:18px; }
+}
+@media (max-width:620px) {
+.psb-home .grade { grid-template-columns:1fr; }
+.psb-home .nav a:not(.botao) { display:none; }
+.psb-home .marca span { display:none; }
+.psb-home main { padding:28px 16px 16px; }
+.psb-home .faixa { padding:24px 20px; }
+.psb-home .abre p { font-size:18px; }
+}
+
+.psb-home table, .psb-home th, .psb-home td { border: 0; background: none; }
+.psb-home table tbody > tr:nth-child(odd) > td, .psb-home table tbody > tr:nth-child(odd) > th { background-color: transparent; }
+.psb-home table caption { caption-side: top; }
+.psb-home button, .psb-home button:hover, .psb-home button:focus { text-transform: none; letter-spacing: normal; }
+.psb-home label { line-height: inherit; vertical-align: baseline; }
+.psb-home h1, .psb-home h2, .psb-home h3 { font-weight: 700; letter-spacing: normal; text-transform: none; }
+.psb-home p { margin-block-start: 0; }
+.psb-home a:hover, .psb-home a:active { color: inherit; }
+
+.psb-home { max-width: 1120px; margin: 0 auto; padding: 0 20px 24px; }
+.psb-home .filtro button { border: 1px solid var(--rule); color: var(--text); background: var(--paper); padding: 7px 14px; border-radius: 4px; }
+.psb-home .filtro button:hover, .psb-home .filtro button:focus { background: var(--paper); color: var(--navy); border-color: var(--navy); }
+.psb-home .filtro button[aria-pressed="true"], .psb-home .filtro button[aria-pressed="true"]:hover, .psb-home .filtro button[aria-pressed="true"]:focus { background: var(--navy); border-color: var(--navy); color: #fff; }
+.psb-home .card a, .psb-home .card a:hover, .psb-home .destaque a, .psb-home .destaque a:hover { color: inherit; }
+.psb-home .botao, .psb-home .botao:hover { color: #fff; }
+.psb-home .card img, .psb-home .destaque img { width: 100%; height: auto; aspect-ratio: 1200 / 630; object-fit: cover; }
+@media (max-width:620px) { .psb-home { padding: 0 16px 16px; } }
