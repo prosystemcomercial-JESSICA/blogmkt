@@ -5,3 +5,11 @@ node_modules/
 squads/*/state.json
 squads/*/state.json.tmp
 squads/*/output/
+
+# Configurações locais do Claude Code (contêm chaves de acesso; nunca versionar)
+.claude/settings.json
+.claude/settings.local.json
+
+# Pacotes temporários gerados para enviar ao servidor
+*.tgz
+__pycache__/
