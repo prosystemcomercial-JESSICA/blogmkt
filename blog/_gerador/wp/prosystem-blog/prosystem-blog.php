@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ProSystem Blog
  * Description: Visual editorial do blog ProSystem (artigos e página do blog) feito por código, sem depender dos modelos do Elementor. Desative para voltar aos modelos do Elementor.
- * Version: 1.1.1
+ * Version: 1.2.1
  * Author: ProSystem Sistemas
  * Text Domain: prosystem-blog
  *
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'PSB_VERSAO', '1.1.1' );
+define( 'PSB_VERSAO', '1.2.1' );
 define( 'PSB_URL', plugin_dir_url( __FILE__ ) );
 define( 'PSB_DIR', plugin_dir_path( __FILE__ ) );
 define( 'PSB_WHATS', '5527997521370' );
@@ -48,15 +48,65 @@ function psb_home_ativa() {
  * ou em pré-visualização para quem pode editar (?psb_v3=1).
  */
 function psb_v3() {
-	return '3' === get_option( 'psb_visual', '' ) || ( isset( $_GET['psb_v3'] ) && current_user_can( 'edit_posts' ) ); // phpcs:ignore WordPress.Security.NonceVerification
+	return '' !== psb_versao();
+}
+
+/**
+ * Versão do visual em uso: '4' (tecnológico, largura fluida), '3' (blog profissional) ou '' (anterior).
+ * Administradores podem pré-visualizar com ?psb_v4=1 ou ?psb_v3=1.
+ */
+function psb_versao() {
+	static $v = null;
+	if ( null !== $v ) {
+		return $v;
+	}
+	$editor = function_exists( 'current_user_can' ) && current_user_can( 'edit_posts' );
+	if ( $editor && isset( $_GET['psb_v4'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
+		$v = '4';
+	} elseif ( $editor && isset( $_GET['psb_v3'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
+		$v = '3';
+	} else {
+		$opt = (string) get_option( 'psb_visual', '' );
+		$v   = in_array( $opt, array( '3', '4' ), true ) ? $opt : '';
+	}
+	return $v;
 }
 
 /** Em pré-visualização, mantém o parâmetro nos links internos. */
 function psb_link( $url ) {
-	if ( '3' !== get_option( 'psb_visual', '' ) && isset( $_GET['psb_v3'] ) && current_user_can( 'edit_posts' ) ) { // phpcs:ignore WordPress.Security.NonceVerification
-		return add_query_arg( 'psb_v3', '1', $url );
+	if ( ! current_user_can( 'edit_posts' ) ) {
+		return $url;
+	}
+	foreach ( array( 'psb_v4', 'psb_v3' ) as $param ) {
+		if ( isset( $_GET[ $param ] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
+			return add_query_arg( $param, '1', $url );
+		}
 	}
 	return $url;
+}
+
+/** Ícones finos por tema (traço simples, cor do texto). */
+function psb_icone_tema( $slug ) {
+	$caminhos = array(
+		'farmacia' => '<path d="M10.5 20.5l-7-7a4.95 4.95 0 1 1 7-7l7 7a4.95 4.95 0 1 1-7 7z"/><path d="M8.5 8.5l7 7"/>',
+		'padaria'  => '<path d="M5 11a7 4.5 0 0 1 14 0v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"/><path d="M9 9.5v3M12 9v3M15 9.5v3"/>',
+		'gestao'   => '<path d="M3 20h18"/><path d="M6 16v-5M11 16V7M16 16v-8M21 4l-5 4-5-3-5 4"/>',
+		'todos'    => '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
+	);
+	if ( ! isset( $caminhos[ $slug ] ) ) {
+		return '';
+	}
+	return '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' . $caminhos[ $slug ] . '</svg>';
+}
+
+function psb_icone( $nome ) {
+	$c = array(
+		'busca'      => '<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>',
+		'calendario' => '<rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
+		'relogio'    => '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
+		'seta'       => '<path d="M5 12h14M13 6l6 6-6 6"/>',
+	);
+	return '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' . $c[ $nome ] . '</svg>';
 }
 
 /** Listagens no visual v3: página do blog, temas do blog novo e busca. */
@@ -73,10 +123,11 @@ add_filter(
 	'template_include',
 	function ( $template ) {
 		if ( is_singular( 'post' ) && psb_eh_post_psb() ) {
-			return PSB_DIR . ( psb_v3() ? 'templates/single-v3.php' : 'templates/single-psb.php' );
+			$arquivo = array( '4' => 'single-v4.php', '3' => 'single-v3.php' );
+			return PSB_DIR . 'templates/' . ( $arquivo[ psb_versao() ] ?? 'single-psb.php' );
 		}
 		if ( psb_lista_v3() ) {
-			return PSB_DIR . 'templates/lista-v3.php';
+			return PSB_DIR . 'templates/' . ( '4' === psb_versao() ? 'lista-v4.php' : 'lista-v3.php' );
 		}
 		if ( psb_home_ativa() ) {
 			return PSB_DIR . 'templates/home-psb.php';
@@ -114,8 +165,11 @@ add_action(
 			return;
 		}
 		if ( psb_v3() ) {
-			wp_enqueue_style( 'psb-fontes3', 'https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap', array(), null );
+			wp_enqueue_style( 'psb-fontes3', 'https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@500;600&display=swap', array(), null );
 			wp_enqueue_style( 'psb-blog', PSB_URL . 'assets/blog.css', array(), PSB_VERSAO );
+			if ( '4' === psb_versao() ) {
+				wp_enqueue_style( 'psb-blog4', PSB_URL . 'assets/blog4.css', array( 'psb-blog' ), PSB_VERSAO );
+			}
 			if ( $single ) {
 				wp_enqueue_script( 'psb', PSB_URL . 'assets/psb.js', array(), PSB_VERSAO, true );
 			}
@@ -175,6 +229,34 @@ function psb_data( $post_id ) {
 function psb_link_post( $p ) {
 	$p = get_post( $p );
 	return psb_link( 'publish' === $p->post_status ? get_permalink( $p ) : get_preview_post_link( $p ) );
+}
+
+/** Cartão de artigo do visual v4: etiqueta sobre a foto, rodapé com data, tempo e "Ler". */
+function psb_card4( $p ) {
+	$p    = get_post( $p );
+	$cat  = psb_categoria( $p->ID );
+	$link = psb_link_post( $p );
+	ob_start();
+	?>
+	<li class="card" data-cat="<?php echo esc_attr( $cat ? $cat->slug : '' ); ?>">
+		<a class="card__img" href="<?php echo esc_url( $link ); ?>" tabindex="-1" aria-hidden="true">
+			<?php echo psb_capa_html( $p->ID, 'medium_large', array( 'loading' => 'lazy' ) ); // phpcs:ignore ?>
+			<?php if ( $cat ) : ?>
+				<span class="tag"><?php echo psb_icone_tema( $cat->slug ); // phpcs:ignore ?>&nbsp;<?php echo esc_html( $cat->name ); ?></span>
+			<?php endif; ?>
+		</a>
+		<div class="card__txt">
+			<h3><a href="<?php echo esc_url( $link ); ?>"><?php echo esc_html( get_the_title( $p ) ); ?></a></h3>
+			<p><?php echo esc_html( get_the_excerpt( $p ) ); ?></p>
+			<div class="meta">
+				<span class="item"><?php echo psb_icone( 'calendario' ); // phpcs:ignore ?><?php echo esc_html( get_the_date( 'd/m/Y', $p ) ); ?></span>
+				<span class="item"><?php echo psb_icone( 'relogio' ); // phpcs:ignore ?><?php echo (int) psb_minutos( $p->ID ); ?> min</span>
+				<span class="ler" aria-hidden="true">Ler <?php echo psb_icone( 'seta' ); // phpcs:ignore ?></span>
+			</div>
+		</div>
+	</li>
+	<?php
+	return ob_get_clean();
 }
 
 /** Cartão de artigo usado na página do blog e nos relacionados. */
