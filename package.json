@@ -1,0 +1,24 @@
+{
+  "name": "mkt-reuniao-1",
+  "version": "1.0.0",
+  "description": "Blog Prosystem para automatizar mkt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prosystemcomercial-JESSICA/blogmkt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/prosystemcomercial-JESSICA/blogmkt/issues"
+  },
+  "homepage": "https://github.com/prosystemcomercial-JESSICA/blogmkt#readme",
+  "dependencies": {
+    "puppeteer": "^25.1.0"
+  }
+}

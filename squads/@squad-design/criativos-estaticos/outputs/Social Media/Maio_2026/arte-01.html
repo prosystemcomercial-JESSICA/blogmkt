@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      font-family: 'Montserrat', sans-serif;
+      background: #1D3A5F;
+      position: relative;
+    }
+
+    /* Imagem de fundo */
+    .zone-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .zone-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+
+    /* Overlay azul profundo */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        170deg,
+        rgba(29, 58, 95, 0.88) 0%,
+        rgba(29, 58, 95, 0.72) 40%,
+        rgba(29, 58, 95, 0.92) 100%
+      );
+      z-index: 1;
+    }
+
+    /* Logo */
+    .zone-logo {
+      position: absolute;
+      top: 64px;
+      left: 108px;
+      z-index: 3;
+    }
+
+    .zone-logo img {
+      height: 64px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+    }
+
+    /* Linha decorativa branca vertical */
+    .accent-line {
+      position: absolute;
+      left: 72px;
+      top: 290px;
+      width: 6px;
+      height: 200px;
+      background: #FFFFFF;
+      border-radius: 3px;
+      z-index: 2;
+      opacity: 0.6;
+    }
+
+    /* Eyebrow */
+    .zone-eyebrow {
+      position: absolute;
+      top: 234px;
+      left: 108px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.65);
+      z-index: 3;
+    }
+
+    /* Headline protagonista */
+    .zone-headline {
+      position: absolute;
+      top: 278px;
+      left: 108px;
+      right: 108px;
+      font-size: 92px;
+      font-weight: 900;
+      line-height: 1.02;
+      color: #FFFFFF;
+      z-index: 3;
+      text-shadow: 0 4px 24px rgba(0,0,0,0.35);
+    }
+
+    /* Divisor branco */
+    .divider {
+      position: absolute;
+      top: 650px;
+      left: 108px;
+      width: 80px;
+      height: 4px;
+      background: rgba(255,255,255,0.5);
+      border-radius: 2px;
+      z-index: 3;
+    }
+
+    /* Subheadline */
+    .zone-subheadline {
+      position: absolute;
+      top: 694px;
+      left: 108px;
+      right: 108px;
+      font-family: 'Inter', sans-serif;
+      font-size: 34px;
+      font-weight: 400;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.82);
+      z-index: 3;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+
+    /* CTA */
+    .zone-cta {
+      position: absolute;
+      bottom: 112px;
+      left: 108px;
+      display: inline-block;
+      background: #FFFFFF;
+      color: #1D3A5F;
+      font-family: 'Inter', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      padding: 18px 44px;
+      border-radius: 9px;
+      z-index: 3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="zone-bg">
+    <img src="{{IMG_01}}" alt="">
+  </div>
+  <div class="overlay"></div>
+  <div class="accent-line"></div>
+
+  <div class="zone-logo">
+    <img src="../../../_assets/logo-light.png" alt="ProSystem Sistemas">
+  </div>
+
+  <div class="zone-eyebrow">GestÃ£o de farmÃ¡cia</div>
+
+  <div class="zone-headline">Fila no caixa nÃ£o deixa rastro</div>
+
+  <div class="divider"></div>
+
+  <div class="zone-subheadline">O cliente que desistiu nÃ£o reclama.<br>Simplesmente nÃ£o volta na semana seguinte.</div>
+
+  <div class="zone-cta">Comenta se isso acontece</div>
+
+</body>
+</html>

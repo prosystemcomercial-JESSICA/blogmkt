@@ -1,0 +1,355 @@
+# ExpxAgents — Arte Estática Feed — Templates Catalog
+#
+# ─── O que é este arquivo ───────────────────────────────────────────────
+# Biblioteca de templates HTML "puros" — estrutura, zonas e proporções,
+# sem identidade visual aplicada. Gerados automaticamente pelo Banguela
+# toda vez que uma arte é aprovada pelo avaliador (step-05 do pipeline).
+#
+# ─── Regras do catálogo ─────────────────────────────────────────────────
+# 1. Felipe Torres consulta este catálogo ANTES de criar spec do zero.
+# 2. Nasce um template novo por cada run aprovada.
+# 3. Cooldown por cliente: não reusar mesmo `template_id` para mesmo
+#    cliente dentro de `cooldown_days` (default 30 dias).
+# 4. Nunca rodar 2 artes consecutivas do mesmo cliente no mesmo
+#    `layout_letter` — Felipe deve variar entre A-I.
+# 5. Alfandega consulta o catálogo para avaliar "Erro D — diversidade
+#    visual" contra as últimas entregas daquele cliente.
+
+config:
+  default_cooldown_days: 30
+  max_consecutive_same_layout_per_client: 1
+
+templates:
+  - id: t01-fullbleed-overlay
+    file: templates/t01-fullbleed-overlay.html
+    layout: FullBleed com overlay
+    layout_letter: H
+    tags: [fullbleed, overlay, gradiente, atmosférico, foto-fundo, narrativa]
+    zones: [zone-image, zone-logo, zone-pre-headline, zone-headline, zone-subheadline, zone-cta]
+    when_to_use: >
+      Copy de autoridade, storytelling ou posicionamento de marca. Imagem tem boa qualidade
+      fotográfica e suporta overlay escuro sem perder impacto. Headline curta a média.
+    when_NOT_to_use: >
+      Copy longo ou com lista. Imagem muito escura. CTA muito detalhado.
+    created_at: "2026-05-07"
+    created_from:
+      run: biblioteca-inicial
+      client: base
+      copy_theme: autoridade-narrativa
+    used_by: []
+
+  - id: t02-split-imagem-topo
+    file: templates/t02-split-imagem-topo.html
+    layout: Split horizontal — imagem topo
+    layout_letter: B
+    tags: [split, horizontal, imagem-topo, produto, conceito, educativo]
+    zones: [zone-image, zone-logo, zone-pre-headline, zone-headline, zone-subheadline, zone-cta]
+    when_to_use: >
+      Copy educativo, de produto ou conceitual. Imagem ilustra visualmente o tema sem precisar
+      de contexto do texto. Ideal para mostrar resultado, produto ou cena específica no topo.
+    when_NOT_to_use: >
+      Imagem panorâmica que perde impacto em metade do frame. Copy muito curto.
+    created_at: "2026-05-07"
+    created_from:
+      run: biblioteca-inicial
+      client: base
+      copy_theme: educativo-produto
+    used_by: []
+
+  - id: t03-tipografico-puro
+    file: templates/t03-tipografico-puro.html
+    layout: Tipográfico puro
+    layout_letter: F
+    tags: [tipografico, sem-imagem, fundo-solido, texto-protagonista, citacao, destaque]
+    zones: [zone-logo, zone-pre-headline, zone-headline, zone-subheadline, zone-cta]
+    when_to_use: >
+      Copy poderoso que não precisa de imagem. Citações, declarações, estatísticas, promessas de valor.
+      Headline rica o suficiente para ser o elemento visual principal. Thiago indicou Layout F.
+    when_NOT_to_use: >
+      Copy fraco ou genérico. Público que responde mais a conteúdo visual.
+    created_at: "2026-05-07"
+    created_from:
+      run: biblioteca-inicial
+      client: base
+      copy_theme: posicionamento-citacao
+    used_by: []
+
+  - id: t04-split-vertical
+    file: templates/t04-split-vertical.html
+    layout: Split vertical
+    layout_letter: E
+    tags: [split, vertical, imagem-lateral, depoimento, pessoa, rosto]
+    zones: [zone-image, zone-logo, zone-pre-headline, zone-headline, zone-subheadline, zone-cta]
+    when_to_use: >
+      Imagem com pessoa ou figura vertical. Depoimentos, cases, humanização de marca.
+      Copy médio que precisa de espaço lateral.
+    when_NOT_to_use: >
+      Imagem paisagística. Copy muito longo. Headline acima de 6 palavras longas.
+    created_at: "2026-05-07"
+    created_from:
+      run: biblioteca-inicial
+      client: base
+      copy_theme: depoimento-pessoa
+    used_by: []
+
+  - id: t05-fullbleed-atmosferico
+    file: templates/t05-fullbleed-atmosferico.html
+    layout: FullBleed atmosférico
+    layout_letter: A
+    tags: [fullbleed, atmosferico, overlay-sutil, pessoa, autoridade, lifestyle]
+    zones: [zone-image, zone-logo, zone-tag, zone-pre-headline, zone-headline, zone-subheadline, zone-cta]
+    when_to_use: >
+      Imagem de pessoa em contexto, fotografia lifestyle ou de ambiente. Copy de autoridade pessoal,
+      posicionamento de líder, conteúdo aspiracional.
+    when_NOT_to_use: >
+      Imagem muito escura ou clara sem contraste para texto. Copy longo ou técnico.
+    created_at: "2026-05-07"
+    created_from:
+      run: biblioteca-inicial
+      client: base
+      copy_theme: autoridade-lifestyle
+    used_by: []
+
+  - id: t06-tipografico-destaque-numerico
+    file: templates/t06-tipografico-destaque-numerico.html
+    layout: Tipográfico puro com destaque numérico inline
+    layout_letter: F
+    tags: [tipografico, sem-imagem, destaque-numerico, promessa-valor, fundo-solido, bloco-central, corporativo-b2b]
+    zones: [zone-logo, zone-pre-headline, zone-headline, zone-subheadline, zone-cta]
+    when_to_use: >
+      Copy com número ou palavra-chave de alto impacto que merece isolamento em linha própria
+      (ex: "10x mais", "R$1M", "100%"). Promessa de valor direta e forte. Público B2B.
+      Headline curta a média com âncora numérica ou declarativa.
+    when_NOT_to_use: >
+      Copy sem elemento numérico ou palavra-chave de destaque. Copy longo ou técnico.
+      Tom casual/lúdico. Quando imagem for disponível e amplificar a mensagem.
+    created_at: "2026-05-07"
+    created_from:
+      run: biblioteca-inicial
+      client: base
+      copy_theme: promessa-valor-numerico
+    used_by: []
+
+  - id: t07-split-vertical-destaque
+    file: templates/t07-split-vertical-destaque.html
+    layout: Split vertical com destaque inline na headline
+    layout_letter: E
+    tags: [split, vertical, imagem-lateral, destaque-inline, social-proof, numero-ancora, pessoa, corporativo-b2b]
+    zones: [zone-image, zone-logo, zone-pre-headline, zone-headline, zone-headline-destaque, zone-subheadline, zone-cta]
+    when_to_use: >
+      Imagem de pessoa real (vertical). Copy com elemento de destaque no início da headline
+      (número, estatística, palavra-chave âncora) que deve ser isolado em cor accent.
+      Social proof, resultados numéricos, autoridade com humanização. Público B2B.
+    when_NOT_to_use: >
+      Headline sem âncora de destaque. Imagem paisagística. Copy muito longo (acima de 10 palavras na headline).
+      Tom casual/lúdico.
+    created_at: "2026-05-07"
+    created_from:
+      run: biblioteca-inicial
+      client: base
+      copy_theme: social-proof-numerico
+    used_by: []
+
+  - id: t08-citacao-depoimento
+    file: templates/t08-citacao-depoimento.html
+    layout: Citação / depoimento
+    layout_letter: F
+    tags: [tipografico, citacao, depoimento, aspas, social-proof, fundo-solido]
+    zones: [zone-logo, zone-quote, zone-headline, zone-autor, zone-cta]
+    when_to_use: >
+      Depoimento de cliente, citação de autoridade ou frase de impacto entre aspas.
+      Copy curto e direto. O texto é o elemento visual principal.
+    when_NOT_to_use: >
+      Copy sem personagem identificado. Headline sem elemento de citação direta.
+    created_at: "2026-05-07"
+    created_from:
+      run: biblioteca-inicial
+      client: base
+      copy_theme: depoimento-citacao
+    used_by: []
+
+  - id: t09-lista-bullets
+    file: templates/t09-lista-bullets.html
+    layout: Lista com bullets
+    layout_letter: F
+    tags: [tipografico, lista, bullets, features, checklist, educativo]
+    zones: [zone-logo, zone-pre-headline, zone-headline, zone-list, zone-cta]
+    when_to_use: >
+      Copy com 3 a 5 itens de lista (features, erros, dicas, passos). Conteúdo educativo
+      ou de valor. Público que responde a estrutura e organização visual.
+    when_NOT_to_use: >
+      Copy com apenas 1-2 pontos. Mensagem emocional que precisa de imagem para impacto.
+    created_at: "2026-05-07"
+    created_from:
+      run: biblioteca-inicial
+      client: base
+      copy_theme: lista-features
+    used_by: []
+
+  - id: t10-produto-preco
+    file: templates/t10-produto-preco.html
+    layout: Produto com preço em destaque
+    layout_letter: G
+    tags: [produto, preco, oferta, comercial, destaque-numerico, imagem-centralizada]
+    zones: [zone-image, zone-logo, zone-produto, zone-preco, zone-beneficio, zone-cta]
+    when_to_use: >
+      Oferta de produto com preço ou promoção em destaque. Imagem do produto centralizada.
+      Copy comercial direto com chamada para ação clara.
+    when_NOT_to_use: >
+      Copy de autoridade ou posicionamento. Sem produto ou oferta específica.
+    created_at: "2026-05-07"
+    created_from:
+      run: biblioteca-inicial
+      client: base
+      copy_theme: produto-oferta
+    used_by: []
+
+  - id: t11-antes-depois
+    file: templates/t11-antes-depois.html
+    layout: Antes e depois
+    layout_letter: I
+    tags: [antes-depois, transformacao, resultado, comparacao, grid]
+    zones: [zone-logo, zone-pre-headline, zone-headline, zone-antes, zone-depois, zone-cta]
+    when_to_use: >
+      Copy de transformação ou resultado. Comparação visual entre estado anterior e posterior.
+      Casos de uso, resultados de produto, evolução de métricas.
+    when_NOT_to_use: >
+      Copy sem narrativa de transformação. Mensagem que não envolve comparação.
+    created_at: "2026-05-07"
+    created_from:
+      run: biblioteca-inicial
+      client: base
+      copy_theme: transformacao-resultado
+    used_by: []
+
+  - id: t12-numero-centralizado
+    file: templates/t12-numero-centralizado.html
+    layout: Número centralizado em destaque
+    layout_letter: F
+    tags: [tipografico, numero-gigante, estatistica, impacto, centralizado]
+    zones: [zone-logo, zone-numero, zone-contexto, zone-headline, zone-cta]
+    when_to_use: >
+      Estatística ou número de alto impacto como elemento central. Dados que impressionam
+      por si mesmos. Número grande ocupa o centro visual da arte.
+    when_NOT_to_use: >
+      Copy sem elemento numérico de destaque. Mensagem que precisa de imagem.
+    created_at: "2026-05-07"
+    created_from:
+      run: biblioteca-inicial
+      client: base
+      copy_theme: estatistica-impacto
+    used_by: []
+
+  - id: t13-grade-2x2
+    file: templates/t13-grade-2x2.html
+    layout: Grade 2x2 de features
+    layout_letter: I
+    tags: [grid, features, 4-itens, icones, estruturado, educativo]
+    zones: [zone-logo, zone-headline, zone-feature-1, zone-feature-2, zone-feature-3, zone-feature-4, zone-cta]
+    when_to_use: >
+      Copy com exatamente 4 features, benefícios ou diferenciais. Estrutura visual equilibrada.
+      Conteúdo que se beneficia de organização em grade.
+    when_NOT_to_use: >
+      Menos de 4 itens ou mais de 4 itens. Mensagem emocional ou narrativa.
+    created_at: "2026-05-07"
+    created_from:
+      run: biblioteca-inicial
+      client: base
+      copy_theme: features-4-itens
+    used_by: []
+
+  - id: t14-icone-central
+    file: templates/t14-icone-central.html
+    layout: Ícone central com contexto
+    layout_letter: F
+    tags: [tipografico, icone, simbolo, centralizado, conceitual, minimalista]
+    zones: [zone-logo, zone-icone, zone-pre-headline, zone-headline, zone-subheadline, zone-cta]
+    when_to_use: >
+      Copy conceitual com ícone ou símbolo como elemento visual principal. Mensagem minimalista
+      que se beneficia de um símbolo forte no centro.
+    when_NOT_to_use: >
+      Copy que precisa de fotografia real para credibilidade. Mensagem muito longa.
+    created_at: "2026-05-07"
+    created_from:
+      run: biblioteca-inicial
+      client: base
+      copy_theme: conceito-simbolo
+    used_by: []
+
+  - id: t15-split-imagem-direita
+    file: templates/t15-split-imagem-direita.html
+    layout: Split vertical — imagem à direita
+    layout_letter: E
+    tags: [split, vertical, imagem-direita, texto-esquerda, produto, conceito]
+    zones: [zone-image, zone-logo, zone-pre-headline, zone-headline, zone-subheadline, zone-cta]
+    when_to_use: >
+      Variação do split vertical com texto à esquerda e imagem à direita. Imagem vertical
+      ou produto. Copy médio com ênfase no texto.
+    when_NOT_to_use: >
+      Imagem muito horizontal. Copy muito longo. Quando t04 for mais adequado.
+    created_at: "2026-05-07"
+    created_from:
+      run: biblioteca-inicial
+      client: base
+      copy_theme: produto-texto-esquerda
+    used_by: []
+
+  - id: t15-mockup-notebook
+    file: templates/t15-mockup-notebook.html
+    layout: Mockup notebook com tela do produto
+    layout_letter: G
+    tags: [mockup, notebook, produto, dashboard, saas, sistema, tecnologia]
+    zones: [zone-logo, zone-pre-headline, zone-headline, zone-mockup, zone-subheadline, zone-cta]
+    when_to_use: >
+      Copy de produto digital (SaaS, sistema, plataforma). Mockup de notebook com tela do produto
+      como elemento visual principal. Ideal para mostrar interface ou dashboard.
+    when_NOT_to_use: >
+      Produto físico. Copy sem produto digital para mostrar. Sem screenshot disponível.
+    created_at: "2026-05-07"
+    created_from:
+      run: biblioteca-inicial
+      client: base
+      copy_theme: produto-digital-saas
+    used_by: []
+
+  - id: t16-mockup-smartphone
+    file: templates/t16-mockup-smartphone.html
+    layout: Mockup smartphone com tela do produto
+    layout_letter: G
+    tags: [mockup, smartphone, mobile, app, produto, sistema, tecnologia]
+    zones: [zone-logo, zone-pre-headline, zone-headline, zone-mockup, zone-subheadline, zone-cta]
+    when_to_use: >
+      Copy de produto mobile (app, versão mobile de sistema). Mockup de smartphone com tela
+      do produto. Público que usa o produto principalmente no celular.
+    when_NOT_to_use: >
+      Produto desktop-first. Copy sem produto mobile para mostrar. Sem screenshot mobile disponível.
+    created_at: "2026-05-07"
+    created_from:
+      run: biblioteca-inicial
+      client: base
+      copy_theme: produto-mobile-app
+    used_by: []
+
+# ─── Schema de cada entrada ─────────────────────────────────────────────
+#
+# - id: t01-fullbleed-overlay        # ID único, incremental (t01, t02, ...)
+#   file: templates/t01-*.html       # caminho relativo ao squad root
+#   layout: fullbleed                # tipo geral
+#   layout_letter: H                 # letra da biblioteca do Felipe (A-I)
+#   tags: [overlay-gradient, text-bottom, image-full, corporate-b2b]
+#   zones: [headline, subheadline, image, logo, cta]
+#   when_to_use: >
+#     Quando usar este template — casos de uso ideais
+#   when_NOT_to_use: >
+#     Quando NÃO usar — evitar em quais cenários
+#   created_at: "2026-04-17"
+#   created_from:
+#     run: "01"
+#     client: nome-do-cliente
+#     copy_theme: "tema-da-copy"
+#   used_by:
+#     - client: nome-do-cliente
+#       date: "2026-04-17"
+#       run: "01"
+#       copy_theme: tema
+#       approved: true

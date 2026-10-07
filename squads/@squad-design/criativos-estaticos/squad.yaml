@@ -1,0 +1,111 @@
+squad:
+  code: criativos-estaticos
+  name: "Criativos Estáticos — Feed Instagram"
+  description: "Produção de artes estáticas profissionais para feed Instagram. Cole sua copy, a squad seleciona a imagem, aplica o design system da sua marca, constrói em HTML/CSS e exporta PNG 1080×1350px em alta resolução."
+  icon: image
+  version: "1.0.0"
+  category: marketing
+
+  tags:
+    - social-media
+    - instagram
+    - design
+    - criativos
+    - feed
+    - html-css
+    - puppeteer
+
+  agents:
+    - id: ministro-da-informacao
+      name: "Ministro da Informação"
+      icon: shield
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Ministro"
+      prompt: agents/ministro-da-informacao.agent.md
+      skills:
+        - file_management
+        - web_search
+        - bash
+
+    - id: imagemaster
+      name: "Thiago Rocha"
+      icon: image
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Thiago"
+      prompt: agents/imagemaster.agent.md
+      skills:
+        - file_management
+        - web_search
+        - bash
+
+    - id: designer-canva
+      name: "Felipe Torres"
+      icon: pencil
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Felipe"
+      prompt: agents/designer-canva.agent.md
+      skills:
+        - file_management
+
+    - id: executor
+      name: "Banguela"
+      icon: cog
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Banguela"
+      prompt: agents/banguela-html.agent.md
+      skills:
+        - file_management
+        - bash
+
+    - id: avaliador
+      name: "Alfandega"
+      icon: eye
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Alfandega"
+      prompt: agents/avaliador.agent.md
+      skills:
+        - file_management
+
+    - id: site-scraper
+      name: "Marina Fontes"
+      icon: download
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Marina"
+      prompt: agents/site-scraper.agent.md
+      standalone: true
+      description: "Extrai e categoriza imagens de qualquer site para uso nos criativos. Invocar com URL do site ou 'extrai do site do cliente'."
+      skills:
+        - file_management
+        - web_search
+        - bash
+
+  pipeline:
+    steps:
+      - id: step-00
+        agent: ministro-da-informacao
+        label: Validar pré-requisitos — chave Unsplash (UNSPLASH_ACCESS_KEY), logotipo e design system. Bloqueia pipeline se logo ou design system estiverem ausentes. Resolve autonomamente quando possível.
+        execution: inline
+
+      - id: step-01
+        agent: imagemaster
+        label: Selecionar imagem — banco de imagens (Unsplash) ou template tipográfico puro
+        execution: inline
+
+      - id: step-02
+        agent: designer-canva
+        label: Produzir Batch Spec — ler design-system.md, escolher template da biblioteca, definir cores 60-30-10, hierarquia tipográfica e posicionamento
+        deliverFrom: imagemaster
+        execution: inline
+
+      - id: step-03
+        agent: executor
+        label: Construir arte em HTML/CSS — implementar spec sobre template da biblioteca, exportar PNG via Puppeteer
+        deliverFrom: designer-canva
+        execution: inline
+
+      - id: step-04
+        agent: avaliador
+        label: Avaliação autônoma — 8 critérios visuais + diagnóstico de erro por agente. Aprova ou devolve para correção.
+        deliverFrom: executor
+        execution: inline
+
+      - id: step-05
+        agent: executor
+        label: Extrair template puro da arte aprovada — strip identidade, gerar zonas semânticas, atualizar templates/_catalog.yaml
+        deliverFrom: avaliador
+        execution: inline
+        mode: template-harvest

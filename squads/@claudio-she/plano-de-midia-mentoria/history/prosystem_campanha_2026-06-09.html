@@ -1,0 +1,924 @@
+﻿<!DOCTYPE html>
+<!-- ════════════════════════════════════════════════════════════════════
+     TEMPLATE STORY v1.0.0 — Squad Plano de Mídia SHE
+     Formato: Story paginado · navegação click / teclado / swipe
+     Tema: Dark SHE · Aprovado: 2026-05-28
+
+     INSTRUÇÕES PARA O DOCUMENT WRITER:
+     1. NUNCA recriar do zero. Copiar este arquivo e substituir {{TOKENS}}.
+     2. Alterar APENAS :root (11 tokens de cor) e {{TOKENS}} de dados.
+     3. Gerar 1 slide por ANI a partir de copy-revisada.md.
+     4. O número de .prog-seg deve ser igual ao total de slides.
+     5. Campanhas H2 (MOFU sem LP): apenas linha no budget — sem slide próprio.
+     ════════════════════════════════════════════════════════════════════ -->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProSystem Sistemas &#8212; Plano de M&#237;dia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ══ DESIGN TOKENS — 11 valores que mudam por cliente ══ */
+    :root {
+      --primary:        #4A7AB8;
+      --primary-light:  #6B99CC;
+      --primary-dark:   #2E5A8F;
+      --primary-glow:   rgba(74,122,184,0.18);
+      --primary-bg:     rgba(74,122,184,0.08);
+      --primary-border: rgba(74,122,184,0.30);
+      --accent:         #2E5A8F;
+      --accent-dark:    #1E3D66;
+      --accent-glow:    rgba(46,90,143,0.14);
+      --accent-bg:      rgba(46,90,143,0.08);
+      --accent-border:  rgba(46,90,143,0.25);
+
+      /* Fixos — dark SHE */
+      --bg-deep:    #080F1E;
+      --bg-surface: #0D1526;
+      --bg-card:    #111827;
+      --white:      #F1F5F9;
+      --gray-100:   #CBD5E1;
+      --gray-300:   #94A3B8;
+      --gray-500:   #64748B;
+      --gray-700:   rgba(255,255,255,0.07);
+      --ok:         #22c55e;
+      --ok-bg:      rgba(34,197,94,0.10);
+      --ok-border:  rgba(34,197,94,0.22);
+      --warn:       #f59e0b;
+      --warn-bg:    rgba(245,158,11,0.10);
+      --warn-border:rgba(245,158,11,0.25);
+      --fd: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --fb: 'DM Sans', system-ui, sans-serif;
+      --r: 12px; --r-lg: 16px;
+    }
+
+    body { font-family: var(--fb); color: var(--white); background: var(--bg-deep); overflow: hidden; height: 100vh; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .story { position: fixed; inset: 0; overflow: hidden; }
+
+    /* ══ PROGRESS BAR ══ */
+    #progress { position: fixed; top: 14px; left: 18px; right: 18px; display: flex; gap: 3px; z-index: 200; }
+    .prog-seg { flex: 1; height: 3px; border-radius: 2px; background: rgba(255,255,255,0.18); transition: background 0.25s; }
+    .prog-seg.filled { background: var(--primary-light); }
+    .prog-seg.active { background: var(--white); }
+
+    /* ══ COUNTER ══ */
+    #counter { position: fixed; bottom: 18px; right: 22px; font-family: var(--fd); font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.3); z-index: 200; letter-spacing: 0.5px; }
+
+    /* ══ NAV ZONES ══ */
+    .nav-prev, .nav-next { position: fixed; top: 0; bottom: 0; width: 28%; z-index: 150; cursor: pointer; }
+    .nav-prev { left: 0; }
+    .nav-next { right: 0; }
+
+    /* ══ EXPORT BUTTON ══ */
+    #exportBtn { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; border: none; cursor: pointer; padding: 12px 28px; border-radius: 100px; font-family: var(--fd); font-size: 13px; font-weight: 700; box-shadow: 0 4px 20px var(--primary-glow); z-index: 200; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+    #exportBtn.visible { opacity: 1; pointer-events: all; }
+
+    /* ══ SLIDES ══ */
+    .slide { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 56px 48px; opacity: 0; pointer-events: none; transition: opacity 0.28s ease; overflow-y: auto; }
+    .slide.active { opacity: 1; pointer-events: all; }
+    .slide-inner { width: 100%; max-width: 720px; }
+
+    /* ══ COMPONENTES ══ */
+    .eyebrow { font-family: var(--fd); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; color: var(--primary-light); margin-bottom: 6px; }
+    .slide-heading { font-family: var(--fd); font-size: 26px; font-weight: 800; letter-spacing: -0.8px; background: linear-gradient(135deg, var(--white) 0%, var(--gray-100) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--gray-700); }
+    .card { background: var(--bg-card); border: 1px solid var(--gray-700); border-radius: var(--r); padding: 18px 20px; }
+    .tag { display: inline-block; background: var(--primary-bg); color: var(--primary-light); font-family: var(--fd); font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 100px; margin: 2px 2px 2px 0; border: 1px solid var(--primary-border); }
+    code { background: rgba(255,255,255,0.06); padding: 2px 8px; border-radius: 5px; font-size: 12px; font-family: 'Courier New', monospace; color: var(--primary-light); border: 1px solid var(--gray-700); }
+
+    /* ══ CAPA ══ */
+    .slide-cover { position: relative; overflow: hidden; }
+    .cover-orb-a { position: absolute; top: -140px; left: -100px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, var(--primary-glow) 0%, transparent 65%); pointer-events: none; }
+    .cover-orb-b { position: absolute; bottom: -120px; right: -80px; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 65%); pointer-events: none; }
+    .cover-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.022) 1px,transparent 1px); background-size: 64px 64px; pointer-events: none; }
+    .cover-badge { display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--primary-border); background: var(--primary-bg); color: var(--primary-light); font-family: var(--fd); font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 100px; letter-spacing: 0.4px; margin-bottom: 24px; }
+    .cover-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+    .cover-company { font-family: var(--fd); font-size: clamp(36px,6vw,62px); font-weight: 800; letter-spacing: -2.5px; line-height: 1.0; margin-bottom: 14px; background: linear-gradient(135deg,#ffffff 0%,rgba(255,255,255,0.72) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .cover-tagline { font-size: 16px; color: var(--gray-300); margin-bottom: 36px; max-width: 500px; line-height: 1.55; }
+    .cover-meta { display: flex; gap: 0; flex-wrap: wrap; border: 1px solid var(--gray-700); border-radius: var(--r); overflow: hidden; width: fit-content; background: var(--bg-card); }
+    .cover-mi { padding: 11px 22px; border-right: 1px solid var(--gray-700); }
+    .cover-mi:last-child { border-right: none; }
+    .cover-ml { font-family: var(--fd); font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-500); margin-bottom: 3px; }
+    .cover-mv { font-family: var(--fd); font-size: 13px; font-weight: 700; color: var(--white); }
+    .cover-cta { margin-top: 28px; display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg,var(--accent) 0%,var(--accent-dark) 100%); color: white; font-family: var(--fd); font-size: 12px; font-weight: 700; padding: 8px 20px; border-radius: 100px; box-shadow: 0 4px 16px var(--accent-glow); }
+
+    /* ══ RAIO-X ══ */
+    .diag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .diag-card { border-radius: var(--r); padding: 18px 20px; border: 1px solid; }
+    .diag-card.ok   { background: var(--ok-bg);   border-color: var(--ok-border); }
+    .diag-card.warn { background: var(--warn-bg);  border-color: var(--warn-border); }
+    .diag-badge { display: inline-flex; align-items: center; font-family: var(--fd); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; padding: 4px 10px; border-radius: 6px; margin-bottom: 12px; }
+    .diag-card.ok   .diag-badge { color: var(--ok);   background: rgba(34,197,94,0.12);  border: 1px solid var(--ok-border); }
+    .diag-card.warn .diag-badge { color: var(--warn);  background: rgba(245,158,11,0.12); border: 1px solid var(--warn-border); }
+    .diag-list { list-style: none; }
+    .diag-list li { font-size: 13px; padding: 5px 0 5px 20px; position: relative; line-height: 1.45; color: var(--gray-100); }
+    .diag-list li::before { position: absolute; left: 0; font-size: 11px; top: 6px; }
+    .diag-card.ok   .diag-list li::before { content: '\2713'; color: var(--ok);   font-weight: 700; }
+    .diag-card.warn .diag-list li::before { content: '\25B3'; color: var(--warn); }
+
+    /* ══ ICP & OFERTA ══ */
+    .icp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .info-label { font-family: var(--fd); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gray-500); margin-bottom: 12px; }
+    .info-body { font-size: 13px; color: var(--gray-100); line-height: 1.6; }
+    .info-body p { margin-bottom: 5px; }
+    .info-body strong { color: var(--white); }
+    .oferta-box { background: var(--primary-bg); border: 1px solid var(--primary-border); border-radius: var(--r); padding: 16px 18px; margin-bottom: 14px; }
+    .oferta-label { font-family: var(--fd); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 4px; }
+    .oferta-name  { font-family: var(--fd); font-size: 22px; font-weight: 800; color: var(--white); letter-spacing: -0.5px; }
+    .oferta-sub   { font-size: 12px; color: var(--gray-300); margin-top: 2px; }
+
+    /* ══ FUNIL ══ */
+    .funil-stages { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 12px; }
+    .funil-stage { border-radius: var(--r); padding: 20px 16px; text-align: center; border: 1px solid; }
+    .funil-stage.tofu { background: var(--primary-bg);  border-color: var(--primary-border); }
+    .funil-stage.bofu { background: var(--accent-bg);   border-color: var(--accent-border); }
+    .funil-stage.mofu { background: var(--bg-surface);  border-color: var(--gray-700); border-style: dashed; opacity: 0.5; }
+    .funil-lbl { font-family: var(--fd); font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 6px; }
+    .tofu .funil-lbl { color: var(--primary-light); } .bofu .funil-lbl { color: var(--accent); } .mofu .funil-lbl { color: var(--gray-500); }
+    .funil-name { font-family: var(--fd); font-size: 24px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.5px; }
+    .tofu .funil-name { color: var(--primary-light); } .bofu .funil-name { color: var(--accent); } .mofu .funil-name { color: var(--gray-500); }
+    .funil-desc { font-size: 12px; color: var(--gray-300); line-height: 1.4; margin-bottom: 10px; }
+    .funil-pill { display: inline-block; font-family: var(--fd); font-size: 10px; font-weight: 700; padding: 3px 12px; border-radius: 100px; }
+    .tofu .funil-pill { background: var(--primary); color: white; } .bofu .funil-pill { background: var(--accent); color: white; } .mofu .funil-pill { background: var(--gray-700); color: var(--gray-300); }
+    .funil-footer { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+    .funil-fi { font-size: 11px; color: var(--gray-500); text-align: center; padding: 0 6px; line-height: 1.4; }
+    .funil-fi.dim { opacity: 0.35; }
+
+    /* ══ SEGMENTAÇÃO ══ */
+    .seg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .seg-card { border-radius: var(--r); border: 1px solid var(--gray-700); overflow: hidden; background: var(--bg-surface); }
+    .seg-hdr { padding: 10px 16px; font-family: var(--fd); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--gray-700); }
+    .seg-card.bofu-seg .seg-hdr { color: var(--primary-light); background: var(--primary-bg); }
+    .seg-card.tofu-seg .seg-hdr { color: var(--accent); background: var(--accent-bg); }
+    .seg-row { display: flex; flex-direction: column; padding: 8px 16px; border-bottom: 1px solid var(--gray-700); }
+    .seg-row:last-child { border-bottom: none; }
+    .seg-key { font-family: var(--fd); font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray-500); margin-bottom: 2px; }
+    .seg-val { font-size: 12.5px; color: var(--gray-100); }
+
+    /* ══ BUDGET ══ */
+    .budget-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    .budget-table th { font-family: var(--fd); background: var(--primary-bg); color: var(--primary-light); font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--primary-border); }
+    .budget-table td { padding: 11px 14px; border-bottom: 1px solid var(--gray-700); vertical-align: middle; color: var(--gray-100); }
+    .budget-table tbody tr:last-child td { border-bottom: none; background: var(--primary-bg); color: var(--white); font-weight: 700; }
+    .pill { display: inline-block; font-family: var(--fd); font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 100px; }
+    .pill.bofu { background: var(--primary-bg); color: var(--primary-light); border: 1px solid var(--primary-border); }
+    .pill.tofu { background: var(--accent-bg);  color: var(--accent);        border: 1px solid var(--accent-border); }
+    .pill.h2   { background: rgba(245,158,11,0.12); color: var(--warn); border: 1px solid rgba(245,158,11,0.3); }
+
+    /* ══ CAMPANHA HEADER ══ */
+    .camp-header-slide { width: 100%; max-width: 720px; }
+    .camp-name-badge { display: inline-block; font-family: 'Courier New', monospace; font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.85); background: var(--bg-card); border: 1px solid var(--gray-700); padding: 7px 14px; border-radius: 8px; margin-bottom: 18px; letter-spacing: 0.3px; }
+    .camp-stage-pill { display: inline-flex; align-items: center; font-family: var(--fd); font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 100px; margin-left: 10px; }
+    .camp-stage-pill.bofu { background: var(--primary); color: white; }
+    .camp-stage-pill.tofu { background: rgba(51,65,85,1); color: var(--gray-100); }
+    .conj-specs { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 4px; }
+    .spec-lbl { font-family: var(--fd); font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray-500); margin-bottom: 4px; }
+    .spec-val { font-size: 13px; font-weight: 600; color: var(--gray-100); }
+    .spec-val.pc { color: var(--primary-light); } .spec-val.ac { color: var(--accent); }
+    .tofu-note { background: rgba(255,255,255,0.03); border: 1px solid var(--gray-700); border-left: 3px solid var(--gray-500); border-radius: var(--r); padding: 16px 20px; font-size: 13px; color: var(--gray-300); line-height: 1.6; margin-top: 16px; }
+    .tofu-note strong { color: var(--white); }
+
+    /* ══ ANI CARD ══ */
+    .ani-slide { width: 100%; max-width: 720px; }
+    .ani-slide-hdr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .ani-id-label { font-family: var(--fd); font-size: 20px; font-weight: 800; color: var(--primary-light); letter-spacing: -0.5px; }
+    .ani-tags { display: flex; gap: 6px; }
+    .ani-tag { font-family: var(--fd); font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 100px; }
+    .ani-tag.fmt { background: var(--primary-bg); color: var(--primary-light); border: 1px solid var(--primary-border); }
+    .ani-tag.ang { background: var(--accent-bg);  color: var(--accent);       border: 1px solid var(--accent-border); }
+    .ani-zones { display: flex; flex-direction: column; gap: 10px; }
+    .ani-zone { background: var(--bg-card); border: 1px solid var(--gray-700); border-radius: var(--r); overflow: hidden; }
+    .ani-zlbl { font-family: var(--fd); font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gray-500); padding: 8px 14px 0; }
+    .ani-hook { font-size: 14px; font-weight: 700; color: var(--white); line-height: 1.4; padding: 6px 14px 8px; border-left: 3px solid var(--primary); margin: 6px 14px 8px; }
+    .ani-body-text { font-size: 12.5px; color: var(--gray-300); line-height: 1.6; padding: 8px 14px 12px; background: var(--bg-surface); margin: 0 14px 12px; border-radius: 8px; }
+    .ani-titulo { font-size: 14px; font-weight: 700; color: var(--white); padding: 6px 14px 12px; }
+    .ani-descr  { font-size: 13px; font-style: italic; color: var(--gray-300); padding: 6px 14px 12px; }
+    .ani-row-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .ani-foot { display: flex; gap: 24px; background: var(--bg-surface); border-top: 1px solid var(--gray-700); padding: 10px 14px; margin-top: 8px; border-radius: 0 0 var(--r) var(--r); flex-wrap: wrap; }
+    .ani-fk { font-family: var(--fd); font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray-500); margin-bottom: 2px; }
+    .ani-fv { font-size: 12px; font-weight: 600; color: var(--gray-100); }
+    .cards-list { list-style: none; padding: 0 14px 12px; }
+    .cards-list li { font-size: 12.5px; color: var(--gray-300); padding: 5px 0 5px 20px; position: relative; line-height: 1.4; }
+    .cards-list li::before { content: '\2192'; position: absolute; left: 0; color: var(--primary-light); font-weight: 700; }
+    .cards-list li strong { color: var(--white); }
+
+    /* ══ PRÓXIMOS PASSOS ══ */
+    .passos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .passo-card { border: 1px solid var(--gray-700); border-radius: var(--r); padding: 18px 20px; background: var(--bg-surface); }
+    .passo-num   { font-family: var(--fd); font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-light); margin-bottom: 5px; }
+    .passo-title { font-family: var(--fd); font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 6px; letter-spacing: -0.2px; }
+    .passo-desc  { font-size: 12.5px; color: var(--gray-300); line-height: 1.5; }
+
+    /* ══ ENCERRAMENTO ══ */
+    .closing-inner { text-align: center; }
+    .closing-icon  { font-size: 48px; margin-bottom: 20px; display: block; }
+    .closing-title { font-family: var(--fd); font-size: 28px; font-weight: 800; letter-spacing: -1px; margin-bottom: 10px; background: linear-gradient(135deg,var(--white) 0%,var(--gray-100) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .closing-sub   { font-size: 15px; color: var(--gray-300); margin-bottom: 28px; line-height: 1.55; }
+    .closing-footer { font-family: var(--fd); font-size: 11px; color: var(--gray-500); margin-top: 36px; }
+
+    /* ══ PRINT — cada slide = uma página ══ */
+    @media print {
+      body { overflow: visible; height: auto; }
+      .story { position: static; overflow: visible; }
+      .slide { position: relative !important; height: 100vh; opacity: 1 !important; pointer-events: none; page-break-after: always; display: flex !important; }
+      #progress, #counter, .nav-prev, .nav-next, #exportBtn { display: none !important; }
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+<div class="story" id="story">
+
+  <div id="progress"><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div><div class="prog-seg"></div></div>
+  <div id="counter">1 / 25</div>
+  <button id="exportBtn" onclick="window.print()">&#8595; Exportar PDF</button>
+  <div class="nav-prev" onclick="prevSlide()"></div>
+  <div class="nav-next" onclick="nextSlide()"></div>
+
+  <!-- ═══ SLIDE 01 — CAPA ═══ -->
+  <div class="slide slide-cover active" id="slide-0">
+    <div class="cover-orb-a"></div><div class="cover-orb-b"></div><div class="cover-grid"></div>
+    <div class="slide-inner" style="position:relative;z-index:1;">
+      <div class="cover-badge">Meu Plano de M&#237;dia &middot; gerado por Vinicius &middot; SHE</div>
+      <div class="cover-company">ProSystem Sistemas</div>
+      <div class="cover-tagline">Há mais de 16 anos ajudando farmácias, padarias e varejistas a vender mais, reduzir perdas e manter conformidade fiscal.</div>
+      <div class="cover-meta">
+        <div class="cover-mi"><div class="cover-ml">Data</div><div class="cover-mv">26/06/2026</div></div>
+        <div class="cover-mi"><div class="cover-ml">Investimento</div><div class="cover-mv">R$ 1.500</div></div>
+        <div class="cover-mi"><div class="cover-ml">Oferta</div><div class="cover-mv">Demonstração Guiada por Consultor</div></div>
+        <div class="cover-mi"><div class="cover-ml">An&#250;ncios</div><div class="cover-mv">15</div></div>
+      </div>
+      <div class="cover-cta">Farmácias · Padarias · Varejo &#8594; use &#8592;&#8594; para navegar</div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 02 — RAIO-X ═══ -->
+  <div class="slide" id="slide-1">
+    <div class="slide-inner">
+      <div class="eyebrow">Situa&#231;&#227;o atual</div>
+      <div class="slide-heading">Raio-X do Seu Neg&#243;cio</div>
+      <div class="diag-grid">
+        <div class="diag-card ok">
+          <div class="diag-badge">&#10003; Pontos Positivos</div>
+          <ul class="diag-list">
+            <li>Demo guiada disponível — melhor oferta para venda consultiva B2B</li><li>Ciclo de venda curto (20–45 dias) — adequado para funil de 2 etapas</li><li>16 anos de mercado e depoimentos reais disponíveis para prova social</li>
+          </ul>
+        </div>
+        <div class="diag-card warn">
+          <div class="diag-badge">&#9651; Aten&#231;&#227;o</div>
+          <ul class="diag-list">
+            <li>CPL máximo viável (R$28–38) abaixo do benchmark — exige segmentação precisa e oferta forte</li><li>Diferencial 'venda consultiva' precisa ser traduzido em prova concreta nos criativos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 03 — ICP & OFERTA ═══ -->
+  <div class="slide" id="slide-2">
+    <div class="slide-inner">
+      <div class="eyebrow">P&#250;blico &amp; Oferta</div>
+      <div class="slide-heading">Seu Comprador e Oferta Prescrita</div>
+      <div class="icp-grid">
+        <div>
+          <div class="info-label">ICP Farm&#225;cia</div>
+          <div class="info-body">
+            <p><strong>Decisor:</strong> Propriet&#225;rio 40–55 anos · S&#243;cio-Propriet&#225;rio</p>
+            <p style="margin-top:5px;"><strong>Porte:</strong> 1–5 lojas · +5 anos de mercado · faturamento ≥ R$150k/mês</p>
+            <p style="margin-top:5px;"><strong>Posicionamento:</strong> Sistema <em>local e robusto</em> — n&#227;o para quando a internet cai</p>
+            <p style="margin-top:5px;margin-bottom:3px;"><strong>Dores:</strong></p>
+            <ul style="padding-left:14px;font-size:12px;line-height:1.55;"><li>Sistema lento / travando no caixa</li><li>Suporte impessoal e demorado</li><li>Depend&#234;ncia excessiva da internet</li><li>Problemas com SNGPC e fiscal</li></ul>
+            <p style="margin-top:6px;margin-bottom:3px;"><strong>Migra de:</strong></p>
+            <div><span class="tag">Linx</span><span class="tag">Digifarma</span><span class="tag">Procfit</span><span class="tag">Alpha7</span><span class="tag">Automatiza</span><span class="tag">Inovafarma</span></div>
+            <p style="margin-top:6px;"><strong>Ticket:</strong> Setup R$1.880 + R$380–420/mês</p>
+          </div>
+        </div>
+        <div>
+          <div class="info-label">ICP Padaria</div>
+          <div class="info-body">
+            <p><strong>Decisor:</strong> Propriet&#225;rio 30–60 anos · dono da padaria de bairro</p>
+            <p style="margin-top:5px;"><strong>Porte:</strong> 3–20 funcion&#225;rios · faturamento ≥ R$50k/mês (ideal ≥ R$80k) · produ&#231;&#227;o pr&#243;pria</p>
+            <p style="margin-top:5px;margin-bottom:3px;"><strong>Dores:</strong></p>
+            <ul style="padding-left:14px;font-size:12px;line-height:1.55;"><li>"Estou perdendo mercadoria e n&#227;o sei onde."</li><li>"N&#227;o consigo fechar meu caixa corretamente."</li><li>"N&#227;o sei quais produtos me d&#227;o lucro."</li><li>"Fa&#231;o controle em planilhas ou cadernos."</li></ul>
+            <p style="margin-top:6px;"><strong>Ticket:</strong> Setup R$800 + R$280/mês</p>
+          </div>
+          <div class="oferta-box" style="margin-top:14px;">
+            <div class="oferta-label">Oferta Principal</div>
+            <div class="oferta-name">Demonstra&#231;&#227;o Guiada por Consultor ProSystem</div>
+            <div class="oferta-sub">40–60 min · Com hora marcada · Sem compromisso · Ciclo Farm&#225;cia 20–30d | Padaria 30–45d</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 04 — FUNIL ═══ -->
+  <div class="slide" id="slide-3">
+    <div class="slide-inner">
+      <div class="eyebrow">Estrat&#233;gia</div>
+      <div class="slide-heading">Estrutura do Seu Funil</div>
+      <div class="funil-stages">
+        <div class="funil-stage tofu">
+          <div class="funil-lbl">Topo</div><div class="funil-name">TOFU</div>
+          <div class="funil-desc">Apresentar a ProSystem para donos de farmácia e padaria que ainda não conhecem a marca</div>
+          <div class="funil-pill">&#9679; Ativo</div>
+        </div>
+        <div class="funil-stage mofu"><!-- trocar para "tofu" se MOFU for H1 -->
+          <div class="funil-lbl">Meio</div><div class="funil-name">MOFU</div>
+          <div class="funil-desc">Retargeting para quem interagiu mas não converteu — ativar após 1.000 pessoas na audiência</div>
+          <div class="funil-pill">○ Horizonte 2</div>
+        </div>
+        <div class="funil-stage bofu">
+          <div class="funil-lbl">Fundo</div><div class="funil-name">BOFU</div>
+          <div class="funil-desc">Campanha principal de geração de leads. Público aberto — algoritmo aprende quem converte. Advantage+ e Audience Network desativados.</div>
+          <div class="funil-pill">&#9679; Ativo</div>
+        </div>
+      </div>
+      <div class="funil-footer">
+        <div class="funil-fi">Nível 0–1</div>
+        <div class="funil-fi dim">Nível 2–3</div>
+        <div class="funil-fi">Nível 1–2</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 05 — SEGMENTAÇÃO ═══ -->
+  <div class="slide" id="slide-4">
+    <div class="slide-inner">
+      <div class="eyebrow">Configura&#231;&#227;o</div>
+      <div class="slide-heading">Segmenta&#231;&#227;o por Campanha</div>
+      <div class="seg-grid">
+        <div class="seg-card bofu-seg">
+          <div class="seg-hdr">BOFU &#8212; Público Aberto</div>
+          <div class="seg-row"><div class="seg-key">P&#250;blico</div><div class="seg-val">Público aberto — sem interesses restritivos — Advantage+ desativado</div></div>
+          <div class="seg-row"><div class="seg-key">Estrutura</div><div class="seg-val">1 conjunto aberto por segmento (Farmácia e Padaria separados)</div></div>
+          <div class="seg-row"><div class="seg-key">Local &middot; Faixa</div><div class="seg-val">Brasil &middot; Farm&#225;cia 35–60 (testar 35–45 e 46–60) · Padaria 30–60</div></div>
+          <div class="seg-row"><div class="seg-key">Advantage+ / AN</div><div class="seg-val">Desativados</div></div>
+          <div class="seg-row"><div class="seg-key">Evolu&#231;&#227;o</div><div class="seg-val">Lookalike 1% quando lista de clientes disponível</div></div>
+        </div>
+        <div class="seg-card tofu-seg">
+          <div class="seg-hdr">TOFU &#8212; Interesses do Nicho</div>
+          <div class="seg-row"><div class="seg-key">Farm&#225;cia</div><div class="seg-val">Farm&#225;cia, Drog aria, Gest&#227;o Farmac&#234;utica, SNGPC, ANVISA, PBM, CFF · Cargos: Propriet&#225;rio, S&#243;cio-propriet&#225;rio, Farmac&#234;utico, Gerente Administrativo</div></div>
+          <div class="seg-row"><div class="seg-key">Padaria</div><div class="seg-val">Padaria, Confeitaria, Panifica&#231;&#227;o, Empres&#225;rio, Pequenas Empresas, Gest&#227;o Empresarial, Varejo, Food Service, Caf&#233; · Cargos: Propriet&#225;rio, S&#243;cio-propriet&#225;rio, Diretor, Gerente Administrativo</div></div>
+          <div class="seg-row"><div class="seg-key">Crit&#233;rios</div><div class="seg-val">Sem first-party data disponível — segmentação por interesses do setor</div></div>
+          <div class="seg-row"><div class="seg-key">Local &middot; Faixa</div><div class="seg-val">Brasil &middot; Farm&#225;cia 35–60 · Padaria 30–60</div></div>
+          <div class="seg-row"><div class="seg-key">Advantage+ / AN</div><div class="seg-val">Desativados</div></div>
+          <div class="seg-row"><div class="seg-key">Evolu&#231;&#227;o</div><div class="seg-val">Substituir por Lookalike 1% quando lista de clientes estiver disponível</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 06 — BUDGET ═══ -->
+  <div class="slide" id="slide-5">
+    <div class="slide-inner">
+      <div class="eyebrow">Investimento</div>
+      <div class="slide-heading">Distribui&#231;&#227;o de Budget</div>
+      <table class="budget-table">
+        <thead><tr><th>Campanha</th><th>Etapa</th><th>R$/dia</th><th>R$/m&#234;s</th><th>%</th><th>Objetivo</th></tr></thead>
+        <tbody>
+          <tr><td>Andromeda Farmácia (FUNDO)</td><td><span class="pill bofu">BOFU</span></td><td>R$ 20</td><td>R$ 600</td><td>40%</td><td>Geração de leads — demo guiada</td></tr>
+          <tr><td>Andromeda Padaria (FUNDO)</td><td><span class="pill tofu">TOFU</span></td><td>R$ 15</td><td>R$ 450</td><td>30%</td><td>Geração de leads — demo guiada</td></tr>
+          <!-- MOFU H2 se houver: -->
+          <tr><td>Reconhecimento (TOPO)</td><td><span class="pill h2">MOFU</span></td><td colspan="3" style="color:var(--gray-500);font-style:italic;">Interesses — Farmácia + Padaria</td><td>Reconhecimento de marca</td></tr>
+          <tr><td><strong>Total H1</strong></td><td>&#8212;</td><td><strong>R$ 50</strong></td><td><strong>R$ 1.500</strong></td><td><strong>100%</strong></td><td>&#8212;</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 07 — HEADER BOFU ═══ -->
+  <div class="slide" id="slide-6">
+    <div class="slide-inner">
+      <div class="eyebrow">Execu&#231;&#227;o &middot; BOFU</div>
+      <div class="slide-heading">Sua Campanha Principal</div>
+      <div class="camp-header-slide">
+        <div><span class="camp-name-badge">SHE [LP] [CBO] [DEMO] FARMÁCIA - 09/06/26 + SHE [LP] [CBO] [DEMO] PADARIA - 09/06/26</span><span class="camp-stage-pill bofu">BOFU &#8212; Fundo de Funil</span></div>
+        <div class="card" style="margin-top:16px;">
+          <div style="font-family:var(--fd);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--gray-500);margin-bottom:14px;">Conjunto 01 &#8212; 01 ABERTO — DONOS FARMÁCIA/PADARIA BRASIL</div>
+          <div class="conj-specs">
+            <div><div class="spec-lbl">P&#250;blico</div><div class="spec-val">Público aberto (sem restrição de interesses)</div></div>
+            <div><div class="spec-lbl">Local &middot; Faixa</div><div class="spec-val">Brasil &middot; 30–58</div></div>
+            <div><div class="spec-lbl">Budget &middot; Pixel</div><div class="spec-val pc">R$ 20 (Farmácia) + R$ 15 (Padaria) &middot; [ID DO PIXEL]</div></div>
+          </div>
+        </div>
+        <div style="margin-top:14px;font-size:12.5px;color:var(--gray-500);">&#8594; Pr&#243;ximos slides: 12 (6 Farmácia + 6 Padaria) an&#250;ncios com copy completa</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANI_SECTION_START -->
+  <div class="slide" id="slide-7">
+    <div class="slide-inner">
+      <div class="ani-slide">
+        <div class="ani-slide-hdr">
+          <div class="ani-id-label">ANI 01</div>
+          <div class="ani-tags"><span class="ani-tag fmt">EST&#193;TICO</span><span class="ani-tag ang">DOR</span></div>
+        </div>
+        <div class="ani-zones">
+          <div class="ani-zone">
+            <div class="ani-zlbl">Texto Principal</div>
+            <div class="ani-hook">PDV travado em horário de pico é prejuízo que você não consegue contabilizar.</div>
+          <div class="ani-body-text">Cada vez que o sistema trava, o cliente espera. Quando ele cansa de esperar, vai para a farmácia do lado — e você nem sabe quantas vezes isso aconteceu essa semana.
+
+O ProSystem tem frente de caixa desenvolvida especificamente para farmácias: rápido, estável, integrado com SNGPC e controlados sem etapa manual a mais.
+
+Um consultor ProSystem mostra tudo funcionando ao vivo. 40 minutos, você decide sem compromisso.</div>
+          </div>
+          <div class="ani-row-grid">
+            <div class="ani-zone"><div class="ani-zlbl">T&#237;tulo</div><div class="ani-titulo">Sua farmácia merece um caixa sem trava</div></div>
+            <div class="ani-zone"><div class="ani-zlbl">Descri&#231;&#227;o</div><div class="ani-descr">Consultor ao vivo · 40 min</div></div>
+          </div>
+        </div>
+        <div class="ani-foot">
+          <div><div class="ani-fk">CTA</div><div class="ani-fv">CADASTRE-SE</div></div>
+          <div><div class="ani-fk">N&#237;vel</div><div class="ani-fv">Consci&#234;ncia C1</div></div>
+          <div><div class="ani-fk">Campanha</div><div class="ani-fv">BOFU &middot; Andromeda</div></div>
+        </div>
+      </div>
+    </div>
+  </div>  <div class="slide" id="slide-8">
+    <div class="slide-inner">
+      <div class="ani-slide">
+        <div class="ani-slide-hdr">
+          <div class="ani-id-label">ANI 02</div>
+          <div class="ani-tags"><span class="ani-tag fmt">EST&#193;TICO</span><span class="ani-tag ang">RESULTADO</span></div>
+        </div>
+        <div class="ani-zones">
+          <div class="ani-zone">
+            <div class="ani-zlbl">Texto Principal</div>
+            <div class="ani-hook">Imagina fechar o dia sabendo exatamente o que vendeu, o que tem em estoque e o que precisa pedir — sem abrir planilha nenhuma.</div>
+          <div class="ani-body-text">A maioria dos donos de farmácia que atendemos chegou aqui depois de anos fazendo esse controle no improviso: SNGPC preenchido manualmente, estoque em caderno ou planilha separada, balancete que o contador manda por fora.
+
+Com o ProSystem Gerencial, essas três coisas funcionam integradas — uma entrada no sistema, tudo atualizado. Sem retrabalho. Sem dado duplicado.
+
+Quer ver como fica na prática na sua farmácia? Um consultor ProSystem apresenta ao vivo, com hora marcada.</div>
+          </div>
+          <div class="ani-row-grid">
+            <div class="ani-zone"><div class="ani-zlbl">T&#237;tulo</div><div class="ani-titulo">Gestão integrada para sua farmácia</div></div>
+            <div class="ani-zone"><div class="ani-zlbl">Descri&#231;&#227;o</div><div class="ani-descr">Gratuito · Consultor ao vivo</div></div>
+          </div>
+        </div>
+        <div class="ani-foot">
+          <div><div class="ani-fk">CTA</div><div class="ani-fv">CADASTRE-SE</div></div>
+          <div><div class="ani-fk">N&#237;vel</div><div class="ani-fv">Consci&#234;ncia C2</div></div>
+          <div><div class="ani-fk">Campanha</div><div class="ani-fv">BOFU &middot; Andromeda</div></div>
+        </div>
+      </div>
+    </div>
+  </div>  <div class="slide" id="slide-9">
+    <div class="slide-inner">
+      <div class="ani-slide">
+        <div class="ani-slide-hdr">
+          <div class="ani-id-label">ANI 03</div>
+          <div class="ani-tags"><span class="ani-tag fmt">CARROSSEL</span><span class="ani-tag ang">DIFERENCIAL</span></div>
+        </div>
+        <div class="ani-zones">
+          <div class="ani-zone">
+            <div class="ani-zlbl">Texto Principal</div>
+            <div class="ani-hook">Seu sistema atual resolve isso? Arraste e veja →</div>
+          <ul class="cards-list">
+            <li>O que muda num sistema feito para farmácias | Não um ERP genérico adaptado</li>
+            <li>PDV que não trava em horário de pico | Caixa fluido mesmo com fila grande</li>
+            <li>SNGPC e controlados sem etapa manual | Transmissão automática, sem retrabalho</li>
+            <li>Consultor mostra ao vivo em 40 minutos | Gratuito · Sem compromisso</li>
+          </ul>
+          </div>
+          <div class="ani-row-grid">
+            <div class="ani-zone"><div class="ani-zlbl">T&#237;tulo</div><div class="ani-titulo">Sistema feito para farmácias</div></div>
+            <div class="ani-zone"><div class="ani-zlbl">Descri&#231;&#227;o</div><div class="ani-descr">Consultor ao vivo · 40 min</div></div>
+          </div>
+        </div>
+        <div class="ani-foot">
+          <div><div class="ani-fk">CTA</div><div class="ani-fv">CADASTRE-SE</div></div>
+          <div><div class="ani-fk">N&#237;vel</div><div class="ani-fv">Consci&#234;ncia C2</div></div>
+          <div><div class="ani-fk">Campanha</div><div class="ani-fv">BOFU &middot; Andromeda</div></div>
+        </div>
+      </div>
+    </div>
+  </div>  <div class="slide" id="slide-10">
+    <div class="slide-inner">
+      <div class="ani-slide">
+        <div class="ani-slide-hdr">
+          <div class="ani-id-label">ANI 04</div>
+          <div class="ani-tags"><span class="ani-tag fmt">EST&#193;TICO</span><span class="ani-tag ang">CURIOSIDADE</span></div>
+        </div>
+        <div class="ani-zones">
+          <div class="ani-zone">
+            <div class="ani-zlbl">Texto Principal</div>
+            <div class="ani-hook">Quantas vendas sua farmácia perde por semana por causa do sistema?</div>
+          <div class="ani-body-text">Não é exagero. Fila no caixa, sistema lento, cliente que pede um controlado e o atendente precisa sair para verificar estoque em outra tela — cada um desses momentos tem custo real.
+
+Depois de 16 anos trabalhando com farmácias, a ProSystem sabe que o problema raramente é a equipe. Quase sempre é a ferramenta.
+
+Se você quer entender onde está o gargalo operacional da sua farmácia, um consultor ProSystem faz esse diagnóstico ao vivo — com hora marcada, sem custo.</div>
+          </div>
+          <div class="ani-row-grid">
+            <div class="ani-zone"><div class="ani-zlbl">T&#237;tulo</div><div class="ani-titulo">16 anos com farmácias no ES e Brasil</div></div>
+            <div class="ani-zone"><div class="ani-zlbl">Descri&#231;&#227;o</div><div class="ani-descr">Consultor ao vivo · 40 min</div></div>
+          </div>
+        </div>
+        <div class="ani-foot">
+          <div><div class="ani-fk">CTA</div><div class="ani-fv">CADASTRE-SE</div></div>
+          <div><div class="ani-fk">N&#237;vel</div><div class="ani-fv">Consci&#234;ncia C1</div></div>
+          <div><div class="ani-fk">Campanha</div><div class="ani-fv">BOFU &middot; Andromeda</div></div>
+        </div>
+      </div>
+    </div>
+  </div>  <div class="slide" id="slide-11">
+    <div class="slide-inner">
+      <div class="ani-slide">
+        <div class="ani-slide-hdr">
+          <div class="ani-id-label">ANI 05</div>
+          <div class="ani-tags"><span class="ani-tag fmt">EST&#193;TICO</span><span class="ani-tag ang">PROVA SOCIAL</span></div>
+        </div>
+        <div class="ani-zones">
+          <div class="ani-zone">
+            <div class="ani-zlbl">Texto Principal</div>
+            <div class="ani-hook">"Ótimo atendimento — a equipe está sempre disponível para resolver." — Arthur, cliente ProSystem há mais de 3 anos.</div>
+          <div class="ani-body-text">Suporte que resolve sem burocracia é o que donos de farmácia mais citam quando indicam a ProSystem para outros donos de farmácia.
+
+Mais de 16 anos no varejo especializado, com farmácias, drogarias e manipulação. Equipe que conhece SNGPC, PBM e controlados de dentro — não aprende junto com você.
+
+Quer conhecer o sistema por trás desse suporte? Um consultor apresenta ao vivo, com hora marcada.</div>
+          </div>
+          <div class="ani-row-grid">
+            <div class="ani-zone"><div class="ani-zlbl">T&#237;tulo</div><div class="ani-titulo">+16 anos com farmácias no Brasil</div></div>
+            <div class="ani-zone"><div class="ani-zlbl">Descri&#231;&#227;o</div><div class="ani-descr">Consultor ao vivo · Sem compromisso</div></div>
+          </div>
+        </div>
+        <div class="ani-foot">
+          <div><div class="ani-fk">CTA</div><div class="ani-fv">CADASTRE-SE</div></div>
+          <div><div class="ani-fk">N&#237;vel</div><div class="ani-fv">Consci&#234;ncia C2</div></div>
+          <div><div class="ani-fk">Campanha</div><div class="ani-fv">BOFU &middot; Andromeda</div></div>
+        </div>
+      </div>
+    </div>
+  </div>  <div class="slide" id="slide-12">
+    <div class="slide-inner">
+      <div class="ani-slide">
+        <div class="ani-slide-hdr">
+          <div class="ani-id-label">ANI 06</div>
+          <div class="ani-tags"><span class="ani-tag fmt">EST&#193;TICO</span><span class="ani-tag ang">URGÊNCIA</span></div>
+        </div>
+        <div class="ani-zones">
+          <div class="ani-zone">
+            <div class="ani-zlbl">Texto Principal</div>
+            <div class="ani-hook">Todo mês sem transmissão correta do SNGPC é um mês de risco acumulado.</div>
+          <div class="ani-body-text">A ANVISA não avisa antes de autuar. O problema que o seu sistema não resolveu em março pode aparecer como notificação em setembro.
+
+Farmácias que usam sistema genérico — não desenvolvido para o setor — frequentemente descobrem o erro tarde demais: quando o contador liga ou quando a notificação chega.
+
+O ProSystem tem integração nativa com SNGPC, NFC-e e PBM — sem adaptação, sem gambiarra. Um consultor mostra como funciona em 40 minutos, com hora marcada.</div>
+          </div>
+          <div class="ani-row-grid">
+            <div class="ani-zone"><div class="ani-zlbl">T&#237;tulo</div><div class="ani-titulo">SNGPC e ANVISA sem risco de autuação</div></div>
+            <div class="ani-zone"><div class="ani-zlbl">Descri&#231;&#227;o</div><div class="ani-descr">Consultor ao vivo · 40 min</div></div>
+          </div>
+        </div>
+        <div class="ani-foot">
+          <div><div class="ani-fk">CTA</div><div class="ani-fv">CADASTRE-SE</div></div>
+          <div><div class="ani-fk">N&#237;vel</div><div class="ani-fv">Consci&#234;ncia C2</div></div>
+          <div><div class="ani-fk">Campanha</div><div class="ani-fv">BOFU &middot; Andromeda</div></div>
+        </div>
+      </div>
+    </div>
+  </div>  <div class="slide" id="slide-13">
+    <div class="slide-inner">
+      <div class="ani-slide">
+        <div class="ani-slide-hdr">
+          <div class="ani-id-label">ANI 07</div>
+          <div class="ani-tags"><span class="ani-tag fmt">EST&#193;TICO</span><span class="ani-tag ang">DOR</span></div>
+        </div>
+        <div class="ani-zones">
+          <div class="ani-zone">
+            <div class="ani-zlbl">Texto Principal</div>
+            <div class="ani-hook">Produto vencendo na prateleira enquanto o estoque diz que está disponível.</div>
+          <div class="ani-body-text">É o tipo de perda que aparece no final do mês — e que nenhum sistema genérico avisa com antecedência suficiente para você agir.
+
+O ProSystem para padarias tem controle de validade e perda integrado ao estoque e à produção. Você vê o que vai vencer antes de virar prejuízo — e ainda sabe quais produtos têm maior índice de descarte.
+
+Um consultor ProSystem mostra ao vivo como funciona na sua realidade. 40 minutos, com hora marcada.</div>
+          </div>
+          <div class="ani-row-grid">
+            <div class="ani-zone"><div class="ani-zlbl">T&#237;tulo</div><div class="ani-titulo">Controle de validade para sua padaria</div></div>
+            <div class="ani-zone"><div class="ani-zlbl">Descri&#231;&#227;o</div><div class="ani-descr">Consultor ao vivo · Sem compromisso</div></div>
+          </div>
+        </div>
+        <div class="ani-foot">
+          <div><div class="ani-fk">CTA</div><div class="ani-fv">CADASTRE-SE</div></div>
+          <div><div class="ani-fk">N&#237;vel</div><div class="ani-fv">Consci&#234;ncia C1</div></div>
+          <div><div class="ani-fk">Campanha</div><div class="ani-fv">BOFU &middot; Andromeda</div></div>
+        </div>
+      </div>
+    </div>
+  </div>  <div class="slide" id="slide-14">
+    <div class="slide-inner">
+      <div class="ani-slide">
+        <div class="ani-slide-hdr">
+          <div class="ani-id-label">ANI 08</div>
+          <div class="ani-tags"><span class="ani-tag fmt">EST&#193;TICO</span><span class="ani-tag ang">RESULTADO</span></div>
+        </div>
+        <div class="ani-zones">
+          <div class="ani-zone">
+            <div class="ani-zlbl">Texto Principal</div>
+            <div class="ani-hook">Dono de padaria que sabe o custo real de cada produto precifica melhor e perde menos.</div>
+          <div class="ani-body-text">A maioria dos donos que chegam à ProSystem está precificando no feeling — soma custo de ingrediente, estima mão de obra e coloca uma margem que "parece certa". O problema é que embalagem, energia e perda de produção ficam de fora dessa conta.
+
+Com o ProSystem Gerencial, o custo real de cada produto fica calculado automaticamente. Você sabe quanto ganha de verdade em cada item — e quais produtos estão te fazendo perder dinheiro sem você perceber.
+
+Um consultor apresenta ao vivo em 40 minutos, com hora marcada.</div>
+          </div>
+          <div class="ani-row-grid">
+            <div class="ani-zone"><div class="ani-zlbl">T&#237;tulo</div><div class="ani-titulo">Custo real de cada produto da sua padaria</div></div>
+            <div class="ani-zone"><div class="ani-zlbl">Descri&#231;&#227;o</div><div class="ani-descr">Consultor ao vivo · 40 min</div></div>
+          </div>
+        </div>
+        <div class="ani-foot">
+          <div><div class="ani-fk">CTA</div><div class="ani-fv">CADASTRE-SE</div></div>
+          <div><div class="ani-fk">N&#237;vel</div><div class="ani-fv">Consci&#234;ncia C2</div></div>
+          <div><div class="ani-fk">Campanha</div><div class="ani-fv">BOFU &middot; Andromeda</div></div>
+        </div>
+      </div>
+    </div>
+  </div>  <div class="slide" id="slide-15">
+    <div class="slide-inner">
+      <div class="ani-slide">
+        <div class="ani-slide-hdr">
+          <div class="ani-id-label">ANI 09</div>
+          <div class="ani-tags"><span class="ani-tag fmt">CARROSSEL</span><span class="ani-tag ang">DIFERENCIAL</span></div>
+        </div>
+        <div class="ani-zones">
+          <div class="ani-zone">
+            <div class="ani-zlbl">Texto Principal</div>
+            <div class="ani-hook">Como donos de padaria param de perder dinheiro sem saber. Arraste →</div>
+          <ul class="cards-list">
+            <li>O que um sistema de padaria muda na prática | Não genérico — específico</li>
+            <li>Validade e perda controlados antes de virar prejuízo | Alerta antes do vencimento</li>
+            <li>Custo real de produção calculado automaticamente | Precifique com número, não feeling</li>
+            <li>Consultor mostra ao vivo em 40 minutos | Gratuito · Sem compromisso</li>
+          </ul>
+          </div>
+          <div class="ani-row-grid">
+            <div class="ani-zone"><div class="ani-zlbl">T&#237;tulo</div><div class="ani-titulo">Sistema feito para padarias</div></div>
+            <div class="ani-zone"><div class="ani-zlbl">Descri&#231;&#227;o</div><div class="ani-descr">Consultor ao vivo · Sem compromisso</div></div>
+          </div>
+        </div>
+        <div class="ani-foot">
+          <div><div class="ani-fk">CTA</div><div class="ani-fv">CADASTRE-SE</div></div>
+          <div><div class="ani-fk">N&#237;vel</div><div class="ani-fv">Consci&#234;ncia C2</div></div>
+          <div><div class="ani-fk">Campanha</div><div class="ani-fv">BOFU &middot; Andromeda</div></div>
+        </div>
+      </div>
+    </div>
+  </div>  <div class="slide" id="slide-16">
+    <div class="slide-inner">
+      <div class="ani-slide">
+        <div class="ani-slide-hdr">
+          <div class="ani-id-label">ANI 10</div>
+          <div class="ani-tags"><span class="ani-tag fmt">EST&#193;TICO</span><span class="ani-tag ang">CURIOSIDADE</span></div>
+        </div>
+        <div class="ani-zones">
+          <div class="ani-zone">
+            <div class="ani-zlbl">Texto Principal</div>
+            <div class="ani-hook">Qual produto da sua padaria dá mais prejuízo?</div>
+          <div class="ani-body-text">Se você não tem essa resposta na hora, é porque seu sistema não calcula o custo real de produção — e você está precificando no feeling.
+
+Não é crítica. É o que acontece com a maioria dos donos de padaria que trabalham com sistema genérico de varejo: o sistema registra venda, mas não enxerga produção.
+
+A ProSystem trabalha com padarias há mais de 16 anos. Um consultor faz esse diagnóstico ao vivo na sua operação — com hora marcada, sem custo.</div>
+          </div>
+          <div class="ani-row-grid">
+            <div class="ani-zone"><div class="ani-zlbl">T&#237;tulo</div><div class="ani-titulo">16 anos com padarias no Brasil</div></div>
+            <div class="ani-zone"><div class="ani-zlbl">Descri&#231;&#227;o</div><div class="ani-descr">Consultor ao vivo · 40 min</div></div>
+          </div>
+        </div>
+        <div class="ani-foot">
+          <div><div class="ani-fk">CTA</div><div class="ani-fv">CADASTRE-SE</div></div>
+          <div><div class="ani-fk">N&#237;vel</div><div class="ani-fv">Consci&#234;ncia C1</div></div>
+          <div><div class="ani-fk">Campanha</div><div class="ani-fv">BOFU &middot; Andromeda</div></div>
+        </div>
+      </div>
+    </div>
+  </div>  <div class="slide" id="slide-17">
+    <div class="slide-inner">
+      <div class="ani-slide">
+        <div class="ani-slide-hdr">
+          <div class="ani-id-label">ANI 11</div>
+          <div class="ani-tags"><span class="ani-tag fmt">EST&#193;TICO</span><span class="ani-tag ang">PROVA SOCIAL</span></div>
+        </div>
+        <div class="ani-zones">
+          <div class="ani-zone">
+            <div class="ani-zlbl">Texto Principal</div>
+            <div class="ani-hook">"Fácil de lidar, bem objetivo e com atenciosos profissionais." — Magno Campos, cliente ProSystem.</div>
+          <div class="ani-body-text">Dono de padaria não tem tempo para aprender sistema complexo. A ProSystem sabe disso — e desenvolveu o produto pensando em operação real de padaria, não em funcionalidade de vitrine.
+
+Implantação acompanhada, suporte humano que responde e equipe que conhece o setor de panificação de dentro.
+
+Um consultor apresenta ao vivo em 40 minutos, com hora marcada.</div>
+          </div>
+          <div class="ani-row-grid">
+            <div class="ani-zone"><div class="ani-zlbl">T&#237;tulo</div><div class="ani-titulo">Suporte humano que resolve de verdade</div></div>
+            <div class="ani-zone"><div class="ani-zlbl">Descri&#231;&#227;o</div><div class="ani-descr">Consultor ao vivo · Sem compromisso</div></div>
+          </div>
+        </div>
+        <div class="ani-foot">
+          <div><div class="ani-fk">CTA</div><div class="ani-fv">CADASTRE-SE</div></div>
+          <div><div class="ani-fk">N&#237;vel</div><div class="ani-fv">Consci&#234;ncia C2</div></div>
+          <div><div class="ani-fk">Campanha</div><div class="ani-fv">BOFU &middot; Andromeda</div></div>
+        </div>
+      </div>
+    </div>
+  </div>  <div class="slide" id="slide-18">
+    <div class="slide-inner">
+      <div class="ani-slide">
+        <div class="ani-slide-hdr">
+          <div class="ani-id-label">ANI 12</div>
+          <div class="ani-tags"><span class="ani-tag fmt">EST&#193;TICO</span><span class="ani-tag ang">URGÊNCIA</span></div>
+        </div>
+        <div class="ani-zones">
+          <div class="ani-zone">
+            <div class="ani-zlbl">Texto Principal</div>
+            <div class="ani-hook">Cada semana sem controle de produção é uma semana precificando no chute.</div>
+          <div class="ani-body-text">Não tem como saber se sua padaria está lucrando de verdade sem saber o custo real de cada produto. E não tem como saber o custo real sem um sistema que conecta produção, estoque e financeiro.
+
+Com sistema genérico, você vê as vendas. Mas não vê as perdas — até o mês fechar no vermelho sem uma causa clara.
+
+O ProSystem conecta essas três pontas. Um consultor mostra exatamente onde está o número que está faltando na sua gestão. 40 minutos, com hora marcada.</div>
+          </div>
+          <div class="ani-row-grid">
+            <div class="ani-zone"><div class="ani-zlbl">T&#237;tulo</div><div class="ani-titulo">Produção, estoque e financeiro integrados</div></div>
+            <div class="ani-zone"><div class="ani-zlbl">Descri&#231;&#227;o</div><div class="ani-descr">Consultor ao vivo · 40 min</div></div>
+          </div>
+        </div>
+        <div class="ani-foot">
+          <div><div class="ani-fk">CTA</div><div class="ani-fv">CADASTRE-SE</div></div>
+          <div><div class="ani-fk">N&#237;vel</div><div class="ani-fv">Consci&#234;ncia C1</div></div>
+          <div><div class="ani-fk">Campanha</div><div class="ani-fv">BOFU &middot; Andromeda</div></div>
+        </div>
+      </div>
+    </div>
+  </div>  <div class="slide" id="slide-20">
+    <div class="slide-inner">
+      <div class="ani-slide">
+        <div class="ani-slide-hdr">
+          <div class="ani-id-label">ANI 01</div>
+          <div class="ani-tags"><span class="ani-tag fmt">EST&#193;TICO</span><span class="ani-tag ang">DOR</span></div>
+        </div>
+        <div class="ani-zones">
+          <div class="ani-zone">
+            <div class="ani-zlbl">Texto Principal</div>
+            <div class="ani-hook">Sistema lento em horário de pico não é problema de equipe. É problema de ferramenta.</div>
+          <div class="ani-body-text">Farmácias e padarias que chegam à ProSystem chegam com a mesma história: equipe boa, operação travada. O sistema não acompanha o ritmo do negócio — e a culpa sempre cai em cima de quem está no caixa.
+
+A ProSystem desenvolve sistemas ERP e PDV para farmácias e padarias há mais de 16 anos. Específico para o seu setor — não adaptado de um sistema genérico.
+
+Se quiser entender como funciona, um consultor apresenta ao vivo com hora marcada.</div>
+          </div>
+          <div class="ani-row-grid">
+            <div class="ani-zone"><div class="ani-zlbl">T&#237;tulo</div><div class="ani-titulo">ERP e PDV para farmácias e padarias</div></div>
+            <div class="ani-zone"><div class="ani-zlbl">Descri&#231;&#227;o</div><div class="ani-descr">+16 anos · Consultor ao vivo</div></div>
+          </div>
+        </div>
+        <div class="ani-foot">
+          <div><div class="ani-fk">CTA</div><div class="ani-fv">CADASTRE-SE</div></div>
+          <div><div class="ani-fk">N&#237;vel</div><div class="ani-fv">Consci&#234;ncia C0</div></div>
+          <div><div class="ani-fk">Campanha</div><div class="ani-fv">TOFU &middot; Alcance</div></div>
+        </div>
+      </div>
+    </div>
+  </div>  <div class="slide" id="slide-21">
+    <div class="slide-inner">
+      <div class="ani-slide">
+        <div class="ani-slide-hdr">
+          <div class="ani-id-label">ANI 02</div>
+          <div class="ani-tags"><span class="ani-tag fmt">EST&#193;TICO</span><span class="ani-tag ang">CURIOSIDADE</span></div>
+        </div>
+        <div class="ani-zones">
+          <div class="ani-zone">
+            <div class="ani-zlbl">Texto Principal</div>
+            <div class="ani-hook">O maior custo de uma farmácia ou padaria mal gerida não aparece no extrato bancário.</div>
+          <div class="ani-body-text">Aparece no estoque que você não sabia que venceu. Na venda que não fechou porque o caixa travou. No mês que terminou sem você saber por que o lucro foi diferente do esperado.
+
+Esses custos existem mesmo com sistema. A diferença está em qual sistema — e se ele foi feito para o seu tipo de negócio ou adaptado de outro setor.
+
+A ProSystem trabalha exclusivamente com varejo especializado há 16 anos. Um consultor apresenta ao vivo.</div>
+          </div>
+          <div class="ani-row-grid">
+            <div class="ani-zone"><div class="ani-zlbl">T&#237;tulo</div><div class="ani-titulo">Sistema feito para o seu tipo de negócio</div></div>
+            <div class="ani-zone"><div class="ani-zlbl">Descri&#231;&#227;o</div><div class="ani-descr">Consultor ao vivo · 40 min</div></div>
+          </div>
+        </div>
+        <div class="ani-foot">
+          <div><div class="ani-fk">CTA</div><div class="ani-fv">CADASTRE-SE</div></div>
+          <div><div class="ani-fk">N&#237;vel</div><div class="ani-fv">Consci&#234;ncia C1</div></div>
+          <div><div class="ani-fk">Campanha</div><div class="ani-fv">TOFU &middot; Alcance</div></div>
+        </div>
+      </div>
+    </div>
+  </div>  <div class="slide" id="slide-22">
+    <div class="slide-inner">
+      <div class="ani-slide">
+        <div class="ani-slide-hdr">
+          <div class="ani-id-label">ANI 03</div>
+          <div class="ani-tags"><span class="ani-tag fmt">EST&#193;TICO</span><span class="ani-tag ang">PROVA SOCIAL</span></div>
+        </div>
+        <div class="ani-zones">
+          <div class="ani-zone">
+            <div class="ani-zlbl">Texto Principal</div>
+            <div class="ani-hook">16 anos trabalhando com farmácias, padarias e varejistas no Brasil.</div>
+          <div class="ani-body-text">Nesse tempo, aprendemos que dono de farmácia tem dor diferente de dono de padaria — e nenhum dos dois é bem atendido por um sistema genérico de gestão.
+
+Por isso a ProSystem desenvolveu soluções específicas para cada segmento: ERP e PDV para farmácias com SNGPC e PBM nativos; gestão de produção e validade para padarias.
+
+Suporte humano, sem burocracia, com equipe que conhece o seu setor.</div>
+          </div>
+          <div class="ani-row-grid">
+            <div class="ani-zone"><div class="ani-zlbl">T&#237;tulo</div><div class="ani-titulo">ProSystem — 16 anos no varejo especializado</div></div>
+            <div class="ani-zone"><div class="ani-zlbl">Descri&#231;&#227;o</div><div class="ani-descr">Consultor ao vivo · Sem compromisso</div></div>
+          </div>
+        </div>
+        <div class="ani-foot">
+          <div><div class="ani-fk">CTA</div><div class="ani-fv">CADASTRE-SE</div></div>
+          <div><div class="ani-fk">N&#237;vel</div><div class="ani-fv">Consci&#234;ncia C1</div></div>
+          <div><div class="ani-fk">Campanha</div><div class="ani-fv">TOFU &middot; Alcance</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ANI_SECTION_END -->
+
+  <!-- ═══ SLIDE TOFU HEADER — após último ANI do BOFU ═══ -->
+  <div class="slide" id="slide-19">
+    <div class="slide-inner">
+      <div class="eyebrow">Execu&#231;&#227;o &middot; TOFU</div>
+      <div class="slide-heading">Sua Campanha de Alcance</div>
+      <div class="camp-header-slide">
+        <div><span class="camp-name-badge">SHE [LP] [CBO] [CONTATO] TOPO - 09/06/26</span><span class="camp-stage-pill tofu">TOFU &#8212; Topo de Funil</span></div>
+        <div class="card" style="margin-top:16px;">
+          <div style="font-family:var(--fd);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--gray-500);margin-bottom:14px;">Conjunto 02 &#8212; 01 INTERESSES — FARMÁCIA | 02 INTERESSES — PADARIA</div>
+          <div class="conj-specs">
+            <div><div class="spec-lbl">P&#250;blico</div><div class="spec-val">Interesses específicos por segmento</div></div>
+            <div><div class="spec-lbl">Local &middot; Faixa</div><div class="spec-val">Brasil &middot; 30–58</div></div>
+            <div><div class="spec-lbl">Budget &middot; Pixel</div><div class="spec-val ac">R$ 15 &middot; [ID DO PIXEL]</div></div>
+          </div>
+        </div>
+        <div class="tofu-note"><strong>3 criativos compartilhados (DOR, CURIOSIDADE, PROVA SOCIAL)</strong><br><br>Budget de topo não justifica nova bateria — criativos TOFU com linguagem neutra funcionam nos dois segmentos</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE PRÓXIMOS PASSOS ═══ -->
+  <div class="slide" id="slide-23">
+    <div class="slide-inner">
+      <div class="eyebrow">A&#231;&#227;o</div>
+      <div class="slide-heading">Pr&#243;ximos Passos</div>
+      <div class="passos-grid">
+        <div class="passo-card"><div class="passo-num">Passo 1 &#8212; Priorit&#225;rio</div><div class="passo-title">Criar Landing Pages dedicadas</div><div class="passo-desc">Uma LP por segmento (Farmácia e Padaria) com formulário de agendamento de demonstração. Substituir [URL DA SUA LP] nas campanhas após criação.</div></div>
+        <div class="passo-card"><div class="passo-num">Passo 2</div><div class="passo-title">Instalar Pixel da Meta e configurar evento LEAD</div><div class="passo-desc">Instalar o Pixel na LP e disparar o evento LEAD no envio do formulário. Isso permite otimização por conversão real e futura criação de Lookalike.</div></div>
+        <!-- repetir .passo-card para Passo 3, 4... -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE ENCERRAMENTO ═══ -->
+  <div class="slide" id="slide-24">
+    <div class="slide-inner" style="display:flex;justify-content:center;">
+      <div class="closing-inner">
+        <span class="closing-icon">&#128640;</span>
+        <div class="closing-title">Seu Plano Est&#225; Pronto</div>
+        <div class="closing-sub">15 an&#250;ncios prontos para o ar &middot; R$ 1.500 &middot; Demonstração Guiada por Consultor<br>Siga os pr&#243;ximos passos e ative sua primeira campanha.</div>
+        <div class="closing-footer">Elaborado por <strong>Vinicius</strong> &middot; SHE &#8212; Software House Exponencial &middot; vinicius@expx.com.br<br>ProSystem Sistemas &middot; 26/06/2026 &middot; v1.4.0 &middot; ICP Farm&#225;cia + Padaria atualizados</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script>
+  let cur=0;
+  const slides=[...document.querySelectorAll('.slide')];
+  const segs=[...document.querySelectorAll('.prog-seg')];
+  const counter=document.getElementById('counter');
+  const exportBtn=document.getElementById('exportBtn');
+  const total=slides.length;
+  function goTo(n){
+    if(n<0||n>=total)return;
+    slides[cur].classList.remove('active');
+    cur=n;
+    slides[cur].classList.add('active');
+    segs.forEach((s,i)=>{s.classList.remove('filled','active');if(i<cur)s.classList.add('filled');if(i===cur)s.classList.add('active');});
+    counter.textContent=(cur+1)+' / '+total;
+    exportBtn.classList.toggle('visible',cur===total-1);
+  }
+  function nextSlide(){goTo(cur+1);}
+  function prevSlide(){goTo(cur-1);}
+  document.addEventListener('keydown',e=>{if(['ArrowRight','ArrowDown',' '].includes(e.key)){e.preventDefault();nextSlide();}if(['ArrowLeft','ArrowUp'].includes(e.key)){e.preventDefault();prevSlide();}});
+  let tx=0;
+  document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
+  document.addEventListener('touchend',e=>{const d=tx-e.changedTouches[0].clientX;if(Math.abs(d)>40)d>0?nextSlide():prevSlide();});
+  goTo(0);
+</script>
+</body>
+</html>

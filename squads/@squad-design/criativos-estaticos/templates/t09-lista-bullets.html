@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <link href="https://fonts.googleapis.com/css2?family={{FONT_FAMILY}}:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: {{COLOR_PRIMARY}};
+      --secondary: {{COLOR_SECONDARY}};
+      --accent: {{COLOR_ACCENT}};
+      --font-family: '{{FONT_FAMILY}}', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      font-family: var(--font-family);
+      background: var(--primary);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Imagem de fundo fullbleed */
+    .zone-bg-image {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .zone-bg-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* Overlay com gradiente sutil */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(2, 20, 2, 0.88) 0%,
+        rgba(5, 46, 5, 0.78) 50%,
+        rgba(44, 50, 88, 0.82) 100%
+      );
+      z-index: 1;
+    }
+
+    /* ZONA: Logo — topo esquerdo */
+    .zone-logo {
+      position: absolute;
+      top: 72px;
+      left: 108px;
+      z-index: 3;
+    }
+
+    .zone-logo img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* ZONA: Conteúdo principal */
+    .zone-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 160px 108px 130px 108px;
+      z-index: 3;
+    }
+
+    /* ZONA: Pre-headline */
+    .zone-pre-headline {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+      display: none;
+    }
+
+    /* ZONA: Headline */
+    .zone-headline {
+      font-size: 68px;
+      font-weight: 800;
+      line-height: 1.1;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+    }
+
+    .zone-headline .destaque {
+      color: var(--accent);
+    }
+
+    /* ZONA: Subheadline */
+    .zone-subheadline {
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.45;
+      color: rgba(255, 255, 255, 0.70);
+      margin-bottom: 64px;
+    }
+
+    /* ZONA: Lista de items */
+    .zone-list {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      margin-bottom: 64px;
+    }
+
+    .list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+    }
+
+    /* Ícone/número do item */
+    .list-item-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 800;
+      color: #FFFFFF;
+      flex-shrink: 0;
+    }
+
+    .list-item-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 4px;
+    }
+
+    .list-item-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .list-item-desc {
+      font-size: 24px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.4;
+    }
+
+    /* Separador entre itens */
+    .list-divider {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.10);
+      margin: 0;
+    }
+
+    /* ZONA: CTA */
+    .zone-cta {
+      display: inline-block;
+      background: var(--accent);
+      color: #FFFFFF;
+      font-size: 26px;
+      font-weight: 700;
+      padding: 18px 40px;
+      border-radius: 6px;
+      align-self: flex-start;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="zone-bg-image">
+    <img src="{{IMAGE_BG_URL}}" alt="{{IMAGE_BG_ALT}}">
+  </div>
+  <div class="overlay"></div>
+
+  <!-- Logo -->
+  <div class="zone-logo">
+    <img src="{{LOGO_URL}}" alt="Logo">
+  </div>
+
+  <div class="zone-content">
+    <div class="zone-pre-headline">{{PRE_HEADLINE}}</div>
+    <div class="zone-headline">{{HEADLINE}}</div>
+    <div class="zone-subheadline">{{SUBHEADLINE}}</div>
+
+    <div class="zone-list">
+      <div class="list-item">
+        <div class="list-item-icon">{{ITEM1_ICON}}</div>
+        <div class="list-item-text">
+          <div class="list-item-title">{{ITEM1_TITLE}}</div>
+          <div class="list-item-desc">{{ITEM1_DESC}}</div>
+        </div>
+      </div>
+      <div class="list-divider"></div>
+      <div class="list-item">
+        <div class="list-item-icon">{{ITEM2_ICON}}</div>
+        <div class="list-item-text">
+          <div class="list-item-title">{{ITEM2_TITLE}}</div>
+          <div class="list-item-desc">{{ITEM2_DESC}}</div>
+        </div>
+      </div>
+      <div class="list-divider"></div>
+      <div class="list-item">
+        <div class="list-item-icon">{{ITEM3_ICON}}</div>
+        <div class="list-item-text">
+          <div class="list-item-title">{{ITEM3_TITLE}}</div>
+          <div class="list-item-desc">{{ITEM3_DESC}}</div>
+        </div>
+      </div>
+      <div class="list-divider"></div>
+      <div class="list-item">
+        <div class="list-item-icon">{{ITEM4_ICON}}</div>
+        <div class="list-item-text">
+          <div class="list-item-title">{{ITEM4_TITLE}}</div>
+          <div class="list-item-desc">{{ITEM4_DESC}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="zone-cta">{{CTA}}</div>
+  </div>
+
+</body>
+</html>

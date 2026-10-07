@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>ANI09 — Carrossel — Custo de Produção | BOFU Padaria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #0a0f1a; padding: 24px; display: flex; gap: 20px; width: fit-content; }
+
+    .card { width: 1080px; height: 1080px; flex-shrink: 0; position: relative; overflow: hidden; display: flex; flex-direction: column; }
+
+    /* ── CARD 1 — CAPA ── */
+    .card-1 { background: url('./producao.jpg') center/cover no-repeat; }
+    .card-1 .ov {
+      position: absolute; inset: 0;
+      background: linear-gradient(165deg, rgba(8,15,30,.18) 0%, rgba(10,18,40,.98) 100%);
+    }
+    .card-1 .inner { position: relative; z-index: 2; padding: 60px 68px; display: flex; flex-direction: column; height: 100%; }
+    .card-1 .logo { height: 36px; filter: brightness(0) invert(1); margin-bottom: auto; }
+    .card-num-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(249,115,22,.2); border: 1px solid rgba(249,115,22,.4); color: #fb923c; font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 7px 18px; border-radius: 100px; margin-bottom: 20px; width: fit-content; }
+    .prog { display: flex; gap: 7px; margin-bottom: 28px; }
+    .prog span { height: 3px; border-radius: 2px; background: rgba(255,255,255,.25); }
+    .prog span.w-active { background: #F97316; width: 44px; }
+    .prog span.w-dot { width: 20px; }
+    .card-1 h2 { font-family: 'Montserrat',sans-serif; font-size: 62px; font-weight: 900; line-height: 1.06; color: #fff; letter-spacing: -.028em; margin-bottom: 20px; }
+    .card-1 h2 em { font-style: normal; color: #fb923c; }
+    .hint { font-size: 15px; color: rgba(255,255,255,.45); display: flex; align-items: center; gap: 8px; }
+
+    /* ── CARDS 2-4 ── */
+    .card-mid { background: #1D3A5F; }
+    .card-mid .dot-grid { position: absolute; inset: 0; background-image: radial-gradient(circle,rgba(249,115,22,.1) 1px,transparent 1px); background-size: 40px 40px; }
+    .card-mid .inner { position: relative; z-index: 2; padding: 60px 68px; height: 100%; display: flex; flex-direction: column; }
+    .card-mid .logo { height: 32px; filter: brightness(0) invert(1); margin-bottom: auto; }
+    .card-num { font-family: 'Montserrat',sans-serif; font-size: 140px; font-weight: 900; color: rgba(249,115,22,.1); line-height: 1; margin-bottom: -20px; letter-spacing: -.05em; }
+    .card-mid h3 { font-family: 'Montserrat',sans-serif; font-size: 42px; font-weight: 900; color: #fff; line-height: 1.12; letter-spacing: -.022em; margin-bottom: 24px; }
+    .card-mid h3 em { font-style: normal; color: #fb923c; }
+    .card-mid p { font-size: 20px; color: rgba(255,255,255,.65); line-height: 1.72; flex: 1; }
+    .prog-mid { display: flex; gap: 7px; margin-top: 32px; }
+    .prog-mid span { height: 3px; border-radius: 2px; background: rgba(255,255,255,.18); }
+    .prog-mid span.w-active { background: #F97316; width: 44px; }
+    .prog-mid span.w-dot { width: 20px; }
+
+    /* ── CARD 5 — CTA ── */
+    .card-cta { background: #F97316; }
+    .card-cta .inner { padding: 60px 68px; height: 100%; display: flex; flex-direction: column; }
+    .card-cta .logo { height: 36px; filter: brightness(0) invert(1); margin-bottom: auto; }
+    .cta-area { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .cta-tag { display: inline-block; background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25); color: rgba(255,255,255,.9); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 8px 18px; border-radius: 100px; margin-bottom: 32px; width: fit-content; }
+    .card-cta h2 { font-family: 'Montserrat',sans-serif; font-size: 58px; font-weight: 900; color: #fff; line-height: 1.08; letter-spacing: -.026em; margin-bottom: 24px; }
+    .card-cta p { font-size: 20px; color: rgba(255,255,255,.8); line-height: 1.68; margin-bottom: 48px; max-width: 700px; }
+    .btn-white { display: inline-flex; align-items: center; gap: 12px; background: #fff; color: #1D3A5F; font-family: 'Montserrat',sans-serif; font-size: 19px; font-weight: 800; padding: 22px 44px; border-radius: 12px; }
+    .card-cta-bottom { color: rgba(255,255,255,.45); font-size: 14px; padding-top: 28px; }
+  </style>
+</head>
+<body>
+
+  <!-- CARD 1 — CAPA -->
+  <div class="card card-1">
+    <div class="ov"></div>
+    <div class="inner">
+      <img src="https://prosystemnet.com/wp-content/uploads/2025/11/Design-sem-nome-3-1.png" alt="ProSystem" class="logo">
+      <div class="prog">
+        <span class="w-active"></span>
+        <span class="w-dot"></span><span class="w-dot"></span><span class="w-dot"></span><span class="w-dot"></span>
+      </div>
+      <div class="card-num-tag">1 de 5 · BOFU Padaria</div>
+      <h2>Você sabe exatamente<br>quanto custa produzir<br>cada item da<br><em>sua padaria?</em></h2>
+      <div class="hint">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        Deslize para ver
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="card card-mid">
+    <div class="dot-grid"></div>
+    <div class="inner">
+      <img src="https://prosystemnet.com/wp-content/uploads/2025/11/Design-sem-nome-3-1.png" alt="ProSystem" class="logo">
+      <div class="card-num">01</div>
+      <h3>Ficha técnica<br>desatualizada é<br><em>preço jogado fora.</em></h3>
+      <p>Quando o preço da farinha sobe 15% e a ficha técnica não reflete isso, a padaria absorve o custo direto na margem. No fim do mês: volume alto, caixa vazio.</p>
+      <div class="prog-mid">
+        <span class="w-active"></span><span class="w-active"></span>
+        <span class="w-dot"></span><span class="w-dot"></span><span class="w-dot"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="card card-mid">
+    <div class="dot-grid"></div>
+    <div class="inner">
+      <img src="https://prosystemnet.com/wp-content/uploads/2025/11/Design-sem-nome-3-1.png" alt="ProSystem" class="logo">
+      <div class="card-num">02</div>
+      <h3>Desperdício sem<br>rastreio é custo<br><em>invisível todo mês.</em></h3>
+      <p>Sem controle de produção integrado ao estoque, não dá pra saber quanto foi desperdiçado, quanto saiu sem registro ou quanto foi produzido além da demanda. Esse número existe — e está no seu caixa.</p>
+      <div class="prog-mid">
+        <span class="w-active"></span><span class="w-active"></span><span class="w-active"></span>
+        <span class="w-dot"></span><span class="w-dot"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 4 -->
+  <div class="card card-mid">
+    <div class="dot-grid"></div>
+    <div class="inner">
+      <img src="https://prosystemnet.com/wp-content/uploads/2025/11/Design-sem-nome-3-1.png" alt="ProSystem" class="logo">
+      <div class="card-num">03</div>
+      <h3>Ficha técnica<br>integrada: custo real<br><em>em cada receita.</em></h3>
+      <p>ProSystem ERP vincula ficha técnica ao custo do insumo em tempo real. Quando o ingrediente muda de preço, o custo da receita atualiza. Você define o preço de venda com margem visível — sem chute.</p>
+      <div class="prog-mid">
+        <span class="w-active"></span><span class="w-active"></span><span class="w-active"></span><span class="w-active"></span>
+        <span class="w-dot"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 5 — CTA -->
+  <div class="card card-cta">
+    <div class="inner">
+      <img src="https://prosystemnet.com/wp-content/uploads/2025/11/Design-sem-nome-3-1.png" alt="ProSystem" class="logo">
+      <div class="cta-area">
+        <div class="cta-tag">40 minutos · Ao vivo · Sem compromisso</div>
+        <h2>Veja o controle<br>de produção ao vivo<br>na sua padaria.</h2>
+        <p>Um consultor especializado mostra PDV, ficha técnica, estoque de insumos e financeiro funcionando ao vivo, no ritmo das suas dúvidas.</p>
+        <div class="btn-white">
+          Agendar demonstração gratuita
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D3A5F" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+      <div class="card-cta-bottom">ProSystem · ERP especializado em padaria e varejo alimentar</div>
+    </div>
+  </div>
+
+</body>
+</html>

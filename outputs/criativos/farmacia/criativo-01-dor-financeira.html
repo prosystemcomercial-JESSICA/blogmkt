@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Criativo 01 — Dor Financeira | ProSystem Farmácia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 1080px; height: 1080px; overflow: hidden; font-family: 'Inter', sans-serif; }
+
+    .ad {
+      width: 1080px;
+      height: 1080px;
+      position: relative;
+      background: url('./farma-1.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(10, 20, 45, 0.25) 0%,
+        rgba(15, 30, 60, 0.65) 45%,
+        rgba(15, 30, 60, 0.97) 100%
+      );
+    }
+
+    .logo {
+      position: absolute;
+      top: 48px;
+      left: 60px;
+      height: 38px;
+      filter: brightness(0) invert(1);
+      z-index: 2;
+    }
+
+    .corner-pill {
+      position: absolute;
+      top: 54px;
+      right: 60px;
+      z-index: 2;
+      background: rgba(74,122,184,0.85);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px;
+      padding: 8px 20px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      padding: 0 64px 60px;
+    }
+
+    .audience-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 100px;
+      padding: 8px 18px;
+      color: rgba(255,255,255,0.85);
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+
+    .audience-tag svg { flex-shrink: 0; }
+
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 64px;
+      font-weight: 900;
+      line-height: 1.08;
+      color: #fff;
+      letter-spacing: -0.025em;
+      margin-bottom: 22px;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: #7BAFD4;
+    }
+
+    .sub {
+      font-size: 20px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.6;
+      margin-bottom: 36px;
+      max-width: 680px;
+    }
+
+    .cta-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #4A7AB8;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      padding: 18px 36px;
+      border-radius: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .years-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.5);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .years-badge span {
+      color: rgba(255,255,255,0.85);
+      font-weight: 700;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="ad">
+    <div class="overlay"></div>
+    <img src="https://prosystemnet.com/wp-content/uploads/2025/11/Design-sem-nome-3-1.png" alt="ProSystem" class="logo">
+    <div class="corner-pill">ERP LOCAL PARA FARMÁCIA</div>
+
+    <div class="content">
+      <div class="audience-tag">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#7BAFD4"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Para donos de farmácia independente
+      </div>
+      <h1>Sua farmácia vende.<br>Mas você sabe quanto<br><em>realmente sobra?</em></h1>
+      <p class="sub">Controle estoque, margem, caixa e SNGPC em um sistema local instalado na sua farmácia — robusto, seguro e independente de internet.</p>
+      <div class="cta-row">
+        <div class="btn-cta">
+          Ver como funciona na minha farmácia
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="years-badge">
+          <span>16 anos</span> especializados em farmácias
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

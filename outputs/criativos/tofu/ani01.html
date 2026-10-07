@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>TOFU ANI01 — Estático — Reconhecimento de Dor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 1080px; height: 1080px; overflow: hidden; font-family: 'Inter', sans-serif; }
+    .ad { width: 1080px; height: 1080px; background: #1D3A5F; display: flex; flex-direction: column; padding: 56px 64px; position: relative; overflow: hidden; }
+    .dot-grid { position: absolute; inset: 0; background-image: radial-gradient(circle,rgba(74,122,184,.15) 1px,transparent 1px); background-size: 44px 44px; }
+    .glow { position: absolute; bottom: -160px; left: -80px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle,rgba(74,122,184,.18) 0%,transparent 70%); }
+    .top { display: flex; justify-content: space-between; align-items: flex-start; position: relative; z-index: 2; }
+    .logo { height: 34px; filter: brightness(0) invert(1); }
+    .funnel-pill { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.55); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 7px 16px; border-radius: 100px; }
+    .middle { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .counter-row { display: flex; gap: 40px; margin-bottom: 40px; }
+    .counter { }
+    .counter-val { font-family: 'Montserrat',sans-serif; font-size: 52px; font-weight: 900; color: #fff; line-height: 1; letter-spacing: -.03em; }
+    .counter-val span { color: #4A7AB8; }
+    .counter-label { font-size: 15px; color: rgba(255,255,255,.5); margin-top: 6px; line-height: 1.4; max-width: 180px; }
+    .divider { width: 1px; background: rgba(255,255,255,.1); align-self: stretch; }
+    h1 { font-family: 'Montserrat',sans-serif; font-size: 56px; font-weight: 900; line-height: 1.08; color: #fff; letter-spacing: -.025em; margin-bottom: 22px; }
+    h1 em { font-style: normal; color: #7BAFD4; }
+    .sub { font-size: 20px; color: rgba(255,255,255,.6); line-height: 1.65; max-width: 720px; }
+    .bottom { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: flex-end; }
+    .tagline { color: rgba(255,255,255,.4); font-size: 14px; line-height: 1.6; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; background: #4A7AB8; color: #fff; font-family: 'Montserrat',sans-serif; font-size: 16px; font-weight: 800; padding: 17px 30px; border-radius: 10px; white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <div class="ad">
+    <div class="dot-grid"></div>
+    <div class="glow"></div>
+    <div class="top">
+      <img src="https://prosystemnet.com/wp-content/uploads/2025/11/Design-sem-nome-3-1.png" alt="ProSystem" class="logo">
+      <div class="funnel-pill">Topo de funil · Reconhecimento</div>
+    </div>
+    <div class="middle">
+      <div class="counter-row">
+        <div class="counter">
+          <div class="counter-val">67<span>%</span></div>
+          <div class="counter-label">dos pequenos negócios não sabem seu custo real por produto</div>
+        </div>
+        <div class="divider"></div>
+        <div class="counter">
+          <div class="counter-val">3<span>×</span></div>
+          <div class="counter-label">mais vendas fechadas por quem conhece a própria margem</div>
+        </div>
+      </div>
+      <h1>Você vende bem.<br>Mas sabe quanto<br><em>realmente sobra?</em></h1>
+      <p class="sub">Quem toma decisão pelo saldo bancário está administrando o passado. ERP local muda isso — você enxerga a margem real, por produto, em tempo real.</p>
+    </div>
+    <div class="bottom">
+      <div class="tagline">ProSystem · ERP local para farmácia e padaria</div>
+      <div class="btn">Conhecer o sistema <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+    </div>
+  </div>
+</body>
+</html>

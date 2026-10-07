@@ -1,0 +1,108 @@
+squad:
+  code: blog-para-social
+  scope: expx
+  setor: marketing
+  grupo: redes-sociais
+  sessao: social-media
+  name: expx blog-para-social
+  description: "Lê conteúdo de qualquer URL fornecida, extrai insights e melhores ângulos, cria 5 briefings calibrados pela Metodologia Andromeda (C1/C2/C3), passa por revisão editorial rigorosa com loop de correção até aprovação total, checkpoint de aprovação humana e aciona automaticamente a squad criativos-estaticos para produzir cada arte."
+  icon: newspaper
+  version: "1.0.1"
+
+  company: "_expxagents/_memory/company.md"
+  preferences: "_expxagents/_memory/preferences.md"
+  memory: "_memory/memories.md"
+
+  target_audience: Seguidores nas redes sociais do cliente
+  platform: instagram-feed
+  format: planejamento-de-conteudo
+
+  schedule:
+    enabled: false
+
+  skills:
+    - web_search
+    - web_fetch
+    - file_management
+
+  data:
+    - key: blog_url
+      label: "URL de conteúdo"
+      description: "URL a ser pesquisada (blog, site institucional, site de notícias, etc.). Para blogs e sites de notícias, a Camila busca automaticamente as publicações mais recentes. Para outros tipos de site, extrai o conteúdo relevante da página fornecida."
+      required: true
+
+  agents:
+    - id: pesquisador-blog
+      name: "Camila Fontes"
+      icon: globe
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Camila"
+      prompt: agents/pesquisador-blog.md
+      skills:
+        - web_search
+        - web_fetch
+
+    - id: analista-insights
+      name: "Bruno Takeda"
+      icon: magnifying-glass
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Bruno"
+      prompt: agents/analista-insights.md
+
+    - id: copywriter
+      name: "Isabela Moura"
+      icon: pencil
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Isabela"
+      prompt: agents/copywriter.md
+
+    - id: revisor-editorial
+      name: "Marcos Vinicius"
+      icon: check-circle
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Marcos"
+      prompt: agents/revisor-editorial.md
+
+    - id: dispatcher
+      name: "Tatiana Souza"
+      icon: send
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Tatiana"
+      prompt: agents/dispatcher.md
+      skills:
+        - file_management
+
+  pipeline:
+    steps:
+      - id: step-01
+        agent: pesquisador-blog
+        label: "Acessar o blog, listar e extrair o conteúdo completo dos 3+ artigos mais recentes"
+        execution: inline
+
+      - id: step-02
+        agent: analista-insights
+        label: "Destrinchar os artigos e extrair os pontos mais altos e relevantes de cada um"
+        deliverFrom: pesquisador-blog
+        execution: inline
+
+      - id: step-03
+        agent: copywriter
+        label: "Criar 5 briefings de criativos com headline, subheadline e CTA baseados nos insights"
+        deliverFrom: analista-insights
+        execution: inline
+
+      - id: step-04
+        agent: revisor-editorial
+        label: "Revisar e aprovar os 5 briefings — rejeitar devolve ao copywriter para correção"
+        deliverFrom: copywriter
+        execution: inline
+        on_reject: step-03
+
+      - id: step-05
+        type: checkpoint
+        label: "Aprovação humana — validar os 5 briefings antes de acionar os criativos"
+        options:
+          - approve
+          - reject
+        on_reject: step-03
+
+      - id: step-06
+        agent: dispatcher
+        label: "Acionar a squad criativos-estaticos para cada um dos 5 briefings aprovados"
+        deliverFrom: revisor-editorial
+        execution: inline

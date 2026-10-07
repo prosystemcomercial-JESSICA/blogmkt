@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <link href="https://fonts.googleapis.com/css2?family={{FONT_FAMILY}}:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: {{COLOR_PRIMARY}};
+      --secondary: {{COLOR_SECONDARY}};
+      --accent: {{COLOR_ACCENT}};
+      --font-family: '{{FONT_FAMILY}}', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      font-family: var(--font-family);
+      background: var(--primary);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Imagem de fundo fullbleed */
+    .zone-bg-image {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .zone-bg-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* Overlay com gradiente sutil — escurece mais nas bordas */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(2, 20, 2, 0.88) 0%,
+        rgba(5, 46, 5, 0.78) 50%,
+        rgba(44, 50, 88, 0.82) 100%
+      );
+      z-index: 1;
+    }
+
+    /* ZONA: Logo — topo esquerdo */
+    .zone-logo {
+      position: absolute;
+      top: 72px;
+      left: 108px;
+      z-index: 3;
+    }
+
+    .zone-logo img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* ZONA: Pre-headline */
+    .zone-pre-headline {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      position: absolute;
+      top: 210px;
+      left: 108px;
+      z-index: 3;
+      display: none;
+    }
+
+    /* ZONA: Headline — protagonista */
+    .zone-headline {
+      position: absolute;
+      top: 300px;
+      left: 0;
+      right: 0;
+      padding: 60px 108px;
+      font-size: 88px;
+      font-weight: 900;
+      line-height: 1.05;
+      color: #FFFFFF;
+      z-index: 3;
+      text-align: left;
+    }
+
+    .zone-headline .destaque {
+      color: var(--accent);
+    }
+
+    /* ZONA: Subheadline */
+    .zone-subheadline {
+      position: absolute;
+      bottom: 260px;
+      left: 108px;
+      right: 108px;
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.80);
+      z-index: 3;
+    }
+
+    /* ZONA: CTA */
+    .zone-cta {
+      position: absolute;
+      bottom: 130px;
+      left: 108px;
+      display: inline-block;
+      background: var(--accent);
+      color: #FFFFFF;
+      font-size: 26px;
+      font-weight: 700;
+      padding: 18px 40px;
+      border-radius: 6px;
+      z-index: 3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="zone-bg-image">
+    <img src="{{IMAGE_BG_URL}}" alt="{{IMAGE_BG_ALT}}">
+  </div>
+  <div class="overlay"></div>
+
+  <!-- Logo -->
+  <div class="zone-logo">
+    <img src="{{LOGO_URL}}" alt="Logo">
+  </div>
+
+  <!-- Pre-headline -->
+  <div class="zone-pre-headline">{{PRE_HEADLINE}}</div>
+
+  <!-- Headline protagonista -->
+  <div class="zone-headline">{{HEADLINE}}</div>
+
+  <!-- Subheadline -->
+  <div class="zone-subheadline">{{SUBHEADLINE}}</div>
+
+  <!-- CTA -->
+  <div class="zone-cta">{{CTA}}</div>
+
+</body>
+</html>

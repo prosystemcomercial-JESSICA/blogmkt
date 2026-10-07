@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<!-- ════════════════════════════════════════════════════════════════════
+     TEMPLATE STORY v1.0.0 — Squad Plano de Mídia SHE
+     Formato: Story paginado · navegação click / teclado / swipe
+     Tema: Dark SHE · Aprovado: 2026-05-28
+
+     INSTRUÇÕES PARA O DOCUMENT WRITER:
+     1. NUNCA recriar do zero. Copiar este arquivo e substituir {{TOKENS}}.
+     2. Alterar APENAS :root (11 tokens de cor) e {{TOKENS}} de dados.
+     3. Gerar 1 slide por ANI a partir de copy-revisada.md.
+     4. O número de .prog-seg deve ser igual ao total de slides.
+     5. Campanhas H2 (MOFU sem LP): apenas linha no budget — sem slide próprio.
+     ════════════════════════════════════════════════════════════════════ -->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{COMPANY_NAME}} &#8212; Plano de M&#237;dia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ══ DESIGN TOKENS — 11 valores que mudam por cliente ══ */
+    :root {
+      --primary:        {{COLOR_PRIMARY}};
+      --primary-light:  {{COLOR_PRIMARY_LIGHT}};
+      --primary-dark:   {{COLOR_PRIMARY_DARK}};
+      --primary-glow:   {{COLOR_PRIMARY_GLOW}};
+      --primary-bg:     {{COLOR_PRIMARY_BG}};
+      --primary-border: {{COLOR_PRIMARY_BORDER}};
+      --accent:         {{COLOR_ACCENT}};
+      --accent-dark:    {{COLOR_ACCENT_DARK}};
+      --accent-glow:    {{COLOR_ACCENT_GLOW}};
+      --accent-bg:      {{COLOR_ACCENT_BG}};
+      --accent-border:  {{COLOR_ACCENT_BORDER}};
+
+      /* Fixos — dark SHE */
+      --bg-deep:    #080F1E;
+      --bg-surface: #0D1526;
+      --bg-card:    #111827;
+      --white:      #F1F5F9;
+      --gray-100:   #CBD5E1;
+      --gray-300:   #94A3B8;
+      --gray-500:   #64748B;
+      --gray-700:   rgba(255,255,255,0.07);
+      --ok:         #22c55e;
+      --ok-bg:      rgba(34,197,94,0.10);
+      --ok-border:  rgba(34,197,94,0.22);
+      --warn:       #f59e0b;
+      --warn-bg:    rgba(245,158,11,0.10);
+      --warn-border:rgba(245,158,11,0.25);
+      --fd: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --fb: 'DM Sans', system-ui, sans-serif;
+      --r: 12px; --r-lg: 16px;
+    }
+
+    body { font-family: var(--fb); color: var(--white); background: var(--bg-deep); overflow: hidden; height: 100vh; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .story { position: fixed; inset: 0; overflow: hidden; }
+
+    /* ══ PROGRESS BAR ══ */
+    #progress { position: fixed; top: 14px; left: 18px; right: 18px; display: flex; gap: 3px; z-index: 200; }
+    .prog-seg { flex: 1; height: 3px; border-radius: 2px; background: rgba(255,255,255,0.18); transition: background 0.25s; }
+    .prog-seg.filled { background: var(--primary-light); }
+    .prog-seg.active { background: var(--white); }
+
+    /* ══ COUNTER ══ */
+    #counter { position: fixed; bottom: 18px; right: 22px; font-family: var(--fd); font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.3); z-index: 200; letter-spacing: 0.5px; }
+
+    /* ══ NAV ZONES ══ */
+    .nav-prev, .nav-next { position: fixed; top: 0; bottom: 0; width: 28%; z-index: 150; cursor: pointer; }
+    .nav-prev { left: 0; }
+    .nav-next { right: 0; }
+
+    /* ══ EXPORT BUTTON ══ */
+    #exportBtn { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; border: none; cursor: pointer; padding: 12px 28px; border-radius: 100px; font-family: var(--fd); font-size: 13px; font-weight: 700; box-shadow: 0 4px 20px var(--primary-glow); z-index: 200; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+    #exportBtn.visible { opacity: 1; pointer-events: all; }
+
+    /* ══ SLIDES ══ */
+    .slide { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 56px 48px; opacity: 0; pointer-events: none; transition: opacity 0.28s ease; overflow-y: auto; }
+    .slide.active { opacity: 1; pointer-events: all; }
+    .slide-inner { width: 100%; max-width: 720px; }
+
+    /* ══ COMPONENTES ══ */
+    .eyebrow { font-family: var(--fd); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; color: var(--primary-light); margin-bottom: 6px; }
+    .slide-heading { font-family: var(--fd); font-size: 26px; font-weight: 800; letter-spacing: -0.8px; background: linear-gradient(135deg, var(--white) 0%, var(--gray-100) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--gray-700); }
+    .card { background: var(--bg-card); border: 1px solid var(--gray-700); border-radius: var(--r); padding: 18px 20px; }
+    .tag { display: inline-block; background: var(--primary-bg); color: var(--primary-light); font-family: var(--fd); font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 100px; margin: 2px 2px 2px 0; border: 1px solid var(--primary-border); }
+    code { background: rgba(255,255,255,0.06); padding: 2px 8px; border-radius: 5px; font-size: 12px; font-family: 'Courier New', monospace; color: var(--primary-light); border: 1px solid var(--gray-700); }
+
+    /* ══ CAPA ══ */
+    .slide-cover { position: relative; overflow: hidden; }
+    .cover-orb-a { position: absolute; top: -140px; left: -100px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, var(--primary-glow) 0%, transparent 65%); pointer-events: none; }
+    .cover-orb-b { position: absolute; bottom: -120px; right: -80px; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 65%); pointer-events: none; }
+    .cover-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.022) 1px,transparent 1px); background-size: 64px 64px; pointer-events: none; }
+    .cover-badge { display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--primary-border); background: var(--primary-bg); color: var(--primary-light); font-family: var(--fd); font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 100px; letter-spacing: 0.4px; margin-bottom: 24px; }
+    .cover-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+    .cover-company { font-family: var(--fd); font-size: clamp(36px,6vw,62px); font-weight: 800; letter-spacing: -2.5px; line-height: 1.0; margin-bottom: 14px; background: linear-gradient(135deg,#ffffff 0%,rgba(255,255,255,0.72) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .cover-tagline { font-size: 16px; color: var(--gray-300); margin-bottom: 36px; max-width: 500px; line-height: 1.55; }
+    .cover-meta { display: flex; gap: 0; flex-wrap: wrap; border: 1px solid var(--gray-700); border-radius: var(--r); overflow: hidden; width: fit-content; background: var(--bg-card); }
+    .cover-mi { padding: 11px 22px; border-right: 1px solid var(--gray-700); }
+    .cover-mi:last-child { border-right: none; }
+    .cover-ml { font-family: var(--fd); font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-500); margin-bottom: 3px; }
+    .cover-mv { font-family: var(--fd); font-size: 13px; font-weight: 700; color: var(--white); }
+    .cover-cta { margin-top: 28px; display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg,var(--accent) 0%,var(--accent-dark) 100%); color: white; font-family: var(--fd); font-size: 12px; font-weight: 700; padding: 8px 20px; border-radius: 100px; box-shadow: 0 4px 16px var(--accent-glow); }
+
+    /* ══ RAIO-X ══ */
+    .diag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .diag-card { border-radius: var(--r); padding: 18px 20px; border: 1px solid; }
+    .diag-card.ok   { background: var(--ok-bg);   border-color: var(--ok-border); }
+    .diag-card.warn { background: var(--warn-bg);  border-color: var(--warn-border); }
+    .diag-badge { display: inline-flex; align-items: center; font-family: var(--fd); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; padding: 4px 10px; border-radius: 6px; margin-bottom: 12px; }
+    .diag-card.ok   .diag-badge { color: var(--ok);   background: rgba(34,197,94,0.12);  border: 1px solid var(--ok-border); }
+    .diag-card.warn .diag-badge { color: var(--warn);  background: rgba(245,158,11,0.12); border: 1px solid var(--warn-border); }
+    .diag-list { list-style: none; }
+    .diag-list li { font-size: 13px; padding: 5px 0 5px 20px; position: relative; line-height: 1.45; color: var(--gray-100); }
+    .diag-list li::before { position: absolute; left: 0; font-size: 11px; top: 6px; }
+    .diag-card.ok   .diag-list li::before { content: '\2713'; color: var(--ok);   font-weight: 700; }
+    .diag-card.warn .diag-list li::before { content: '\25B3'; color: var(--warn); }
+
+    /* ══ ICP & OFERTA ══ */
+    .icp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .info-label { font-family: var(--fd); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gray-500); margin-bottom: 12px; }
+    .info-body { font-size: 13px; color: var(--gray-100); line-height: 1.6; }
+    .info-body p { margin-bottom: 5px; }
+    .info-body strong { color: var(--white); }
+    .oferta-box { background: var(--primary-bg); border: 1px solid var(--primary-border); border-radius: var(--r); padding: 16px 18px; margin-bottom: 14px; }
+    .oferta-label { font-family: var(--fd); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 4px; }
+    .oferta-name  { font-family: var(--fd); font-size: 22px; font-weight: 800; color: var(--white); letter-spacing: -0.5px; }
+    .oferta-sub   { font-size: 12px; color: var(--gray-300); margin-top: 2px; }
+
+    /* ══ FUNIL ══ */
+    .funil-stages { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 12px; }
+    .funil-stage { border-radius: var(--r); padding: 20px 16px; text-align: center; border: 1px solid; }
+    .funil-stage.tofu { background: var(--primary-bg);  border-color: var(--primary-border); }
+    .funil-stage.bofu { background: var(--accent-bg);   border-color: var(--accent-border); }
+    .funil-stage.mofu { background: var(--bg-surface);  border-color: var(--gray-700); border-style: dashed; opacity: 0.5; }
+    .funil-lbl { font-family: var(--fd); font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 6px; }
+    .tofu .funil-lbl { color: var(--primary-light); } .bofu .funil-lbl { color: var(--accent); } .mofu .funil-lbl { color: var(--gray-500); }
+    .funil-name { font-family: var(--fd); font-size: 24px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.5px; }
+    .tofu .funil-name { color: var(--primary-light); } .bofu .funil-name { color: var(--accent); } .mofu .funil-name { color: var(--gray-500); }
+    .funil-desc { font-size: 12px; color: var(--gray-300); line-height: 1.4; margin-bottom: 10px; }
+    .funil-pill { display: inline-block; font-family: var(--fd); font-size: 10px; font-weight: 700; padding: 3px 12px; border-radius: 100px; }
+    .tofu .funil-pill { background: var(--primary); color: white; } .bofu .funil-pill { background: var(--accent); color: white; } .mofu .funil-pill { background: var(--gray-700); color: var(--gray-300); }
+    .funil-footer { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+    .funil-fi { font-size: 11px; color: var(--gray-500); text-align: center; padding: 0 6px; line-height: 1.4; }
+    .funil-fi.dim { opacity: 0.35; }
+
+    /* ══ SEGMENTAÇÃO ══ */
+    .seg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .seg-card { border-radius: var(--r); border: 1px solid var(--gray-700); overflow: hidden; background: var(--bg-surface); }
+    .seg-hdr { padding: 10px 16px; font-family: var(--fd); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--gray-700); }
+    .seg-card.bofu-seg .seg-hdr { color: var(--primary-light); background: var(--primary-bg); }
+    .seg-card.tofu-seg .seg-hdr { color: var(--accent); background: var(--accent-bg); }
+    .seg-row { display: flex; flex-direction: column; padding: 8px 16px; border-bottom: 1px solid var(--gray-700); }
+    .seg-row:last-child { border-bottom: none; }
+    .seg-key { font-family: var(--fd); font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray-500); margin-bottom: 2px; }
+    .seg-val { font-size: 12.5px; color: var(--gray-100); }
+
+    /* ══ BUDGET ══ */
+    .budget-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    .budget-table th { font-family: var(--fd); background: var(--primary-bg); color: var(--primary-light); font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--primary-border); }
+    .budget-table td { padding: 11px 14px; border-bottom: 1px solid var(--gray-700); vertical-align: middle; color: var(--gray-100); }
+    .budget-table tbody tr:last-child td { border-bottom: none; background: var(--primary-bg); color: var(--white); font-weight: 700; }
+    .pill { display: inline-block; font-family: var(--fd); font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 100px; }
+    .pill.bofu { background: var(--primary-bg); color: var(--primary-light); border: 1px solid var(--primary-border); }
+    .pill.tofu { background: var(--accent-bg);  color: var(--accent);        border: 1px solid var(--accent-border); }
+    .pill.h2   { background: rgba(245,158,11,0.12); color: var(--warn); border: 1px solid rgba(245,158,11,0.3); }
+
+    /* ══ CAMPANHA HEADER ══ */
+    .camp-header-slide { width: 100%; max-width: 720px; }
+    .camp-name-badge { display: inline-block; font-family: 'Courier New', monospace; font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.85); background: var(--bg-card); border: 1px solid var(--gray-700); padding: 7px 14px; border-radius: 8px; margin-bottom: 18px; letter-spacing: 0.3px; }
+    .camp-stage-pill { display: inline-flex; align-items: center; font-family: var(--fd); font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 100px; margin-left: 10px; }
+    .camp-stage-pill.bofu { background: var(--primary); color: white; }
+    .camp-stage-pill.tofu { background: rgba(51,65,85,1); color: var(--gray-100); }
+    .conj-specs { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 4px; }
+    .spec-lbl { font-family: var(--fd); font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray-500); margin-bottom: 4px; }
+    .spec-val { font-size: 13px; font-weight: 600; color: var(--gray-100); }
+    .spec-val.pc { color: var(--primary-light); } .spec-val.ac { color: var(--accent); }
+    .tofu-note { background: rgba(255,255,255,0.03); border: 1px solid var(--gray-700); border-left: 3px solid var(--gray-500); border-radius: var(--r); padding: 16px 20px; font-size: 13px; color: var(--gray-300); line-height: 1.6; margin-top: 16px; }
+    .tofu-note strong { color: var(--white); }
+
+    /* ══ ANI CARD ══ */
+    .ani-slide { width: 100%; max-width: 720px; }
+    .ani-slide-hdr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .ani-id-label { font-family: var(--fd); font-size: 20px; font-weight: 800; color: var(--primary-light); letter-spacing: -0.5px; }
+    .ani-tags { display: flex; gap: 6px; }
+    .ani-tag { font-family: var(--fd); font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 100px; }
+    .ani-tag.fmt { background: var(--primary-bg); color: var(--primary-light); border: 1px solid var(--primary-border); }
+    .ani-tag.ang { background: var(--accent-bg);  color: var(--accent);       border: 1px solid var(--accent-border); }
+    .ani-zones { display: flex; flex-direction: column; gap: 10px; }
+    .ani-zone { background: var(--bg-card); border: 1px solid var(--gray-700); border-radius: var(--r); overflow: hidden; }
+    .ani-zlbl { font-family: var(--fd); font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gray-500); padding: 8px 14px 0; }
+    .ani-hook { font-size: 14px; font-weight: 700; color: var(--white); line-height: 1.4; padding: 6px 14px 8px; border-left: 3px solid var(--primary); margin: 6px 14px 8px; }
+    .ani-body-text { font-size: 12.5px; color: var(--gray-300); line-height: 1.6; padding: 8px 14px 12px; background: var(--bg-surface); margin: 0 14px 12px; border-radius: 8px; }
+    .ani-titulo { font-size: 14px; font-weight: 700; color: var(--white); padding: 6px 14px 12px; }
+    .ani-descr  { font-size: 13px; font-style: italic; color: var(--gray-300); padding: 6px 14px 12px; }
+    .ani-row-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .ani-foot { display: flex; gap: 24px; background: var(--bg-surface); border-top: 1px solid var(--gray-700); padding: 10px 14px; margin-top: 8px; border-radius: 0 0 var(--r) var(--r); flex-wrap: wrap; }
+    .ani-fk { font-family: var(--fd); font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray-500); margin-bottom: 2px; }
+    .ani-fv { font-size: 12px; font-weight: 600; color: var(--gray-100); }
+    .cards-list { list-style: none; padding: 0 14px 12px; }
+    .cards-list li { font-size: 12.5px; color: var(--gray-300); padding: 5px 0 5px 20px; position: relative; line-height: 1.4; }
+    .cards-list li::before { content: '\2192'; position: absolute; left: 0; color: var(--primary-light); font-weight: 700; }
+    .cards-list li strong { color: var(--white); }
+
+    /* ══ PRÓXIMOS PASSOS ══ */
+    .passos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .passo-card { border: 1px solid var(--gray-700); border-radius: var(--r); padding: 18px 20px; background: var(--bg-surface); }
+    .passo-num   { font-family: var(--fd); font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-light); margin-bottom: 5px; }
+    .passo-title { font-family: var(--fd); font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 6px; letter-spacing: -0.2px; }
+    .passo-desc  { font-size: 12.5px; color: var(--gray-300); line-height: 1.5; }
+
+    /* ══ ENCERRAMENTO ══ */
+    .closing-inner { text-align: center; }
+    .closing-icon  { font-size: 48px; margin-bottom: 20px; display: block; }
+    .closing-title { font-family: var(--fd); font-size: 28px; font-weight: 800; letter-spacing: -1px; margin-bottom: 10px; background: linear-gradient(135deg,var(--white) 0%,var(--gray-100) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .closing-sub   { font-size: 15px; color: var(--gray-300); margin-bottom: 28px; line-height: 1.55; }
+    .closing-footer { font-family: var(--fd); font-size: 11px; color: var(--gray-500); margin-top: 36px; }
+
+    /* ══ PRINT — cada slide = uma página ══ */
+    @media print {
+      body { overflow: visible; height: auto; }
+      .story { position: static; overflow: visible; }
+      .slide { position: relative !important; height: 100vh; opacity: 1 !important; pointer-events: none; page-break-after: always; display: flex !important; }
+      #progress, #counter, .nav-prev, .nav-next, #exportBtn { display: none !important; }
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+<div class="story" id="story">
+
+  <div id="progress"><!-- PROG_SEGS_PLACEHOLDER --></div>
+  <div id="counter">1 / {{TOTAL_SLIDES}}</div>
+  <button id="exportBtn" onclick="window.print()">&#8595; Exportar PDF</button>
+  <div class="nav-prev" onclick="prevSlide()"></div>
+  <div class="nav-next" onclick="nextSlide()"></div>
+
+  <!-- ═══ SLIDE 01 — CAPA ═══ -->
+  <div class="slide slide-cover active" id="slide-0">
+    <div class="cover-orb-a"></div><div class="cover-orb-b"></div><div class="cover-grid"></div>
+    <div class="slide-inner" style="position:relative;z-index:1;">
+      <div class="cover-badge">Meu Plano de M&#237;dia &middot; gerado por {{OPERATOR_NAME}} &middot; SHE</div>
+      <div class="cover-company">{{COMPANY_NAME}}</div>
+      <div class="cover-tagline">{{COMPANY_TAGLINE}}</div>
+      <div class="cover-meta">
+        <div class="cover-mi"><div class="cover-ml">Data</div><div class="cover-mv">{{DATE_DDMMYYYY}}</div></div>
+        <div class="cover-mi"><div class="cover-ml">Investimento</div><div class="cover-mv">{{INVESTMENT_MONTHLY}}</div></div>
+        <div class="cover-mi"><div class="cover-ml">Oferta</div><div class="cover-mv">{{OFFER_TYPE}}</div></div>
+        <div class="cover-mi"><div class="cover-ml">An&#250;ncios</div><div class="cover-mv">{{TOTAL_ANIS}}</div></div>
+      </div>
+      <div class="cover-cta">{{HEADER_BADGE}} &#8594; use &#8592;&#8594; para navegar</div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 02 — RAIO-X ═══ -->
+  <div class="slide" id="slide-1">
+    <div class="slide-inner">
+      <div class="eyebrow">Situa&#231;&#227;o atual</div>
+      <div class="slide-heading">Raio-X do Seu Neg&#243;cio</div>
+      <div class="diag-grid">
+        <div class="diag-card ok">
+          <div class="diag-badge">&#10003; Pontos Positivos</div>
+          <ul class="diag-list">
+            <li>{{DIAG_OK_1}}</li><li>{{DIAG_OK_2}}</li><li>{{DIAG_OK_3}}</li>
+          </ul>
+        </div>
+        <div class="diag-card warn">
+          <div class="diag-badge">&#9651; Aten&#231;&#227;o</div>
+          <ul class="diag-list">
+            <li>{{DIAG_WARN_1}}</li><li>{{DIAG_WARN_2}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 03 — ICP & OFERTA ═══ -->
+  <div class="slide" id="slide-2">
+    <div class="slide-inner">
+      <div class="eyebrow">P&#250;blico &amp; Oferta</div>
+      <div class="slide-heading">Seu Comprador e Oferta Prescrita</div>
+      <div class="icp-grid">
+        <div>
+          <div class="info-label">Perfil do Cliente Ideal</div>
+          <div class="info-body">
+            <p><strong>Cargo:</strong> {{ICP_CARGO}}</p>
+            <p style="margin-top:7px;"><strong>Segmentos:</strong></p>
+            <div style="margin-top:5px;"><span class="tag">{{ICP_SEG_1}}</span><span class="tag">{{ICP_SEG_2}}</span></div>
+            <p style="margin-top:8px;"><strong>Porte:</strong> {{ICP_PORTE}}</p>
+            <p><strong>Localiza&#231;&#227;o:</strong> {{ICP_LOCAL}}</p>
+            <p><strong>Faixa et&#225;ria:</strong> {{ICP_FAIXA}}</p>
+            <p style="margin-top:8px;margin-bottom:3px;"><strong>Dores:</strong></p>
+            <ul style="padding-left:14px;font-size:12.5px;"><li>{{ICP_DOR_1}}</li><li>{{ICP_DOR_2}}</li></ul>
+          </div>
+        </div>
+        <div>
+          <div class="info-label">Oferta Prescrita</div>
+          <div class="oferta-box">
+            <div class="oferta-label">Oferta Principal</div>
+            <div class="oferta-name">{{OFERTA_NOME}}</div>
+            <div class="oferta-sub">{{OFERTA_SUB}}</div>
+          </div>
+          <div class="info-body">
+            <p style="margin-bottom:5px;"><strong>Por que esta oferta?</strong> {{OFERTA_JUSTIFICATIVA}}</p>
+            <p style="margin-bottom:4px;"><strong>Destino:</strong> <code>{{OFERTA_LP_URL}}</code></p>
+            <p style="margin-bottom:4px;"><strong>Pixel:</strong> <code>{{OFERTA_PIXEL}}</code></p>
+            <p style="margin-bottom:4px;"><strong>Benchmark CPL:</strong> {{OFERTA_CPL_BENCHMARK}}</p>
+            <p><strong>Ciclo de venda:</strong> {{OFERTA_CICLO}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 04 — FUNIL ═══ -->
+  <div class="slide" id="slide-3">
+    <div class="slide-inner">
+      <div class="eyebrow">Estrat&#233;gia</div>
+      <div class="slide-heading">Estrutura do Seu Funil</div>
+      <div class="funil-stages">
+        <div class="funil-stage tofu">
+          <div class="funil-lbl">Topo</div><div class="funil-name">TOFU</div>
+          <div class="funil-desc">{{TOFU_DESC}}</div>
+          <div class="funil-pill">&#9679; Ativo</div>
+        </div>
+        <div class="funil-stage mofu"><!-- trocar para "tofu" se MOFU for H1 -->
+          <div class="funil-lbl">Meio</div><div class="funil-name">MOFU</div>
+          <div class="funil-desc">{{MOFU_DESC}}</div>
+          <div class="funil-pill">{{MOFU_PILL}}</div>
+        </div>
+        <div class="funil-stage bofu">
+          <div class="funil-lbl">Fundo</div><div class="funil-name">BOFU</div>
+          <div class="funil-desc">{{BOFU_DESC}}</div>
+          <div class="funil-pill">&#9679; Ativo</div>
+        </div>
+      </div>
+      <div class="funil-footer">
+        <div class="funil-fi">{{TOFU_NIVEL}}</div>
+        <div class="funil-fi dim">{{MOFU_NIVEL}}</div>
+        <div class="funil-fi">{{BOFU_NIVEL}}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 05 — SEGMENTAÇÃO ═══ -->
+  <div class="slide" id="slide-4">
+    <div class="slide-inner">
+      <div class="eyebrow">Configura&#231;&#227;o</div>
+      <div class="slide-heading">Segmenta&#231;&#227;o por Campanha</div>
+      <div class="seg-grid">
+        <div class="seg-card bofu-seg">
+          <div class="seg-hdr">BOFU &#8212; {{SEG_BOFU_TIPO}}</div>
+          <div class="seg-row"><div class="seg-key">P&#250;blico</div><div class="seg-val">{{SEG_BOFU_PUBLICO}}</div></div>
+          <div class="seg-row"><div class="seg-key">Estrutura</div><div class="seg-val">{{SEG_BOFU_ESTRUTURA}}</div></div>
+          <div class="seg-row"><div class="seg-key">Local &middot; Faixa</div><div class="seg-val">{{SEG_BOFU_LOCAL}} &middot; {{SEG_BOFU_FAIXA}}</div></div>
+          <div class="seg-row"><div class="seg-key">Advantage+ / AN</div><div class="seg-val">Desativados</div></div>
+          <div class="seg-row"><div class="seg-key">Evolu&#231;&#227;o</div><div class="seg-val">{{SEG_BOFU_EVOLUCAO}}</div></div>
+        </div>
+        <div class="seg-card tofu-seg">
+          <div class="seg-hdr">TOFU &#8212; {{SEG_TOFU_TIPO}}</div>
+          <div class="seg-row"><div class="seg-key">P&#250;blico</div><div class="seg-val">{{SEG_TOFU_PUBLICO}}</div></div>
+          <div class="seg-row"><div class="seg-key">Crit&#233;rios</div><div class="seg-val">{{SEG_TOFU_CRITERIOS}}</div></div>
+          <div class="seg-row"><div class="seg-key">Local &middot; Faixa</div><div class="seg-val">{{SEG_TOFU_LOCAL}} &middot; {{SEG_TOFU_FAIXA}}</div></div>
+          <div class="seg-row"><div class="seg-key">Advantage+ / AN</div><div class="seg-val">Desativados</div></div>
+          <div class="seg-row"><div class="seg-key">Evolu&#231;&#227;o</div><div class="seg-val">{{SEG_TOFU_EVOLUCAO}}</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 06 — BUDGET ═══ -->
+  <div class="slide" id="slide-5">
+    <div class="slide-inner">
+      <div class="eyebrow">Investimento</div>
+      <div class="slide-heading">Distribui&#231;&#227;o de Budget</div>
+      <table class="budget-table">
+        <thead><tr><th>Campanha</th><th>Etapa</th><th>R$/dia</th><th>R$/m&#234;s</th><th>%</th><th>Objetivo</th></tr></thead>
+        <tbody>
+          <tr><td>{{BUDGET_ROW1_NOME}}</td><td><span class="pill bofu">BOFU</span></td><td>{{BUDGET_ROW1_DIA}}</td><td>{{BUDGET_ROW1_MES}}</td><td>{{BUDGET_ROW1_PCT}}</td><td>{{BUDGET_ROW1_OBJ}}</td></tr>
+          <tr><td>{{BUDGET_ROW2_NOME}}</td><td><span class="pill tofu">TOFU</span></td><td>{{BUDGET_ROW2_DIA}}</td><td>{{BUDGET_ROW2_MES}}</td><td>{{BUDGET_ROW2_PCT}}</td><td>{{BUDGET_ROW2_OBJ}}</td></tr>
+          <!-- MOFU H2 se houver: -->
+          <tr><td>{{BUDGET_MOFU_NOME}}</td><td><span class="pill h2">MOFU</span></td><td colspan="3" style="color:var(--gray-500);font-style:italic;">{{BUDGET_MOFU_NOTA}}</td><td>{{BUDGET_MOFU_OBJ}}</td></tr>
+          <tr><td><strong>Total H1</strong></td><td>&#8212;</td><td><strong>{{BUDGET_TOTAL_DIA}}</strong></td><td><strong>{{BUDGET_TOTAL_MES}}</strong></td><td><strong>100%</strong></td><td>&#8212;</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 07 — HEADER BOFU ═══ -->
+  <div class="slide" id="slide-6">
+    <div class="slide-inner">
+      <div class="eyebrow">Execu&#231;&#227;o &middot; BOFU</div>
+      <div class="slide-heading">Sua Campanha Principal</div>
+      <div class="camp-header-slide">
+        <div><span class="camp-name-badge">{{BOFU_CAMP_NAME}}</span><span class="camp-stage-pill bofu">BOFU &#8212; Fundo de Funil</span></div>
+        <div class="card" style="margin-top:16px;">
+          <div style="font-family:var(--fd);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--gray-500);margin-bottom:14px;">Conjunto 01 &#8212; {{BOFU_CONJ_NOME}}</div>
+          <div class="conj-specs">
+            <div><div class="spec-lbl">P&#250;blico</div><div class="spec-val">{{BOFU_PUBLICO}}</div></div>
+            <div><div class="spec-lbl">Local &middot; Faixa</div><div class="spec-val">{{BOFU_LOCAL}} &middot; {{BOFU_FAIXA}}</div></div>
+            <div><div class="spec-lbl">Budget &middot; Pixel</div><div class="spec-val pc">{{BOFU_BUDGET_DIA}} &middot; {{BOFU_PIXEL}}</div></div>
+          </div>
+        </div>
+        <div style="margin-top:14px;font-size:12.5px;color:var(--gray-500);">&#8594; Pr&#243;ximos slides: {{BOFU_ANI_COUNT}} an&#250;ncios com copy completa</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANI_SECTION_START -->
+  <!-- ═══ SLIDES ANI — copiar este bloco 1× por ANI, incrementar id ═══
+       ESTÁTICO (padrão): -->
+  <div class="slide" id="slide-7">
+    <div class="slide-inner">
+      <div class="ani-slide">
+        <div class="ani-slide-hdr">
+          <div class="ani-id-label">{{ANI_ID}}</div>
+          <div class="ani-tags"><span class="ani-tag fmt">EST&#193;TICO</span><span class="ani-tag ang">{{ANI_ANGULO}}</span></div>
+        </div>
+        <div class="ani-zones">
+          <div class="ani-zone">
+            <div class="ani-zlbl">Texto Principal</div>
+            <div class="ani-hook">{{ANI_HOOK}}</div>
+            <div class="ani-body-text">{{ANI_BODY}}</div>
+          </div>
+          <div class="ani-row-grid">
+            <div class="ani-zone"><div class="ani-zlbl">T&#237;tulo</div><div class="ani-titulo">{{ANI_TITULO}}</div></div>
+            <div class="ani-zone"><div class="ani-zlbl">Descri&#231;&#227;o</div><div class="ani-descr">{{ANI_DESCRICAO}}</div></div>
+          </div>
+        </div>
+        <div class="ani-foot">
+          <div><div class="ani-fk">CTA</div><div class="ani-fv">{{ANI_CTA}}</div></div>
+          <div><div class="ani-fk">N&#237;vel</div><div class="ani-fv">Consci&#234;ncia {{ANI_NIVEL}}</div></div>
+          <div><div class="ani-fk">Campanha</div><div class="ani-fv">BOFU &middot; Andromeda</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- CARROSSEL: trocar .ani-tag fmt para "CARROSSEL" e substituir .ani-body-text por <ul class="cards-list"> com <li> por card -->
+  <!-- ANI_SECTION_END -->
+
+  <!-- ═══ SLIDE TOFU HEADER — após último ANI do BOFU ═══ -->
+  <div class="slide" id="slide-N">
+    <div class="slide-inner">
+      <div class="eyebrow">Execu&#231;&#227;o &middot; TOFU</div>
+      <div class="slide-heading">Sua Campanha de Alcance</div>
+      <div class="camp-header-slide">
+        <div><span class="camp-name-badge">{{TOFU_CAMP_NAME}}</span><span class="camp-stage-pill tofu">TOFU &#8212; Topo de Funil</span></div>
+        <div class="card" style="margin-top:16px;">
+          <div style="font-family:var(--fd);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--gray-500);margin-bottom:14px;">Conjunto 02 &#8212; {{TOFU_CONJ_NOME}}</div>
+          <div class="conj-specs">
+            <div><div class="spec-lbl">P&#250;blico</div><div class="spec-val">{{TOFU_PUBLICO}}</div></div>
+            <div><div class="spec-lbl">Local &middot; Faixa</div><div class="spec-val">{{TOFU_LOCAL}} &middot; {{TOFU_FAIXA}}</div></div>
+            <div><div class="spec-lbl">Budget &middot; Pixel</div><div class="spec-val ac">{{TOFU_BUDGET_DIA}} &middot; {{TOFU_PIXEL}}</div></div>
+          </div>
+        </div>
+        <div class="tofu-note"><strong>{{TOFU_REUSO_NOTA}}</strong><br><br>{{TOFU_REUSO_JUSTIFICATIVA}}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE PRÓXIMOS PASSOS ═══ -->
+  <div class="slide" id="slide-N1">
+    <div class="slide-inner">
+      <div class="eyebrow">A&#231;&#227;o</div>
+      <div class="slide-heading">Pr&#243;ximos Passos</div>
+      <div class="passos-grid">
+        <div class="passo-card"><div class="passo-num">Passo 1 &#8212; Priorit&#225;rio</div><div class="passo-title">{{PASSO1_TITULO}}</div><div class="passo-desc">{{PASSO1_DESC}}</div></div>
+        <div class="passo-card"><div class="passo-num">Passo 2</div><div class="passo-title">{{PASSO2_TITULO}}</div><div class="passo-desc">{{PASSO2_DESC}}</div></div>
+        <!-- repetir .passo-card para Passo 3, 4... -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE ENCERRAMENTO ═══ -->
+  <div class="slide" id="slide-N2">
+    <div class="slide-inner" style="display:flex;justify-content:center;">
+      <div class="closing-inner">
+        <span class="closing-icon">&#128640;</span>
+        <div class="closing-title">Seu Plano Est&#225; Pronto</div>
+        <div class="closing-sub">{{TOTAL_ANIS}} an&#250;ncios prontos para o ar &middot; {{INVESTMENT_MONTHLY}} &middot; {{OFFER_TYPE}}<br>Siga os pr&#243;ximos passos e ative sua primeira campanha.</div>
+        <div class="closing-footer">Elaborado por <strong>{{OPERATOR_NAME}}</strong> &middot; SHE &#8212; Software House Exponencial &middot; {{OPERATOR_EMAIL}}<br>{{COMPANY_NAME}} &middot; {{DATE_DDMMYYYY}} &middot; v{{SQUAD_VERSION}}</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script>
+  let cur=0;
+  const slides=[...document.querySelectorAll('.slide')];
+  const segs=[...document.querySelectorAll('.prog-seg')];
+  const counter=document.getElementById('counter');
+  const exportBtn=document.getElementById('exportBtn');
+  const total=slides.length;
+  function goTo(n){
+    if(n<0||n>=total)return;
+    slides[cur].classList.remove('active');
+    cur=n;
+    slides[cur].classList.add('active');
+    segs.forEach((s,i)=>{s.classList.remove('filled','active');if(i<cur)s.classList.add('filled');if(i===cur)s.classList.add('active');});
+    counter.textContent=(cur+1)+' / '+total;
+    exportBtn.classList.toggle('visible',cur===total-1);
+  }
+  function nextSlide(){goTo(cur+1);}
+  function prevSlide(){goTo(cur-1);}
+  document.addEventListener('keydown',e=>{if(['ArrowRight','ArrowDown',' '].includes(e.key)){e.preventDefault();nextSlide();}if(['ArrowLeft','ArrowUp'].includes(e.key)){e.preventDefault();prevSlide();}});
+  let tx=0;
+  document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
+  document.addEventListener('touchend',e=>{const d=tx-e.changedTouches[0].clientX;if(Math.abs(d)>40)d>0?nextSlide():prevSlide();});
+  goTo(0);
+</script>
+</body>
+</html>

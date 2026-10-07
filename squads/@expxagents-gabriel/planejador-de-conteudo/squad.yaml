@@ -1,0 +1,237 @@
+squad:
+  code: planejador-de-conteudo
+  setor: marketing
+  grupo: redes-sociais
+  sessao: planejamento
+  name: Planejador de Conteúdo
+  description: >
+    Squad que monta, do zero, um planejamento de conteúdo de 1 mês para redes sociais
+    de qualquer nicho — sem depender do cliente saber definir persona, público-alvo ou
+    estratégia. A squad pesquisa o nicho informado, constrói ICP e persona usando
+    Escala de Hawkins + JTBD + VALS, garimpa referências virais reais (Método 5x3),
+    desenha a estratégia de frequência e pilares, escreve os roteiros/copy aplicando
+    frameworks de persuasão e o Manual Anti-GPT. Nenhuma peça chega ao usuário sem
+    passar pelo QA (gate Anti-GPT + score 0-10, nota de corte 8) — peças reprovadas
+    voltam para correção em quantos ciclos forem necessários, e cada reprovação
+    alimenta uma memória de aprendizado contínuo para não repetir o mesmo erro nas
+    peças seguintes. Termina — se o usuário quiser — com um calendário editorial em
+    HTML só para visualização e, opcionalmente, com o despacho das demandas de
+    produção (arte estática, carrossel, reels) para squads de produção já
+    instaladas no mesmo ambiente, se existirem e o usuário confirmar.
+  icon: calendar
+  version: "1.0.1"
+  category: marketing
+  tags:
+    - marketing
+    - social-media
+    - content-planning
+    - copywriting
+
+  company: "_expxagents/_memory/company.md"
+  preferences: "_expxagents/_memory/preferences.md"
+  memory: "_memory/memories.md"
+
+  target_audience: Qualquer negócio/cliente final que precise de planejamento de conteúdo para redes sociais, em qualquer nicho
+  platform: social-media
+  format: content-planning
+
+  schedule:
+    enabled: false
+
+  skills:
+    - web_search
+    - web_fetch
+    - file_management
+
+  data: []
+
+  agents:
+    # === ETAPA 1 — INTELIGÊNCIA DE NICHO (invisível ao usuário, não pede aprovação própria) ===
+    - id: investigador-nicho
+      name: "Renata Cavalcanti"
+      icon: search
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Renata"
+      prompt: agents/investigador-nicho.md
+
+    # === ETAPA 2 — REFERÊNCIAS VIRAIS (MÉTODO 5x3) ===
+    - id: curador-referencias
+      name: "Gabriel Tavares"
+      icon: compass
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=GabrielTavares"
+      prompt: agents/curador-referencias.md
+
+    # === ETAPA 3 — ESTRATÉGIA E DISTRIBUIÇÃO ===
+    - id: estrategista-conteudo
+      name: "Marina Solano"
+      icon: target
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Marina"
+      prompt: agents/estrategista-conteudo.md
+
+    # === ETAPA 4 — HOOKS (antes da escrita completa) ===
+    - id: especialista-hooks
+      name: "Diogo Amaral"
+      icon: zap
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Diogo"
+      prompt: agents/especialista-hooks.md
+
+    # === ETAPA 5 — ROTEIRO/COPY COMPLETO ===
+    - id: roteirista
+      name: "Debora Duarte"
+      icon: pencil
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Debora"
+      prompt: agents/roteirista.md
+
+    # === ETAPA 6 — REVISÃO ANTI-GPT + QA ===
+    - id: revisor-qa
+      name: "Ricardo Neves"
+      icon: shield
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Ricardo"
+      prompt: agents/revisor-qa.md
+
+    # === BÔNUS — CALENDÁRIO HTML (só executa se o usuário confirmar no checkpoint final) ===
+    - id: montador-calendario
+      name: "Yasmin Cordeiro"
+      icon: layout
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Yasmin"
+      prompt: agents/montador-calendario.md
+      optional: true
+
+    # === BÔNUS — DESPACHO PARA SQUADS DE PRODUÇÃO (só executa se o usuário confirmar) ===
+    - id: despachante-producao
+      name: "Otávio Ramires"
+      icon: send
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Otavio"
+      prompt: agents/despachante-producao.md
+      optional: true
+
+  pipeline:
+    # REGRAS PERMANENTES:
+    # 1. O nicho/produto/público é sempre definido a partir do que o usuário informar
+    #    no início da execução (nome do negócio, o que vende, para quem vende). A squad
+    #    NUNCA assume que é software house — investiga o nicho real informado.
+    # 2. Nenhum roteiro é escrito antes do Checkpoint 1 (aprovação do briefing/ICP/
+    #    persona/estratégia). Escrever antes disso é escrever sem alvo.
+    # 3. O Calendário HTML (Yasmin) só roda se o usuário disser sim no Checkpoint 3.
+    #    Nunca é assumido como parte obrigatória da entrega.
+
+    steps:
+      # === ETAPA 1 — INVESTIGAÇÃO DE NICHO, ICP E PERSONA ===
+      - id: step-01
+        agent: investigador-nicho
+        label: "Renata procura contexto já disponível na instalação, confirma ou pergunta o que falta, e pesquisa o nicho para construir ICP + persona com Hawkins, JTBD e VALS"
+        execution: inline
+
+      # === ETAPA 2 — REFERÊNCIAS VIRAIS (MÉTODO 5x3) ===
+      - id: step-02
+        agent: curador-referencias
+        label: "Gabriel Tavares mapeia 5 perfis de referência e cura 6 conteúdos fortes de cada (30 no total)"
+        deliverFrom: investigador-nicho
+        execution: inline
+
+      # === ETAPA 3 — ESTRATÉGIA, FREQUÊNCIA E DISTRIBUIÇÃO NO CALENDÁRIO ===
+      - id: step-03
+        agent: estrategista-conteudo
+        label: "Marina pergunta (com opções de múltipla escolha) se há acontecimentos reais do negócio a ancorar no mês, define frequência, pilares e distribui os 30 conteúdos validados respeitando os slots fixos"
+        deliverFrom: curador-referencias
+        execution: inline
+
+      # === CHECKPOINT 1 — APROVAÇÃO DO BRIEFING (ICP + PERSONA + ESTRATÉGIA) ===
+      - id: checkpoint-01
+        type: checkpoint
+        agent: estrategista-conteudo
+        label: "Usuário aprova ICP, persona, referências e estratégia de distribuição antes de qualquer roteiro ser escrito"
+        deliverFrom: estrategista-conteudo
+        options:
+          - approve
+          - request_changes
+        on_reject: step-01
+
+      # === ETAPA 4 — HOOKS DE CADA CONTEÚDO ===
+      - id: step-04
+        agent: especialista-hooks
+        label: "Diogo escreve e pontua (Hook Score 0-10) o hook de cada conteúdo do mês, usando também o Dicionário de Gatilhos do Nicho produzido por Gabriel Tavares no step-02"
+        deliverFrom: estrategista-conteudo
+        execution: inline
+
+      # === ETAPA 5 — ROTEIRO/COPY COMPLETO POR FORMATO ===
+      - id: step-05
+        agent: roteirista
+        label: "Debora escreve o conteúdo completo de cada peça (estático, carrossel ou reels) usando os hooks aprovados e a estrutura fixa por formato"
+        deliverFrom: especialista-hooks
+        execution: inline
+
+      # === ETAPA 6 — REVISÃO ANTI-GPT + QA (GATE + SCORE 0-10, NOTA DE CORTE 8) ===
+      - id: step-06
+        agent: revisor-qa
+        label: "Ricardo aplica o gate Anti-GPT e pontua cada peça (0-10); só segue quem atingir score >= 8"
+        deliverFrom: roteirista
+        execution: inline
+
+      - id: step-06b
+        agent: roteirista
+        label: "Debora corrige peças reprovadas no gate ou com score abaixo de 8, conforme apontado por Ricardo"
+        deliverFrom: revisor-qa
+        execution: inline
+        condition: "se houver peça com score < 8 ou reprovada no gate"
+        on_complete: step-06c
+
+      - id: step-06c
+        agent: revisor-qa
+        label: "Ricardo repontua do zero as peças corrigidas — repete o ciclo step-06b/step-06c quantas vezes forem necessárias até toda peça atingir score >= 8"
+        deliverFrom: roteirista
+        execution: inline
+        condition: "se houve qualquer correção na rodada anterior"
+        on_complete: step-06b
+
+      # === CHECKPOINT 2 — APROVAÇÃO DOS CONTEÚDOS ===
+      - id: checkpoint-02
+        type: checkpoint
+        agent: revisor-qa
+        label: "Usuário revisa o pacote completo de conteúdos — pode escolher aprovar tudo de uma vez ou revisar peça por peça"
+        deliverFrom: revisor-qa
+        options:
+          - approve_all
+          - review_one_by_one
+          - request_changes
+        on_reject: step-05
+
+      # === CHECKPOINT 3 — OFERTA DO CALENDÁRIO HTML (BÔNUS) ===
+      - id: checkpoint-03
+        type: checkpoint
+        agent: revisor-qa
+        label: "Squad pergunta se o usuário quer gerar o calendário editorial em HTML com o material aprovado"
+        deliverFrom: revisor-qa
+        options:
+          - yes_generate_calendar
+          - no_finish_here
+
+      # === ETAPA 7 — CALENDÁRIO HTML (SÓ SE APROVADO NO CHECKPOINT 3) ===
+      - id: step-07
+        agent: montador-calendario
+        label: "Yasmin monta o calendário editorial em HTML (visualização com modais, sem filtros/funcionalidades extras)"
+        deliverFrom: revisor-qa
+        execution: inline
+        optional: true
+        skip_if_not_requested: true
+
+      # === CHECKPOINT 4 — OFERTA DE DESPACHO PARA SQUADS DE PRODUÇÃO (BÔNUS FINAL) ===
+      - id: checkpoint-04
+        type: checkpoint
+        agent: revisor-qa
+        label: "Squad mapeia squads de arte/carrossel/reels instaladas no ambiente e pergunta se o usuário quer despachar as demandas de produção para elas"
+        deliverFrom: revisor-qa
+        options:
+          - yes_dispatch_production
+          - no_finish_here
+        # Este checkpoint roda depois do step-07 (calendário), tenha ele executado ou não —
+        # deliverFrom aponta para revisor-qa (Ricardo) porque é o pacote de copy aprovado,
+        # independente do calendário HTML ser bônus opcional.
+
+      # === ETAPA 8 — DESPACHO PARA SQUADS DE PRODUÇÃO (SÓ SE APROVADO NO CHECKPOINT 4) ===
+      - id: step-08
+        agent: despachante-producao
+        label: "Otávio mapeia squads de produção instaladas, empacota as demandas e dispara a execução das confirmadas, aguardando o resultado"
+        deliverFrom: revisor-qa
+        execution: inline
+        optional: true
+        skip_if_not_requested: true

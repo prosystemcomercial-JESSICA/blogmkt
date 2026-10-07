@@ -1,0 +1,113 @@
+{
+  "squad": "lp-integracao-mentoria",
+  "status": "running",
+  "step": {
+    "current": 1,
+    "total": 9,
+    "label": "Conduzir briefing estruturado e identificar tipo de campanha"
+  },
+  "agents": [
+    {
+      "id": "coordenador",
+      "name": "Coordenador",
+      "icon": "clipboard",
+      "status": "working",
+      "stepIndex": 1,
+      "stepLabel": "Conduzir briefing estruturado e identificar tipo de campanha",
+      "deliverTo": null,
+      "desk": { "col": 1, "row": 1 },
+      "message": "Iniciando briefing"
+    },
+    {
+      "id": "analista-estrategico",
+      "name": "Analista Estratégico",
+      "icon": "search",
+      "status": "idle",
+      "stepIndex": 2,
+      "stepLabel": "Pesquisar persona, segmento, linguagem real e contexto competitivo",
+      "deliverTo": null,
+      "desk": { "col": 2, "row": 1 },
+      "message": null
+    },
+    {
+      "id": "copy-funil-demonstracao",
+      "name": "Copywriter Demonstração",
+      "icon": "monitor-play",
+      "status": "idle",
+      "stepIndex": 4,
+      "stepLabel": "Criar criativos Andromeda (9 peças) e landing page — Demonstração",
+      "deliverTo": null,
+      "desk": { "col": 3, "row": 1 },
+      "message": null
+    },
+    {
+      "id": "copy-funil-diagnostico",
+      "name": "Copywriter Diagnóstico",
+      "icon": "clipboard-list",
+      "status": "idle",
+      "stepIndex": 5,
+      "stepLabel": "Criar criativos Andromeda (9 peças) e perguntas do diagnóstico — Diagnóstico Gratuito",
+      "deliverTo": null,
+      "desk": { "col": 1, "row": 2 },
+      "message": null
+    },
+    {
+      "id": "copy-funil-ebook",
+      "name": "Copywriter E-Book",
+      "icon": "book-open",
+      "status": "idle",
+      "stepIndex": 6,
+      "stepLabel": "Criar criativos Andromeda (9 peças), landing page e e-book — E-Book",
+      "deliverTo": null,
+      "desk": { "col": 2, "row": 2 },
+      "message": null
+    },
+    {
+      "id": "revisor-editorial",
+      "name": "Revisor Editorial",
+      "icon": "check-circle",
+      "status": "idle",
+      "stepIndex": 7,
+      "stepLabel": "Revisar e aprovar todos os criativos com critérios Andromeda e Manual de Proibições",
+      "deliverTo": null,
+      "desk": { "col": 3, "row": 2 },
+      "message": null
+    },
+    {
+      "id": "intelligence-analyst",
+      "name": "Intelligence Analyst",
+      "icon": "search",
+      "status": "idle",
+      "stepIndex": 3,
+      "stepLabel": "Intelligence Analyst — Extrair identidade visual do site da empresa",
+      "deliverTo": null,
+      "desk": { "col": 1, "row": 3 },
+      "message": null
+    },
+    {
+      "id": "lp-builder",
+      "name": "LP Builder",
+      "icon": "code",
+      "status": "idle",
+      "stepIndex": 8,
+      "stepLabel": "LP Builder — Montar landing page via template com dados da empresa",
+      "deliverTo": null,
+      "desk": { "col": 2, "row": 3 },
+      "message": null
+    },
+    {
+      "id": "vercel-deploy",
+      "name": "Hospedagem Vercel",
+      "icon": "cloud-upload",
+      "status": "idle",
+      "stepIndex": 9,
+      "stepLabel": "Hospedagem Vercel — Criar conta, gerar token e publicar a LP",
+      "deliverTo": null,
+      "desk": { "col": 3, "row": 3 },
+      "message": null
+    }
+  ],
+  "handoff": null,
+  "startedAt": "2026-06-23T12:40:07.315Z",
+  "updatedAt": "2026-06-24T00:00:00.000Z"
+}

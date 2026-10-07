@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>ANI10 — Comparativo — BOFU Padaria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 1080px; height: 1350px; overflow: hidden; font-family: 'Montserrat', sans-serif; background: #3a1400; }
+    .ad { width: 1080px; height: 1350px; position: relative; overflow: hidden; }
+    .bg {
+      position: absolute; inset: 0;
+      background: url('file:///C:/Users/prosy/Documents/mkt reuniao 1/banco imagens/padaria/padeiros-padaria.jpg') center 40%/cover no-repeat;
+      filter: brightness(0.82) saturate(1.1) contrast(1.05);
+    }
+    .overlay-top { position:absolute; top:0; left:0; right:0; height:450px; background:linear-gradient(180deg,rgba(180,65,5,.97) 0%,rgba(210,80,10,.90) 40%,rgba(200,75,8,.0) 100%); }
+    .overlay-bottom { position:absolute; bottom:0; left:0; right:0; height:640px; background:linear-gradient(0deg,rgba(130,40,5,.98) 0%,rgba(160,55,8,.94) 52%,rgba(180,65,5,.0) 100%); }
+    .geo { position:absolute; transform:rotate(45deg); }
+    .g1 { top:-90px; right:-90px; width:360px; height:360px; background:rgba(255,255,255,.05); border:2.5px solid rgba(255,200,100,.12); }
+    .g2 { top:16px; right:16px; width:220px; height:220px; background:transparent; border:1.5px solid rgba(255,200,100,.16); }
+    .g3 { bottom:-100px; left:-100px; width:340px; height:340px; background:rgba(255,255,255,.04); border:2px solid rgba(255,200,100,.08); }
+    .orange-line { position:absolute; left:0; top:0; bottom:0; width:6px; background:linear-gradient(180deg,#ffaa00,#ff6b00); }
+    .content {
+      position:relative; z-index:20; width:100%; height:100%;
+      display:flex; flex-direction:column; padding:56px 64px 52px 72px; justify-content:space-between;
+    }
+    .top { display:flex; flex-direction:column; align-items:flex-start; }
+    .logo { height:36px; filter:brightness(0) invert(1); margin-bottom:28px; }
+    .badge {
+      display:inline-flex; align-items:center; gap:8px;
+      background:rgba(255,170,0,.16); border:1.5px solid rgba(255,170,0,.40);
+      color:#ffd070; font-size:12px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+      padding:7px 18px; border-radius:100px; margin-bottom:22px;
+    }
+    .badge-dot { width:6px; height:6px; border-radius:50%; background:#ffaa00; }
+    .headline { margin-bottom:0; }
+    .hl-small { display:block; font-size:26px; font-weight:700; color:rgba(255,255,255,.72); letter-spacing:-.01em; margin-bottom:4px; }
+    .hl-big { display:block; font-size:76px; font-weight:900; color:#fff; line-height:.93; letter-spacing:-.04em; }
+    .hl-big em { font-style:italic; color:#ffaa00; }
+    .hl-bottom { display:block; font-size:30px; font-weight:800; color:rgba(255,255,255,.82); letter-spacing:-.02em; margin-top:8px; }
+    .spacer { flex:1; }
+    .bottom { display:flex; flex-direction:column; align-items:flex-start; gap:20px; }
+    .compare-table { width:100%; display:flex; gap:14px; }
+    .col { flex:1; border-radius:16px; overflow:hidden; }
+    .col-header { padding:14px 18px; font-size:16px; font-weight:800; text-align:center; letter-spacing:.04em; text-transform:uppercase; }
+    .col-bad .col-header { background:rgba(255,60,60,.22); color:#ff8888; border:1.5px solid rgba(255,60,60,.30); border-bottom:none; border-radius:16px 16px 0 0; }
+    .col-good .col-header { background:rgba(255,170,0,.20); color:#ffd070; border:1.5px solid rgba(255,170,0,.38); border-bottom:none; border-radius:16px 16px 0 0; }
+    .col-body { padding:12px 16px; display:flex; flex-direction:column; gap:10px; }
+    .col-bad .col-body { background:rgba(255,255,255,.06); border:1.5px solid rgba(255,60,60,.20); border-top:none; border-radius:0 0 16px 16px; }
+    .col-good .col-body { background:rgba(255,255,255,.08); border:1.5px solid rgba(255,170,0,.28); border-top:none; border-radius:0 0 16px 16px; }
+    .row { display:flex; align-items:center; gap:8px; font-size:15px; font-weight:700; color:#fff; }
+    .row-icon { font-size:16px; flex-shrink:0; }
+    .col-bad .row { color:rgba(255,255,255,.72); }
+    .pills { display:flex; gap:10px; flex-wrap:wrap; }
+    .pill {
+      display:inline-flex; align-items:center; gap:7px;
+      background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.18);
+      border-radius:100px; padding:9px 18px; color:rgba(255,255,255,.88); font-size:15px; font-weight:700;
+    }
+    .cta-row { display:flex; align-items:center; gap:20px; width:100%; }
+    .cta {
+      display:inline-flex; align-items:center; gap:12px;
+      background:linear-gradient(135deg,#ffaa00,#ff6b00); color:#fff;
+      font-size:20px; font-weight:800; padding:22px 44px; border-radius:100px;
+      box-shadow:0 8px 40px rgba(255,107,0,.45); letter-spacing:-.01em;
+    }
+    .footer-note { font-size:13px; color:rgba(255,255,255,.32); letter-spacing:.04em; flex:1; text-align:right; }
+  </style>
+</head>
+<body>
+<div class="ad">
+  <div class="bg"></div>
+  <div class="overlay-top"></div>
+  <div class="overlay-bottom"></div>
+  <div class="geo g1"></div><div class="geo g2"></div><div class="geo g3"></div>
+  <div class="orange-line"></div>
+  <div class="content">
+    <div class="top">
+      <img src="https://prosystemnet.com/wp-content/uploads/2025/11/Design-sem-nome-3-1.png" class="logo" alt="ProSystem">
+      <div class="badge"><span class="badge-dot"></span>BOFU · Padaria & Confeitaria</div>
+      <div class="headline">
+        <span class="hl-small">Planilha ou sistema integrado?</span>
+        <span class="hl-big">essa<br><em>escolha</em></span>
+        <span class="hl-bottom">define sua margem de lucro.</span>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <div class="bottom">
+      <div class="compare-table">
+        <div class="col col-bad">
+          <div class="col-header">Planilha</div>
+          <div class="col-body">
+            <div class="row"><span class="row-icon">✗</span> Custo calculado na mão</div>
+            <div class="row"><span class="row-icon">✗</span> Estoque fora de sincronia</div>
+            <div class="row"><span class="row-icon">✗</span> Produção sem controle</div>
+            <div class="row"><span class="row-icon">✗</span> NFC-e manual e lento</div>
+          </div>
+        </div>
+        <div class="col col-good">
+          <div class="col-header">ProSystem</div>
+          <div class="col-body">
+            <div class="row"><span class="row-icon">✓</span> Custo real por receita</div>
+            <div class="row"><span class="row-icon">✓</span> Estoque atualizado ao vivo</div>
+            <div class="row"><span class="row-icon">✓</span> Produção integrada ao caixa</div>
+            <div class="row"><span class="row-icon">✓</span> NFC-e automático</div>
+          </div>
+        </div>
+      </div>
+      <div class="pills">
+        <div class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffaa00" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>100% offline</div>
+        <div class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffaa00" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>16 anos de especialização</div>
+      </div>
+      <div class="cta-row">
+        <div class="cta">Conhecer o ProSystem <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+        <div class="footer-note">prosystemnet.com</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

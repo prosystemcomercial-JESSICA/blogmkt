@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      font-family: 'Montserrat', sans-serif;
+      background: #EEF4FB;
+      position: relative;
+    }
+
+    /* Faixa azul no topo */
+    .top-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: #4A7AB8;
+      z-index: 4;
+    }
+
+    /* Imagem em quadrante direito */
+    .zone-img-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 480px;
+      height: 560px;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .zone-img-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    /* Gradiente de fade da imagem para o fundo */
+    .img-fade {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 480px;
+      height: 560px;
+      background: linear-gradient(
+        to left,
+        rgba(238, 244, 251, 0) 60%,
+        rgba(238, 244, 251, 1) 100%
+      ), linear-gradient(
+        to bottom,
+        rgba(238, 244, 251, 0) 65%,
+        rgba(238, 244, 251, 1) 100%
+      );
+      z-index: 2;
+    }
+
+    /* Logo */
+    .zone-logo {
+      position: absolute;
+      top: 52px;
+      left: 108px;
+      z-index: 5;
+    }
+
+    .zone-logo img {
+      height: 64px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* Badge */
+    .result-badge {
+      position: absolute;
+      top: 60px;
+      right: 108px;
+      background: #4A7AB8;
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      border-radius: 6px;
+      z-index: 5;
+    }
+
+    /* Eyebrow */
+    .zone-eyebrow {
+      position: absolute;
+      top: 175px;
+      left: 108px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #4A7AB8;
+      z-index: 5;
+    }
+
+    /* NÃºmero real em destaque */
+    .zone-number-real {
+      position: absolute;
+      top: 208px;
+      left: 108px;
+      font-size: 200px;
+      font-weight: 900;
+      line-height: 0.85;
+      color: #4A7AB8;
+      z-index: 5;
+    }
+
+    /* Headline */
+    .zone-headline {
+      position: absolute;
+      top: 478px;
+      left: 108px;
+      right: 108px;
+      font-size: 60px;
+      font-weight: 800;
+      line-height: 1.15;
+      color: #111827;
+      z-index: 5;
+    }
+
+    .zone-headline .destaque {
+      color: #4A7AB8;
+    }
+
+    /* Card de prova */
+    .proof-card {
+      position: absolute;
+      top: 730px;
+      left: 108px;
+      right: 108px;
+      background: #FFFFFF;
+      border-radius: 16px;
+      border-left: 6px solid #4A7AB8;
+      padding: 36px 40px;
+      box-shadow: 0 4px 32px rgba(74, 122, 184, 0.14);
+      z-index: 5;
+    }
+
+    .proof-card .proof-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 1.55;
+      color: #374151;
+    }
+
+    .proof-card .proof-detail {
+      font-family: 'Inter', sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: #6B7280;
+      margin-top: 16px;
+    }
+
+    /* Faixa inferior azul */
+    .bottom-band {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 260px;
+      background: linear-gradient(135deg, #4A7AB8 0%, #2E5A8F 100%);
+      z-index: 3;
+    }
+
+    /* CTA */
+    .zone-cta {
+      position: absolute;
+      bottom: 88px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      display: inline-block;
+      background: #FFFFFF;
+      color: #1D3A5F;
+      font-family: 'Inter', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      padding: 18px 52px;
+      border-radius: 9px;
+      z-index: 5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar"></div>
+  <div class="bottom-band"></div>
+
+  <div class="zone-img-panel">
+    <img src="{{IMG_04}}" alt="">
+  </div>
+  <div class="img-fade"></div>
+
+  <div class="zone-logo">
+    <img src="../../../_assets/logo-light.png" alt="ProSystem Sistemas">
+  </div>
+
+  <div class="result-badge">Resultado Real</div>
+
+  <div class="zone-eyebrow">PDV integrado ProSystem</div>
+
+  <div class="zone-number-real">+18%</div>
+
+  <div class="zone-headline">a mais no<br><span class="destaque">ticket mÃ©dio</span></div>
+
+  <div class="proof-card">
+    <div class="proof-text">FarmÃ¡cias que ativam sugestÃ£o de produto no caixa registram esse resultado sem alterar a equipe.</div>
+    <div class="proof-detail">Aumento mÃ©dio documentado: 12% a 18%</div>
+  </div>
+
+  <div class="zone-cta">Veja como funciona na prÃ¡tica</div>
+
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>TOFU ANI01 v3 — Você vende. Mas sabe quanto sobra?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 1080px; height: 1350px; overflow: hidden; font-family: 'Inter', sans-serif; }
+
+    .ad {
+      width: 1080px;
+      height: 1350px;
+      position: relative;
+      overflow: hidden;
+      background: #0b1520;
+      display: flex;
+    }
+
+    /* ── FOTO ESQUERDA ── */
+    .photo-side {
+      width: 440px;
+      height: 1350px;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .photo-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 55% top;
+      display: block;
+      filter: brightness(1.10) contrast(1.06) saturate(1.05);
+    }
+    .photo-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right,  rgba(11,21,32,0) 35%, rgba(11,21,32,.9) 100%),
+        linear-gradient(to bottom, rgba(11,21,32,.55) 0%, rgba(11,21,32,0) 20%);
+    }
+
+    /* ── BARRA LARANJA — separador visual ── */
+    .orange-bar {
+      position: absolute;
+      left: 428px;
+      top: 0;
+      width: 12px;
+      height: 1350px;
+      background: linear-gradient(to bottom, #F97316 0%, #EA580C 100%);
+      z-index: 10;
+    }
+
+    /* ── LOGO NO TOPO DA FOTO ── */
+    .logo-wrap {
+      position: absolute;
+      top: 44px;
+      left: 38px;
+      z-index: 20;
+    }
+    .logo-wrap img {
+      height: 30px;
+      filter: brightness(0) invert(1);
+    }
+
+    /* ── CONTEÚDO DIREITA ── */
+    .content-side {
+      flex: 1;
+      background: #1D3A5F;
+      display: flex;
+      flex-direction: column;
+      padding: 56px 44px 52px 60px;
+      position: relative;
+      justify-content: center;
+    }
+
+    /* Dot grid sutil */
+    .content-side::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+    }
+
+    /* Reflexo laranja vindo da barra */
+    .content-side::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 80px;
+      height: 100%;
+      background: linear-gradient(to right, rgba(249,115,22,.06), transparent);
+      pointer-events: none;
+    }
+
+    /* ── PILL ── */
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(74,122,184,.22);
+      border: 1px solid rgba(74,122,184,.42);
+      color: #7BAFD4;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 100px;
+      margin-bottom: 36px;
+      width: fit-content;
+      position: relative;
+      z-index: 2;
+    }
+    .pill-dot { width: 6px; height: 6px; border-radius: 50%; background: #4A7AB8; flex-shrink: 0; }
+
+    /* ── HEADLINE ── */
+    .headline {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 36px;
+    }
+    .headline .l1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 76px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.0;
+      letter-spacing: -.038em;
+      display: block;
+    }
+    .headline .l2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 52px;
+      font-weight: 900;
+      color: rgba(255,255,255,.55);
+      line-height: 1.1;
+      letter-spacing: -.025em;
+      display: block;
+    }
+    .headline .l3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 100px;
+      font-weight: 900;
+      font-style: italic;
+      color: #F97316;
+      line-height: 0.95;
+      letter-spacing: -.04em;
+      display: block;
+      text-shadow: 0 0 60px rgba(249,115,22,.35);
+    }
+
+    /* ── DIVISOR ── */
+    .divider {
+      width: 52px;
+      height: 4px;
+      background: linear-gradient(to right, #F97316, rgba(249,115,22,.3));
+      border-radius: 2px;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ── SUBTEXT ── */
+    .subtext {
+      font-size: 19px;
+      color: rgba(255,255,255,.58);
+      line-height: 1.68;
+      max-width: 360px;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 44px;
+    }
+    .subtext strong {
+      color: rgba(255,255,255,.88);
+      font-weight: 600;
+    }
+
+    /* ── CTA ── */
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #4A7AB8;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      padding: 20px 36px;
+      border-radius: 10px;
+      position: relative;
+      z-index: 2;
+      letter-spacing: -.01em;
+      width: fit-content;
+      box-shadow:
+        0 8px 32px rgba(74,122,184,.45),
+        0 2px 0 rgba(249,115,22,.5);
+    }
+
+    /* ── RODAPÉ ── */
+    .footer-note {
+      position: absolute;
+      bottom: 40px;
+      left: 64px;
+      right: 52px;
+      font-size: 12px;
+      color: rgba(255,255,255,.22);
+      letter-spacing: .04em;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="ad">
+
+    <!-- FOTO ESQUERDA -->
+    <div class="photo-side">
+      <img src="file:///C:/Users/prosy/Desktop/PROJETOS/AUTOMAÇÃO MKT PROSYSTEM/banco imagens/farmacia/ictq-varejo_farmaceutico-farmacia-fidelizacao_clientes.png" alt="">
+      <div class="photo-overlay"></div>
+    </div>
+
+    <!-- BARRA LARANJA -->
+    <div class="orange-bar"></div>
+
+    <!-- LOGO -->
+    <div class="logo-wrap">
+      <img src="https://prosystemnet.com/wp-content/uploads/2025/11/Design-sem-nome-3-1.png" alt="ProSystem">
+    </div>
+
+    <!-- CONTEÚDO DIREITA -->
+    <div class="content-side">
+
+      <div class="pill">
+        <span class="pill-dot"></span>
+        Farmácia &amp; Padaria
+      </div>
+
+      <div class="headline">
+        <span class="l1">Você vende.</span>
+        <span class="l2">Mas sabe quanto</span>
+        <span class="l3">sobra?</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="subtext">
+        Quem decide pelo saldo bancário<br>está gerindo o passado.<br>
+        <strong>ERP local mostra a margem real,<br>por produto, em tempo real.</strong>
+      </p>
+
+      <div class="cta">
+        Conhecer o sistema
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+
+      <div class="footer-note">prosystemnet.com · ERP local para farmácia e padaria</div>
+
+    </div>
+  </div>
+</body>
+</html>

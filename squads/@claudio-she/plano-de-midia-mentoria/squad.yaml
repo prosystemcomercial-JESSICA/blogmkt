@@ -1,0 +1,187 @@
+﻿squad:
+  code: plano-de-midia-mentoria
+  name: Plano de Mídia — Mentoria Meta Ads B2B
+  description: >
+    Squad educativo que conduz donos de Software Houses B2B na criação do seu
+    próprio plano de mídia paga no Meta Ads. 7 steps, 7 agentes especializados,
+    confirmação a cada etapa. O mentorado aprende enquanto o plano é construído.
+    Inclui diagnóstico financeiro, estratégia de funil, estrutura técnica,
+    copy com 18 filtros Anti-GPT, revisão editorial em 8 dimensões e documento
+    final em HTML story paginado + PDF com identidade visual do negócio.
+    Atualização automática a cada sessão.
+    Criado por Vinicius Campos de Souza — SHE (Software House Exponencial).
+  author: "Vinicius Campos de Souza — SHE (Software House Exponencial)"
+  icon: megaphone
+  version: "1.3.5"
+  category: marketing
+
+  # Cada run é independente — nunca oferecer "continuar run anterior"
+  session:
+    mode: always_new
+
+  # Pastas excluídas da distribuição — NUNCA publicar histórico ou memória de clientes
+  exclude:
+    - _history/**
+    - _memory/**
+    - history/**
+    - "*.pdf"
+  tags:
+    - meta-ads
+    - mentoria
+    - marketing
+    - b2b
+    - trafego-pago
+    - funil
+    - copywriting
+
+  language: pt-BR
+
+  # ============================================================
+  # CONTEXTO PADRÃO
+  # ============================================================
+  contexto_agencia: >
+    Este squad é para donos de software houses B2B que estão sendo mentorados
+    pela SHE (Software House Exponencial) e querem criar seu próprio plano de
+    mídia no Meta Ads.
+
+    O MENTORADO É O DONO DO NEGÓCIO — não um gestor de tráfego criando para um cliente.
+    Ele fala na primeira pessoa sobre sua própria empresa.
+
+    PERFIL PADRÃO DO MENTORADO:
+      - Produto: sistema/software vertical que ele mesmo desenvolveu ou vende
+      - Mercado: outras empresas (B2B) — ele vende para donos de negócio ou gestores
+      - Ciclo de venda: 30 a 120 dias (venda consultiva)
+      - Ticket médio: R$500–R$5.000/mês ou R$3k–R$50k (licença)
+      - Demanda: majoritariamente LATENTE — o comprador tem o problema mas não busca
+        ativamente a solução; Meta Ads vai interrompê-lo no momento certo
+      - OBJETIVO: geração de leads para o próprio negócio do mentorado
+
+    POSTURA EDUCATIVA OBRIGATÓRIA:
+      Após cada decisão estratégica, o squad explica brevemente o raciocínio:
+      "Por que estou recomendando isso? Porque [razão simples e direta]."
+      O mentorado aprende enquanto o plano é construído — não só recebe um documento.
+
+    ISOLAMENTO DE MEMÓRIA:
+      Este squad NÃO lê arquivos de memória de outros clientes.
+      NÃO usa histórico de campanhas anteriores de terceiros.
+      Parte exclusivamente das respostas do mentorado nesta sessão.
+
+  # ============================================================
+  # LEIS DE OURO
+  # ============================================================
+  leis_de_ouro:
+
+    linguagem_acessivel: >
+      REGRA OBRIGATÓRIA: o mentorado pode não conhecer termos de tráfego pago.
+      Todo termo técnico deve ser explicado na mesma frase, entre parênteses.
+      Exemplos: "CPL (quanto você vai pagar por cada lead)", "pixel (código que
+      rastreia quem visita seu site)", "TOFU (anúncios para quem nunca ouviu falar
+      de você)". As perguntas devem soar como uma conversa, não um briefing técnico.
+
+    postura_educativa: >
+      REGRA OBRIGATÓRIA: após cada recomendação estratégica, explicar brevemente
+      o porquê em linguagem simples. Formato: "→ Por que isso? [razão em 1–2 frases]."
+      O objetivo não é só entregar um plano — é fazer o mentorado entender a lógica
+      para que ele consiga tomar decisões sozinho no futuro.
+
+    primeira_pessoa: >
+      REGRA ABSOLUTA: todas as perguntas e todo o plano são na primeira pessoa.
+      NUNCA usar "seu cliente", "a empresa do cliente" ou "o produto do cliente".
+      Usar sempre: "você", "seu negócio", "seu produto", "seu sistema", "sua empresa".
+      O mentorado É o cliente. Ele está falando sobre si mesmo.
+
+    isolamento_de_memoria: >
+      REGRA ABSOLUTA: este squad NÃO acessa memória de outros clientes.
+      A única memória que pode ser consultada é a do PRÓPRIO NEGÓCIO DO MENTORADO
+      (ex: arquivos gerados por uma mentoria anterior sobre o mesmo negócio).
+      Dados de outros negócios, clientes ou campanhas de terceiros são proibidos.
+
+    rigor_tecnico_sem_suposicao: >
+      Nunca inferir dados do negócio do mentorado sem que ele os confirme.
+      Se uma informação for importante (ticket, ciclo de venda, público) e não
+      foi informada, perguntar antes de prosseguir.
+
+    primum_non_nocere: >
+      Nunca recomendar Audience Network, Advantage+ em conta nova ou CBO sem
+      criativos testados. Configurações que podem desperdiçar o dinheiro do
+      mentorado são proibidas por padrão.
+
+  # ============================================================
+  # AGENTES
+  # ============================================================
+  agents:
+
+    - id: briefing-analyst
+      name: Briefing Analyst
+      icon: clipboard-list
+      prompt: agents/briefing-analyst.md
+
+    - id: media-strategist
+      name: Media Strategist
+      icon: bar-chart-2
+      prompt: agents/media-strategist.md
+
+    - id: meta-ads-planner
+      name: Meta Ads Planner
+      icon: layout
+      prompt: agents/meta-ads-planner.md
+
+    - id: design-system
+      name: Design System
+      icon: palette
+      prompt: agents/design-system.md
+
+    - id: meta-ads-copy
+      name: Meta Ads Copy
+      icon: pen-tool
+      prompt: agents/copywriter.md
+
+    - id: copy-revisor
+      name: Copy Revisor
+      icon: check-circle
+      prompt: agents/revisor-editorial.md
+
+    - id: document-writer
+      name: Document Writer
+      icon: file-text
+      prompt: agents/document-writer.md
+
+  # ============================================================
+  # PIPELINE (6 STEPS, 3 CHECKPOINTS)
+  # ============================================================
+  pipeline:
+    steps:
+      - id: step-01
+        agent: briefing-analyst
+        label: Briefing e Diagnóstico — Seu Negócio
+        execution: inline
+
+      - id: step-02
+        agent: design-system
+        label: Design System — Identidade Visual
+        execution: inline
+
+      - id: step-03
+        agent: media-strategist
+        label: Estratégia de Funil e Budget
+        execution: inline
+
+      - id: step-04
+        agent: meta-ads-planner
+        label: Estrutura Técnica das Campanhas
+        execution: inline
+
+      - id: step-05
+        agent: meta-ads-copy
+        label: Copy dos Anúncios
+        execution: inline
+
+      - id: step-06
+        agent: copy-revisor
+        label: Revisão Editorial — 8 Dimensões
+        execution: inline
+
+      - id: step-07
+        agent: document-writer
+        label: Documento Final — HTML + PDF
+        execution: inline

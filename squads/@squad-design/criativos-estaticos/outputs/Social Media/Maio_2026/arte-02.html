@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      font-family: 'Montserrat', sans-serif;
+      background: #2E5A8F;
+      position: relative;
+    }
+
+    /* Imagem de fundo */
+    .zone-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .zone-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+
+    /* Overlay azul escuro */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(46, 90, 143, 0.90) 0%,
+        rgba(29, 58, 95, 0.82) 50%,
+        rgba(29, 58, 95, 0.95) 100%
+      );
+      z-index: 1;
+    }
+
+    /* Logo */
+    .zone-logo {
+      position: absolute;
+      top: 64px;
+      left: 108px;
+      z-index: 3;
+    }
+
+    .zone-logo img {
+      height: 64px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+    }
+
+    /* Badge SNGPC */
+    .badge-sngpc {
+      position: absolute;
+      top: 72px;
+      right: 108px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1.5px solid rgba(255, 255, 255, 0.50);
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 10px 22px;
+      border-radius: 6px;
+      z-index: 3;
+    }
+
+    /* Bloco numÃ©rico central */
+    .zone-number-block {
+      position: absolute;
+      top: 200px;
+      left: 108px;
+      right: 108px;
+      z-index: 3;
+    }
+
+    .number-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 8px;
+    }
+
+    .number-main {
+      font-size: 340px;
+      font-weight: 900;
+      line-height: 0.82;
+      color: #FFFFFF;
+      text-shadow: 0 8px 48px rgba(0,0,0,0.4);
+    }
+
+    .number-suffix {
+      font-family: 'Inter', sans-serif;
+      font-size: 48px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.70);
+      margin-top: 16px;
+      letter-spacing: 1px;
+    }
+
+    /* Divisor */
+    .divider {
+      position: absolute;
+      top: 840px;
+      left: 108px;
+      width: 100px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.35);
+      border-radius: 2px;
+      z-index: 3;
+    }
+
+    /* Headline */
+    .zone-headline {
+      position: absolute;
+      top: 878px;
+      left: 108px;
+      right: 108px;
+      font-size: 52px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #FFFFFF;
+      z-index: 3;
+    }
+
+    /* Subheadline */
+    .zone-subheadline {
+      position: absolute;
+      bottom: 210px;
+      left: 108px;
+      right: 108px;
+      font-family: 'Inter', sans-serif;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.72);
+      z-index: 3;
+    }
+
+    /* CTA */
+    .zone-cta {
+      position: absolute;
+      bottom: 112px;
+      left: 108px;
+      display: inline-block;
+      background: #FFFFFF;
+      color: #1D3A5F;
+      font-family: 'Inter', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      padding: 18px 44px;
+      border-radius: 9px;
+      z-index: 3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="zone-bg">
+    <img src="{{IMG_02}}" alt="">
+  </div>
+  <div class="overlay"></div>
+
+  <div class="zone-logo">
+    <img src="../../../_assets/logo-light.png" alt="ProSystem Sistemas">
+  </div>
+
+  <div class="badge-sngpc">SNGPC</div>
+
+  <div class="zone-number-block">
+    <div class="number-label">Prazo crÃ­tico</div>
+    <div class="number-main">7</div>
+    <div class="number-suffix">dias sem transmissÃ£o</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="zone-headline">farmÃ¡cia em<br>desconformidade</div>
+
+  <div class="zone-subheadline">A Anvisa exige envio semanal mesmo quando nenhuma venda de controlado ocorreu no perÃ­odo.</div>
+
+  <div class="zone-cta">Salva pra conferir depois</div>
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      font-family: 'Montserrat', sans-serif;
+      background: #1D3A5F;
+      position: relative;
+    }
+
+    /* Imagem de fundo */
+    .zone-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .zone-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+    }
+
+    /* Overlay G3 de urgÃªncia */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        150deg,
+        rgba(46, 90, 143, 0.88) 0%,
+        rgba(29, 58, 95, 0.82) 40%,
+        rgba(15, 30, 55, 0.96) 100%
+      );
+      z-index: 1;
+    }
+
+    /* Logo */
+    .zone-logo {
+      position: absolute;
+      top: 64px;
+      left: 108px;
+      z-index: 3;
+    }
+
+    .zone-logo img {
+      height: 64px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+    }
+
+    /* Badge alerta */
+    .alert-badge {
+      position: absolute;
+      top: 72px;
+      right: 108px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1.5px solid rgba(255, 255, 255, 0.45);
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 10px 24px;
+      border-radius: 6px;
+      z-index: 3;
+    }
+
+    /* Eyebrow */
+    .zone-eyebrow {
+      position: absolute;
+      top: 206px;
+      left: 108px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+      z-index: 3;
+    }
+
+    /* Headline */
+    .zone-headline-label {
+      position: absolute;
+      top: 246px;
+      left: 108px;
+      right: 108px;
+      font-size: 66px;
+      font-weight: 800;
+      line-height: 1.1;
+      color: #FFFFFF;
+      z-index: 3;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Valor da multa em destaque */
+    .zone-multa {
+      position: absolute;
+      top: 440px;
+      left: 72px;
+      right: 72px;
+      text-align: center;
+      z-index: 3;
+    }
+
+    .multa-prefix {
+      font-family: 'Inter', sans-serif;
+      font-size: 52px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.65);
+      display: inline-block;
+      margin-right: 12px;
+      vertical-align: top;
+      margin-top: 30px;
+    }
+
+    .multa-value {
+      font-size: 140px;
+      font-weight: 900;
+      line-height: 0.88;
+      color: #FFFFFF;
+      text-shadow: 0 6px 40px rgba(0,0,0,0.4);
+      display: inline-block;
+    }
+
+    /* Linha separadora */
+    .divider {
+      position: absolute;
+      top: 730px;
+      left: 108px;
+      right: 108px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.18);
+      z-index: 3;
+    }
+
+    /* Grid multa range */
+    .zone-multa-range {
+      position: absolute;
+      top: 762px;
+      left: 108px;
+      right: 108px;
+      display: flex;
+      align-items: center;
+      z-index: 3;
+    }
+
+    .multa-item {
+      flex: 1;
+      text-align: center;
+    }
+
+    .multa-item .m-value {
+      font-size: 44px;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1;
+    }
+
+    .multa-item .m-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.50);
+      margin-top: 8px;
+    }
+
+    .multa-arrow {
+      font-size: 36px;
+      color: rgba(255, 255, 255, 0.40);
+      padding: 0 20px;
+    }
+
+    /* Subheadline */
+    .zone-subheadline {
+      position: absolute;
+      top: 960px;
+      left: 108px;
+      right: 108px;
+      font-family: 'Inter', sans-serif;
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.72);
+      z-index: 3;
+    }
+
+    /* Barra de urgÃªncia */
+    .urgency-bar {
+      position: absolute;
+      bottom: 220px;
+      left: 108px;
+      right: 108px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 9px;
+      padding: 18px 28px;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .urgency-bar .urgency-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.80);
+    }
+
+    /* CTA */
+    .zone-cta {
+      position: absolute;
+      bottom: 112px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      display: inline-block;
+      background: #FFFFFF;
+      color: #1D3A5F;
+      font-family: 'Inter', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      padding: 20px 56px;
+      border-radius: 9px;
+      z-index: 3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="zone-bg">
+    <img src="{{IMG_05}}" alt="">
+  </div>
+  <div class="overlay"></div>
+
+  <div class="zone-logo">
+    <img src="../../../_assets/logo-light.png" alt="ProSystem Sistemas">
+  </div>
+
+  <div class="alert-badge">FiscalizaÃ§Ã£o Ativa</div>
+
+  <div class="zone-eyebrow">SNGPC Â· Anvisa Â· 2026</div>
+
+  <div class="zone-headline-label">SNGPC ativo:<br>multa de atÃ©</div>
+
+  <div class="zone-multa">
+    <span class="multa-prefix">R$</span><span class="multa-value">1,5 milhÃ£o</span>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="zone-multa-range">
+    <div class="multa-item">
+      <div class="m-value">R$ 2.000</div>
+      <div class="m-label">multa mÃ­nima</div>
+    </div>
+    <div class="multa-arrow">â†’</div>
+    <div class="multa-item">
+      <div class="m-value">R$ 1.500.000</div>
+      <div class="m-label">multa mÃ¡xima</div>
+    </div>
+  </div>
+
+  <div class="zone-subheadline">O risco existe agora, e a Anvisa jÃ¡ sinalizou que vai fiscalizar.</div>
+
+  <div class="urgency-bar">
+    <span class="urgency-text">âš  ObrigatÃ³rio desde 02/01/2026 em todo o Brasil</span>
+  </div>
+
+  <div class="zone-cta">Confira os 5 passos</div>
+
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <link href="https://fonts.googleapis.com/css2?family={{FONT_FAMILY}}:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: {{COLOR_PRIMARY}};
+      --secondary: {{COLOR_SECONDARY}};
+      --accent: {{COLOR_ACCENT}};
+      --font-family: '{{FONT_FAMILY}}', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      font-family: var(--font-family);
+      background: var(--primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .zone-bg-image {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .zone-bg-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(2, 20, 2, 0.92) 0%,
+        rgba(5, 46, 5, 0.85) 50%,
+        rgba(44, 50, 88, 0.88) 100%
+      );
+      z-index: 1;
+    }
+
+    .zone-logo {
+      position: absolute;
+      top: 72px;
+      left: 108px;
+      z-index: 3;
+    }
+
+    .zone-logo img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .zone-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 80px;
+      z-index: 3;
+      position: relative;
+      width: 100%;
+      margin-top: 40px;
+    }
+
+    .zone-pre-headline {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .zone-headline {
+      font-size: 64px;
+      font-weight: 900;
+      line-height: 1.1;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+    }
+
+    .zone-headline .destaque {
+      color: var(--accent);
+    }
+
+    .zone-subheadline {
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.70);
+      margin-bottom: 52px;
+      max-width: 780px;
+    }
+
+    /* Mockup smartphone */
+    .mockup-phone {
+      position: relative;
+      width: 300px;
+      margin-bottom: 52px;
+      filter: drop-shadow(0 32px 64px rgba(0,0,0,0.65));
+    }
+
+    /* Corpo do celular */
+    .phone-body {
+      position: relative;
+      width: 100%;
+      background: #1c1c1e;
+      border-radius: 44px;
+      padding: 16px 12px;
+      border: 2px solid #3a3a3a;
+      box-shadow:
+        inset 0 0 0 2px #2a2a2a,
+        0 0 0 1px #111;
+    }
+
+    /* Dynamic island / câmera */
+    .phone-island {
+      width: 88px;
+      height: 28px;
+      background: #0a0a0a;
+      border-radius: 20px;
+      margin: 0 auto 12px auto;
+    }
+
+    /* Tela */
+    .phone-screen {
+      width: 100%;
+      aspect-ratio: 9 / 19.5;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .phone-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    /* Barra home */
+    .phone-home-bar {
+      width: 100px;
+      height: 5px;
+      background: #3a3a3a;
+      border-radius: 3px;
+      margin: 12px auto 0 auto;
+    }
+
+    /* Botão lateral (volume/power) decorativo */
+    .phone-btn-right {
+      position: absolute;
+      right: -4px;
+      top: 120px;
+      width: 4px;
+      height: 60px;
+      background: #2e2e2e;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .phone-btn-left-1 {
+      position: absolute;
+      left: -4px;
+      top: 100px;
+      width: 4px;
+      height: 36px;
+      background: #2e2e2e;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .phone-btn-left-2 {
+      position: absolute;
+      left: -4px;
+      top: 148px;
+      width: 4px;
+      height: 36px;
+      background: #2e2e2e;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .zone-cta {
+      display: inline-block;
+      background: var(--accent);
+      color: #FFFFFF;
+      font-size: 26px;
+      font-weight: 700;
+      padding: 20px 52px;
+      border-radius: 6px;
+      letter-spacing: 0.3px;
+    }
+
+    .zone-footer-note {
+      position: absolute;
+      bottom: 56px;
+      left: 108px;
+      right: 108px;
+      font-size: 18px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.30);
+      text-align: center;
+      z-index: 3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="zone-bg-image">
+    <img src="{{IMAGE_BG_URL}}" alt="{{IMAGE_BG_ALT}}">
+  </div>
+  <div class="overlay"></div>
+
+  <div class="zone-logo">
+    <img src="{{LOGO_URL}}" alt="Logo">
+  </div>
+
+  <div class="zone-content">
+    <div class="zone-pre-headline">{{PRE_HEADLINE}}</div>
+    <div class="zone-headline">{{HEADLINE}}</div>
+    <div class="zone-subheadline">{{SUBHEADLINE}}</div>
+
+    <div class="mockup-phone">
+      <div class="phone-body">
+        <div class="phone-island"></div>
+        <div class="phone-screen">
+          <img src="{{SCREEN_URL}}" alt="{{SCREEN_ALT}}">
+        </div>
+        <div class="phone-home-bar"></div>
+      </div>
+      <div class="phone-btn-right"></div>
+      <div class="phone-btn-left-1"></div>
+      <div class="phone-btn-left-2"></div>
+    </div>
+
+    <div class="zone-cta">{{CTA}}</div>
+  </div>
+
+  <div class="zone-footer-note">{{FOOTER_NOTE}}</div>
+
+</body>
+</html>

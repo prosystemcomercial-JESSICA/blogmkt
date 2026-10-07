@@ -1,0 +1,131 @@
+{
+  "squad": "planejador-de-conteudo",
+  "status": "idle",
+  "step": {
+    "current": 4,
+    "total": 14,
+    "label": "Usuário aprova ICP, persona, referências e estratégia de distribuição antes de qualquer roteiro ser escrito"
+  },
+  "agents": [
+    {
+      "id": "investigador-nicho",
+      "name": "Renata Cavalcanti",
+      "icon": "search",
+      "status": "done",
+      "stepIndex": 1,
+      "stepLabel": "Renata procura contexto já disponível na instalação, confirma ou pergunta o que falta, e pesquisa o nicho para construir ICP + persona com Hawkins, JTBD e VALS",
+      "deliverTo": "curador-referencias",
+      "desk": {
+        "col": 1,
+        "row": 1
+      },
+      "message": "Me confirma o vertical e o que estiver certo/errado acima que eu já parto para a pesquisa de nicho."
+    },
+    {
+      "id": "curador-referencias",
+      "name": "Gabriel Tavares",
+      "icon": "compass",
+      "status": "done",
+      "stepIndex": 2,
+      "stepLabel": "Gabriel Tavares mapeia 5 perfis de referência e cura 6 conteúdos fortes de cada (30 no total)",
+      "deliverTo": "estrategista-conteudo",
+      "desk": {
+        "col": 2,
+        "row": 1
+      },
+      "message": "Assim que você confirmar, retorno o pipeline para o step-01 (Renata completa o Dossiê real) e só então sigo com o Método 5x3."
+    },
+    {
+      "id": "estrategista-conteudo",
+      "name": "Marina Solano",
+      "icon": "target",
+      "status": "idle",
+      "stepIndex": 4,
+      "stepLabel": "Usuário aprova ICP, persona, referências e estratégia de distribuição antes de qualquer roteiro ser escrito",
+      "deliverTo": "estrategista-conteudo",
+      "desk": {
+        "col": 3,
+        "row": 1
+      },
+      "message": "Sem acesso de escrita ao `state.json` — mas isso não bloqueia o essencial: preciso das suas respostas antes de qualquer coisa. Pode responder as 4 perguntas acima quando puder."
+    },
+    {
+      "id": "especialista-hooks",
+      "name": "Diogo Amaral",
+      "icon": "zap",
+      "status": "idle",
+      "stepIndex": 5,
+      "stepLabel": "Diogo escreve e pontua (Hook Score 0-10) o hook de cada conteúdo do mês, usando também o Dicionário de Gatilhos do Nicho produzido por Gabriel Tavares no step-02",
+      "deliverTo": null,
+      "desk": {
+        "col": 1,
+        "row": 2
+      },
+      "message": null
+    },
+    {
+      "id": "roteirista",
+      "name": "Debora Duarte",
+      "icon": "pencil",
+      "status": "idle",
+      "stepIndex": 6,
+      "stepLabel": "Debora escreve o conteúdo completo de cada peça (estático, carrossel ou reels) usando os hooks aprovados e a estrutura fixa por formato",
+      "deliverTo": null,
+      "desk": {
+        "col": 2,
+        "row": 2
+      },
+      "message": null
+    },
+    {
+      "id": "revisor-qa",
+      "name": "Ricardo Neves",
+      "icon": "shield",
+      "status": "idle",
+      "stepIndex": 7,
+      "stepLabel": "Ricardo aplica o gate Anti-GPT e pontua cada peça (0-10); só segue quem atingir score >= 8",
+      "deliverTo": null,
+      "desk": {
+        "col": 3,
+        "row": 2
+      },
+      "message": null
+    },
+    {
+      "id": "montador-calendario",
+      "name": "Yasmin Cordeiro",
+      "icon": "layout",
+      "status": "idle",
+      "stepIndex": 12,
+      "stepLabel": "Yasmin monta o calendário editorial em HTML (visualização com modais, sem filtros/funcionalidades extras)",
+      "deliverTo": null,
+      "desk": {
+        "col": 1,
+        "row": 3
+      },
+      "message": null
+    },
+    {
+      "id": "despachante-producao",
+      "name": "Otávio Ramires",
+      "icon": "send",
+      "status": "idle",
+      "stepIndex": 14,
+      "stepLabel": "Otávio mapeia squads de produção instaladas, empacota as demandas e dispara a execução das confirmadas, aguardando o resultado",
+      "deliverTo": null,
+      "desk": {
+        "col": 2,
+        "row": 3
+      },
+      "message": null
+    }
+  ],
+  "handoff": {
+    "from": "estrategista-conteudo",
+    "to": "estrategista-conteudo",
+    "message": "Sem acesso de escrita ao `state.json` — mas isso não bloqueia o essencial: preciso das suas respostas antes de qualquer coisa. Pode responder as 4 perguntas acima quando puder.",
+    "completedAt": "2026-08-06T18:26:11.467Z"
+  },
+  "startedAt": "2026-08-06T18:22:44.197Z",
+  "updatedAt": "2026-08-06T18:26:13.659Z"
+}

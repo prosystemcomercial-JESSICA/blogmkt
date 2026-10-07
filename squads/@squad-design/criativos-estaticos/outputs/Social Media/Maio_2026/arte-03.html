@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      font-family: 'Montserrat', sans-serif;
+      background: #4A7AB8;
+      position: relative;
+    }
+
+    /* Imagem de fundo */
+    .zone-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .zone-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+
+    /* Overlay gradiente */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        150deg,
+        rgba(74, 122, 184, 0.88) 0%,
+        rgba(46, 90, 143, 0.80) 45%,
+        rgba(29, 58, 95, 0.94) 100%
+      );
+      z-index: 1;
+    }
+
+    /* Logo */
+    .zone-logo {
+      position: absolute;
+      top: 64px;
+      left: 108px;
+      z-index: 3;
+    }
+
+    .zone-logo img {
+      height: 64px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+    }
+
+    /* Eyebrow */
+    .zone-eyebrow {
+      position: absolute;
+      top: 188px;
+      left: 108px;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.55);
+      z-index: 3;
+    }
+
+    /* NÃºmero gigante */
+    .zone-number {
+      position: absolute;
+      top: 210px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 280px;
+      font-weight: 900;
+      line-height: 0.85;
+      color: #FFFFFF;
+      z-index: 3;
+      text-shadow: 0 8px 48px rgba(0,0,0,0.35);
+    }
+
+    /* Headline */
+    .zone-headline {
+      position: absolute;
+      top: 680px;
+      left: 108px;
+      right: 108px;
+      text-align: center;
+      font-size: 52px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #FFFFFF;
+      z-index: 3;
+    }
+
+    /* Cards de dados */
+    .zone-cards {
+      position: absolute;
+      top: 880px;
+      left: 72px;
+      right: 72px;
+      display: flex;
+      gap: 20px;
+      z-index: 3;
+    }
+
+    .data-card {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1.5px solid rgba(255, 255, 255, 0.28);
+      border-radius: 12px;
+      padding: 28px 16px 24px;
+      text-align: center;
+    }
+
+    .data-card .card-number {
+      font-size: 60px;
+      font-weight: 900;
+      line-height: 1;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+
+    .data-card .card-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 19px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    /* Subheadline */
+    .zone-subheadline {
+      position: absolute;
+      bottom: 136px;
+      left: 108px;
+      right: 108px;
+      font-family: 'Inter', sans-serif;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.60);
+      text-align: center;
+      z-index: 3;
+    }
+
+    /* CTA */
+    .zone-cta {
+      position: absolute;
+      bottom: 56px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      display: inline-block;
+      background: #FFFFFF;
+      color: #1D3A5F;
+      font-family: 'Inter', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      padding: 18px 48px;
+      border-radius: 9px;
+      z-index: 3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="zone-bg">
+    <img src="{{IMG_03}}" alt="">
+  </div>
+  <div class="overlay"></div>
+
+  <div class="zone-logo">
+    <img src="../../../_assets/logo-light.png" alt="ProSystem Sistemas">
+  </div>
+
+  <div class="zone-eyebrow">PDV &amp; comportamento do cliente</div>
+
+  <div class="zone-number">67%</div>
+
+  <div class="zone-headline">dos clientes desistem<br>com fila no caixa</div>
+
+  <div class="zone-cards">
+    <div class="data-card">
+      <div class="card-number">67%</div>
+      <div class="card-desc">desistem ao ver fila longa</div>
+    </div>
+    <div class="data-card">
+      <div class="card-number">3x</div>
+      <div class="card-desc">mais chance de trocar de farmÃ¡cia</div>
+    </div>
+    <div class="data-card">
+      <div class="card-number">-18%</div>
+      <div class="card-desc">no ticket quando o cliente estÃ¡ com pressa</div>
+    </div>
+  </div>
+
+  <div class="zone-subheadline">Cada segundo de PDV lento impacta diretamente o seu faturamento.</div>
+
+  <div class="zone-cta">Ver demonstraÃ§Ã£o do PDV</div>
+
+</body>
+</html>

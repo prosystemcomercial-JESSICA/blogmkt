@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <link href="https://fonts.googleapis.com/css2?family={{FONT_FAMILY}}:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: {{COLOR_PRIMARY}};
+      --secondary: {{COLOR_SECONDARY}};
+      --accent: {{COLOR_ACCENT}};
+      --font-family: '{{FONT_FAMILY}}', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      font-family: var(--font-family);
+      position: relative;
+    }
+
+    /* ZONA: Imagem de fundo — ocupa 100% */
+    .zone-image {
+      position: absolute;
+      inset: 0;
+    }
+
+    .zone-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top; /* foco na parte superior — ideal para pessoas */
+    }
+
+    /* Overlay atmosférico — mais sutil que o t01, preserva a imagem */
+    .overlay-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 300px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.50), transparent);
+    }
+
+    .overlay-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 500px;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.60) 50%, transparent 100%);
+    }
+
+    /* ZONA: Logo — topo esquerdo */
+    .zone-logo {
+      position: absolute;
+      top: 80px;
+      left: 108px;
+      z-index: 2;
+    }
+
+    .zone-logo img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* ZONA: Tag/categoria — topo direito (opcional) */
+    .zone-tag {
+      position: absolute;
+      top: 88px;
+      right: 108px;
+      z-index: 2;
+      background: var(--accent);
+      color: #FFFFFF;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 10px 22px;
+      border-radius: 4px;
+      display: none; /* ativar se houver tag */
+    }
+
+    /* ZONA: Conteúdo principal — parte inferior */
+    .zone-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0 108px 120px 108px;
+      z-index: 2;
+    }
+
+    /* ZONA: Pre-headline */
+    .zone-pre-headline {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    /* ZONA: Headline */
+    .zone-headline {
+      font-size: 76px;
+      font-weight: 800;
+      line-height: 1.08;
+      color: #FFFFFF;
+      margin-bottom: 24px;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+    }
+
+    .zone-headline .destaque {
+      color: var(--accent);
+    }
+
+    /* ZONA: Subheadline */
+    .zone-subheadline {
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 1.45;
+      color: rgba(255, 255, 255, 0.88);
+      margin-bottom: 44px;
+    }
+
+    /* ZONA: CTA */
+    .zone-cta {
+      display: inline-block;
+      border: 2px solid var(--accent);
+      color: #FFFFFF;
+      background: transparent;
+      font-size: 24px;
+      font-weight: 700;
+      padding: 16px 36px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Imagem atmosférica de fundo -->
+  <div class="zone-image">
+    <img src="{{IMAGE_URL}}" alt="{{IMAGE_ALT}}">
+  </div>
+
+  <!-- Overlays -->
+  <div class="overlay-top"></div>
+  <div class="overlay-bottom"></div>
+
+  <!-- Logo -->
+  <div class="zone-logo">
+    <img src="{{LOGO_URL}}" alt="Logo">
+  </div>
+
+  <!-- Tag opcional -->
+  <div class="zone-tag">{{TAG}}</div>
+
+  <!-- Conteúdo principal -->
+  <div class="zone-content">
+    <div class="zone-pre-headline">{{PRE_HEADLINE}}</div>
+    <div class="zone-headline">{{HEADLINE}}</div>
+    <div class="zone-subheadline">{{SUBHEADLINE}}</div>
+    <div class="zone-cta">{{CTA}}</div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>TOFU ANI01 v2 — Você vende. Mas sabe quanto sobra?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 1080px; height: 1080px; overflow: hidden; font-family: 'Inter', sans-serif; }
+
+    .ad {
+      width: 1080px;
+      height: 1080px;
+      position: relative;
+      overflow: hidden;
+      background: #0b1520;
+      display: flex;
+    }
+
+    /* ── FOTO ESQUERDA ── */
+    .photo-side {
+      width: 440px;
+      height: 1080px;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .photo-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 65% top;
+      display: block;
+      filter: brightness(1.08) contrast(1.05);
+    }
+    /* Overlay leve — só nas bordas, preserva o rosto */
+    .photo-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right,  rgba(11,21,32,0) 40%, rgba(11,21,32,.85) 100%),
+        linear-gradient(to bottom, rgba(11,21,32,.5) 0%,  rgba(11,21,32,0)  18%);
+    }
+
+    /* ── BARRA LARANJA ── */
+    .orange-bar {
+      position: absolute;
+      left: 436px;
+      top: 0;
+      width: 8px;
+      height: 1080px;
+      background: #F97316;
+      z-index: 10;
+    }
+
+    /* ── LOGO NO TOPO DA FOTO ── */
+    .logo-wrap {
+      position: absolute;
+      top: 44px;
+      left: 38px;
+      z-index: 20;
+    }
+    .logo-wrap img {
+      height: 30px;
+      filter: brightness(0) invert(1);
+    }
+
+    /* ── CONTEÚDO DIREITA ── */
+    .content-side {
+      flex: 1;
+      background: #1D3A5F;
+      display: flex;
+      flex-direction: column;
+      padding: 56px 44px 52px 58px;
+      position: relative;
+      justify-content: center;
+    }
+
+    /* Dot grid sutil */
+    .content-side::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 34px 34px;
+      pointer-events: none;
+    }
+
+    /* ── PILL ── */
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(74,122,184,.2);
+      border: 1px solid rgba(74,122,184,.38);
+      color: #7BAFD4;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 100px;
+      margin-bottom: 36px;
+      width: fit-content;
+      position: relative;
+      z-index: 2;
+    }
+    .pill-dot { width: 6px; height: 6px; border-radius: 50%; background: #4A7AB8; flex-shrink: 0; }
+
+    /* ── HEADLINE ── */
+    .headline {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 32px;
+    }
+    /* Pirâmide tipográfica: linha curta = grande, linha longa = menor, palavra-chave = enorme */
+    .headline .l1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 76px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.0;
+      letter-spacing: -.038em;
+      display: block;
+    }
+    .headline .l2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 52px;
+      font-weight: 900;
+      color: rgba(255,255,255,.4);
+      line-height: 1.1;
+      letter-spacing: -.025em;
+      display: block;
+    }
+    .headline .l3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 96px;
+      font-weight: 900;
+      font-style: italic;
+      color: #F97316;
+      line-height: 1.0;
+      letter-spacing: -.04em;
+      display: block;
+    }
+
+    /* ── DIVISOR ── */
+    .divider {
+      width: 52px;
+      height: 4px;
+      background: #F97316;
+      border-radius: 2px;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ── SUBTEXT ── */
+    .subtext {
+      font-size: 19px;
+      color: rgba(255,255,255,.58);
+      line-height: 1.68;
+      max-width: 360px;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 44px;
+    }
+    .subtext strong {
+      color: rgba(255,255,255,.88);
+      font-weight: 600;
+    }
+
+    /* ── CTA ── */
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #4A7AB8;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      padding: 20px 36px;
+      border-radius: 10px;
+      position: relative;
+      z-index: 2;
+      letter-spacing: -.01em;
+      width: fit-content;
+      box-shadow: 0 8px 32px rgba(74,122,184,.35);
+    }
+
+    /* ── RODAPÉ ── */
+    .footer-note {
+      position: absolute;
+      bottom: 40px;
+      left: 64px;
+      right: 52px;
+      font-size: 12px;
+      color: rgba(255,255,255,.2);
+      letter-spacing: .04em;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="ad">
+
+    <!-- FOTO ESQUERDA -->
+    <div class="photo-side">
+      <img src="file:///C:/Users/prosy/Documents/mkt reuniao 1/banco imagens/farma/1.jpg" alt="">
+      <div class="photo-overlay"></div>
+    </div>
+
+    <!-- BARRA LARANJA -->
+    <div class="orange-bar"></div>
+
+    <!-- LOGO -->
+    <div class="logo-wrap">
+      <img src="https://prosystemnet.com/wp-content/uploads/2025/11/Design-sem-nome-3-1.png" alt="ProSystem">
+    </div>
+
+    <!-- CONTEÚDO DIREITA -->
+    <div class="content-side">
+
+      <div class="pill">
+        <span class="pill-dot"></span>
+        Farmácia &amp; Padaria
+      </div>
+
+      <div class="headline">
+        <span class="l1">Você vende.</span>
+        <span class="l2">Mas sabe quanto</span>
+        <span class="l3">sobra?</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="subtext">
+        Quem decide pelo saldo bancário<br>está gerindo o passado.<br>
+        <strong>ERP local mostra a margem real,<br>por produto, em tempo real.</strong>
+      </p>
+
+      <div class="cta">
+        Conhecer o sistema
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+
+      <div class="footer-note">prosystemnet.com · ERP local para farmácia e padaria</div>
+
+    </div>
+  </div>
+</body>
+</html>
