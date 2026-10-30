@@ -34,7 +34,9 @@
 - **Jessica:** revisar os textos de exemplo dos carrosséis.
 - **Jessica:** dizer se ainda quer usar a imagem da pasta Downloads na caneta.
 - **Comercial:** confirmar os itens do card da V1, em especial "Receita vinculada à venda".
-- **Equipe:** reunir clientes reais para depoimentos.
+- **Equipe:** pedir a autorização dos clientes dos depoimentos. Situação e mensagem em `outputs/criativos/depoimentos/legendas.md`.
+- **Comercial:** confirmar se o suporte é 24 horas e atende em sábado e domingo, como dizem os clientes. O site não confirma.
+- **Prints de avaliações:** ficam só neste computador, em `banco imagens/depoimentos-google/`. Têm nomes completos e o repositório é público.
 - **Fotos:** `prateleira-vazia.jpg` é de supermercado. Uma foto própria de farmácia ficaria melhor.
 
 ## Por que o feed foi escolhido

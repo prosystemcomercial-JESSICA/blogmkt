@@ -16,3 +16,6 @@ __pycache__/
 
 # Telas originais da base de conhecimento (cópias locais de trabalho)
 banco imagens/telas-prosystem/_originais/
+
+# Prints e transcrição de avaliações com nomes completos de clientes (repositório público)
+banco imagens/depoimentos-google/

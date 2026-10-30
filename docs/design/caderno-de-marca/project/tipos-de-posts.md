@@ -10,7 +10,7 @@ Cada tipo tem um exemplo ao vivo em Componentes. Os textos dos exemplos só most
 | Foto com painel | Dor do dia a dia | Foto em tom azul e painel central | Exemplo |
 | Frase de impacto | Compartilhamento e marcação | Só tipografia sobre branco, com losangos nos cantos | Exemplo |
 | Meme | Humor do setor | Texto, imagem em cartão e desfecho | Exemplo. **Em aberto:** origem das imagens |
-| Depoimento | Prova social | Citação em cartão branco, nome e cidade | Exemplo. Falta cliente real |
+| Depoimento | Prova social | Citação em cartão branco, nome e cidade | Peças com clientes reais em `outputs/criativos/depoimentos/`. Falta autorização para publicar |
 | Padaria com foto | Dor e conteúdo de padaria | Título, foto em cartão e pílula branca | Exemplo |
 
 A Jessica pediu "carrossel, estático, frases de impacto que chamam atenção, memes, depoimentos e etc". Outros tipos entram aqui quando forem criados e aprovados.
