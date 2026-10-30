@@ -9,7 +9,7 @@ Analisar o site e o feed do Instagram, comparar com o que fizemos e definir um p
 - `squads/@squad-design/criativos-estaticos/design-system.md` não foi alterado.
 - Depois, a pedido dela ("faça o modelo completo das páginas dos carrosséis", "pode colocar no documento"): dois carrosséis de 6 páginas, farmácia em azul e padaria em laranja, com PNGs 1080×1350 e gerador em `outputs/criativos/modelos/carrossel/` (`node outputs/criativos/modelos/carrossel/gerar.js`). Entraram no guia na seção "Carrosséis completos".
 - Depois, ela pediu mais imagens entre as páginas, capas mais fortes e "mais 2 variações de cada segmento". V2 (foto em destaque) e V3 (impacto) de farmácia e padaria em `outputs/criativos/modelos/carrossel/`, com `gerar-variacoes.js` e fotos em `fotos/` (créditos em `fotos/CREDITOS.md`). A V1 não mudou. Guia atualizado com as seis versões.
-- Depois, ela decidiu: "Gostei do carrosel V2 e V3, vamos mesclar esses modelos na hora das produções". Registrado no guia, na seção de carrosséis e nas regras de produção. Nenhuma peça nova foi gerada.
+- Depois, ela disse: "Gostei do carrosel V2 e V3, vamos mesclar esses modelos na hora das produções". Registrei uma regra errada, misturando layouts dentro do carrossel (commit `722e829`). Ela corrigiu: "NÃO É PARA MESCLAR OS CARROSSÉIS". Regra atual: cada carrossel sai inteiro em V2 ou em V3, e os dois modelos se revezam entre as publicações. Nenhuma peça nova foi gerada.
 
 ## Verificado
 - Site: abri `prosystemnet.com.br/home/`, que redireciona para `prosystemnet.com/home/`. Cores e fontes lidas do código renderizado da página.
@@ -26,7 +26,7 @@ Analisar o site e o feed do Instagram, comparar com o que fizemos e definir um p
 - Tema de cor: feed como referência das redes, porque ele e o site compartilham o degradê azul-turquesa, mas o site é mais escuro.
 - Fotos do Unsplash não usadas nos exemplos.
 - Carrosséis seguem as recomendações ainda não aprovadas (logo a 30%, sem tablet, sem pessoas posando, `#F88818`).
-- Como mesclar foi definido aqui, porque ela não detalhou: capa do modelo que deixar a frase mais forte e miolo revezando foto no alto, tela cheia e losango, sem repetir layout em páginas seguidas.
+- O revezamento entre V2 e V3 é a leitura da frase dela depois da correção; ela ainda não confirmou essa parte.
 
 ## Pendente
 - Foto `farmaceutico-conferindo.jpg` mostra homem mais velho, de pele clara: Jessica avalia contra a regra de pessoas.
