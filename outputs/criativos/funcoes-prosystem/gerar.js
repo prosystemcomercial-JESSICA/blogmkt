@@ -159,7 +159,7 @@ const CARROSSEIS = [
     id: 'carrossel-padaria-whatsapp-v1', tema: 'laranja', amb: 'padaria',
     capa: { n: 'whats-fechamento', tipo: 'notebook', titulo: 'O caixa fechou. O resumo chega no seu <b>WhatsApp.</b>', apoio: 'Sem você precisar estar na loja.' },
     itens: [
-      { n: 'whats-fechamento', tipo: 'desktop', titulo: 'Fechamento <b>na hora.</b>', apoio: 'Venda, descontos, sangrias e formas de pagamento.' },
+      { n: 'whats-fechamento', tipo: 'desktop', titulo: 'Fechamento <b>no WhatsApp.</b>', apoio: 'Venda, descontos, sangrias e formas de pagamento.' },
       { n: 'whats-contas', tipo: 'notebook', titulo: 'Contas antes de virar <b>atraso.</b>', apoio: 'Hoje, amanhã, próximos 5 dias e o que já venceu.' },
       { n: 'whats-desconto', tipo: 'notebook', titulo: 'Desconto liberado? <b>Você fica sabendo.</b>', apoio: 'Autorizações com login podem gerar aviso ao responsável.' },
     ],
@@ -176,7 +176,7 @@ body{font-family:'Montserrat',Arial,sans-serif}
 .laranja{--escuro:#C2410C;--tinta:#2B1408;--sombra:43,20,8;--marca:176,58,10;--grad:linear-gradient(155deg,#B83C0A 0%,#D9500B 50%,#F07A12 85%,#F88818 100%);--pil:#fff;--piltx:#B83C0A}
 .forte{background:var(--grad);color:#fff}
 .logo{position:absolute;top:70px;left:50%;transform:translateX(-50%);width:324px;height:auto;z-index:5}
-.topo-sombra{position:absolute;left:0;right:0;top:0;height:300px;background:linear-gradient(180deg,rgba(var(--sombra),.78),rgba(var(--sombra),0));z-index:2}
+.topo-sombra{position:absolute;left:0;right:0;top:0;height:160px;background:linear-gradient(180deg,rgba(var(--sombra),.78),rgba(var(--sombra),0));z-index:2}
 .encaixe{position:absolute;left:0;top:0;transform-origin:0 0;transform:scale(.7714)}
 .foto{position:absolute;left:0;top:0;width:100%;overflow:hidden}
 .pil{display:inline-block;padding:20px 46px;border-radius:99px;font-size:34px;font-weight:800;background:var(--pil);color:var(--piltx)}
@@ -220,10 +220,10 @@ function paginas(c) {
   const out = [];
   out.push(`<section class="pg sobre">${inteira(c.capa, c.amb)}${sombra}<div class="v2-cap-grad"></div>${logo}<div class="v2-cap"><h2>${c.capa.titulo}</h2><p>${c.capa.apoio}</p><span class="pil contorno">Arraste para o lado →</span></div></section>`);
   c.itens.forEach((it, k) => {
-    out.push(`<section class="pg"><div class="foto v2-foto"><div class="encaixe">${cena(it.n, it.tipo, a(it), { lupa: true, altura: 908, dy: 0, reducao: 0.84 })}</div></div>${sombra}${logo}<div class="v2-sel"><span>${k + 1}</span></div><div class="v2-txt"><h2>${it.titulo}</h2><p class="faixa">${it.apoio}</p></div>${num(k + 2)}</section>`);
+    out.push(`<section class="pg"><div class="foto v2-foto"><div class="encaixe">${cena(it.n, it.tipo, a(it), { lupa: true, altura: 908, dy: 0, reducao: 0.8 })}</div></div>${sombra}${logo}<div class="v2-sel"><span>${k + 1}</span></div><div class="v2-txt"><h2>${it.titulo}</h2><p class="faixa">${it.apoio}</p></div>${num(k + 2)}</section>`);
   });
   out.push(`<section class="pg sobre">${inteira(c.sol, c.amb)}${sombra}${logo}<div class="v2-painel"><h2>${c.sol.titulo}</h2><p>${c.sol.apoio}</p></div>${num(5)}</section>`);
-  out.push(`<section class="pg forte"><div class="foto v2-fim-foto"><div class="encaixe">${cena(c.fim.n, c.fim.tipo, c.amb, { altura: 730, dy: -90, reducao: 0.84 })}</div></div>${sombra}${logo}<div class="v2-fim"><h2>${c.fim.titulo}</h2>${provas}<span class="pil">Fale com um especialista</span><div class="site">${SITE}</div></div></section>`);
+  out.push(`<section class="pg forte"><div class="foto v2-fim-foto"><div class="encaixe">${cena(c.fim.n, c.fim.tipo, c.amb, { altura: 730, dy: -30, reducao: 0.74 })}</div></div>${sombra}${logo}<div class="v2-fim"><h2>${c.fim.titulo}</h2>${provas}<span class="pil">Fale com um especialista</span><div class="site">${SITE}</div></div></section>`);
   return out;
 }
 

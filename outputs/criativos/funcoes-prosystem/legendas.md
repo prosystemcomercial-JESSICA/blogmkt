@@ -1,8 +1,8 @@
 # Legendas dos carrosséis de funções do Prosystem
 
-Publicação: 6 páginas, 1080×1350, nas pastas com o nome de cada carrossel. Para regenerar, use `gerar.js`.
+Publicação: 6 páginas, 1080×1350, no modelo V2 do caderno de marca, nos arquivos `carrossel-<segmento>-<tema>-v1-<página>.png`. Para regenerar, use `gerar.js`.
 
-## farmacia-uso-continuo
+## carrossel-farmacia-uso-continuo-v1
 
 O cliente de uso contínuo raramente avisa que vai comprar. Se ninguém lembrar da reposição, ela pode virar uma nova cotação em outra farmácia.
 
@@ -12,7 +12,7 @@ Quer ver isso na sua farmácia? Fale com um especialista pelo link da bio.
 
 #gestaodefarmacia #farmacia #drogaria #sistemaparafarmacia #prosystem
 
-## farmacia-perda-de-vendas
+## carrossel-farmacia-perda-de-vendas-v1
 
 O relatório mostra o que você vendeu. E o que o cliente pediu e não levou?
 
@@ -22,7 +22,7 @@ Quer saber por que sua farmácia perde vendas? Fale com um especialista pelo lin
 
 #gestaodefarmacia #farmacia #drogaria #vendas #prosystem
 
-## padaria-sangria
+## carrossel-padaria-sangria-v1
 
 Café da manhã cheio, fila no caixa e dinheiro acumulando na gaveta. A sangria fica para depois, até alguém lembrar.
 
@@ -32,12 +32,12 @@ Quer esse controle na sua padaria? Fale com um especialista pelo link da bio.
 
 #padaria #gestaodepadaria #panificacao #controledecaixa #prosystem
 
-## padaria-whatsapp
+## carrossel-padaria-whatsapp-v1
 
 Você ainda precisa ligar para a loja para saber como foi o dia?
 
 Na versão Plus do Prosystem, o fechamento do caixa, as contas a pagar e os avisos de desconto autorizado podem chegar pelo WhatsApp de quem você escolher.
 
-Quer receber os números da sua padaria no celular? Fale com um especialista pelo link da bio.
+Quer receber os números da sua padaria? Fale com um especialista pelo link da bio.
 
 #padaria #gestaodepadaria #panificacao #whatsapp #prosystem

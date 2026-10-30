@@ -64,8 +64,23 @@ Os valores do feed foram medidos em capturas de tela, portanto são aproximados.
 - Use foto real, sem cara de IA: nada de pele plástica, brilho artificial ou simetria perfeita.
 - **Não pode aparecer texto em inglês** em rótulo, letreiro ou embalagem. Olhe a foto ampliada antes de usar.
 - **Pessoas:** aparência brasileira e farmacêutico em ação (conferindo, organizando, atendendo). **Em aberto:** o feed e o site usam modelos posando, vários com aparência europeia.
-- **Tablet, smartphone e tela de sistema são proibidos nas imagens.** **Em aberto:** o feed usa notebook com o sistema, e a recomendação é liberar só esse caso.
+- **Celular e tablet são proibidos em qualquer imagem.** Tela de sistema só aparece em mockup de notebook ou desktop, como explicado em Mockups de tela.
 - Comece pelos bancos locais: `banco imagens/padaria/` e `banco imagens/farma/`. Foto externa precisa de licença, e o crédito vai em `CREDITOS.md`, junto das fotos.
+
+## Mockups de tela
+
+Para mostrar o Prosystem, use mockup com a tela real do sistema. Regra da Jessica, de 30/10/2026: "proibido celular, faça apenas em notebook e desktop em balcão".
+
+- **Aparelhos permitidos:** só notebook e desktop.
+- **Proibidos:** celular e tablet, sem exceção. Isso vale também para função que chega ao celular, como os avisos por WhatsApp e o app de contagem: mostre a conversa na tela do notebook ou do desktop, ou escolha outra tela.
+- **Cenário:** balcão de farmácia, balcão de padaria ou mesa de escritório. Use o cenário do segmento da peça. O escritório serve para relatórios e painéis.
+- **Tela:** sempre real, tirada do sistema ou da base de conhecimento. Não desenhe tela inventada.
+- **Dados:** os dados das telas da base são fictícios, mas CPF visível fica oculto, para a peça não parecer vazamento.
+- **Marcas:** oculte nomes comerciais de medicamentos.
+- **Padaria:** use só tela sem referência a farmácia. A cor da própria tela do sistema não conta como azul da peça; a moldura e o cenário não levam azul.
+- **Texto pequeno:** se a mensagem da tela não ficar legível na peça, repita o texto real em um destaque ampliado, sem mudar as palavras.
+
+Os mockups prontos ficam em `banco imagens/mockups-prosystem/`, e as telas de origem, em `banco imagens/telas-prosystem/`.
 
 ## Formato e layout
 

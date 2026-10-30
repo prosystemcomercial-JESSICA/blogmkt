@@ -24,8 +24,9 @@
 - **Versões:** a versão vai no nome do arquivo (`-v1`, `-v2`, `-v3`).
 - **Fotos:** ligadas ao assunto de cada página, sem texto em inglês e sem cara de IA.
 - **Proibido:** amarelo ou âmbar.
+- **Mockups de tela:** só notebook e desktop, em balcão ou escritório, com tela real do sistema. **Celular e tablet são proibidos em qualquer imagem.** Mockups prontos em `banco imagens/mockups-prosystem/`.
 
-**Em aberto, aguardando a Jessica (ver `decisoes.md`):** telas e tablets, pessoas nas fotos, tamanho e posição do logo (os modelos usam 324px de largura, no centro), tom de laranja, memes e marcas de terceiros, textura, Hero com Modelo e endereço do site. Até a decisão, mantenha as proibições de tablet, smartphone e tela de sistema e a regra de pessoas.
+**Em aberto, aguardando a Jessica (ver `decisoes.md`):** pessoas nas fotos, tamanho e posição do logo (os modelos usam 324px de largura, no centro), tom de laranja, memes e marcas de terceiros, textura, Hero com Modelo e endereço do site. Até a decisão, mantenha as proibições de tablet, smartphone e tela de sistema e a regra de pessoas.
 
 ---
 

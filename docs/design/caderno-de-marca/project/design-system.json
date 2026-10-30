@@ -64,6 +64,17 @@
         "v1.jpg"
       ],
       "tile": "m"
+    },
+    "Mockups": {
+      "files": {},
+      "name": "Mockups",
+      "order": [
+        "sangria-aviso-desktop.jpg",
+        "whats-contas-notebook.jpg",
+        "uso-continuo-alerta-notebook.jpg",
+        "painel-vendas-desktop.jpg"
+      ],
+      "tile": "m"
     }
   },
   "blobs": {},
@@ -78,14 +89,15 @@
   "groups": [
     "Logos",
     "Modelos",
+    "Mockups",
     "Referencias",
     "Fotos"
   ],
   "lastChange": {
     "by": "Jessica",
     "via": "Claude Code",
-    "at": "2026-10-30T17:33:30.331Z",
-    "note": "Imagens publicadas como arquivos e embutidas nos exemplos"
+    "at": "2026-10-30T18:26:44Z",
+    "note": "Regra de mockups: só notebook e desktop; celular e tablet proibidos"
   },
   "layout": "files",
   "libraries": [],

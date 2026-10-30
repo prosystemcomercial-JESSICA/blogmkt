@@ -11,6 +11,8 @@
 | 30/10/2026 | Mais fotos nos carrosséis, ligadas ao assunto | "um pouco mais de imagens entre as páginas [...] coisas que fazem sentido com o assunto" |
 | 30/10/2026 | Modelos de carrossel escolhidos: V2 e V3 | "Gostei do carrossel V2 e V3" |
 | 30/10/2026 | V2 e V3 não se misturam: cada produção usa um modelo | "Não é para mesclar os carrosséis", "vamos usar os dois modelos, em ocasiões diferentes", "uma produção o V2, na outra o V3" |
+| 30/10/2026 | Mockup de tela só em notebook e desktop, em balcão ou escritório. Celular e tablet proibidos | "proibido celular, faça apenas em notebook e desktop em balcão etc" |
+| 30/10/2026 | Telas reais do Prosystem podem aparecer nas peças, em mockup. Os dados das telas da base são fictícios | "Quero usar os mockups das telas também do Prosystem", "Esses dados que constam nas telas são fictícios" |
 | 30/10/2026 | Tipos de post da próxima fase | "carrossel, estático, frases de impacto [...] memes, depoimentos e etc" |
 | 05/08/2026 | Hero com Modelo nos anúncios ANI01 a ANI06 | `briefings/farmacia-hero-modelo.md` |
 | Maio e junho de 2026 | Sem amarelo, sem texto em inglês, sem cara de IA | Correções feitas ao longo das criações |
@@ -19,7 +21,6 @@
 
 | Assunto | O conflito | Como os modelos estão hoje | Recomendação |
 |---|---|---|---|
-| Telas e tablets | A regra proíbe. O feed usa notebook com o sistema e modelos com tablet | Sem telas | Liberar notebook com tela real e manter tablet proibido |
 | Pessoas nas fotos | A regra pede aparência brasileira e farmacêutico em ação. O feed usa modelos posando, vários com aparência europeia | Sem pose. A foto `farmaceutico-conferindo.jpg` mostra um homem mais velho, de pele clara, e precisa de avaliação | Manter a regra atual |
 | Tamanho e posição do logo | A regra pede 200px de altura. O feed usa de 30% a 40% da largura, no centro | Centro, 324px de largura | 30% da largura, no centro |
 | Tom de laranja | O laranja do site, `#F9A01B`, é próximo do amarelo proibido | `#F88818` | Usar o `#F88818` e ajustar o site depois |

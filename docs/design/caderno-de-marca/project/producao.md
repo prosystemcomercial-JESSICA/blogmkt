@@ -25,6 +25,9 @@
 | Fotos dos modelos e créditos | `outputs/criativos/modelos/carrossel/fotos/` |
 | Peças de tendência | `outputs/criativos/<segmento>/tendencia/` |
 | Bancos de imagens | `banco imagens/padaria/` e `banco imagens/farma/` |
+| Mockups prontos, em notebook e desktop | `banco imagens/mockups-prosystem/<ambiente>/` |
+| Telas do sistema, já recortadas | `banco imagens/telas-prosystem/` |
+| Gerador de mockups e carrosséis com telas | `outputs/criativos/funcoes-prosystem/gerar.js` |
 | Design system lido pela squad | `squads/@squad-design/criativos-estaticos/design-system.md` |
 
 ## Como gerar
@@ -54,7 +57,8 @@ Para um carrossel novo, altere os textos e as fotos no início do gerador, em `c
 **Fotos**
 - Ligadas ao assunto da página.
 - Sem texto em inglês, conferido com a foto ampliada.
-- Sem tablet, smartphone ou tela de sistema.
+- Sem celular nem tablet.
+- Tela de sistema só em mockup de notebook ou desktop, com tela real, sem CPF visível nem marca de medicamento.
 - Pessoas conforme a regra do caderno.
 - Licença verificada e crédito anotado.
 
