@@ -4,9 +4,11 @@
 
 "Vamos criar o editorial (planejamento de conteúdo) do dia 04/11 a 31 de dezembro para o instagram, blog e google." E depois: "use os temas que pesquisamos que está em alta + nossa base de conhecimento, quero conteúdos de qualidade, com ganchos fortes, mesclados em Farmácias e Padarias, me entregue um documento para aprovação ou alteração, depois de aprovar o conteúdo e planejamento, vamos para os criativos".
 
+Ajuste no mesmo dia: "Inclua datas comemorativas e suspenda as publicações do dia 23 ao dia 2, vamos já colocar um pouco para 2027 Janeiro."
+
 ## Feito
 
-- Documento para aprovação no Claude Docs: https://claude.ai/artifact/Jqb8G2Q2Z1QW8MqauJ2VUv. Tem 30 posts de Instagram, 9 artigos e 1 atualização no blog, 9 postagens do Perfil da Empresa com o texto pronto, 10 pautas de reserva e a lista do que conferir. Cada linha tem a coluna Decisão: Aprovado, Alterar ou Trocar.
+- Documento para aprovação no Claude Docs: https://claude.ai/artifact/Jqb8G2Q2Z1QW8MqauJ2VUv. Agora vai de 04/11/2026 a 22/01/2027, com pausa de 23/12 a 02/01. Tem 39 posts de Instagram, 11 artigos e 1 atualização no blog, 11 postagens do Perfil da Empresa com o texto pronto, 7 datas comemorativas, 10 pautas de reserva e a lista do que conferir. Cada linha tem a coluna Decisão: Aprovado, Alterar ou Trocar.
 - Nenhum criativo foi feito e nada foi publicado no site.
 - Memória: situação do planejamento em `project_planejamento_nov_dez`.
 
@@ -16,7 +18,9 @@
 - Dias da semana conferidos por script, incluindo 02/11, segunda-feira e feriado.
 - Lista de posts publicados lida do WordPress por WP-CLI, só leitura. Os artigos de uso contínuo e sangria dão 404, então seguem sem publicar. O artigo do SNCR no ar ainda cita "30 de outubro" 8 vezes.
 - `posologia` ou `baixa de vendas`: 9 ocorrências em `a12_uso_continuo.py` e 4 em `a14_sangria.py`. Os arquivos `a13` e `a15` não têm mais esses termos, ao contrário do que dizia o relatório anterior.
-- Páginas abertas: Agência Senado (prazo até 22/12), O Povo (13º em 30/11 e 18/12), Central do Varejo (Black Friday em 27/11) e Mercado&Consumo (perfumaria, dado não usado).
+- Páginas abertas: Agência Senado (prazo até 22/12), O Povo (13º em 30/11 e 18/12), Central do Varejo (Black Friday em 27/11), Mercado&Consumo (perfumaria, dado não usado) e CFF (Dia do Farmacêutico em 20/01).
+- Só pelo resultado da busca, em sites oficiais, sem abrir a página: Dia do Diabetes, Lei 12.235/2010 (Dengue), Dezembro Vermelho e Lei 14.556/2023 (Janeiro Branco). O dia 21/11 é conta nossa: penúltimo sábado de novembro.
+- Depois do ajuste, a busca por 28/12, 30/12 e 31/12 no documento não teve resultado.
 - **Não verificado:** volume das palavras-chave com `*`; ajuda oficial do Google sobre postagens, porque as regras de 1.500 caracteres e sem telefone vêm de guias de terceiros; legendas das 15 pautas, reaproveitadas do feed sem nova conferência das fontes; 16/12 contra 15/12 na escala.
 
 ## Decisões e porquês
@@ -24,8 +28,13 @@
 - **Claude Docs,** e não um arquivo HTML, porque ela pediu um documento para aprovar ou alterar.
 - **Ritmo decidido por mim:** Instagram na segunda, quarta e sexta, mais 4 peças prontas às terças; blog às terças; Google às quintas, sempre depois do artigo.
 - **Reels e stories ficaram fora,** porque o caderno de marca não tem modelo aprovado.
-- **Post da taxa da CBS em 28/12,** depois do prazo de 22/12 da Agência Senado, porque as fontes divergem entre 15/12 e 22/12.
-- **Feriados:** o post de 20/11 foi para 19/11, e 25/12 só tem mensagem de Natal.
+- **Pausa nos três canais, de 23/12 a 02/01 inclusive,** com volta em 04/01. Ela não especificou canal, então apliquei a todos.
+- **Janeiro até 22/01,** para pegar o Dia do Farmacêutico. Os posts que cairiam na pausa foram para janeiro; o Natal foi para 22/12, e o depoimento do Rodrigo, para 12/01.
+- **Post da taxa da CBS em 04/01,** depois do prazo de 22/12 da Agência Senado, porque as fontes divergem entre 15/12 e 22/12.
+- **Feriado:** o post de 20/11 foi para 19/11.
+- **Datas de saúde só pelo lado da gestão ou do cuidado no balcão,** sem orientar tratamento.
+- **Sem data do setor para padaria:** o Dia do Panificador é 08/07, sem lei federal encontrada. Novembro Azul e Consciência Negra ficaram fora por não terem ligação direta com a gestão.
+- **Opção pelo Simples em janeiro foi descartada como gancho:** para 2027, o prazo foi antecipado para setembro e prorrogado até outubro de 2026.
 - **Encomendas de Natal sem ferramenta,** porque "Encomenda" na base é produto em falta, não pedido de padaria.
 - **Ano no título do blog só com prazo real;** o ano entra na descrição do artigo de curva ABC.
 - **Dado da RD Saúde sobre perfumaria não entrou:** é de uma só rede e de 2025.
