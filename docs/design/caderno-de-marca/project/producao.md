@@ -24,7 +24,7 @@
 | Modelos de carrossel V2 e V3 | `outputs/criativos/modelos/carrossel/gerar-variacoes.js` |
 | Fotos dos modelos e créditos | `outputs/criativos/modelos/carrossel/fotos/` |
 | Peças de tendência | `outputs/criativos/<segmento>/tendencia/` |
-| Bancos de imagens | `banco imagens/padaria/` e `banco imagens/farmacia/` |
+| Bancos de imagens | `banco imagens/padaria/` e `banco imagens/farma/` |
 | Design system lido pela squad | `squads/@squad-design/criativos-estaticos/design-system.md` |
 
 ## Como gerar

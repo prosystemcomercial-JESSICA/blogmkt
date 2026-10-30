@@ -65,7 +65,7 @@ Os valores do feed foram medidos em capturas de tela, portanto são aproximados.
 - **Não pode aparecer texto em inglês** em rótulo, letreiro ou embalagem. Olhe a foto ampliada antes de usar.
 - **Pessoas:** aparência brasileira e farmacêutico em ação (conferindo, organizando, atendendo). **Em aberto:** o feed e o site usam modelos posando, vários com aparência europeia.
 - **Tablet, smartphone e tela de sistema são proibidos nas imagens.** **Em aberto:** o feed usa notebook com o sistema, e a recomendação é liberar só esse caso.
-- Comece pelos bancos locais: `banco imagens/padaria/` e `banco imagens/farmacia/`. Foto externa precisa de licença, e o crédito vai em `CREDITOS.md`, junto das fotos.
+- Comece pelos bancos locais: `banco imagens/padaria/` e `banco imagens/farma/`. Foto externa precisa de licença, e o crédito vai em `CREDITOS.md`, junto das fotos.
 
 ## Formato e layout
 
