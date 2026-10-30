@@ -10,6 +10,29 @@
 
 ---
 
+## Padrão vigente (desde 30/10/2026)
+
+**Toda peça nova do feed segue esta seção.** As regras completas estão em `docs/design/caderno-de-marca/project/`: `README.md` (marca), `tipos-de-posts.md`, `producao.md`, `decisoes.md` e `tokens.json`. Em caso de conflito, o caderno vale sobre o restante deste arquivo.
+
+- **Padaria:** laranja predominante, sem azul. Degradê `linear-gradient(155deg,#B83C0A 0%,#D9500B 50%,#F07A12 85%,#F88818 100%)`. Texto pequeno sobre `#C2410C`.
+- **Demais segmentos:** padrão do feed. Degradê `linear-gradient(155deg,#2E6DB4 0%,#417ABC 48%,#3898D8 78%,#38C8F8 100%)`. Texto pequeno sobre `#2E6DB4`, e `#081330` sobre branco e ciano. Laranja `#F88818` só na pílula.
+- **Fundos:** alternar degradê, branco e foto.
+- **Tipografia:** só Montserrat, misturando peso 300 e 800 na mesma frase.
+- **Elemento de marca:** losangos de cantos redondos, entrando pelos cantos e longe do texto.
+- **Texto:** no máximo 3 blocos por peça. Pílula pequena; botão grande só em anúncio.
+- **Carrossel:** cada produção usa um único modelo, V2 ou V3, da capa à última página. **Nunca misture os dois.** A V1 não é usada. Gerador: `outputs/criativos/modelos/carrossel/gerar-variacoes.js`.
+- **Versões:** a versão vai no nome do arquivo (`-v1`, `-v2`, `-v3`).
+- **Fotos:** ligadas ao assunto de cada página, sem texto em inglês e sem cara de IA.
+- **Proibido:** amarelo ou âmbar.
+
+**Em aberto, aguardando a Jessica (ver `decisoes.md`):** telas e tablets, pessoas nas fotos, tamanho e posição do logo (os modelos usam 324px de largura, no centro), tom de laranja, memes e marcas de terceiros, textura, Hero com Modelo e endereço do site. Até a decisão, mantenha as proibições de tablet, smartphone e tela de sistema e a regra de pessoas.
+
+---
+
+# Padrão anterior
+
+> Vale só para o layout Hero com Modelo (`briefings/farmacia-hero-modelo.md`) e como registro das peças já feitas. Não use em peças novas do feed.
+
 ## Paleta de Cores por Segmento
 
 ### Regra 60-30-10

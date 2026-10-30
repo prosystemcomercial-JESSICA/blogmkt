@@ -25,6 +25,8 @@ Antes de cada commit:
 - `squads/` — squads do ExpxAgents (blog, design, campanhas).
 - `banco imagens/` — banco de imagens de padaria e farmácia.
 - `outputs/` — saídas de campanhas e criativos.
+- `docs/design/caderno-de-marca/project/` — design system e caderno de marca: leia `README.md`, `tipos-de-posts.md`,
+  `producao.md` e `decisoes.md` antes de criar qualquer peça. Publicado em https://claude.ai/artifact/BB4fyaWHTFrY3ZX3J1yPuk.
 
 ## Site (prosystemnet.com)
 
