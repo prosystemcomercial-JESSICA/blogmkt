@@ -7,7 +7,7 @@ A partir da base de conhecimento (universidade.prosystemnet.com/base-conheciment
 - `docs/conteudo-prosystem/`: mapa com 38 funções (`mapa_funcoes.py`, `mapa_modelo.html`, `mapa-funcoes.csv`, `mapa-funcoes.html`). Página privada: https://claude.ai/artifact/VHzmQkwvTfsn4jscdMNKn6
 - `banco imagens/telas-prosystem/`: 13 telas recortadas e `LEIA-ME.md` com as regras. Originais em `_originais/`, fora do git.
 - `outputs/criativos/funcoes-prosystem/`: `preparar_telas.py`, `gerar.js`, `legendas.md` e 4 carrosséis de 6 páginas no modelo V2 (`carrossel-farmacia-uso-continuo-v1`, `carrossel-farmacia-perda-de-vendas-v1`, `carrossel-padaria-sangria-v1`, `carrossel-padaria-whatsapp-v1`).
-- `banco imagens/mockups-prosystem/`: 60 mockups em notebook e desktop, nos cenários farmácia, padaria e escritório, depois da regra "proibido celular, faça apenas em notebook e desktop em balcão etc".
+- Mockups gerados por código em notebook e desktop: a Jessica reprovou ("ficaram horrorosos") e pediu "separe as telas que eu faço os mockups". O banco de mockups foi removido. `banco imagens/telas-para-mockup/`: 307 telas originais em 26 pastas por função, mais 16 recortes em `00-recortadas`.
 - Caderno de marca (`README.md`, `decisoes.md`, `producao.md`, republicado), `design-system.md` da squad e guia de estilos: nova regra de mockups; o item em aberto "Telas e tablets" foi fechado.
 - `blog/_gerador/artigos/a12` a `a15`: 4 artigos gerados em `blog/*.html`, com capas e mockups em `blog/assets/images/telas/`. Não publicados.
 - `blog/_gerador/base.py`: data por artigo (opcional) e função `tela()`. `blog/assets/css/artigo.css`: estilo `.tela`.
@@ -32,7 +32,7 @@ A partir da base de conhecimento (universidade.prosystemnet.com/base-conheciment
 - **Lote de 4 temas:** uso contínuo, perda de vendas, sangria e WhatsApp, por ter telas prontas para uso e não repetir o blog. O resto fica priorizado no mapa.
 
 ## Pendente
-- Jessica: aprovar os 4 artigos e os 4 carrosséis antes de publicar.
+- Jessica: fazer os mockups. Carrosséis e artigos seguem com imagens provisórias, reprovadas, e não devem ser publicados assim. Depois, aprovar os textos.
 - Jessica/produto: enviar telas ou material de ficha técnica e produção para padaria; confirmar telas atuais do PDV; confirmar se a função de sangria e a de perda de vendas valem sem ajuste na padaria.
 - Técnico: para publicar no WordPress, incluir os 4 slugs em `ARTIGOS` (`wp_pacote.py`) e enviar `blog/assets/images/telas/`, porque o importador hoje só leva a capa.
 - Site: a página /padaria/ tem o título "Por que escolher a Prosystem para a sua drogaria?"; não foi alterado.

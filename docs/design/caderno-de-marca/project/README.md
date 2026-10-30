@@ -81,7 +81,7 @@ Para mostrar o Prosystem, use mockup com a tela real do sistema. Regra da Jessic
 - **Padaria:** use só tela sem referência a farmácia. A cor da própria tela do sistema não conta como azul da peça; a moldura e o cenário não levam azul.
 - **Texto pequeno:** se a mensagem da tela não ficar legível na peça, repita o texto real em um destaque ampliado, sem mudar as palavras.
 
-Os mockups prontos ficam em `banco imagens/mockups-prosystem/`, e as telas de origem, em `banco imagens/telas-prosystem/`.
+A Jessica faz os mockups. As telas originais, separadas por função, ficam em `banco imagens/telas-para-mockup/`.
 
 ## Formato e layout
 

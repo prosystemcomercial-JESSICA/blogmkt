@@ -2,6 +2,8 @@
 
 Publicação: 6 páginas, 1080×1350, no modelo V2 do caderno de marca, nos arquivos `carrossel-<segmento>-<tema>-v1-<página>.png`. Para regenerar, use `gerar.js`.
 
+**Provisório:** as imagens destes carrosséis usam os mockups gerados por código, que foram reprovados. Não publique: substitua pelos mockups feitos pela Jessica.
+
 ## carrossel-farmacia-uso-continuo-v1
 
 O cliente de uso contínuo raramente avisa que vai comprar. Se ninguém lembrar da reposição, ela pode virar uma nova cotação em outra farmácia.

@@ -4,7 +4,7 @@ Estas telas vêm da base de conhecimento (universidade.prosystemnet.com) e já f
 
 ## Regras
 
-- **Mockup só em notebook ou desktop.** Celular e tablet são proibidos. Os mockups prontos estão em `banco imagens/mockups-prosystem/`.
+- **Mockup só em notebook ou desktop.** Celular e tablet são proibidos. A Jessica faz os mockups, a partir de `banco imagens/telas-para-mockup/`.
 - **Sem marca de medicamento.** Nas peças, nomes comerciais foram ocultados ou trocados pelo princípio ativo.
 - **CPF visível fica oculto.** O leitor não sabe que o dado é fictício, e a peça pode parecer vazamento.
 - **Foto de pessoa:** confirme o direito de uso antes de publicar.
@@ -16,4 +16,4 @@ Estas telas vêm da base de conhecimento (universidade.prosystemnet.com) e já f
 Na raiz do projeto:
 
 1. `python -I outputs/criativos/funcoes-prosystem/preparar_telas.py`: baixa as originais em `_originais/` (fora do git) e gera os recortes.
-2. `node outputs/criativos/funcoes-prosystem/gerar.js`: gera os mockups do banco e do blog e os carrosséis.
+2. `node outputs/criativos/funcoes-prosystem/gerar.js`: gera as imagens provisórias do blog e dos carrosséis.

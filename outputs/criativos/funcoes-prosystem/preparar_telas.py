@@ -105,3 +105,13 @@ salvar(original("76bbe87c9febe582.png").crop((8, 112, 585, 440)), "whats-config"
 salvar(empilhar([original("f44597f9a26fa7cf.png"), original("f60cd09e3a01d4c1.png").resize((1203, 484), Image.LANCZOS)], "white"), "painel-vendas")
 salvar(empilhar([original("6faecc1984e153ad.jpg")], "white"), "painel-estoque")
 salvar(empilhar([original("9067ea1a576ad72a.jpg"), original("fdf655104d140f5d.png").resize((1204, 473), Image.LANCZOS)], "white"), "painel-delivery")
+
+# ---------- telas do feed de editoriais ----------
+im = original("97975ce09fd8f3aa.jpg")
+borrar(im, (8, 112, 108, 176), 5)             # nome da impressora
+salvar(im, "receitas-scanner", 2)
+
+salvar(original("378d7b36fce91d9d.png"), "dias-sem-giro", 2)
+salvar(original("680e42701a95903a.png"), "fechamento-caixa", 2)
+salvar(original("51e296e06aeb12ba.png"), "precificacao", 2)
+salvar(original("5421b2a3852a604a.png"), "curva-abc", 2)

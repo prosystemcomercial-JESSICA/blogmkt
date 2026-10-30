@@ -38,6 +38,11 @@ const TELAS = {
   'painel-vendas': { amb: F, titulo: 'Painel de indicadores', cheia: true, escritorio: true },
   'painel-estoque': { amb: F, titulo: 'Painel de indicadores', cheia: true, escritorio: true },
   'painel-delivery': { amb: F, titulo: 'Painel de indicadores', cheia: true, escritorio: true },
+  'receitas-scanner': { amb: F, titulo: 'Scanner de receitas', semBlog: true },
+  'dias-sem-giro': { amb: F, titulo: 'Relatórios de produtos', semBlog: true },
+  'fechamento-caixa': { amb: NEUTRA, titulo: 'Fechamento de caixa', semBlog: true },
+  'precificacao': { amb: NEUTRA, titulo: 'Preço de venda', semBlog: true },
+  'curva-abc': { amb: NEUTRA, titulo: 'Curva ABC', semBlog: true },
 };
 const BLOG_AMB = (n) => (/^(sangria|whats)/.test(n) ? 'padaria' : 'farmacia');
 
@@ -253,7 +258,7 @@ const FONTE = '<link href="https://fonts.googleapis.com/css2?family=Montserrat:w
         total += 1;
       }
     }
-    if (!n.startsWith('painel')) {
+    if (!n.startsWith('painel') && !TELAS[n].semBlog) {
       await abrir(cena(n, 'notebook', BLOG_AMB(n), { lupa: true }), CSS_SOLTO);
       await pg.screenshot({ path: path.join(BLOG, `${n}.jpg`), type: 'jpeg', quality: 82, clip: { x: 0, y: 0, width: 1400, height: 900 } });
     }

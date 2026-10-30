@@ -16,6 +16,7 @@
 | 30/10/2026 | V2 e V3 não se misturam: cada produção usa um modelo | "Não é para mesclar os carrosséis", "vamos usar os dois modelos, em ocasiões diferentes", "uma produção o V2, na outra o V3" |
 | 30/10/2026 | Mockup de tela só em notebook e desktop, em balcão ou escritório. Celular e tablet proibidos | "proibido celular, faça apenas em notebook e desktop em balcão etc" |
 | 30/10/2026 | Telas reais do Prosystem podem aparecer nas peças, em mockup. Os dados das telas da base são fictícios | "Quero usar os mockups das telas também do Prosystem", "Esses dados que constam nas telas são fictícios" |
+| 30/10/2026 | A Jessica faz os mockups de tela; os gerados por código foram reprovados | "separe as telas que eu faço os mockups" |
 | 30/10/2026 | Tipos de post da próxima fase | "carrossel, estático, frases de impacto [...] memes, depoimentos e etc" |
 | 05/08/2026 | Hero com Modelo nos anúncios ANI01 a ANI06 | `briefings/farmacia-hero-modelo.md` |
 | Maio e junho de 2026 | Sem amarelo, sem texto em inglês, sem cara de IA | Correções feitas ao longo das criações |
