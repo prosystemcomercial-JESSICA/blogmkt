@@ -24,7 +24,6 @@ select,input { font:inherit; color:var(--fg); background:var(--sup); border:1px 
 .topo .Lote { color:var(--azul); border-color:var(--azul); }
 .topo .livre { color:var(--ok); border-color:var(--ok); }
 .topo .mascarar { color:var(--alerta); border-color:var(--alerta); }
-.topo .proibida { color:var(--perigo); border-color:var(--perigo); }
 h2 { font:700 19px/1.25 var(--f-tit); margin:6px 0 2px; }
 .hook { font-size:21px; font-weight:700; color:var(--destaque); margin:0 0 12px; text-wrap:balance; }
 dl { display:grid; grid-template-columns:110px minmax(0,1fr); gap:6px 14px; margin:0; font-size:16px; }
@@ -38,13 +37,13 @@ a { color:var(--destaque); }
   <p class="int">Cada função vendável da base de conhecimento com a dor do cliente, o hook, a solução, as telas para mockup e os cuidados. Material técnico de suporte ficou de fora.</p>
   <div class="alertas">
     <div><b>Padaria tem lacuna</b>A base quase não fala de padaria e não tem artigo de ficha técnica ou produção. Peças de padaria usam funções gerais, confirmadas na página de Padarias do site.</div>
-    <div><b>Dados nas telas</b>Várias telas têm nome, CPF, endereço ou remédio de clientes. Use somente as versões limpas de "banco imagens/telas-prosystem".</div>
+    <div><b>Dados nas telas</b>Os dados das telas são fictícios. Antes de usar, cubra marcas de medicamento e CPF visível, para a peça não parecer vazamento nem propaganda de remédio.</div>
     <div><b>Base antiga</b>52 dos 91 artigos lidos são de 2020. Confirme com a equipe de produto se a tela e a regra continuam atuais antes de publicar.</div>
   </div>
   <div class="filtros">
     <label for="f-seg">Segmento<select id="f-seg"><option value="">Todos</option><option>Farmácia</option><option>Padaria</option><option>Manipulação</option></select></label>
     <label for="f-pri">Prioridade<select id="f-pri"><option value="">Todas</option><option>Lote 1</option><option>Alta</option><option>Média</option><option>Baixa</option></select></label>
-    <label for="f-tela">Tela<select id="f-tela"><option value="">Todas</option><option value="livre">Livre</option><option value="mascarar">Mascarar</option><option value="proibida">Com restrição</option></select></label>
+    <label for="f-tela">Tela<select id="f-tela"><option value="">Todas</option><option value="livre">Livre</option><option value="mascarar">Mascarar</option></select></label>
     <label for="f-busca">Buscar<input id="f-busca" type="search" placeholder="estoque, desconto, caixa"></label>
   </div>
   <p class="conta" id="conta" aria-live="polite"></p>
@@ -52,7 +51,7 @@ a { color:var(--destaque); }
 </div>
 <script>
 var DADOS = __DADOS__;
-var NOME_TELA = { livre: 'Tela livre', mascarar: 'Mascarar tela', proibida: 'Tela com restrição' };
+var NOME_TELA = { livre: 'Tela livre', mascarar: 'Mascarar tela' };
 function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
 function linha(rot, val) { return '<dt>' + rot + '</dt><dd>' + esc(val) + '</dd>'; }
 function desenha() {

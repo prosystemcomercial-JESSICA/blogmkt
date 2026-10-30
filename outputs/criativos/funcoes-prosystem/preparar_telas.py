@@ -1,5 +1,5 @@
 # Prepara as telas reais do Prosystem para uso em marketing: baixa da base de conhecimento,
-# recorta o trecho que importa e remove dados de pessoas, CNPJ, marcas de medicamento e amarelo.
+# recorta o trecho que importa e remove CNPJ, marcas de medicamento e amarelo. Os dados das telas são fictícios.
 # Uso (na raiz do projeto):  python -I outputs/criativos/funcoes-prosystem/preparar_telas.py
 # Saída: banco imagens/telas-prosystem/*.png  (originais em _originais/, fora do git)
 import pathlib

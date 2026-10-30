@@ -23,7 +23,7 @@ ARTIGO = {
     "whats": WHATS,
     "barra": "Quero receber meus números",
     "cta_lateral": ("Avisos automáticos", "Relatórios por usuário, com envio diário ou no fechamento do caixa. Versão Plus.", "Falar com a ProSystem"),
-    "aviso": "Telas reais do Prosystem, com dados de exemplo; nomes e telefones foram retirados das imagens. Os avisos por WhatsApp são uma funcionalidade da versão Plus.",
+    "aviso": "Telas reais do Prosystem, com dados fictícios. Os avisos por WhatsApp são uma funcionalidade da versão Plus.",
     "resumo": [
         "O Prosystem envia <strong>relatórios automáticos por WhatsApp</strong>, com frequência diária, no fechamento do caixa ou nos dois.",
         "O dono pode acompanhar <strong>fechamento, vendas, contas a pagar, compras e inventário</strong> sem abrir o sistema.",

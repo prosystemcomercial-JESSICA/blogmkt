@@ -1,4 +1,4 @@
-// Gera, a partir de banco imagens/telas-prosystem/ (já sem dados de pessoas):
+// Gera, a partir de banco imagens/telas-prosystem/ (telas já recortadas):
 //  - os mockups dos artigos em blog/assets/images/telas/*.jpg
 //  - os carrosséis (1080×1350) em outputs/criativos/funcoes-prosystem/<id>/pagina-N.png
 // Uso (na raiz do projeto): node outputs/criativos/funcoes-prosystem/gerar.js

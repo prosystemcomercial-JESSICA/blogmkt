@@ -5,7 +5,7 @@ A partir da base de conhecimento (universidade.prosystemnet.com/base-conheciment
 
 ## Feito
 - `docs/conteudo-prosystem/`: mapa com 38 funções (`mapa_funcoes.py`, `mapa_modelo.html`, `mapa-funcoes.csv`, `mapa-funcoes.html`). Página privada: https://claude.ai/artifact/VHzmQkwvTfsn4jscdMNKn6
-- `banco imagens/telas-prosystem/`: 13 telas limpas e `LEIA-ME.md` com as regras e as telas proibidas. Originais em `_originais/`, fora do git.
+- `banco imagens/telas-prosystem/`: 13 telas recortadas e `LEIA-ME.md` com as regras. Originais em `_originais/`, fora do git.
 - `outputs/criativos/funcoes-prosystem/`: `preparar_telas.py`, `gerar.js`, `legendas.md` e 4 carrosséis de 6 páginas (`farmacia-uso-continuo`, `farmacia-perda-de-vendas`, `padaria-sangria`, `padaria-whatsapp`).
 - `blog/_gerador/artigos/a12` a `a15`: 4 artigos gerados em `blog/*.html`, com capas e mockups em `blog/assets/images/telas/`. Não publicados.
 - `blog/_gerador/base.py`: data por artigo (opcional) e função `tela()`. `blog/assets/css/artigo.css`: estilo `.tela`.
@@ -19,13 +19,13 @@ A partir da base de conhecimento (universidade.prosystemnet.com/base-conheciment
 - Não verificado: se as telas e regras dos artigos antigos da base continuam atuais; os artigos no WordPress; a aparência dos carrosséis no Instagram.
 
 ## Decisões e porquês
-- **Telas proibidas:** a base traz nome, CPF, endereço, foto e remédio de clientes. Só as versões limpas podem ser usadas.
+- **Dados das telas:** a Jessica confirmou em 30/10/2026 que são fictícios. A primeira versão os tratou como reais por engano, e as telas marcadas como proibidas foram liberadas. Segue a recomendação de ocultar CPF visível nas artes, para a peça não parecer vazamento.
 - **Exceção à regra "sem telas":** vale só para mockups de telas reais; fotos e imagens geradas seguem sem tela. Registrada na memória.
 - **Marca de medicamento oculta:** nomes comerciais cobertos ou trocados pelo princípio ativo, para não promover remédio em peça de marketing. A fatia amarela do gráfico foi recolorida.
 - **Lupa nos carrosséis:** o texto das telas fica pequeno no celular; a mensagem real é repetida em tamanho legível.
 - **Padaria usa só funções gerais:** a base quase não fala de padaria; a página de Padarias do site confirma dashboards, avisos, curva ABC e estoque. "Encomenda" na base é produto em falta, não bolo; não vender assim sem confirmar.
 - **Dados descartados:** OMS (50% de adesão) não pôde ser conferido; "4% de vendas perdidas" não tem fonte identificada.
-- **Lote de 4 temas:** uso contínuo, perda de vendas, sangria e WhatsApp, por ter telas limpas e não repetir o blog. O resto fica priorizado no mapa.
+- **Lote de 4 temas:** uso contínuo, perda de vendas, sangria e WhatsApp, por ter telas prontas para uso e não repetir o blog. O resto fica priorizado no mapa.
 
 ## Pendente
 - Jessica: aprovar os 4 artigos e os 4 carrosséis antes de publicar.

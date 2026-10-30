@@ -14,5 +14,5 @@ squads/*/output/
 *.tgz
 __pycache__/
 
-# Telas originais da base de conhecimento (podem conter dados de clientes; nunca versionar)
+# Telas originais da base de conhecimento (cópias locais de trabalho)
 banco imagens/telas-prosystem/_originais/

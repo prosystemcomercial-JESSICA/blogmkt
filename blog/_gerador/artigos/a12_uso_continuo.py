@@ -40,7 +40,7 @@ ARTIGO = {
     "whats": WHATS,
     "barra": "Ver na minha farmácia",
     "cta_lateral": ("Uso contínuo no sistema", "Posologia na venda, alerta no balcão e relatório de próxima compra.", "Falar com a ProSystem"),
-    "aviso": "Telas reais do Prosystem, com nomes de produtos e dados de pessoas ocultados ou substituídos. Os valores da simulação são exemplos.",
+    "aviso": "Telas reais do Prosystem, com dados fictícios e nomes de produtos ocultados ou substituídos. Os valores da simulação são exemplos.",
     "resumo": [
         "O ciclo para refazer uma medicação contínua é, em média, de <strong>60 dias</strong> e costuma depender de o próprio cliente lembrar.",
         "Sem lembrete, a reposição pode virar <strong>nova cotação</strong> entre farmácias, por preço ou por agilidade.",
