@@ -6,6 +6,7 @@
 |---|---|---|
 | 30/10/2026 | Depoimentos do Google autorizados, com nome completo | "esta autorizado, é publico e esta no google" |
 | 30/10/2026 | Suporte: das 7h às 22h, inclusive sábado e domingo, humanizado, com especialistas técnicos. Não usar "24 horas" | "das 7 da manha as 22 da noite e atende sabado e domingo, humanizado com especialistas tecnicos de facil acesso" |
+| 30/10/2026 | Suporte: o primeiro contato é pelo WhatsApp, e o cliente informa o problema por áudio, texto ou print da tela | "O primeiro passo é entrar em contato atraves do whatsapp", "audio, escrito ou print da tela" |
 | 30/10/2026 | Estrelas de avaliação em branco | "faça branco use a criatividade" |
 | 30/10/2026 | Padaria com laranja predominante | "Padarias quero o padrão com a cor predominante laranja" |
 | 30/10/2026 | Demais segmentos no padrão do feed do Instagram | "os demais quero o mesmo padrão desse feed" |

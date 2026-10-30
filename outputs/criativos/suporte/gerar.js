@@ -12,12 +12,12 @@ const FOTOS = '../modelos/carrossel/fotos';
 const SITE = 'prosystemnet.com.br';
 
 const c = {
-  id: 'carrossel-farmacia-suporte-v1',
+  id: 'carrossel-farmacia-suporte-v2',
   tema: 'azul',
   capa: { titulo: 'Travou na farmácia? <b>Chame o suporte assim.</b>', apoio: '3 passos para resolver mais rápido', foto: 'L:teclado-azul' },
   itens: [
-    { n: 1, titulo: 'Diga <b>de qual loja</b> você fala.', apoio: 'Nome da farmácia e <b>qual computador</b> está com problema.', foto: 'L:prateleiras-recorte' },
-    { n: 2, titulo: 'Conte <b>o que apareceu</b> na tela.', apoio: 'Anote a mensagem de erro e <b>o que você estava fazendo.</b>', foto: 'L:maos-digitando' },
+    { n: 1, titulo: 'Chame o suporte no <b>WhatsApp.</b>', apoio: 'Diga <b>de qual loja</b> você fala e qual computador está com problema.', foto: 'L:prateleiras-recorte' },
+    { n: 2, titulo: 'Conte <b>o problema</b> do seu jeito.', apoio: 'Pode ser por <b>áudio, texto ou print da tela.</b>', foto: 'L:maos-digitando' },
     { n: 3, titulo: 'Deixe o <b>acesso remoto</b> pronto.', apoio: 'Abra o programa e passe ao técnico o número de <b>“Este Dispositivo”.</b>', foto: 'L:maos-teclado-mesa' },
   ],
   sol: { titulo: 'Do outro lado, gente que conhece o sistema', apoio: 'Suporte humanizado, das 7h às 22h, inclusive sábado e domingo.', foto: 'farmaceutica-prateleira' },

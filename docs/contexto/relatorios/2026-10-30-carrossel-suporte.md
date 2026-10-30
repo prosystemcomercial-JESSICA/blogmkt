@@ -24,8 +24,16 @@ Antes disso ela pediu: "Depois preciso de posts para o google, junto como o edit
 - **Fotos de teclado da Wikimedia Commons (CC0).** O banco não tinha foto de computador ou atendimento, e o Unsplash recusou o acesso automatizado.
 - **Sem mockup.** `legendas.md` de `funcoes-prosystem` registra que os mockups gerados por código foram reprovados.
 
+## Atualização do mesmo dia (versão v2)
+A Jessica respondeu: "O primeiro passo é entrar em contato atraves do whatsapp só faltou isso, no de informar o problema, audio, escrito ou print da tela".
+- Peças `carrossel-farmacia-suporte-v2-<página>.png`, com os passos 1 e 2 reescritos. A v1 fica como referência e não deve ser usada.
+- Legenda atualizada e decisão registrada em `docs/design/caderno-de-marca/project/decisoes.md`.
+- Verificado: gerador sem estouro; páginas 2, 3 e 4 da v2 vistas em tamanho real. As teclas das fotos têm letras e rótulos pequenos de teclado americano, sem marca visível.
+- O número de WhatsApp não aparece na peça, porque o único registrado no projeto é o comercial.
+- Isso substitui as decisões "Sem canal de suporte na peça" e "Passos 1 e 2 são orientação geral nossa": o canal e as formas de contato agora vêm da Jessica. "Diga de qual loja" segue como orientação nossa.
+
 ## Pendente
-- Jessica: aprovar o carrossel e dizer qual é o canal de suporte, se quiser citá-lo.
+- Jessica: aprovar o carrossel e dizer se o número de WhatsApp do suporte entra na peça.
 - Jessica: a página 5 usa foto de farmacêutica sob o título "Do outro lado, gente que conhece o sistema". Falta foto real da equipe de suporte, que seria melhor.
 - Jessica: a pasta `banco imagens/mockups-prosystem/` aparece apagada no `git status`, fora desta tarefa, e não entrou neste commit. `outputs/criativos/depoimentos/gerar.js` e os carrosséis de funções usam esses arquivos, então regenerar essas peças pode quebrar.
 - **Editorial de novembro e posts do Google: não feitos.** Só foi lida a pesquisa `docs/contexto/pesquisas/2026-10-30-temas-farmacia-padaria.md`.
