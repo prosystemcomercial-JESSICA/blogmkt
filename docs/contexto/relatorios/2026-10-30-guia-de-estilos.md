@@ -8,6 +8,7 @@ Analisar o site e o feed do Instagram, comparar com o que fizemos e definir um p
 - `outputs/criativos/farmacia/tendencia/canetas-emagrecedoras-v1.{html,png}`: arquivos renomeados, sem mudar o conteúdo. O relatório `2026-10-30-criativo-caneta-emagrecedora.md` ainda cita o nome antigo.
 - `squads/@squad-design/criativos-estaticos/design-system.md` não foi alterado.
 - Depois, a pedido dela ("faça o modelo completo das páginas dos carrosséis", "pode colocar no documento"): dois carrosséis de 6 páginas, farmácia em azul e padaria em laranja, com PNGs 1080×1350 e gerador em `outputs/criativos/modelos/carrossel/` (`node outputs/criativos/modelos/carrossel/gerar.js`). Entraram no guia na seção "Carrosséis completos".
+- Depois, ela pediu mais imagens entre as páginas, capas mais fortes e "mais 2 variações de cada segmento". V2 (foto em destaque) e V3 (impacto) de farmácia e padaria em `outputs/criativos/modelos/carrossel/`, com `gerar-variacoes.js` e fotos em `fotos/` (créditos em `fotos/CREDITOS.md`). A V1 não mudou. Guia atualizado com as seis versões.
 
 ## Verificado
 - Site: abri `prosystemnet.com.br/home/`, que redireciona para `prosystemnet.com/home/`. Cores e fontes lidas do código renderizado da página.
@@ -15,6 +16,7 @@ Analisar o site e o feed do Instagram, comparar com o que fizemos e definir um p
 - Contraste com branco calculado por fórmula para cada cor da paleta.
 - Exemplos conferidos em captura a 1200px, sem rolagem lateral nessa largura.
 - Carrosséis: as 12 páginas conferidas lado a lado; losangos fora da área de texto. Textos de exemplo, ainda sem revisão dela.
+- V2 e V3: 24 páginas conferidas lado a lado e 4 ampliadas. Trocadas duas fotos com texto em inglês (vitrine da padaria e prancheta da farmácia).
 - Não verificado: guia na largura de celular e em tema escuro; demais páginas do site; perfil do Instagram ao vivo.
 
 ## Decisões e porquês
@@ -25,6 +27,7 @@ Analisar o site e o feed do Instagram, comparar com o que fizemos e definir um p
 - Carrosséis seguem as recomendações ainda não aprovadas (logo a 30%, sem tablet, sem pessoas posando, `#F88818`).
 
 ## Pendente
+- Jessica escolhe entre V1, V2 e V3 ou pede combinações. Foto `farmaceutico-conferindo.jpg` mostra homem mais velho, de pele clara: avaliar contra a regra de pessoas.
 - Jessica aprova ou ajusta os modelos de carrossel.
 - Jessica decide: telas e tablets, pessoas nas fotos, tamanho do logo, tom de laranja, memes e marcas de terceiros (tabela no guia).
 - Imagem da pasta Downloads para a caneta: ela não confirmou se ainda quer usar.
