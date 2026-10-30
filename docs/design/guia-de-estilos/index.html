@@ -1,0 +1,194 @@
+<title>Guia de Estilos ProSystem</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800;900&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: coluna de leitura à esquerda, com peças e tabelas abrindo em largura total */
+:root{--bg:#F6F8FB;--surface:#FFFFFF;--fg:#14233F;--muted:#55647D;--line:#D9E1EC;--brand:#2E6DB4;--cyan:#00A5C4;--orange:#C2410C;--ok:#12715B;--tint:#E9F1FA;
+--display:'Montserrat','Segoe UI',Arial,sans-serif;--body:'Source Sans 3','Segoe UI',Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0D1420;--surface:#16202F;--fg:#E8EEF7;--muted:#9FB0C6;--line:#2A3A50;--brand:#7FB2EC;--cyan:#4FD2E8;--orange:#FF9A5C;--ok:#59D0B1;--tint:#1B2B41;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0D1420;--surface:#16202F;--fg:#E8EEF7;--muted:#9FB0C6;--line:#2A3A50;--brand:#7FB2EC;--cyan:#4FD2E8;--orange:#FF9A5C;--ok:#59D0B1;--tint:#1B2B41;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:400 17px/1.55 var(--body)}
+.wrap{max-width:1120px;margin:0 auto;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+h1{font-size:clamp(32px,5vw,50px);line-height:1.08;font-weight:300;letter-spacing:-.02em}h1 b{font-weight:800;color:var(--brand)}
+h2{font-size:clamp(24px,3vw,31px);font-weight:300;line-height:1.15}h2 b{font-weight:800}
+h3{font-size:17px;font-weight:700}
+p{margin:0;max-width:68ch}.lead{font-size:20px;color:var(--muted)}
+section{display:flex;flex-direction:column;gap:20px}header{display:flex;flex-direction:column;gap:14px}
+.status{align-self:flex-start;font:700 12px var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--orange);border:1.5px solid currentColor;border-radius:99px;padding:5px 12px}
+.traits{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px 32px}.traits>div{min-width:0;display:flex;flex-direction:column;gap:5px}.traits p{color:var(--muted);font-size:16px}
+figure{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}figure img{display:block;width:100%;border:1px solid var(--line);border-radius:8px}figcaption{font-size:14px;color:var(--muted)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:680px;font-size:15.5px}th,td{text-align:left;vertical-align:top;padding:11px 14px;border-bottom:1px solid var(--line)}th{font:700 12.5px var(--display);letter-spacing:.03em;color:var(--muted);text-transform:uppercase}tr:last-child td{border-bottom:0}td:first-child{font-weight:700}
+</style>
+<main class="wrap">
+<header>
+<span class="status" id="status">Aguardando suas decisões</span>
+<h1>Guia de estilos <b>ProSystem</b></h1>
+<p class="lead">Estudo do feed e do site para definir o padrão dos próximos criativos: estáticos, carrosséis, frases, memes e depoimentos. Padaria em laranja, os demais segmentos no padrão azul do feed.</p>
+</header>
+
+<section>
+<h2>O que define o seu <b>feed</b></h2>
+<figure><img src="assets/feed-1.jpg" alt="Grade do feed da ProSystem com peças azuis, brancas e laranja"><figcaption>Feed enviado por você: é a referência visual do padrão.</figcaption></figure>
+<div class="traits">
+<div><h3>Dois fundos que se alternam</h3><p>Azul claro em degradê até o ciano, e branco com foto bem apagada. O branco ocupa de 33% a 44% dos pixels das imagens enviadas, então o feed respira.</p></div>
+<div><h3>Losangos de cantos redondos</h3><p>Quadrados girados, só com contorno fino ou preenchidos em degradê, entrando pelos cantos. É o elemento mais reconhecível da marca.</p></div>
+<div><h3>Peso fino com peso forte</h3><p>Montserrat em caixa alta ou baixa, misturando letra fina e extrabold na mesma frase: "A <b>gestão</b> da sua <b>FARMÁCIA</b>".</p></div>
+<div><h3>Logo no alto e no centro</h3><p>Ocupa cerca de 30% a 40% da largura da peça, e quase sempre está centralizado.</p></div>
+<div><h3>Pouco texto, bem hierarquizado</h3><p>Título grande, uma faixa em degradê com o complemento e uma pílula pequena: "Leia a legenda" ou "Arraste para o lado".</p></div>
+<div><h3>Laranja só como ponto de atenção</h3><p>Nas peças azuis, o laranja aparece em pílulas e faixas. Nas de padaria, vira a cor dominante.</p></div>
+</div>
+</section>
+
+<section>
+<h2>O que o <b>site</b> confirma</h2>
+<div class="two">
+<figure><img src="assets/site-1.jpg" alt="Topo do site com fundo azul escuro e foto"><figcaption>Topo do site: azul mais escuro que o feed.</figcaption></figure>
+<figure><img src="assets/site-2.jpg" alt="Faixa de soluções em degradê de azul para turquesa"><figcaption>Faixa "Nossas soluções": o mesmo degradê do feed.</figcaption></figure>
+</div>
+<div class="traits">
+<div><h3>Cores medidas no código</h3><p>Azul <code>#417ABC</code>, turquesa <code>#00BFD1</code>, azul-noite <code>#081330</code>, botão <code>#0084F0</code> e laranja <code>#F9A01B</code>.</p></div>
+<div><h3>Provas prontas para usar</h3><p>"+600 clientes", "+16 anos de experiência" e a promessa de conformidade fiscal são argumentos que já estão no ar.</p></div>
+<div><h3>Onde o site destoa</h3><p>Usa várias fontes (Montserrat, Poppins e Inter) e é mais escuro que o feed. Para as redes, vale seguir o feed.</p></div>
+</div>
+</section>
+<section>
+<h2>A <b>V1</b> comparada ao padrão</h2>
+<p>A V1 está bem resolvida como peça isolada, mas segue o padrão azul-escuro de agosto. Ao lado do feed, ela parece de outra marca.</p>
+<div class="scroll"><table>
+<thead><tr><th>Item</th><th>V1 (canetas)</th><th>Feed</th><th>Padrão daqui em diante</th></tr></thead>
+<tbody>
+<tr><td>Fundo</td><td>Azul-escuro <code>#0A2E87</code></td><td>Azul claro até ciano, ou branco</td><td>Seguir o feed</td></tr>
+<tr><td>Logo</td><td>Canto esquerdo, 21% da largura</td><td>Centro, 30% a 40% da largura</td><td>Centro, 30% da largura</td></tr>
+<tr><td>Título</td><td>Tudo em peso 900</td><td>Fino + extrabold</td><td>Fino + extrabold</td></tr>
+<tr><td>Elemento de marca</td><td>Fita métrica e riscos</td><td>Losangos de cantos redondos</td><td>Losangos em toda peça</td></tr>
+<tr><td>Quadro de texto</td><td>Vidro translúcido com checks</td><td>Faixa em degradê ou cartão branco</td><td>Faixa ou cartão branco</td></tr>
+<tr><td>Chamada</td><td>Botão grande em degradê</td><td>Pílula pequena</td><td>Pílula, e botão só em anúncio</td></tr>
+<tr><td>Quantidade de texto</td><td>Título, frase, 3 itens, botão, rodapé</td><td>Título, complemento, pílula</td><td>No máximo 3 blocos</td></tr>
+<tr><td>Textura</td><td>Grão e linhas diagonais</td><td>Nenhuma</td><td>Sem textura</td></tr>
+</tbody></table></div>
+</section>
+
+<section>
+<h2>Paleta e <b>contraste</b></h2>
+<p>Valores do feed são aproximados, medidos nas imagens enviadas. O contraste foi calculado com branco: abaixo de 3 não serve nem para título, e texto pequeno pede 4,5.</p>
+<style>
+.pal{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
+.sw{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;min-width:0}
+.chip{height:72px}.sw div:last-child{padding:10px 12px;font-size:14.5px;display:flex;flex-direction:column;gap:2px}
+.sw b{font-family:var(--display);font-size:13.5px}.sw span{color:var(--muted)}
+</style>
+<h3>Farmácias, drogarias e demais segmentos</h3>
+<div class="pal">
+<div class="sw"><div class="chip" style="background:#2E6DB4"></div><div><b>Azul profundo</b><code>#2E6DB4</code><span>Branco 5,3: texto pequeno</span></div></div>
+<div class="sw"><div class="chip" style="background:#417ABC"></div><div><b>Azul da marca</b><code>#417ABC</code><span>Branco 4,4: texto médio</span></div></div>
+<div class="sw"><div class="chip" style="background:#3898D8"></div><div><b>Azul vivo</b><code>#3898D8</code><span>Branco 3,2: só título</span></div></div>
+<div class="sw"><div class="chip" style="background:#38C8F8"></div><div><b>Ciano</b><code>#38C8F8</code><span>Branco 1,9: texto azul-noite</span></div></div>
+<div class="sw"><div class="chip" style="background:#081330"></div><div><b>Azul-noite</b><code>#081330</code><span>Texto sobre branco e ciano</span></div></div>
+<div class="sw"><div class="chip" style="background:#F88818"></div><div><b>Laranja atenção</b><code>#F88818</code><span>Só pílula, texto azul-noite</span></div></div>
+</div>
+<h3>Padarias</h3>
+<div class="pal">
+<div class="sw"><div class="chip" style="background:#C2410C"></div><div><b>Laranja queimado</b><code>#C2410C</code><span>Branco 5,2: texto pequeno</span></div></div>
+<div class="sw"><div class="chip" style="background:#EA580C"></div><div><b>Laranja forte</b><code>#EA580C</code><span>Branco 3,6: título</span></div></div>
+<div class="sw"><div class="chip" style="background:#F88818"></div><div><b>Laranja do feed</b><code>#F88818</code><span>Branco 2,5: só fundo e forma</span></div></div>
+<div class="sw"><div class="chip" style="background:#FFFFFF"></div><div><b>Branco</b><code>#FFFFFF</code><span>Fundo das peças claras</span></div></div>
+</div>
+<p>O feed coloca texto branco pequeno sobre ciano e laranja claro, e isso fica difícil de ler no celular. O padrão mantém as cores, mas põe o texto na parte mais escura do degradê.</p>
+</section>
+<section>
+<h2>Os <b>estilos</b> definidos</h2>
+<p>Exemplos construídos neste padrão para você comparar. Não são peças finais: os textos servem só para mostrar o formato.</p>
+<style>
+.specimens{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:26px 20px}
+.spec{display:flex;flex-direction:column;gap:9px;min-width:0}.spec h3{font-size:15px}.spec>p{font-size:14.5px;color:var(--muted)}
+.car{grid-column:1/-1}.car .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px}
+.post{container-type:inline-size;aspect-ratio:4/5;position:relative;overflow:hidden;border-radius:3px;box-shadow:0 0 0 1px var(--line);max-width:100%}
+.p{--u:calc(100cqw/1080);position:absolute;inset:0;overflow:hidden;font-family:'Montserrat',Arial,sans-serif;color:#fff;font-weight:400}
+.azul{background:linear-gradient(155deg,#2E6DB4 0%,#417ABC 48%,#3898D8 78%,#38C8F8 100%)}
+.lar{background:linear-gradient(155deg,#B83C0A 0%,#D9500B 50%,#F07A12 85%,#F88818 100%)}
+.bra{background:#fff;color:#081330}
+.g{position:absolute;transform:rotate(45deg);border-radius:calc(46*var(--u));border:calc(3.5*var(--u)) solid rgba(255,255,255,.75)}
+.gf{position:absolute;transform:rotate(45deg);border-radius:calc(46*var(--u));background:linear-gradient(135deg,rgba(56,200,248,.95),rgba(65,122,188,.55))}
+.bra .g{border-color:#38C8F8}.bra .g.b{border-color:#417ABC}
+.lar .gf,.lb .gf{background:linear-gradient(135deg,rgba(255,190,120,.75),rgba(234,88,12,.35))}
+.lb .g{border-color:#F88818}.lb .g.b{border-color:#C2410C}
+.lg{position:absolute;top:calc(66*var(--u));left:50%;transform:translateX(-50%);width:calc(324*var(--u));height:auto;border:0;border-radius:0}
+.c{position:absolute;left:calc(90*var(--u));right:calc(90*var(--u));text-align:center;display:flex;flex-direction:column;align-items:center;gap:calc(30*var(--u))}
+.t{margin:0;font-size:calc(80*var(--u));line-height:1.06;font-weight:300;letter-spacing:-.015em;text-wrap:balance}.t b{font-weight:800}.up{text-transform:uppercase}
+.s{margin:0;font-size:calc(35*var(--u));line-height:1.3;font-weight:500;max-width:none;text-wrap:balance}.s b{font-weight:800}
+.bar{padding:calc(22*var(--u)) calc(36*var(--u));border-radius:calc(18*var(--u));background:#2E6DB4;color:#fff;font-size:calc(33*var(--u));line-height:1.28;font-weight:500}.bar b{font-weight:800}
+.pl{display:inline-block;padding:calc(15*var(--u)) calc(36*var(--u));border-radius:calc(99*var(--u));font-size:calc(28*var(--u));font-weight:800;background:#F88818;color:#081330}
+.pl.o{background:transparent;border:calc(3*var(--u)) solid #fff;color:#fff;font-weight:700}.pl.w{background:#fff;color:#B83C0A}
+.azultxt{color:#2E6DB4}.lartxt{color:#C2410C}
+.ph{position:absolute;object-fit:cover;border:0;max-width:none}
+.pen-s{position:absolute;right:calc(42*var(--u));top:calc(190*var(--u));height:calc(1090*var(--u));width:auto;transform:rotate(9deg);filter:drop-shadow(calc(-14*var(--u)) calc(22*var(--u)) calc(26*var(--u)) rgba(8,19,48,.4))}
+.q{font-size:calc(210*var(--u));line-height:.7;font-weight:800;color:#38C8F8;height:calc(96*var(--u))}
+</style>
+<div class="specimens"><div class="spec"><div class="post"><div class="p azul"><i class="g" style="width:calc(330*var(--u));height:calc(330*var(--u));top:calc(-150*var(--u));left:calc(-130*var(--u))"></i><i class="g" style="width:calc(280*var(--u));height:calc(280*var(--u));top:calc(-130*var(--u));right:calc(-90*var(--u))"></i><i class="gf" style="width:calc(250*var(--u));height:calc(250*var(--u));bottom:calc(-130*var(--u));left:calc(-90*var(--u))"></i><i class="g" style="width:calc(300*var(--u));height:calc(300*var(--u));bottom:calc(-170*var(--u));right:calc(-60*var(--u))"></i><img class="lg" src="assets/logo-light.png" alt="ProSystem"><svg class="pen-s" viewBox="-20 -10 190 1080" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs>
+<linearGradient id="b" x1="0" x2="1"><stop offset="0" stop-color="#b9b3d3"/><stop offset=".22" stop-color="#f4f0fa"/><stop offset=".5" stop-color="#ffffff"/><stop offset=".8" stop-color="#e2dcee"/><stop offset="1" stop-color="#9f99c0"/></linearGradient>
+<linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#8d9ab4"/><stop offset=".25" stop-color="#dfe6f1"/><stop offset=".5" stop-color="#f4f7fb"/><stop offset=".8" stop-color="#c7d1e1"/><stop offset="1" stop-color="#7f8ca8"/></linearGradient>
+<linearGradient id="t" x1="0" x2="1"><stop offset="0" stop-color="#8f7fc4"/><stop offset=".4" stop-color="#d9cff2"/><stop offset="1" stop-color="#7f6fb6"/></linearGradient>
+<linearGradient id="c" x1="0" x2="1"><stop offset="0" stop-color="#5d6b85"/><stop offset=".45" stop-color="#b9c6da"/><stop offset="1" stop-color="#55627c"/></linearGradient>
+</defs>
+<rect x="2" y="0" width="146" height="96" rx="16" fill="url(#b)"/><rect x="8" y="6" width="4" height="84" rx="2" fill="#8f8bb0" opacity=".32"/><rect x="19" y="6" width="4" height="84" rx="2" fill="#8f8bb0" opacity=".32"/><rect x="30" y="6" width="4" height="84" rx="2" fill="#8f8bb0" opacity=".32"/><rect x="41" y="6" width="4" height="84" rx="2" fill="#8f8bb0" opacity=".32"/><rect x="52" y="6" width="4" height="84" rx="2" fill="#8f8bb0" opacity=".32"/><rect x="63" y="6" width="4" height="84" rx="2" fill="#8f8bb0" opacity=".32"/><rect x="74" y="6" width="4" height="84" rx="2" fill="#8f8bb0" opacity=".32"/><rect x="85" y="6" width="4" height="84" rx="2" fill="#8f8bb0" opacity=".32"/><rect x="96" y="6" width="4" height="84" rx="2" fill="#8f8bb0" opacity=".32"/><rect x="107" y="6" width="4" height="84" rx="2" fill="#8f8bb0" opacity=".32"/><rect x="118" y="6" width="4" height="84" rx="2" fill="#8f8bb0" opacity=".32"/><rect x="129" y="6" width="4" height="84" rx="2" fill="#8f8bb0" opacity=".32"/><rect x="140" y="6" width="4" height="84" rx="2" fill="#8f8bb0" opacity=".32"/>
+<rect x="0" y="92" width="150" height="540" rx="6" fill="url(#b)"/>
+<rect x="42" y="150" width="66" height="96" rx="10" fill="#fff" stroke="#a9a3c6" stroke-width="3"/>
+<text x="75" y="214" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="46" fill="#1D3A5F">1</text>
+<path d="M50 198l-12-9v18zM100 198l12-9v18z" fill="#1D3A5F"/>
+<rect x="-1" y="628" width="152" height="14" fill="#6f7c98"/>
+<rect x="6" y="640" width="138" height="270" rx="8" fill="url(#g)"/>
+<rect x="34" y="668" width="82" height="214" rx="14" fill="#33415c"/>
+<rect x="42" y="676" width="66" height="198" rx="9" fill="url(#c)"/><rect x="52" y="690" width="46" height="7" rx="2" fill="#8a97ad"/><rect x="52" y="703" width="46" height="7" rx="2" fill="#8a97ad"/><rect x="52" y="716" width="46" height="7" rx="2" fill="#8a97ad"/><rect x="52" y="729" width="46" height="7" rx="2" fill="#8a97ad"/><rect x="52" y="742" width="46" height="7" rx="2" fill="#8a97ad"/><rect x="52" y="755" width="46" height="7" rx="2" fill="#8a97ad"/><rect x="52" y="768" width="46" height="7" rx="2" fill="#8a97ad"/><rect x="52" y="781" width="46" height="7" rx="2" fill="#8a97ad"/><rect x="52" y="794" width="46" height="7" rx="2" fill="#8a97ad"/><rect x="52" y="807" width="46" height="7" rx="2" fill="#8a97ad"/><rect x="52" y="820" width="46" height="7" rx="2" fill="#8a97ad"/><rect x="52" y="833" width="46" height="7" rx="2" fill="#8a97ad"/><rect x="52" y="846" width="46" height="7" rx="2" fill="#8a97ad"/>
+<rect x="42" y="838" width="66" height="36" rx="6" fill="#1b2438"/>
+<path d="M28 908h94l-10 48H38z" fill="url(#t)"/>
+<rect x="72" y="954" width="6" height="16" fill="#8f7fc4"/>
+<rect x="74" y="968" width="2.5" height="90" fill="#dfe6f1"/>
+</svg><div class="c" style="left:calc(80*var(--u));right:calc(400*var(--u));top:calc(330*var(--u));text-align:left;align-items:flex-start"><h4 class="t" style="font-size:calc(74*var(--u))">Canetas <b>emagrecedoras</b> viraram <b>alvo.</b></h4><div class="bar" style="font-size:calc(31*var(--u))">Você sabe onde está <b>cada unidade</b> do seu estoque?</div><span class="pl">Leia a legenda</span></div></div></div><h3>Estático azul com produto</h3><p>Para notícia e tendência. É a mensagem da V1 no padrão do feed.</p></div>
+<div class="spec"><div class="post"><div class="p bra"><i class="g" style="width:calc(310*var(--u));height:calc(310*var(--u));top:calc(-150*var(--u));left:calc(-120*var(--u))"></i><i class="gf" style="width:calc(220*var(--u));height:calc(220*var(--u));top:calc(-90*var(--u));right:calc(-70*var(--u))"></i><i class="g b" style="width:calc(330*var(--u));height:calc(330*var(--u));bottom:calc(-180*var(--u));right:calc(-100*var(--u))"></i><i class="g b" style="width:calc(240*var(--u));height:calc(240*var(--u));bottom:calc(-130*var(--u));left:calc(-70*var(--u))"></i><img class="lg" src="assets/logo-dark.png" alt="ProSystem"><div class="c" style="top:calc(370*var(--u))"><h4 class="t azultxt" style="font-size:calc(108*var(--u))">Quem não confere o estoque, <b>confere o prejuízo.</b></h4><p class="s" style="color:#081330;font-size:calc(40*var(--u))">Marque quem precisa ler isso.</p></div></div></div><h3>Frase de impacto</h3><p>Só tipografia sobre branco, com losangos nos cantos. Para compartilhar.</p></div>
+<div class="spec"><div class="post"><div class="p azul"><img class="ph" src="assets/prateleiras.jpg" alt="" style="inset:0;width:100%;height:100%;opacity:.45;mix-blend-mode:luminosity"><i class="g" style="width:calc(330*var(--u));height:calc(330*var(--u));top:calc(-150*var(--u));left:calc(-130*var(--u))"></i><i class="g" style="width:calc(280*var(--u));height:calc(280*var(--u));top:calc(-130*var(--u));right:calc(-90*var(--u))"></i><i class="gf" style="width:calc(250*var(--u));height:calc(250*var(--u));bottom:calc(-130*var(--u));left:calc(-90*var(--u))"></i><i class="g" style="width:calc(300*var(--u));height:calc(300*var(--u));bottom:calc(-170*var(--u));right:calc(-60*var(--u))"></i><img class="lg" src="assets/logo-light.png" alt="ProSystem"><div class="c" style="top:calc(330*var(--u));left:calc(70*var(--u));right:calc(70*var(--u));background:rgba(36,86,150,.92);border-radius:calc(26*var(--u));padding:calc(80*var(--u)) calc(44*var(--u))"><h4 class="t up" style="font-size:calc(104*var(--u));font-weight:800">Estoque bagunçado</h4><p class="s" style="font-size:calc(44*var(--u))">está travando o crescimento da sua <b>farmácia.</b></p><span class="pl">Leia a legenda</span></div></div></div><h3>Foto com painel</h3><p>Foto em tom azul e um painel central. Para dor do dia a dia.</p></div>
+<div class="spec"><div class="post"><div class="p bra"><i class="g" style="width:calc(310*var(--u));height:calc(310*var(--u));top:calc(-150*var(--u));left:calc(-120*var(--u))"></i><i class="gf" style="width:calc(220*var(--u));height:calc(220*var(--u));top:calc(-90*var(--u));right:calc(-70*var(--u))"></i><i class="g b" style="width:calc(330*var(--u));height:calc(330*var(--u));bottom:calc(-180*var(--u));right:calc(-100*var(--u))"></i><i class="g b" style="width:calc(240*var(--u));height:calc(240*var(--u));bottom:calc(-130*var(--u));left:calc(-70*var(--u))"></i><img class="lg" src="assets/logo-dark.png" alt="ProSystem"><div class="c" style="top:calc(215*var(--u));left:calc(80*var(--u));right:calc(80*var(--u));gap:calc(34*var(--u))"><p class="s" style="font-size:calc(40*var(--u));color:#081330">Quando o fiscal pede <b class="azultxt">o XML de março</b> e você abre a pasta "Novo (3)"</p><div style="position:relative;width:100%;height:calc(560*var(--u))"><i style="position:absolute;inset:0;background:#38C8F8;border-radius:calc(30*var(--u));transform:rotate(-3deg)"></i><div style="position:absolute;inset:0;background:#DCE7F3;border-radius:calc(30*var(--u));display:flex;align-items:center;justify-content:center;color:#2E6DB4;font-size:calc(32*var(--u));font-weight:700;padding:calc(30*var(--u))">Imagem do meme com direito de uso</div></div><p class="s" style="font-size:calc(34*var(--u));color:#081330"><b>Com o fiscal em dia, essa cena não acontece.</b></p></div></div></div><h3>Meme</h3><p>Texto, imagem em cartão e desfecho. A imagem precisa ter direito de uso.</p></div>
+<div class="spec"><div class="post"><div class="p azul"><i class="g" style="width:calc(330*var(--u));height:calc(330*var(--u));top:calc(-150*var(--u));left:calc(-130*var(--u))"></i><i class="g" style="width:calc(280*var(--u));height:calc(280*var(--u));top:calc(-130*var(--u));right:calc(-90*var(--u))"></i><i class="gf" style="width:calc(250*var(--u));height:calc(250*var(--u));bottom:calc(-130*var(--u));left:calc(-90*var(--u))"></i><i class="g" style="width:calc(300*var(--u));height:calc(300*var(--u));bottom:calc(-170*var(--u));right:calc(-60*var(--u))"></i><img class="lg" src="assets/logo-light.png" alt="ProSystem"><div class="c" style="top:calc(290*var(--u));left:calc(80*var(--u));right:calc(80*var(--u));background:#fff;color:#081330;border-radius:calc(30*var(--u));padding:calc(90*var(--u)) calc(56*var(--u));gap:calc(44*var(--u))"><div class="q">&ldquo;</div><p class="s" style="font-size:calc(58*var(--u));font-weight:500">[Depoimento real do cliente, em até 20 palavras]</p><p class="s azultxt" style="font-size:calc(36*var(--u))"><b>[Nome do cliente]</b><br>[Farmácia ou padaria, cidade]</p></div></div></div><h3>Depoimento</h3><p>Sempre de cliente real, com autorização. Os colchetes marcam o que falta.</p></div>
+<div class="spec"><div class="post"><div class="p lar"><i class="g" style="width:calc(330*var(--u));height:calc(330*var(--u));top:calc(-150*var(--u));left:calc(-130*var(--u))"></i><i class="g" style="width:calc(280*var(--u));height:calc(280*var(--u));top:calc(-130*var(--u));right:calc(-90*var(--u))"></i><i class="gf" style="width:calc(250*var(--u));height:calc(250*var(--u));bottom:calc(-130*var(--u));left:calc(-90*var(--u))"></i><i class="g" style="width:calc(300*var(--u));height:calc(300*var(--u));bottom:calc(-170*var(--u));right:calc(-60*var(--u))"></i><img class="lg" src="assets/logo-light.png" alt="ProSystem"><div class="c" style="top:calc(220*var(--u));left:calc(80*var(--u));right:calc(80*var(--u));gap:calc(26*var(--u))"><h4 class="t" style="font-size:calc(74*var(--u))">Quanto custa, <b>de verdade,</b> o seu pãozinho?</h4></div><img class="ph" src="assets/padeiro.jpg" alt="Padeiro com pães" style="left:calc(90*var(--u));width:calc(900*var(--u));height:calc(520*var(--u));top:calc(560*var(--u));border-radius:calc(30*var(--u))"><div class="c" style="top:calc(1140*var(--u))"><span class="pl w">Leia a legenda</span></div></div></div><h3>Padaria com foto</h3><p>Laranja dominante e foto em cartão. Sem azul.</p></div>
+<div class="spec"><div class="post"><div class="p bra lb"><i class="g" style="width:calc(310*var(--u));height:calc(310*var(--u));top:calc(-150*var(--u));left:calc(-120*var(--u))"></i><i class="gf" style="width:calc(220*var(--u));height:calc(220*var(--u));top:calc(-90*var(--u));right:calc(-70*var(--u))"></i><i class="g b" style="width:calc(330*var(--u));height:calc(330*var(--u));bottom:calc(-180*var(--u));right:calc(-100*var(--u))"></i><i class="g b" style="width:calc(240*var(--u));height:calc(240*var(--u));bottom:calc(-130*var(--u));left:calc(-70*var(--u))"></i><img class="lg" src="assets/logo-dark.png" alt="ProSystem"><div class="c" style="top:calc(370*var(--u))"><h4 class="t lartxt" style="font-size:calc(108*var(--u))">Pão que sobra também é <b>prejuízo.</b></h4><p class="s" style="color:#081330;font-size:calc(40*var(--u))">Marque o dono da padaria.</p></div></div></div><h3>Padaria: frase</h3><p>Fundo branco com títulos e losangos em laranja.</p></div>
+<div class="spec"><div class="post"><div class="p lar"><i class="g" style="width:calc(330*var(--u));height:calc(330*var(--u));top:calc(-150*var(--u));left:calc(-130*var(--u))"></i><i class="g" style="width:calc(280*var(--u));height:calc(280*var(--u));top:calc(-130*var(--u));right:calc(-90*var(--u))"></i><i class="gf" style="width:calc(250*var(--u));height:calc(250*var(--u));bottom:calc(-130*var(--u));left:calc(-90*var(--u))"></i><i class="g" style="width:calc(300*var(--u));height:calc(300*var(--u));bottom:calc(-170*var(--u));right:calc(-60*var(--u))"></i><img class="lg" src="assets/logo-light.png" alt="ProSystem"><div class="c" style="top:calc(320*var(--u))"><h4 class="t up" style="font-size:calc(108*var(--u))"><b>3 erros</b> na ficha técnica que comem sua margem</h4><span class="pl o">Arraste para o lado</span></div></div></div><h3>Padaria: capa de carrossel</h3><p>Pergunta grande e pílula de arrastar.</p></div>
+<div class="spec car"><div class="row"><div class="post"><div class="p azul"><i class="g" style="width:calc(330*var(--u));height:calc(330*var(--u));top:calc(-150*var(--u));left:calc(-130*var(--u))"></i><i class="g" style="width:calc(280*var(--u));height:calc(280*var(--u));top:calc(-130*var(--u));right:calc(-90*var(--u))"></i><i class="gf" style="width:calc(250*var(--u));height:calc(250*var(--u));bottom:calc(-130*var(--u));left:calc(-90*var(--u))"></i><i class="g" style="width:calc(300*var(--u));height:calc(300*var(--u));bottom:calc(-170*var(--u));right:calc(-60*var(--u))"></i><img class="lg" src="assets/logo-light.png" alt="ProSystem"><div class="c" style="top:calc(340*var(--u))"><h4 class="t" style="font-size:calc(110*var(--u))"><b>3 sinais</b> de que o estoque está custando caro</h4><span class="pl o">Arraste para o lado</span></div></div></div><div class="post"><div class="p bra"><i class="g" style="width:calc(310*var(--u));height:calc(310*var(--u));top:calc(-150*var(--u));left:calc(-120*var(--u))"></i><i class="gf" style="width:calc(220*var(--u));height:calc(220*var(--u));top:calc(-90*var(--u));right:calc(-70*var(--u))"></i><i class="g b" style="width:calc(330*var(--u));height:calc(330*var(--u));bottom:calc(-180*var(--u));right:calc(-100*var(--u))"></i><i class="g b" style="width:calc(240*var(--u));height:calc(240*var(--u));bottom:calc(-130*var(--u));left:calc(-70*var(--u))"></i><img class="lg" src="assets/logo-dark.png" alt="ProSystem"><div class="c" style="top:calc(280*var(--u))"><div class="t azultxt" style="font-size:calc(230*var(--u));font-weight:800">1</div><h4 class="t azultxt" style="font-size:calc(82*var(--u))">Você só descobre o <b>vencido</b> quando ele já venceu.</h4><p class="s" style="color:#081330;font-size:calc(42*var(--u))">Controlar por lote e validade evita essa perda.</p></div></div></div><div class="post"><div class="p azul"><i class="g" style="width:calc(330*var(--u));height:calc(330*var(--u));top:calc(-150*var(--u));left:calc(-130*var(--u))"></i><i class="g" style="width:calc(280*var(--u));height:calc(280*var(--u));top:calc(-130*var(--u));right:calc(-90*var(--u))"></i><i class="gf" style="width:calc(250*var(--u));height:calc(250*var(--u));bottom:calc(-130*var(--u));left:calc(-90*var(--u))"></i><i class="g" style="width:calc(300*var(--u));height:calc(300*var(--u));bottom:calc(-170*var(--u));right:calc(-60*var(--u))"></i><img class="lg" src="assets/logo-light.png" alt="ProSystem"><div class="c" style="top:calc(310*var(--u))"><h4 class="t" style="font-size:calc(90*var(--u))">Estoque <b>por produto, lote e validade</b> em um só lugar.</h4><div class="bar">+600 clientes e +16 anos de experiência</div><span class="pl">Fale com a ProSystem</span></div></div></div></div><h3>Carrossel</h3><p>Capa e fechamento em azul, miolo em branco. Assim a pessoa percebe que a sequência avança.</p></div></div>
+</section>
+
+<section>
+<h2>Regras de <b>produção</b></h2>
+<div class="traits">
+<div><h3>Formato</h3><p>Feed em 1080×1350. Margem de 90px nas laterais, com texto importante longe dos cantos.</p></div>
+<div><h3>Alternância</h3><p>Azul, branco e foto se revezam, para a grade não ficar com duas peças iguais lado a lado.</p></div>
+<div><h3>Segmento</h3><p>Padaria usa só laranja e branco, sem azul. Farmácia, drogaria, manipulação e varejo usam o padrão azul.</p></div>
+<div><h3>Versões</h3><p>Cada peça leva a versão no nome: <code>canetas-emagrecedoras-v1</code>, depois <code>-v2</code>, <code>-v3</code>. A V1 fica guardada como referência.</p></div>
+</div>
+</section>
+
+<section>
+<h2>Decisões que dependem de <b>você</b></h2>
+<p>O feed contradiz algumas regras que você aprovou nos últimos meses. Antes de oficializar o padrão, preciso saber qual vale.</p>
+<div class="scroll"><table>
+<thead><tr><th>Assunto</th><th>O conflito</th><th>Recomendação</th></tr></thead>
+<tbody>
+<tr><td>Telas e tablets</td><td>A regra proíbe tablets e telas de sistema. O feed usa notebooks com o sistema e modelos com tablet.</td><td>Liberar notebook com tela real do sistema, porque mostra o produto. Manter tablet proibido.</td></tr>
+<tr><td>Pessoas nas fotos</td><td>A regra pede aparência brasileira e farmacêutico em ação. O feed e o site usam modelos posando, vários com aparência europeia.</td><td>Manter a regra atual nas peças novas. Aproxima mais do cliente.</td></tr>
+<tr><td>Tamanho do logo</td><td>A regra de 200px de altura rende cerca de 21% da largura. O feed usa de 30% a 40%.</td><td>Trocar por 30% da largura, centralizado.</td></tr>
+<tr><td>Laranja</td><td>O laranja do site, <code>#F9A01B</code>, é próximo do amarelo proibido. O do feed é mais fechado.</td><td>Usar o <code>#F88818</code> do feed e ajustar o site depois.</td></tr>
+<tr><td>Memes e marcas</td><td>O feed usa cena de série em meme e embalagens de marcas de terceiros. Isso pode gerar problema de direito de uso.</td><td>Usar imagem própria ou licenciada e evitar marca de terceiros.</td></tr>
+</tbody></table></div>
+</section>
+
+<section>
+<h2>Próxima <b>fase</b></h2>
+<div class="traits">
+<div><h3>1. Oficializar</h3><p>Com suas respostas, atualizo o design system da squad e crio os modelos de cada estilo.</p></div>
+<div><h3>2. Pesquisar</h3><p>Levantar temas atuais de farmácia e padaria e as dúvidas dos donos, e reunir clientes que possam dar depoimento.</p></div>
+<div><h3>3. Montar o editorial</h3><p>Calendário com tema, formato e segmento de cada peça.</p></div>
+<div><h3>4. Produzir</h3><p>Estáticos, carrosséis, frases, memes e depoimentos, com V1, V2 e V3 quando houver ajuste.</p></div>
+</div>
+</section>
+</main>
