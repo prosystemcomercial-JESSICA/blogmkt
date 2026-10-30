@@ -8,7 +8,7 @@ Depois: "faça um documento em HTML no mesmo formato do feed di instagram, simul
 
 ## Feito
 
-- `docs/conteudo-prosystem/feed-editoriais.html`: simulação do perfil, em um arquivo só, com 18 publicações e 52 páginas. Cada publicação abre com legenda, editorial, ferramenta, tela, SEO, pendências e fontes. Gerada por `feed_editoriais.py` a partir de `feed_modelo.html`.
+- `docs/conteudo-prosystem/feed-editoriais.html`: simulação do perfil, em um arquivo só, com 18 publicações e 53 páginas. Cada publicação abre com legenda, editorial, ferramenta, tela, SEO, pendências e fontes. Gerada por `feed_editoriais.py` a partir de `feed_modelo.html`.
 - `docs/contexto/pesquisas/2026-10-30-tendencias-2027-e-seo.md`: tendências de 2027, buscas reais do Google e regras de SEO.
 - `banco imagens/telas-para-mockup/00-recortadas/`: 5 telas novas (`receitas-scanner`, `dias-sem-giro`, `fechamento-caixa`, `precificacao`, `curva-abc`). A receita está em `outputs/criativos/funcoes-prosystem/preparar_telas.py`.
 - Memória: regra dos editoriais e do SEO, e atualização sobre quem faz os mockups.
