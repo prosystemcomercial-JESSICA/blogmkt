@@ -9,6 +9,7 @@
 - Texto, logo, selo, card, botão e rodapé não foram alterados.
 
 - Depois, a pedido da Jessica, rodapé corrigido: "100% offline · PDV + ERP + SNGPC" e "prosystemnet.com.br". "100% offline" foi mantido porque só o trecho do produto e o site foram citados.
+- Depois, textura fina só no fundo (`<svg class="texture">`): grão em overlay a 10% e linhas diagonais brancas a 3,5%, atrás da caneta e dos textos. PNG conferido inteiro e em recorte ampliado.
 
 ## Verificado
 - PNG aberto e conferido: caneta não encosta no card nem no botão; fita não passa sob o rodapé.
