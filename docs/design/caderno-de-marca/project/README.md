@@ -18,7 +18,7 @@ Antes de abrir qualquer peça, defina o segmento. Ele escolhe a cor, as fotos e 
 - **Fale com o dono do negócio, sobre o dinheiro dele.** A capa provoca, em vez de explicar. Exemplos: "Sua prateleira está perdendo dinheiro.", "Tem dinheiro vencendo na sua prateleira.", "Seu pãozinho dá lucro ou só dá trabalho?", "Você vende pão todo dia. E o lucro?"
 - **Escreva em português do Brasil,** com "você", frases curtas e termos do dia a dia do setor: lote, validade, giro, ruptura, ficha técnica, fornada, SNGPC.
 - **Use no máximo 3 blocos de texto por peça:** título, complemento e pílula.
-- **Use só provas confirmadas:** "+600 clientes" e "+16 anos de experiência", que estão no site. Não invente número, cliente ou depoimento.
+- **Use só provas confirmadas:** "+600 clientes" e "+16 anos de experiência", que estão no site, e o suporte humanizado com especialistas técnicos, das 7h às 22h, inclusive sábado e domingo, informado pela Jessica. **Não escreva "24 horas",** mesmo que um cliente diga isso. Não invente número, cliente ou depoimento.
 - **Não use emoji** nas artes.
 - **Em peça de farmácia, não fale de padaria,** e vice-versa.
 - **Assine como** "ProSystem Sistemas" quando houver assinatura.
@@ -50,6 +50,7 @@ Os valores do feed foram medidos em capturas de tela, portanto são aproximados.
 - **Pílula:** a chamada pequena, com `raio-pilula`. Exemplos: "Leia a legenda", "Arraste para o lado →", "Fale com um especialista". Botão grande só em anúncio.
 - **Sem textura de fundo,** como no feed. **Em aberto:** a peça V1 das canetas tem textura fina, a pedido da Jessica.
 - Não existe biblioteca de ícones aprovada. Não use emoji nem desenhe ícones novos sem pedir.
+- **Estrelas de avaliação:** sempre brancas, de pontas redondas, sobre o azul da peça. Nunca amarelas.
 
 ## Logo
 

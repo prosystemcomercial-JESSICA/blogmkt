@@ -18,17 +18,25 @@ A Jessica salvou 20 prints de avaliações do Google em `banco imagens/depoiment
 - Não verificado: aparência das peças em um celular de verdade e no feed real.
 
 ## Decisões e porquês
-- Assinatura com primeiro nome e inicial, sem foto e sem nome da farmácia, porque falta autorização e o repositório é público.
-- Sem estrelas desenhadas: o caderno proíbe amarelo e ícones novos. O selo é a pílula "Avaliação 5 estrelas no Google".
+- Na v1, assinatura com primeiro nome e inicial, até a autorização. Na v2, nome completo, sem foto.
+- Na v1, sem estrelas desenhadas. Na v2, estrelas brancas, a pedido da Jessica.
 - Fora das peças: a avaliação de 4 estrelas, a conta "administrativo" e a com pseudônimo. Nomes de técnicos também ficaram de fora.
 - Trechos curtos com correção mínima de português, listada em `legendas.md`.
 - Azul em todas as peças: nenhuma avaliação cita padaria e só duas confirmam farmácia. Para mudar para laranja, basta trocar `tema` em `gerar.js`.
 
+## Atualização do mesmo dia (versões v2)
+A Jessica respondeu: "esta autorizado, é publico e esta no google"; suporte "das 7 da manha as 22 da noite e atende sabado e domingo, humanizado com especialistas tecnicos de facil acesso"; estrelas: "faça branco use a criatividade".
+- Peças v2 em `outputs/criativos/depoimentos/`, com nomes completos e Farmácia Pharmavida. Estrelas brancas de pontas redondas. As v1 ficam como referência e não devem ser usadas.
+- Carrossel, página 4: saiu "24 horas" (a avaliação diz isso, mas o suporte é das 7h às 22h). Entrou outro trecho real da mesma avaliação e o horário informado pela Jessica.
+- Caderno atualizado: prova de suporte e regra das estrelas (`README.md`, `decisoes.md`, `tipos-de-posts.md`).
+- Push: a API do GitHub mostrou `push: false` para `alcancelegalmkt-collab`. Foi criado um ajudante de credencial só neste repositório (`git config --local`), que usa `prosystemcomercial-JESSICA`. A conta ativa do `gh` não mudou.
+- Histórico: os prints de `b696440` ficam, porque a Jessica considerou o conteúdo público. Decisão de não reescrever o histórico.
+- Verificado: v2 revisadas em folhas de contato e push real feito com o ajudante.
+
 ## Pendente
-- **Jessica:** decidir se reescreve o histórico público para apagar os 2 prints de `b696440` (exige force push). Sem isso, eles seguem acessíveis no histórico do GitHub.
-- **Jessica:** pedir autorização aos clientes. Nada pode ser publicado antes.
-- **Comercial:** confirmar suporte 24 horas e de fim de semana (carrossel, página 4, e peça do Samuel).
-- **Jessica:** informar o segmento dos clientes, se algum for padaria.
+- Publicação pela equipe. Nenhuma pendência de texto ou autorização.
+- Não verificado: aparência das peças em um celular de verdade e no feed real.
+- A página do caderno publicada como artifact não foi atualizada; as regras novas estão no repositório.
 
 ## Próxima sessão
-Com as autorizações em mãos, atualizar `outputs/criativos/depoimentos/legendas.md`, ajustar nomes e negócio em `gerar.js` e rodar `node outputs/criativos/depoimentos/gerar.js`. Skill sugerida: nenhuma específica; leia o caderno de marca antes.
+Sem passo obrigatório. Para novos depoimentos, editar `depoimentos` em `outputs/criativos/depoimentos/gerar.js`, criar nova versão e rodar o gerador.

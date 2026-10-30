@@ -1,6 +1,6 @@
 // Gera os depoimentos e as peças de prova social, 1080×1350, em PNG.
 // Textos: trechos reais de avaliações do Google. Nunca inventar nem mudar o sentido.
-// Nomes: só primeiro nome e inicial, porque o repositório é público. Os prints ficam fora do git.
+// Nomes completos: uso autorizado pela Jessica em 30/10/2026. Os prints ficam fora do git.
 // Uso: node outputs/criativos/depoimentos/gerar.js
 const fs = require('fs');
 const path = require('path');
@@ -10,25 +10,27 @@ const AQUI = __dirname;
 const LOGOS = '../../../docs/design/guia-de-estilos/assets';
 const FOTOS = '../modelos/carrossel/fotos';
 const SITE = 'prosystemnet.com.br';
-const SELO = 'Avaliação 5 estrelas no Google';
+// Estrelas brancas de pontas redondas, pedido da Jessica. Nunca amarelas.
+const ESTRELA = '<svg viewBox="0 0 24 24"><polygon points="12,2.6 14.9,8.6 21.5,9.5 16.7,14.1 17.9,20.7 12,17.5 6.1,20.7 7.3,14.1 2.5,9.5 9.1,8.6" fill="#fff" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg>';
+const ESTRELAS = `<span class="estrelas">${ESTRELA.repeat(5)}</span>`;
 
 // fundo: forte (degradê) ou branco, alternados para a grade não repetir.
 const depoimentos = [
-  { id: 'depoimento-krisley-v1', tema: 'azul', fundo: 'forte', tam: 66, texto: 'Eu tenho <b>duas farmácias</b> e há quase <b>15 anos</b> de empresa trabalho com o software da Prosystem!', nome: 'Krisley O.', sobre: 'Dona de duas farmácias' },
-  { id: 'depoimento-rodrigo-v1', tema: 'azul', fundo: 'branco', tam: 86, texto: 'Trabalho com eles há <b>13 anos</b> e não pretendo mudar.', nome: 'Rodrigo A.', sobre: 'Cliente ProSystem' },
-  { id: 'depoimento-samuel-v1', tema: 'azul', fundo: 'forte', tam: 62, texto: 'Suporte humanizado tanto segunda a sexta quanto <b>sábado e domingo,</b> sem aquelas frescuras de falar com robô.', nome: 'Samuel F.', sobre: 'Cliente ProSystem' },
-  { id: 'depoimento-paulo-v1', tema: 'azul', fundo: 'branco', tam: 70, texto: 'Já tive outros, mas o <b>único que os funcionários não reclamam</b> aqui é a Prosystem.', nome: 'Paulo S.', sobre: 'Cliente ProSystem' },
-  { id: 'depoimento-sirleia-v1', tema: 'azul', fundo: 'forte', tam: 78, texto: 'Sistema <b>muito fácil</b> de trabalhar e eles dão <b>ótima assistência.</b>', nome: 'Sirleia M.', sobre: 'Cliente ProSystem' },
-  { id: 'depoimento-veronica-v1', tema: 'azul', fundo: 'branco', tam: 78, texto: 'Recomendo para quem procura <b>confiança e profissionalismo.</b>', nome: 'Verônica X.', sobre: 'Cliente ProSystem' },
+  { id: 'depoimento-krisley-v2', tema: 'azul', fundo: 'forte', tam: 66, texto: 'Eu tenho <b>duas farmácias</b> e há quase <b>15 anos</b> de empresa trabalho com o software da Prosystem!', nome: 'Krisley Kretli de Oliveira', sobre: 'Dona de duas farmácias' },
+  { id: 'depoimento-rodrigo-v2', tema: 'azul', fundo: 'branco', tam: 86, texto: 'Trabalho com eles há <b>13 anos</b> e não pretendo mudar.', nome: 'Rodrigo Amancio', sobre: 'Cliente ProSystem' },
+  { id: 'depoimento-samuel-v2', tema: 'azul', fundo: 'forte', tam: 62, texto: 'Suporte humanizado tanto segunda a sexta quanto <b>sábado e domingo,</b> sem aquelas frescuras de falar com robô.', nome: 'Samuel Ferreira', sobre: 'Cliente ProSystem' },
+  { id: 'depoimento-paulo-v2', tema: 'azul', fundo: 'branco', tam: 70, texto: 'Já tive outros, mas o <b>único que os funcionários não reclamam</b> aqui é a Prosystem.', nome: 'Paulo Siqueira', sobre: 'Cliente ProSystem' },
+  { id: 'depoimento-sirleia-v2', tema: 'azul', fundo: 'forte', tam: 78, texto: 'Sistema <b>muito fácil</b> de trabalhar e eles dão <b>ótima assistência.</b>', nome: 'Sirleia Moreira', sobre: 'Cliente ProSystem' },
+  { id: 'depoimento-veronica-v2', tema: 'azul', fundo: 'branco', tam: 78, texto: 'Recomendo para quem procura <b>confiança e profissionalismo.</b>', nome: 'Verônica Xavier', sobre: 'Cliente ProSystem' },
 ];
 
 const provasSociais = [
   { id: 'prova-social-15-anos-v1', tema: 'azul', fundo: 'forte', titulo: 'Tem cliente com a gente há <b>quase 15 anos.</b>', apoio: '<b>+600 clientes</b> e <b>+16 anos</b> de experiência' },
-  { id: 'prova-social-rapido-v1', tema: 'azul', fundo: 'branco', titulo: 'Uma palavra que se repete nas nossas avaliações: <b>rápido.</b>', apoio: '“Atendimento sempre rápido, e com excelência.” <b>Juliana B.</b>' },
+  { id: 'prova-social-rapido-v2', tema: 'azul', fundo: 'branco', titulo: 'Uma palavra que se repete nas nossas avaliações: <b>rápido.</b>', apoio: `${ESTRELAS}<br>“Atendimento sempre rápido, e com excelência.”<br><b>Juliana Barcellos Brejenski</b>` },
 ];
 
 // Modelo V3 do caderno, inteiro. Avaliação de uma cliente de farmácia.
-const tatiana = { id: 'carrossel-farmacia-depoimento-v1', tema: 'azul' };
+const tatiana = { id: 'carrossel-farmacia-depoimento-v2', tema: 'azul' };
 
 const CSS = `
 *{margin:0;padding:0;box-sizing:border-box}
@@ -66,6 +68,10 @@ body{background:#8a93a3;font-family:'Montserrat',Arial,sans-serif}
 .quem b{font-weight:800;font-size:40px}
 .forte .quem{color:var(--escuro)}
 .selo{position:absolute;left:0;right:0;bottom:84px;text-align:center;z-index:4}
+.estrelas{display:inline-flex;gap:8px;vertical-align:middle}
+.estrelas svg{width:44px;height:44px}
+.pil.google{display:inline-flex;align-items:center;gap:22px;background:var(--escuro);color:#fff;padding:18px 44px;font-weight:700}
+.pil.google .estrelas svg{width:40px;height:40px}
 
 /* Prova social: frase grande */
 .frase{position:absolute;left:90px;right:90px;top:250px;bottom:190px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:60px;z-index:3}
@@ -119,7 +125,7 @@ const pg = (nome, tema, cls, html) => `<div class="${tema}"><section class="pg $
 // Losangos nos cantos, longe do texto e do logo.
 const cantos = '<i class="los" style="width:300px;height:300px;top:-170px;left:-150px"></i><i class="los" style="width:260px;height:260px;top:-150px;right:-110px"></i><i class="losf" style="width:240px;height:240px;bottom:-140px;left:-100px"></i><i class="los" style="width:280px;height:280px;bottom:-180px;right:-80px"></i>';
 
-const depoimento = (d) => pg(d.id, d.tema, d.fundo, `${cantos}${logo(d.fundo)}<div class="cartao"><div class="aspas">&ldquo;</div><p class="fala" style="font-size:${d.tam}px">${d.texto}</p><p class="quem"><b>${d.nome}</b><br>${d.sobre}</p></div><div class="selo"><span class="pil">${SELO}</span></div>`);
+const depoimento = (d) => pg(d.id, d.tema, d.fundo, `${cantos}${logo(d.fundo)}<div class="cartao"><div class="aspas">&ldquo;</div><p class="fala" style="font-size:${d.tam}px">${d.texto}</p><p class="quem"><b>${d.nome}</b><br>${d.sobre}</p></div><div class="selo"><span class="pil google">${ESTRELAS}Avaliação no Google</span></div>`);
 
 const provaSocial = (p) => pg(p.id, p.tema, p.fundo, `${cantos}${logo(p.fundo)}<div class="frase"><h2>${p.titulo}</h2><p class="faixa">${p.apoio}</p></div><div class="selo"><span class="pil">Fale com um especialista</span></div>`);
 
@@ -131,8 +137,8 @@ function carrossel(c) {
     pg(n(1), t, 'forte', `${claro}<div class="v3-cap"><h2>Seu sistema dá mais <b>problema</b> do que solução?</h2></div><div class="v3-atras" style="left:170px;top:720px;width:740px;height:430px;transform:rotate(4deg)"></div><img class="v3-card" src="${foto('cartelas-azuis')}" alt="" style="left:170px;top:720px;width:740px;height:430px;transform:rotate(-3deg)"><div class="v3-pil"><span class="pil contorno">Arraste para o lado →</span></div>`),
     sobre(2, foto('conferindo-frasco'), 'Antes', '“Um sistema que nos gerava <b>muitos problemas.</b>”', 'Dificuldades no controle das mercadorias, problemas com lançamentos de notas.'),
     pg(n(3), t, '', `${escuro}<i class="dia-linha"></i><div class="dia"><img src="${foto('prateleiras-escuras')}" alt=""></div><div class="v3-sel">Hoje</div><div class="v3-txt"><h2>“Mais <b>organização, praticidade e segurança</b> para nossa rotina.”</h2><p class="faixa">A Prosystem vem nos auxiliando de forma <b>extremamente eficiente.</b></p></div>${num(3)}`),
-    sobre(4, foto('farmaceutica-prateleira'), '24h', '“O atendimento 24 horas faz <b>toda a diferença.</b>”', 'Profissionais dispostos a ajudar com atenção, paciência e agilidade.'),
-    pg(n(5), t, 'forte escuro-txt', `${claro}<div class="v3-atras" style="left:130px;top:220px;width:820px;height:500px;transform:rotate(3deg)"></div><img class="v3-card" src="${mockup('painel-estoque-notebook')}" alt="" style="left:130px;top:220px;width:820px;height:500px;transform:rotate(-2deg)"><div class="v3-sol"><h2>“Só tenho a <b>agradecer</b> por todo o suporte e comprometimento oferecidos pela equipe.”</h2><p><b>Tatiana S.,</b> cliente de farmácia<br>${SELO}</p></div>${num(5)}`),
+    sobre(4, foto('farmaceutica-prateleira'), 'Suporte', '“Dispostos a ajudar com <b>atenção, paciência e agilidade.</b>”', 'Humanizado, com especialistas técnicos, das 7h às 22h, inclusive sábado e domingo.'),
+    pg(n(5), t, 'forte escuro-txt', `${claro}<div class="v3-atras" style="left:130px;top:220px;width:820px;height:500px;transform:rotate(3deg)"></div><img class="v3-card" src="${mockup('painel-estoque-notebook')}" alt="" style="left:130px;top:220px;width:820px;height:500px;transform:rotate(-2deg)"><div class="v3-sol"><h2>“Só tenho a <b>agradecer</b> por todo o suporte e comprometimento oferecidos pela equipe.”</h2><p><b>Tatiana Souza</b><br>Farmácia Pharmavida</p>${ESTRELAS}</div>${num(5)}`),
     pg(n(6), t, 'forte', `${claro}<div class="v3-fim"><h2>Quer esse suporte na <b>sua farmácia?</b></h2>${provas}<span class="pil">Fale com um especialista</span><div class="site">${SITE}</div></div><img class="v3-card" src="${foto('cartelas-detalhe')}" alt="" style="left:60px;top:900px;width:500px;height:360px;transform:rotate(-5deg)"><img class="v3-card" src="${foto('prateleiras-escuras')}" alt="" style="left:520px;top:930px;width:500px;height:360px;transform:rotate(4deg)">`),
   ];
 }

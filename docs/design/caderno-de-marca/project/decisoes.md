@@ -4,6 +4,9 @@
 
 | Data | Decisão | Palavras da Jessica ou origem |
 |---|---|---|
+| 30/10/2026 | Depoimentos do Google autorizados, com nome completo | "esta autorizado, é publico e esta no google" |
+| 30/10/2026 | Suporte: das 7h às 22h, inclusive sábado e domingo, humanizado, com especialistas técnicos. Não usar "24 horas" | "das 7 da manha as 22 da noite e atende sabado e domingo, humanizado com especialistas tecnicos de facil acesso" |
+| 30/10/2026 | Estrelas de avaliação em branco | "faça branco use a criatividade" |
 | 30/10/2026 | Padaria com laranja predominante | "Padarias quero o padrão com a cor predominante laranja" |
 | 30/10/2026 | Demais segmentos no padrão do feed do Instagram | "os demais quero o mesmo padrão desse feed" |
 | 30/10/2026 | O padrão do feed substitui o azul-escuro `#0A2E87` nas peças novas do feed | Consequência da decisão acima |
@@ -34,9 +37,7 @@
 - **Jessica:** revisar os textos de exemplo dos carrosséis.
 - **Jessica:** dizer se ainda quer usar a imagem da pasta Downloads na caneta.
 - **Comercial:** confirmar os itens do card da V1, em especial "Receita vinculada à venda".
-- **Equipe:** pedir a autorização dos clientes dos depoimentos. Situação e mensagem em `outputs/criativos/depoimentos/legendas.md`.
-- **Comercial:** confirmar se o suporte é 24 horas e atende em sábado e domingo, como dizem os clientes. O site não confirma.
-- **Prints de avaliações:** ficam só neste computador, em `banco imagens/depoimentos-google/`. Têm nomes completos e o repositório é público.
+- **Prints de avaliações:** ficam só neste computador, em `banco imagens/depoimentos-google/`. Não precisam ir para o repositório.
 - **Fotos:** `prateleira-vazia.jpg` é de supermercado. Uma foto própria de farmácia ficaria melhor.
 
 ## Por que o feed foi escolhido
