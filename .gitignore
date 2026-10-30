@@ -13,3 +13,6 @@ squads/*/output/
 # Pacotes temporários gerados para enviar ao servidor
 *.tgz
 __pycache__/
+
+# Telas originais da base de conhecimento (podem conter dados de clientes; nunca versionar)
+banco imagens/telas-prosystem/_originais/

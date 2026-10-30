@@ -1,0 +1,37 @@
+# Conteúdo das funções do Prosystem com telas reais
+
+## Pedido
+A partir da base de conhecimento (universidade.prosystemnet.com/base-conhecimento), abordar as funções "de forma inteligente, com hooks, problemas e solu[ções]". A Jessica escolheu mapa de conteúdo, artigos do blog e posts/carrosséis; "funções vendáveis, farmácia e padarias, deixe de fora o material técnico"; e pediu: "quero usar os mockups das telas também do Prosystem".
+
+## Feito
+- `docs/conteudo-prosystem/`: mapa com 38 funções (`mapa_funcoes.py`, `mapa_modelo.html`, `mapa-funcoes.csv`, `mapa-funcoes.html`). Página privada: https://claude.ai/artifact/VHzmQkwvTfsn4jscdMNKn6
+- `banco imagens/telas-prosystem/`: 13 telas limpas e `LEIA-ME.md` com as regras e as telas proibidas. Originais em `_originais/`, fora do git.
+- `outputs/criativos/funcoes-prosystem/`: `preparar_telas.py`, `gerar.js`, `legendas.md` e 4 carrosséis de 6 páginas (`farmacia-uso-continuo`, `farmacia-perda-de-vendas`, `padaria-sangria`, `padaria-whatsapp`).
+- `blog/_gerador/artigos/a12` a `a15`: 4 artigos gerados em `blog/*.html`, com capas e mockups em `blog/assets/images/telas/`. Não publicados.
+- `blog/_gerador/base.py`: data por artigo (opcional) e função `tela()`. `blog/assets/css/artigo.css`: estilo `.tela`.
+- `squads/blog-escritor-seo/_memory/memories.md`: temas novos na lista de cobertos.
+
+## Verificado
+- Base lida: 91 artigos das categorias vendáveis, 386 telas baixadas. 228 telas das funções do mapa revisadas em folhas de contato, em miniatura; só as 13 usadas foram conferidas em tamanho real. O restante não foi revisado.
+- Gerador rodado: os HTML antigos não mudaram (`git diff` vazio em `blog/*.html`).
+- Links internos existem; imagens dos 4 artigos carregam (rolagem via Puppeteer); calculadoras conferidas: 10 clientes e R$ 3.650; R$ 5.200 e R$ 62.400.
+- Fontes conferidas nas páginas: Abrappe via Central do Varejo, Banco Central via Tecnoblog, Sebrae e LGPD.
+- Não verificado: se as telas e regras dos artigos antigos da base continuam atuais; os artigos no WordPress; a aparência dos carrosséis no Instagram.
+
+## Decisões e porquês
+- **Telas proibidas:** a base traz nome, CPF, endereço, foto e remédio de clientes. Só as versões limpas podem ser usadas.
+- **Exceção à regra "sem telas":** vale só para mockups de telas reais; fotos e imagens geradas seguem sem tela. Registrada na memória.
+- **Marca de medicamento oculta:** nomes comerciais cobertos ou trocados pelo princípio ativo, para não promover remédio em peça de marketing. A fatia amarela do gráfico foi recolorida.
+- **Lupa nos carrosséis:** o texto das telas fica pequeno no celular; a mensagem real é repetida em tamanho legível.
+- **Padaria usa só funções gerais:** a base quase não fala de padaria; a página de Padarias do site confirma dashboards, avisos, curva ABC e estoque. "Encomenda" na base é produto em falta, não bolo; não vender assim sem confirmar.
+- **Dados descartados:** OMS (50% de adesão) não pôde ser conferido; "4% de vendas perdidas" não tem fonte identificada.
+- **Lote de 4 temas:** uso contínuo, perda de vendas, sangria e WhatsApp, por ter telas limpas e não repetir o blog. O resto fica priorizado no mapa.
+
+## Pendente
+- Jessica: aprovar os 4 artigos e os 4 carrosséis antes de publicar.
+- Jessica/produto: enviar telas ou material de ficha técnica e produção para padaria; confirmar telas atuais do PDV; confirmar se a função de sangria e a de perda de vendas valem sem ajuste na padaria.
+- Técnico: para publicar no WordPress, incluir os 4 slugs em `ARTIGOS` (`wp_pacote.py`) e enviar `blog/assets/images/telas/`, porque o importador hoje só leva a capa.
+- Site: a página /padaria/ tem o título "Por que escolher a Prosystem para a sua drogaria?"; não foi alterado.
+
+## Próxima sessão
+Com o aceite da Jessica, publicar pelo fluxo de `blog/_gerador/wp_pacote.py` e produzir o próximo lote pela prioridade "Alta" do mapa, começando por Painel de indicadores. Skills: `blog-post`, `ai-seo`, `relatorio-final`.

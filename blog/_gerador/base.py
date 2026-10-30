@@ -31,6 +31,7 @@ SPRITE = """<svg width="0" height="0" style="position:absolute" aria-hidden="tru
 
 
 def schema(a, url, og):
+    data_iso = a.get("data_iso", DATA_ISO)
     faq = [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in a["faq"]]
     grafo = {
         "@context": "https://schema.org",
@@ -41,8 +42,8 @@ def schema(a, url, og):
                 "headline": a["h1"],
                 "description": a["descricao"],
                 "image": og,
-                "datePublished": DATA_ISO,
-                "dateModified": DATA_ISO,
+                "datePublished": data_iso,
+                "dateModified": data_iso,
                 "inLanguage": "pt-BR",
                 "articleSection": a["secao"],
                 "keywords": a["keywords"],
@@ -69,6 +70,7 @@ def schema(a, url, og):
 def render(a):
     url = f"{BLOG}{a['slug']}/"
     og = f"{BLOG}assets/images/og-{a['slug']}.jpg"
+    data_iso = a.get("data_iso", DATA_ISO)
     wtopo = wa(a["whats"])
     share_txt = quote(f"{a['og_titulo']} {url}")
     share_url = quote(url, safe="")
@@ -102,8 +104,8 @@ def render(a):
   <meta property="og:image" content="{og}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="article:published_time" content="{DATA_ISO}">
-  <meta property="article:modified_time" content="{DATA_ISO}">
+  <meta property="article:published_time" content="{data_iso}">
+  <meta property="article:modified_time" content="{data_iso}">
   <meta property="article:section" content="{esc(a['secao'])}">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -142,7 +144,7 @@ def render(a):
   <p class="linha-fina">{a['linha_fina']}</p>
   <div class="assinatura">
     <span>Por <strong>ProSystem Sistemas</strong></span>
-    <span>Atualizado em <time datetime="{DATA_ISO[:10]}">{DATA_CURTA}</time></span>
+    <span>Atualizado em <time datetime="{data_iso[:10]}">{a.get('data_curta', DATA_CURTA)}</time></span>
     <span>{a['minutos']} min de leitura</span>
     <span class="assinatura__comp">
       <a href="https://wa.me/?text={share_txt}" target="_blank" rel="noopener" aria-label="Compartilhar no WhatsApp"><svg width="17" height="17"><use href="#i-whats"/></svg></a>
@@ -173,7 +175,7 @@ def render(a):
     <ol class="fontes">
       {fontes}
     </ol>
-    <p class="aviso">Conteúdo informativo, atualizado em {DATA_LONGA}. {a.get('aviso', '')}</p>
+    <p class="aviso">Conteúdo informativo, atualizado em {a.get('data_longa', DATA_LONGA)}. {a.get('aviso', '')}</p>
   </article>
 
   <aside class="lateral" aria-label="Neste artigo">
@@ -236,6 +238,14 @@ def cta(titulo, texto, whats_texto, secundario=True):
         {sec}
       </div>
     </div>"""
+
+
+def tela(nome, alt, legenda):
+    """Tela real do Prosystem em mockup (blog/assets/images/telas), gerada por outputs/criativos/funcoes-prosystem/gerar.js."""
+    return f"""    <figure class="tela">
+      <img src="assets/images/telas/{nome}.jpg" alt="{esc(alt)}" loading="lazy">
+      <figcaption>{legenda}</figcaption>
+    </figure>"""
 
 
 # ---------- imagem de compartilhamento ----------

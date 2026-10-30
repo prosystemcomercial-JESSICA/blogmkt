@@ -175,6 +175,10 @@
 - Ficha técnica e rendimento na padaria (06/10/2026)
 - Etiqueta de alimentos preparados e temperaturas RDC 216 (06/10/2026)
 - Prazo de validade de embalados e Guia 16 Anvisa (06/10/2026)
+- Cliente de uso contínuo e recompra na farmácia (30/10/2026)
+- Perda de vendas e motivos na farmácia (30/10/2026)
+- Sangria de caixa na padaria (30/10/2026)
+- Relatórios por WhatsApp na padaria (30/10/2026)
 
 ## Lote de 06/10/2026 — modelo editorial v2
 - 11 artigos em `blog/` gerados por `blog/_gerador/gerar.py` (conteúdo em `blog/_gerador/artigos/*.py`; o do Simples Nacional foi escrito à mão no mesmo modelo).

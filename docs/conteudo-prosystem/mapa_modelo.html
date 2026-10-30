@@ -1,0 +1,74 @@
+<title>Mapa de Funções Prosystem</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: lista de fichas por função, com filtros de segmento, prioridade e situação da tela. */
+:root { --bg:#F4F6FA; --sup:#FFFFFF; --fg:#111827; --suave:#566175; --linha:#DCE2EC; --azul:#0A2E87; --destaque:#2E6DB4; --laranja:#C2410C; --ok:#0F7A4B; --alerta:#A34A07; --perigo:#B42318; --f-tit:'Montserrat','Segoe UI',sans-serif; --f-txt:'Source Sans 3','Segoe UI',sans-serif; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#0E1420; --sup:#172033; --fg:#E8ECF4; --suave:#A3AEC2; --linha:#2B3650; --azul:#8DB4F2; --destaque:#6FA3E8; --laranja:#F59A6A; --ok:#55C595; --alerta:#F0A869; --perigo:#F58A80; color-scheme:dark } }
+:root[data-theme="dark"] { --bg:#0E1420; --sup:#172033; --fg:#E8ECF4; --suave:#A3AEC2; --linha:#2B3650; --azul:#8DB4F2; --destaque:#6FA3E8; --laranja:#F59A6A; --ok:#55C595; --alerta:#F0A869; --perigo:#F58A80; color-scheme:dark }
+body { background:var(--bg); color:var(--fg); font:17px/1.5 var(--f-txt); }
+.pag { max-width:1080px; margin:0 auto; padding-block:36px 56px; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); }
+h1 { font:800 clamp(30px,5vw,44px)/1.1 var(--f-tit); color:var(--azul); margin:0 0 10px; text-wrap:balance; }
+.int { max-width:68ch; color:var(--suave); margin:0 0 26px; }
+.alertas { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:14px; margin-bottom:28px; }
+.alertas div { background:var(--sup); border:1px solid var(--linha); padding:14px 16px; border-radius:6px; min-width:0; }
+.alertas b { display:block; font-family:var(--f-tit); font-size:15px; margin-bottom:4px; }
+.filtros { display:flex; flex-wrap:wrap; gap:12px 18px; align-items:end; margin-bottom:12px; }
+.filtros label { display:flex; flex-direction:column; gap:4px; font-size:14px; font-weight:600; color:var(--suave); min-width:0; }
+select,input { font:inherit; color:var(--fg); background:var(--sup); border:1px solid var(--linha); border-radius:4px; padding:7px 10px; max-width:100%; }
+.conta { color:var(--suave); font-size:15px; margin:0 0 16px; }
+.lista { display:flex; flex-direction:column; gap:12px; }
+.ficha { background:var(--sup); border:1px solid var(--linha); border-radius:6px; padding:18px 20px; min-width:0; }
+.topo { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:6px; font-size:13px; font-weight:700; }
+.topo span { padding:2px 8px; border-radius:3px; border:1px solid var(--linha); color:var(--suave); }
+.topo .Lote { color:var(--azul); border-color:var(--azul); }
+.topo .livre { color:var(--ok); border-color:var(--ok); }
+.topo .mascarar { color:var(--alerta); border-color:var(--alerta); }
+.topo .proibida { color:var(--perigo); border-color:var(--perigo); }
+h2 { font:700 19px/1.25 var(--f-tit); margin:6px 0 2px; }
+.hook { font-size:21px; font-weight:700; color:var(--destaque); margin:0 0 12px; text-wrap:balance; }
+dl { display:grid; grid-template-columns:110px minmax(0,1fr); gap:6px 14px; margin:0; font-size:16px; }
+dt { color:var(--suave); font-weight:600; }
+dd { margin:0; min-width:0; overflow-wrap:anywhere; }
+a { color:var(--destaque); }
+@media (max-width:560px) { dl { grid-template-columns:1fr; gap:0; } dd { margin-bottom:8px; } }
+</style>
+<div class="pag">
+  <h1>Mapa de Funções Prosystem</h1>
+  <p class="int">Cada função vendável da base de conhecimento com a dor do cliente, o hook, a solução, as telas para mockup e os cuidados. Material técnico de suporte ficou de fora.</p>
+  <div class="alertas">
+    <div><b>Padaria tem lacuna</b>A base quase não fala de padaria e não tem artigo de ficha técnica ou produção. Peças de padaria usam funções gerais, confirmadas na página de Padarias do site.</div>
+    <div><b>Dados nas telas</b>Várias telas têm nome, CPF, endereço ou remédio de clientes. Use somente as versões limpas de "banco imagens/telas-prosystem".</div>
+    <div><b>Base antiga</b>52 dos 91 artigos lidos são de 2020. Confirme com a equipe de produto se a tela e a regra continuam atuais antes de publicar.</div>
+  </div>
+  <div class="filtros">
+    <label for="f-seg">Segmento<select id="f-seg"><option value="">Todos</option><option>Farmácia</option><option>Padaria</option><option>Manipulação</option></select></label>
+    <label for="f-pri">Prioridade<select id="f-pri"><option value="">Todas</option><option>Lote 1</option><option>Alta</option><option>Média</option><option>Baixa</option></select></label>
+    <label for="f-tela">Tela<select id="f-tela"><option value="">Todas</option><option value="livre">Livre</option><option value="mascarar">Mascarar</option><option value="proibida">Com restrição</option></select></label>
+    <label for="f-busca">Buscar<input id="f-busca" type="search" placeholder="estoque, desconto, caixa"></label>
+  </div>
+  <p class="conta" id="conta" aria-live="polite"></p>
+  <div class="lista" id="lista"></div>
+</div>
+<script>
+var DADOS = __DADOS__;
+var NOME_TELA = { livre: 'Tela livre', mascarar: 'Mascarar tela', proibida: 'Tela com restrição' };
+function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
+function linha(rot, val) { return '<dt>' + rot + '</dt><dd>' + esc(val) + '</dd>'; }
+function desenha() {
+  var seg = document.getElementById('f-seg').value, pri = document.getElementById('f-pri').value;
+  var tel = document.getElementById('f-tela').value, bus = document.getElementById('f-busca').value.toLowerCase();
+  var r = DADOS.filter(function (d) {
+    return (!seg || d.segmento.indexOf(seg) > -1 || d.segmento.indexOf(seg.toLowerCase()) > -1) && (!pri || d.prioridade === pri) &&
+      (!tel || d.situacao_tela === tel) && (!bus || JSON.stringify(d).toLowerCase().indexOf(bus) > -1);
+  });
+  document.getElementById('conta').textContent = r.length + ' de ' + DADOS.length + ' funções';
+  document.getElementById('lista').innerHTML = r.map(function (d) {
+    return '<article class="ficha"><div class="topo"><span class="' + d.prioridade.split(' ')[0] + '">' + esc(d.prioridade) + '</span><span>' + esc(d.segmento) + '</span><span>' + esc(d.modulo) + '</span><span class="' + d.situacao_tela + '">' + NOME_TELA[d.situacao_tela] + '</span></div>' +
+      '<h2>' + esc(d.funcao) + '</h2><p class="hook">' + esc(d.hook) + '</p><dl>' + linha('Dor', d.dor) + linha('Solução', d.solucao) + linha('Telas', d.telas) + linha('Cuidado', d.cuidado) + linha('Formatos', d.formatos) +
+      '<dt>Fonte</dt><dd><a href="' + esc(d.artigo_base) + '" target="_blank" rel="noopener">Artigo na Universidade Prosystem</a></dd></dl></article>';
+  }).join('');
+}
+['f-seg', 'f-pri', 'f-tela', 'f-busca'].forEach(function (i) { document.getElementById(i).addEventListener('input', desenha); });
+desenha();
+</script>
