@@ -32,9 +32,14 @@ A Jessica respondeu: "O primeiro passo é entrar em contato atraves do whatsapp 
 - O número de WhatsApp não aparece na peça, porque o único registrado no projeto é o comercial.
 - Isso substitui as decisões "Sem canal de suporte na peça" e "Passos 1 e 2 são orientação geral nossa": o canal e as formas de contato agora vêm da Jessica. "Diga de qual loja" segue como orientação nossa.
 
+## Atualização do mesmo dia (versão v3)
+A Jessica pediu: "No 5 coloque alguem de suporte, com fone e sorrindo atendendo cliente remoto Traças brasileiros".
+- Peças `carrossel-farmacia-suporte-v3-<página>.png`. Só a foto da página 5 mudou. A v1 e a v2 ficam como referência e não devem ser usadas.
+- Foto: `fotos/atendente-suporte.jpg`, de banco de imagens (Pexels, Yan Krukau), recortada para tirar um celular que estava sobre a mesa. Não é da equipe da ProSystem.
+- Verificado: página 5 vista em tamanho real, sem celular nem texto legível na foto; gerador sem estouro. Autor e licença "Free" lidos na página da foto; os termos completos da licença do Pexels não foram lidos.
+
 ## Pendente
 - Jessica: aprovar o carrossel e dizer se o número de WhatsApp do suporte entra na peça.
-- Jessica: a página 5 usa foto de farmacêutica sob o título "Do outro lado, gente que conhece o sistema". Falta foto real da equipe de suporte, que seria melhor.
 - Jessica: a pasta `banco imagens/mockups-prosystem/` aparece apagada no `git status`, fora desta tarefa, e não entrou neste commit. `outputs/criativos/depoimentos/gerar.js` e os carrosséis de funções usam esses arquivos, então regenerar essas peças pode quebrar.
 - **Editorial de novembro e posts do Google: não feitos.** Só foi lida a pesquisa `docs/contexto/pesquisas/2026-10-30-temas-farmacia-padaria.md`.
 

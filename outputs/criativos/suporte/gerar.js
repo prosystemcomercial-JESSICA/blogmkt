@@ -12,7 +12,7 @@ const FOTOS = '../modelos/carrossel/fotos';
 const SITE = 'prosystemnet.com.br';
 
 const c = {
-  id: 'carrossel-farmacia-suporte-v2',
+  id: 'carrossel-farmacia-suporte-v3',
   tema: 'azul',
   capa: { titulo: 'Travou na farmácia? <b>Chame o suporte assim.</b>', apoio: '3 passos para resolver mais rápido', foto: 'L:teclado-azul' },
   itens: [
@@ -20,7 +20,7 @@ const c = {
     { n: 2, titulo: 'Conte <b>o problema</b> do seu jeito.', apoio: 'Pode ser por <b>áudio, texto ou print da tela.</b>', foto: 'L:maos-digitando' },
     { n: 3, titulo: 'Deixe o <b>acesso remoto</b> pronto.', apoio: 'Abra o programa e passe ao técnico o número de <b>“Este Dispositivo”.</b>', foto: 'L:maos-teclado-mesa' },
   ],
-  sol: { titulo: 'Do outro lado, gente que conhece o sistema', apoio: 'Suporte humanizado, das 7h às 22h, inclusive sábado e domingo.', foto: 'farmaceutica-prateleira' },
+  sol: { titulo: 'Do outro lado, gente que conhece o sistema', apoio: 'Suporte humanizado, das 7h às 22h, inclusive sábado e domingo.', foto: 'L:atendente-suporte' },
   fim: { titulo: 'Mostre este passo a passo para <b>sua equipe.</b>', foto: 'cartelas-azuis' },
 };
 

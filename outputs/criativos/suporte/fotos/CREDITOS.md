@@ -6,3 +6,4 @@ Wikimedia Commons, conferir a licença na página de cada arquivo.
 - `maos-teclado-mesa.jpg`: Ed Gregory, CC0, https://commons.wikimedia.org/wiki/File:Hands-woman-apple-desk.jpg
 - `maos-digitando.jpg`: William Iven firmbee, CC0, https://commons.wikimedia.org/wiki/File:Woman_typing_at_a_computer_(Unsplash).png (recortada para tirar o computador e o logo)
 - `prateleiras-recorte.jpg`: recorte de `prateleiras-escuras.jpg`, Árpád Czapp, licença Unsplash, créditos em `outputs/criativos/modelos/carrossel/fotos/CREDITOS.md`. Recortada e desfocada para não deixar marca de medicamento legível.
+- `atendente-suporte.jpg`: Yan Krukau, licença Pexels, https://www.pexels.com/photo/a-smiling-woman-sitting-at-her-station-8867213/ (recortada para tirar um celular que estava sobre a mesa)
