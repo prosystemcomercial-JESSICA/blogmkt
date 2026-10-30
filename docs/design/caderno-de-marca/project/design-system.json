@@ -1,46 +1,27 @@
 {
   "v": 3,
-  "layout": "files",
-  "createdOnFiles": {
-    "v": 1,
-    "at": "2026-10-30T17:23:46.423Z"
-  },
-  "title": "Caderno de Marca ProSystem",
-  "namespace": "CadernoProSystem",
-  "libraries": [],
-  "sections": {},
-  "groups": [
-    "Logos",
-    "Modelos",
-    "Referencias",
-    "Fotos"
-  ],
   "assetGroups": {
+    "Fotos": {
+      "files": {},
+      "name": "Fotos",
+      "order": [
+        "prateleiras.jpg",
+        "padeiro.jpg"
+      ],
+      "tile": "s"
+    },
     "Logos": {
+      "files": {},
       "name": "Logos",
-      "tile": "m",
       "order": [
         "logo-light.png",
         "logo-dark.png"
       ],
-      "files": {
-        "logo-light.png": {
-          "name": "logo-light.png",
-          "blob": "feac7f36cfea55604915c79170dc1e5e",
-          "size": 68918,
-          "type": "image/png"
-        },
-        "logo-dark.png": {
-          "name": "logo-dark.png",
-          "blob": "70799febf3f0a3d3126df0187c595780",
-          "size": 18887,
-          "type": "image/png"
-        }
-      }
+      "tile": "m"
     },
     "Modelos": {
+      "files": {},
       "name": "Modelos",
-      "tile": "s",
       "order": [
         "carrossel-farmacia-estoque-v1-1.jpg",
         "carrossel-padaria-ficha-tecnica-v1-1.jpg",
@@ -69,168 +50,11 @@
         "carrossel-padaria-ficha-tecnica-v3-5.jpg",
         "carrossel-padaria-ficha-tecnica-v3-6.jpg"
       ],
-      "files": {
-        "carrossel-farmacia-estoque-v1-1.jpg": {
-          "name": "carrossel-farmacia-estoque-v1-1.jpg",
-          "blob": "7a49be90a0ac2e5f7da04361229d0dff",
-          "size": 41279,
-          "type": "image/jpeg"
-        },
-        "carrossel-padaria-ficha-tecnica-v1-1.jpg": {
-          "name": "carrossel-padaria-ficha-tecnica-v1-1.jpg",
-          "blob": "3788ae74511297eb315eba326d8836c1",
-          "size": 44539,
-          "type": "image/jpeg"
-        },
-        "carrossel-farmacia-estoque-v2-1.jpg": {
-          "name": "carrossel-farmacia-estoque-v2-1.jpg",
-          "blob": "682f6ab1494b0f3ec85b2c512556f8e3",
-          "size": 97768,
-          "type": "image/jpeg"
-        },
-        "carrossel-farmacia-estoque-v2-2.jpg": {
-          "name": "carrossel-farmacia-estoque-v2-2.jpg",
-          "blob": "c151837df7148337e3f207c5aec7dcbe",
-          "size": 76962,
-          "type": "image/jpeg"
-        },
-        "carrossel-farmacia-estoque-v2-3.jpg": {
-          "name": "carrossel-farmacia-estoque-v2-3.jpg",
-          "blob": "548a81ab8373d39978458c6d5a06f325",
-          "size": 100680,
-          "type": "image/jpeg"
-        },
-        "carrossel-farmacia-estoque-v2-4.jpg": {
-          "name": "carrossel-farmacia-estoque-v2-4.jpg",
-          "blob": "f47ea630c49cd5747a5329a04d248efb",
-          "size": 77041,
-          "type": "image/jpeg"
-        },
-        "carrossel-farmacia-estoque-v2-5.jpg": {
-          "name": "carrossel-farmacia-estoque-v2-5.jpg",
-          "blob": "713ac53a4e83e5d436e784751fe3c25b",
-          "size": 74902,
-          "type": "image/jpeg"
-        },
-        "carrossel-farmacia-estoque-v2-6.jpg": {
-          "name": "carrossel-farmacia-estoque-v2-6.jpg",
-          "blob": "8ae295d905dab0cffe297d0d4ca1d132",
-          "size": 81995,
-          "type": "image/jpeg"
-        },
-        "carrossel-farmacia-estoque-v3-1.jpg": {
-          "name": "carrossel-farmacia-estoque-v3-1.jpg",
-          "blob": "f3855c78220b9db6412e2b6c210001da",
-          "size": 73493,
-          "type": "image/jpeg"
-        },
-        "carrossel-farmacia-estoque-v3-2.jpg": {
-          "name": "carrossel-farmacia-estoque-v3-2.jpg",
-          "blob": "7444095201435835e7ce3cd12c1c7512",
-          "size": 69792,
-          "type": "image/jpeg"
-        },
-        "carrossel-farmacia-estoque-v3-3.jpg": {
-          "name": "carrossel-farmacia-estoque-v3-3.jpg",
-          "blob": "b10538e8393a01b99c3e230f195861fc",
-          "size": 64462,
-          "type": "image/jpeg"
-        },
-        "carrossel-farmacia-estoque-v3-4.jpg": {
-          "name": "carrossel-farmacia-estoque-v3-4.jpg",
-          "blob": "37722168660bbb6f0438089b60cc0228",
-          "size": 69944,
-          "type": "image/jpeg"
-        },
-        "carrossel-farmacia-estoque-v3-5.jpg": {
-          "name": "carrossel-farmacia-estoque-v3-5.jpg",
-          "blob": "cfa53511a529165c03a7fdf71169eba5",
-          "size": 67905,
-          "type": "image/jpeg"
-        },
-        "carrossel-farmacia-estoque-v3-6.jpg": {
-          "name": "carrossel-farmacia-estoque-v3-6.jpg",
-          "blob": "55986a22f8dc1a026a2607ef37961a56",
-          "size": 84398,
-          "type": "image/jpeg"
-        },
-        "carrossel-padaria-ficha-tecnica-v2-1.jpg": {
-          "name": "carrossel-padaria-ficha-tecnica-v2-1.jpg",
-          "blob": "1a1a9bb41ed2f4753450ae3835dd8406",
-          "size": 97641,
-          "type": "image/jpeg"
-        },
-        "carrossel-padaria-ficha-tecnica-v2-2.jpg": {
-          "name": "carrossel-padaria-ficha-tecnica-v2-2.jpg",
-          "blob": "ac83a3137131389509c5d67210a2b198",
-          "size": 84157,
-          "type": "image/jpeg"
-        },
-        "carrossel-padaria-ficha-tecnica-v2-3.jpg": {
-          "name": "carrossel-padaria-ficha-tecnica-v2-3.jpg",
-          "blob": "369f393f9f283a12088c350a4965f8bf",
-          "size": 100484,
-          "type": "image/jpeg"
-        },
-        "carrossel-padaria-ficha-tecnica-v2-4.jpg": {
-          "name": "carrossel-padaria-ficha-tecnica-v2-4.jpg",
-          "blob": "dea66cdbc11144d34592456a561a58a7",
-          "size": 68125,
-          "type": "image/jpeg"
-        },
-        "carrossel-padaria-ficha-tecnica-v2-5.jpg": {
-          "name": "carrossel-padaria-ficha-tecnica-v2-5.jpg",
-          "blob": "25efd8da9970faacf51feb9a4e34a326",
-          "size": 108793,
-          "type": "image/jpeg"
-        },
-        "carrossel-padaria-ficha-tecnica-v2-6.jpg": {
-          "name": "carrossel-padaria-ficha-tecnica-v2-6.jpg",
-          "blob": "6127106cf4620d7ec2e700cc47279ec4",
-          "size": 71775,
-          "type": "image/jpeg"
-        },
-        "carrossel-padaria-ficha-tecnica-v3-1.jpg": {
-          "name": "carrossel-padaria-ficha-tecnica-v3-1.jpg",
-          "blob": "d7c5639d75416d96d5e79363b7546c4f",
-          "size": 66483,
-          "type": "image/jpeg"
-        },
-        "carrossel-padaria-ficha-tecnica-v3-2.jpg": {
-          "name": "carrossel-padaria-ficha-tecnica-v3-2.jpg",
-          "blob": "f2968aedd8ebcc548d7ce64a8b145980",
-          "size": 63394,
-          "type": "image/jpeg"
-        },
-        "carrossel-padaria-ficha-tecnica-v3-3.jpg": {
-          "name": "carrossel-padaria-ficha-tecnica-v3-3.jpg",
-          "blob": "d35f9da659870b5aed859a99e02f42e3",
-          "size": 63737,
-          "type": "image/jpeg"
-        },
-        "carrossel-padaria-ficha-tecnica-v3-4.jpg": {
-          "name": "carrossel-padaria-ficha-tecnica-v3-4.jpg",
-          "blob": "5c4b61b3c195d071517a76fc96b54abe",
-          "size": 70355,
-          "type": "image/jpeg"
-        },
-        "carrossel-padaria-ficha-tecnica-v3-5.jpg": {
-          "name": "carrossel-padaria-ficha-tecnica-v3-5.jpg",
-          "blob": "55211a4dd72dc132bdadebdd17f9bed0",
-          "size": 76871,
-          "type": "image/jpeg"
-        },
-        "carrossel-padaria-ficha-tecnica-v3-6.jpg": {
-          "name": "carrossel-padaria-ficha-tecnica-v3-6.jpg",
-          "blob": "3b40f87af5044d4b2a9ae11a2dc93a3c",
-          "size": 94518,
-          "type": "image/jpeg"
-        }
-      }
+      "tile": "s"
     },
     "Referencias": {
+      "files": {},
       "name": "Referencias",
-      "tile": "m",
       "order": [
         "feed-1.jpg",
         "feed-2.jpg",
@@ -239,77 +63,33 @@
         "site-2.jpg",
         "v1.jpg"
       ],
-      "files": {
-        "feed-1.jpg": {
-          "name": "feed-1.jpg",
-          "blob": "d98a1a9f6e34dad93809575b1198fd63",
-          "size": 225383,
-          "type": "image/jpeg"
-        },
-        "feed-2.jpg": {
-          "name": "feed-2.jpg",
-          "blob": "9defa7da4ee44f4c82959a872de2a45f",
-          "size": 204716,
-          "type": "image/jpeg"
-        },
-        "feed-3.jpg": {
-          "name": "feed-3.jpg",
-          "blob": "ab5b9c078e904664aa5077504c59c4ac",
-          "size": 216560,
-          "type": "image/jpeg"
-        },
-        "site-1.jpg": {
-          "name": "site-1.jpg",
-          "blob": "e5d62fb5b350419787587d6fb5a93e88",
-          "size": 89277,
-          "type": "image/jpeg"
-        },
-        "site-2.jpg": {
-          "name": "site-2.jpg",
-          "blob": "cf332da98aa17713dc422597b949b015",
-          "size": 65935,
-          "type": "image/jpeg"
-        },
-        "v1.jpg": {
-          "name": "v1.jpg",
-          "blob": "e656f50ea2809dccbcd5af1f83b43876",
-          "size": 77864,
-          "type": "image/jpeg"
-        }
-      }
-    },
-    "Fotos": {
-      "name": "Fotos",
-      "tile": "s",
-      "order": [
-        "prateleiras.jpg",
-        "padeiro.jpg"
-      ],
-      "files": {
-        "prateleiras.jpg": {
-          "name": "prateleiras.jpg",
-          "blob": "d8e2a18c2c215f06df70cc1b3bf50814",
-          "size": 61505,
-          "type": "image/jpeg"
-        },
-        "padeiro.jpg": {
-          "name": "padeiro.jpg",
-          "blob": "cea1621f0e790137960a4c4f3f85a88a",
-          "size": 60889,
-          "type": "image/jpeg"
-        }
-      }
+      "tile": "m"
     }
   },
   "blobs": {},
+  "createdOnFiles": {
+    "at": "2026-10-30T17:23:46.423Z",
+    "v": 1
+  },
   "docs": {
     "readme": "project/README.md",
     "sections": []
   },
+  "groups": [
+    "Logos",
+    "Modelos",
+    "Referencias",
+    "Fotos"
+  ],
   "lastChange": {
     "by": "Jessica",
     "via": "Claude Code",
-    "at": "2026-10-30T17:23:46.433Z",
-    "note": "Primeira versão do caderno com as decisões de 30/10/2026"
-  }
+    "at": "2026-10-30T17:33:30.331Z",
+    "note": "Imagens publicadas como arquivos e embutidas nos exemplos"
+  },
+  "layout": "files",
+  "libraries": [],
+  "namespace": "CadernoProSystem",
+  "sections": {},
+  "title": "Caderno de Marca ProSystem"
 }

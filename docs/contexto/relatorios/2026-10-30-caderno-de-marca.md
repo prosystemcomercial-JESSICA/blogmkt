@@ -17,6 +17,8 @@
 - Não verificado: a página publicada aberta no navegador, porque exige login; a página em tema escuro; a largura de celular.
 - Não verificado: a execução real da squad com o novo `design-system.md`.
 
+- Depois, a Jessica avisou: "documento está com imagens quebradas". A causa não foi confirmada, porque esta sessão não abre a página publicada. Os arquivos estavam no servidor e o endereço `/_blob/` é aceito pelo código da página; a suspeita é o carregamento desse endereço depender do login. Correção: exemplos com imagens embutidas em `data:` (35 imagens carregadas e nenhuma quebrada no teste local) e arquivos de `assets/` publicados como no guia. Não verificado: a página corrigida aberta por ela.
+
 ## Decisões e porquês
 - Tudo em um só lugar: o caderno e o design system são o mesmo material, e o repositório guarda a fonte. Assim a página e os agentes leem as mesmas regras.
 - O que não foi decidido pela Jessica ficou marcado como "em aberto", com a situação atual e a recomendação, em vez de virar regra.
