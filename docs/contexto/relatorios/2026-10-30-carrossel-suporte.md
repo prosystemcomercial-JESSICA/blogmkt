@@ -38,8 +38,19 @@ A Jessica pediu: "No 5 coloque alguem de suporte, com fone e sorrindo atendendo 
 - Foto: `fotos/atendente-suporte.jpg`, de banco de imagens (Pexels, Yan Krukau), recortada para tirar um celular que estava sobre a mesa. Não é da equipe da ProSystem.
 - Verificado: página 5 vista em tamanho real, sem celular nem texto legível na foto; gerador sem estouro. Autor e licença "Free" lidos na página da foto; os termos completos da licença do Pexels não foram lidos.
 
+## Atualização do mesmo dia (agendamento e legenda)
+A Jessica pediu: "programe esse carrosel para Segunda-feira as 12h00 no instagram". **Não foi agendado.** O projeto não tem rotina de publicação e a única chave da Meta venceu em 17/07/2026 (consulta só de leitura, erro 190). Segunda, 02/11/2026, é feriado de Finados; recomendei terça, 03/11, mas a data é dela.
+
+Depois pediu: "Preciso de legenda mais explicativa, alem disso em SEO".
+- `outputs/criativos/suporte/legendas.md`: legenda reescrita com os 3 passos explicados, e texto alternativo das 6 páginas. As peças não mudaram.
+- Regras seguidas: `docs/contexto/pesquisas/2026-10-30-tendencias-2027-e-seo.md`. Palavra-chave "sistema para farmácia" na primeira frase, 2027 junto do assunto, 5 hashtags.
+- Verificado: as 6 páginas vistas em tamanho real para escrever o texto alternativo; tamanho da legenda medido por script.
+- Não verificado: volume de busca de "sistema para farmácia" neste uso, se a opção de aparecer em buscadores está ligada na conta, e o caminho do texto alternativo no Instagram atual.
+- 2027 entra como pergunta para quem revê o sistema, porque não há prazo legal ligado a suporte. "Assim, o técnico já sabe onde olhar" e a explicação do print são orientação nossa.
+
 ## Pendente
-- Carrossel fechado na v3. A Jessica decidiu que o número de WhatsApp não entra: "nao precisa, a ultima alteração e a foto mesmo". Falta só a publicação no Instagram.
+- Carrossel fechado na v3. A Jessica decidiu que o número de WhatsApp não entra: "nao precisa, a ultima alteração e a foto mesmo".
+- **Jessica:** agendar no Meta Business Suite e escolher a data. Publicar daqui exige chave nova da Meta com permissão de publicação.
 - Jessica: a pasta `banco imagens/mockups-prosystem/` aparece apagada no `git status`, fora desta tarefa, e não entrou neste commit. `outputs/criativos/depoimentos/gerar.js` e os carrosséis de funções usam esses arquivos, então regenerar essas peças pode quebrar.
 - **Editorial de novembro e posts do Google: não feitos.** Só foi lida a pesquisa `docs/contexto/pesquisas/2026-10-30-temas-farmacia-padaria.md`.
 
