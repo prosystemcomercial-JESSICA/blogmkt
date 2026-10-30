@@ -8,29 +8,36 @@ import json
 import pathlib
 import re
 
-from PIL import Image
+from PIL import Image, ImageFilter
 
 AQUI = pathlib.Path(__file__).resolve().parent
 RAIZ = AQUI.parents[1]
 RECORTES = RAIZ / "banco imagens" / "telas-para-mockup" / "00-recortadas"
-NOVAS = RAIZ / "banco imagens" / "telas-prosystem"
 FOTOS = RAIZ / "outputs" / "criativos" / "modelos" / "carrossel" / "fotos"
 LOGOS = RAIZ / "docs" / "design" / "guia-de-estilos" / "assets"
 
 TELAS = {n: RECORTES / f"{n}.png" for n in [
     "painel-estoque", "painel-vendas", "perda-vendas-motivo", "sangria-aviso", "sangria-bloqueio", "sangria-registro",
     "uso-continuo-alerta", "uso-continuo-proxima-compra", "uso-continuo-relatorio", "whats-fechamento", "whats-desconto",
+    "receitas-scanner", "dias-sem-giro", "fechamento-caixa", "precificacao", "curva-abc",
 ]}
-TELAS.update({n: NOVAS / f"{n}.png" for n in ["receitas-scanner", "dias-sem-giro", "fechamento-caixa", "precificacao", "curva-abc"]})
 OUTRAS = {n: FOTOS / f"{n}.jpg" for n in [
-    "prateleiras-escuras", "farmaceutica-prateleira", "conferindo-frasco", "calculadora", "farinha-trigo",
+    "prateleiras-escuras", "farmaceutica-prateleira", "calculadora", "farinha-trigo",
     "paes-grade", "forno", "sovando-massa", "maos-massa", "paes-prateleira", "carrinho-paes",
 ]}
 OUTRAS["depoimento-paulo"] = RAIZ / "outputs" / "criativos" / "depoimentos" / "depoimento-paulo-v2.png"
 
 
+# Fotos com rótulo legível: a prateleira é desfocada e a farmacêutica é cortada antes da caixa com texto em inglês.
+AJUSTE = {
+    "prateleiras-escuras": lambda im: im.filter(ImageFilter.GaussianBlur(im.width / 220)),
+    "farmaceutica-prateleira": lambda im: im.crop((0, 0, round(im.width * 0.70), im.height)),
+}
+
+
 def jpg(caminho, largura, qualidade):
     im = Image.open(caminho).convert("RGB")
+    im = AJUSTE.get(caminho.stem, lambda x: x)(im)
     if im.width > largura:
         im = im.resize((largura, round(im.height * largura / im.width)), Image.LANCZOS)
     saida = io.BytesIO()

@@ -55,8 +55,8 @@ dialog::backdrop{background:rgba(0,0,0,.72)}
 .seta{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.92);color:#111;font-size:18px;font-weight:700;z-index:12}
 .seta.ant{left:10px}.seta.prox{right:10px}
 .pontos{position:absolute;bottom:10px;left:0;right:0;display:flex;justify-content:center;gap:5px;z-index:12}
-.pontos i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.5);box-shadow:0 0 2px rgba(0,0,0,.6)}
-.pontos i.on{background:#fff}
+.pontos i{width:7px;height:7px;border-radius:50%;background:rgba(110,120,130,.55)}
+.pontos i.on{background:#fff;box-shadow:0 0 0 1.5px #111}
 .lado{display:flex;flex-direction:column;min-width:0;max-height:calc(100dvh - 32px);overflow-y:auto;border-left:1px solid var(--linha)}
 .topo{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--linha);position:sticky;top:0;background:var(--bg);z-index:2}
 .topo .mini{width:32px;height:32px;border-radius:50%;box-shadow:0 0 0 1px var(--linha);padding:4px;display:flex;align-items:center}
@@ -282,13 +282,13 @@ const P = [
   itens: [
     { foto: 'prateleiras-escuras', titulo: 'PIS e Cofins <b>acabam.</b>', apoio: 'Entra a CBS, o imposto novo. A taxa ainda depende do Senado.' },
     { foto: 'farmaceutica-prateleira', titulo: 'Remédio paga <b>menos.</b>', apoio: 'A lei corta 60% do imposto novo do remédio registrado. Alguns ficam com zero.' },
-    { foto: 'conferindo-frasco', titulo: 'O estoque entra na <b>conta da virada.</b>', apoio: 'Pergunte ao contador como ficam os produtos que você já comprou.' },
+    { foto: 'calculadora', titulo: 'O estoque entra na <b>conta da virada.</b>', apoio: 'Pergunte ao contador como ficam os produtos que você já comprou.' },
   ],
   sol: { foto: 'prateleiras-escuras', tela: 'painel-estoque', titulo: 'Seu estoque em um só painel', apoio: 'Itens e custo na mesma tela. Painel de indicadores, plano Plus.' },
   fim: { foto: 'prateleiras-escuras', tela: 'painel-estoque', titulo: 'Quer ver o painel da <b>sua farmácia?</b>' },
   cap: 'Reforma tributária na farmácia em 2027: o que conferir antes de 1º de janeiro.\n\nO PIS e a Cofins acabam e entra a CBS, o imposto novo. Remédio registrado paga menos, mas a conta de quem tem estoque precisa ser feita com o contador. E essa conversa começa por uma pergunta simples: quanto você tem na prateleira hoje?\n\nNo plano Plus do Prosystem, o painel mostra itens e custo do estoque na mesma tela.\n\nFale com um especialista pelo link da bio.',
   tags: '#reformatributaria #gestaodefarmacia #sistemaparafarmacia #drogaria',
-  seo: { kw: 'reforma tributária farmácia 2027', alt: 'Painel do sistema Prosystem mostrando itens e custo do estoque de uma farmácia', titulo: 'Reforma tributária na farmácia: o que muda em 2027', desc: 'PIS e Cofins acabam em 2027 e entra a CBS. Veja o que conferir no estoque da farmácia antes de 1º de janeiro.' },
+  seo: { kw: 'reforma tributária na farmácia', alt: 'Painel do sistema Prosystem mostrando itens e custo do estoque de uma farmácia', titulo: 'Reforma tributária na farmácia: o que muda em 2027', desc: 'PIS e Cofins acabam em 2027 e entra a CBS. Veja o que conferir no estoque da farmácia antes de 1º de janeiro.' },
   origem: 'Reforma Tributária (tema 1 de farmácia) + Painel de indicadores',
   ferramenta: 'Painel de indicadores, estoque. Só plano Plus.', arq: 'painel-estoque',
   conferir: ['Taxa da CBS: 11,3% é cálculo do TCU; o Senado decide até dezembro.', 'Não prometer economia nem crédito de estoque: o dado de 9,25% vem de consultoria.'],
@@ -315,7 +315,7 @@ const P = [
   titulo: 'Foto de receita <b>não é receita eletrônica.</b>', apoio: 'Marque quem atende no balcão.',
   cap: 'Receita eletrônica na farmácia: foto, digitalização ou PDF feito a partir do papel não vale como receita eletrônica.\n\nE tem mais uma dúvida comum. O SNCR não substitui o SNGPC: um cuida do número e do uso da receita, o outro segue na escrituração. A transição do SNCR vai até 3 de março de 2027.\n\nMarque quem atende no balcão.',
   tags: '#receitaeletronica #sncr #sngpc #farmacia',
-  seo: { kw: 'receita eletrônica farmácia', alt: 'Frase em azul sobre fundo branco: foto de receita não é receita eletrônica', titulo: 'Receita eletrônica na farmácia: foto de receita vale?', desc: 'Foto ou PDF do papel não é receita eletrônica. Entenda a diferença entre SNCR e SNGPC e o novo prazo de março de 2027.' },
+  seo: { kw: 'receita eletrônica na farmácia', alt: 'Frase em azul sobre fundo branco: foto de receita não é receita eletrônica', titulo: 'Receita eletrônica na farmácia: foto de receita vale?', desc: 'Foto ou PDF do papel não é receita eletrônica. Entenda a diferença entre SNCR e SNGPC e o novo prazo de março de 2027.' },
   origem: 'SNCR e receita eletrônica (tema 2 de farmácia), dúvida real de donos',
   ferramenta: 'Nenhuma. Frases só provocam.', arq: '',
   conferir: [],
@@ -323,26 +323,26 @@ const P = [
 
 { id: 'pix', seg: 'Padaria', ed: 'olho', tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte',
   titulo: 'O dinheiro saiu da gaveta. <b>Você acompanha?</b>', tela: 'whats-fechamento', faixa: 'Pix, cartão e dinheiro no resumo do caixa. Versão Plus.', pilula: 'Leia a legenda',
-  cap: 'Fechamento de caixa na padaria com Pix, cartão e dinheiro: você sabe quanto entrou em cada um?\n\nDesde outubro, o Pix por aproximação não tem mais o limite próprio de R$ 500. Cada vez menos dinheiro passa pela gaveta, e conferir o dia fica mais difícil.\n\nNa versão Plus do Prosystem, o resumo do fechamento chega no WhatsApp de quem você escolher, separado por forma de pagamento.\n\nQuer ver na sua padaria? Fale com um especialista pelo link da bio.',
+  cap: 'Programa para padaria com caixa: você sabe quanto entrou em Pix, cartão e dinheiro?\n\nDesde outubro, o Pix por aproximação não tem mais o limite próprio de R$ 500. Cada vez menos dinheiro passa pela gaveta, e conferir o dia fica mais difícil.\n\nNa versão Plus do Prosystem, o resumo do fechamento chega no WhatsApp de quem você escolher, separado por forma de pagamento.\n\nQuer ver na sua padaria? Fale com um especialista pelo link da bio.',
   tags: '#padaria #fechamentodecaixa #pix #sistemaparapadaria',
-  seo: { kw: 'programa para padaria caixa', alt: 'Resumo do fechamento de caixa do Prosystem com vendas por dinheiro, cartão e Pix', titulo: 'Programa para padaria: caixa com Pix, cartão e dinheiro', desc: 'O dinheiro saiu da gaveta. Veja como acompanhar Pix, cartão e dinheiro no fechamento do caixa da padaria.' },
+  seo: { kw: 'programa para padaria', alt: 'Resumo do fechamento de caixa do Prosystem com vendas por dinheiro, cartão e Pix', titulo: 'Programa para padaria: caixa com Pix, cartão e dinheiro', desc: 'O dinheiro saiu da gaveta. Veja como acompanhar Pix, cartão e dinheiro no fechamento do caixa da padaria.' },
   origem: 'Pix, maquininha e caixa (tema 5 de padaria) + Avisos via WhatsApp',
   ferramenta: 'Avisos via WhatsApp. Só versão Plus.', arq: 'whats-fechamento',
   conferir: ['Mockup em notebook ou desktop: celular é proibido.', 'Não prometer conciliação de Pix com o banco: ainda não confirmada.'],
   fontes: [['Agência Brasil', 'https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/pix-por-aproximacao-deixa-de-ter-teto-de-r-500-partir-desta-quinta']] },
 
 { id: 'farmacia-popular', seg: 'Farmácia', ed: 'regra', tipo: 'v2', tema: 'azul', formato: 'Carrossel V2',
-  capa: { foto: 'conferindo-frasco', tela: 'receitas-scanner', titulo: 'Farmácia Popular: multa de <b>até 20%.</b>', apoio: 'As regras mudaram em agosto.' },
+  capa: { foto: 'prateleiras-escuras', tela: 'receitas-scanner', titulo: 'Farmácia Popular: multa de <b>até 20%.</b>', apoio: 'As regras mudaram em agosto.' },
   itens: [
     { foto: 'prateleiras-escuras', titulo: 'A fiscalização ficou <b>automática.</b>', apoio: 'O monitoramento separa por risco e pode suspender a farmácia antes.' },
     { foto: 'calculadora', titulo: 'A multa <b>cresceu.</b>', apoio: 'O teto era 10% sobre 3 meses. Agora é 20%, e a base pode ser de 12 meses.' },
-    { foto: 'conferindo-frasco', titulo: 'Guarde por <b>5 anos.</b>', apoio: 'De preferência em meio digital. Antes eram 10 anos.' },
+    { foto: 'prateleiras-escuras', titulo: 'Guarde por <b>5 anos.</b>', apoio: 'De preferência em meio digital. Antes eram 10 anos.' },
   ],
   sol: { foto: 'prateleiras-escuras', tela: 'receitas-scanner', titulo: 'Receita guardada, sem pilha de caixa', apoio: 'O Prosystem digitaliza as receitas do programa e guarda em mídia externa ou nuvem.' },
   fim: { foto: 'prateleiras-escuras', tela: 'receitas-scanner', titulo: 'Quer organizar isso na <b>sua farmácia?</b>' },
   cap: 'Farmácia Popular: novas regras, multa maior e fiscalização automática. Sua farmácia está preparada para 2027?\n\nA portaria de agosto subiu a multa máxima para 20%, e a base pode ser a venda dos últimos 12 meses. Os documentos agora ficam guardados por 5 anos, de preferência em meio digital.\n\nNo Prosystem, o scanner de receitas digitaliza o que você precisa guardar.\n\nFale com um especialista pelo link da bio.',
   tags: '#farmaciapopular #farmacia #gestaodefarmacia #sistemaparafarmacia',
-  seo: { kw: 'farmácia popular novas regras', alt: 'Tela do Prosystem digitalizando uma receita do Farmácia Popular', titulo: 'Farmácia Popular novas regras: multa de até 20%', desc: 'A portaria de agosto de 2026 mudou multa, fiscalização e guarda de documentos. Veja o que conferir na sua farmácia.' },
+  seo: { kw: 'farmácia popular: novas regras', alt: 'Tela do Prosystem digitalizando uma receita do Farmácia Popular', titulo: 'Farmácia Popular novas regras: multa de até 20%', desc: 'A portaria de agosto de 2026 mudou multa, fiscalização e guarda de documentos. Veja o que conferir na sua farmácia.' },
   origem: 'Novas regras do Farmácia Popular (tema 5 de farmácia) + Scanner de receitas',
   ferramenta: 'Scanner de receitas do Farmácia Popular.', arq: 'receitas-scanner',
   conferir: ['Confirmar com produto se o scanner atende a portaria nova: o artigo da base é antigo.', 'Conferir a portaria no Diário Oficial: uma fonte cita republicação em 24/09.'],
@@ -372,7 +372,7 @@ const P = [
   titulo: 'Fim da escala 6x1: a hora fica <b>4,8% mais cara.</b>', fs: 74, faixa: 'Em dezembro de 2027, 10%. Conta da Fenacon.', pilula: 'Leia a legenda',
   cap: 'Fim da escala 6x1 na padaria: em 16 de dezembro, valem duas folgas por semana e 42 horas, sem reduzir salário.\n\nA Fenacon calcula a hora 4,8% mais cara nessa etapa. Em dezembro de 2027 vem a segunda, com 40 horas e hora 10% mais cara. E tudo isso começa em cima do Natal.\n\nRefaça a escala agora, olhando os dias e os horários em que a loja mais vende. Converse com seu contador e seu sindicato.',
   tags: '#escala6x1 #padaria #gestaodepadaria #panificacao',
-  seo: { kw: 'fim da escala 6x1 padaria', alt: 'Padeiro sovando massa, com o texto: fim da escala 6x1, a hora fica 4,8% mais cara', titulo: 'Fim da escala 6x1 na padaria: o que muda em 16 de dezembro', desc: 'Duas folgas, 42 horas e hora mais cara a partir de 16 de dezembro. Em 2027, 40 horas. Veja como preparar a escala.' },
+  seo: { kw: 'fim da escala 6x1 na padaria', alt: 'Padeiro sovando massa, com o texto: fim da escala 6x1, a hora fica 4,8% mais cara', titulo: 'Fim da escala 6x1 na padaria: o que muda em 16 de dezembro', desc: 'Duas folgas, 42 horas e hora mais cara a partir de 16 de dezembro. Em 2027, 40 horas. Veja como preparar a escala.' },
   origem: 'Fim da escala 6x1 (tema 1 de padaria), com a etapa de 2027',
   ferramenta: 'A confirmar: relatório de vendas por hora para padaria. A peça não cita ferramenta.', arq: '',
   conferir: ['Produto: existe relatório de vendas por hora para padaria? Com ele, esta peça vira carrossel com tela.', 'Não é consultoria trabalhista: manter a frase do contador e do sindicato.'],
@@ -389,7 +389,7 @@ const P = [
   fim: { foto: 'prateleiras-escuras', tela: 'uso-continuo-alerta', titulo: 'Quer ver o uso contínuo na <b>sua farmácia?</b>' },
   cap: 'Cliente de uso contínuo na farmácia: quem lembra primeiro, vende.\n\nEle raramente avisa que vai comprar. Se ninguém lembrar da reposição, a compra pode ir para outra farmácia, e 13% já compram pelo WhatsApp.\n\nNo sistema Prosystem, como o cliente toma o remédio vira a data da próxima compra. Nos 9 dias antes de acabar, o balcão recebe o alerta, e um relatório mostra quem deve comprar em cada período.\n\nFale com um especialista pelo link da bio.',
   tags: '#usocontinuo #farmacia #fidelizacao #sistemaparafarmacia',
-  seo: { kw: 'uso contínuo farmácia', alt: 'Alerta do Prosystem no balcão avisando que a medicação do cliente acaba em 8 dias', titulo: 'Uso contínuo na farmácia: como lembrar o cliente na hora certa', desc: 'O cliente raramente avisa que vai comprar. Veja como marcar a próxima compra e avisar o balcão antes de o remédio acabar.' },
+  seo: { kw: 'uso contínuo na farmácia', alt: 'Alerta do Prosystem no balcão avisando que a medicação do cliente acaba em 8 dias', titulo: 'Uso contínuo na farmácia: lembre o cliente na hora certa', desc: 'O cliente raramente avisa que vai comprar. Veja como marcar a próxima compra e avisar o balcão antes de o remédio acabar.' },
   origem: 'IA, WhatsApp e automação (tema 2.11 de farmácia) + Uso contínuo',
   ferramenta: 'Uso contínuo ativo.', arq: 'uso-continuo-alerta, uso-continuo-proxima-compra, uso-continuo-relatorio',
   conferir: ['O contato com o cliente envolve dado de saúde: manter a menção à autorização e à LGPD.'],
@@ -406,7 +406,7 @@ const P = [
   fim: { titulo: 'Quer deixar a <b>sua padaria</b> pronta para 2027?', fotos: ['paes-prateleira', 'forno'] },
   cap: 'Reforma tributária nas padarias: em 2027, um cupom pode ter várias regras.\n\nO pão francês fica com imposto novo zero. O que é preparado na loja tem regime próprio. Refrigerante revendido fica de fora. Para a padaria, o cadastro de cada produto passa a valer dinheiro.\n\nSe você está no Simples, a conta é diferente: confirme com seu contador.\n\nFale com um especialista pelo link da bio.',
   tags: '#reformatributaria #padaria #panificacao #sistemaparapadaria',
-  seo: { kw: 'reforma tributária padarias', alt: 'Pães em uma grade de padaria, com o texto: em 2027, o pão francês zera, e o resto do cupom?', titulo: 'Reforma tributária nas padarias: um cupom, várias regras', desc: 'Em 2027, pão francês, salgado feito na loja e refrigerante revendido seguem regras diferentes. Veja o que muda na padaria.' },
+  seo: { kw: 'reforma tributária nas padarias', alt: 'Pães em uma grade de padaria, com o texto: em 2027, o pão francês zera, e o resto do cupom?', titulo: 'Reforma tributária nas padarias: um cupom, várias regras', desc: 'Em 2027, pão francês, salgado feito na loja e refrigerante revendido seguem regras diferentes. Veja o que muda na padaria.' },
   origem: 'Reforma Tributária (tema 2 de padaria)',
   ferramenta: 'A confirmar: cadastro de produto e nota no layout novo. A peça não promete função nem mostra tela.', arq: '',
   conferir: ['Produto: o que já está pronto para padaria e para o Simples em 2027?', 'Não confirmado: como os 40% funcionam no Simples e como fica o pão consumido na loja.', 'A regra dos 40% veio de parecer jurídico; os artigos não foram lidos no Planalto.'],
@@ -416,7 +416,7 @@ const P = [
   titulo: 'A caneta deve ficar mais barata. <b>E a que você já comprou?</b>', fs: 68, tela: 'dias-sem-giro', faixa: 'O Prosystem mostra há quantos dias cada produto não vende.', pilula: 'Leia a legenda',
   cap: 'Canetas emagrecedoras na farmácia: com mais opções e genéricos, comprar errado custa caro.\n\nA expectativa do mercado é de alternativas mais baratas nos próximos anos. Produto caro parado na prateleira é dinheiro preso, e o valor dele pode cair.\n\nNo Prosystem, o relatório de dias sem giro mostra o que está parado para você comprar melhor em 2027.\n\nFale com um especialista pelo link da bio.',
   tags: '#gestaodefarmacia #estoque #comprasnafarmacia #sistemaparafarmacia',
-  seo: { kw: 'canetas emagrecedoras farmácia', alt: 'Relatório do Prosystem de produtos sem giro, filtrado por dias sem venda', titulo: 'Canetas emagrecedoras na farmácia: como comprar sem perder', desc: 'Com mais genéricos, o preço tende a cair. Veja como evitar produto caro parado e comprar melhor em 2027.' },
+  seo: { kw: 'canetas emagrecedoras na farmácia', alt: 'Relatório do Prosystem de produtos sem giro, filtrado por dias sem venda', titulo: 'Canetas emagrecedoras na farmácia: como comprar sem perder', desc: 'Com mais genéricos, o preço tende a cair. Veja como evitar produto caro parado e comprar melhor em 2027.' },
   origem: 'Canetas emagrecedoras (tema 3 de farmácia) + tendência de preço 2027 + Produtos sem giro',
   ferramenta: 'Produtos sem giro.', arq: 'dias-sem-giro',
   conferir: ['Só gestão: não falar de emagrecimento, não citar marca nem mostrar aplicação.', 'A queda de preço é expectativa, não fato: manter "deve".'],
@@ -436,11 +436,11 @@ const P = [
   capa: { foto: 'farmaceutica-prateleira', fs: 96, titulo: 'Seu cliente saiu sem comprar. <b>Você sabe por quê?</b>' },
   itens: [
     { n: 1, foto: 'prateleiras-escuras', titulo: 'Supermercado <b>já pode.</b>', apoio: 'Desde março, com espaço separado e farmacêutico o tempo todo.' },
-    { n: 2, foto: 'conferindo-frasco', titulo: 'Na gôndola aberta, <b>não.</b>', apoio: 'A lei proíbe remédio em área aberta.' },
+    { n: 2, foto: 'farmaceutica-prateleira', titulo: 'Na gôndola aberta, <b>não.</b>', apoio: 'A lei proíbe remédio em área aberta.' },
     { n: 3, foto: 'farmaceutica-prateleira', titulo: 'Em 2027, <b>cada venda conta.</b>', apoio: 'Saber por que o cliente não levou vale mais que adivinhar.' },
   ],
   sol: { tela: 'perda-vendas-motivo', titulo: 'O Prosystem <b>guarda o motivo</b>', apoio: 'Falta do produto, oferta da concorrência, tempo de atendimento: fica registrado.' },
-  fim: { titulo: 'Quer saber por que sua farmácia <b>perde vendas?</b>', fotos: ['prateleiras-escuras', 'conferindo-frasco'] },
+  fim: { titulo: 'Quer saber por que sua farmácia <b>perde vendas?</b>', fotos: ['prateleiras-escuras', 'farmaceutica-prateleira'] },
   cap: 'Supermercado pode vender remédio? Pode, desde março de 2026, em espaço separado e com farmacêutico o tempo todo. Na gôndola aberta, não.\n\nPara a farmácia de bairro, a pergunta que importa é outra: por que o seu cliente saiu sem comprar?\n\nCom o indicador de perda de vendas do Prosystem, cada item excluído pode ficar registrado com o motivo, e os padrões começam a aparecer.\n\nFale com um especialista pelo link da bio.',
   tags: '#farmacia #perdadevendas #gestaodefarmacia #sistemaparafarmacia',
   seo: { kw: 'supermercado pode vender remédio', alt: 'Tela do Prosystem pedindo o motivo da exclusão de um item, como falta do produto', titulo: 'Supermercado pode vender remédio? O que muda na farmácia', desc: 'A lei permite, com regras. Veja o que a farmácia de bairro pode fazer para saber por que perde vendas.' },
@@ -489,7 +489,7 @@ const P = [
   titulo: 'Quando o caixa não fecha...', fecho: '...e você começa a conta pela terceira vez.',
   cap: 'Fechamento de caixa da farmácia: quem nunca refez a conta três vezes?\n\nMarque quem passa por isso todo fim de dia.',
   tags: '#farmacia #vidadefarmaceutico #gestaodefarmacia',
-  seo: { kw: 'fechamento de caixa farmácia', alt: 'Calculadora e caneta sobre uma folha de papel, em um meme sobre o caixa que não fecha', titulo: 'Fechamento de caixa na farmácia: por que a conta não fecha', desc: 'Quando o caixa não fecha, a conta recomeça. Veja como conferir cada forma de pagamento no fechamento da farmácia.' },
+  seo: { kw: 'fechamento de caixa da farmácia', alt: 'Calculadora e caneta sobre uma folha de papel, em um meme sobre o caixa que não fecha', titulo: 'Fechamento de caixa na farmácia: por que a conta não fecha', desc: 'Quando o caixa não fecha, a conta recomeça. Veja como conferir cada forma de pagamento no fechamento da farmácia.' },
   origem: 'Formato pedido pela Jessica; foto licenciada, sem marca de terceiros',
   ferramenta: 'Nenhuma. Memes só provocam.', arq: '',
   conferir: ['Origem das imagens de meme segue em aberto no caderno. Esta usa foto licenciada do banco.'],

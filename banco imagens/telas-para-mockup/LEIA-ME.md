@@ -5,7 +5,7 @@ Telas originais da base de conhecimento (universidade.prosystemnet.com), sem alt
 ## Como usar
 
 - **Comece pelos arquivos `melhor-*`.** São as telas que escolhi em cada função. Nem toda pasta tem essa marcação.
-- **`00-recortadas`:** 16 telas já recortadas no trecho que importa, com marcas de medicamento e CNPJ cobertos e o gráfico sem amarelo.
+- **`00-recortadas`:** 21 telas já recortadas no trecho que importa, com marcas de medicamento e CNPJ cobertos e o gráfico sem amarelo.
 - **Lembre da regra:** só notebook e desktop. Celular e tablet são proibidos.
 - **Nas originais:** oculte CPF visível e marcas de medicamento. Em peça de padaria, evite telas com medicamentos, "Drogaria Modelo" ou grupos de farmácia.
 

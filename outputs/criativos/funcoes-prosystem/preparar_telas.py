@@ -108,7 +108,7 @@ salvar(empilhar([original("9067ea1a576ad72a.jpg"), original("fdf655104d140f5d.pn
 
 # ---------- telas do feed de editoriais ----------
 im = original("97975ce09fd8f3aa.jpg")
-borrar(im, (8, 112, 108, 176), 5)             # nome da impressora
+borrar(im, (8, 88, 108, 176), 5)             # nome da impressora
 salvar(im, "receitas-scanner", 2)
 
 salvar(original("378d7b36fce91d9d.png"), "dias-sem-giro", 2)
