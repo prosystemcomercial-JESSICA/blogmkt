@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><title>Modelos de carrossel</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&display=swap" rel="stylesheet"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#8a93a3;font-family:'Montserrat',Arial,sans-serif}
+.pg{width:1080px;height:1350px;position:relative;overflow:hidden;margin:0 0 30px}
+.azul .forte{background:linear-gradient(155deg,#2E6DB4 0%,#417ABC 48%,#3898D8 78%,#38C8F8 100%);color:#fff}
+.laranja .forte{background:linear-gradient(155deg,#B83C0A 0%,#D9500B 50%,#F07A12 85%,#F88818 100%);color:#fff}
+.claro{background:#fff}
+.azul .claro{color:#081330;--destaque:#2E6DB4;--linha:#38C8F8;--linha2:#417ABC}
+.laranja .claro{color:#2B1408;--destaque:#C2410C;--linha:#F88818;--linha2:#C2410C}
+.forte{--linha:rgba(255,255,255,.72);--linha2:rgba(255,255,255,.72)}
+.los{position:absolute;width:300px;height:300px;transform:rotate(45deg);border-radius:46px;border:4px solid var(--linha)}
+.los.b{border-color:var(--linha2)}
+.los.cheio{border:0;background:linear-gradient(135deg,rgba(56,200,248,.95),rgba(65,122,188,.55))}
+.laranja .los.cheio{background:linear-gradient(135deg,rgba(255,190,120,.8),rgba(234,88,12,.4))}
+.logo{position:absolute;top:70px;left:50%;transform:translateX(-50%);width:324px;height:auto}
+.num{position:absolute;bottom:62px;left:0;right:0;text-align:center;font-size:26px;font-weight:700;letter-spacing:.08em;opacity:.75}
+.meio{position:absolute;left:96px;right:96px;top:230px;bottom:130px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:40px}
+.grande{font-size:172px;line-height:1;font-weight:800;letter-spacing:-.03em}
+.resto{font-size:84px;line-height:1.1;font-weight:300;letter-spacing:-.015em;text-wrap:balance}
+.pil{display:inline-block;padding:20px 46px;border-radius:99px;font-size:34px;font-weight:800}
+.azul .pil{background:#F88818;color:#081330}
+.laranja .pil{background:#fff;color:#B83C0A}
+.pil.contorno{background:transparent!important;border:3px solid #fff;color:#fff!important;font-weight:700}
+.numero{font-size:210px;line-height:.85;font-weight:800;color:var(--destaque)}
+.tit{font-size:86px;line-height:1.08;font-weight:300;letter-spacing:-.015em;color:var(--destaque);text-wrap:balance}
+.tit b{font-weight:800}
+.faixa{padding:32px 42px;border-radius:22px;color:#fff;font-size:40px;line-height:1.3;font-weight:500;text-wrap:balance}
+.faixa b{font-weight:800}
+.azul .faixa{background:#2E6DB4}
+.laranja .faixa{background:#C2410C}
+.fundo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(3px) saturate(.9);transform:scale(1.04)}
+.azul .fundo{opacity:.42;mix-blend-mode:luminosity}
+.cartao{width:100%;height:470px;object-fit:cover;border-radius:30px;display:block}
+.painel{width:100%;padding:70px 50px;border-radius:30px;display:flex;flex-direction:column;gap:30px;align-items:center}
+.azul .painel{background:rgba(36,86,150,.93)}
+.tit-f{font-size:82px;line-height:1.06;font-weight:800;letter-spacing:-.02em;text-wrap:balance}
+.apoio-f{font-size:42px;line-height:1.3;font-weight:500;text-wrap:balance}
+.tit-fim{font-size:104px;line-height:1.05;font-weight:300;letter-spacing:-.02em;text-wrap:balance}
+.tit-fim b{font-weight:800}
+.provas{display:flex;align-items:stretch;gap:44px}
+.provas div{display:flex;flex-direction:column;gap:6px}
+.provas strong{font-size:76px;line-height:1;font-weight:800}
+.provas span{font-size:30px;font-weight:500}
+.provas i{width:3px;background:rgba(255,255,255,.7)}
+.site{font-size:34px;font-weight:700}
+</style></head><body>
+<div class="azul"><section class="pg forte" data-nome="carrossel-farmacia-estoque-v1-1"><i class="los" style="left:-150px;top:-150px"></i><i class="los" style="left:930px;top:50px"></i><i class="los cheio" style="width:240px;height:240px;right:-100px;bottom:-110px"></i><img class="logo" src="../../../../docs/design/guia-de-estilos/assets/logo-light.png" alt="ProSystem"><div class="meio"><div class="grande">3 sinais</div><div class="resto">de que o estoque está custando caro</div><span class="pil contorno">Arraste para o lado →</span></div></section>
+<section class="pg claro" data-nome="carrossel-farmacia-estoque-v1-2"><i class="los" style="left:-150px;top:50px"></i><i class="los b" style="left:930px;top:1050px"></i><i class="los cheio" style="width:220px;height:220px;right:-90px;top:-100px"></i><img class="logo" src="../../../../docs/design/guia-de-estilos/assets/logo-dark.png" alt="ProSystem"><div class="meio"><div class="numero">1</div><h2 class="tit">Você só descobre o <b>vencido</b> quando ele já venceu.</h2><p class="faixa">Controlar por lote e validade deixa a perda visível <b>antes</b> de acontecer.</p></div><div class="num">2 / 6</div></section>
+<section class="pg claro" data-nome="carrossel-farmacia-estoque-v1-3"><i class="los b" style="left:-150px;top:1050px"></i><i class="los" style="left:930px;top:30px"></i><i class="los cheio" style="width:240px;height:240px;right:-100px;bottom:-110px"></i><img class="logo" src="../../../../docs/design/guia-de-estilos/assets/logo-dark.png" alt="ProSystem"><div class="meio"><div class="numero">2</div><h2 class="tit">Falta o que <b>mais vende</b> e sobra o que ninguém procura.</h2><p class="faixa">Comprar sem olhar o giro deixa <b>dinheiro parado</b> na prateleira.</p></div><div class="num">3 / 6</div></section>
+<section class="pg claro" data-nome="carrossel-farmacia-estoque-v1-4"><i class="los" style="left:-150px;top:30px"></i><i class="los b" style="left:930px;top:1070px"></i><i class="los cheio" style="width:220px;height:220px;right:-90px;top:-100px"></i><img class="logo" src="../../../../docs/design/guia-de-estilos/assets/logo-dark.png" alt="ProSystem"><div class="meio"><div class="numero">3</div><h2 class="tit">O sistema diz uma coisa e a <b>prateleira</b> diz outra.</h2><p class="faixa">Divergência sem explicação costuma ser <b>perda</b> que ninguém registrou.</p></div><div class="num">4 / 6</div></section>
+<section class="pg forte" data-nome="carrossel-farmacia-estoque-v1-5"><img class="fundo" src="../../../../docs/design/guia-de-estilos/assets/prateleiras.jpg" alt=""><i class="los b" style="left:-150px;top:1070px"></i><i class="los" style="left:930px;top:50px"></i><i class="los cheio" style="width:240px;height:240px;right:-100px;bottom:-110px"></i><img class="logo" src="../../../../docs/design/guia-de-estilos/assets/logo-light.png" alt="ProSystem"><div class="meio"><div class="painel"><h2 class="tit-f">Estoque por produto, lote e validade</h2><p class="apoio-f">Menos perdas, rupturas e excesso de mercadoria.</p></div></div><div class="num">5 / 6</div></section>
+<section class="pg forte" data-nome="carrossel-farmacia-estoque-v1-6"><i class="los" style="left:-150px;top:50px"></i><i class="los" style="left:930px;top:1050px"></i><i class="los cheio" style="width:220px;height:220px;right:-90px;top:-100px"></i><img class="logo" src="../../../../docs/design/guia-de-estilos/assets/logo-light.png" alt="ProSystem"><div class="meio"><h2 class="tit-fim">Quer ver isso na <b>sua farmácia?</b></h2><div class="provas"><div><strong>+600</strong><span>clientes</span></div><i></i><div><strong>+16</strong><span>anos de experiência</span></div></div><span class="pil">Fale com um especialista</span><div class="site">prosystemnet.com.br</div></div></section></div>
+<div class="laranja"><section class="pg forte" data-nome="carrossel-padaria-ficha-tecnica-v1-1"><i class="los" style="left:-150px;top:-150px"></i><i class="los" style="left:930px;top:50px"></i><i class="los cheio" style="width:240px;height:240px;right:-100px;bottom:-110px"></i><img class="logo" src="../../../../docs/design/guia-de-estilos/assets/logo-light.png" alt="ProSystem"><div class="meio"><div class="grande">3 erros</div><div class="resto">na ficha técnica que comem sua margem</div><span class="pil contorno">Arraste para o lado →</span></div></section>
+<section class="pg claro" data-nome="carrossel-padaria-ficha-tecnica-v1-2"><i class="los" style="left:-150px;top:50px"></i><i class="los b" style="left:930px;top:1050px"></i><i class="los cheio" style="width:220px;height:220px;right:-90px;top:-100px"></i><img class="logo" src="../../../../docs/design/guia-de-estilos/assets/logo-dark.png" alt="ProSystem"><div class="meio"><div class="numero">1</div><h2 class="tit">Contar só a receita e esquecer a <b>perda.</b></h2><p class="faixa">Massa que fica na máquina e pão que sai torto também entram no <b>custo.</b></p></div><div class="num">2 / 6</div></section>
+<section class="pg claro" data-nome="carrossel-padaria-ficha-tecnica-v1-3"><i class="los b" style="left:-150px;top:1050px"></i><i class="los" style="left:930px;top:30px"></i><i class="los cheio" style="width:240px;height:240px;right:-100px;bottom:-110px"></i><img class="logo" src="../../../../docs/design/guia-de-estilos/assets/logo-dark.png" alt="ProSystem"><div class="meio"><div class="numero">2</div><h2 class="tit">Usar o preço do insumo de <b>meses atrás.</b></h2><p class="faixa">A farinha mudou de preço. A ficha precisa <b>mudar junto.</b></p></div><div class="num">3 / 6</div></section>
+<section class="pg claro" data-nome="carrossel-padaria-ficha-tecnica-v1-4"><i class="los" style="left:-150px;top:30px"></i><i class="los b" style="left:930px;top:1070px"></i><i class="los cheio" style="width:220px;height:220px;right:-90px;top:-100px"></i><img class="logo" src="../../../../docs/design/guia-de-estilos/assets/logo-dark.png" alt="ProSystem"><div class="meio"><div class="numero">3</div><h2 class="tit">Deixar embalagem, gás e mão de obra <b>de fora.</b></h2><p class="faixa">O que não entra na conta <b>sai do seu lucro.</b></p></div><div class="num">4 / 6</div></section>
+<section class="pg forte" data-nome="carrossel-padaria-ficha-tecnica-v1-5"><i class="los b" style="left:-150px;top:1070px"></i><i class="los" style="left:930px;top:50px"></i><i class="los cheio" style="width:240px;height:240px;right:-100px;bottom:-110px"></i><img class="logo" src="../../../../docs/design/guia-de-estilos/assets/logo-light.png" alt="ProSystem"><div class="meio"><img class="cartao" src="../../../../docs/design/guia-de-estilos/assets/padeiro.jpg" alt="Padeiro com pães"><h2 class="tit-f">Produção, vendas e estoque em um só sistema</h2><p class="apoio-f">Menos perdas e margens melhores.</p></div><div class="num">5 / 6</div></section>
+<section class="pg forte" data-nome="carrossel-padaria-ficha-tecnica-v1-6"><i class="los" style="left:-150px;top:50px"></i><i class="los" style="left:930px;top:1050px"></i><i class="los cheio" style="width:220px;height:220px;right:-90px;top:-100px"></i><img class="logo" src="../../../../docs/design/guia-de-estilos/assets/logo-light.png" alt="ProSystem"><div class="meio"><h2 class="tit-fim">Quer saber quanto sobra em <b>cada fornada?</b></h2><div class="provas"><div><strong>+600</strong><span>clientes</span></div><i></i><div><strong>+16</strong><span>anos de experiência</span></div></div><span class="pil">Fale com um especialista</span><div class="site">prosystemnet.com.br</div></div></section></div>
+</body></html>
