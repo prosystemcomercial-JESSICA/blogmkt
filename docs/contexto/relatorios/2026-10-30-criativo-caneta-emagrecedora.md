@@ -8,6 +8,8 @@
 - `outputs/criativos/farmacia/tendencia/canetas-emagrecedoras.png`: exportado de novo em 1080×1350 (escala 2x).
 - Texto, logo, selo, card, botão e rodapé não foram alterados.
 
+- Depois, a pedido da Jessica, rodapé corrigido: "100% offline · PDV + ERP + SNGPC" e "prosystemnet.com.br". "100% offline" foi mantido porque só o trecho do produto e o site foram citados.
+
 ## Verificado
 - PNG aberto e conferido: caneta não encosta no card nem no botão; fita não passa sob o rodapé.
 - `git diff` do HTML: alterações só no CSS e nos elementos da imagem/fundo.
@@ -19,6 +21,7 @@
 - Fotos do Unsplash descartadas: as de produto têm rótulo em holandês ("injectie") e as de pessoas mostram uso/aplicação.
 
 ## Pendente
+- A Jessica indicou uma imagem na pasta Downloads (nome começa com gVlAwRJsyTz) para usar no criativo. A busca do arquivo foi recusada e interrompida, e a imagem ainda não foi aplicada: confirmar se ainda deve entrar.
 - Jessica decide se aprova o desenho ou prefere a foto de referência (precisa salvar o arquivo na pasta e confirmar o direito de uso).
 - Comercial confirma os itens do card, em especial "Receita vinculada à venda" (pendência anterior).
 
