@@ -13,8 +13,8 @@ Antes disso ela pediu: "Depois preciso de posts para o google, junto como o edit
 - Base de conhecimento, artigo do acesso remoto (atualizado em 18/05/2023): o cliente abre o programa e informa ao técnico o número de "Este Dispositivo". Esse artigo é a fonte da página 4.
 - Horário do suporte: vem de `docs/design/caderno-de-marca/project/decisoes.md`.
 - Gerador sem estouro de texto. Folha de contato revisada.
-- Páginas 2 e 6 vistas em tamanho real. Na 2 apareceu marca de medicamento em uma caixa, e a foto foi recortada.
-- Não verificado: páginas 1, 3, 4 e 5 em tamanho real; aparência em um celular de verdade; se o artigo de 2023 ainda vale; licença das fotos novas, lida só nos dados da Wikimedia Commons.
+- Páginas 1, 2, 5 e 6 vistas em tamanho real. Na 2 apareceram marcas de medicamento nas caixas, e a foto foi recortada e desfocada.
+- Não verificado: páginas 3 e 4 em tamanho real (vistas só na folha de contato); aparência em um celular de verdade; se o artigo de 2023 ainda vale; licença das fotos novas, lida só nos dados da Wikimedia Commons.
 
 ## Decisões e porquês
 - **Só o assunto foi aproveitado.** Texto, layout e fotos são nossos. Nem o nome nem a peça do concorrente aparecem no material.
