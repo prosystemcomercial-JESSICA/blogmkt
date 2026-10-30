@@ -28,6 +28,7 @@ A Jessica salvou 20 prints de avaliações do Google em `banco imagens/depoiment
 A Jessica respondeu: "esta autorizado, é publico e esta no google"; suporte "das 7 da manha as 22 da noite e atende sabado e domingo, humanizado com especialistas tecnicos de facil acesso"; estrelas: "faça branco use a criatividade".
 - Peças v2 em `outputs/criativos/depoimentos/`, com nomes completos e Farmácia Pharmavida. Estrelas brancas de pontas redondas. As v1 ficam como referência e não devem ser usadas.
 - Carrossel, página 4: saiu "24 horas" (a avaliação diz isso, mas o suporte é das 7h às 22h). Entrou outro trecho real da mesma avaliação e o horário informado pela Jessica.
+- Carrossel, páginas 2 e 4: revisão em tamanho real achou rótulos em inglês com medicamento ou fabricante. Página 2 trocada para `calculadora.jpg` (as teclas têm abreviações como MATH, pouco visíveis) e página 4 recortada. As fotos antigas continuam nos modelos de carrossel; aviso em `decisoes.md`.
 - Caderno atualizado: prova de suporte e regra das estrelas (`README.md`, `decisoes.md`, `tipos-de-posts.md`).
 - Push: a API do GitHub mostrou `push: false` para `alcancelegalmkt-collab`. Foi criado um ajudante de credencial só neste repositório (`git config --local`), que usa `prosystemcomercial-JESSICA`. A conta ativa do `gh` não mudou.
 - Histórico: os prints de `b696440` ficam, porque a Jessica considerou o conteúdo público. Decisão de não reescrever o histórico.

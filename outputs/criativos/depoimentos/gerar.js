@@ -39,6 +39,7 @@ body{background:#8a93a3;font-family:'Montserrat',Arial,sans-serif}
 .azul{--escuro:#2E6DB4;--tinta:#081330;--sombra:8,19,48;--marca:46,109,180;--realce:#38C8F8;--grad:linear-gradient(155deg,#2E6DB4 0%,#417ABC 48%,#3898D8 78%,#38C8F8 100%);--pil:#F88818;--piltx:#081330}
 .laranja{--escuro:#C2410C;--tinta:#2B1408;--sombra:43,20,8;--marca:176,58,10;--realce:#F88818;--grad:linear-gradient(155deg,#B83C0A 0%,#D9500B 50%,#F07A12 85%,#F88818 100%);--pil:#fff;--piltx:#B83C0A}
 .forte{background:var(--grad);color:#fff}
+.sobre{background:var(--escuro)}
 .logo{position:absolute;top:70px;left:50%;transform:translateX(-50%);width:324px;height:auto;z-index:5}
 .cheia{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .pil{display:inline-block;padding:20px 46px;border-radius:99px;font-size:34px;font-weight:800;background:var(--pil);color:var(--piltx)}
@@ -132,12 +133,12 @@ const provaSocial = (p) => pg(p.id, p.tema, p.fundo, `${cantos}${logo(p.fundo)}<
 function carrossel(c) {
   const n = (i) => `${c.id}-${i}`;
   const t = c.tema;
-  const sobre = (i, img, rotulo, titulo, apoio) => pg(n(i), t, 'sobre', `<img class="cheia" src="${img}" alt=""><div class="tinta"></div>${claro}<div class="v3-sobre"><div class="v3-n">${rotulo}</div><h2>${titulo}</h2><p>${apoio}</p></div>${num(i)}`);
+  const sobre = (i, img, rotulo, titulo, apoio, ajuste = '') => pg(n(i), t, 'sobre', `<img class="cheia" src="${img}" alt="" style="${ajuste}"><div class="tinta"></div>${claro}<div class="v3-sobre"><div class="v3-n">${rotulo}</div><h2>${titulo}</h2><p>${apoio}</p></div>${num(i)}`);
   return [
     pg(n(1), t, 'forte', `${claro}<div class="v3-cap"><h2>Seu sistema dá mais <b>problema</b> do que solução?</h2></div><div class="v3-atras" style="left:170px;top:720px;width:740px;height:430px;transform:rotate(4deg)"></div><img class="v3-card" src="${foto('cartelas-azuis')}" alt="" style="left:170px;top:720px;width:740px;height:430px;transform:rotate(-3deg)"><div class="v3-pil"><span class="pil contorno">Arraste para o lado →</span></div>`),
-    sobre(2, foto('conferindo-frasco'), 'Antes', '“Um sistema que nos gerava <b>muitos problemas.</b>”', 'Dificuldades no controle das mercadorias, problemas com lançamentos de notas.'),
+    sobre(2, foto('calculadora'), 'Antes', '“Um sistema que nos gerava <b>muitos problemas.</b>”', 'Dificuldades no controle das mercadorias, problemas com lançamentos de notas.'),
     pg(n(3), t, '', `${escuro}<i class="dia-linha"></i><div class="dia"><img src="${foto('prateleiras-escuras')}" alt=""></div><div class="v3-sel">Hoje</div><div class="v3-txt"><h2>“Mais <b>organização, praticidade e segurança</b> para nossa rotina.”</h2><p class="faixa">A Prosystem vem nos auxiliando de forma <b>extremamente eficiente.</b></p></div>${num(3)}`),
-    sobre(4, foto('farmaceutica-prateleira'), 'Suporte', '“Dispostos a ajudar com <b>atenção, paciência e agilidade.</b>”', 'Humanizado, com especialistas técnicos, das 7h às 22h, inclusive sábado e domingo.'),
+    sobre(4, foto('farmaceutica-prateleira'), 'Suporte', '“Dispostos a ajudar com <b>atenção, paciência e agilidade.</b>”', 'Humanizado, com especialistas técnicos, das 7h às 22h, inclusive sábado e domingo.', 'object-position:0% 50%;transform:translateY(-230px);-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent 98%)'),
     pg(n(5), t, 'forte escuro-txt', `${claro}<div class="v3-atras" style="left:130px;top:220px;width:820px;height:500px;transform:rotate(3deg)"></div><img class="v3-card" src="${mockup('painel-estoque-notebook')}" alt="" style="left:130px;top:220px;width:820px;height:500px;transform:rotate(-2deg)"><div class="v3-sol"><h2>“Só tenho a <b>agradecer</b> por todo o suporte e comprometimento oferecidos pela equipe.”</h2><p><b>Tatiana Souza</b><br>Farmácia Pharmavida</p>${ESTRELAS}</div>${num(5)}`),
     pg(n(6), t, 'forte', `${claro}<div class="v3-fim"><h2>Quer esse suporte na <b>sua farmácia?</b></h2>${provas}<span class="pil">Fale com um especialista</span><div class="site">${SITE}</div></div><img class="v3-card" src="${foto('cartelas-detalhe')}" alt="" style="left:60px;top:900px;width:500px;height:360px;transform:rotate(-5deg)"><img class="v3-card" src="${foto('prateleiras-escuras')}" alt="" style="left:520px;top:930px;width:500px;height:360px;transform:rotate(4deg)">`),
   ];

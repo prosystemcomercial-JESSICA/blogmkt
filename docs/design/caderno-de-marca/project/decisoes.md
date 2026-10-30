@@ -38,6 +38,7 @@
 - **Jessica:** dizer se ainda quer usar a imagem da pasta Downloads na caneta.
 - **Comercial:** confirmar os itens do card da V1, em especial "Receita vinculada à venda".
 - **Prints de avaliações:** ficam só neste computador, em `banco imagens/depoimentos-google/`. Não precisam ir para o repositório.
+- **Fotos:** `conferindo-frasco.jpg` e `farmaceutica-prateleira.jpg` têm rótulo legível em inglês, com medicamento ou fabricante. Antes de usar, confira o recorte em tamanho real.
 - **Fotos:** `prateleira-vazia.jpg` é de supermercado. Uma foto própria de farmácia ficaria melhor.
 
 ## Por que o feed foi escolhido
