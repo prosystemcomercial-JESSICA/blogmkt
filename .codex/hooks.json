@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash 'c:\\Users\\prosy\\Documents\\mkt reuniao 1\\.codex\\hooks\\auto-commit-push.sh'",
+            "timeout": 180,
+            "statusMessage": "Commit e push automáticos..."
+          }
+        ]
+      }
+    ]
+  }
+}
