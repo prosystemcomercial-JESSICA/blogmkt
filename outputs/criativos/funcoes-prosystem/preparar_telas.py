@@ -100,3 +100,8 @@ salvar(empilhar([im.crop((0, 180, 762, 262)), im.crop((0, 940, 762, 1332))], BOL
 
 salvar(original("e71f28f2e8c910e1.png").crop((0, 170, 829, 441)), "whats-desconto")
 salvar(original("76bbe87c9febe582.png").crop((8, 112, 585, 440)), "whats-config", 2)
+
+# ---------- painel de indicadores (interface mais atual; cita "Drogaria Modelo", só para farmácia) ----------
+salvar(empilhar([original("f44597f9a26fa7cf.png"), original("f60cd09e3a01d4c1.png").resize((1203, 484), Image.LANCZOS)], "white"), "painel-vendas")
+salvar(empilhar([original("6faecc1984e153ad.jpg")], "white"), "painel-estoque")
+salvar(empilhar([original("9067ea1a576ad72a.jpg"), original("fdf655104d140f5d.png").resize((1204, 473), Image.LANCZOS)], "white"), "painel-delivery")
