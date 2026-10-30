@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Feed Editoriais ProSystem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;800&display=swap">
+<style>
+/* Moldura imita o Instagram em tema claro; as peças seguem o caderno de marca, medidas em 1080×1350. */
+:root{--bg:#fff;--fg:#0f1419;--apoio:#5b6570;--linha:#dbdfe4;--suave:#f3f5f7;--link:#2E6DB4;--aviso:#fff4ea;--aviso-tx:#7a3206;color-scheme:light}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+img{max-width:100%}
+.aviso{background:var(--aviso);color:var(--aviso-tx);padding:9px max(16px,env(safe-area-inset-left,0px));text-align:center;font-size:13px}
+.folha{max-width:935px;margin:0 auto;padding-block:24px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.perfil{display:flex;gap:28px;align-items:center;padding-bottom:22px}
+.avatar{flex:none;width:112px;height:112px;border-radius:50%;background:#fff;box-shadow:0 0 0 1px var(--linha);display:flex;align-items:center;justify-content:center;padding:12px}
+.perfil h1{margin:0;font-size:20px;font-weight:600}
+.perfil .cont{margin:6px 0 8px;color:var(--apoio)}
+.perfil p{margin:0;max-width:60ch}
+.perfil a{color:var(--link);font-weight:600;text-decoration:none}
+.destaques{display:flex;gap:16px;overflow-x:auto;padding:6px 2px 12px;scrollbar-width:thin}
+.dest{flex:none;width:82px;text-align:center;font-size:12px;line-height:1.25}
+.dest i{display:flex;width:66px;height:66px;margin:0 auto 6px;border-radius:50%;align-items:center;justify-content:center;box-shadow:0 0 0 1px var(--linha);background:#fff}
+.dest i::before{content:"";width:24px;height:24px;border-radius:6px;transform:rotate(45deg);background:linear-gradient(135deg,#2E6DB4,#38C8F8)}
+.dest[aria-pressed="true"]{font-weight:700}
+.dest[aria-pressed="true"] i{box-shadow:0 0 0 2px var(--fg)}
+.def{min-height:44px;margin:0 0 12px;padding:10px 14px;background:var(--suave);border-radius:10px}
+.abas{display:flex;justify-content:center;gap:36px;border-top:1px solid var(--linha);margin-bottom:4px}
+.aba{padding:12px 2px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--apoio);border-top:1px solid transparent;margin-top:-1px}
+.aba[aria-pressed="true"]{color:var(--fg);border-top-color:var(--fg)}
+.grade{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+.cel{position:relative;display:block;width:100%;min-width:0}
+.cel:hover .post{filter:brightness(.92)}
+.pilha{position:absolute;top:6px;right:6px;width:18px;height:18px;z-index:9;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6))}
+.notas{margin-top:36px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.notas h2{margin:0 0 8px;font-size:16px}
+.notas ul{margin:0;padding-left:18px}
+.notas li{margin-bottom:7px}
+.notas table{border-collapse:collapse;width:100%}
+.notas td{padding:5px 8px 5px 0;border-bottom:1px solid var(--linha);vertical-align:top}
+.notas td:first-child{color:var(--apoio)}
+.notas td:last-child{font-weight:600}
+
+/* Publicação aberta */
+dialog{border:0;padding:0;width:min(1120px,calc(100vw - 32px));max-height:calc(100dvh - 32px);border-radius:6px;overflow:hidden;color:var(--fg);background:var(--bg)}
+dialog::backdrop{background:rgba(0,0,0,.72)}
+.abre{display:grid;grid-template-columns:minmax(0,1fr) 400px;max-height:calc(100dvh - 32px)}
+.palco{position:relative;background:#000;display:flex;align-items:center;justify-content:center;min-width:0}
+.palco .post{width:min(100%,calc((100dvh - 32px)*.8))}
+.seta{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.92);color:#111;font-size:18px;font-weight:700;z-index:12}
+.seta.ant{left:10px}.seta.prox{right:10px}
+.pontos{position:absolute;bottom:10px;left:0;right:0;display:flex;justify-content:center;gap:5px;z-index:12}
+.pontos i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.5);box-shadow:0 0 2px rgba(0,0,0,.6)}
+.pontos i.on{background:#fff}
+.lado{display:flex;flex-direction:column;min-width:0;max-height:calc(100dvh - 32px);overflow-y:auto;border-left:1px solid var(--linha)}
+.topo{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--linha);position:sticky;top:0;background:var(--bg);z-index:2}
+.topo .mini{width:32px;height:32px;border-radius:50%;box-shadow:0 0 0 1px var(--linha);padding:4px;display:flex;align-items:center}
+.topo b{flex:1}
+.fechar{font-size:22px;line-height:1;padding:2px 6px}
+.bloco{padding:12px 14px;border-bottom:1px solid var(--linha)}
+.bloco h3{margin:0 0 8px;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--apoio)}
+.legenda{white-space:pre-line;margin:0}
+.legenda .tags{color:var(--link);display:block;margin-top:8px}
+.par{display:grid;grid-template-columns:96px minmax(0,1fr);gap:3px 8px;margin:0}
+.par dt{color:var(--apoio)}.par dd{margin:0}
+.conferir{margin:0;padding-left:16px;color:var(--aviso-tx)}
+.fontes{margin:0;padding-left:16px}
+.fontes a{color:var(--link)}
+@media (max-width:860px){
+  .abre{grid-template-columns:minmax(0,1fr);overflow-y:auto}
+  .lado{max-height:none;overflow:visible;border-left:0}
+  .palco .post{width:100%}
+  dialog{width:100vw;max-width:100vw;max-height:100dvh;border-radius:0}
+  .abre{max-height:100dvh}
+  .notas{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:600px){
+  .perfil{gap:16px}.avatar{width:76px;height:76px;padding:8px}
+  .grade{gap:2px}
+  .abas{gap:22px}
+  .folha{padding-block:14px 32px}
+}
+
+/* Peças */
+.post{container-type:inline-size;aspect-ratio:4/5;position:relative;overflow:hidden;width:100%;max-width:100%;background:#fff}
+.p{--u:calc(100cqw/1080);position:absolute;inset:0;overflow:hidden;font-family:'Montserrat',Arial,sans-serif;font-weight:500;color:#fff;text-align:left}
+.p *{box-sizing:border-box}
+.azul{--esc:#2E6DB4;--tin:#081330;--mar:46,109,180;--sb:8,19,48;--grad:linear-gradient(155deg,#2E6DB4 0%,#417ABC 48%,#3898D8 78%,#38C8F8 100%);--pil:#F88818;--piltx:#081330;--l1:#38C8F8;--l2:#417ABC;--lf:linear-gradient(135deg,rgba(56,200,248,.95),rgba(65,122,188,.55))}
+.lar{--esc:#C2410C;--tin:#2B1408;--mar:176,58,10;--sb:43,20,8;--grad:linear-gradient(155deg,#B83C0A 0%,#D9500B 50%,#F07A12 85%,#F88818 100%);--pil:#fff;--piltx:#B83C0A;--l1:#F88818;--l2:#C2410C;--lf:linear-gradient(135deg,rgba(255,190,120,.8),rgba(234,88,12,.4))}
+.forte{background:var(--grad)}
+.bra{background:#fff;color:var(--tin)}
+.lg{position:absolute;top:66U;left:50%;transform:translateX(-50%);width:324U;height:auto;z-index:8;max-width:none}
+.som{position:absolute;left:0;right:0;top:0;height:170U;background:linear-gradient(180deg,rgba(var(--sb),.8),rgba(var(--sb),0));z-index:6}
+.g{position:absolute;transform:rotate(45deg);border-radius:46U;border:3.5U solid rgba(255,255,255,.7);z-index:1}
+.bra .g{border-color:var(--l1)}.bra .g.b{border-color:var(--l2)}
+.gf{position:absolute;transform:rotate(45deg);border-radius:46U;background:var(--lf);z-index:1}
+.ft{position:absolute;object-fit:cover;max-width:none;display:block}
+.cn{position:absolute;left:0;top:0;width:100%;overflow:hidden;background:#222}
+.cn>.ft{inset:0;width:100%;height:100%;filter:brightness(.62)}
+.tl{position:absolute;background:#fff;border-radius:20U;padding:12U;box-shadow:0 22U 44U rgba(0,0,0,.42);z-index:5}
+.tl img{display:block;width:100%;height:100%;object-fit:contain;max-width:none}
+.pl{display:inline-block;padding:18U 42U;border-radius:99U;font-size:32U;line-height:1.2;font-weight:800;background:var(--pil);color:var(--piltx)}
+.pl.o{background:transparent;border:3U solid #fff;color:#fff;font-weight:700}
+.pl.oe{background:transparent;border:3U solid var(--esc);color:var(--esc);font-weight:700}
+.fx{padding:24U 34U;border-radius:22U;background:var(--esc);color:#fff;font-size:35U;line-height:1.28;font-weight:500;text-wrap:balance;text-align:center;margin:0}
+.fx b,.bb b{font-weight:800}
+.num{position:absolute;bottom:30U;left:0;right:0;text-align:center;font-size:24U;font-weight:700;letter-spacing:.08em;color:var(--tin);opacity:.75;z-index:7}
+.sob .num{color:#fff;opacity:.9}
+h2,h4{margin:0;font-weight:300;letter-spacing:-.018em;text-wrap:balance}
+h2 b,h4 b{font-weight:800}
+.prv{display:flex;gap:40U;justify-content:center}
+.prv div{display:flex;flex-direction:column;gap:6U;text-align:center}
+.prv strong{font-size:68U;line-height:1;font-weight:800}
+.prv span{font-size:28U}
+.prv i{width:3U;background:rgba(255,255,255,.7)}
+.site{font-size:31U;font-weight:700}
+/* V2 */
+.gr{position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--mar),0) 44%,rgba(var(--mar),.94) 62%,rgba(var(--mar),1) 100%);z-index:6}
+.cap{position:absolute;left:80U;right:80U;bottom:80U;z-index:7;display:flex;flex-direction:column;gap:24U;align-items:flex-start}
+.cap h2{font-size:86U;line-height:1.05}
+.cap p{margin:0;font-size:39U;font-weight:600;line-height:1.25}
+.sel{position:absolute;left:50%;top:625U;transform:translateX(-50%) rotate(45deg);width:124U;height:124U;border-radius:30U;background:var(--grad);z-index:7;display:flex;align-items:center;justify-content:center}
+.sel span{transform:rotate(-45deg);color:#fff;font-size:72U;font-weight:800}
+.txt{position:absolute;left:70U;right:70U;top:780U;bottom:76U;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26U;text-align:center;z-index:6}
+.txt h2{font-size:66U;line-height:1.08;color:var(--esc)}
+.pain{position:absolute;left:66U;right:66U;bottom:84U;padding:40U;border-radius:30U;background:rgba(var(--mar),.97);text-align:center;display:flex;flex-direction:column;gap:18U;z-index:7}
+.pain h2{font-size:62U;line-height:1.06}
+.pain p{margin:0;font-size:34U;line-height:1.3;text-wrap:balance}
+.fim{position:absolute;left:70U;right:70U;top:590U;bottom:50U;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:32U;z-index:7}
+.fim h2{font-size:74U;line-height:1.06}
+/* V3 */
+.c3{position:absolute;left:70U;right:70U;top:176U;text-align:center;z-index:6}
+.c3 h2{line-height:1.02;letter-spacing:-.03em}
+.car{position:absolute;object-fit:cover;border-radius:34U;box-shadow:0 26U 50U rgba(var(--sb),.45);z-index:4;max-width:none}
+.atr{position:absolute;border-radius:34U;background:#fff;opacity:.9;z-index:3}
+.pb{position:absolute;left:0;right:0;bottom:66U;text-align:center;z-index:7}
+.tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--mar),.55),rgba(var(--mar),.9));z-index:2}
+.sb3{position:absolute;left:84U;right:84U;top:200U;bottom:96U;z-index:6;display:flex;flex-direction:column;justify-content:flex-end;gap:28U}
+.n3{font-size:190U;line-height:.85;font-weight:800}
+.sb3 h2{font-size:84U;line-height:1.06}
+.sb3 p{margin:0;font-size:39U;line-height:1.3;text-wrap:balance}
+.dia{position:absolute;left:50%;top:180U;width:470U;height:470U;margin-left:-235U;transform:rotate(45deg);border-radius:60U;overflow:hidden;z-index:3}
+.dia img{position:absolute;left:-20%;top:-20%;width:140%;height:140%;object-fit:cover;transform:rotate(-45deg);max-width:none}
+.n3b{position:absolute;left:96U;top:620U;font-size:170U;line-height:1;font-weight:800;color:var(--esc);z-index:4}
+.t3{position:absolute;left:76U;right:76U;top:860U;bottom:76U;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24U;text-align:center;z-index:4}
+.t3 h2{font-size:60U;line-height:1.08;color:var(--esc)}
+.s3{position:absolute;left:76U;right:76U;top:770U;bottom:80U;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:22U;z-index:6}
+.s3 h2{font-size:70U;line-height:1.06;font-weight:300}
+.s3 p{margin:0;font-size:37U;line-height:1.3;text-wrap:balance}
+.f3{position:absolute;left:70U;right:70U;top:176U;display:flex;flex-direction:column;align-items:center;text-align:center;gap:26U;z-index:6}
+.f3 h2{font-size:80U;line-height:1.05}
+/* Estáticos */
+.col{position:absolute;left:80U;right:80U;top:176U;bottom:66U;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26U;text-align:center;z-index:6}
+.col h2{font-size:78U;line-height:1.07}
+.bra .col h2,.bra h4{color:var(--esc)}
+.caixa{position:relative;width:100%;flex:1 1 auto;min-height:0}
+.frs{position:absolute;left:90U;right:90U;top:330U;display:flex;flex-direction:column;align-items:center;gap:40U;text-align:center;z-index:6}
+.frs h4{font-size:106U;line-height:1.06}
+.frs p{margin:0;font-size:40U;color:var(--tin)}
+.pnl{position:absolute;left:84U;right:84U;top:330U;bottom:120U;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34U;padding:50U 44U;border-radius:30U;background:rgba(var(--mar),.93);text-align:center;z-index:6}
+.pnl h2{font-size:82U;line-height:1.06}
+.pnl .fx{background:#fff;color:var(--tin);font-size:34U}
+.mm{position:absolute;left:80U;right:80U;top:180U;bottom:60U;display:flex;flex-direction:column;align-items:center;gap:30U;text-align:center;z-index:6}
+.mm h4{font-size:58U;line-height:1.12;color:var(--esc)}
+.mm img{flex:1 1 auto;min-height:0;width:100%;object-fit:cover;border-radius:30U;display:block;max-width:none}
+.mm p{margin:0;font-size:42U;line-height:1.22;font-weight:800;color:var(--tin);text-wrap:balance}
+.cheia{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;max-width:none}
+</style>
+</head>
+<body>
+<div class="aviso">Simulação para aprovação. Nada aqui foi publicado. As telas aparecem sem aparelho porque os mockups quem faz é a Jessica.</div>
+<main class="folha">
+  <header class="perfil">
+    <div class="avatar"><img id="avatar" alt="ProSystem"></div>
+    <div>
+      <h1>ProSystem Sistemas</h1>
+      <div class="cont"><b id="total"></b> publicações na simulação</div>
+      <p>Sistema para farmácia, drogaria e padaria. Caixa, estoque e gestão no mesmo lugar.<br>+600 clientes. +16 anos de experiência.<br><a href="https://prosystemnet.com/blog/" target="_blank" rel="noopener">prosystemnet.com/blog</a></p>
+    </div>
+  </header>
+  <nav class="destaques" id="destaques" aria-label="Editoriais"></nav>
+  <p class="def" id="def" aria-live="polite"></p>
+  <nav class="abas" id="abas" aria-label="Segmento"></nav>
+  <section class="grade" id="grade" aria-label="Publicações"></section>
+  <section class="notas">
+    <div>
+      <h2>Falar simples</h2>
+      <table><tbody>
+        <tr><td>Posologia</td><td>Como o cliente toma o remédio</td></tr>
+        <tr><td>Rentabilidade</td><td>Quanto sobra de lucro</td></tr>
+        <tr><td>Capital parado</td><td>Dinheiro parado na prateleira</td></tr>
+        <tr><td>Curva ABC</td><td>Os produtos que sustentam a loja</td></tr>
+        <tr><td>Dashboard</td><td>Painel</td></tr>
+        <tr><td>Tíquete médio</td><td>Valor médio de cada compra</td></tr>
+      </tbody></table>
+    </div>
+    <div>
+      <h2>Falta conferir antes de publicar</h2>
+      <ul id="pendencias"></ul>
+    </div>
+  </section>
+</main>
+<dialog id="dlg" aria-label="Publicação"><div class="abre">
+  <div class="palco" id="palco"></div>
+  <div class="lado" id="lado"></div>
+</div></dialog>
+<script>
+const I = /*__IMAGENS__*/{};
+const A = /*__PROPORCAO__*/{};
+const SITE = 'prosystemnet.com.br';
+
+const ED = {
+  dinheiro: { nome: 'Dinheiro escapando', fala: 'dono', dor: 'vende, mas não sobra' },
+  olho: { nome: 'Olho na loja', fala: 'dono e gerente', dor: 'não saber o que acontece quando não está lá' },
+  cliente: { nome: 'Cliente que volta', fala: 'dono, gerente e farmacêutico', dor: 'o cliente compra e some' },
+  rotina: { nome: 'Rotina sem sufoco', fala: 'gerente', dor: 'tarefa e escala que tomam o dia' },
+  regra: { nome: 'Regra em dia', fala: 'dono e farmacêutico', dor: 'medo de multa e de mudança na lei' },
+  usa: { nome: 'Quem usa', fala: 'quem está escolhendo sistema', dor: 'ter certeza antes de trocar' },
+};
+
+// ---------- blocos das peças ----------
+const lo = (b) => `<i class="g" style="width:310U;height:310U;top:-150U;left:-120U"></i><i class="gf" style="width:220U;height:220U;top:-90U;right:-70U"></i><i class="g ${b ? 'b' : ''}" style="width:330U;height:330U;bottom:-180U;right:-100U"></i><i class="g ${b ? 'b' : ''}" style="width:240U;height:240U;bottom:-130U;left:-70U"></i>`;
+const logo = (e) => `<img class="lg" src="${I[e ? 'logo-dark' : 'logo-light']}" alt="">`;
+const px = (n) => `calc(${n}*var(--u))`;
+const foto = (n, st = '') => `<img class="ft" src="${I[n]}" alt="" style="${st}">`;
+// Encaixa a tela na caixa sem cortar nem deformar.
+function tela(n, x, y, w, h, giro = 0) {
+  const a = A[n]; const W = Math.min(w, h * a); const H = W / a;
+  return `<div class="tl" style="left:${px(x + (w - W) / 2)};top:${px(y + (h - H) / 2)};width:${px(W)};height:${px(H)};transform:rotate(${giro}deg)"><img src="${I[n]}" alt=""></div>`;
+}
+const cena = (f, altura, canto, dentro) => `<div class="cn" style="height:${px(altura)};${canto ? `border-radius:0 0 ${px(70)} ${px(70)}` : ''}">${foto(f)}${dentro || ''}</div>`;
+const provas = '<div class="prv"><div><strong>+600</strong><span>clientes</span></div><i></i><div><strong>+16</strong><span>anos de experiência</span></div></div>';
+const num = (i) => `<div class="num">${i} / 6</div>`;
+const pg = (tema, cl, corpo) => `<div class="p ${tema} ${cl}">${corpo}</div>`;
+
+function v2(c) {
+  const t = c.tema;
+  const out = [pg(t, 'forte sob', `${cena(c.capa.foto, 900, 0, c.capa.tela ? tela(c.capa.tela, 90, 180, 900, 400) : '')}<div class="gr"></div><div class="som"></div>${logo()}<div class="cap"><h2>${c.capa.titulo}</h2><p>${c.capa.apoio}</p><span class="pl o">Arraste para o lado →</span></div>`)];
+  c.itens.forEach((it, k) => out.push(pg(t, 'bra', `${cena(it.foto, 700, 1, it.tela ? tela(it.tela, 110, 170, 860, 410) : '')}<div class="som"></div>${logo()}<div class="sel"><span>${k + 1}</span></div><div class="txt"><h2>${it.titulo}</h2><p class="fx">${it.apoio}</p></div>${num(k + 2)}`)));
+  out.push(pg(t, 'forte sob', `${cena(c.sol.foto, 1350, 0, c.sol.tela ? tela(c.sol.tela, 80, 190, 920, 600) : '')}<div class="som"></div>${logo()}<div class="pain"><h2>${c.sol.titulo}</h2><p>${c.sol.apoio}</p></div>${num(5)}`));
+  out.push(pg(t, 'forte sob', `${cena(c.fim.foto, 560, 1, c.fim.tela ? tela(c.fim.tela, 170, 170, 740, 330) : '')}<div class="som"></div>${logo()}<div class="fim"><h2>${c.fim.titulo}</h2>${provas}<span class="pl">Fale com um especialista</span><div class="site">${SITE}</div></div>`));
+  return out;
+}
+
+function v3(c) {
+  const t = c.tema;
+  const cartao = (x, y, w, h, g1, g2, f) => `<div class="atr" style="left:${px(x)};top:${px(y)};width:${px(w)};height:${px(h)};transform:rotate(${g1}deg)"></div><img class="car" src="${I[f]}" alt="" style="left:${px(x)};top:${px(y)};width:${px(w)};height:${px(h)};transform:rotate(${g2}deg)">`;
+  const sobre = (it, i) => pg(t, 'sob', `<img class="cheia" src="${I[it.foto]}" alt=""><div class="tint"></div><div class="som"></div>${logo()}<div class="sb3"><div class="n3">${it.n}</div><h2>${it.titulo}</h2><p>${it.apoio}</p></div>${num(i)}`);
+  const out = [pg(t, 'forte', `${lo()}${logo()}<div class="c3"><h2 style="font-size:${px(c.capa.fs || 110)}">${c.capa.titulo}</h2></div>${cartao(170, 740, 740, 420, 4, -3, c.capa.foto)}<div class="pb"><span class="pl o">Arraste para o lado →</span></div>`)];
+  out.push(sobre(c.itens[0], 2));
+  const m = c.itens[1];
+  out.push(pg(t, 'bra', `${logo(1)}<div class="dia"><img src="${I[m.foto]}" alt=""></div><div class="n3b">${m.n}</div><div class="t3"><h2>${m.titulo}</h2><p class="fx">${m.apoio}</p></div>${num(3)}`));
+  out.push(sobre(c.itens[2], 4));
+  out.push(pg(t, 'forte sob', `${lo()}${logo()}${c.sol.tela ? tela(c.sol.tela, 110, 200, 860, 520, -1.5) : cartao(130, 210, 820, 500, 3, -2, c.sol.foto)}<div class="s3"><h2>${c.sol.titulo}</h2><p>${c.sol.apoio}</p></div>${num(5)}`));
+  out.push(pg(t, 'forte', `${lo()}${logo()}<div class="f3"><h2>${c.fim.titulo}</h2>${provas}<span class="pl">Fale com um especialista</span><div class="site">${SITE}</div></div>${cartao(70, 930, 470, 340, 0, -5, c.fim.fotos[0]).replace(/<div class="atr".*?<\/div>/, '')}${cartao(540, 950, 470, 340, 0, 4, c.fim.fotos[1]).replace(/<div class="atr".*?<\/div>/, '')}`));
+  return out;
+}
+
+const frase = (c) => [pg(c.tema, 'bra', `${lo(1)}${logo(1)}<div class="frs"><h4>${c.titulo}</h4><p>${c.apoio}</p></div>`)];
+// Título, tela, faixa e pílula. Três blocos de texto, como pede o caderno.
+function comTela(c) {
+  const cl = c.fundo === 'bra' ? 'bra' : 'forte sob';
+  const pil = c.fundo === 'bra' ? 'pl oe' : 'pl o';
+  const alturaTitulo = c.alturaTitulo || 270;
+  const y = 176 + alturaTitulo + 16; const h = 1350 - y - (c.pilula ? 330 : 240);
+  return [pg(c.tema, cl, `${lo(c.fundo === 'bra')}${logo(c.fundo === 'bra')}<div class="col" style="justify-content:flex-start"><h2 style="font-size:${px(c.fs || 74)}">${c.titulo}</h2></div>${tela(c.tela, 80, y, 920, h)}<div style="position:absolute;left:80U;right:80U;bottom:66U;display:flex;flex-direction:column;align-items:center;gap:22U;z-index:6"><p class="fx">${c.faixa}</p>${c.pilula ? `<span class="${pil}">${c.pilula}</span>` : ''}</div>`)];
+}
+const fotoPainel = (c) => [pg(c.tema, 'sob', `<img class="cheia" src="${I[c.foto]}" alt=""><div class="som"></div>${logo()}<div class="pnl"><h2 style="font-size:${px(c.fs || 82)}">${c.titulo}</h2><p class="fx">${c.faixa}</p><span class="pl o">${c.pilula}</span></div>`)];
+const meme = (c) => [pg(c.tema, 'bra', `${lo(1)}${logo(1)}<div class="mm"><h4>${c.titulo}</h4><img src="${I[c.foto]}" alt=""><p>${c.fecho}</p></div>`)];
+const pronta = (c) => [`<img class="cheia" src="${I[c.foto]}" alt="">`];
+const RENDER = { v2, v3, frase, comTela, fotoPainel, meme, pronta };
+
+// ---------- publicações: a ordem é a da grade, sem duas cores iguais lado a lado ----------
+const P = [
+{ id: 'reforma-farmacia', seg: 'Farmácia', ed: 'regra', tipo: 'v2', tema: 'azul', formato: 'Carrossel V2',
+  capa: { foto: 'prateleiras-escuras', tela: 'painel-estoque', titulo: 'Em 2027 o imposto muda. <b>Quanto vale seu estoque?</b>', apoio: 'A virada é em 1º de janeiro.' },
+  itens: [
+    { foto: 'prateleiras-escuras', titulo: 'PIS e Cofins <b>acabam.</b>', apoio: 'Entra a CBS, o imposto novo. A taxa ainda depende do Senado.' },
+    { foto: 'farmaceutica-prateleira', titulo: 'Remédio paga <b>menos.</b>', apoio: 'A lei corta 60% do imposto novo do remédio registrado. Alguns ficam com zero.' },
+    { foto: 'conferindo-frasco', titulo: 'O estoque entra na <b>conta da virada.</b>', apoio: 'Pergunte ao contador como ficam os produtos que você já comprou.' },
+  ],
+  sol: { foto: 'prateleiras-escuras', tela: 'painel-estoque', titulo: 'Seu estoque em um só painel', apoio: 'Itens e custo na mesma tela. Painel de indicadores, plano Plus.' },
+  fim: { foto: 'prateleiras-escuras', tela: 'painel-estoque', titulo: 'Quer ver o painel da <b>sua farmácia?</b>' },
+  cap: 'Reforma tributária na farmácia em 2027: o que conferir antes de 1º de janeiro.\n\nO PIS e a Cofins acabam e entra a CBS, o imposto novo. Remédio registrado paga menos, mas a conta de quem tem estoque precisa ser feita com o contador. E essa conversa começa por uma pergunta simples: quanto você tem na prateleira hoje?\n\nNo plano Plus do Prosystem, o painel mostra itens e custo do estoque na mesma tela.\n\nFale com um especialista pelo link da bio.',
+  tags: '#reformatributaria #gestaodefarmacia #sistemaparafarmacia #drogaria',
+  seo: { kw: 'reforma tributária farmácia 2027', alt: 'Painel do sistema Prosystem mostrando itens e custo do estoque de uma farmácia', titulo: 'Reforma tributária na farmácia: o que muda em 2027', desc: 'PIS e Cofins acabam em 2027 e entra a CBS. Veja o que conferir no estoque da farmácia antes de 1º de janeiro.' },
+  origem: 'Reforma Tributária (tema 1 de farmácia) + Painel de indicadores',
+  ferramenta: 'Painel de indicadores, estoque. Só plano Plus.', arq: 'painel-estoque',
+  conferir: ['Taxa da CBS: 11,3% é cálculo do TCU; o Senado decide até dezembro.', 'Não prometer economia nem crédito de estoque: o dado de 9,25% vem de consultoria.'],
+  fontes: [['Senado, 28/10/2026', 'https://www12.senado.leg.br/noticias/materias/2026/10/28/reforma-tributaria-tcu-calcula-aliquota-da-cbs-em-11-3-para-2027'], ['LC 214/2025', 'https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm']] },
+
+{ id: 'trigo', seg: 'Padaria', ed: 'dinheiro', tipo: 'v3', tema: 'lar', formato: 'Carrossel V3',
+  capa: { foto: 'farinha-trigo', titulo: 'O trigo subiu. <b>E o preço do seu pão?</b>' },
+  itens: [
+    { n: 1, foto: 'farinha-trigo', titulo: 'Menos trigo <b>no Brasil.</b>', apoio: 'A Conab prevê produção 26% menor em 2026.' },
+    { n: 2, foto: 'paes-grade', titulo: 'O grão subiu <b>perto de 9%.</b>', apoio: 'No Paraná, de agosto a outubro. Conta feita com dados do Cepea.' },
+    { n: 3, foto: 'forno', titulo: 'Custo mudou, <b>a conta muda.</b>', apoio: 'O preço de meses atrás pode não cobrir o pão de hoje.' },
+  ],
+  sol: { tela: 'precificacao', titulo: 'Refaça o preço com o <b>custo de hoje</b>', apoio: 'O Prosystem coloca o custo de operar a loja na conta do preço de venda.' },
+  fim: { titulo: 'Quer ver essa conta na <b>sua padaria?</b>', fotos: ['paes-grade', 'carrinho-paes'] },
+  cap: 'Como calcular o preço do pão francês quando o trigo sobe? Comece olhando o custo de hoje, não o de meses atrás.\n\nA Conab prevê 26% menos trigo no Brasil em 2026, e o grão ficou mais caro. Quem entra em 2027 com o preço antigo pode estar vendendo muito e sobrando pouco.\n\nNo Prosystem, o custo de operar a loja entra na conta do preço de venda.\n\nQuer ver isso na sua padaria? Fale com um especialista pelo link da bio.',
+  tags: '#padaria #gestaodepadaria #panificacao #precodopao #sistemaparapadaria',
+  seo: { kw: 'como calcular o preço do pão francês', alt: 'Tela do Prosystem com a composição de custo e a fórmula do preço de venda', titulo: 'Como calcular o preço do pão francês com o trigo em alta', desc: 'O trigo subiu e o preço antigo pode não cobrir o custo. Veja como refazer a conta do pão na sua padaria.' },
+  origem: 'Custos: trigo (tema 4 de padaria) + Precificação',
+  ferramenta: 'Precificação: composição de custo e fórmula de preço.', arq: 'precificacao',
+  conferir: ['A alta de 9% é do grão, não da farinha. Não achei cotação de farinha de outubro.', 'Tela pequena e antiga: pedir captura nova à equipe de produto.', 'Confirmar se a função de precificação vale sem ajuste na padaria.'],
+  fontes: [['Conab, via Agrolink', 'https://www.agrolink.com.br/noticias/trigo-valoriza-enquanto-brasil-reduz-area-e-producao-em-2026_518817.html'], ['Cepea, via Brasil61', 'https://brasil61.com/n/soja-sobe-no-parana-trigo-tambem-registra-alta-no-estado-pagr266609.amp']] },
+
+{ id: 'frase-receita', seg: 'Farmácia', ed: 'regra', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto',
+  titulo: 'Foto de receita <b>não é receita eletrônica.</b>', apoio: 'Marque quem atende no balcão.',
+  cap: 'Receita eletrônica na farmácia: foto, digitalização ou PDF feito a partir do papel não vale como receita eletrônica.\n\nE tem mais uma dúvida comum. O SNCR não substitui o SNGPC: um cuida do número e do uso da receita, o outro segue na escrituração. A transição do SNCR vai até 3 de março de 2027.\n\nMarque quem atende no balcão.',
+  tags: '#receitaeletronica #sncr #sngpc #farmacia',
+  seo: { kw: 'receita eletrônica farmácia', alt: 'Frase em azul sobre fundo branco: foto de receita não é receita eletrônica', titulo: 'Receita eletrônica na farmácia: foto de receita vale?', desc: 'Foto ou PDF do papel não é receita eletrônica. Entenda a diferença entre SNCR e SNGPC e o novo prazo de março de 2027.' },
+  origem: 'SNCR e receita eletrônica (tema 2 de farmácia), dúvida real de donos',
+  ferramenta: 'Nenhuma. Frases só provocam.', arq: '',
+  conferir: [],
+  fontes: [['CRF-GO e CRF-SP, via ICTQ', 'https://ictq.com.br/farmacia-clinica/5186-diretoras-do-crf-go-e-crf-sp-esclarecem-pontos-criticos-do-sncr-para-a-rotina-do-farmaceutico'], ['Anvisa, 29/10/2026', 'https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2026/20a-reuniao-ordinaria-publica-da-anvisa-periodo-de-transicao-para-emissao-de-receitas-eletronicas-no-sncr-e-prorrogado']] },
+
+{ id: 'pix', seg: 'Padaria', ed: 'olho', tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte',
+  titulo: 'O dinheiro saiu da gaveta. <b>Você acompanha?</b>', tela: 'whats-fechamento', faixa: 'Pix, cartão e dinheiro no resumo do caixa. Versão Plus.', pilula: 'Leia a legenda',
+  cap: 'Fechamento de caixa na padaria com Pix, cartão e dinheiro: você sabe quanto entrou em cada um?\n\nDesde outubro, o Pix por aproximação não tem mais o limite próprio de R$ 500. Cada vez menos dinheiro passa pela gaveta, e conferir o dia fica mais difícil.\n\nNa versão Plus do Prosystem, o resumo do fechamento chega no WhatsApp de quem você escolher, separado por forma de pagamento.\n\nQuer ver na sua padaria? Fale com um especialista pelo link da bio.',
+  tags: '#padaria #fechamentodecaixa #pix #sistemaparapadaria',
+  seo: { kw: 'programa para padaria caixa', alt: 'Resumo do fechamento de caixa do Prosystem com vendas por dinheiro, cartão e Pix', titulo: 'Programa para padaria: caixa com Pix, cartão e dinheiro', desc: 'O dinheiro saiu da gaveta. Veja como acompanhar Pix, cartão e dinheiro no fechamento do caixa da padaria.' },
+  origem: 'Pix, maquininha e caixa (tema 5 de padaria) + Avisos via WhatsApp',
+  ferramenta: 'Avisos via WhatsApp. Só versão Plus.', arq: 'whats-fechamento',
+  conferir: ['Mockup em notebook ou desktop: celular é proibido.', 'Não prometer conciliação de Pix com o banco: ainda não confirmada.'],
+  fontes: [['Agência Brasil', 'https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/pix-por-aproximacao-deixa-de-ter-teto-de-r-500-partir-desta-quinta']] },
+
+{ id: 'farmacia-popular', seg: 'Farmácia', ed: 'regra', tipo: 'v2', tema: 'azul', formato: 'Carrossel V2',
+  capa: { foto: 'conferindo-frasco', tela: 'receitas-scanner', titulo: 'Farmácia Popular: multa de <b>até 20%.</b>', apoio: 'As regras mudaram em agosto.' },
+  itens: [
+    { foto: 'prateleiras-escuras', titulo: 'A fiscalização ficou <b>automática.</b>', apoio: 'O monitoramento separa por risco e pode suspender a farmácia antes.' },
+    { foto: 'calculadora', titulo: 'A multa <b>cresceu.</b>', apoio: 'O teto era 10% sobre 3 meses. Agora é 20%, e a base pode ser de 12 meses.' },
+    { foto: 'conferindo-frasco', titulo: 'Guarde por <b>5 anos.</b>', apoio: 'De preferência em meio digital. Antes eram 10 anos.' },
+  ],
+  sol: { foto: 'prateleiras-escuras', tela: 'receitas-scanner', titulo: 'Receita guardada, sem pilha de caixa', apoio: 'O Prosystem digitaliza as receitas do programa e guarda em mídia externa ou nuvem.' },
+  fim: { foto: 'prateleiras-escuras', tela: 'receitas-scanner', titulo: 'Quer organizar isso na <b>sua farmácia?</b>' },
+  cap: 'Farmácia Popular: novas regras, multa maior e fiscalização automática. Sua farmácia está preparada para 2027?\n\nA portaria de agosto subiu a multa máxima para 20%, e a base pode ser a venda dos últimos 12 meses. Os documentos agora ficam guardados por 5 anos, de preferência em meio digital.\n\nNo Prosystem, o scanner de receitas digitaliza o que você precisa guardar.\n\nFale com um especialista pelo link da bio.',
+  tags: '#farmaciapopular #farmacia #gestaodefarmacia #sistemaparafarmacia',
+  seo: { kw: 'farmácia popular novas regras', alt: 'Tela do Prosystem digitalizando uma receita do Farmácia Popular', titulo: 'Farmácia Popular novas regras: multa de até 20%', desc: 'A portaria de agosto de 2026 mudou multa, fiscalização e guarda de documentos. Veja o que conferir na sua farmácia.' },
+  origem: 'Novas regras do Farmácia Popular (tema 5 de farmácia) + Scanner de receitas',
+  ferramenta: 'Scanner de receitas do Farmácia Popular.', arq: 'receitas-scanner',
+  conferir: ['Confirmar com produto se o scanner atende a portaria nova: o artigo da base é antigo.', 'Conferir a portaria no Diário Oficial: uma fonte cita republicação em 24/09.'],
+  fontes: [['CFF, 12/08/2026', 'https://site.cff.org.br/noticia/noticias-do-cff/12/08/2026/farmacia-popular-tem-novas-regras-e-abre-caminho-para-discutir-servicos-farmaceuticos'], ['ICTQ', 'https://ictq.com.br/varejo-farmaceutico/5406-novas-regras-do-farmacia-popular-mudam-fiscalizacao-e-endurecem-punicoes-para-farmacias']] },
+
+{ id: 'menos-cliente', seg: 'Padaria', ed: 'dinheiro', tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte',
+  titulo: 'Mais padarias em 2027. <b>O que sustenta a sua?</b>', tela: 'curva-abc', faixa: 'A curva ABC mostra os produtos que mais pesam no seu resultado.', pilula: 'Leia a legenda',
+  cap: 'Como aumentar as vendas na padaria em 2027, com mais concorrência e menos gente entrando?\n\nDe janeiro a setembro de 2026, abriram 81.437 pequenos negócios de panificação no Brasil, segundo o Sebrae. E um levantamento do setor mostrou fluxo 2,31% menor, com valor médio de cada compra 5,75% maior.\n\nCom menos gente na porta, cada venda conta mais. A curva ABC do Prosystem separa os produtos que sustentam a loja dos que quase não vendem.\n\nFale com um especialista pelo link da bio.',
+  tags: '#padaria #gestaodepadaria #vendasnapadaria #sistemaparapadaria',
+  seo: { kw: 'como aumentar as vendas na padaria', alt: 'Tela da curva ABC do Prosystem, que separa os produtos por valor e quantidade', titulo: 'Como aumentar as vendas na padaria em 2027', desc: 'Mais padarias abertas e menos clientes na porta. Saiba quais produtos sustentam o seu resultado e onde focar em 2027.' },
+  origem: 'Tendência 2027: concorrência (Sebrae) + Menos cliente, ticket maior (tema 3 de padaria) + Curva ABC',
+  ferramenta: 'Curva ABC.', arq: 'curva-abc',
+  conferir: ['Tela de configuração, pouco vendedora: pedir uma com o resultado sem nomes de remédio.', 'Os números do setor vêm de reportagem; o encarte oficial da ABIP não foi lido.'],
+  fontes: [['Sebrae, via Boletim Trends CE', 'https://empreender.boletimtrendsce.com.br/2026/10/19/brasil-registra-mais-de-81-mil-novos-negocios-no-setor-de-panificacao-em-2026/'], ['IDEAL, via O Hoje', 'https://ohoje.com/2026/08/21/panificacao-cresce-no-brasil-e-centro-oeste-tem-o-pao-frances-mais-caro/']] },
+
+{ id: 'mercado-2027', seg: 'Farmácia', ed: 'olho', tipo: 'comTela', tema: 'azul', formato: 'Estático com tela', fundo: 'bra',
+  titulo: 'O mercado cresce em 2027. <b>E a sua farmácia?</b>', tela: 'painel-vendas', faixa: 'Vendas, lucro médio e desconto no mesmo painel. Plano Plus.', pilula: 'Leia a legenda',
+  cap: 'Sistema para farmácia e drogaria: você consegue ver em 30 segundos se a sua loja cresceu?\n\nO Close-Up projeta para 2027 um ritmo parecido com o de 2026, perto de 13% em valor. Só que, em 2025, as farmácias independentes fecharam mais lojas do que abriram: foram 1.096 a menos.\n\nNo plano Plus do Prosystem, o painel mostra vendas, lucro médio, desconto e valor médio de cada compra por período.\n\nFale com um especialista pelo link da bio.',
+  tags: '#sistemaparafarmacia #drogaria #gestaodefarmacia #farmaciaindependente',
+  seo: { kw: 'sistema para farmácia e drogaria', alt: 'Painel do Prosystem com total de vendas, lucro médio, desconto e gráfico de evolução', titulo: 'Sistema para farmácia e drogaria: veja seus números em 2027', desc: 'O mercado segue crescendo em 2027, mas as independentes perdem espaço. Veja vendas, lucro e desconto no mesmo painel.' },
+  origem: 'Tendência 2027: Close-Up e independentes em queda + Painel de indicadores',
+  ferramenta: 'Painel de indicadores, vendas. Só plano Plus.', arq: 'painel-vendas',
+  conferir: ['Não citar 2028: a matéria do Close-Up se contradiz.', 'Saldo de 1.096 lojas: abrir a fonte original (IQVIA ou Febrafar) antes de publicar.', 'A tela cita "Drogaria Modelo": só em peça de farmácia.'],
+  fontes: [['Close-Up, via Guia da Farmácia', 'https://guiadafarmacia.com.br/varejo-farmaceutico-cresce-129-e-deve-manter-expansao-ate-2028-segundo-close-up/'], ['Times Brasil', 'https://timesbrasil.com.br/empresas-e-negocios/ciencias-e-saude/farmacias-independentes-perdem-espaco-no-brasil-e-mais-da-metade-ja-sente-queda-no-lucro/']] },
+
+{ id: 'escala', seg: 'Padaria', ed: 'rotina', tipo: 'fotoPainel', tema: 'lar', formato: 'Foto com painel', foto: 'sovando-massa',
+  titulo: 'Fim da escala 6x1: a hora fica <b>4,8% mais cara.</b>', fs: 74, faixa: 'Em dezembro de 2027, 10%. Conta da Fenacon.', pilula: 'Leia a legenda',
+  cap: 'Fim da escala 6x1 na padaria: em 16 de dezembro, valem duas folgas por semana e 42 horas, sem reduzir salário.\n\nA Fenacon calcula a hora 4,8% mais cara nessa etapa. Em dezembro de 2027 vem a segunda, com 40 horas e hora 10% mais cara. E tudo isso começa em cima do Natal.\n\nRefaça a escala agora, olhando os dias e os horários em que a loja mais vende. Converse com seu contador e seu sindicato.',
+  tags: '#escala6x1 #padaria #gestaodepadaria #panificacao',
+  seo: { kw: 'fim da escala 6x1 padaria', alt: 'Padeiro sovando massa, com o texto: fim da escala 6x1, a hora fica 4,8% mais cara', titulo: 'Fim da escala 6x1 na padaria: o que muda em 16 de dezembro', desc: 'Duas folgas, 42 horas e hora mais cara a partir de 16 de dezembro. Em 2027, 40 horas. Veja como preparar a escala.' },
+  origem: 'Fim da escala 6x1 (tema 1 de padaria), com a etapa de 2027',
+  ferramenta: 'A confirmar: relatório de vendas por hora para padaria. A peça não cita ferramenta.', arq: '',
+  conferir: ['Produto: existe relatório de vendas por hora para padaria? Com ele, esta peça vira carrossel com tela.', 'Não é consultoria trabalhista: manter a frase do contador e do sindicato.'],
+  fontes: [['Fenacon', 'https://fenacon.org.br/wp-content/uploads/2026/10/FCOM0007-Nota-Tecnica-6x1-.pdf'], ['EC 141/2026', 'https://planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc141.htm']] },
+
+{ id: 'uso-continuo', seg: 'Farmácia', ed: 'cliente', tipo: 'v2', tema: 'azul', formato: 'Carrossel V2',
+  capa: { foto: 'prateleiras-escuras', tela: 'uso-continuo-alerta', titulo: 'O remédio do seu cliente acaba em <b>8 dias.</b>', apoio: 'Quem vai lembrar dele primeiro?' },
+  itens: [
+    { foto: 'prateleiras-escuras', tela: 'uso-continuo-proxima-compra', titulo: 'Na venda, o sistema <b>marca a data.</b>', apoio: 'Você informa como o cliente toma o remédio. O Prosystem calcula a próxima compra.' },
+    { foto: 'prateleiras-escuras', tela: 'uso-continuo-alerta', titulo: 'Ele volta, e o balcão <b>é avisado.</b>', apoio: 'O alerta aparece nos 9 dias antes de o remédio acabar.' },
+    { foto: 'calculadora', tela: 'uso-continuo-relatorio', titulo: 'Quem deve comprar vira <b>lista.</b>', apoio: 'Relatório por período. Contato só com autorização do cliente.' },
+  ],
+  sol: { foto: 'farmaceutica-prateleira', tela: 'uso-continuo-alerta', titulo: 'Lembre antes da outra farmácia', apoio: '13% já compram em farmácia pelo WhatsApp, segundo pesquisa IFEPEC, Axxus e Unicamp.' },
+  fim: { foto: 'prateleiras-escuras', tela: 'uso-continuo-alerta', titulo: 'Quer ver o uso contínuo na <b>sua farmácia?</b>' },
+  cap: 'Cliente de uso contínuo na farmácia: quem lembra primeiro, vende.\n\nEle raramente avisa que vai comprar. Se ninguém lembrar da reposição, a compra pode ir para outra farmácia, e 13% já compram pelo WhatsApp.\n\nNo sistema Prosystem, como o cliente toma o remédio vira a data da próxima compra. Nos 9 dias antes de acabar, o balcão recebe o alerta, e um relatório mostra quem deve comprar em cada período.\n\nFale com um especialista pelo link da bio.',
+  tags: '#usocontinuo #farmacia #fidelizacao #sistemaparafarmacia',
+  seo: { kw: 'uso contínuo farmácia', alt: 'Alerta do Prosystem no balcão avisando que a medicação do cliente acaba em 8 dias', titulo: 'Uso contínuo na farmácia: como lembrar o cliente na hora certa', desc: 'O cliente raramente avisa que vai comprar. Veja como marcar a próxima compra e avisar o balcão antes de o remédio acabar.' },
+  origem: 'IA, WhatsApp e automação (tema 2.11 de farmácia) + Uso contínuo',
+  ferramenta: 'Uso contínuo ativo.', arq: 'uso-continuo-alerta, uso-continuo-proxima-compra, uso-continuo-relatorio',
+  conferir: ['O contato com o cliente envolve dado de saúde: manter a menção à autorização e à LGPD.'],
+  fontes: [['Central do Varejo', 'https://centraldovarejo.com.br/whatsapp-ganha-espaco-nas-compras-de-farmacias-e-amplia-atencao-aos-custos-digitais/'], ['Base de conhecimento', 'https://universidade.prosystemnet.com/base-conhecimento/admin-retaguarda/gestao-de-clientes/uso-continuo-ativo-nao-perca-vendas']] },
+
+{ id: 'reforma-padaria', seg: 'Padaria', ed: 'regra', tipo: 'v3', tema: 'lar', formato: 'Carrossel V3',
+  capa: { foto: 'paes-grade', fs: 96, titulo: 'Em 2027, o pão francês zera. <b>E o resto do cupom?</b>' },
+  itens: [
+    { n: 1, foto: 'paes-grade', titulo: 'Pão francês: <b>zero.</b>', apoio: 'A lei zera os impostos novos, CBS e IBS, para o pão francês.' },
+    { n: 2, foto: 'maos-massa', titulo: 'Feito na loja: <b>regra própria.</b>', apoio: 'O regulamento cita padarias, com desconto de 40% no que é preparado ali.' },
+    { n: 3, foto: 'paes-prateleira', titulo: 'Revenda: <b>fora do desconto.</b>', apoio: 'Refrigerante e produto comprado pronto não entram, segundo parecer jurídico.' },
+  ],
+  sol: { foto: 'carrinho-paes', titulo: 'Cada produto precisa estar <b>bem cadastrado</b>', apoio: 'No Simples, a conta é diferente. Confirme com seu contador.' },
+  fim: { titulo: 'Quer deixar a <b>sua padaria</b> pronta para 2027?', fotos: ['paes-prateleira', 'forno'] },
+  cap: 'Reforma tributária nas padarias: em 2027, um cupom pode ter várias regras.\n\nO pão francês fica com imposto novo zero. O que é preparado na loja tem regime próprio. Refrigerante revendido fica de fora. Para a padaria, o cadastro de cada produto passa a valer dinheiro.\n\nSe você está no Simples, a conta é diferente: confirme com seu contador.\n\nFale com um especialista pelo link da bio.',
+  tags: '#reformatributaria #padaria #panificacao #sistemaparapadaria',
+  seo: { kw: 'reforma tributária padarias', alt: 'Pães em uma grade de padaria, com o texto: em 2027, o pão francês zera, e o resto do cupom?', titulo: 'Reforma tributária nas padarias: um cupom, várias regras', desc: 'Em 2027, pão francês, salgado feito na loja e refrigerante revendido seguem regras diferentes. Veja o que muda na padaria.' },
+  origem: 'Reforma Tributária (tema 2 de padaria)',
+  ferramenta: 'A confirmar: cadastro de produto e nota no layout novo. A peça não promete função nem mostra tela.', arq: '',
+  conferir: ['Produto: o que já está pronto para padaria e para o Simples em 2027?', 'Não confirmado: como os 40% funcionam no Simples e como fica o pão consumido na loja.', 'A regra dos 40% veio de parecer jurídico; os artigos não foram lidos no Planalto.'],
+  fontes: [['Decreto 12.955/2026', 'https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/D12955.htm'], ['Parecer TAGD', 'https://tagdlaw.com.br/reforma-tributaria-parecer-sobre-a-tributacao-do-ibs-e-cbs-nos-bares-e-restaurantes/']] },
+
+{ id: 'canetas', seg: 'Farmácia', ed: 'dinheiro', tipo: 'comTela', tema: 'azul', formato: 'Estático com tela', fundo: 'forte',
+  titulo: 'A caneta deve ficar mais barata. <b>E a que você já comprou?</b>', fs: 68, tela: 'dias-sem-giro', faixa: 'O Prosystem mostra há quantos dias cada produto não vende.', pilula: 'Leia a legenda',
+  cap: 'Canetas emagrecedoras na farmácia: com mais opções e genéricos, comprar errado custa caro.\n\nA expectativa do mercado é de alternativas mais baratas nos próximos anos. Produto caro parado na prateleira é dinheiro preso, e o valor dele pode cair.\n\nNo Prosystem, o relatório de dias sem giro mostra o que está parado para você comprar melhor em 2027.\n\nFale com um especialista pelo link da bio.',
+  tags: '#gestaodefarmacia #estoque #comprasnafarmacia #sistemaparafarmacia',
+  seo: { kw: 'canetas emagrecedoras farmácia', alt: 'Relatório do Prosystem de produtos sem giro, filtrado por dias sem venda', titulo: 'Canetas emagrecedoras na farmácia: como comprar sem perder', desc: 'Com mais genéricos, o preço tende a cair. Veja como evitar produto caro parado e comprar melhor em 2027.' },
+  origem: 'Canetas emagrecedoras (tema 3 de farmácia) + tendência de preço 2027 + Produtos sem giro',
+  ferramenta: 'Produtos sem giro.', arq: 'dias-sem-giro',
+  conferir: ['Só gestão: não falar de emagrecimento, não citar marca nem mostrar aplicação.', 'A queda de preço é expectativa, não fato: manter "deve".'],
+  fontes: [['Guia da Farmácia', 'https://guiadafarmacia.com.br/varejo-farmaceutico-cresce-129-e-deve-manter-expansao-ate-2028-segundo-close-up/'], ['CFF, 27/08/2026', 'https://site.cff.org.br/noticia/Noticias-gerais/27/08/2026/anvisa-aprova-segundo-generico-de-semaglutida-e-canetas-devem-ficar-mais-baratas']] },
+
+{ id: 'frase-sobra', seg: 'Padaria', ed: 'dinheiro', tipo: 'frase', tema: 'lar', formato: 'Frase de impacto',
+  titulo: 'Pão que sobra também é <b>prejuízo.</b>', apoio: 'Marque o dono da padaria.',
+  cap: 'Sobra de pão na padaria é dinheiro que foi para o lixo. Quanto sobrou ontem na sua?\n\nMarque o dono da padaria.',
+  tags: '#padaria #gestaodepadaria #panificacao',
+  seo: { kw: 'sobra de pão na padaria', alt: 'Frase em laranja sobre fundo branco: pão que sobra também é prejuízo', titulo: 'Sobra de pão na padaria: quanto isso custa por mês', desc: 'Pão que sobra também é prejuízo. Veja como medir a sobra e ajustar a produção da padaria.' },
+  origem: 'Texto de exemplo do caderno de marca',
+  ferramenta: 'Nenhuma. Frases só provocam.', arq: '',
+  conferir: ['O termo "sobra de pão" não veio das sugestões do Google: conferir o volume.'],
+  fontes: [] },
+
+{ id: 'supermercado', seg: 'Farmácia', ed: 'cliente', tipo: 'v3', tema: 'azul', formato: 'Carrossel V3',
+  capa: { foto: 'farmaceutica-prateleira', fs: 96, titulo: 'Seu cliente saiu sem comprar. <b>Você sabe por quê?</b>' },
+  itens: [
+    { n: 1, foto: 'prateleiras-escuras', titulo: 'Supermercado <b>já pode.</b>', apoio: 'Desde março, com espaço separado e farmacêutico o tempo todo.' },
+    { n: 2, foto: 'conferindo-frasco', titulo: 'Na gôndola aberta, <b>não.</b>', apoio: 'A lei proíbe remédio em área aberta.' },
+    { n: 3, foto: 'farmaceutica-prateleira', titulo: 'Em 2027, <b>cada venda conta.</b>', apoio: 'Saber por que o cliente não levou vale mais que adivinhar.' },
+  ],
+  sol: { tela: 'perda-vendas-motivo', titulo: 'O Prosystem <b>guarda o motivo</b>', apoio: 'Falta do produto, oferta da concorrência, tempo de atendimento: fica registrado.' },
+  fim: { titulo: 'Quer saber por que sua farmácia <b>perde vendas?</b>', fotos: ['prateleiras-escuras', 'conferindo-frasco'] },
+  cap: 'Supermercado pode vender remédio? Pode, desde março de 2026, em espaço separado e com farmacêutico o tempo todo. Na gôndola aberta, não.\n\nPara a farmácia de bairro, a pergunta que importa é outra: por que o seu cliente saiu sem comprar?\n\nCom o indicador de perda de vendas do Prosystem, cada item excluído pode ficar registrado com o motivo, e os padrões começam a aparecer.\n\nFale com um especialista pelo link da bio.',
+  tags: '#farmacia #perdadevendas #gestaodefarmacia #sistemaparafarmacia',
+  seo: { kw: 'supermercado pode vender remédio', alt: 'Tela do Prosystem pedindo o motivo da exclusão de um item, como falta do produto', titulo: 'Supermercado pode vender remédio? O que muda na farmácia', desc: 'A lei permite, com regras. Veja o que a farmácia de bairro pode fazer para saber por que perde vendas.' },
+  origem: 'Farmácias em supermercados (tema 2.7 de farmácia) + Indicador de perda de vendas',
+  ferramenta: 'Indicador de perda de vendas.', arq: 'perda-vendas-motivo',
+  conferir: ['Não há dado de quanto a farmácia perde para o supermercado: não afirmar perda.', 'O termo "supermercado pode vender remédio" não veio das sugestões do Google: conferir o volume.'],
+  fontes: [['Lei 15.357/2026', 'https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/L15357.htm']] },
+
+{ id: 'sangria', seg: 'Padaria', ed: 'olho', tipo: 'v2', tema: 'lar', formato: 'Carrossel V2',
+  capa: { foto: 'paes-prateleira', tela: 'sangria-bloqueio', titulo: 'Quanto dinheiro tem na sua <b>gaveta agora?</b>', apoio: 'Sangria que depende de memória falha.' },
+  itens: [
+    { foto: 'paes-prateleira', tela: 'sangria-aviso', titulo: 'Chegou no valor, o caixa <b>avisa.</b>', apoio: 'Exemplo: a partir de R$ 600 em dinheiro. A venda continua.' },
+    { foto: 'paes-prateleira', tela: 'sangria-bloqueio', titulo: 'Passou do limite, o caixa <b>trava.</b>', apoio: 'Exemplo: em R$ 900, só volta a vender depois da sangria.' },
+    { foto: 'calculadora', tela: 'sangria-registro', titulo: 'Toda retirada fica <b>registrada.</b>', apoio: 'Valor e motivo, prontos para conferir no fechamento.' },
+  ],
+  sol: { foto: 'carrinho-paes', tela: 'sangria-aviso', titulo: 'Sangria com regra, sem depender da memória', apoio: 'Menos dinheiro exposto na gaveta e um fechamento mais fácil de conferir.' },
+  fim: { foto: 'paes-prateleira', tela: 'sangria-registro', titulo: 'Quer esse controle no caixa da <b>sua padaria?</b>' },
+  cap: 'Sangria de caixa na padaria: com café da manhã cheio e fila no caixa, ela fica para depois até alguém lembrar.\n\nNo Prosystem, você define dois valores: em um, o caixa avisa; no outro, ele só volta a vender depois da sangria. Cada retirada fica registrada para conferir no fechamento.\n\nQuer esse controle na sua padaria? Fale com um especialista pelo link da bio.',
+  tags: '#sangriadecaixa #padaria #controledecaixa #sistemaparapadaria',
+  seo: { kw: 'sangria de caixa', alt: 'Aviso do caixa do Prosystem pedindo a sangria programada', titulo: 'Sangria de caixa: o que é e como evitar dinheiro na gaveta', desc: 'Sangria de caixa é a retirada de dinheiro da gaveta. Veja como definir um limite e registrar cada retirada na padaria.' },
+  origem: 'Função já mapeada (Lote 1), com texto simplificado',
+  ferramenta: 'Alerta de sangria obrigatória.', arq: 'sangria-aviso, sangria-bloqueio, sangria-registro',
+  conferir: ['Confirmar com produto se a função vale sem ajuste na padaria.', 'A tela de registro tem "centro de custo": se ficar legível no mockup, é a palavra difícil da peça.'],
+  fontes: [['Base de conhecimento', 'https://universidade.prosystemnet.com/base-conhecimento/caixa-frente-de-loja/funcoes-basicas-do-caixa/alerta-de-sangria-obrigatoria-nao-deixe-dinheiro-acumulado-no-caixa']] },
+
+{ id: 'depoimento', seg: 'Farmácia', ed: 'usa', tipo: 'pronta', formato: 'Depoimento (peça pronta)', foto: 'depoimento-paulo',
+  cap: 'Sistema para farmácia bom é o que a equipe usa sem reclamar. Quando isso acontece, sobra tempo para atender o cliente.\n\nObrigado, Paulo.\n\nQuer ver como o Prosystem funciona na sua farmácia? Fale com um especialista pelo link da bio.',
+  tags: '#sistemaparafarmacia #depoimento #prosystem',
+  seo: { kw: 'sistema para farmácia', alt: 'Depoimento de Paulo Siqueira, cliente ProSystem, com avaliação de cinco estrelas no Google', titulo: 'Sistema para farmácia: o que dizem os clientes', desc: 'Avaliações reais de clientes ProSystem no Google. Veja por que as equipes de farmácia preferem este sistema.' },
+  origem: 'Avaliação real no Google, autorizada pela Jessica em 30/10/2026',
+  ferramenta: 'Nenhuma. Prova social.', arq: '',
+  conferir: ['A peça não diz o segmento do cliente: confirmar se Paulo é de farmácia antes de usar "sistema para farmácia" na legenda.'],
+  fontes: [] },
+
+{ id: 'fechamento', seg: 'Padaria', ed: 'olho', tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte',
+  titulo: 'Fechou o caixa. Faltou dinheiro. <b>E agora?</b>', tela: 'fechamento-caixa', faixa: 'O que foi informado e o que foi vendido, lado a lado.', pilula: 'Leia a legenda',
+  cap: 'Sistema para padaria com fechamento de caixa: quando falta dinheiro, você precisa saber onde olhar.\n\nNo Prosystem, o fechamento mostra o que foi informado e o que foi vendido em cada forma de pagamento. A diferença aparece na tela, sem refazer a conta na calculadora.\n\nEntre em 2027 com o caixa conferido todo dia. Fale com um especialista pelo link da bio.',
+  tags: '#sistemaparapadaria #fechamentodecaixa #padaria #gestaodepadaria',
+  seo: { kw: 'sistema para padaria', alt: 'Tela de fechamento de caixa do Prosystem com valores informados e vendidos por forma de pagamento', titulo: 'Sistema para padaria: fechamento de caixa sem diferença', desc: 'Faltou dinheiro no caixa? Veja como comparar o que foi informado e o que foi vendido em cada forma de pagamento.' },
+  origem: 'Função mapeada (Fechamento de caixa), priorizada para padaria',
+  ferramenta: 'Fechamento de caixa.', arq: 'fechamento-caixa',
+  conferir: ['Tela de 2021, sem linha de Pix: pedir captura atual à equipe de produto.'],
+  fontes: [['Base de conhecimento', 'https://universidade.prosystemnet.com/base-conhecimento/caixa-frente-de-loja/funcoes-basicas-do-caixa/fechamento-de-caixa']] },
+
+{ id: 'meme', seg: 'Farmácia', ed: 'rotina', tipo: 'meme', tema: 'azul', formato: 'Meme', foto: 'calculadora',
+  titulo: 'Quando o caixa não fecha...', fecho: '...e você começa a conta pela terceira vez.',
+  cap: 'Fechamento de caixa da farmácia: quem nunca refez a conta três vezes?\n\nMarque quem passa por isso todo fim de dia.',
+  tags: '#farmacia #vidadefarmaceutico #gestaodefarmacia',
+  seo: { kw: 'fechamento de caixa farmácia', alt: 'Calculadora e caneta sobre uma folha de papel, em um meme sobre o caixa que não fecha', titulo: 'Fechamento de caixa na farmácia: por que a conta não fecha', desc: 'Quando o caixa não fecha, a conta recomeça. Veja como conferir cada forma de pagamento no fechamento da farmácia.' },
+  origem: 'Formato pedido pela Jessica; foto licenciada, sem marca de terceiros',
+  ferramenta: 'Nenhuma. Memes só provocam.', arq: '',
+  conferir: ['Origem das imagens de meme segue em aberto no caderno. Esta usa foto licenciada do banco.'],
+  fontes: [] },
+
+{ id: 'desconto', seg: 'Farmácia', ed: 'olho', tipo: 'comTela', tema: 'azul', formato: 'Estático com tela', fundo: 'forte',
+  titulo: 'Quem liberou <b>esse desconto?</b>', fs: 84, alturaTitulo: 210, tela: 'whats-desconto', faixa: 'Autorizou com login, o aviso chega para você. Versão Plus.', pilula: 'Leia a legenda',
+  cap: 'Sistema para drogaria com controle de desconto: você fica sabendo quando alguém libera um desconto?\n\nO desconto vira hábito no balcão, e ninguém mede o efeito no lucro. Para 2027, vale revisar isso desde já.\n\nNa versão Plus do Prosystem, a autorização com login pode gerar um aviso no WhatsApp do responsável.\n\nFale com um especialista pelo link da bio.',
+  tags: '#sistemaparadrogaria #drogaria #gestaodefarmacia #controledeloja',
+  seo: { kw: 'sistema para drogaria', alt: 'Aviso do Prosystem informando um desconto autorizado com login', titulo: 'Sistema para drogaria: saiba quem liberou cada desconto', desc: 'O desconto vira hábito e ninguém mede o efeito no lucro. Veja como receber um aviso a cada liberação na drogaria.' },
+  origem: 'Planejamento 2027: evitar descontos que corroem a margem (Guia da Farmácia) + Avisos via WhatsApp',
+  ferramenta: 'Avisos via WhatsApp. Só versão Plus.', arq: 'whats-desconto',
+  conferir: ['Mockup em notebook ou desktop: celular é proibido.'],
+  fontes: [['Guia da Farmácia, 15/10/2026', 'https://guiadafarmacia.com.br/planejamento-estrategico-para-2027-hora-de-pensar-nos-proximos-desafios/']] },
+];
+
+// ---------- página ----------
+const paginas = (p) => RENDER[p.tipo](p);
+const envolver = (html) => `<div class="post">${html}</div>`;
+const PILHA = '<svg class="pilha" viewBox="0 0 24 24" aria-hidden="true" fill="#fff"><path d="M8 2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2V6a2 2 0 0 0-2-2H6a2 2 0 0 1 2-2z"/><rect x="2" y="6" width="16" height="16" rx="2"/></svg>';
+const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+let filtroEd = ''; let filtroSeg = '';
+
+function desenharDestaques() {
+  const itens = [['', 'Todos'], ...Object.entries(ED).map(([k, v]) => [k, v.nome])];
+  document.getElementById('destaques').innerHTML = itens.map(([k, n]) => `<button class="dest" data-ed="${k}" aria-pressed="${k === filtroEd}"><i></i>${n}</button>`).join('');
+  const d = ED[filtroEd];
+  document.getElementById('def').innerHTML = d ? `<b>${d.nome}.</b> Fala com: ${d.fala}. Problema: ${d.dor}.` : 'Toque em um editorial para filtrar. Toque em uma publicação para ver a legenda, o SEO e a fonte.';
+}
+function desenharAbas() {
+  document.getElementById('abas').innerHTML = [['', 'Tudo'], ['Farmácia', 'Farmácia'], ['Padaria', 'Padaria']].map(([k, n]) => `<button class="aba" data-seg="${k}" aria-pressed="${k === filtroSeg}">${n}</button>`).join('');
+}
+function desenharGrade() {
+  document.getElementById('grade').innerHTML = P.map((p, i) => [p, i]).filter(([p]) => (!filtroEd || p.ed === filtroEd) && (!filtroSeg || p.seg === filtroSeg))
+    .map(([p, i]) => `<button class="cel" data-i="${i}" aria-label="Abrir ${p.formato}: ${p.seo.titulo}">${envolver(paginas(p)[0])}${paginas(p).length > 1 ? PILHA : ''}</button>`).join('');
+}
+
+const dlg = document.getElementById('dlg');
+let atual = null; let pag = 0;
+function desenharPalco() {
+  const lista = paginas(atual);
+  document.getElementById('palco').innerHTML = envolver(lista[pag]) + (lista.length > 1 ? `
+    ${pag > 0 ? '<button class="seta ant" data-ir="-1" aria-label="Página anterior">‹</button>' : ''}
+    ${pag < lista.length - 1 ? '<button class="seta prox" data-ir="1" aria-label="Próxima página">›</button>' : ''}
+    <div class="pontos">${lista.map((_, k) => `<i class="${k === pag ? 'on' : ''}"></i>`).join('')}</div>` : '');
+}
+function abrir(i) {
+  atual = P[i]; pag = 0; desenharPalco();
+  const p = atual; const e = ED[p.ed];
+  document.getElementById('lado').innerHTML = `
+    <div class="topo"><span class="mini"><img src="${I['logo-dark']}" alt=""></span><b>ProSystem Sistemas</b><button class="fechar" data-fechar aria-label="Fechar">×</button></div>
+    <div class="bloco"><h3>Legenda</h3><p class="legenda">${esc(p.cap)}<span class="tags">${p.tags}</span></p></div>
+    <div class="bloco"><h3>Editorial</h3><dl class="par">
+      <dt>Editorial</dt><dd>${e.nome}</dd><dt>Fala com</dt><dd>${e.fala}</dd><dt>Segmento</dt><dd>${p.seg}</dd><dt>Formato</dt><dd>${p.formato}</dd><dt>Tema</dt><dd>${esc(p.origem)}</dd><dt>Ferramenta</dt><dd>${esc(p.ferramenta)}</dd>${p.arq ? `<dt>Seu mockup</dt><dd>Usar a tela: ${esc(p.arq)}</dd>` : ''}
+    </dl></div>
+    <div class="bloco"><h3>SEO</h3><dl class="par">
+      <dt>Palavra-chave</dt><dd>${esc(p.seo.kw)}</dd><dt>Texto alternativo</dt><dd>${esc(p.seo.alt)}</dd><dt>Título no blog e no Google</dt><dd>${esc(p.seo.titulo)}</dd><dt>Descrição</dt><dd>${esc(p.seo.desc)}</dd>
+    </dl></div>
+    ${p.conferir.length ? `<div class="bloco"><h3>Conferir antes de publicar</h3><ul class="conferir">${p.conferir.map((c) => `<li>${esc(c)}</li>`).join('')}</ul></div>` : ''}
+    ${p.fontes.length ? `<div class="bloco"><h3>Fontes</h3><ul class="fontes">${p.fontes.map(([n, u]) => `<li><a href="${u}" target="_blank" rel="noopener">${esc(n)}</a></li>`).join('')}</ul></div>` : ''}`;
+  document.getElementById('lado').scrollTop = 0;
+  if (!dlg.open) dlg.showModal();
+}
+document.addEventListener('click', (ev) => {
+  const b = ev.target.closest('button');
+  if (ev.target === dlg) { dlg.close(); return; }
+  if (!b) return;
+  if (b.dataset.ed !== undefined) { filtroEd = b.dataset.ed; desenharDestaques(); desenharGrade(); }
+  else if (b.dataset.seg !== undefined) { filtroSeg = b.dataset.seg; desenharAbas(); desenharGrade(); }
+  else if (b.dataset.i !== undefined) abrir(+b.dataset.i);
+  else if (b.dataset.ir) { pag += +b.dataset.ir; desenharPalco(); }
+  else if (b.dataset.fechar !== undefined) dlg.close();
+});
+document.addEventListener('keydown', (ev) => {
+  if (!dlg.open || !atual) return;
+  const n = paginas(atual).length;
+  if (ev.key === 'ArrowRight' && pag < n - 1) { pag += 1; desenharPalco(); }
+  if (ev.key === 'ArrowLeft' && pag > 0) { pag -= 1; desenharPalco(); }
+});
+
+document.getElementById('avatar').src = I['logo-dark'];
+document.getElementById('total').textContent = P.length;
+const unicos = [...new Set(P.flatMap((p) => p.conferir.filter((c) => /^Produto:|Confirmar com produto|pedir captura|Pedir/i.test(c))))];
+document.getElementById('pendencias').innerHTML = unicos.map((c) => `<li>${esc(c)}</li>`).join('');
+desenharDestaques(); desenharAbas(); desenharGrade();
+</script>
+</body>
+</html>
