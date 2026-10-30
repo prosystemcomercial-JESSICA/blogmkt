@@ -39,7 +39,7 @@ A Jessica pediu: "No 5 coloque alguem de suporte, com fone e sorrindo atendendo 
 - Verificado: página 5 vista em tamanho real, sem celular nem texto legível na foto; gerador sem estouro. Autor e licença "Free" lidos na página da foto; os termos completos da licença do Pexels não foram lidos.
 
 ## Pendente
-- Jessica: aprovar o carrossel e dizer se o número de WhatsApp do suporte entra na peça.
+- Carrossel fechado na v3. A Jessica decidiu que o número de WhatsApp não entra: "nao precisa, a ultima alteração e a foto mesmo". Falta só a publicação no Instagram.
 - Jessica: a pasta `banco imagens/mockups-prosystem/` aparece apagada no `git status`, fora desta tarefa, e não entrou neste commit. `outputs/criativos/depoimentos/gerar.js` e os carrosséis de funções usam esses arquivos, então regenerar essas peças pode quebrar.
 - **Editorial de novembro e posts do Google: não feitos.** Só foi lida a pesquisa `docs/contexto/pesquisas/2026-10-30-temas-farmacia-padaria.md`.
 
