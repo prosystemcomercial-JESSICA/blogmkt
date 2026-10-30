@@ -13,8 +13,8 @@ Pesquisa feita em 30/10/2026 para orientar o conteúdo (blog e redes) da ProSyst
 
 **Antes de tudo: três correções para o que já temos**
 
-1. **O artigo de SNCR do blog ficou desatualizado ontem.** O texto em `blog/_gerador/artigos/a02_sncr.py` diz que a transição acaba em 30/10. A Anvisa [prorrogou para 3 de março de 2027](https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2026/20a-reuniao-ordinaria-publica-da-anvisa-periodo-de-transicao-para-emissao-de-receitas-eletronicas-no-sncr-e-prorrogado) em 29/10/2026. Os artigos ainda não foram publicados, então vale corrigir antes.
-2. **O artigo antigo de Reforma Tributária está errado hoje.** O arquivo `blog/reforma-tributaria-2026-farmacia-padaria-nfce.html` diz que nota sem IBS/CBS é rejeitada desde janeiro de 2026. A rejeição [ficou sem data](https://notagateway.com.br/blog/rejeicao-de-nf-e-e-nfc-e-sem-ibs-e-cbs-e-adiada-e-fica-sem-nova-data/), e o Simples Nacional [já tem data: 1º/01/2027](https://www.bmalaw.com.br/conteudo/direito-tributario/reforma-tributaria/reforma-tributaria-cronograma-para-emissao-de-documentos-fiscais-eletronicos/pdf).
+1. **O artigo de SNCR do blog ficou desatualizado ontem.** O texto em `blog/_gerador/artigos/a02_sncr.py` diz que a transição acaba em 30/10. A Anvisa [prorrogou para 3 de março de 2027](https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2026/20a-reuniao-ordinaria-publica-da-anvisa-periodo-de-transicao-para-emissao-de-receitas-eletronicas-no-sncr-e-prorrogado) em 29/10/2026. **Esse artigo está no ar desde 06/10/2026** em [prosystemnet.com/blog/sncr-receita-eletronica-controlados-farmacia-2026](https://prosystemnet.com/blog/sncr-receita-eletronica-controlados-farmacia-2026/) e cita "30 de outubro" 8 vezes (conferido em 30/10/2026). Precisa corrigir no site também.
+2. **O artigo antigo de Reforma Tributária está errado hoje, mas não foi encontrado no site** (o endereço com esse nome dá 404 e a busca do site não o traz, em 30/10/2026). Não publicar sem corrigir. O arquivo `blog/reforma-tributaria-2026-farmacia-padaria-nfce.html` diz que nota sem IBS/CBS é rejeitada desde janeiro de 2026. A rejeição [ficou sem data](https://notagateway.com.br/blog/rejeicao-de-nf-e-e-nfc-e-sem-ibs-e-cbs-e-adiada-e-fica-sem-nova-data/), e o Simples Nacional [já tem data: 1º/01/2027](https://www.bmalaw.com.br/conteudo/direito-tributario/reforma-tributaria/reforma-tributaria-cronograma-para-emissao-de-documentos-fiscais-eletronicos/pdf).
 3. **Venda de remédio em supermercado não é mais projeto de lei.** Já é a [Lei 15.357/2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/L15357.htm), em vigor desde 23/03/2026.
 
 **Regras para quem for escrever a partir daqui**
@@ -177,7 +177,7 @@ Os demais temas (serviços clínicos, supermercados, CMED, grandes redes, PBM e 
 
 **Situação:** em vigor desde 23/03/2026.
 
-**Por que interessa ao dono:** é um concorrente novo, com fluxo alto e preço agressivo. Não encontrei dado de quantas lojas abriram nem de perda de venda para a farmácia independente.
+**Por que interessa ao dono:** é um concorrente novo, dentro de um lugar de muito movimento (inferência nossa). Não encontrei dado de quantas lojas abriram nem de perda de venda para a farmácia independente.
 
 **Como o ERP/PDV entra:** relatório de perda de venda, curva ABC e preço por região para saber onde competir. O artigo de perda de vendas já existe e pode ser citado.
 
@@ -236,7 +236,7 @@ Os demais temas (serviços clínicos, supermercados, CMED, grandes redes, PBM e 
 
 **Situação:** tendência, sem regra nova específica confirmada.
 
-**Por que interessa ao dono:** o lembrete de recompra por WhatsApp pode passar a ter custo, e robô não pode decidir dispensação.
+**Por que interessa ao dono:** o lembrete de recompra por WhatsApp pode passar a ter custo, e a decisão de dispensar segue com o farmacêutico, mesmo com automação no atendimento.
 
 **Como o ERP/PDV entra:** liga direto com o artigo de uso contínuo já escrito.
 
