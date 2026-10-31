@@ -150,3 +150,20 @@ Resolvido na atualização abaixo.
 
 **Pendente:** Jessica aprova o novo formato. Se aprovar, ele entra no caderno de marca (`tipos-de-posts.md`).
 
+## Atualização de 31/10/2026: Ano Novo aprovado e Natal refeito
+
+**Pedido:** "Ano novo esta aprovado (nao mexer mais) ja vou programar para postagem". "De Natal preciso mais bonito, com boa resolção da arvore, mais pontos de Luz. Os elementos sao para complementar o designe com as regras que ja temos, para que fique um designe profissional mais rico".
+
+**Feito:**
+- `ano-novo-v2` travada: `travada: true` em `pecas-dados.js` faz `gerar.js` não recriar o PNG. O arquivo ficou idêntico, conferido por md5.
+- `natal-v4`, tipo `natalRico` em `gerar.js`: árvore do Pariser Platz, foto de 8.384 px, losango da marca atrás, losangos nos cantos, degradê azul e luzes desfocadas discretas. Fotos e créditos em `outputs/criativos/nov-dez/fotos/`.
+
+**Verificado:** `natal-v4` visto em tamanho real; `conferir.js` e `gerar.js` sem erro. **Não verificado:** peça em celular.
+
+**Decisões:**
+- **Árvore isolada por edição:** céu subtraído por canal e silhueta em máscara, para tirar hotel, postes, pessoas e a faixa em alemão.
+- **Linha fora do Natal v4:** a árvore e o losango já bastam, e a linha competia com as luzes. Ela segue em encomendas.
+- **Losangos longe do logo e do texto,** como pede o caderno.
+
+**Pendente:** Jessica aprova `natal-v4`. Ela mesma programa o `ano-novo-v2`.
+

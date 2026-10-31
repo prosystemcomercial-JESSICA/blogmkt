@@ -39,7 +39,7 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Qua 16/12 | Os dois | `frase-escala-hoje-v2` | Frase de impacto | - |
 | Sex 18/12 | Padaria | `padaria-curva-abc-v1` | Estático com tela | `curva-abc` |
 | Seg 21/12 | Farmácia | `frase-farmacia-receita-v1` | Frase de impacto | - |
-| Sex 25/12 | Os dois | `natal-v3` | Foto com linha | - |
+| Sex 25/12 | Os dois | `natal-v4` | Foto com losango e linha | - |
 | Sex 01/01 | Os dois | `ano-novo-v2` | Foto com linha | - |
 | Seg 04/01 | Farmácia | `farmacia-cbs-v1` | Estático com tela | `precificacao` |
 | Qua 06/01 | Padaria | `padaria-dia-de-reis-v1` | Padaria com foto | - |
@@ -693,7 +693,7 @@ Marque quem atende no balcão.
 **Texto alternativo:** Frase em azul sobre fundo branco: foto de receita não é receita eletrônica.
 
 
-### Sex 25/12: natal-v3
+### Sex 25/12: natal-v4
 
 Tem quem passa a véspera de Natal atrás do balcão, atendendo a última receita ou entregando a última encomenda.
 
@@ -701,7 +701,7 @@ A vocês, que trabalham para o Natal dos outros dar certo, o nosso obrigado e um
 
 #feliznatal #farmacia #padaria
 
-**Texto alternativo:** Árvore de Natal coberta de luzes à noite, com uma linha branca enrolada nela como guirlanda, e o texto: Feliz Natal a quem trabalha para o Natal dos outros dar certo.
+**Texto alternativo:** Árvore de Natal com milhares de luzes sobre um losango azul, com uma linha branca como guirlanda, e o texto: Feliz Natal a quem trabalha para o Natal dos outros dar certo.
 
 **Conferir antes de publicar:**
 
