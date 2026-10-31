@@ -28,7 +28,7 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Seg 30/11 | Padaria | `padaria-13-salario-v1` | Foto com painel (o plano pedia estático com tela) | - |
 | Ter 01/12 | Farmácia | `frase-dezembro-vermelho-v2` | Frase de impacto | - |
 | Qua 02/12 | Farmácia | `farmacia-escala-5x2-v1` | Foto com painel | - |
-| Qui 03/12 | Farmácia | `farmacia-dezembro-laranja-v1` | Foto com painel | - |
+| Qui 03/12 | Farmácia | `farmacia-dezembro-laranja-v2` | Foto com painel | - |
 | Sex 04/12 | Padaria | `carrossel-padaria-sangria-v2` | Carrossel V2 | `sangria-bloqueio`, `sangria-aviso`, `sangria-registro` |
 | Seg 07/12 | Farmácia | `carrossel-farmacia-popular-v2` | Carrossel V2 | `receitas-scanner` |
 | Ter 08/12 | Os dois | `depoimento-samuel-v2.png` | Depoimento | - |
@@ -479,7 +479,7 @@ Refaça a escala agora, olhando os dias e os horários de maior movimento. Conve
 - "Ponto mais apertado" é inferência nossa, sem posição de Abrafarma ou Febrafar.
 
 
-### Qui 03/12: farmacia-dezembro-laranja-v1
+### Qui 03/12: farmacia-dezembro-laranja-v2
 
 Protetor solar na farmácia: o Dezembro Laranja, campanha da Sociedade Brasileira de Dermatologia contra o câncer de pele, começa junto com o verão.
 
@@ -491,12 +491,12 @@ Fale com um especialista pelo link da bio.
 
 #dezembrolaranja #protetorsolar #gestaodefarmacia #sistemaparafarmacia
 
-**Texto alternativo:** Mulher passando protetor solar no rosto ao ar livre, com o texto: Dezembro Laranja começou, vai faltar protetor solar?
+**Texto alternativo:** Mão com frasco de protetor solar sobre uma perna com pontos de creme, na areia da praia, com o texto: Dezembro Laranja começou, vai faltar protetor solar?
 
 **Conferir antes de publicar:**
 
 - Data de saúde: a peça fala de estoque, sem orientar uso nem fator de proteção.
-- Conferir a foto em tamanho real: não pode aparecer marca no frasco.
+- Foto do Pexels, sem marca aparente no frasco.
 
 
 ### Sex 04/12: carrossel-padaria-sangria-v2

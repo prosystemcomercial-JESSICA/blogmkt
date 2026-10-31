@@ -167,3 +167,15 @@ Resolvido na atualização abaixo.
 
 **Pendente:** Jessica aprova `natal-v4`. Ela mesma programa o `ano-novo-v2`.
 
+## Atualização de 31/10/2026: foto do Dezembro Laranja
+
+**Pedido:** "preciso de foto de alguem passando protetor na praia, mais verao, mostrando mais o protetor".
+
+**Feito:** `farmacia-dezembro-laranja-v2`, com `fotos/protetor-praia.jpg` (Karola G, Pexels), painel menor e mais baixo, tom azul mais fraco sobre a foto e losangos nos cantos. O texto não mudou.
+
+**Verificado:** peça e rótulo do frasco vistos em tamanho real, sem marca nem texto legível; `conferir.js` e `gerar.js` sem erro; `ano-novo-v2` com o mesmo md5. Licença "Free" lida na página da foto; os termos completos do Pexels não foram lidos. **Não verificado:** peça em celular.
+
+**Decisões:**
+- **Foto de areia e frasco, sem o corpo inteiro,** para o protetor ser o assunto. As opções de biquíni ficaram de fora por não combinarem com uma marca de sistema.
+- **Pele clara e sem rosto:** a foto não mostra quem é a pessoa, e o banco não trouxe opção melhor com traços brasileiros e produto visível.
+

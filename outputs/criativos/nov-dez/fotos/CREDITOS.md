@@ -14,5 +14,6 @@ Wikimedia Commons. Licença lida nos dados de cada arquivo em 31/10/2026.
 - `protetor-rosto.jpg`: Bill Branson (photographer), Public domain, https://commons.wikimedia.org/wiki/File:Woman_applying_sunscreen.jpg
 - `arvore-natal-berlim.jpg`: Leonhard Lenz, CC0, https://commons.wikimedia.org/wiki/File:Christmas_tree_Pariser_Platz_at_night_2022-12-09_01.jpg (árvore isolada do céu, do prédio e das pessoas)
 - `luzes-desfocadas.jpg`: thr3 eyes thr3eyes, CC0, https://commons.wikimedia.org/wiki/File:Christmas_Lights_Bokeh_Effect_(Unsplash).jpg
+- `protetor-praia.jpg`: Karola G, licença Pexels, https://www.pexels.com/photo/a-woman-holding-a-blue-plastic-bottle-while-putting-a-lotion-on-her-leg-5202456/
 
 Os recortes `prateleiras-desfocadas`, `farmaceutica-recorte` e `paes-prateleira-sem-etiqueta` têm os créditos em `outputs/criativos/modelos/carrossel/fotos/CREDITOS.md`.

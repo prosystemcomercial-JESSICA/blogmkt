@@ -377,13 +377,13 @@ const P = [
   alts: ['Frase em azul sobre fundo branco: antibiótico sem receita? No balcão, a resposta é não.'],
   conferir: ['Saiu no domingo porque 18/11 a 21/11 já têm post ou feriado.', 'A norma é a RDC 471/2021, alterada pela RDC 973/2025: li resumos, não o texto oficial.', 'Sem ferramenta na peça.'] },
 
-{ data: 'Qui 03/12', seg: 'Farmácia', id: 'farmacia-dezembro-laranja-v1', tipo: 'fotoPainel', tema: 'azul', formato: 'Foto com painel', nova: true, foto: 'protetor-rosto', posicao: '50% 20%', ajuste: 'transform-origin:50% 0;transform:translateY(-90px) scale(1.12)', painelTopo: 670,
-  titulo: 'Dezembro Laranja começou. <b>Vai faltar protetor solar?</b>', fs: 72, faixa: 'Ruptura no verão é venda perdida.', pilula: 'Leia a legenda',
+{ data: 'Qui 03/12', seg: 'Farmácia', id: 'farmacia-dezembro-laranja-v2', tipo: 'fotoPainel', tema: 'azul', formato: 'Foto com painel', nova: true, foto: 'protetor-praia', posicao: '50% 100%', painelTopo: 880, tomFraco: true, losangos: true,
+  titulo: 'Dezembro Laranja começou. <b>Vai faltar protetor solar?</b>', fs: 54, faixa: 'Ruptura no verão é venda perdida.', pilula: 'Leia a legenda',
   kw: 'protetor solar na farmácia',
   cap: `Protetor solar na farmácia: o Dezembro Laranja, campanha da Sociedade Brasileira de Dermatologia contra o câncer de pele, começa junto com o verão.\n\nÉ quando o cliente mais procura, e o verão só termina em março de 2027. Prateleira vazia nessa hora é venda perdida, e o cliente deixa de levar o que precisa.\n\nNo plano Plus do Prosystem, o painel de indicadores mostra a ruptura de estoque.\n\n${CTA}`,
   tags: '#dezembrolaranja #protetorsolar #gestaodefarmacia #sistemaparafarmacia',
-  alts: ['Mulher passando protetor solar no rosto ao ar livre, com o texto: Dezembro Laranja começou, vai faltar protetor solar?'],
-  conferir: ['Data de saúde: a peça fala de estoque, sem orientar uso nem fator de proteção.', 'Conferir a foto em tamanho real: não pode aparecer marca no frasco.'] },
+  alts: ['Mão com frasco de protetor solar sobre uma perna com pontos de creme, na areia da praia, com o texto: Dezembro Laranja começou, vai faltar protetor solar?'],
+  conferir: ['Data de saúde: a peça fala de estoque, sem orientar uso nem fator de proteção.', 'Foto do Pexels, sem marca aparente no frasco.'] },
 
 { data: 'Qua 09/12', seg: 'Padaria', id: 'padaria-dia-da-culinaria-v2', tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', nova: true, semAno: true, foto: 'maos-massa', pilula: 'Feliz Dia do Profissional da Culinária', fs: 88,
   titulo: 'Por trás de cada fornada, <b>tem quem chegou antes do sol.</b>',
