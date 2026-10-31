@@ -179,3 +179,10 @@ Resolvido na atualização abaixo.
 - **Foto de areia e frasco, sem o corpo inteiro,** para o protetor ser o assunto. As opções de biquíni ficaram de fora por não combinarem com uma marca de sistema.
 - **Pele clara e sem rosto:** a foto não mostra quem é a pessoa, e o banco não trouxe opção melhor com traços brasileiros e produto visível.
 
+## Atualização de 31/10/2026: Dezembro Laranja aprovado
+
+**Pedido:** "ficou perfeito, pode colocar como aprovado".
+
+**Feito:** decisão "Aprovado" marcada no post de 03/12 do documento de aprovação e `travada: true` em `farmacia-dezembro-laranja-v2`, em `outputs/criativos/nov-dez/pecas-dados.js`. O arquivo da peça não mudou.
+
+**Verificado:** o documento confirmou a opção "Aprovado" nessa linha; `conferir.js` sem erro nos 46 posts.

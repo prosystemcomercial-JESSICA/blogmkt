@@ -377,7 +377,7 @@ const P = [
   alts: ['Frase em azul sobre fundo branco: antibiótico sem receita? No balcão, a resposta é não.'],
   conferir: ['Saiu no domingo porque 18/11 a 21/11 já têm post ou feriado.', 'A norma é a RDC 471/2021, alterada pela RDC 973/2025: li resumos, não o texto oficial.', 'Sem ferramenta na peça.'] },
 
-{ data: 'Qui 03/12', seg: 'Farmácia', id: 'farmacia-dezembro-laranja-v2', tipo: 'fotoPainel', tema: 'azul', formato: 'Foto com painel', nova: true, foto: 'protetor-praia', posicao: '50% 100%', painelTopo: 880, tomFraco: true, losangos: true,
+{ data: 'Qui 03/12', seg: 'Farmácia', id: 'farmacia-dezembro-laranja-v2', travada: true, tipo: 'fotoPainel', tema: 'azul', formato: 'Foto com painel', nova: true, foto: 'protetor-praia', posicao: '50% 100%', painelTopo: 880, tomFraco: true, losangos: true,
   titulo: 'Dezembro Laranja começou. <b>Vai faltar protetor solar?</b>', fs: 54, faixa: 'Ruptura no verão é venda perdida.', pilula: 'Leia a legenda',
   kw: 'protetor solar na farmácia',
   cap: `Protetor solar na farmácia: o Dezembro Laranja, campanha da Sociedade Brasileira de Dermatologia contra o câncer de pele, começa junto com o verão.\n\nÉ quando o cliente mais procura, e o verão só termina em março de 2027. Prateleira vazia nessa hora é venda perdida, e o cliente deixa de levar o que precisa.\n\nNo plano Plus do Prosystem, o painel de indicadores mostra a ruptura de estoque.\n\n${CTA}`,
