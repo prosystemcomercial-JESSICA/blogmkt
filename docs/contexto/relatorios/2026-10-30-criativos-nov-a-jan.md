@@ -119,6 +119,15 @@ Ler as decisões do documento de aprovação dos criativos com `read` no Claude 
 **Verificado:** nenhum "24 horas" sobrou nesses arquivos do `blog/`. Leitura do site em 31/10/2026: plugin 1.2.1 com o texto em 6 templates, `_psb_cta` nos posts 3623 e 3631, e "24 horas" presente em /blog/ e nos dois artigos abertos. A página `lpv2_obrigado` (3546), fora do blog, também tem "24 horas".
 
 **Pendente:**
-- **Jessica:** autorizar a publicação no site. Passos: backup do plugin em `~/backups-claude`, envio de `prosystem-blog.php` e `templates/*.php`, troca do `_psb_cta` dos posts 3623 e 3631, limpeza de cache e conferência com curl.
-- **Jessica:** decidir se a página `lpv2_obrigado` também muda.
+Resolvido na atualização abaixo.
+
+## Atualização de 31/10/2026: publicação no site
+
+**Pedido:** "autorizo publicar no site aprovado".
+
+**Feito no site:** plugin 1.2.2 no ar e `_psb_cta` dos posts 3623 e 3631 trocado. Backups em `~/backups-claude`: `prosystem-blog-1.2.1-20261031.tgz` e `psb_cta-<ID>-20261031.txt`.
+
+**Verificado:** curl sem cache em /blog/ e nos artigos do SNCR e de boas práticas: HTTP 200, nenhum "24 horas" e o texto novo presente. Nenhum arquivo do plugin no servidor tem mais "24 horas".
+
+**Decisão:** a página `lpv2_obrigado` não mudou. A frase é "O atendimento costuma acontecer em até 24 horas úteis", que é prazo de retorno da demonstração, não horário de suporte. Trocar mudaria o sentido.
 
