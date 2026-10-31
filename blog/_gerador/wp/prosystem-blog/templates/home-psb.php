@@ -120,7 +120,7 @@ get_header();
 		<section class="faixa">
 			<div>
 				<b>Quer ver isso funcionando na sua loja?</b>
-				<p>Sistema de gestão para farmácias, drogarias e padarias, com PDV, emissão fiscal, estoque e financeiro no mesmo lugar e suporte 24 horas.</p>
+				<p>Sistema de gestão para farmácias, drogarias e padarias, com PDV, emissão fiscal, estoque e financeiro no mesmo lugar e suporte das 7h às 22h.</p>
 			</div>
 			<a class="botao" href="<?php echo esc_url( $psb_whats ); ?>" target="_blank" rel="noopener"><?php echo psb_icone_whats(); // phpcs:ignore ?>Falar com um especialista</a>
 		</section>

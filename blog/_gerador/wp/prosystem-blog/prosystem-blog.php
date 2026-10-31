@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ProSystem Blog
  * Description: Visual editorial do blog ProSystem (artigos e página do blog) feito por código, sem depender dos modelos do Elementor. Desative para voltar aos modelos do Elementor.
- * Version: 1.2.1
+ * Version: 1.2.2
  * Author: ProSystem Sistemas
  * Text Domain: prosystem-blog
  *
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'PSB_VERSAO', '1.2.1' );
+define( 'PSB_VERSAO', '1.2.2' );
 define( 'PSB_URL', plugin_dir_url( __FILE__ ) );
 define( 'PSB_DIR', plugin_dir_path( __FILE__ ) );
 define( 'PSB_WHATS', '5527997521370' );

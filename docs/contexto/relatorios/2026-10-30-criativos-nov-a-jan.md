@@ -110,3 +110,15 @@ Ler as decisões do documento de aprovação dos criativos com `read` no Claude 
 - **Jessica:** "24 horas" aparece no rodapé de `blog/_gerador/base.py`, em 15 arquivos HTML do blog e nos templates do plugin WordPress. O caderno proíbe esse texto. Nada foi alterado, porque corrigir mexe no site em produção.
 - **Jessica:** aprovar artigo e Google. Depois disso, o artigo é agendado no WordPress, e o post do Google é feito no Perfil da Empresa.
 
+## Atualização de 31/10/2026: suporte das 7h às 22h
+
+**Pedido:** "suporte das 7 as 22", em resposta à pergunta sobre o texto "suporte 24 horas" no blog.
+
+**Feito:** o texto trocado no repositório: `blog/_gerador/base.py`, `previa_home.py`, artigos, `wp/import/manifest.json`, HTML do blog e templates do plugin, que passa para a versão 1.2.2. **O site não mudou:** a publicação foi barrada pela proteção de produção.
+
+**Verificado:** nenhum "24 horas" sobrou nesses arquivos do `blog/`. Leitura do site em 31/10/2026: plugin 1.2.1 com o texto em 6 templates, `_psb_cta` nos posts 3623 e 3631, e "24 horas" presente em /blog/ e nos dois artigos abertos. A página `lpv2_obrigado` (3546), fora do blog, também tem "24 horas".
+
+**Pendente:**
+- **Jessica:** autorizar a publicação no site. Passos: backup do plugin em `~/backups-claude`, envio de `prosystem-blog.php` e `templates/*.php`, troca do `_psb_cta` dos posts 3623 e 3631, limpeza de cache e conferência com curl.
+- **Jessica:** decidir se a página `lpv2_obrigado` também muda.
+

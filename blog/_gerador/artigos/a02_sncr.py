@@ -19,7 +19,7 @@ ARTIGO = {
     "keywords": "SNCR, Sistema Nacional de Controle de Receituários, receita eletrônica controlados, notificação de receita eletrônica, receita de controle especial eletrônica, Cadastro Anvisa, SNCR-Farmácia, SNGPC",
     "whats": WHATS,
     "barra": "Tirar dúvida no WhatsApp",
-    "cta_lateral": ("Controlados e SNGPC sem dor de cabeça", "PDV e escrituração do SNGPC no mesmo sistema, com suporte 24 horas.", "Falar com a ProSystem"),
+    "cta_lateral": ("Controlados e SNGPC sem dor de cabeça", "PDV e escrituração do SNGPC no mesmo sistema, com suporte das 7h às 22h.", "Falar com a ProSystem"),
     "resumo": [
         "Desde <strong>30 de setembro</strong>, o SNCR permite consultar e registrar receitas eletrônicas de controlados, inclusive as notificações amarela (A) e azul (B).",
         "<strong>Receita em papel continua válida.</strong> A emissão eletrônica é uma opção do prescritor, não uma obrigação.",

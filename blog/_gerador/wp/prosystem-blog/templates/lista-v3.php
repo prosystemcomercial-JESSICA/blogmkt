@@ -177,7 +177,7 @@ get_header();
 					<div class="caixa caixa--marca">
 						<img class="logo" src="<?php echo esc_url( PSB_URL . 'assets/logo-h.png' ); ?>" alt="ProSystem Sistemas" width="182" height="26">
 						<h3>Sistema de gestão para farmácias, drogarias e padarias</h3>
-						<p>PDV, emissão fiscal, estoque e financeiro no mesmo lugar, com suporte 24 horas.</p>
+						<p>PDV, emissão fiscal, estoque e financeiro no mesmo lugar, com suporte das 7h às 22h.</p>
 						<a class="btn btn--whats btn--bloco" href="<?php echo esc_url( $psb_whats ); ?>" target="_blank" rel="noopener"><?php echo psb_icone_whats(); // phpcs:ignore ?>Falar com um especialista</a>
 					</div>
 					<div class="caixa">

@@ -19,7 +19,7 @@ ARTIGO = {
     "keywords": "Manual de Boas Práticas padaria, POP padaria, RDC 216, procedimento operacional padronizado, vigilância sanitária padaria, boas práticas de fabricação padaria",
     "whats": WHATS,
     "barra": "Falar com a ProSystem",
-    "cta_lateral": ("Padaria organizada do balcão ao estoque", "PDV, estoque e financeiro no mesmo sistema, com suporte 24 horas.", "Falar com a ProSystem"),
+    "cta_lateral": ("Padaria organizada do balcão ao estoque", "PDV, estoque e financeiro no mesmo sistema, com suporte das 7h às 22h.", "Falar com a ProSystem"),
     "resumo": [
         "A <strong>RDC 216/2004</strong> da Anvisa exige que padarias tenham <strong>Manual de Boas Práticas</strong> e <strong>Procedimentos Operacionais Padronizados (POPs)</strong>.",
         "São <strong>quatro POPs obrigatórios</strong>: higienização, controle de pragas, higienização do reservatório de água e higiene e saúde dos manipuladores.",

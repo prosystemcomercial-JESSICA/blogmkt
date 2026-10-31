@@ -17,7 +17,7 @@ while ( have_posts() ) :
 	$psb_cat       = psb_categoria( $psb_pid );
 	$psb_whats     = psb_link_whats( psb_texto_whats( $psb_pid ) );
 	$psb_cta       = json_decode( (string) get_post_meta( $psb_pid, '_psb_cta', true ), true );
-	$psb_cta       = is_array( $psb_cta ) && count( $psb_cta ) === 3 ? $psb_cta : array( 'Fale com a ProSystem', 'PDV, emissão fiscal, estoque e financeiro no mesmo sistema, com suporte 24 horas.', 'Falar com a ProSystem' );
+	$psb_cta       = is_array( $psb_cta ) && count( $psb_cta ) === 3 ? $psb_cta : array( 'Fale com a ProSystem', 'PDV, emissão fiscal, estoque e financeiro no mesmo sistema, com suporte das 7h às 22h.', 'Falar com a ProSystem' );
 	$psb_blog_url  = get_permalink( (int) get_option( 'page_for_posts' ) );
 	$psb_blog_url  = $psb_blog_url ? $psb_blog_url : home_url( '/blog/' );
 	?>

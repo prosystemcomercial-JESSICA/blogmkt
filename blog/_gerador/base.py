@@ -210,7 +210,7 @@ def render(a):
     <div>
       <img src="assets/logo/logo-h.png" alt="ProSystem Sistemas" width="182" height="26">
       <b>Sistema de gestão para farmácias, drogarias e padarias</b>
-      <p>PDV, emissão fiscal, estoque e financeiro no mesmo lugar, com suporte 24 horas.</p>
+      <p>PDV, emissão fiscal, estoque e financeiro no mesmo lugar, com suporte das 7h às 22h.</p>
     </div>
     <a class="botao botao--whats" href="{wa('Olá! Vim pelo blog da ProSystem e quero conhecer o sistema.')}" target="_blank" rel="noopener">{ICON_WHATS}Conhecer o sistema</a>
   </div>
