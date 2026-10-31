@@ -19,24 +19,24 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Ter 17/11 | Farmácia | `farmacia-novembro-azul-v1` | Foto com painel | - |
 | Qua 18/11 | Farmácia | `farmacia-quem-liberou-desconto-v1` | Estático com tela | `whats-desconto` |
 | Qui 19/11 | Padaria | `padaria-escala-6x1-v1` | Foto com painel | - |
-| Sáb 21/11 | Farmácia | `farmacia-dia-da-dengue-v2` | Foto com painel | - |
-| Dom 22/11 | Farmácia | `frase-antimicrobianos-v1` | Frase de impacto | - |
+| Sáb 21/11 | Farmácia | `farmacia-dia-da-dengue-v3` | Foto com painel | - |
+| Dom 22/11 | Farmácia | `frase-antimicrobianos-v2` | Frase de impacto | - |
 | Seg 23/11 | Farmácia | `carrossel-farmacia-black-friday-v2` | Carrossel V3 | `analise-descontos` |
 | Ter 24/11 | Farmácia | `carrossel-farmacia-depoimento-v3-<página>.png` | Carrossel V3 de depoimento | - |
 | Qua 25/11 | Padaria | `padaria-encomendas-natal-v1` | Padaria com foto | - |
 | Sex 27/11 | Farmácia | `frase-farmacia-lucro-v1` | Frase de impacto | - |
 | Seg 30/11 | Padaria | `padaria-13-salario-v1` | Foto com painel (o plano pedia estático com tela) | - |
-| Ter 01/12 | Farmácia | `frase-dezembro-vermelho-v1` | Frase de impacto | - |
+| Ter 01/12 | Farmácia | `frase-dezembro-vermelho-v2` | Frase de impacto | - |
 | Qua 02/12 | Farmácia | `farmacia-escala-5x2-v1` | Foto com painel | - |
 | Qui 03/12 | Farmácia | `farmacia-dezembro-laranja-v1` | Foto com painel | - |
 | Sex 04/12 | Padaria | `carrossel-padaria-sangria-v2` | Carrossel V2 | `sangria-bloqueio`, `sangria-aviso`, `sangria-registro` |
 | Seg 07/12 | Farmácia | `carrossel-farmacia-popular-v2` | Carrossel V2 | `receitas-scanner` |
 | Ter 08/12 | Os dois | `depoimento-samuel-v2.png` | Depoimento | - |
-| Qua 09/12 | Padaria | `padaria-dia-da-culinaria-v1` | Padaria com foto | - |
+| Qua 09/12 | Padaria | `padaria-dia-da-culinaria-v2` | Padaria com foto | - |
 | Qui 10/12 | Padaria | `padaria-combos-v2` | Estático com tela | `combo-totais` |
 | Sex 11/12 | Farmácia | `carrossel-farmacia-uso-continuo-v3` | Carrossel V2 | `uso-continuo-alerta`, `uso-continuo-proxima-compra`, `uso-continuo-relatorio` |
 | Seg 14/12 | Padaria | `padaria-fechamento-caixa-v1` | Estático com tela | `fechamento-caixa` |
-| Qua 16/12 | Os dois | `frase-escala-hoje-v1` | Frase de impacto | - |
+| Qua 16/12 | Os dois | `frase-escala-hoje-v2` | Frase de impacto | - |
 | Sex 18/12 | Padaria | `padaria-curva-abc-v1` | Estático com tela | `curva-abc` |
 | Seg 21/12 | Farmácia | `frase-farmacia-receita-v1` | Frase de impacto | - |
 | Sex 25/12 | Os dois | `natal-v2` | Foto com painel | - |
@@ -53,7 +53,7 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Ter 19/01 | Farmácia | `carrossel-farmacia-atencao-farmaceutica-v2` | Carrossel V2 | `atencao-anamnese` |
 | Qua 20/01 | Farmácia | `frase-dia-do-farmaceutico-v1` | Frase de impacto | - |
 | Sex 22/01 | Padaria | `padaria-entregas-v1` | Estático com tela | `painel-entregas` |
-| Dom 31/01 | Farmácia | `frase-janeiro-roxo-v1` | Frase de impacto | - |
+| Dom 31/01 | Farmácia | `frase-janeiro-roxo-v2` | Frase de impacto | - |
 
 ## Mockups que a Jessica precisa fazer
 
@@ -298,7 +298,7 @@ Refaça a escala agora, olhando os dias e os horários em que a loja mais vende.
 - Não é consultoria trabalhista: manter a frase do contador e do sindicato.
 
 
-### Sáb 21/11: farmacia-dia-da-dengue-v2
+### Sáb 21/11: farmacia-dia-da-dengue-v3
 
 Sistema para farmácia ajuda a comprar certo: hoje é o Dia Nacional de Combate à Dengue, e a pergunta do dono é se o repelente vai faltar na prateleira.
 
@@ -310,7 +310,7 @@ Fale com um especialista pelo link da bio.
 
 #combateadengue #gestaodefarmacia #comprasnafarmacia #sistemaparafarmacia
 
-**Texto alternativo:** Mosquito pousado na pele, com o texto: hoje é o Dia de Combate à Dengue, o repelente está na sua prateleira?
+**Texto alternativo:** Mosquito pousado na pele, com o texto: Dia de Combate à Dengue, o repelente está na sua prateleira?
 
 **Conferir antes de publicar:**
 
@@ -319,13 +319,13 @@ Fale com um especialista pelo link da bio.
 - O nome legal é Dia Nacional de Combate à Dengue; a arte encurta para caber.
 
 
-### Dom 22/11: frase-antimicrobianos-v1
+### Dom 22/11: frase-antimicrobianos-v2
 
 Antibiótico na farmácia só sai com receita, que fica retida e é escriturada.
 
 Esta é a Semana Mundial de Conscientização sobre o Uso de Antimicrobianos, de 18 a 24 de novembro. Usar antibiótico sem indicação ajuda a criar resistência, e quem atende no balcão faz parte desse cuidado.
 
-Mostre este post para quem atende na sua farmácia.
+Marque o farmacêutico da sua loja.
 
 #antibioticos #usoresponsavel #farmacia #farmaceutico
 
@@ -392,7 +392,7 @@ Encomendas de Natal na padaria: quando tudo fica no caderno, um erro aparece só
 
 E fique atento para 2027: no Simples, o faturamento passa a seguir o documento fiscal, inclusive em venda para entrega futura. Confirme com seu contador.
 
-Salve este post e mostre para quem atende no balcão.
+O passo a passo completo está no blog, no link da bio. Salve este post e mostre para quem atende no balcão.
 
 #padaria #encomendasdenatal #gestaodepadaria #panificacao
 
@@ -443,13 +443,13 @@ Fale com um especialista pelo link da bio.
 - Publicar só em 30/11: o título diz "hoje".
 
 
-### Ter 01/12: frase-dezembro-vermelho-v1
+### Ter 01/12: frase-dezembro-vermelho-v2
 
 Hoje é o Dia Mundial de Luta contra a Aids, e começa o Dezembro Vermelho.
 
 Na farmácia, cuidado também é falar baixo, atender com discrição e tratar cada compra com respeito. Quem entra na sua loja precisa se sentir seguro para pedir o que precisa.
 
-Mostre este post para quem atende na sua farmácia.
+Compartilhe com a sua equipe.
 
 #dezembrovermelho #farmacia #atendimento
 
@@ -562,7 +562,7 @@ Está escolhendo o sistema da sua loja para 2027? Pergunte quem atende no doming
 **Texto alternativo:** Depoimento de Samuel Ferreira, cliente ProSystem, sobre o suporte de sábado e domingo, com avaliação de cinco estrelas no Google.
 
 
-### Qua 09/12: padaria-dia-da-culinaria-v1
+### Qua 09/12: padaria-dia-da-culinaria-v2
 
 Hoje é o Dia do Profissional da Culinária, e na padaria esse dia tem cheiro de fornada.
 
@@ -572,7 +572,7 @@ Marque um padeiro ou confeiteiro que merece ler isso.
 
 #diadoprofissionaldaculinaria #padeiro #confeiteiro #padaria
 
-**Texto alternativo:** Mãos segurando uma bola de massa, com o texto: hoje o dia é de quem faz o pão sair bom todo dia. Feliz Dia do Profissional da Culinária.
+**Texto alternativo:** Mãos segurando uma bola de massa, com o texto: por trás de cada fornada, tem quem chegou antes do sol. Feliz Dia do Profissional da Culinária.
 
 **Conferir antes de publicar:**
 
@@ -642,17 +642,17 @@ Entre em 2027 com o caixa conferido todo dia. Fale com um especialista pelo link
 - Tela de 2021, sem linha de Pix: pedir captura atual à equipe de produto.
 
 
-### Qua 16/12: frase-escala-hoje-v1
+### Qua 16/12: frase-escala-hoje-v2
 
 Fim da escala 6x1: a partir de hoje, valem duas folgas por semana e 42 horas, sem reduzir salário.
 
 E não para aqui. Em dezembro de 2027 vem a segunda etapa, com 40 horas.
 
-Se a sua escala ainda não mudou, converse hoje com seu contador e seu sindicato. Marque quem cuida da escala na sua loja.
+Se a escala da sua loja ainda não mudou, converse hoje com seu contador e seu sindicato. Marque quem cuida da escala na sua loja.
 
 #fimdaescala6x1 #escala5x2 #gestaodeloja #prosystem
 
-**Texto alternativo:** Frase em azul sobre fundo branco: hoje a escala mudou, a sua já mudou?
+**Texto alternativo:** Frase em azul sobre fundo branco: hoje acaba a escala 6x1, sua loja está pronta?
 
 **Conferir antes de publicar:**
 
@@ -967,17 +967,17 @@ Fale com um especialista pelo link da bio.
 - A tela diz "Ticket médio". Se ficar legível no mockup, é a palavra difícil da peça.
 
 
-### Dom 31/01: frase-janeiro-roxo-v1
+### Dom 31/01: frase-janeiro-roxo-v2
 
 Hoje é o Dia Nacional de Combate e Prevenção da Hanseníase, e o Janeiro Roxo lembra que informação ajuda a acabar com o preconceito.
 
 A hanseníase tem cura, e o tratamento é gratuito pelo SUS. Na dúvida, oriente o cliente a procurar a unidade básica de saúde.
 
-Mostre este post para quem atende na sua farmácia.
+Compartilhe esta informação.
 
 #janeiroroxo #hanseniase #farmacia
 
-**Texto alternativo:** Frase em azul sobre fundo branco: Janeiro Roxo, informação também passa pelo balcão.
+**Texto alternativo:** Frase em azul sobre fundo branco: Janeiro Roxo, hanseníase tem cura e tratamento pelo SUS.
 
 **Conferir antes de publicar:**
 

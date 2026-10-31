@@ -39,5 +39,19 @@ for (const p of P) {
   if (tela) marca('tela ' + tela, p.id);
 }
 for (const [k, v] of Object.entries(capas)) if (v.length > 1) erros.push(`capa repetida, ${k}: ${v.join(', ')}`);
+// Frase de arte nenhuma repete a de outro post, pedido da Jessica em 31/10/2026. Chamadas padrão ficam de fora.
+const limpa = (x) => x.replace(/<[^>]+>/g, '');
+const CHAMADAS = new Set(['Leia a legenda', 'ProSystem Sistemas']);
+const frases = {};
+const inicios = {};
+for (const p of P) {
+  if (p.pagina) continue;
+  const textos = [p.titulo, p.apoio, p.faixa, p.pilula, p.capa && p.capa.titulo, p.capa && p.capa.apoio, p.sol && p.sol.titulo, p.sol && p.sol.apoio, p.fim && p.fim.titulo, ...(p.itens || []).flatMap((i) => [i.titulo, i.apoio])];
+  for (const x of textos) if (x && !CHAMADAS.has(limpa(x))) (frases[limpa(x)] = frases[limpa(x)] || new Set()).add(p.id);
+  const tit = limpa(p.titulo || (p.capa && p.capa.titulo) || '');
+  if (tit) { const k = tit.split(' ').slice(0, 4).join(' '); (inicios[k] = inicios[k] || []).push(p.id); }
+}
+for (const [k, v] of Object.entries(frases)) if (v.size > 1) erros.push(`frase repetida, "${k}": ${[...v].join(', ')}`);
+for (const [k, v] of Object.entries(inicios)) if (v.length > 1) erros.push(`título com o mesmo início, "${k}": ${v.join(', ')}`);
 console.log(erros.length ? erros.join('\n') : 'tudo certo');
 console.log('peças conferidas:', P.filter((x) => !x.pagina).length + PRONTAS.length);

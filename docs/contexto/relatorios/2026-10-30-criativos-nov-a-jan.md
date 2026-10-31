@@ -88,3 +88,25 @@ Ler as decisões do documento de aprovação dos criativos com `read` no Claude 
 
 **Pendente:** Jessica preenche as decisões no documento de aprovação e faz 20 mockups para 18 posts.
 
+## Atualização de 31/10/2026: encomendas no blog e no Google, e frases
+
+**Pedido:** "Qua 25/11: Encomenda de Natal no caderno esse tem que sair antes, nao no dia do natal, vamos puvlicar no mes 11 e colocar no blog e no google tambem". Depois, no documento de aprovação: "frase esta confusa" (escala, 16/12) e "frase repetida" (Janeiro Roxo).
+
+**Feito:**
+- O post já estava em 25/11, um mês antes do Natal, então a data ficou. Instagram, blog e Google saem nesse dia.
+- Artigo em `blog/_gerador/artigos/a16_encomendas_natal.py`, com `blog/encomendas-de-natal-padaria-5-combinados.html`. Prévia: https://claude.ai/artifact/32QFeDNVC7WkTXMMZxGA3D. **Não foi publicado no site.**
+- Texto do Google no planejamento e no documento de aprovação. Legenda de 25/11 agora aponta para o blog.
+- Frases novas: `frase-escala-hoje-v2`, `frase-dezembro-vermelho-v2`, `frase-antimicrobianos-v2`, `frase-janeiro-roxo-v2`, `padaria-dia-da-culinaria-v2` e `farmacia-dia-da-dengue-v3`.
+- `conferir.js` agora acusa frase de arte repetida e título com o mesmo início.
+
+**Verificado:** `conferir.js` e `gerar.js` sem erro nos 46 posts; título do artigo com 56 caracteres, descrição com 140 e texto do Google com 186; artigo renderizado sem rolagem lateral em 1100 px; regra do Simples lida na notícia da Receita Federal. **Não verificado:** artigo em celular; os 5 combinados não têm fonte externa, são orientação nossa, e a página diz isso.
+
+**Decisões:**
+- **Sem tela no artigo,** porque "Encomenda" no Prosystem é produto em falta, não pedido de padaria.
+- **Mantida a nota da Jessica na tabela do documento,** porque o texto é dela.
+- **Prazos e sinais de outras padarias ficaram fora,** porque a fonte aberta não trazia esses dados de padaria.
+
+**Pendente:**
+- **Jessica:** "24 horas" aparece no rodapé de `blog/_gerador/base.py`, em 15 arquivos HTML do blog e nos templates do plugin WordPress. O caderno proíbe esse texto. Nada foi alterado, porque corrigir mexe no site em produção.
+- **Jessica:** aprovar artigo e Google. Depois disso, o artigo é agendado no WordPress, e o post do Google é feito no Perfil da Empresa.
+
