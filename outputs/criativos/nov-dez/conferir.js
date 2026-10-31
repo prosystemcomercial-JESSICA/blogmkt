@@ -26,5 +26,18 @@ for (const p of P) {
   if (p.seg === 'Farmácia' && /padaria|pão\b/i.test(p.cap || '')) erros.push(`${p.id}: farmácia falando de padaria`);
   if (p.seg === 'Padaria' && p.tema && p.tema !== 'lar') erros.push(`${p.id}: padaria fora do laranja`);
 }
+// Capa nenhuma repete foto ou tela de outro post. Pedido da Jessica em 31/10/2026.
+const capas = {};
+const marca = (k, nome) => { (capas[k] = capas[k] || []).push(nome); };
+marca('foto teclado-azul', 'suporte-v3');
+marca('foto cartelas-azuis', 'depoimento-v3');
+for (const p of P) {
+  if (p.pagina) continue;
+  const foto = p.capa ? p.capa.foto : p.foto;
+  const tela = p.capa ? p.capa.tela : p.tela;
+  if (foto) marca('foto ' + foto, p.id);
+  if (tela) marca('tela ' + tela, p.id);
+}
+for (const [k, v] of Object.entries(capas)) if (v.length > 1) erros.push(`capa repetida, ${k}: ${v.join(', ')}`);
 console.log(erros.length ? erros.join('\n') : 'tudo certo');
 console.log('peças conferidas:', P.filter((x) => !x.pagina).length + PRONTAS.length);

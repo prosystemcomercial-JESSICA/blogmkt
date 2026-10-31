@@ -2,7 +2,7 @@
 
 Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e gere de novo. As imagens ficam em `pecas/`, exceto as de outras produções, que têm o caminho indicado.
 
-**Pausa de 23/12 a 02/01: nenhuma publicação.** **Nada aqui foi publicado.** Enquanto houver mockup em falta, a peça mostra a tela em um cartão provisório e não deve ser publicada.
+**Pausa de 23/12 a 02/01: nenhuma publicação, exceto Natal (25/12) e Ano Novo (01/01).** **Nada aqui foi publicado.** Enquanto houver mockup em falta, a peça mostra a tela em um cartão provisório e não deve ser publicada.
 
 ## Calendário
 
@@ -14,12 +14,12 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Ter 10/11 | Farmácia | `depoimento-krisley-v2.png` | Depoimento | - |
 | Qua 11/11 | Padaria | `carrossel-padaria-trigo-v1` | Carrossel V3 | `precificacao` |
 | Sex 13/11 | Farmácia | `canetas-emagrecedoras-v2` | Estático com tela | `dias-sem-giro` |
-| Sáb 14/11 | Farmácia | `farmacia-dia-do-diabetes-v1` | Estático com tela | `uso-continuo-alerta` |
+| Sáb 14/11 | Farmácia | `farmacia-dia-do-diabetes-v2` | Estático com tela | `uso-continuo-relatorio` |
 | Seg 16/11 | Padaria | `padaria-pix-caixa-v1` | Estático com tela | `whats-fechamento` |
 | Qua 18/11 | Farmácia | `farmacia-quem-liberou-desconto-v1` | Estático com tela | `whats-desconto` |
 | Qui 19/11 | Padaria | `padaria-escala-6x1-v1` | Foto com painel | - |
-| Sáb 21/11 | Farmácia | `farmacia-dia-da-dengue-v1` | Foto com painel | - |
-| Seg 23/11 | Farmácia | `carrossel-farmacia-black-friday-v1` | Carrossel V3 | `analise-descontos` |
+| Sáb 21/11 | Farmácia | `farmacia-dia-da-dengue-v2` | Foto com painel | - |
+| Seg 23/11 | Farmácia | `carrossel-farmacia-black-friday-v2` | Carrossel V3 | `analise-descontos` |
 | Ter 24/11 | Farmácia | `carrossel-farmacia-depoimento-v3-<página>.png` | Carrossel V3 de depoimento | - |
 | Qua 25/11 | Padaria | `padaria-encomendas-natal-v1` | Padaria com foto | - |
 | Sex 27/11 | Farmácia | `frase-farmacia-lucro-v1` | Frase de impacto | - |
@@ -27,24 +27,25 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Ter 01/12 | Farmácia | `frase-dezembro-vermelho-v1` | Frase de impacto | - |
 | Qua 02/12 | Farmácia | `farmacia-escala-5x2-v1` | Foto com painel | - |
 | Sex 04/12 | Padaria | `carrossel-padaria-sangria-v2` | Carrossel V2 | `sangria-bloqueio`, `sangria-aviso`, `sangria-registro` |
-| Seg 07/12 | Farmácia | `carrossel-farmacia-popular-v1` | Carrossel V2 | `receitas-scanner` |
+| Seg 07/12 | Farmácia | `carrossel-farmacia-popular-v2` | Carrossel V2 | `receitas-scanner` |
 | Ter 08/12 | Os dois | `depoimento-samuel-v2.png` | Depoimento | - |
-| Qua 09/12 | Padaria | `padaria-combos-v1` | Estático com tela | `combo-totais` |
-| Sex 11/12 | Farmácia | `carrossel-farmacia-uso-continuo-v2` | Carrossel V2 | `uso-continuo-alerta`, `uso-continuo-proxima-compra`, `uso-continuo-relatorio` |
+| Qua 09/12 | Padaria | `padaria-combos-v2` | Estático com tela | `combo-totais` |
+| Sex 11/12 | Farmácia | `carrossel-farmacia-uso-continuo-v3` | Carrossel V2 | `uso-continuo-alerta`, `uso-continuo-proxima-compra`, `uso-continuo-relatorio` |
 | Seg 14/12 | Padaria | `padaria-fechamento-caixa-v1` | Estático com tela | `fechamento-caixa` |
 | Qua 16/12 | Os dois | `frase-escala-hoje-v1` | Frase de impacto | - |
 | Sex 18/12 | Padaria | `padaria-curva-abc-v1` | Estático com tela | `curva-abc` |
 | Seg 21/12 | Farmácia | `frase-farmacia-receita-v1` | Frase de impacto | - |
-| Ter 22/12 | Os dois | `frase-natal-v1` | Frase de impacto | - |
+| Sex 25/12 | Os dois | `natal-v2` | Foto com painel | - |
+| Sex 01/01 | Os dois | `ano-novo-v1` | Foto com painel | - |
 | Seg 04/01 | Farmácia | `farmacia-cbs-v1` | Estático com tela | `precificacao` |
 | Qua 06/01 | Padaria | `padaria-simples-nota-v1` | Foto com painel | - |
 | Sex 08/01 | Farmácia | `farmacia-mercado-2027-v1` | Estático com tela | `painel-vendas` |
 | Seg 11/01 | Padaria | `frase-padaria-sobra-v1` | Frase de impacto | - |
 | Ter 12/01 | Os dois | `depoimento-rodrigo-v2.png` | Depoimento | - |
 | Qua 13/01 | Os dois | `frase-janeiro-branco-v1` | Frase de impacto | - |
-| Sex 15/01 | Farmácia | `carrossel-farmacia-sncr-v1` | Carrossel V3 | - |
-| Seg 18/01 | Padaria | `carrossel-padaria-lucro-por-produto-v1` | Carrossel V3 | `rentabilidade-relatorio` |
-| Ter 19/01 | Farmácia | `carrossel-farmacia-atencao-farmaceutica-v1` | Carrossel V2 | `atencao-anamnese` |
+| Sex 15/01 | Farmácia | `carrossel-farmacia-sncr-v2` | Carrossel V3 | - |
+| Seg 18/01 | Padaria | `carrossel-padaria-lucro-por-produto-v2` | Carrossel V3 | `rentabilidade-relatorio` |
+| Ter 19/01 | Farmácia | `carrossel-farmacia-atencao-farmaceutica-v2` | Carrossel V2 | `atencao-anamnese` |
 | Qua 20/01 | Farmácia | `frase-dia-do-farmaceutico-v1` | Frase de impacto | - |
 | Sex 22/01 | Padaria | `padaria-entregas-v1` | Estático com tela | `painel-entregas` |
 
@@ -65,9 +66,9 @@ Só em notebook ou desktop, em balcão do segmento ou escritório. Salve em `moc
 | `sangria-registro` | Sex 04/12 |
 | `receitas-scanner` | Seg 07/12 |
 | `combo-totais` | Qua 09/12 |
-| `uso-continuo-alerta` | Sex 11/12, Sáb 14/11 |
+| `uso-continuo-alerta` | Sex 11/12 |
 | `uso-continuo-proxima-compra` | Sex 11/12 |
-| `uso-continuo-relatorio` | Sex 11/12 |
+| `uso-continuo-relatorio` | Sex 11/12, Sáb 14/11 |
 | `fechamento-caixa` | Seg 14/12 |
 | `curva-abc` | Sex 18/12 |
 | `painel-vendas` | Sex 08/01 |
@@ -196,24 +197,24 @@ Fale com um especialista pelo link da bio.
 - A queda de preço é expectativa, não fato: manter "deve".
 
 
-### Sáb 14/11: farmacia-dia-do-diabetes-v1
+### Sáb 14/11: farmacia-dia-do-diabetes-v2
 
 Uso contínuo na farmácia: hoje, Dia Mundial do Diabetes, vale olhar para quem depende do remédio todo mês.
 
 Quem usa medicamento de uso contínuo nem sempre avisa quando vai comprar de novo. Lembrar da reposição é um cuidado com o cliente, e é também o que mantém esse cliente na sua loja em 2027.
 
-No Prosystem, o balcão recebe um alerta quando o remédio do cliente está para acabar. Contato com o cliente, só com a autorização dele.
+No Prosystem, um relatório mostra quais clientes de uso contínuo devem comprar em cada período. Contato com o cliente, só com a autorização dele.
 
 O tratamento é sempre com o médico. Fale com um especialista pelo link da bio.
 
 #diamundialdodiabetes #usocontinuo #farmacia #sistemaparafarmacia
 
-**Texto alternativo:** Alerta do Prosystem avisando que a medicação do cliente está para acabar, com o título: hoje é o Dia Mundial do Diabetes, quem lembra seu cliente de repor o remédio?
+**Texto alternativo:** Lista de relatórios do Prosystem com clientes de produtos de uso contínuo em destaque, com o título: hoje é o Dia Mundial do Diabetes, quem lembra seu cliente de repor o remédio?
 
 **Conferir antes de publicar:**
 
 - Data de saúde: a peça fala de lembrar a reposição, sem orientar tratamento.
-- O remédio que aparece na tela é genérico e não é para diabetes: conferir se incomoda no mockup.
+- A tela é a lista de relatórios, sem nome de remédio.
 
 
 ### Seg 16/11: padaria-pix-caixa-v1
@@ -273,7 +274,7 @@ Refaça a escala agora, olhando os dias e os horários em que a loja mais vende.
 - Não é consultoria trabalhista: manter a frase do contador e do sindicato.
 
 
-### Sáb 21/11: farmacia-dia-da-dengue-v1
+### Sáb 21/11: farmacia-dia-da-dengue-v2
 
 Sistema para farmácia ajuda a comprar certo: hoje é o Dia Nacional de Combate à Dengue, e a pergunta do dono é se o repelente vai faltar na prateleira.
 
@@ -285,7 +286,7 @@ Fale com um especialista pelo link da bio.
 
 #combateadengue #gestaodefarmacia #comprasnafarmacia #sistemaparafarmacia
 
-**Texto alternativo:** Prateleiras de farmácia desfocadas, com o texto: hoje é o Dia de Combate à Dengue, o repelente está na sua prateleira?
+**Texto alternativo:** Mosquito pousado na pele, com o texto: hoje é o Dia de Combate à Dengue, o repelente está na sua prateleira?
 
 **Conferir antes de publicar:**
 
@@ -294,7 +295,7 @@ Fale com um especialista pelo link da bio.
 - O nome legal é Dia Nacional de Combate à Dengue; a arte encurta para caber.
 
 
-### Seg 23/11: carrossel-farmacia-black-friday-v1
+### Seg 23/11: carrossel-farmacia-black-friday-v2
 
 Desconto na farmácia na Black Friday: dá para saber se ele se paga antes de dar.
 
@@ -308,7 +309,7 @@ Fale com um especialista pelo link da bio.
 
 **Texto alternativo:**
 
-1. Cartelas de comprimidos em cartão inclinado, com o título: Black Friday, esse desconto se pagou?
+1. Comprimidos em embalagens abertas, em cartão inclinado, com o título: Black Friday, esse desconto se pagou?
 2. Cartelas de comprimidos e o texto: vendeu muito, sobrou quanto?
 3. Calculadora em losango e o texto: olhe o lucro, não só a venda.
 4. Prateleiras de farmácia desfocadas e o texto: faça a conta antes de sexta.
@@ -460,7 +461,7 @@ Quer esse controle na sua padaria? Fale com um especialista pelo link da bio.
 - A tela de registro tem "centro de custo" e um lançamento de gasolina: conferir no mockup.
 
 
-### Seg 07/12: carrossel-farmacia-popular-v1
+### Seg 07/12: carrossel-farmacia-popular-v2
 
 Farmácia Popular: novas regras, multa maior e fiscalização automática. Sua farmácia está preparada para 2027?
 
@@ -474,7 +475,7 @@ Fale com um especialista pelo link da bio.
 
 **Texto alternativo:**
 
-1. Tela do scanner de receitas do Prosystem sobre prateleiras de farmácia, com o título: Farmácia Popular, multa de até 20%.
+1. Tela do scanner de receitas do Prosystem sobre uma medição de pressão, com o título: Farmácia Popular, multa de até 20%.
 2. Prateleiras de farmácia e o texto: a fiscalização ficou automática.
 3. Calculadora e o texto: a multa cresceu, de 10% para 20%.
 4. Mãos digitando em um teclado e o texto: guarde por 5 anos, de preferência em meio digital.
@@ -498,7 +499,7 @@ Está escolhendo o sistema da sua loja para 2027? Pergunte quem atende no doming
 **Texto alternativo:** Depoimento de Samuel Ferreira, cliente ProSystem, sobre o suporte de sábado e domingo, com avaliação de cinco estrelas no Google.
 
 
-### Qua 09/12: padaria-combos-v1
+### Qua 09/12: padaria-combos-v2
 
 Sistema para padaria com PDV: promoção feita de cabeça no caixa vira erro e desconto indevido, ainda mais com kit de Natal.
 
@@ -508,7 +509,7 @@ Fale com um especialista pelo link da bio.
 
 #sistemaparapadaria #padaria #kitsdenatal #gestaodepadaria
 
-**Texto alternativo:** Pães em uma grade e os totais da venda com desconto no Prosystem, com o título: leve 3, pague 2 sem calculadora no caixa.
+**Texto alternativo:** Croissants em uma bandeja e os totais da venda com desconto no Prosystem, com o título: leve 3, pague 2 sem calculadora no caixa.
 
 **Conferir antes de publicar:**
 
@@ -517,7 +518,7 @@ Fale com um especialista pelo link da bio.
 - Os totais mostram 16,66% de desconto, de um kit com o segundo item a 50%. Não é um leve 3, pague 2 exato: a captura nova resolve.
 
 
-### Sex 11/12: carrossel-farmacia-uso-continuo-v2
+### Sex 11/12: carrossel-farmacia-uso-continuo-v3
 
 Cliente de uso contínuo na farmácia: quem lembra primeiro, vende, em 2027 também.
 
@@ -612,7 +613,7 @@ Marque quem atende no balcão.
 **Texto alternativo:** Frase em azul sobre fundo branco: foto de receita não é receita eletrônica.
 
 
-### Ter 22/12: frase-natal-v1
+### Sex 25/12: natal-v2
 
 Tem quem passa a véspera de Natal atrás do balcão, atendendo a última receita ou entregando a última encomenda.
 
@@ -620,7 +621,28 @@ A vocês, que trabalham para o Natal dos outros dar certo, o nosso obrigado e um
 
 #feliznatal #farmacia #padaria
 
-**Texto alternativo:** Frase em azul sobre fundo branco: Feliz Natal a quem trabalha para o Natal dos outros dar certo. Assinado ProSystem Sistemas.
+**Texto alternativo:** Árvore de Natal coberta de luzes à noite, com o texto: Feliz Natal a quem trabalha para o Natal dos outros dar certo.
+
+**Conferir antes de publicar:**
+
+- Exceção à pausa de 23/12 a 02/01, a pedido da Jessica: deixar agendado.
+
+
+### Sex 01/01: ano-novo-v1
+
+Feliz 2027!
+
+A quem abre a loja cedo, confere o caixa no fim do dia e conhece cada cliente pelo nome: que este ano traga movimento no balcão e tranquilidade no caixa.
+
+Obrigado por mais um ano com a gente.
+
+#feliz2027 #anonovo #farmacia #padaria
+
+**Texto alternativo:** Fogos de artifício no céu noturno, com o texto: Feliz 2027 a quem abre a loja todo dia.
+
+**Conferir antes de publicar:**
+
+- Exceção à pausa de 23/12 a 02/01, a pedido da Jessica: deixar agendado.
 
 
 ### Seg 04/01: farmacia-cbs-v1
@@ -729,7 +751,7 @@ Mostre este post para quem cuida da equipe na sua loja.
 - Data de saúde: a Jessica deve dizer se combina com a marca.
 
 
-### Sex 15/01: carrossel-farmacia-sncr-v1
+### Sex 15/01: carrossel-farmacia-sncr-v2
 
 SNCR da Anvisa: a transição vai até 3 de março de 2027, e faltam 47 dias.
 
@@ -743,9 +765,9 @@ Salve este post e mostre para quem atende no balcão. Para conhecer nosso sistem
 
 **Texto alternativo:**
 
-1. Farmacêutica em cartão inclinado, com o título: SNCR, faltam 47 dias, sua equipe já tem acesso?
+1. Mãos em um teclado, em cartão inclinado, com o título: SNCR, faltam 47 dias, sua equipe já tem acesso?
 2. Farmacêutica na prateleira e o texto: quem opera precisa de perfil.
-3. Mãos em um teclado, em losango, e o texto: uma etapa a mais no balcão.
+3. Cartelas de comprimidos, em losango, e o texto: uma etapa a mais no balcão.
 4. Prateleiras de farmácia desfocadas e o texto: o SNGPC continua.
 5. Mãos digitando e o texto: treine a equipe antes de 3 de março.
 6. Fotos de farmácia e a pergunta: sua farmácia está pronta para 3 de março?
@@ -757,7 +779,7 @@ Salve este post e mostre para quem atende no balcão. Para conhecer nosso sistem
 - Sem ferramenta: não foi confirmada integração do SNCR com o Prosystem.
 
 
-### Seg 18/01: carrossel-padaria-lucro-por-produto-v1
+### Seg 18/01: carrossel-padaria-lucro-por-produto-v2
 
 Margem de lucro na padaria: passado o fim de ano, qual produto vendeu muito e não deixou lucro?
 
@@ -771,7 +793,7 @@ Quer ver na sua padaria? Fale com um especialista pelo link da bio.
 
 **Texto alternativo:**
 
-1. Pães em uma grade, com o título: qual produto vende muito e não deixa lucro?
+1. Pãezinhos em uma cesta, com o título: qual produto vende muito e não deixa lucro?
 2. Carrinho de pães e o texto: sai todo dia, sobra quanto?
 3. Forno em losango e o texto: o custo mudou no ano.
 4. Padeiro sovando massa e o texto: comece pelos que mais vendem.
@@ -784,7 +806,7 @@ Quer ver na sua padaria? Fale com um especialista pelo link da bio.
 - A tela é só a lista de relatórios. Pedir captura do resultado, com produtos de padaria.
 
 
-### Ter 19/01: carrossel-farmacia-atencao-farmaceutica-v1
+### Ter 19/01: carrossel-farmacia-atencao-farmaceutica-v2
 
 Atenção farmacêutica sem registro se perde: o farmacêutico atende, orienta, e nada fica guardado para o próximo atendimento.
 
@@ -798,7 +820,7 @@ Fale com um especialista pelo link da bio.
 
 **Texto alternativo:**
 
-1. Farmacêutica pegando um produto na prateleira, com o título: seu farmacêutico atende, onde fica o histórico?
+1. Profissional de jaleco medindo a pressão de um homem, com o título: seu farmacêutico atende, onde fica o histórico?
 2. Prateleiras de farmácia e o texto: atendeu e ficou na memória?
 3. Mãos digitando e o texto: registre cada atendimento.
 4. Ficha de anamnese do Prosystem e o texto: a ficha fica pronta.

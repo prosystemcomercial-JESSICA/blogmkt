@@ -47,3 +47,25 @@
 ## Próxima sessão
 
 Ler as decisões do documento de aprovação dos criativos com `read` no Claude Docs, aplicar mudanças em `pecas-dados.js` e rodar `gerar.js` e `conferir.js`. Quando os mockups chegarem em `mockups/`, gerar de novo e conferir em tamanho real. Skills: `relatorio-final`.
+
+## Atualização de 31/10/2026: capas sem repetição, Natal e Ano Novo
+
+**Pedido:** "as imagens escolhidas para as capas nao podem repetir de um post para o outro, e faça o de natal e o de Ano novo tambem! Quais sao as demais datas que precisamos de posts até Janeiro?"
+
+**Feito:**
+- 9 posts ganharam capa nova, com versão nova no nome: Black Friday v2, Farmácia Popular v2, uso contínuo v3, Dia do Diabetes v2 (tela de relatório), Dengue v2, SNCR v2, lucro por produto v2, atenção farmacêutica v2 e combos v2. As versões anteriores ficam em `pecas/`, só como referência.
+- `natal-v2` (foto com painel) em 25/12 e `ano-novo-v1` em 01/01. Agora são 40 posts.
+- 8 fotos novas da Wikimedia Commons, com créditos em `outputs/criativos/nov-dez/fotos/CREDITOS.md`.
+- `conferir.js` agora acusa foto ou tela repetida em capa.
+- Atualizados o documento de aprovação, o planejamento e a galeria.
+
+**Verificado:** `conferir.js` sem erro nos 40 posts, com a checagem das capas; `gerar.js` sem estouro; capas novas vistas em folha de contato. Licenças lidas nos dados da Commons, sem abrir os termos de cada página. **Não verificado:** capas novas em tamanho real; datas de saúde sugeridas em página oficial de 2026 ou 2027.
+
+**Decisões:**
+- **Natal e Ano Novo saem como exceção à pausa,** porque ela pediu os dois depois de suspender as publicações. Só no Instagram e agendados. Blog e Google seguem em pausa.
+- **Foto do pill box recortada** para tirar os dias da semana em inglês.
+- **Banco local de padaria não usado:** tem origem de licença desconhecida e fotos de estabelecimentos reais.
+- **Páginas internas podem repetir foto:** o pedido foi sobre capas.
+
+**Pendente:** Jessica decide quais datas extras entram; as opções foram entregues na resposta da sessão. Nenhuma foi produzida.
+
