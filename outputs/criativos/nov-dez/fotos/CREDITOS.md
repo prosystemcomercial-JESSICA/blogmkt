@@ -10,5 +10,7 @@ Wikimedia Commons. Licença lida nos dados de cada arquivo em 31/10/2026.
 - `paezinhos-cesta.jpg`: Daniel Sone (Photographer), Public domain, https://commons.wikimedia.org/wiki/File:Basket_of_rolls.jpg
 - `arvore-natal-luzes.jpg`: http://www.photos-public-domain.com/, CC0, https://commons.wikimedia.org/wiki/File:White_Christmas_Tree_Lights_at_Night.jpg
 - `fogos-ano-novo.jpg`: Ondrejk, Public domain, https://commons.wikimedia.org/wiki/File:Bratislava_New_Year_Fireworks.jpg
+- `panetone-mesa.jpg`: <a href="//commons.wikimedia.org/w/index.php?title=User:Muago&amp;action=edit&amp;redlink=1" class="new" title="User:Mua, CC0, https://commons.wikimedia.org/wiki/File:Panet%C3%B3n_2.jpg
+- `protetor-rosto.jpg`: Bill Branson (photographer), Public domain, https://commons.wikimedia.org/wiki/File:Woman_applying_sunscreen.jpg
 
 Os recortes `prateleiras-desfocadas`, `farmaceutica-recorte` e `paes-prateleira-sem-etiqueta` têm os créditos em `outputs/criativos/modelos/carrossel/fotos/CREDITOS.md`.

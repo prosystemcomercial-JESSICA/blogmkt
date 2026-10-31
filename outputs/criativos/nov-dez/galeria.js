@@ -1,4 +1,4 @@
-// Monta a página de revisão das peças de 04/11/2026 a 22/01/2027, com as imagens embutidas e a legenda de cada post.
+// Monta a página de revisão das peças de 04/11/2026 a 31/01/2027, com as imagens embutidas e a legenda de cada post.
 // Uso: node outputs/criativos/nov-dez/galeria.js <arquivo de saída .html>
 const fs = require('fs');
 const path = require('path');
@@ -79,8 +79,8 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;margin:10px 0;max-w
 details ul{margin:12px 0 0;padding-left:18px;color:var(--apoio);max-width:72ch}
 </style>
 <main class="fl">
-<h1>Criativos de <b>04/11 a 22/01</b></h1>
-<p class="lead">São ${posts.length} posts na ordem do planejamento, com pausa de 23/12 a 02/01. ${nFalta} mostram a tela em um cartão provisório e aguardam o seu mockup. Nada foi publicado.</p>
+<h1>Criativos de <b>04/11 a 31/01</b></h1>
+<p class="lead">São ${posts.length} posts na ordem do planejamento, com pausa de 23/12 a 02/01, exceto Natal e Ano Novo. ${nFalta} mostram a tela em um cartão provisório e aguardam o seu mockup. Nada foi publicado.</p>
 <div class="filtros" id="filtros">
 <button type="button" data-f="" aria-pressed="true">Todos</button><button type="button" data-f="Farmácia" aria-pressed="false">Farmácia</button><button type="button" data-f="Padaria" aria-pressed="false">Padaria</button><button type="button" data-f="falta" aria-pressed="false">Aguardam mockup</button>
 </div>

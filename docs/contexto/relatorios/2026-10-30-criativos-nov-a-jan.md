@@ -67,5 +67,24 @@ Ler as decisões do documento de aprovação dos criativos com `read` no Claude 
 - **Banco local de padaria não usado:** tem origem de licença desconhecida e fotos de estabelecimentos reais.
 - **Páginas internas podem repetir foto:** o pedido foi sobre capas.
 
-**Pendente:** Jessica decide quais datas extras entram; as opções foram entregues na resposta da sessão. Nenhuma foi produzida.
+**Pendente:** resolvido na atualização abaixo.
+
+## Atualização de 31/10/2026: seis datas extras
+
+**Pedido:** "PRODUZA TUDO", em resposta à lista de datas que ainda não estavam no plano. Entendi como as 6 datas da lista, inclusive as que eu recomendei deixar de fora. Blog e Google não entraram.
+
+**Feito:** agora são 46 posts, até 31/01/2027.
+- Novos: \`farmacia-novembro-azul-v1\` (17/11), \`frase-antimicrobianos-v1\` (22/11), \`farmacia-dezembro-laranja-v1\` (03/12), \`padaria-dia-da-culinaria-v1\` (09/12), \`padaria-dia-de-reis-v1\` (06/01) e \`frase-janeiro-roxo-v1\` (31/01).
+- Mudança de data: combos para 10/12 e Simples para 07/01, para liberar 09/12 e 06/01.
+- Duas fotos novas da Wikimedia Commons, com créditos em \`outputs/criativos/nov-dez/fotos/CREDITOS.md\`.
+- Atualizados o documento de aprovação, o planejamento e a galeria.
+
+**Verificado:** \`conferir.js\` e \`gerar.js\` sem erro nos 46 posts. Novembro Azul e Dezembro Laranja vistos em tamanho real; os outros 4 só em folha de contato. **Não verificado:** dia 17/11 do Novembro Azul; Dia do Profissional da Culinária em fonte oficial, com uma só fonte do setor; texto oficial da RDC 471/2021; página do Ministério sobre hanseníase. Essas pesquisas usaram só o resumo da busca.
+
+**Decisões:**
+- **Antimicrobianos no domingo, 22/11,** porque os outros dias da semana têm post ou feriado.
+- **Novembro Azul com a foto \`farmaceutico-conferindo\`,** que o caderno deixou para avaliação, porque a foto de pressão tinha texto legível em inglês e ficou ruim desfocada.
+- **Novembro Azul não diz "hoje",** porque o dia 17/11 não foi confirmado.
+
+**Pendente:** Jessica preenche as decisões no documento de aprovação e faz 20 mockups para 18 posts.
 

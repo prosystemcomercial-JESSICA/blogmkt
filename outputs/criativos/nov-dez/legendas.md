@@ -1,4 +1,4 @@
-# Peças de 04/11/2026 a 22/01/2027: legendas, texto alternativo e o que falta
+# Peças de 04/11/2026 a 31/01/2027: legendas, texto alternativo e o que falta
 
 Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e gere de novo. As imagens ficam em `pecas/`, exceto as de outras produções, que têm o caminho indicado.
 
@@ -16,9 +16,11 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Sex 13/11 | Farmácia | `canetas-emagrecedoras-v2` | Estático com tela | `dias-sem-giro` |
 | Sáb 14/11 | Farmácia | `farmacia-dia-do-diabetes-v2` | Estático com tela | `uso-continuo-relatorio` |
 | Seg 16/11 | Padaria | `padaria-pix-caixa-v1` | Estático com tela | `whats-fechamento` |
+| Ter 17/11 | Farmácia | `farmacia-novembro-azul-v1` | Foto com painel | - |
 | Qua 18/11 | Farmácia | `farmacia-quem-liberou-desconto-v1` | Estático com tela | `whats-desconto` |
 | Qui 19/11 | Padaria | `padaria-escala-6x1-v1` | Foto com painel | - |
 | Sáb 21/11 | Farmácia | `farmacia-dia-da-dengue-v2` | Foto com painel | - |
+| Dom 22/11 | Farmácia | `frase-antimicrobianos-v1` | Frase de impacto | - |
 | Seg 23/11 | Farmácia | `carrossel-farmacia-black-friday-v2` | Carrossel V3 | `analise-descontos` |
 | Ter 24/11 | Farmácia | `carrossel-farmacia-depoimento-v3-<página>.png` | Carrossel V3 de depoimento | - |
 | Qua 25/11 | Padaria | `padaria-encomendas-natal-v1` | Padaria com foto | - |
@@ -26,10 +28,12 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Seg 30/11 | Padaria | `padaria-13-salario-v1` | Foto com painel (o plano pedia estático com tela) | - |
 | Ter 01/12 | Farmácia | `frase-dezembro-vermelho-v1` | Frase de impacto | - |
 | Qua 02/12 | Farmácia | `farmacia-escala-5x2-v1` | Foto com painel | - |
+| Qui 03/12 | Farmácia | `farmacia-dezembro-laranja-v1` | Foto com painel | - |
 | Sex 04/12 | Padaria | `carrossel-padaria-sangria-v2` | Carrossel V2 | `sangria-bloqueio`, `sangria-aviso`, `sangria-registro` |
 | Seg 07/12 | Farmácia | `carrossel-farmacia-popular-v2` | Carrossel V2 | `receitas-scanner` |
 | Ter 08/12 | Os dois | `depoimento-samuel-v2.png` | Depoimento | - |
-| Qua 09/12 | Padaria | `padaria-combos-v2` | Estático com tela | `combo-totais` |
+| Qua 09/12 | Padaria | `padaria-dia-da-culinaria-v1` | Padaria com foto | - |
+| Qui 10/12 | Padaria | `padaria-combos-v2` | Estático com tela | `combo-totais` |
 | Sex 11/12 | Farmácia | `carrossel-farmacia-uso-continuo-v3` | Carrossel V2 | `uso-continuo-alerta`, `uso-continuo-proxima-compra`, `uso-continuo-relatorio` |
 | Seg 14/12 | Padaria | `padaria-fechamento-caixa-v1` | Estático com tela | `fechamento-caixa` |
 | Qua 16/12 | Os dois | `frase-escala-hoje-v1` | Frase de impacto | - |
@@ -38,7 +42,8 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Sex 25/12 | Os dois | `natal-v2` | Foto com painel | - |
 | Sex 01/01 | Os dois | `ano-novo-v1` | Foto com painel | - |
 | Seg 04/01 | Farmácia | `farmacia-cbs-v1` | Estático com tela | `precificacao` |
-| Qua 06/01 | Padaria | `padaria-simples-nota-v1` | Foto com painel | - |
+| Qua 06/01 | Padaria | `padaria-dia-de-reis-v1` | Padaria com foto | - |
+| Qui 07/01 | Padaria | `padaria-simples-nota-v1` | Foto com painel | - |
 | Sex 08/01 | Farmácia | `farmacia-mercado-2027-v1` | Estático com tela | `painel-vendas` |
 | Seg 11/01 | Padaria | `frase-padaria-sobra-v1` | Frase de impacto | - |
 | Ter 12/01 | Os dois | `depoimento-rodrigo-v2.png` | Depoimento | - |
@@ -48,6 +53,7 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Ter 19/01 | Farmácia | `carrossel-farmacia-atencao-farmaceutica-v2` | Carrossel V2 | `atencao-anamnese` |
 | Qua 20/01 | Farmácia | `frase-dia-do-farmaceutico-v1` | Frase de impacto | - |
 | Sex 22/01 | Padaria | `padaria-entregas-v1` | Estático com tela | `painel-entregas` |
+| Dom 31/01 | Farmácia | `frase-janeiro-roxo-v1` | Frase de impacto | - |
 
 ## Mockups que a Jessica precisa fazer
 
@@ -65,7 +71,7 @@ Só em notebook ou desktop, em balcão do segmento ou escritório. Salve em `moc
 | `sangria-aviso` | Sex 04/12 |
 | `sangria-registro` | Sex 04/12 |
 | `receitas-scanner` | Seg 07/12 |
-| `combo-totais` | Qua 09/12 |
+| `combo-totais` | Qui 10/12 |
 | `uso-continuo-alerta` | Sex 11/12 |
 | `uso-continuo-proxima-compra` | Sex 11/12 |
 | `uso-continuo-relatorio` | Sex 11/12, Sáb 14/11 |
@@ -237,6 +243,24 @@ Quer ver na sua padaria? Fale com um especialista pelo link da bio.
 - Não prometer conciliação de Pix com o banco: ainda não confirmada.
 
 
+### Ter 17/11: farmacia-novembro-azul-v1
+
+Novembro Azul é o mês de falar da saúde do homem, e muitas vezes ele aparece primeiro na farmácia, não no consultório.
+
+A campanha começou com o câncer de próstata e hoje lembra também de glicemia e vacina em dia. No balcão, uma conversa simples pode ser o empurrão para marcar a consulta.
+
+Mostre este post para quem atende na sua farmácia.
+
+#novembroazul #saudedohomem #farmacia
+
+**Texto alternativo:** Farmacêutico de jaleco conferindo produtos entre as prateleiras, com o texto: Novembro Azul, quem lembra o homem de se cuidar?
+
+**Conferir antes de publicar:**
+
+- Data de saúde: a peça incentiva procurar o médico, sem orientar tratamento.
+- As fontes são reportagens que citam o Ministério da Saúde. Não confirmei o dia 17/11, por isso a peça não diz "hoje".
+
+
 ### Qua 18/11: farmacia-quem-liberou-desconto-v1
 
 Sistema para drogaria com controle de desconto: você fica sabendo quando alguém libera um desconto?
@@ -293,6 +317,25 @@ Fale com um especialista pelo link da bio.
 - Produto: a Sugestão de compras segue como na base?
 - O dia 21/11 é conta nossa: penúltimo sábado de novembro, conforme a Lei 12.235/2010.
 - O nome legal é Dia Nacional de Combate à Dengue; a arte encurta para caber.
+
+
+### Dom 22/11: frase-antimicrobianos-v1
+
+Antibiótico na farmácia só sai com receita, que fica retida e é escriturada.
+
+Esta é a Semana Mundial de Conscientização sobre o Uso de Antimicrobianos, de 18 a 24 de novembro. Usar antibiótico sem indicação ajuda a criar resistência, e quem atende no balcão faz parte desse cuidado.
+
+Mostre este post para quem atende na sua farmácia.
+
+#antibioticos #usoresponsavel #farmacia #farmaceutico
+
+**Texto alternativo:** Frase em azul sobre fundo branco: antibiótico sem receita? No balcão, a resposta é não.
+
+**Conferir antes de publicar:**
+
+- Saiu no domingo porque 18/11 a 21/11 já têm post ou feriado.
+- A norma é a RDC 471/2021, alterada pela RDC 973/2025: li resumos, não o texto oficial.
+- Sem ferramenta na peça.
 
 
 ### Seg 23/11: carrossel-farmacia-black-friday-v2
@@ -436,6 +479,26 @@ Refaça a escala agora, olhando os dias e os horários de maior movimento. Conve
 - "Ponto mais apertado" é inferência nossa, sem posição de Abrafarma ou Febrafar.
 
 
+### Qui 03/12: farmacia-dezembro-laranja-v1
+
+Protetor solar na farmácia: o Dezembro Laranja, campanha da Sociedade Brasileira de Dermatologia contra o câncer de pele, começa junto com o verão.
+
+É quando o cliente mais procura, e o verão só termina em março de 2027. Prateleira vazia nessa hora é venda perdida, e o cliente deixa de levar o que precisa.
+
+No plano Plus do Prosystem, o painel de indicadores mostra a ruptura de estoque.
+
+Fale com um especialista pelo link da bio.
+
+#dezembrolaranja #protetorsolar #gestaodefarmacia #sistemaparafarmacia
+
+**Texto alternativo:** Mulher passando protetor solar no rosto ao ar livre, com o texto: Dezembro Laranja começou, vai faltar protetor solar?
+
+**Conferir antes de publicar:**
+
+- Data de saúde: a peça fala de estoque, sem orientar uso nem fator de proteção.
+- Conferir a foto em tamanho real: não pode aparecer marca no frasco.
+
+
 ### Sex 04/12: carrossel-padaria-sangria-v2
 
 Sangria de caixa na padaria: com café da manhã cheio e fila no caixa, ela fica para depois até alguém lembrar. E dezembro é o mês de mais movimento antes de 2027.
@@ -499,7 +562,24 @@ Está escolhendo o sistema da sua loja para 2027? Pergunte quem atende no doming
 **Texto alternativo:** Depoimento de Samuel Ferreira, cliente ProSystem, sobre o suporte de sábado e domingo, com avaliação de cinco estrelas no Google.
 
 
-### Qua 09/12: padaria-combos-v2
+### Qua 09/12: padaria-dia-da-culinaria-v1
+
+Hoje é o Dia do Profissional da Culinária, e na padaria esse dia tem cheiro de fornada.
+
+A quem chega antes de o sol nascer, acerta a massa e faz o pão sair bom todo dia, o nosso obrigado.
+
+Marque um padeiro ou confeiteiro que merece ler isso.
+
+#diadoprofissionaldaculinaria #padeiro #confeiteiro #padaria
+
+**Texto alternativo:** Mãos segurando uma bola de massa, com o texto: hoje o dia é de quem faz o pão sair bom todo dia. Feliz Dia do Profissional da Culinária.
+
+**Conferir antes de publicar:**
+
+- A data vem de uma só fonte do setor, sem lei ou calendário oficial: confirmar antes de publicar.
+
+
+### Qui 10/12: padaria-combos-v2
 
 Sistema para padaria com PDV: promoção feita de cabeça no caixa vira erro e desconto indevido, ainda mais com kit de Natal.
 
@@ -665,7 +745,26 @@ Fale com um especialista pelo link da bio.
 - A tela cita ICMS_ST e é pequena e antiga: pedir captura nova.
 
 
-### Qua 06/01: padaria-simples-nota-v1
+### Qua 06/01: padaria-dia-de-reis-v1
+
+Panetone na padaria: hoje é Dia de Reis, a temporada acaba, e o que ficou na prateleira vira dinheiro parado.
+
+Vale olhar agora quanto sobrou e quanto foi vendido, para fazer a compra e a produção do próximo Natal com número na mão. É um bom jeito de começar 2027.
+
+No Prosystem, o relatório de dias sem giro mostra há quanto tempo cada produto não vende.
+
+Fale com um especialista pelo link da bio.
+
+#panetone #padaria #gestaodepadaria #sistemaparapadaria
+
+**Texto alternativo:** Panetone polvilhado com açúcar sobre um prato dourado, com o texto: Dia de Reis, a festa acabou, e o panetone que sobrou?
+
+**Conferir antes de publicar:**
+
+- Produto: o relatório de dias sem giro vale sem ajuste na padaria?
+
+
+### Qui 07/01: padaria-simples-nota-v1
 
 Nota fiscal da padaria no Simples em 2027: desde 1º de janeiro, os documentos seguem as regras novas de IBS e CBS.
 
@@ -866,3 +965,22 @@ Fale com um especialista pelo link da bio.
 - O painel é de plano Plus e foi recortado sem o nome "Drogaria Modelo".
 - A tela mostra tempo médio de entrega de 3h 19m, dado fictício que não ajuda a venda: pedir outra captura ou cobrir no mockup.
 - A tela diz "Ticket médio". Se ficar legível no mockup, é a palavra difícil da peça.
+
+
+### Dom 31/01: frase-janeiro-roxo-v1
+
+Hoje é o Dia Nacional de Combate e Prevenção da Hanseníase, e o Janeiro Roxo lembra que informação ajuda a acabar com o preconceito.
+
+A hanseníase tem cura, e o tratamento é gratuito pelo SUS. Na dúvida, oriente o cliente a procurar a unidade básica de saúde.
+
+Mostre este post para quem atende na sua farmácia.
+
+#janeiroroxo #hanseniase #farmacia
+
+**Texto alternativo:** Frase em azul sobre fundo branco: Janeiro Roxo, informação também passa pelo balcão.
+
+**Conferir antes de publicar:**
+
+- Data de saúde: a peça encaminha para a unidade de saúde, sem orientar tratamento.
+- Cura e gratuidade vêm de secretarias de saúde, sem abrir a página do Ministério.
+- O post amplia o calendário de 22/01 para 31/01.

@@ -1,4 +1,4 @@
-// Textos, legendas e SEO das peças de 04/11/2026 a 22/01/2027. A ordem do calendário vem da data.
+// Textos, legendas e SEO das peças de 04/11/2026 a 31/01/2027. A ordem do calendário vem da data.
 // Pautas com origem no feed simulado: docs/conteudo-prosystem/feed_modelo.html. Pautas novas: escritas nesta produção.
 const FOTO_PR = 'prateleiras-desfocadas';
 const FOTO_FA = 'farmaceutica-recorte';
@@ -161,7 +161,7 @@ const P = [
   alts: ['Tela do scanner de receitas do Prosystem sobre uma medição de pressão, com o título: Farmácia Popular, multa de até 20%.', 'Prateleiras de farmácia e o texto: a fiscalização ficou automática.', 'Calculadora e o texto: a multa cresceu, de 10% para 20%.', 'Mãos digitando em um teclado e o texto: guarde por 5 anos, de preferência em meio digital.', 'Tela do scanner de receitas e o texto: receita guardada, sem pilha de caixa.', 'Tela do scanner de receitas e o convite para organizar isso na farmácia.'],
   conferir: ['Produto: o scanner atende a portaria nova? O artigo da base é antigo.', 'Conferir a portaria no Diário Oficial: uma fonte cita republicação em 24/09.'] },
 
-{ data: 'Qua 09/12', seg: 'Padaria', id: 'padaria-combos-v2', tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte', nova: true,
+{ data: 'Qui 10/12', seg: 'Padaria', id: 'padaria-combos-v2', tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte', nova: true,
   titulo: 'Leve 3, pague 2 <b>sem calculadora no caixa</b>', fs: 78, alturaTitulo: 230, foto: 'croissants-bandeja', tela: 'combo-totais', faixa: 'Cadastre o combo uma vez. O desconto entra na venda.', pilula: 'Leia a legenda',
   kw: 'sistema para padaria',
   cap: `Sistema para padaria com PDV: promoção feita de cabeça no caixa vira erro e desconto indevido, ainda mais com kit de Natal.\n\nNo Prosystem, você cadastra leve e pague, desconto progressivo e kits. Na venda, o caixa não precisa fazer conta. Vale começar agora e levar o costume para 2027.\n\n${CTA}`,
@@ -248,7 +248,7 @@ const P = [
   alts: ['Tela de precificação do Prosystem com as fórmulas do preço de venda, e o título: 2027 começou, e a CBS também, você já refez a conta?'],
   conferir: ['Só publicar depois de o Senado fixar a taxa, ou de confirmar que os 11,3% valeram. Preencher o trecho entre colchetes da legenda.', 'A tela cita ICMS_ST e é pequena e antiga: pedir captura nova.'] },
 
-{ data: 'Qua 06/01', seg: 'Padaria', id: 'padaria-simples-nota-v1', tipo: 'fotoPainel', tema: 'lar', formato: 'Foto com painel', nova: true, foto: 'embalagem-papel',
+{ data: 'Qui 07/01', seg: 'Padaria', id: 'padaria-simples-nota-v1', tipo: 'fotoPainel', tema: 'lar', formato: 'Foto com painel', nova: true, foto: 'embalagem-papel',
   titulo: 'Sua padaria é do Simples? <b>A nota já mudou.</b>', fs: 76, faixa: 'Confirme com seu contador como ficou na sua loja.', pilula: 'Leia a legenda',
   kw: 'nota fiscal da padaria no Simples',
   cap: 'Nota fiscal da padaria no Simples em 2027: desde 1º de janeiro, os documentos seguem as regras novas de IBS e CBS.\n\nE tem outra mudança: o faturamento do Simples passou a seguir o documento fiscal, inclusive em venda para entrega futura, como encomenda.\n\nSe ainda não conversou, confirme com seu contador como isso funciona na sua padaria.',
@@ -356,6 +356,54 @@ const P = [
   tags: '#delivery #padaria #gestaodepadaria #sistemaparapadaria',
   alts: ['Painel de delivery do Prosystem com atendimentos, valor médio e evolução de vendas, e o título: cadê o entregador? E o dinheiro da entrega?'],
   conferir: ['Produto: a Gestão de entregas vale em padaria?', 'O painel é de plano Plus e foi recortado sem o nome "Drogaria Modelo".', 'A tela mostra tempo médio de entrega de 3h 19m, dado fictício que não ajuda a venda: pedir outra captura ou cobrir no mockup.', 'A tela diz "Ticket médio". Se ficar legível no mockup, é a palavra difícil da peça.'] },
+
+{ data: 'Ter 17/11', seg: 'Farmácia', id: 'farmacia-novembro-azul-v1', tipo: 'fotoPainel', tema: 'azul', formato: 'Foto com painel', nova: true, semAno: true, foto: 'farmaceutico-conferindo', posicao: '8% 20%', ajuste: 'transform-origin:0 0;transform:scale(1.5)',
+  titulo: 'Novembro Azul: <b>quem lembra o homem de se cuidar?</b>', fs: 72, faixa: 'No balcão, uma conversa pode levar ao médico.', pilula: 'Leia a legenda',
+  kw: '',
+  cap: 'Novembro Azul é o mês de falar da saúde do homem, e muitas vezes ele aparece primeiro na farmácia, não no consultório.\n\nA campanha começou com o câncer de próstata e hoje lembra também de glicemia e vacina em dia. No balcão, uma conversa simples pode ser o empurrão para marcar a consulta.\n\nMostre este post para quem atende na sua farmácia.',
+  tags: '#novembroazul #saudedohomem #farmacia',
+  alts: ['Farmacêutico de jaleco conferindo produtos entre as prateleiras, com o texto: Novembro Azul, quem lembra o homem de se cuidar?'],
+  conferir: ['Data de saúde: a peça incentiva procurar o médico, sem orientar tratamento.', 'As fontes são reportagens que citam o Ministério da Saúde. Não confirmei o dia 17/11, por isso a peça não diz "hoje".'] },
+
+{ data: 'Dom 22/11', seg: 'Farmácia', id: 'frase-antimicrobianos-v1', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto', nova: true, semAno: true, fs: 92,
+  titulo: 'Antibiótico sem receita? <b>No balcão, a resposta é não.</b>', apoio: 'Mostre para quem atende na sua farmácia.',
+  kw: 'antibiótico na farmácia',
+  cap: 'Antibiótico na farmácia só sai com receita, que fica retida e é escriturada.\n\nEsta é a Semana Mundial de Conscientização sobre o Uso de Antimicrobianos, de 18 a 24 de novembro. Usar antibiótico sem indicação ajuda a criar resistência, e quem atende no balcão faz parte desse cuidado.\n\nMostre este post para quem atende na sua farmácia.',
+  tags: '#antibioticos #usoresponsavel #farmacia #farmaceutico',
+  alts: ['Frase em azul sobre fundo branco: antibiótico sem receita? No balcão, a resposta é não.'],
+  conferir: ['Saiu no domingo porque 18/11 a 21/11 já têm post ou feriado.', 'A norma é a RDC 471/2021, alterada pela RDC 973/2025: li resumos, não o texto oficial.', 'Sem ferramenta na peça.'] },
+
+{ data: 'Qui 03/12', seg: 'Farmácia', id: 'farmacia-dezembro-laranja-v1', tipo: 'fotoPainel', tema: 'azul', formato: 'Foto com painel', nova: true, foto: 'protetor-rosto', posicao: '50% 20%', ajuste: 'transform-origin:50% 0;transform:translateY(-90px) scale(1.12)', painelTopo: 670,
+  titulo: 'Dezembro Laranja começou. <b>Vai faltar protetor solar?</b>', fs: 72, faixa: 'Ruptura no verão é venda perdida.', pilula: 'Leia a legenda',
+  kw: 'protetor solar na farmácia',
+  cap: `Protetor solar na farmácia: o Dezembro Laranja, campanha da Sociedade Brasileira de Dermatologia contra o câncer de pele, começa junto com o verão.\n\nÉ quando o cliente mais procura, e o verão só termina em março de 2027. Prateleira vazia nessa hora é venda perdida, e o cliente deixa de levar o que precisa.\n\nNo plano Plus do Prosystem, o painel de indicadores mostra a ruptura de estoque.\n\n${CTA}`,
+  tags: '#dezembrolaranja #protetorsolar #gestaodefarmacia #sistemaparafarmacia',
+  alts: ['Mulher passando protetor solar no rosto ao ar livre, com o texto: Dezembro Laranja começou, vai faltar protetor solar?'],
+  conferir: ['Data de saúde: a peça fala de estoque, sem orientar uso nem fator de proteção.', 'Conferir a foto em tamanho real: não pode aparecer marca no frasco.'] },
+
+{ data: 'Qua 09/12', seg: 'Padaria', id: 'padaria-dia-da-culinaria-v1', tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', nova: true, semAno: true, foto: 'maos-massa', pilula: 'Feliz Dia do Profissional da Culinária', fs: 88,
+  titulo: 'Hoje o dia é de quem <b>faz o pão sair bom todo dia.</b>',
+  kw: '',
+  cap: 'Hoje é o Dia do Profissional da Culinária, e na padaria esse dia tem cheiro de fornada.\n\nA quem chega antes de o sol nascer, acerta a massa e faz o pão sair bom todo dia, o nosso obrigado.\n\nMarque um padeiro ou confeiteiro que merece ler isso.',
+  tags: '#diadoprofissionaldaculinaria #padeiro #confeiteiro #padaria',
+  alts: ['Mãos segurando uma bola de massa, com o texto: hoje o dia é de quem faz o pão sair bom todo dia. Feliz Dia do Profissional da Culinária.'],
+  conferir: ['A data vem de uma só fonte do setor, sem lei ou calendário oficial: confirmar antes de publicar.'] },
+
+{ data: 'Qua 06/01', seg: 'Padaria', id: 'padaria-dia-de-reis-v1', tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', nova: true, foto: 'panetone-mesa', pilula: 'Leia a legenda', fs: 88,
+  titulo: 'Dia de Reis: a festa acabou. <b>E o panetone que sobrou?</b>',
+  kw: 'panetone na padaria',
+  cap: `Panetone na padaria: hoje é Dia de Reis, a temporada acaba, e o que ficou na prateleira vira dinheiro parado.\n\nVale olhar agora quanto sobrou e quanto foi vendido, para fazer a compra e a produção do próximo Natal com número na mão. É um bom jeito de começar 2027.\n\nNo Prosystem, o relatório de dias sem giro mostra há quanto tempo cada produto não vende.\n\n${CTA}`,
+  tags: '#panetone #padaria #gestaodepadaria #sistemaparapadaria',
+  alts: ['Panetone polvilhado com açúcar sobre um prato dourado, com o texto: Dia de Reis, a festa acabou, e o panetone que sobrou?'],
+  conferir: ['Produto: o relatório de dias sem giro vale sem ajuste na padaria?'] },
+
+{ data: 'Dom 31/01', seg: 'Farmácia', id: 'frase-janeiro-roxo-v1', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto', nova: true, semAno: true, fs: 92,
+  titulo: 'Janeiro Roxo: <b>informação também passa pelo balcão.</b>', apoio: 'Mostre para quem atende na sua farmácia.',
+  kw: '',
+  cap: 'Hoje é o Dia Nacional de Combate e Prevenção da Hanseníase, e o Janeiro Roxo lembra que informação ajuda a acabar com o preconceito.\n\nA hanseníase tem cura, e o tratamento é gratuito pelo SUS. Na dúvida, oriente o cliente a procurar a unidade básica de saúde.\n\nMostre este post para quem atende na sua farmácia.',
+  tags: '#janeiroroxo #hanseniase #farmacia',
+  alts: ['Frase em azul sobre fundo branco: Janeiro Roxo, informação também passa pelo balcão.'],
+  conferir: ['Data de saúde: a peça encaminha para a unidade de saúde, sem orientar tratamento.', 'Cura e gratuidade vêm de secretarias de saúde, sem abrir a página do Ministério.', 'O post amplia o calendário de 22/01 para 31/01.'] },
 ];
 
 // Peças prontas de outras produções: só a legenda é nova.
@@ -382,7 +430,7 @@ function legendas(usadas) {
   const telaDe = (p) => [p.tela, p.capa && p.capa.tela, p.sol && p.sol.tela, p.fim && p.fim.tela, ...(p.itens || []).map((i) => i.tela)].filter(Boolean);
   const fs = require('fs'); const path = require('path');
   const faltam = (p) => [...new Set(telaDe(p))].filter((t) => !fs.existsSync(path.join(__dirname, 'mockups', t + '.png')));
-  let s = '# Peças de 04/11/2026 a 22/01/2027: legendas, texto alternativo e o que falta\n\nArquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e gere de novo. As imagens ficam em `pecas/`, exceto as de outras produções, que têm o caminho indicado.\n\n**Pausa de 23/12 a 02/01: nenhuma publicação, exceto Natal (25/12) e Ano Novo (01/01).** **Nada aqui foi publicado.** Enquanto houver mockup em falta, a peça mostra a tela em um cartão provisório e não deve ser publicada.\n\n## Calendário\n\n| Data | Para quem | Peça | Formato | Mockup em falta |\n|---|---|---|---|---|\n';
+  let s = '# Peças de 04/11/2026 a 31/01/2027: legendas, texto alternativo e o que falta\n\nArquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e gere de novo. As imagens ficam em `pecas/`, exceto as de outras produções, que têm o caminho indicado.\n\n**Pausa de 23/12 a 02/01: nenhuma publicação, exceto Natal (25/12) e Ano Novo (01/01).** **Nada aqui foi publicado.** Enquanto houver mockup em falta, a peça mostra a tela em um cartão provisório e não deve ser publicada.\n\n## Calendário\n\n| Data | Para quem | Peça | Formato | Mockup em falta |\n|---|---|---|---|---|\n';
   for (const p of todas) {
     const m = p.arq ? [] : faltam(p);
     s += `| ${p.data} | ${p.seg} | \`${p.arq ? p.arq.split('/').pop() : p.id}\` | ${p.formato} | ${m.length ? m.map((x) => '`' + x + '`').join(', ') : '-'} |\n`;
