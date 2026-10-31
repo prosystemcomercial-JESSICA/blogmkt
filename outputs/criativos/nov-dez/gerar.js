@@ -1,4 +1,4 @@
-// Gera as peças do planejamento de 04/11 a 31/12/2026, 1080×1350, em PNG, e o arquivo legendas.md.
+// Gera as peças do planejamento de 04/11/2026 a 22/01/2027, 1080×1350, em PNG, e o arquivo legendas.md.
 // Os estilos vêm de docs/conteudo-prosystem/feed_modelo.html, o feed simulado entregue à Jessica.
 // Telas: se existir mockups/<tela>.png, feito pela Jessica, ele entra no lugar do cartão provisório.
 // Uso: node outputs/criativos/nov-dez/gerar.js [id da peça]
@@ -29,6 +29,17 @@ const css = fs.readFileSync(path.join(RAIZ, 'docs/conteudo-prosystem/feed_modelo
   .split('/* Peças */')[1].split('</style>')[0]
   .replace(/(?<![\w#.$-])(-?\d+(?:\.\d+)?)U\b/g, 'calc($1*var(--u))');
 const LOGOS = path.join(RAIZ, 'docs/design/guia-de-estilos/assets');
+// Ajustes sobre o feed simulado, feitos ao ver as peças em tamanho real.
+const AJUSTES = `
+.frs{top:190px;bottom:130px;justify-content:center}
+.frs h4{font-size:116px}
+.pnl{top:610px;bottom:70px;padding:36px 40px;gap:24px}
+.tom{position:absolute;inset:0;background:rgba(var(--mar),.3);z-index:2}
+.dq{position:absolute;left:0;right:0;text-align:center;z-index:6}
+.dq span{display:inline-block;padding:12px 26px;border-radius:14px;background:#fff;color:var(--tin);font-size:31px;font-weight:800;box-shadow:0 10px 24px rgba(var(--sb),.4)}
+.estr{display:flex;gap:8px;justify-content:center}
+.estr svg{width:38px;height:38px;fill:#fff}
+`;
 
 // ---------- blocos das peças (mesmos do feed simulado) ----------
 const lo = (b) => `<i class="g" style="width:${px(310)};height:${px(310)};top:${px(-150)};left:${px(-120)}"></i><i class="gf" style="width:${px(220)};height:${px(220)};top:${px(-90)};right:${px(-70)}"></i><i class="g ${b ? 'b' : ''}" style="width:${px(330)};height:${px(330)};bottom:${px(-180)};right:${px(-100)}"></i><i class="g ${b ? 'b' : ''}" style="width:${px(240)};height:${px(240)};bottom:${px(-130)};left:${px(-70)}"></i>`;
@@ -36,14 +47,26 @@ const logo = (e) => `<img class="lg" src="${url(path.join(LOGOS, e ? 'logo-dark.
 function px(n) { return `calc(${n}*var(--u))`; }
 const foto = (n, st = '') => `<img class="ft" src="${img(n)}" alt="" style="${st}">`;
 const usadas = new Set();
+// Mensagem que fica pequena na tela: o caderno manda repetir o texto real ampliado, sem mudar as palavras.
+const DESTAQUE = {
+  'sangria-aviso': 'Favor efetuar Sangria programada no caixa',
+  'sangria-bloqueio': 'Caixa bloqueado, favor efetuar a sangria programada',
+  'uso-continuo-alerta': 'Previsão próxima compra: 8 DIAS',
+  'dias-sem-giro': 'Dias Sem Giro: 30 dias',
+  'painel-estoque': 'Inventário (custo): R$ 915.912,20',
+  'rentabilidade-relatorio': '0-Geral   1-Positivos   2-Negativos',
+};
 function tela(n, x, y, w, h, giro = 0) {
   usadas.add(n);
   const mk = path.join(AQUI, 'mockups', n + '.png');
   const pronto = fs.existsSync(mk);
   const a = proporcao(pronto ? mk : arqTela(n)); const W = Math.min(w, h * a); const H = W / a;
-  const caixa = `left:${px(x + (w - W) / 2)};top:${px(y + (h - H) / 2)};width:${px(W)};height:${px(H)};transform:rotate(${giro}deg)`;
-  if (pronto) return `<img src="${url(mk)}" alt="" style="position:absolute;z-index:5;object-fit:contain;max-width:none;${caixa}">`;
-  return `<div class="tl" style="${caixa}"><img src="${url(arqTela(n))}" alt=""></div>`;
+  const topo = y + (h - H) / 2;
+  const caixa = `left:${px(x + (w - W) / 2)};top:${px(topo)};width:${px(W)};height:${px(H)};transform:rotate(${giro}deg)`;
+  const dq = DESTAQUE[n] ? `<div class="dq" style="top:${px(topo + H + 12)}"><span>${DESTAQUE[n]}</span></div>` : '';
+  if (pronto) return `<img src="${url(mk)}" alt="" style="position:absolute;z-index:5;object-fit:contain;max-width:none;${caixa}">${dq}`;
+  // Tela em faixa fina: sem margem, para o texto ocupar toda a largura.
+  return `<div class="tl" style="${caixa}${H < 80 ? ';padding:0;border-radius:0' : ''}"><img src="${url(arqTela(n))}" alt=""></div>${dq}`;
 }
 const cena = (f, altura, canto, dentro) => `<div class="cn" style="height:${px(altura)};${canto ? `border-radius:0 0 ${px(70)} ${px(70)}` : ''}">${foto(f)}${dentro || ''}</div>`;
 const provas = '<div class="prv"><div><strong>+600</strong><span>clientes</span></div><i></i><div><strong>+16</strong><span>anos de experiência</span></div></div>';
@@ -87,11 +110,11 @@ function comTela(c) {
     : tela(c.tela, 80, y, 920, h);
   return [pg(c.tema, cl, `${lo(c.fundo === 'bra')}${logo(c.fundo === 'bra')}<div class="col" style="justify-content:flex-start"><h2 style="font-size:${px(c.fs || 74)}">${c.titulo}</h2></div>${miolo}<div style="position:absolute;left:${px(80)};right:${px(80)};bottom:${px(66)};display:flex;flex-direction:column;align-items:center;gap:${px(22)};z-index:6"><p class="fx">${c.faixa}</p>${c.pilula ? `<span class="${pil}">${c.pilula}</span>` : ''}</div>`)];
 }
-const fotoPainel = (c) => [pg(c.tema, 'sob', `<img class="cheia" src="${img(c.foto)}" alt=""><div class="som"></div>${logo()}<div class="pnl"><h2 style="font-size:${px(c.fs || 82)}">${c.titulo}</h2><p class="fx">${c.faixa}</p><span class="pl o">${c.pilula}</span></div>`)];
+const fotoPainel = (c) => [pg(c.tema, 'sob', `<img class="cheia" src="${img(c.foto)}" alt="" style="object-position:50% 30%;${c.ajuste || ''}"><div class="tom"></div><div class="som"></div>${logo()}<div class="pnl"${c.painelTopo ? ` style="top:${c.painelTopo}px"` : ''}><h2 style="font-size:${px(c.fs || 82)}">${c.titulo}</h2><p class="fx">${c.faixa}</p><span class="pl o">${c.pilula}</span></div>`)];
 // Padaria com foto: título, foto em cartão e pílula branca.
 const padariaFoto = (c) => [pg(c.tema, 'forte', `${lo()}${logo()}<div class="c3"><h2 style="font-size:${px(c.fs || 96)}">${c.titulo}</h2></div><div class="atr" style="left:${px(120)};top:${px(520)};width:${px(840)};height:${px(600)};transform:rotate(3deg)"></div><img class="car" src="${img(c.foto)}" alt="" style="left:${px(120)};top:${px(520)};width:${px(840)};height:${px(600)};transform:rotate(-2deg)">${pilAbs('pl', c.pilula)}`)];
 // Página 5 do carrossel da Tatiana: a v2 usava um mockup reprovado; a foto da atendente entra no lugar.
-const tatiana5 = (c) => [pg('azul', 'forte sob', `${lo()}${logo()}<div class="atr" style="left:${px(190)};top:${px(200)};width:${px(700)};height:${px(530)};transform:rotate(3deg)"></div><img class="car" src="${img('atendente-suporte')}" alt="" style="left:${px(190)};top:${px(200)};width:${px(700)};height:${px(530)};transform:rotate(-2deg);object-position:50% 25%"><div class="s3"><h2>“Só tenho a <b>agradecer</b> por todo o suporte e comprometimento oferecidos pela equipe.”</h2><p><b>Tatiana Souza</b><br>Farmácia Pharmavida</p></div>${num(5)}`)];
+const tatiana5 = (c) => [pg('azul', 'forte sob', `${lo()}${logo()}<div class="atr" style="left:${px(190)};top:${px(200)};width:${px(700)};height:${px(530)};transform:rotate(3deg)"></div><img class="car" src="${img('atendente-suporte')}" alt="" style="left:${px(190)};top:${px(200)};width:${px(700)};height:${px(530)};transform:rotate(-2deg);object-position:50% 25%"><div class="s3"><h2>“Só tenho a <b>agradecer</b> por todo o suporte e comprometimento oferecidos pela equipe.”</h2><p><b>Tatiana Souza</b><br>Farmácia Pharmavida</p><div class="estr">${'<svg viewBox="0 0 24 24"><polygon points="12,2.6 14.9,8.6 21.5,9.5 16.7,14.1 17.9,20.7 12,17.5 6.1,20.7 7.3,14.1 2.5,9.5 9.1,8.6" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg>'.repeat(5)}</div></div>${num(5)}`)];
 const RENDER = { v2, v3, frase, comTela, fotoPainel, padariaFoto, tatiana5 };
 
 const DADOS = require('./pecas-dados.js');
@@ -108,7 +131,7 @@ const DADOS = require('./pecas-dados.js');
     const paginas = RENDER[c.tipo](c);
     for (let i = 0; i < paginas.length; i++) {
       const nome = paginas.length > 1 ? `${c.id}-${i + 1}` : c.id;
-      const html = `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;800&display=swap" rel="stylesheet"><style>*{box-sizing:border-box}html,body{margin:0}${css}</style></head><body><div class="post" style="width:1080px">${paginas[i]}</div></body></html>`;
+      const html = `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;800&display=swap" rel="stylesheet"><style>*{box-sizing:border-box}html,body{margin:0}${css}${AJUSTES}</style></head><body><div class="post" style="width:1080px">${paginas[i]}</div></body></html>`;
       const tmp = path.join(AQUI, '_pagina.html');
       fs.writeFileSync(tmp, html);
       await p.goto(url(tmp), { waitUntil: 'networkidle0', timeout: 90000 });
@@ -135,6 +158,13 @@ const DADOS = require('./pecas-dados.js');
     }
   }
   await b.close();
+  // Carrossel da Tatiana: as outras páginas são as da v2, e a v3 fica junto dos demais depoimentos.
+  const DEP = path.join(RAIZ, 'outputs/criativos/depoimentos');
+  const p5 = path.join(SAIDA, 'carrossel-farmacia-depoimento-v3-5.png');
+  if (fs.existsSync(p5)) {
+    fs.renameSync(p5, path.join(DEP, 'carrossel-farmacia-depoimento-v3-5.png'));
+    for (const i of [1, 2, 3, 4, 6]) fs.copyFileSync(path.join(DEP, `carrossel-farmacia-depoimento-v2-${i}.png`), path.join(DEP, `carrossel-farmacia-depoimento-v3-${i}.png`));
+  }
   if (!filtro) fs.writeFileSync(path.join(AQUI, 'legendas.md'), DADOS.legendas(usadas));
   console.log(problemas.length ? problemas.join('\n') : 'sem estouro');
   console.log('peças:', lista.length, '| telas sem mockup:', [...usadas].filter((n) => !fs.existsSync(path.join(AQUI, 'mockups', n + '.png'))).join(', '));

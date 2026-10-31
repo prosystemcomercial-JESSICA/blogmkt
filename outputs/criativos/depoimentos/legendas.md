@@ -26,6 +26,8 @@ Ajustes de português feitos nos trechos:
 | `prova-social-15-anos-v1` | São mais de 600 clientes e mais de 16 anos de experiência. Alguns estão com a gente há quase 15 anos. |
 | `prova-social-rapido-v2` | Quando o caixa para, cada minuto pesa. Por isso esta palavra nas avaliações deixa a gente tão feliz. |
 
-## Carrossel `carrossel-farmacia-depoimento-v2` (modelo V3, 6 páginas)
+## Carrossel `carrossel-farmacia-depoimento-v3` (modelo V3, 6 páginas)
+
+A v2 tem um mockup reprovado na página 5 e não deve ser usada. A página 5 da v3 sai de `outputs/criativos/nov-dez/gerar.js`. A legenda com palavra-chave para o post de 24/11 está em `outputs/criativos/nov-dez/legendas.md`.
 
 **Legenda:** Trocar de sistema dá receio. A Tatiana, da Farmácia Pharmavida, contou no Google como foi o antes e o depois. Obrigado, Tatiana. Quer esse suporte na sua farmácia? Fale com um especialista.
