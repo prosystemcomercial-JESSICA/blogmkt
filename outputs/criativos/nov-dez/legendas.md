@@ -23,7 +23,7 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Dom 22/11 | Farmácia | `frase-antimicrobianos-v2` | Frase de impacto | - |
 | Seg 23/11 | Farmácia | `carrossel-farmacia-black-friday-v2` | Carrossel V3 | `analise-descontos` |
 | Ter 24/11 | Farmácia | `carrossel-farmacia-depoimento-v3-<página>.png` | Carrossel V3 de depoimento | - |
-| Qua 25/11 | Padaria | `padaria-encomendas-natal-v1` | Padaria com foto | - |
+| Qua 25/11 | Padaria | `padaria-encomendas-natal-v2` | Padaria com foto | - |
 | Sex 27/11 | Farmácia | `frase-farmacia-lucro-v1` | Frase de impacto | - |
 | Seg 30/11 | Padaria | `padaria-13-salario-v1` | Foto com painel (o plano pedia estático com tela) | - |
 | Ter 01/12 | Farmácia | `frase-dezembro-vermelho-v2` | Frase de impacto | - |
@@ -39,8 +39,8 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Qua 16/12 | Os dois | `frase-escala-hoje-v2` | Frase de impacto | - |
 | Sex 18/12 | Padaria | `padaria-curva-abc-v1` | Estático com tela | `curva-abc` |
 | Seg 21/12 | Farmácia | `frase-farmacia-receita-v1` | Frase de impacto | - |
-| Sex 25/12 | Os dois | `natal-v2` | Foto com painel | - |
-| Sex 01/01 | Os dois | `ano-novo-v1` | Foto com painel | - |
+| Sex 25/12 | Os dois | `natal-v3` | Foto com linha | - |
+| Sex 01/01 | Os dois | `ano-novo-v2` | Foto com linha | - |
 | Seg 04/01 | Farmácia | `farmacia-cbs-v1` | Estático com tela | `precificacao` |
 | Qua 06/01 | Padaria | `padaria-dia-de-reis-v1` | Padaria com foto | - |
 | Qui 07/01 | Padaria | `padaria-simples-nota-v1` | Foto com painel | - |
@@ -378,7 +378,7 @@ Quer esse suporte na sua farmácia em 2027? Fale com um especialista pelo link d
 **Texto alternativo:** 1. Cartelas de comprimidos e o título: seu sistema dá mais problema do que solução? 2. Calculadora e a citação de antes: um sistema que nos gerava muitos problemas. 3. Prateleiras em losango e a citação: mais organização, praticidade e segurança. 4. Farmacêutica e a citação sobre o suporte. 5. Atendente sorrindo, de fone, e o agradecimento de Tatiana Souza, da Farmácia Pharmavida. 6. Fotos de farmácia e o convite para falar com um especialista.
 
 
-### Qua 25/11: padaria-encomendas-natal-v1
+### Qua 25/11: padaria-encomendas-natal-v2
 
 Encomendas de Natal na padaria: quando tudo fica no caderno, um erro aparece só na hora da retirada.
 
@@ -396,7 +396,7 @@ O passo a passo completo está no blog, no link da bio. Salve este post e mostre
 
 #padaria #encomendasdenatal #gestaodepadaria #panificacao
 
-**Texto alternativo:** Carrinho com prateleiras de pães, com o título: encomenda de Natal no caderno, e se faltar?
+**Texto alternativo:** Carrinho com prateleiras de pães, com uma linha branca em volta da foto, como a fita de uma encomenda, e o título: encomenda de Natal no caderno, e se faltar?
 
 **Conferir antes de publicar:**
 
@@ -693,7 +693,7 @@ Marque quem atende no balcão.
 **Texto alternativo:** Frase em azul sobre fundo branco: foto de receita não é receita eletrônica.
 
 
-### Sex 25/12: natal-v2
+### Sex 25/12: natal-v3
 
 Tem quem passa a véspera de Natal atrás do balcão, atendendo a última receita ou entregando a última encomenda.
 
@@ -701,14 +701,14 @@ A vocês, que trabalham para o Natal dos outros dar certo, o nosso obrigado e um
 
 #feliznatal #farmacia #padaria
 
-**Texto alternativo:** Árvore de Natal coberta de luzes à noite, com o texto: Feliz Natal a quem trabalha para o Natal dos outros dar certo.
+**Texto alternativo:** Árvore de Natal coberta de luzes à noite, com uma linha branca enrolada nela como guirlanda, e o texto: Feliz Natal a quem trabalha para o Natal dos outros dar certo.
 
 **Conferir antes de publicar:**
 
 - Exceção à pausa de 23/12 a 02/01, a pedido da Jessica: deixar agendado.
 
 
-### Sex 01/01: ano-novo-v1
+### Sex 01/01: ano-novo-v2
 
 Feliz 2027!
 
@@ -718,7 +718,7 @@ Obrigado por mais um ano com a gente.
 
 #feliz2027 #anonovo #farmacia #padaria
 
-**Texto alternativo:** Fogos de artifício no céu noturno, com o texto: Feliz 2027 a quem abre a loja todo dia.
+**Texto alternativo:** Fogos de artifício no céu noturno, com uma linha branca subindo do texto até os fogos, e o texto: Feliz 2027 a quem abre a loja todo dia.
 
 **Conferir antes de publicar:**
 

@@ -131,3 +131,22 @@ Resolvido na atualização abaixo.
 
 **Decisão:** a página `lpv2_obrigado` não mudou. A frase é "O atendimento costuma acontecer em até 24 horas úteis", que é prazo de retorno da demonstração, não horário de suporte. Trocar mudaria o sentido.
 
+## Atualização de 31/10/2026: Natal com conceitos do reel
+
+**Pedido:** "Nos posts de Natal, precisamos melhorar, use conceitos do designe citados nesse video", com o reel de @thiagor.designer (https://www.instagram.com/reel/DfFxkqUoVNK/).
+
+**Feito:** `natal-v3`, `ano-novo-v2` e `padaria-encomendas-natal-v2`, com novo tipo `fotoLinha` e linha opcional em `padariaFoto`, em `outputs/criativos/nov-dez/gerar.js`.
+- Natal: linha como guirlanda em volta da árvore, com a parte de trás mais fraca e as luzes por cima.
+- Ano Novo: linha sai de perto do título e entra nos fogos.
+- Encomendas: linha como fita, passa por trás da foto e chega na pílula.
+
+**Verificado:** `conferir.js` e `gerar.js` sem erro; as 3 peças vistas em folha ampliada. **Não verificado:** o vídeo não foi assistido, só a legenda, lida por resumo da ferramenta; o download direto foi barrado pela proteção contra bots. As peças não foram vistas em celular.
+
+**Decisões:**
+- **Uma só linha por peça,** porque a legenda alerta para o detalhe não competir com a mensagem.
+- **Sem losangos nessas 3 peças,** para a linha ser o único detalhe. Isso foge do caderno de marca, que trata o losango como o elemento mais reconhecível.
+- **Só as 3 peças do tema Natal e virada.** Kits de Natal (combos) e o Dia de Reis não mudaram.
+- **Natal e Ano Novo sem painel:** o título fica sobre o degradê azul, na parte escura.
+
+**Pendente:** Jessica aprova o novo formato. Se aprovar, ele entra no caderno de marca (`tipos-de-posts.md`).
+
