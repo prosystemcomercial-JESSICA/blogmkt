@@ -11,6 +11,7 @@
 - `outputs/criativos/depoimentos/carrossel-farmacia-depoimento-v3-<página>.png`: o carrossel da Tatiana, marcado como pronto no plano, tinha um mockup reprovado na página 5 da v2. A página 5 agora usa a foto da atendente; as outras são cópias da v2.
 - Legendas novas, com palavra-chave e 2027, para os depoimentos de Krisley, Tatiana, Samuel e Rodrigo. As peças deles e o carrossel do suporte não mudaram.
 - Galeria de revisão: https://claude.ai/artifact/6tbxkP61jsBEjhTejFME3j (privada; o arquivo sai de `galeria.js`).
+- Documento de aprovação no Claude Docs: https://claude.ai/artifact/3EWRqeFaTD2J6UuUeHwRoe, com arte, legenda, decisão e campo de alteração por post, a pedido dela ("Quero arquivo para aprovar ou pedir alterações").
 - Nada foi publicado no Instagram, no blog nem no Google.
 
 ## Verificado
@@ -38,11 +39,11 @@
 ## Pendente
 
 - **Jessica:** 20 mockups para 18 posts, lista em `outputs/criativos/nov-dez/legendas.md`. O primeiro, `painel-estoque`, precisa ficar pronto até 03/11 para o post de 04/11.
-- **Jessica:** preencher a coluna Decisão e dizer se as datas de saúde combinam com a marca. Agendar as peças: não há chave válida da Meta para publicar daqui.
+- **Jessica:** preencher as decisões no documento de aprovação dos criativos e dizer se as datas de saúde combinam com a marca. Agendar as peças: não há chave válida da Meta para publicar daqui.
 - **Equipe de produto:** itens de "Conferir antes dos criativos" no documento e capturas novas de precificação, fechamento de caixa, curva ABC, combos, lucro por produto e delivery.
 - **Conferir nas datas:** taxa da CBS na legenda de 04/01, que tem um trecho entre colchetes; 15/12 ou 16/12 na escala; saldo de 1.096 lojas no post de 08/01; prazo do SNCR.
 - `painel-estoque` e `painel-vendas` mostram um CNPJ, embora o LEIA-ME das telas diga que estão cobertos. O dado é fictício, mas precisa ser coberto no mockup.
 
 ## Próxima sessão
 
-Ler a coluna Decisão com `read` no Claude Docs, aplicar mudanças em `pecas-dados.js` e rodar `gerar.js` e `conferir.js`. Quando os mockups chegarem em `mockups/`, gerar de novo e conferir em tamanho real. Skills: `relatorio-final`.
+Ler as decisões do documento de aprovação dos criativos com `read` no Claude Docs, aplicar mudanças em `pecas-dados.js` e rodar `gerar.js` e `conferir.js`. Quando os mockups chegarem em `mockups/`, gerar de novo e conferir em tamanho real. Skills: `relatorio-final`.
