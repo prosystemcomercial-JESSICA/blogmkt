@@ -432,12 +432,12 @@ ${CTA}`,
   alts: ['Panetone cortado, com uma fatia saindo, em frente a uma árvore de Natal iluminada, com o texto: Dia de Reis, a festa acabou, e o panetone que sobrou?'],
   conferir: ['Produto: o relatório de dias sem giro vale sem ajuste na padaria?'] },
 
-{ data: 'Dom 31/01', seg: 'Farmácia', id: 'frase-janeiro-roxo-v2', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto', nova: true, semAno: true, fs: 92,
+{ data: 'Dom 31/01', seg: 'Farmácia', id: 'frase-janeiro-roxo-v2', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto', nova: true, semAno: true, fs: 92, laco: 'roxo',
   titulo: 'Janeiro Roxo: <b>hanseníase tem cura e tratamento pelo SUS.</b>', apoio: 'Informar também é cuidar.',
   kw: '',
   cap: 'Hoje é o Dia Nacional de Combate e Prevenção da Hanseníase, e o Janeiro Roxo lembra que informação ajuda a acabar com o preconceito.\n\nA hanseníase tem cura, e o tratamento é gratuito pelo SUS. Na dúvida, oriente o cliente a procurar a unidade básica de saúde.\n\nCompartilhe esta informação.',
   tags: '#janeiroroxo #hanseniase #farmacia',
-  alts: ['Frase em azul sobre fundo branco: Janeiro Roxo, hanseníase tem cura e tratamento pelo SUS.'],
+  alts: ['Laço roxo e frase em azul sobre fundo branco: Janeiro Roxo, hanseníase tem cura e tratamento pelo SUS.'],
   conferir: ['Data de saúde: a peça encaminha para a unidade de saúde, sem orientar tratamento.', 'Cura e gratuidade vêm de secretarias de saúde, sem abrir a página do Ministério.', 'O post amplia o calendário de 22/01 para 31/01.'] },
 ];
 

@@ -106,7 +106,8 @@ function v3(c) {
 const LACO_VERMELHO = `<svg viewBox="0 0 100 140" style="width:${px(92)};height:${px(128)};fill:none;stroke-width:17;margin:0 auto ${px(36)};flex:none"><path d="M50 16C29 16 25 40 34 58L74 126" stroke="#a5161d"/><path d="M50 16C71 16 75 40 66 58L26 126" stroke="#d62828"/></svg>`;
 // Laço branco do Janeiro Branco: contorno fino por baixo do traço branco, para aparecer no fundo branco.
 const LACO_BRANCO = `<svg viewBox="0 0 100 140" style="width:${px(92)};height:${px(128)};fill:none;stroke-linecap:butt;margin:0 auto ${px(36)};flex:none;filter:drop-shadow(0 ${px(6)} ${px(10)} rgba(15,76,150,.18))"><path d="M50 16C29 16 25 40 34 58L74 126" stroke="#6f8fb8" stroke-width="25"/><path d="M50 16C29 16 25 40 34 58L74 126" stroke="#e3eaf3" stroke-width="19"/><path d="M50 16C71 16 75 40 66 58L26 126" stroke="#6f8fb8" stroke-width="25"/><path d="M50 16C71 16 75 40 66 58L26 126" stroke="#fff" stroke-width="19"/></svg>`;
-const LACOS_FRASE = { vermelho: LACO_VERMELHO, branco: LACO_BRANCO };
+const LACO_ROXO = `<svg viewBox="0 0 100 140" style="width:${px(92)};height:${px(128)};fill:none;stroke-width:17;margin:0 auto ${px(36)};flex:none"><path d="M50 16C29 16 25 40 34 58L74 126" stroke="#4a1f7a"/><path d="M50 16C71 16 75 40 66 58L26 126" stroke="#7b3fb8"/></svg>`;
+const LACOS_FRASE = { vermelho: LACO_VERMELHO, branco: LACO_BRANCO, roxo: LACO_ROXO };
 const frase = (c) => [pg(c.tema, 'bra', `${lo(1)}${logo(1)}<div class="frs">${LACOS_FRASE[c.laco] || ''}<h4${c.fs ? ` style="font-size:${px(c.fs)}"` : ''}>${c.titulo}</h4><p>${c.apoio}</p></div>`)];
 // Título, tela, faixa e pílula. Três blocos de texto, como pede o caderno.
 function comTela(c) {

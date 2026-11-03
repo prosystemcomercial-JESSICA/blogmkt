@@ -1031,7 +1031,7 @@ Compartilhe esta informação.
 
 #janeiroroxo #hanseniase #farmacia
 
-**Texto alternativo:** Frase em azul sobre fundo branco: Janeiro Roxo, hanseníase tem cura e tratamento pelo SUS.
+**Texto alternativo:** Laço roxo e frase em azul sobre fundo branco: Janeiro Roxo, hanseníase tem cura e tratamento pelo SUS.
 
 **Conferir antes de publicar:**
 
