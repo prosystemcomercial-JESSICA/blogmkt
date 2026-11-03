@@ -16,4 +16,7 @@ Jessica, com print da peça `frase-janeiro-roxo-v2`: "coloque o simbolo oficial 
 - Símbolo usado: o laço roxo, que identifica o Janeiro Roxo. Sem logomarca de órgão ou instituição (marca de terceiro).
 
 ## Pendente
-- Aprovação da Jessica. Depois de aprovada, marcar `travada: true` na peça.
+- ~~Aprovação do laço~~: aprovado pela Jessica em 03/11/2026; peça travada (`travada: true`).
+
+## Próxima sessão
+Peça aprovada e travada: não gerar de novo. Para mudar, a Jessica precisa pedir e tirar `travada: true` em `pecas-dados.js`.
