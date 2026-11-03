@@ -54,6 +54,7 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Ter 19/01 | Farmácia | `carrossel-farmacia-atencao-farmaceutica-v2` | Carrossel V2 | `atencao-anamnese` |
 | Qua 20/01 | Farmácia | `frase-dia-do-farmaceutico-v1` | Frase de impacto | - |
 | Sex 22/01 | Padaria | `padaria-entregas-v1` | Estático com tela | `painel-entregas` |
+| Seg 25/01 | Padaria | `frase-padaria-registro-sobras-v1` | Frase de impacto | - |
 | Dom 31/01 | Farmácia | `frase-janeiro-roxo-v2` | Frase de impacto | - |
 
 ## Mockups que a Jessica precisa fazer
@@ -63,7 +64,7 @@ Só em notebook ou desktop, em balcão do segmento ou escritório. Salve em `moc
 | Tela | Datas |
 |---|---|
 | `painel-estoque` | Qua 04/11 |
-| `precificacao` | Qua 11/11 |
+| `precificacao` | Qua 11/11, Qui 14/01 |
 | `dias-sem-giro` | Sex 13/11 |
 | `whats-fechamento-v2` | Seg 16/11 |
 | `whats-desconto` | Qua 18/11 |
@@ -764,7 +765,7 @@ Fale com um especialista pelo link da bio.
 
 #panetone #padaria #gestaodepadaria #sistemaparapadaria
 
-**Texto alternativo:** Panetone polvilhado com açúcar sobre um prato dourado, com o texto: Dia de Reis, a festa acabou, e o panetone que sobrou?
+**Texto alternativo:** Panetone cortado, com uma fatia saindo, em frente a uma árvore de Natal iluminada, com o texto: Dia de Reis, a festa acabou, e o panetone que sobrou?
 
 **Conferir antes de publicar:**
 
@@ -991,6 +992,26 @@ Fale com um especialista pelo link da bio.
 - O painel é de plano Plus e foi recortado sem o nome "Drogaria Modelo".
 - A tela mostra tempo médio de entrega de 3h 19m, dado fictício que não ajuda a venda: pedir outra captura ou cobrir no mockup.
 - A tela diz "Ticket médio". Se ficar legível no mockup, é a palavra difícil da peça.
+
+
+### Seg 25/01: frase-padaria-registro-sobras-v1
+
+Controle de sobras na padaria começa com um caderno, uma balança e cinco minutos no fim do dia.
+
+Anote o que sobrou de cada produto e em que horário. Em quatro semanas, você para de produzir no "acho que" e passa a acertar a fornada pelo histórico. É um bom hábito para firmar já no começo de 2027.
+
+O passo a passo, com uma calculadora da próxima fornada, está no artigo do blog, no link da bio. E a venda por produto e por horário já fica registrada no PDV do Prosystem.
+
+Marque o dono da padaria.
+
+#padaria #gestaodepadaria #panificacao #sistemaparapadaria
+
+**Texto alternativo:** Frase em laranja sobre fundo branco: sobra sem registro vira opinião, sobra registrada vira decisão para a fornada de amanhã.
+
+**Conferir antes de publicar:**
+
+- O artigo de sobras precisa estar publicado no blog antes desta data (a peça de 11/01 já anuncia que ele está no ar).
+- O termo "controle de sobras na padaria" não veio das sugestões do Google: conferir o volume.
 
 
 ### Dom 31/01: frase-janeiro-roxo-v2

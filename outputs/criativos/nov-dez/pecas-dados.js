@@ -233,6 +233,15 @@ ${CTA}`,
   alts: ['Frase em laranja sobre fundo branco: pão que sobra também é prejuízo.'],
   conferir: ['O termo "sobra de pão" não veio das sugestões do Google: conferir o volume.'] },
 
+// Citação do artigo de sobras (blog/_gerador/artigos/a08_sobras.py), pedida em 03/11/2026.
+{ data: 'Seg 25/01', seg: 'Padaria', id: 'frase-padaria-registro-sobras-v1', tipo: 'frase', tema: 'lar', formato: 'Frase de impacto', nova: true, fs: 84,
+  titulo: 'Sobra sem registro vira <b>opinião.</b><br>Sobra registrada vira <b>decisão</b> para a fornada de amanhã.', apoio: 'Leia a legenda.',
+  kw: 'controle de sobras na padaria',
+  cap: 'Controle de sobras na padaria começa com um caderno, uma balança e cinco minutos no fim do dia.\n\nAnote o que sobrou de cada produto e em que horário. Em quatro semanas, você para de produzir no "acho que" e passa a acertar a fornada pelo histórico. É um bom hábito para firmar já no começo de 2027.\n\nO passo a passo, com uma calculadora da próxima fornada, está no artigo do blog, no link da bio. E a venda por produto e por horário já fica registrada no PDV do Prosystem.\n\nMarque o dono da padaria.',
+  tags: '#padaria #gestaodepadaria #panificacao #sistemaparapadaria',
+  alts: ['Frase em laranja sobre fundo branco: sobra sem registro vira opinião, sobra registrada vira decisão para a fornada de amanhã.'],
+  conferir: ['O artigo de sobras precisa estar publicado no blog antes desta data (a peça de 11/01 já anuncia que ele está no ar).', 'O termo "controle de sobras na padaria" não veio das sugestões do Google: conferir o volume.'] },
+
 { data: 'Sex 25/12', seg: 'Os dois', id: 'natal-v5', travada: true, tipo: 'natalRico', tema: 'azul', formato: 'Foto com losango e linha', nova: true, semAno: true, foto: 'arvore-natal-berlim',
   titulo: 'Depois de um dezembro corrido, <b>um Natal tranquilo.</b>', fs: 68, apoio: 'Boas festas a você e a toda a sua equipe.',
   kw: '',
