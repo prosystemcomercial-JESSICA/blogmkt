@@ -414,7 +414,7 @@ ${CTA}`,
   alts: ['Mãos segurando uma bola de massa, com o texto: por trás de cada fornada, tem quem chegou antes do sol. Feliz Dia do Profissional da Culinária.'],
   conferir: ['A data vem de uma só fonte do setor, sem lei ou calendário oficial: confirmar antes de publicar.'] },
 
-{ data: 'Qua 06/01', seg: 'Padaria', id: 'padaria-dia-de-reis-v1', tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', nova: true, foto: 'panetone-natal', pilula: 'Leia a legenda', fs: 88,
+{ data: 'Qua 06/01', seg: 'Padaria', id: 'padaria-dia-de-reis-v1', travada: true, tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', nova: true, foto: 'panetone-natal', pilula: 'Leia a legenda', fs: 88,
   titulo: 'Dia de Reis: a festa acabou. <b>E o panetone que sobrou?</b>',
   kw: 'panetone na padaria',
   cap: `Panetone na padaria: hoje é Dia de Reis, a temporada acaba, e o que ficou na prateleira vira dinheiro parado.\n\nVale olhar agora quanto sobrou e quanto foi vendido, para fazer a compra e a produção do próximo Natal com número na mão. É um bom jeito de começar 2027.\n\nNo Prosystem, o relatório de dias sem giro mostra há quanto tempo cada produto não vende.\n\n${CTA}`,

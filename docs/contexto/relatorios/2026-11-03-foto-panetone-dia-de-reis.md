@@ -23,3 +23,6 @@
 
 ## Próxima sessão
 - Se ela aprovar, marcar a peça como travada. Se quiser trocar também a foto do post do Google, usar a mesma `panetone-natal`.
+
+## Aprovação
+A Jessica aprovou a peça com a foto nova, e ela foi marcada com `travada: true` em `pecas-dados.js`.
