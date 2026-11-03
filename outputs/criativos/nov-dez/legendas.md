@@ -48,6 +48,7 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Seg 11/01 | Padaria | `frase-padaria-sobra-v1` | Frase de impacto | - |
 | Ter 12/01 | Os dois | `depoimento-rodrigo-v2.png` | Depoimento | - |
 | Qua 13/01 | Os dois | `frase-janeiro-branco-v1` | Frase de impacto | - |
+| Qui 14/01 | Farmácia | `farmacia-cbs-tela-v1` | Estático com tela | `precificacao` |
 | Sex 15/01 | Farmácia | `carrossel-farmacia-sncr-v2` | Carrossel V3 | - |
 | Seg 18/01 | Padaria | `carrossel-padaria-lucro-por-produto-v2` | Carrossel V3 | `rentabilidade-relatorio` |
 | Ter 19/01 | Farmácia | `carrossel-farmacia-atencao-farmaceutica-v2` | Carrossel V2 | `atencao-anamnese` |
@@ -853,6 +854,26 @@ Mostre este post para quem cuida da equipe na sua loja.
 **Conferir antes de publicar:**
 
 - Data de saúde: a Jessica deve dizer se combina com a marca.
+
+
+### Qui 14/01: farmacia-cbs-tela-v1
+
+Preço da farmácia com a CBS: a reforma tributária entrou em 2027, e o preço de cada produto precisa acompanhar.
+
+Refazer a conta é rever custo, imposto e margem item por item. Remédio registrado tem regra própria, com corte de 60%. Confirme com seu contador como isso fica na sua loja.
+
+Na Precificação do Prosystem, a composição de custo e a fórmula de preço ficam na mesma tela.
+
+Fale com um especialista pelo link da bio.
+
+#reformatributaria #cbs #precificacao #gestaodefarmacia #sistemaparafarmacia
+
+**Texto alternativo:** Tela de precificação do Prosystem com as fórmulas do preço de venda, e o título: 2027 começou, e a CBS também, você já refez a conta?
+
+**Conferir antes de publicar:**
+
+- Segunda peça do assunto: a frase de 04/01 anuncia, esta mostra onde refazer o preço. Arte aprovada pela Jessica e travada.
+- A tela cita ICMS_ST e é pequena e antiga: pedir captura nova.
 
 
 ### Sex 15/01: carrossel-farmacia-sncr-v2
