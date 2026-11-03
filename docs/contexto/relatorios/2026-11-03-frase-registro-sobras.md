@@ -22,9 +22,11 @@ A Jessica mandou o print da citação do artigo de sobras ("Sobra sem registro v
 - Sem trilha: a música pode ser escolhida no próprio Instagram.
 - Data Seg 25/01: único dia livre de padaria depois da peça de 11/01, que anuncia o artigo.
 
+## Aprovação
+- A Jessica aprovou a v2 ("Aprovado"): a peça está com `travada: true`, e `gerar.js` e `motion.js` não a geram de novo.
+
 ## Pendente
-- Jessica: aprovar o vídeo e a data.
 - Conferir se o artigo está no ar antes de 25/01 e o volume de busca de "controle de sobras na padaria".
 
 ## Próxima sessão
-Ajustes de tempo ficam no `montar()` de `motion.js`. Para gerar: `node outputs/criativos/nov-dez/gerar.js frase-padaria-registro-sobras-v2` (capa) e `node outputs/criativos/nov-dez/motion.js frase-padaria-registro-sobras-v2` (vídeo). Se aprovada, marcar `travada: true`. Outras frases ganham vídeo com `motion: true`.
+Ajustes de tempo ficam no `montar()` de `motion.js`. Para gerar: `node outputs/criativos/nov-dez/gerar.js frase-padaria-registro-sobras-v2` (capa) e `node outputs/criativos/nov-dez/motion.js frase-padaria-registro-sobras-v2` (vídeo). Outras frases ganham vídeo com `motion: true`.

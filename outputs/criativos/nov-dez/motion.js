@@ -87,7 +87,8 @@ function montar() {
 
 (async () => {
   const filtro = process.argv[2];
-  const lista = P.filter((p) => p.motion && (!filtro || p.id === filtro));
+  // Peça aprovada (travada) não é gerada de novo, como em gerar.js.
+  const lista = P.filter((p) => p.motion && !p.travada && (!filtro || p.id === filtro));
   if (!lista.length) throw new Error('nenhuma peça com motion: ' + (filtro || ''));
   const b = await puppeteer.launch({ headless: 'new', args: ['--allow-file-access-from-files'] });
   const p = await b.newPage();
