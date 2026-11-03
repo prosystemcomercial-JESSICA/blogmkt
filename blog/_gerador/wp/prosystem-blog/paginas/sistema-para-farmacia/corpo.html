@@ -1,0 +1,475 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+<style>
+/* Layout: barra fixa; hero em degradê do segmento com telas flutuando; faixa de funções correndo; dores; carrossel de
+   ferramentas; "um dia" com tela fixa que troca ao rolar; planos com tabela; avaliações; suporte; chamada final.
+   Uma só aparência por segmento (farmácia azul, padaria laranja). Os tokens do segmento vêm do montar_lp.py. */
+:root{
+  --c-escuro:#2E6DB4; --c-medio:#417ABC; --c-vivo:#3898D8; --c-claro:#38C8F8;
+  --degrade:linear-gradient(155deg,#2E6DB4 0%,#417ABC 48%,#3898D8 78%,#38C8F8 100%);
+  --tinta:#081330; --nevoa:#F2F7FC; --linha:#DCE7F3; --apoio:#4A5A75;
+  --pilula-bg:#F88818; --pilula-tx:#081330; --sim:#2E6DB4; --brilho:rgba(56,200,248,.38);
+  --branco:#FFFFFF;
+  --fonte:"Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --raio-cartao:24px; --raio-painel:18px; --raio-pilula:99px;
+  --sombra:0 22px 48px rgba(8,19,48,.2);
+  --gutter-l:max(16px,env(safe-area-inset-left,0px)); --gutter-r:max(16px,env(safe-area-inset-right,0px));
+  --ease:cubic-bezier(.22,1,.36,1);
+  color-scheme:light;
+}
+
+:root{--veu:linear-gradient(180deg,rgba(46,109,180,.88),rgba(46,109,180,.94))}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--branco);color:var(--tinta);font-family:var(--fonte);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--c-claro);outline-offset:3px;border-radius:10px}
+b,strong{font-weight:800}
+.wrap{width:100%;max-width:1160px;margin-inline:auto;padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
+section{padding-block:88px 0}
+.olho{display:block;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--c-escuro);margin-bottom:10px}
+h2{margin:0 0 14px;font-size:clamp(1.7rem,4.8vw,2.7rem);line-height:1.1;font-weight:300;letter-spacing:-.012em;text-wrap:balance;max-width:24ch}
+.lead{margin:0 0 34px;color:var(--apoio);font-weight:500;max-width:56ch}
+
+/* progresso e barra */
+.progresso{position:fixed;inset:0 0 auto;height:calc(3px + env(safe-area-inset-top,0px));z-index:70;pointer-events:none}
+.progresso i{display:block;height:100%;background:linear-gradient(90deg,var(--c-claro),var(--branco));transform-origin:0 50%;transform:scaleX(var(--p,0))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:59;background:var(--c-escuro)}
+.barra{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:60;transition:background .4s,box-shadow .4s,backdrop-filter .4s}
+.barra.on{background:color-mix(in srgb,var(--c-escuro) 86%,transparent);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);box-shadow:0 8px 24px rgba(8,19,48,.18)}
+.barra .wrap{display:flex;align-items:center;gap:20px;padding-block:14px}
+.barra img{height:24px;width:auto}
+.barra nav{display:none;gap:22px;margin-left:auto;font-size:.875rem;font-weight:600;color:var(--branco)}
+.barra nav a{opacity:.85;transition:opacity .2s}
+.barra nav a:hover{opacity:1}
+.barra .btn{margin-left:auto}
+.barra .longo{display:none}
+@media (min-width:600px){.barra .longo{display:inline}.barra .curto{display:none}}
+@media (min-width:900px){.barra nav{display:flex}.barra .btn{margin-left:0}}
+
+/* botões e pílulas */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;border-radius:var(--raio-pilula);font-weight:800;font-size:1rem;padding:16px 26px;overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .3s;white-space:nowrap}
+.btn .seta{transition:transform .35s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:hover .seta{transform:translateX(4px)}
+.btn.branco{background:var(--branco);color:var(--c-escuro);box-shadow:0 14px 30px rgba(8,19,48,.25)}
+.btn.branco.forte::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,var(--brilho) 50%,transparent 70%);transform:translateX(-120%);animation:brilho 3.8s 1.6s var(--ease) infinite}
+.btn.vazado{color:var(--branco);border:1.5px solid rgba(255,255,255,.55)}
+.btn.vazado:hover{background:rgba(255,255,255,.12)}
+.btn.cor{background:var(--c-escuro);color:var(--branco);box-shadow:0 14px 30px color-mix(in srgb,var(--c-escuro) 35%,transparent)}
+.btn.pequeno{font-size:.8125rem;padding:9px 16px;box-shadow:none}
+@keyframes brilho{0%{transform:translateX(-120%)}45%,100%{transform:translateX(120%)}}
+.pilula{display:inline-flex;align-items:center;gap:6px;border-radius:var(--raio-pilula);font-weight:800;font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 11px;white-space:nowrap}
+.pilula.selo{background:var(--pilula-bg);color:var(--pilula-tx)}
+
+/* HERO */
+.hero{position:relative;background:var(--degrade);color:var(--branco);overflow:hidden;isolation:isolate;padding:0}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(560px circle at var(--mx,72%) var(--my,35%),var(--brilho),transparent 60%)}
+.hero .wrap{display:grid;gap:44px;padding-block:112px 72px;align-items:center}
+.hero-texto{display:grid;gap:22px;justify-items:start}
+.hero .olho{color:var(--branco);opacity:.92;margin:0}
+.hero h1{margin:0;font-size:clamp(2.3rem,7.6vw,4.2rem);line-height:1.04;font-weight:300;letter-spacing:-.02em;text-wrap:balance;max-width:15ch}
+.hero h1 .w{display:inline-block}
+.hero .sub{margin:0;font-size:clamp(1rem,2.4vw,1.15rem);max-width:46ch;font-weight:500;opacity:.96}
+.acoes{display:flex;flex-wrap:wrap;gap:12px}
+.provas{display:flex;flex-wrap:wrap;gap:12px 30px;margin:6px 0 0;padding:0;list-style:none}
+.provas li{display:grid;line-height:1.1}
+.provas .n{font-size:1.75rem;font-weight:800;font-variant-numeric:tabular-nums}
+.provas .r{font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.9}
+.palco{position:relative;min-height:340px;perspective:1200px}
+.flut{position:absolute;border-radius:16px;background:var(--branco);box-shadow:0 30px 60px rgba(8,19,48,.35);overflow:hidden;transform:translate3d(calc(var(--px,0) * var(--f) * 1px),calc(var(--py,0) * var(--f) * 1px + var(--sy,0px) * var(--v)),0) rotate(var(--r));will-change:transform;transition:box-shadow .4s}
+.flut img{display:block;width:100%;height:auto}
+.flut .topo{display:flex;gap:6px;align-items:center;padding:8px 12px;background:var(--nevoa);border-bottom:1px solid var(--linha);font-size:.625rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--apoio)}
+.flut .topo i{width:8px;height:8px;border-radius:2px;background:var(--degrade);transform:rotate(45deg);margin-right:4px}
+.flut.a{width:78%;top:0;left:0;--f:.6;--v:-.06;--r:-2deg}
+.flut.b{width:46%;bottom:4%;right:0;--f:-1;--v:-.14;--r:3deg}
+.flut.b img{max-height:300px;object-fit:cover;object-position:top}
+.flut.c{width:46%;top:46%;left:6%;--f:1.3;--v:-.2;--r:-4deg}
+.losangos{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.los{position:absolute;width:var(--t);aspect-ratio:1;border-radius:calc(var(--t) * .2);border:2px solid rgba(255,255,255,.38);transform:translate3d(0,calc(var(--sy,0px) * var(--v)),0) rotate(45deg)}
+.los.cheio{border:0;background:linear-gradient(155deg,rgba(255,255,255,.28),var(--brilho))}
+
+/* faixa de funções */
+.faixa{background:var(--tinta);color:var(--branco);overflow:hidden;padding-block:18px;position:relative}
+.faixa .trilho{display:flex;gap:44px;width:max-content;animation:rola 40s linear infinite;font-weight:700;font-size:.95rem;letter-spacing:.02em}
+.faixa .trilho span{display:inline-flex;align-items:center;gap:44px;white-space:nowrap}
+.faixa .trilho span::after{content:"";width:9px;height:9px;border-radius:2px;background:var(--degrade);transform:rotate(45deg)}
+@keyframes rola{to{transform:translateX(-50%)}}
+
+/* dores */
+.dores{display:grid;gap:16px}
+.dor{position:relative;padding:28px 26px 26px;border-radius:var(--raio-cartao);background:var(--nevoa);border:1px solid var(--linha);overflow:hidden;transition:transform .5s var(--ease),border-color .4s}
+.dor:hover{transform:translateY(-4px);border-color:var(--c-vivo)}
+.dor::before{content:"";position:absolute;top:-46px;right:-46px;width:120px;aspect-ratio:1;border-radius:26px;border:2px solid var(--linha);transform:rotate(45deg);transition:transform .9s var(--ease),border-color .4s}
+.dor:hover::before{transform:rotate(135deg);border-color:var(--c-claro)}
+.dor q{display:block;quotes:none;font-size:1.2rem;line-height:1.3;font-weight:800;color:var(--c-escuro);max-width:24ch;text-wrap:balance}
+.dor p{margin:14px 0 0;color:var(--apoio);font-weight:500;font-size:.9375rem}
+@media (min-width:860px){.dores{grid-template-columns:repeat(3,1fr)}}
+
+/* carrossel de ferramentas */
+.carrossel-topo{display:flex;align-items:end;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.setas{display:flex;gap:10px;margin-bottom:34px}
+.seta-btn{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--linha);background:var(--branco);color:var(--c-escuro);font:800 1.1rem var(--fonte);cursor:pointer;transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease)}
+.seta-btn:hover{background:var(--c-escuro);color:var(--branco);border-color:var(--c-escuro);transform:scale(1.06)}
+.carrossel{display:grid;grid-auto-flow:column;grid-auto-columns:min(86%,380px);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-block:6px 26px;margin-inline:calc(-1 * var(--gutter-l)) calc(-1 * var(--gutter-r));padding-inline:var(--gutter-l) var(--gutter-r);scrollbar-width:none;cursor:grab}
+.carrossel::-webkit-scrollbar{display:none}
+.carrossel.arrastando{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}
+.ferr{scroll-snap-align:start;display:grid;grid-template-rows:auto 1fr;border-radius:var(--raio-cartao);background:var(--branco);border:1px solid var(--linha);overflow:hidden;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.ferr:hover{transform:translateY(-6px);box-shadow:var(--sombra)}
+.ferr .tela{position:relative;aspect-ratio:16/10;background:var(--nevoa);display:grid;place-items:center;padding:16px;overflow:hidden;border-bottom:1px solid var(--linha)}
+.ferr .tela img{max-width:100%;max-height:100%;width:auto;height:auto;border-radius:8px;box-shadow:0 10px 24px rgba(8,19,48,.14);transition:transform .8s var(--ease)}
+.ferr:hover .tela img{transform:scale(1.04)}
+.ferr .tela.sem{background:var(--degrade);color:var(--branco);padding:26px;text-align:left;place-items:end start}
+.ferr .tela.sem strong{font-size:clamp(1.8rem,5vw,2.4rem);line-height:1;font-weight:800;letter-spacing:-.02em}
+.ferr .tela.sem small{display:block;margin-top:8px;font-size:.8125rem;font-weight:500;opacity:.95;max-width:30ch}
+.ferr .corpo{display:grid;gap:10px;align-content:start;padding:22px 22px 24px}
+.ferr .meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ferr .mod{font-size:.6875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--c-escuro)}
+.ferr h3{margin:0;font-size:1.15rem;line-height:1.25;font-weight:800}
+.ferr p{margin:0;color:var(--apoio);font-size:.9375rem;font-weight:500}
+.pontos{display:flex;gap:8px;justify-content:center}
+.pontos button{width:8px;height:8px;border-radius:2px;border:0;padding:0;background:var(--linha);transform:rotate(45deg);cursor:pointer;transition:background .3s,transform .3s var(--ease)}
+.pontos button.on{background:var(--c-escuro);transform:rotate(45deg) scale(1.4)}
+
+/* um dia: tela fixa que troca ao rolar */
+.dia{display:grid;gap:30px}
+.passos{display:grid;gap:18px}
+.passo{position:relative;padding:22px 22px 22px 58px;border-radius:var(--raio-painel);border:1px solid var(--linha);background:var(--branco);transition:border-color .4s,box-shadow .4s,opacity .4s}
+.passo::before{content:"";position:absolute;left:22px;top:28px;width:14px;height:14px;border-radius:4px;transform:rotate(45deg);background:var(--linha);transition:background .4s,transform .5s var(--ease)}
+.passo .hora{font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--c-escuro)}
+.passo h3{margin:4px 0 6px;font-size:1.15rem;font-weight:800;line-height:1.25}
+.passo p{margin:0;color:var(--apoio);font-weight:500;font-size:.9375rem}
+.passo .mini{margin-top:14px;border-radius:12px;overflow:hidden;border:1px solid var(--linha);background:var(--nevoa);padding:10px}
+.passo .mini img{display:block;width:100%;height:auto;border-radius:6px}
+.passo.on{border-color:var(--c-vivo);box-shadow:var(--sombra)}
+.passo.on::before{background:var(--degrade);transform:rotate(225deg) scale(1.15)}
+.visor{display:none}
+@media (min-width:900px){
+  .dia{grid-template-columns:1fr 1.15fr;gap:56px;align-items:start}
+  .passos{gap:0}
+  .passo{min-height:62vh;display:flex;flex-direction:column;justify-content:center;border:0;background:transparent;box-shadow:none!important;opacity:.35;padding-left:46px}
+  .passo::before{left:4px;top:auto}
+  .passo.on{opacity:1}
+  .passo .mini{display:none}
+  .visor{display:block;position:sticky;top:max(110px,calc(50vh - 230px));order:2}
+  .visor .moldura{position:relative;aspect-ratio:4/3;border-radius:var(--raio-cartao);background:var(--degrade);padding:28px;overflow:hidden;box-shadow:var(--sombra)}
+  .visor .moldura::before{content:"";position:absolute;width:260px;aspect-ratio:1;border:2px solid rgba(255,255,255,.35);border-radius:50px;transform:rotate(45deg);right:-90px;bottom:-110px}
+  .visor img{position:absolute;inset:28px;width:calc(100% - 56px);height:calc(100% - 56px);object-fit:contain;opacity:0;transform:translateY(24px) scale(.96);transition:opacity .6s var(--ease),transform .8s var(--ease);filter:drop-shadow(0 18px 30px rgba(8,19,48,.3))}
+  .visor img.on{opacity:1;transform:none}
+  .visor .barrinha{height:4px;border-radius:4px;background:var(--linha);margin-top:16px;overflow:hidden}
+  .visor .barrinha i{display:block;height:100%;background:var(--degrade);transform-origin:0 50%;transform:scaleX(var(--dp,0));transition:transform .5s var(--ease)}
+}
+
+/* planos */
+.planos{display:grid;gap:18px;align-items:stretch}
+.plano{position:relative;display:flex;flex-direction:column;gap:18px;padding:30px 26px;border-radius:var(--raio-cartao);background:var(--branco);border:1px solid var(--linha);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.plano:hover{transform:translateY(-6px);box-shadow:var(--sombra)}
+.plano .nome{font-size:.8125rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--c-escuro)}
+.plano h3{margin:0;font-size:1.9rem;line-height:1.05;font-weight:300}
+.plano .para{margin:0;color:var(--apoio);font-weight:500;font-size:.9375rem}
+.plano ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:.9375rem;font-weight:500}
+.plano li{display:grid;grid-template-columns:14px 1fr;gap:12px;align-items:start}
+.plano li::before{content:"";width:9px;height:9px;margin-top:7px;border-radius:2px;transform:rotate(45deg);background:var(--degrade)}
+.plano li.base{font-weight:800;color:var(--c-escuro)}
+.plano li.base::before{background:transparent;border:2px solid var(--c-escuro)}
+.plano .btn{margin-top:auto;align-self:start}
+.plano.top{background:var(--degrade);color:var(--branco);border:0}
+.plano.top .nome,.plano.top .para,.plano.top li.base{color:var(--branco)}
+.plano.top li::before{background:var(--branco)}
+.plano.top li.base::before{background:transparent;border-color:var(--branco)}
+.plano.top .btn{background:var(--branco);color:var(--c-escuro)}
+.plano.top::after{content:"";position:absolute;inset:-2px;border-radius:calc(var(--raio-cartao) + 2px);z-index:-1;background:linear-gradient(120deg,var(--c-claro),var(--c-escuro),var(--c-claro));background-size:200% 100%;animation:borda 4s linear infinite}
+@keyframes borda{to{background-position:200% 0}}
+@media (min-width:900px){.planos{grid-template-columns:repeat(3,1fr)}.plano.top{transform:translateY(-12px)}.plano.top:hover{transform:translateY(-18px)}}
+.comparar{margin-top:30px;border:1px solid var(--linha);border-radius:var(--raio-painel);background:var(--branco);overflow:hidden}
+.comparar summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 22px;font-weight:800;color:var(--c-escuro)}
+.comparar summary::-webkit-details-marker{display:none}
+.comparar summary i{width:12px;height:12px;border-right:2.5px solid currentColor;border-bottom:2.5px solid currentColor;transform:rotate(45deg) translate(-3px,-3px);transition:transform .4s var(--ease)}
+.comparar[open] summary i{transform:rotate(225deg)}
+.tabela{overflow-x:auto;border-top:1px solid var(--linha)}
+.tabela table{width:100%;min-width:520px;border-collapse:collapse;font-size:.875rem}
+.tabela th,.tabela td{padding:11px 16px;text-align:center;border-bottom:1px solid var(--linha)}
+.tabela th:first-child,.tabela td:first-child{text-align:left;font-weight:600}
+.tabela thead th{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--c-escuro);background:var(--nevoa);position:sticky;top:0}
+.tabela tr.grupo td{background:var(--nevoa);font-size:.6875rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--apoio)}
+.sim{display:inline-block;width:12px;height:12px;border-radius:3px;transform:rotate(45deg);background:var(--degrade)}
+.nao{display:inline-block;width:12px;height:2px;background:var(--linha);vertical-align:middle}
+.nota{margin:14px 0 0;font-size:.75rem;color:var(--apoio)}
+
+/* avaliações */
+.depo{background:var(--degrade);color:var(--branco);margin-top:96px;padding-block:72px;overflow:hidden}
+.depo .olho,.depo h2{color:var(--branco)}
+.depo .trilho{display:flex;gap:16px;width:max-content;animation:rola 60s linear infinite;margin-top:22px}
+.depo .trilho:hover{animation-play-state:paused}
+.cit{margin:0;width:min(80vw,340px);flex:none;display:flex;flex-direction:column;gap:14px;background:rgba(0,0,0,.16);border:1px solid rgba(255,255,255,.24);border-radius:var(--raio-cartao);padding:22px}
+.cit blockquote{margin:0;font-size:.9375rem;font-weight:500;line-height:1.5;flex:1}
+.cit figcaption{font-size:.875rem;font-weight:800}
+.estrelas{display:flex;gap:4px}
+.estrelas svg{width:18px;height:18px}
+.fonte{margin:22px 0 0;font-size:.75rem;opacity:.88}
+
+/* suporte */
+.suporte{display:grid;gap:26px;align-items:center;background:var(--nevoa);border:1px solid var(--linha);border-radius:var(--raio-cartao);padding:32px 26px}
+.suporte p{margin:0;color:var(--apoio);font-weight:500;max-width:46ch}
+.relogio{display:grid;grid-template-columns:repeat(24,1fr);gap:4px;align-items:end;height:64px}
+.relogio i{border-radius:5px 5px 2px 2px;background:var(--linha);height:30%}
+.relogio i.ativo{background:linear-gradient(180deg,var(--c-claro),var(--c-escuro));height:100%}
+.relogio i.agora{background:var(--pilula-bg)}
+.horas{display:grid;grid-template-columns:repeat(24,1fr);gap:4px;font-size:.6875rem;font-weight:700;color:var(--apoio);margin-top:6px}
+@media (min-width:860px){.suporte{grid-template-columns:1.2fr 1fr;padding:46px}}
+
+/* chamada final */
+.final{position:relative;margin-top:96px;background:var(--degrade);color:var(--branco);overflow:hidden;isolation:isolate}
+.final .wrap{display:grid;gap:22px;justify-items:center;text-align:center;padding-block:84px}
+.final h2{color:var(--branco);margin-inline:auto}
+.final p{margin:0;max-width:48ch;font-weight:500;opacity:.95}
+.final .foto{position:absolute;inset:0;z-index:-2}
+.final .foto img{width:100%;height:100%;object-fit:cover}
+.final::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--veu)}
+.rodape{padding-block:30px 40px;display:grid;gap:10px;justify-items:center;text-align:center;font-size:.75rem;color:var(--apoio)}
+.rodape img{width:150px;height:auto}
+
+/* revelação (o JS liga; sem JS tudo aparece) */
+.js .rv{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+.js .hero h1 .w{opacity:0;transform:translateY(.5em);animation:sobe .9s var(--ease) forwards;animation-delay:calc(.15s + var(--i) * .06s)}
+.js .entra{opacity:0;transform:translateY(16px);animation:sobe .9s var(--ease) forwards;animation-delay:var(--d,0s)}
+.js .flut{animation:pousa 1.2s var(--ease) both;animation-delay:var(--d,.3s)}
+@keyframes sobe{to{opacity:1;transform:none}}
+@keyframes pousa{from{opacity:0;translate:0 40px;scale:.94}}
+
+@media (min-width:900px){
+  .hero .wrap{grid-template-columns:1.05fr 1fr;gap:40px;padding-block:140px 96px}
+  .palco{min-height:460px}
+}
+@media (max-width:899px){ .palco{min-height:300px;margin-inline:auto;width:100%;max-width:520px} }
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv,.js .entra,.js .hero h1 .w,.js .flut{opacity:1!important;transform:none!important}
+  .flut{transform:rotate(var(--r))!important}
+  .los{transform:rotate(45deg)!important}
+  .faixa .trilho,.depo .trilho{width:auto;overflow-x:auto}
+  html{scroll-behavior:auto}
+}
+</style>
+
+<div class="progresso" aria-hidden="true"><i id="prog"></i></div>
+
+<header class="barra" id="barra">
+  <div class="wrap">
+    <a href="#topo" aria-label="Início"><img src="https://prosystemnet.com/wp-content/plugins/prosystem-blog/paginas/sistema-para-farmacia/img/4b0201e6ea54.png" alt="ProSystem"></a>
+    <nav aria-label="Seções"><a href="#ferramentas">Ferramentas</a><a href="#dia">Na prática</a><a href="#planos">Planos</a><a href="#avaliacoes">Avaliações</a></nav>
+    <a class="btn branco pequeno" href="https://api.whatsapp.com/message/6BX6LTHQ6SUWB1?autoload=1&amp;app_absent=0" target="_blank" rel="noopener"><span class="longo">Fale com um especialista</span><span class="curto">WhatsApp</span> <span class="seta">→</span></a>
+  </div>
+</header>
+
+<main id="topo">
+<section class="hero" id="hero">
+  <div class="losangos" aria-hidden="true">
+    <div class="los" style="--t:260px;--v:-.22;top:-90px;right:-80px"></div>
+    <div class="los cheio" style="--t:130px;--v:.16;top:58%;left:-70px"></div>
+    <div class="los" style="--t:80px;--v:-.4;top:22%;left:44%"></div>
+    <div class="los" style="--t:340px;--v:.1;bottom:-230px;right:24%"></div>
+  </div>
+  <div class="wrap">
+    <div class="hero-texto">
+      <span class="olho entra" style="--d:0s">Sistema para farmácia e drogaria</span>
+      <h1 id="titulo">A <b>gestão</b> da sua <b>FARMÁCIA</b> em um só sistema.</h1>
+      <p class="sub entra" style="--d:.65s">Caixa, estoque, controlados, PBM e fiscal conectados. E especialistas de verdade no suporte, das 7h às 22h, inclusive sábado e domingo.</p>
+      <div class="acoes entra" style="--d:.8s">
+        <a class="btn branco forte" href="https://api.whatsapp.com/message/6BX6LTHQ6SUWB1?autoload=1&amp;app_absent=0" target="_blank" rel="noopener">Fale com um especialista <span class="seta">→</span></a>
+        <a class="btn vazado" href="#planos">Ver os planos</a>
+      </div>
+      <ul class="provas entra" style="--d:.95s">
+        <li><span class="n" data-conta="600" data-pre="+">+600</span><span class="r">clientes</span></li>
+        <li><span class="n" data-conta="16" data-pre="+">+16</span><span class="r">anos de experiência</span></li>
+        <li><span class="n">7h–22h</span><span class="r">suporte, sábado e domingo também</span></li>
+      </ul>
+    </div>
+    <div class="palco" id="palco" aria-hidden="true"><figure class="flut a" style="--d:0.35s;margin:0"><div class="topo"><i></i>Painel de indicadores</div><img src="https://prosystemnet.com/wp-content/plugins/prosystem-blog/paginas/sistema-para-farmacia/img/9179d70eab4f.webp" alt=""></figure><figure class="flut b" style="--d:0.53s;margin:0"><div class="topo"><i></i>Fechamento no WhatsApp</div><img src="https://prosystemnet.com/wp-content/plugins/prosystem-blog/paginas/sistema-para-farmacia/img/e6c9c04102fe.webp" alt=""></figure><figure class="flut c" style="--d:0.71s;margin:0"><div class="topo"><i></i>Uso contínuo</div><img src="https://prosystemnet.com/wp-content/plugins/prosystem-blog/paginas/sistema-para-farmacia/img/a0c0ecb8ce41.webp" alt=""></figure></div>
+  </div>
+</section>
+
+<div class="faixa" aria-label="Funções do sistema"><div class="trilho"><span>Caixa rápido</span><span>NF-e e TEF</span><span>SNGPC</span><span>PBM e Farmácia Popular</span><span>Lote e validade</span><span>Uso contínuo</span><span>Curva ABC</span><span>Acesso por biometria</span><span>Avisos no WhatsApp</span><span>Painel de indicadores</span><span>Caixa rápido</span><span>NF-e e TEF</span><span>SNGPC</span><span>PBM e Farmácia Popular</span><span>Lote e validade</span><span>Uso contínuo</span><span>Curva ABC</span><span>Acesso por biometria</span><span>Avisos no WhatsApp</span><span>Painel de indicadores</span></div></div>
+
+<section>
+  <div class="wrap">
+    <span class="olho rv">O que tira o sono do dono</span>
+    <h2 class="rv">O lucro da farmácia some nos <b>detalhes</b>.</h2>
+    <p class="lead rv">Cliente que recompra no concorrente, venda que ninguém registrou, número espalhado em relatório. O Prosystem mostra cada um deles.</p>
+    <div class="dores"><article class="dor rv" style="--d:0.0s"><q>O remédio do seu cliente acaba em 8 dias. Quem vai lembrar dele primeiro?</q><p>O uso contínuo calcula a próxima compra pela posologia e avisa o balcão antes.</p></article><article class="dor rv" style="--d:0.1s"><q>A venda perdida não aparece no caixa. Mas dá para medir.</q><p>Cada item excluído pede um motivo: falta do produto, preço da concorrência, demora no atendimento.</p></article><article class="dor rv" style="--d:0.2s"><q>Sua loja cresceu. Você consegue provar isso em 30 segundos?</q><p>O painel de indicadores junta vendas, estoque, financeiro e delivery numa tela.</p></article></div>
+  </div>
+</section>
+
+<section id="ferramentas">
+  <div class="wrap">
+    <div class="carrossel-topo">
+      <div>
+        <span class="olho rv">Ferramentas</span>
+        <h2 class="rv">O que o Prosystem faz <b>pela sua farmácia</b>.</h2>
+        <p class="lead rv" style="margin-bottom:24px">Telas reais do Prosystem, com dados de exemplo. Arraste para o lado ou use as setas.</p>
+      </div>
+      <div class="setas rv"><button class="seta-btn" id="ant" type="button" aria-label="Ferramenta anterior">←</button><button class="seta-btn" id="prox" type="button" aria-label="Próxima ferramenta">→</button></div>
+    </div>
+    <div class="carrossel" id="carrossel"><article class="ferr"><div class="tela"><img src="https://prosystemnet.com/wp-content/plugins/prosystem-blog/paginas/sistema-para-farmacia/img/14bca0583ffd.webp" alt="Tela do Prosystem: Painel de indicadores" loading="lazy"></div><div class="corpo"><div class="meta"><span class="mod">Gerencial</span><span class="pilula selo">Farma Plus</span></div><h3>Painel de indicadores</h3><p>Vendas, estoque, financeiro, compras e delivery em painéis, com filtro por período.</p></div></article><article class="ferr"><div class="tela"><img src="https://prosystemnet.com/wp-content/plugins/prosystem-blog/paginas/sistema-para-farmacia/img/33a173f2e6e2.webp" alt="Tela do Prosystem: Uso contínuo ativo" loading="lazy"></div><div class="corpo"><div class="meta"><span class="mod">Clientes</span></div><h3>Uso contínuo ativo</h3><p>Calcula a próxima compra pela posologia e avisa o balcão nos dias anteriores, para o cliente voltar à sua loja.</p></div></article><article class="ferr"><div class="tela"><img src="https://prosystemnet.com/wp-content/plugins/prosystem-blog/paginas/sistema-para-farmacia/img/673c8b07c04a.webp" alt="Tela do Prosystem: Indicador de perda de vendas" loading="lazy"></div><div class="corpo"><div class="meta"><span class="mod">Gerencial</span></div><h3>Indicador de perda de vendas</h3><p>Registra o motivo de cada item excluído e mostra o gráfico do que você deixou de vender.</p></div></article><article class="ferr"><div class="tela"><img src="https://prosystemnet.com/wp-content/plugins/prosystem-blog/paginas/sistema-para-farmacia/img/9d0910a9a069.webp" alt="Tela do Prosystem: Avisos via WhatsApp" loading="lazy"></div><div class="corpo"><div class="meta"><span class="mod">Gerencial</span><span class="pilula selo">Farma Plus</span></div><h3>Avisos via WhatsApp</h3><p>Fechamento de caixa, vendas, contas, metas e logins chegam no WhatsApp de quem você escolher.</p></div></article><article class="ferr"><div class="tela"><img src="https://prosystemnet.com/wp-content/plugins/prosystem-blog/paginas/sistema-para-farmacia/img/cc64d97fca2d.webp" alt="Tela do Prosystem: Sangria obrigatória" loading="lazy"></div><div class="corpo"><div class="meta"><span class="mod">Caixa</span></div><h3>Sangria obrigatória</h3><p>Avisa o caixa num valor e bloqueia a venda em outro, até a sangria ser feita.</p></div></article><article class="ferr"><div class="tela"><img src="https://prosystemnet.com/wp-content/plugins/prosystem-blog/paginas/sistema-para-farmacia/img/c05e65e1a2ae.webp" alt="Tela do Prosystem: Scanner de receitas do Farmácia Popular" loading="lazy"></div><div class="corpo"><div class="meta"><span class="mod">PBM</span><span class="pilula selo">Pro e Plus</span></div><h3>Scanner de receitas do Farmácia Popular</h3><p>Digitaliza e guarda as receitas em mídia externa ou na nuvem.</p></div></article><article class="ferr"><div class="tela"><img src="https://prosystemnet.com/wp-content/plugins/prosystem-blog/paginas/sistema-para-farmacia/img/a13b049de2d0.webp" alt="Tela do Prosystem: Curva ABC e XYZ" loading="lazy"></div><div class="corpo"><div class="meta"><span class="mod">Estoque</span></div><h3>Curva ABC e XYZ</h3><p>Classifica os itens por valor, quantidade e criticidade para você comprar melhor.</p></div></article><article class="ferr"><div class="tela"><img src="https://prosystemnet.com/wp-content/plugins/prosystem-blog/paginas/sistema-para-farmacia/img/3705aa3807ff.webp" alt="Tela do Prosystem: Produtos sem giro" loading="lazy"></div><div class="corpo"><div class="meta"><span class="mod">Estoque</span></div><h3>Produtos sem giro</h3><p>Mostra há quantos dias cada item não vende e o que está parado na prateleira.</p></div></article><article class="ferr"><div class="tela sem"><div><strong>Digital</strong><small>Login e liberações com a impressão digital, sem senha emprestada.</small></div></div><div class="corpo"><div class="meta"><span class="mod">Acessos</span><span class="pilula selo">Novidade</span></div><h3>Acesso e liberações por biometria</h3><p>Descontos, cancelamentos e ajustes ficam ligados ao colaborador que pôs o dedo no leitor.</p></div></article></div>
+    <div class="pontos" id="pontos"></div>
+  </div>
+</section>
+
+<section id="dia">
+  <div class="wrap">
+    <span class="olho rv">Na prática</span>
+    <h2 class="rv">Um dia na sua farmácia, <b>com o Prosystem</b>.</h2>
+    <p class="lead rv">Role a página: a tela muda junto com o dia.</p>
+    <div class="dia">
+      <div class="visor" aria-hidden="true"><div class="moldura"><img src="https://prosystemnet.com/wp-content/plugins/prosystem-blog/paginas/sistema-para-farmacia/img/42c4f06eb1a0.webp" alt=""><img src="https://prosystemnet.com/wp-content/plugins/prosystem-blog/paginas/sistema-para-farmacia/img/33a173f2e6e2.webp" alt=""><img src="https://prosystemnet.com/wp-content/plugins/prosystem-blog/paginas/sistema-para-farmacia/img/c7a4017700ff.webp" alt=""><img src="https://prosystemnet.com/wp-content/plugins/prosystem-blog/paginas/sistema-para-farmacia/img/9d0910a9a069.webp" alt=""></div><div class="barrinha"><i id="dp"></i></div></div>
+      <div class="passos"><article class="passo" data-k="0"><span class="hora">Abertura</span><h3>O estoque na tela antes da porta abrir</h3><p>Ruptura, estoque excedente e inventário no painel, para saber o que repor primeiro.</p><div class="mini"><img src="https://prosystemnet.com/wp-content/plugins/prosystem-blog/paginas/sistema-para-farmacia/img/5251cd07314d.webp" alt="Tela do Prosystem: O estoque na tela antes da porta abrir" loading="lazy"></div></article><article class="passo" data-k="1"><span class="hora">No balcão</span><h3>O sistema lembra do cliente por você</h3><p>Na venda, o aviso mostra que o remédio de uso contínuo está perto de acabar.</p><div class="mini"><img src="https://prosystemnet.com/wp-content/plugins/prosystem-blog/paginas/sistema-para-farmacia/img/3cc8736c3043.webp" alt="Tela do Prosystem: O sistema lembra do cliente por você" loading="lazy"></div></article><article class="passo" data-k="2"><span class="hora">Horário de pico</span><h3>Dinheiro na gaveta sob controle</h3><p>Passou do limite, o caixa é avisado. Passou do segundo, a venda para até a sangria.</p><div class="mini"><img src="https://prosystemnet.com/wp-content/plugins/prosystem-blog/paginas/sistema-para-farmacia/img/68d6532a59ac.webp" alt="Tela do Prosystem: Dinheiro na gaveta sob controle" loading="lazy"></div></article><article class="passo" data-k="3"><span class="hora">Fim do dia</span><h3>O fechamento chega no seu WhatsApp</h3><p>Venda bruta, descontos, sangrias e formas de pagamento, onde você estiver.</p><div class="mini"><img src="https://prosystemnet.com/wp-content/plugins/prosystem-blog/paginas/sistema-para-farmacia/img/f80f968c7984.webp" alt="Tela do Prosystem: O fechamento chega no seu WhatsApp" loading="lazy"></div></article></div>
+    </div>
+  </div>
+</section>
+
+<section id="planos">
+  <div class="wrap">
+    <span class="olho rv">Planos</span>
+    <h2 class="rv">Um plano para cada <b>fase</b> da sua farmácia.</h2>
+    <p class="lead rv">Os planos para farmácia e drogaria vêm da tabela oficial do Prosystem. Fale com um especialista para saber o valor do plano certo para a sua loja.</p>
+    <div class="planos"><article class="plano rv" style="--d:0.0s"><span class="nome">Farma Basic</span><h3>O <b>essencial</b> do balcão</h3><p class="para">Para quem quer o caixa e o fiscal em dia.</p><ul><li class="">Venda, orçamento e devolução</li><li class="">NF-e, TEF e recarga</li><li class="">Sangria e fechamento de caixa</li><li class="">SPED, Sintegra e tributação</li><li class="">Balanço de estoque</li><li class="">Atualização de preços pelo dicionário</li><li class="">Classes terapêuticas e genéricos</li></ul><a class="btn cor pequeno" href="https://api.whatsapp.com/message/6BX6LTHQ6SUWB1?autoload=1&amp;app_absent=0" target="_blank" rel="noopener">Quero o Farma Basic <span class="seta">→</span></a></article><article class="plano rv" style="--d:0.1s"><span class="nome">Farma Pro</span><h3>A farmácia <b>completa</b></h3><p class="para">Para quem vende controlados e trabalha com PBM.</p><ul><li class="base">Tudo do Farma Basic, mais:</li><li class="">Produtos controlados (SNGPC)</li><li class="">PBM e cadastro de prescritores</li><li class="">Encomendas e entregas</li><li class="">Conferência cega na venda e na entrada de notas</li><li class="">Auditoria de acessos</li><li class="">Financeiro, ponto e comissões</li><li class="">Prosystem Gerencial e integrações</li></ul><a class="btn cor pequeno" href="https://api.whatsapp.com/message/6BX6LTHQ6SUWB1?autoload=1&amp;app_absent=0" target="_blank" rel="noopener">Quero o Farma Pro <span class="seta">→</span></a></article><article class="plano rv top" style="--d:0.2s"><span class="nome">Farma Plus</span><h3>A gestão <b>na palma da mão</b></h3><p class="para">Para quem quer os números da loja em tempo real.</p><ul><li class="base">Tudo do Farma Pro, mais:</li><li class="">Painel de indicadores (Dashboard)</li><li class="base">Avisos via WhatsApp</li><li class="">Fluxo de caixa, banco e boleto</li><li class="">Demonstrativo de resultados (DRE)</li><li class="">Metas de funcionários</li><li class="">Atenção farmacêutica</li><li class="">Módulo de manipulação</li></ul><a class="btn cor pequeno" href="https://api.whatsapp.com/message/6BX6LTHQ6SUWB1?autoload=1&amp;app_absent=0" target="_blank" rel="noopener">Quero o Farma Plus <span class="seta">→</span></a></article></div>
+    <details class="comparar rv">
+      <summary>Comparar os planos função por função <i aria-hidden="true"></i></summary>
+      <div class="tabela"><table><thead><tr><th scope="col">Função</th><th scope="col">Farma Basic</th><th scope="col">Farma Pro</th><th scope="col">Farma Plus</th></tr></thead><tbody><tr class="grupo"><td colspan="4">Caixa</td></tr><tr><td>Venda, orçamento e devolução</td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr><td>NF-e e venda com TEF</td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr><td>Sangria, suprimento e fechamento</td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr><td>Conferência cega das vendas</td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr><td>PBM</td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr><td>Encomendas</td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr><td>Entregas</td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr class="grupo"><td colspan="4">Produtos e estoque</td></tr><tr><td>Balanço de estoque</td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr><td>Atualização de preços pelo dicionário</td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr><td>Produtos controlados (SNGPC)</td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr><td>Conferência cega na entrada de notas</td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr><td>Tabloides</td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr><td>Políticas de preços</td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr><td>Análises e processamentos</td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr class="grupo"><td colspan="4">Fiscal</td></tr><tr><td>SPED, Sintegra e tributação</td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr class="grupo"><td colspan="4">Gestão</td></tr><tr><td>Auditoria de acessos</td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr><td>Financeiro (caixa, sangrias, cheques)</td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr><td>Registro de ponto</td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr><td>Tabela de comissões</td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr><td>Fluxo de caixa, banco e boleto</td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr><td>Metas de funcionários</td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr><td>Demonstrativo de resultados (DRE)</td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr><td>Prosystem Gerencial</td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr><td>Painel de indicadores (Dashboard)</td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr><td>Integrações</td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr class="grupo"><td colspan="4">Clientes</td></tr><tr><td>Cadastro de prescritores</td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr><td>Atenção farmacêutica</td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr><tr class="grupo"><td colspan="4">Manipulação</td></tr><tr><td>Módulo de manipulação</td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="nao" role="img" aria-label="Não"></span></td><td><span class="sim" role="img" aria-label="Sim"></span></td></tr></tbody></table></div>
+    </details>
+    <p class="nota">Fonte: tabela Planos Prosystem 2025 da base de conhecimento. Integrações dos planos Pro e Plus: Napp, FarmaciasApp, Tray, Imendes, Avant, Farmácia Popular, E-Diretor, RV-Tecnologia, TEF, Balanço Coletor, Balanço Celular e PG Farma. Também há o plano Prosystem MEI.</p>
+  </div>
+</section>
+
+<section class="depo" id="avaliacoes" aria-labelledby="depo-t">
+  <div class="wrap">
+    <span class="olho rv">Avaliações no Google</span>
+    <h2 class="rv" id="depo-t">Quem usa, <b>recomenda</b>.</h2>
+  </div>
+  <div class="trilho"><figure class="cit"><span class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg></span><blockquote>Eu tenho duas farmácias e a quase 15 anos de empresa trabalho com o software da Prosystem! Amo o trabalho deles,o programa é super simples de aprender e o suporte que eles oferecem é super ágil e eficaz</blockquote><figcaption>Krisley Kretli de Oliveira</figcaption></figure><figure class="cit"><span class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg></span><blockquote>Trabalho com eles a 13 anos e não pretendo mudar. Me atendem super bem e com rapidez e sempre resolvem as minhas demandas de maneira muito eficaz. São nota 1000 e estão de parabéns.</blockquote><figcaption>Rodrigo Amancio</figcaption></figure><figure class="cit"><span class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg></span><blockquote>O sistema é excelente, tudo funciona, muito personalizável, integração, detalhamentos e o suporte humanizado tanto segunda a sexta quando sábado e domingo, sem aquelas frescuras de falar com robô. O suporte do Matheus de Carvalho excelente</blockquote><figcaption>Samuel Ferreira</figcaption></figure><figure class="cit"><span class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg></span><blockquote>Sistema muito bem estruturado de fácil acesso, atendimento nota 1000, todos muito atenciosos e prestativos quando precisamos!!!</blockquote><figcaption>Thalita Silva</figcaption></figure><figure class="cit"><span class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg></span><blockquote>Tive uma experiência incrível com a Prosystem! Atendimento excelente, serviço de ótima qualidade e muita atenção aos detalhes. Recomendo para quem procura confiança e profissionalismo.</blockquote><figcaption>Verônica Xavier</figcaption></figure><figure class="cit"><span class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg></span><blockquote>Trabalhamos com a Prossystem a muitos anos, nos atendem rapidamente em tudo que precisamos do sistema! A pessoa que nos atende João Vitor super educado e sempre rápido.</blockquote><figcaption>Katiane Avancini</figcaption></figure><figure class="cit"><span class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg></span><blockquote>Sistema muito bom. Aprovado. Técnico João Victor nos atende com extrema qualidade e paciência.</blockquote><figcaption>Claudiele Castro</figcaption></figure><figure class="cit"><span class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg></span><blockquote>Sistema muito fácil de trabalhar e eles dão ótima assistência.</blockquote><figcaption>Sirleia Moreira</figcaption></figure><figure class="cit"><span class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg></span><blockquote>Eu tenho duas farmácias e a quase 15 anos de empresa trabalho com o software da Prosystem! Amo o trabalho deles,o programa é super simples de aprender e o suporte que eles oferecem é super ágil e eficaz</blockquote><figcaption>Krisley Kretli de Oliveira</figcaption></figure><figure class="cit"><span class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg></span><blockquote>Trabalho com eles a 13 anos e não pretendo mudar. Me atendem super bem e com rapidez e sempre resolvem as minhas demandas de maneira muito eficaz. São nota 1000 e estão de parabéns.</blockquote><figcaption>Rodrigo Amancio</figcaption></figure><figure class="cit"><span class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg></span><blockquote>O sistema é excelente, tudo funciona, muito personalizável, integração, detalhamentos e o suporte humanizado tanto segunda a sexta quando sábado e domingo, sem aquelas frescuras de falar com robô. O suporte do Matheus de Carvalho excelente</blockquote><figcaption>Samuel Ferreira</figcaption></figure><figure class="cit"><span class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg></span><blockquote>Sistema muito bem estruturado de fácil acesso, atendimento nota 1000, todos muito atenciosos e prestativos quando precisamos!!!</blockquote><figcaption>Thalita Silva</figcaption></figure><figure class="cit"><span class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg></span><blockquote>Tive uma experiência incrível com a Prosystem! Atendimento excelente, serviço de ótima qualidade e muita atenção aos detalhes. Recomendo para quem procura confiança e profissionalismo.</blockquote><figcaption>Verônica Xavier</figcaption></figure><figure class="cit"><span class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg></span><blockquote>Trabalhamos com a Prossystem a muitos anos, nos atendem rapidamente em tudo que precisamos do sistema! A pessoa que nos atende João Vitor super educado e sempre rápido.</blockquote><figcaption>Katiane Avancini</figcaption></figure><figure class="cit"><span class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg></span><blockquote>Sistema muito bom. Aprovado. Técnico João Victor nos atende com extrema qualidade e paciência.</blockquote><figcaption>Claudiele Castro</figcaption></figure><figure class="cit"><span class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg></span><blockquote>Sistema muito fácil de trabalhar e eles dão ótima assistência.</blockquote><figcaption>Sirleia Moreira</figcaption></figure></div>
+  <div class="wrap"><p class="fonte">Avaliações reais de clientes, publicadas no perfil da ProSystem no Google.</p></div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="suporte rv">
+      <div>
+        <span class="olho">Suporte humanizado</span>
+        <h2>Aqui você fala com <b>gente</b>, não com robô.</h2>
+        <p>Mande áudio, texto ou print da tela pelo WhatsApp. Especialistas técnicos atendem das 7h às 22h, inclusive sábado e domingo.</p>
+        <p style="margin-top:22px"><a class="btn cor" href="https://api.whatsapp.com/message/6BX6LTHQ6SUWB1?autoload=1&amp;app_absent=0" target="_blank" rel="noopener">Chamar no WhatsApp <span class="seta">→</span></a></p>
+      </div>
+      <div aria-label="Horário do suporte: das 7h às 22h">
+        <div class="relogio" id="relogio"></div>
+        <div class="horas"><span style="grid-column:1/span 3">0h</span><span style="grid-column:8/span 3">7h</span><span style="grid-column:13/span 3">12h</span><span style="grid-column:19/span 3">18h</span><span style="grid-column:23/span 2">22h</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="foto" aria-hidden="true"><img src="https://prosystemnet.com/wp-content/plugins/prosystem-blog/paginas/sistema-para-farmacia/img/29dc342599de.webp" alt=""></div>
+  <div class="wrap">
+    <h2 class="rv">Pronto para ver o Prosystem <b>na sua farmácia</b>?</h2>
+    <p class="rv">Converse com um especialista pelo WhatsApp. Ele entende a sua rotina e indica o plano certo.</p>
+    <a class="btn branco forte rv" href="https://api.whatsapp.com/message/6BX6LTHQ6SUWB1?autoload=1&amp;app_absent=0" target="_blank" rel="noopener">Fale com um especialista <span class="seta">→</span></a>
+  </div>
+</section>
+</main>
+
+<footer class="rodape wrap">
+  <img src="https://prosystemnet.com/wp-content/plugins/prosystem-blog/paginas/sistema-para-farmacia/img/4699f164ee06.png" alt="ProSystem Sistemas">
+  <span>ProSystem Sistemas · +16 anos · Atendimento em todo o Brasil</span>
+  <span>Foto: Cristine Rochol / PMPA</span>
+</footer>
+
+<script>
+(function(){
+  var doc=document.documentElement, reduz=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  doc.classList.add('js');
+
+  // título palavra por palavra
+  var i=0;
+  (function quebra(no){
+    Array.prototype.slice.call(no.childNodes).forEach(function(n){
+      if(n.nodeType===3){
+        var frag=document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(function(p){
+          if(!p) return;
+          if(/^\s+$/.test(p)){frag.appendChild(document.createTextNode(p));return;}
+          var s=document.createElement('span');s.className='w';s.style.setProperty('--i',i++);s.textContent=p;frag.appendChild(s);
+        });
+        no.replaceChild(frag,n);
+      } else if(n.nodeType===1) quebra(n);
+    });
+  })(document.getElementById('titulo'));
+
+  // revelação ao rolar
+  var alvos=document.querySelectorAll('.rv');
+  if(!reduz && 'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    alvos.forEach(function(el){io.observe(el);});
+  } else alvos.forEach(function(el){el.classList.add('in');});
+
+  // contadores
+  if(!reduz) setTimeout(function(){document.querySelectorAll('[data-conta]').forEach(function(el){
+    var fim=+el.dataset.conta,pre=el.dataset.pre||'',t0=null;
+    (function f(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/1400);el.textContent=pre+Math.round(fim*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f);})(performance.now());
+  });},1000);
+
+  // rolagem: progresso, parallax, barra
+  var prog=document.getElementById('prog'),hero=document.getElementById('hero'),barra=document.getElementById('barra'),pend=false;
+  function rola(){pend=false;var y=scrollY,max=doc.scrollHeight-innerHeight;
+    prog.style.setProperty('--p',max>0?y/max:0);
+    if(!reduz) hero.style.setProperty('--sy',y+'px');
+    barra.classList.toggle('on',y>40);}
+  addEventListener('scroll',function(){if(!pend){pend=true;requestAnimationFrame(rola);}},{passive:true});
+  rola();
+
+  // telas do hero acompanham o mouse
+  if(!reduz && matchMedia('(hover:hover)').matches){
+    hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();
+      hero.style.setProperty('--mx',(e.clientX-r.left)+'px');hero.style.setProperty('--my',(e.clientY-r.top)+'px');
+      var px=((e.clientX-r.left)/r.width-.5)*18,py=((e.clientY-r.top)/r.height-.5)*18;
+      document.querySelectorAll('.flut').forEach(function(f){f.style.setProperty('--px',px);f.style.setProperty('--py',py);});});
+  }
+
+  // carrossel: setas, pontos, arrastar com o mouse e avanço automático
+  var car=document.getElementById('carrossel'),itens=car.children,pontos=document.getElementById('pontos'),atual=0,auto;
+  Array.prototype.forEach.call(itens,function(_,k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Ferramenta '+(k+1));b.onclick=function(){vai(k);para();};pontos.appendChild(b);});
+  function passo(){return itens[1]?itens[1].offsetLeft-itens[0].offsetLeft:car.clientWidth;}
+  function vai(k){k=(k+itens.length)%itens.length;car.scrollTo({left:itens[k].offsetLeft-itens[0].offsetLeft,behavior:reduz?'auto':'smooth'});}
+  function marca(){atual=Math.round(car.scrollLeft/passo());Array.prototype.forEach.call(pontos.children,function(b,k){b.classList.toggle('on',k===atual);});}
+  car.addEventListener('scroll',function(){requestAnimationFrame(marca);},{passive:true});marca();
+  document.getElementById('ant').onclick=function(){vai(atual-1);para();};
+  document.getElementById('prox').onclick=function(){vai(atual+1);para();};
+  function para(){clearInterval(auto);auto=null;}
+  if(!reduz){
+    var vis=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!auto&&auto!==0){auto=setInterval(function(){var fimScroll=car.scrollLeft+car.clientWidth>=car.scrollWidth-4;vai(fimScroll?0:atual+1);},4200);}else if(!e.isIntersecting)para();});},{threshold:.4});
+    vis.observe(car);
+    ['pointerdown','wheel','touchstart'].forEach(function(ev){car.addEventListener(ev,function(){para();auto=0;},{passive:true});});
+  }
+  var arr=null;
+  car.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;arr={x:e.clientX,s:car.scrollLeft,m:false};});
+  addEventListener('pointermove',function(e){if(!arr)return;var dx=e.clientX-arr.x;if(Math.abs(dx)>4){arr.m=true;car.classList.add('arrastando');}car.scrollLeft=arr.s-dx;});
+  addEventListener('pointerup',function(){if(!arr)return;var m=arr.m;arr=null;car.classList.remove('arrastando');if(m)vai(Math.round(car.scrollLeft/passo()));});
+  car.addEventListener('click',function(e){if(car.classList.contains('arrastando'))e.preventDefault();},true);
+
+  // um dia: passo ativo troca a tela fixa
+  var passos=document.querySelectorAll('.passo'),telas=document.querySelectorAll('.visor img'),dp=document.getElementById('dp');
+  function ativa(k){passos.forEach(function(p,j){p.classList.toggle('on',j===k);});telas.forEach(function(t,j){t.classList.toggle('on',j===k);});if(dp)dp.style.setProperty('--dp',(k+1)/passos.length);}
+  ativa(0);
+  if('IntersectionObserver' in window){
+    var po=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)ativa(+e.target.dataset.k);});},{rootMargin:'-45% 0px -45% 0px'});
+    passos.forEach(function(p){po.observe(p);});
+  }
+
+  // suporte pelo horário de Brasília
+  try{
+    var h=+new Intl.DateTimeFormat('pt-BR',{hour:'numeric',hourCycle:'h23',timeZone:'America/Sao_Paulo'}).format(new Date()),rel=document.getElementById('relogio');
+    for(var k=0;k<24;k++){var b=document.createElement('i');if(k>=7&&k<22)b.className='ativo';if(k===h)b.className+=' agora';rel.appendChild(b);}
+  }catch(e){}
+})();
+</script>

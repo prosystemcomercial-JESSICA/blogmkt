@@ -70,7 +70,6 @@ COMPARAR = {
         ("Clientes", "Cadastro de prescritores", "Cadastros>Prescritores"),
         ("Clientes", "Atenção farmacêutica", "Auxiliares>Clientes> Características (AF)"),
         ("Manipulação", "Módulo de manipulação", "Manipulação"),
-        ("Suporte", "Atendimento em plantão", "Atendimento Plantão"),
     ],
     "loja": [
         ("Caixa", "Venda, orçamento e devolução", "Orçamento - F1"),
@@ -96,7 +95,6 @@ COMPARAR = {
         ("Gestão", "Painel de indicadores (Dashboard)", "Dashboard"),
         ("Gestão", "Controle de mesas", "Controle de Mesas"),
         ("Gestão", "Integrações", "Integrações *"),
-        ("Suporte", "Atendimento em plantão", "Atendimento Plantão"),
     ],
 }
 
@@ -254,7 +252,7 @@ FARMACIA = dict(
              itens=[("Tudo do Farma Basic, mais:", None), ("Produtos controlados (SNGPC)", "Produtos>Controlado"), ("PBM e cadastro de prescritores", "PBM"),
                     ("Encomendas e entregas", "Encomenda"), ("Conferência cega na venda e na entrada de notas", "Conferência Cega Vendas"),
                     ("Auditoria de acessos", "Sistema>Auditoria"), ("Financeiro, ponto e comissões", "Auxiliares>Tabela de comissões"),
-                    ("Prosystem Gerencial e integrações", "Integrações *"), ("Atendimento em plantão", "Atendimento Plantão")]),
+                    ("Prosystem Gerencial e integrações", "Integrações *")]),
         dict(nome="Plus", titulo="A gestão <b>na palma da mão</b>", para="Para quem quer os números da loja em tempo real.", top=True,
              itens=[("Tudo do Farma Pro, mais:", None), ("Painel de indicadores (Dashboard)", "Dashboard"), ("Avisos via WhatsApp", None),
                     ("Fluxo de caixa, banco e boleto", "Financeiro>Fluxo de caixa"), ("Demonstrativo de resultados (DRE)", "Financeiro>Demonstrativos de Resultados"),
@@ -311,7 +309,7 @@ PADARIA = dict(
              itens=[("Tudo do Loja Basic, mais:", None), ("Produção", "Produtos>Movimentação> Produção"), ("Entregas", "Entregas - F12"),
                     ("Conferência cega na venda e na entrada de notas", "Conferência Cega Vendas"), ("Auditoria de acessos", "Sistema>Auditoria"),
                     ("Financeiro e registro de ponto", "Auxiliares>Funcionários> Registro de Ponto"), ("Tabloides", "Auxiliares>Produtos>Tablóides"),
-                    ("Prosystem Gerencial e integrações", "Integrações *"), ("Atendimento em plantão", "Atendimento Plantão")]),
+                    ("Prosystem Gerencial e integrações", "Integrações *")]),
         dict(nome="Plus", titulo="A gestão <b>na palma da mão</b>", para="Para quem quer os números da padaria em tempo real.", top=True,
              itens=[("Tudo do Loja Pro, mais:", None), ("Painel de indicadores (Dashboard)", "Dashboard"), ("Controle de mesas", "Controle de Mesas"),
                     ("Avisos via WhatsApp", None), ("Fluxo de caixa, banco e boleto", "Financeiro>Fluxo de caixa"),

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ProSystem Blog
  * Description: Visual editorial do blog ProSystem (artigos e página do blog) feito por código, sem depender dos modelos do Elementor. Desative para voltar aos modelos do Elementor.
- * Version: 1.2.2
+ * Version: 1.3.0
  * Author: ProSystem Sistemas
  * Text Domain: prosystem-blog
  *
@@ -11,13 +11,16 @@
  * - A página de posts (/blog/) usa templates/home-psb.php somente quando a opção psb_blog_home = 1,
  *   ou para administradores com ?psb_preview=1 (pré-visualização antes de ligar).
  * - Cabeçalho e rodapé continuam os do site (get_header/get_footer do tema).
+ * - Páginas próprias (link na bio e LPs): a página cujo slug tem pasta em paginas/<slug>/ é desenhada por
+ *   templates/pagina-propria.php quando o slug está na opção psb_paginas (lista separada por vírgula),
+ *   ou em prévia com ?psb_nova=1. O corpo vem do site/publicar_paginas.py do projeto.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'PSB_VERSAO', '1.2.2' );
+define( 'PSB_VERSAO', '1.3.0' );
 define( 'PSB_URL', plugin_dir_url( __FILE__ ) );
 define( 'PSB_DIR', plugin_dir_path( __FILE__ ) );
 define( 'PSB_WHATS', '5527997521370' );
@@ -452,4 +455,63 @@ add_filter(
 	},
 	10,
 	2
+);
+
+/**
+ * Página própria: a página do WordPress cujo slug tem paginas/<slug>/corpo.html.
+ * Fica no ar quando o slug está na opção psb_paginas; antes disso, só com ?psb_nova=1.
+ * Devolve o caminho do corpo, ou '' quando a página segue com o Elementor.
+ */
+function psb_pagina_propria() {
+	static $corpo = null;
+	if ( null !== $corpo ) {
+		return $corpo;
+	}
+	$corpo = '';
+	if ( ! is_page() ) {
+		return $corpo;
+	}
+	$slug    = get_post_field( 'post_name', get_queried_object_id() );
+	$arquivo = PSB_DIR . 'paginas/' . sanitize_file_name( $slug ) . '/corpo.html';
+	if ( ! $slug || ! file_exists( $arquivo ) ) {
+		return $corpo;
+	}
+	$ligadas = array_map( 'trim', explode( ',', (string) get_option( 'psb_paginas', '' ) ) );
+	if ( in_array( $slug, $ligadas, true ) || isset( $_GET['psb_nova'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
+		$corpo = $arquivo;
+	}
+	return $corpo;
+}
+
+/** Na página própria, tira os estilos do tema e do Elementor; os scripts (Pixel, Clarity) continuam. */
+add_action(
+	'wp_enqueue_scripts',
+	function () {
+		if ( ! psb_pagina_propria() ) {
+			return;
+		}
+		global $wp_styles;
+		foreach ( (array) $wp_styles->queue as $handle ) {
+			if ( ! in_array( $handle, array( 'admin-bar', 'dashicons' ), true ) ) {
+				wp_dequeue_style( $handle );
+			}
+		}
+	},
+	9999
+);
+
+add_action(
+	'template_redirect',
+	function () {
+		$corpo = psb_pagina_propria();
+		if ( ! $corpo ) {
+			return;
+		}
+		if ( isset( $_GET['psb_nova'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
+			add_filter( 'wp_robots', 'wp_robots_no_robots' );
+		}
+		include PSB_DIR . 'templates/pagina-propria.php';
+		exit;
+	},
+	5
 );

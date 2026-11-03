@@ -5,9 +5,9 @@ from pathlib import Path
 
 AQUI = Path(__file__).parent
 WA = "https://api.whatsapp.com/message/6BX6LTHQ6SUWB1?autoload=1&amp;app_absent=0"
-# Destino dos cartões de segmento: por enquanto, as prévias das LPs (site/lp). No site, trocar pelos endereços das páginas.
-LP_FARMACIA = "https://claude.ai/artifact/RgoAoEjoV4fMAPazhA6zWG"
-LP_PADARIA = "https://claude.ai/artifact/AvgXmvxUuNJhh71qc7QiRB"
+# Destino dos cartões "Conheça o sistema": as LPs do site (site/lp), publicadas pelo plugin prosystem-blog
+LP_FARMACIA = "https://prosystemnet.com/sistema-para-farmacia/"
+LP_PADARIA = "https://prosystemnet.com/sistema-para-padaria/"
 
 LINKS = [  # (sigla no losango, título, apoio, url, destaque)
     ("WA", "Fale com um especialista", "WhatsApp, das 7h às 22h, todos os dias", WA, True),
