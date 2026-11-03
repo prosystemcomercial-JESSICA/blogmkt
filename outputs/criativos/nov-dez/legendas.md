@@ -16,10 +16,10 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Sex 13/11 | Farmácia | `canetas-emagrecedoras-v2` | Estático com tela | `dias-sem-giro` |
 | Sáb 14/11 | Farmácia | `farmacia-dia-do-diabetes-v2` | Estático com tela | `uso-continuo-relatorio` |
 | Seg 16/11 | Padaria | `padaria-pix-caixa-v1` | Estático com tela | `whats-fechamento-v2` |
-| Ter 17/11 | Farmácia | `farmacia-novembro-azul-v1` | Foto com painel | - |
+| Ter 17/11 | Farmácia | `farmacia-novembro-azul-v2` | Foto com painel | - |
 | Qua 18/11 | Farmácia | `farmacia-quem-liberou-desconto-v1` | Estático com tela | `whats-desconto` |
 | Qui 19/11 | Padaria | `padaria-escala-6x1-v1` | Foto com painel | - |
-| Sáb 21/11 | Farmácia | `farmacia-dia-da-dengue-v3` | Foto com painel | - |
+| Sáb 21/11 | Farmácia | `farmacia-dia-da-dengue-v4` | Foto com painel | - |
 | Dom 22/11 | Farmácia | `frase-antimicrobianos-v2` | Frase de impacto | - |
 | Seg 23/11 | Farmácia | `carrossel-farmacia-black-friday-v2` | Carrossel V3 | `analise-descontos` |
 | Ter 24/11 | Farmácia | `carrossel-farmacia-depoimento-v3-<página>.png` | Carrossel V3 de depoimento | - |
@@ -27,7 +27,7 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Sex 27/11 | Farmácia | `frase-farmacia-lucro-v1` | Frase de impacto | - |
 | Seg 30/11 | Padaria | `padaria-13-salario-v2` | Foto com painel de vidro (o plano pedia estático com tela) | - |
 | Ter 01/12 | Farmácia | `frase-dezembro-vermelho-v2` | Frase de impacto | - |
-| Qua 02/12 | Farmácia | `farmacia-escala-5x2-v1` | Foto com painel | - |
+| Qua 02/12 | Farmácia | `farmacia-escala-5x2-v2` | Foto com painel | - |
 | Qui 03/12 | Farmácia | `farmacia-dezembro-laranja-v2` | Foto com painel | - |
 | Sex 04/12 | Padaria | `carrossel-padaria-sangria-v2` | Carrossel V2 | `sangria-bloqueio`, `sangria-aviso`, `sangria-registro` |
 | Seg 07/12 | Farmácia | `carrossel-farmacia-popular-v2` | Carrossel V2 | `receitas-scanner` |
@@ -43,7 +43,7 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Sex 01/01 | Os dois | `ano-novo-v3` | Foto com linha | - |
 | Seg 04/01 | Farmácia | `farmacia-cbs-v1` | Estático com tela | `precificacao` |
 | Qua 06/01 | Padaria | `padaria-dia-de-reis-v1` | Padaria com foto | - |
-| Qui 07/01 | Padaria | `padaria-simples-nota-v1` | Foto com painel | - |
+| Qui 07/01 | Padaria | `padaria-simples-nota-v2` | Foto com painel | - |
 | Sex 08/01 | Farmácia | `farmacia-mercado-2027-v1` | Estático com tela | `painel-vendas` |
 | Seg 11/01 | Padaria | `frase-padaria-sobra-v1` | Frase de impacto | - |
 | Ter 12/01 | Os dois | `depoimento-rodrigo-v2.png` | Depoimento | - |
@@ -244,7 +244,7 @@ Quer ver na sua padaria? Fale com um especialista pelo link da bio.
 - Não prometer conciliação de Pix com o banco: ainda não confirmada.
 
 
-### Ter 17/11: farmacia-novembro-azul-v1
+### Ter 17/11: farmacia-novembro-azul-v2
 
 Novembro Azul é o mês de falar da saúde do homem, e muitas vezes ele aparece primeiro na farmácia, não no consultório.
 
@@ -303,7 +303,7 @@ Fale com um especialista pelo link da bio.
 - A faixa de totais saiu do painel da Drogaria Modelo (valores fictícios); se possível, mockup com números de padaria.
 
 
-### Sáb 21/11: farmacia-dia-da-dengue-v3
+### Sáb 21/11: farmacia-dia-da-dengue-v4
 
 Sistema para farmácia ajuda a comprar certo: hoje é o Dia Nacional de Combate à Dengue, e a pergunta do dono é se o repelente vai faltar na prateleira.
 
@@ -465,7 +465,7 @@ Atendimento discreto também é o que faz o cliente voltar.
 - Data de saúde: a Jessica deve dizer se combina com a marca.
 
 
-### Qua 02/12: farmacia-escala-5x2-v1
+### Qua 02/12: farmacia-escala-5x2-v2
 
 Escala 5x2 na farmácia: a partir de 16 de dezembro, valem duas folgas por semana e 42 horas, sem reduzir salário.
 
@@ -769,7 +769,7 @@ Fale com um especialista pelo link da bio.
 - Produto: o relatório de dias sem giro vale sem ajuste na padaria?
 
 
-### Qui 07/01: padaria-simples-nota-v1
+### Qui 07/01: padaria-simples-nota-v2
 
 Nota fiscal da padaria no Simples em 2027: desde 1º de janeiro, os documentos seguem as regras novas de IBS e CBS.
 
