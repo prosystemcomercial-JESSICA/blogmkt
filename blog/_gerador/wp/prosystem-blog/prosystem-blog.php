@@ -483,7 +483,7 @@ function psb_pagina_propria() {
 	return $corpo;
 }
 
-/** Na página própria, tira os estilos do tema e do Elementor; os scripts (Pixel, Clarity) continuam. */
+/** Na página própria, tira os estilos do tema e do Elementor e os scripts do Elementor; Pixel e Clarity continuam. */
 add_action(
 	'wp_enqueue_scripts',
 	function () {
@@ -496,8 +496,32 @@ add_action(
 				wp_dequeue_style( $handle );
 			}
 		}
+		psb_tira_scripts_do_tema();
 	},
 	9999
+);
+
+/**
+ * Tira os scripts do tema, do Elementor e dos complementos dele (ElementsKit, Essential Addons),
+ * inclusive os que entram só no rodapé. Pixel (PixelYourSite), Clarity e jQuery continuam.
+ */
+function psb_tira_scripts_do_tema() {
+	global $wp_scripts;
+	foreach ( (array) $wp_scripts->queue as $handle ) {
+		if ( preg_match( '/^(elementor|e-|ekit|eael|hello-theme|smartmenus)/', $handle ) ) {
+			wp_dequeue_script( $handle );
+		}
+	}
+}
+
+add_action(
+	'wp_print_footer_scripts',
+	function () {
+		if ( psb_pagina_propria() ) {
+			psb_tira_scripts_do_tema();
+		}
+	},
+	0
 );
 
 add_action(

@@ -41,5 +41,22 @@
   - plugin ProSystem Blog 1.3.0: "página própria". A página cujo slug tem `paginas/<slug>/corpo.html` é desenhada por `templates/pagina-propria.php` com `wp_head`/`wp_footer` (mantém Yoast, Pixel da Meta via PixelYourSite e Clarity) e sem os estilos do tema. Só liga quando o slug está na opção `psb_paginas`; antes disso, prévia com `?psb_nova=1` (noindex);
   - `site/publicar_paginas.py`: gera os corpos de `linknabio`, `sistema-para-farmacia` e `sistema-para-padaria`, com imagens em arquivo (bio 158 KB, LPs ~570 KB);
   - cartões do link da bio apontam para https://prosystemnet.com/sistema-para-farmacia/ e /sistema-para-padaria/.
-- **Não aplicado no servidor:** o envio foi bloqueado pela checagem de segurança do Claude Code (escrita remota). Conferido antes: o plugin no servidor era igual ao 1.2.2 local; as páginas das LPs ainda não existem.
-- Passos para aplicar (com autorização): backup do banco (mysqldump) e do plugin em `~/backups-claude`; copiar o plugin; `php -l`; criar as páginas `sistema-para-farmacia` e `sistema-para-padaria` (fora do menu); testar `?psb_nova=1` nas três; `wp option update psb_paginas "linknabio,sistema-para-farmacia,sistema-para-padaria"`; conferir Pixel e Clarity no HTML. Para voltar: `wp option delete psb_paginas`.
+- Primeira tentativa bloqueada pela checagem de segurança; a Jessica autorizou: "autorizo publicar no site prosystemnet.com via SSH". Depois: "e depois mude o link da bio".
+
+## Publicado no site (03/11/2026, noite)
+- Backup do banco: `~/backups-claude/db-antes-paginas-proprias-20261103-233252.sql.gz`; plugin anterior: `~/backups-claude/plugin-prosystem-blog-antes-1.3.0-20261103-233252.tgz`.
+- Plugin ProSystem Blog **1.3.0** no servidor (`php -l` ok). Além do modo página própria, tira dessas páginas os scripts do tema, do Elementor, do ElementsKit e do Essential Addons (davam erro `elementorFrontendConfig is not defined`).
+- Páginas criadas: **3675** `sistema-para-farmacia` e **3676** `sistema-para-padaria`, fora do menu, com título e descrição no Yoast.
+- Ligado: `wp option update psb_paginas "linknabio,sistema-para-farmacia,sistema-para-padaria"`. A página 551 (`linknabio`) continua no Elementor por baixo; só o desenho mudou.
+- Para voltar ao link da bio antigo: `wp option update psb_paginas "sistema-para-farmacia,sistema-para-padaria"` (ou `wp option delete psb_paginas` para desligar tudo).
+
+### Conferido no ar
+- As três páginas: 200, ~0,5 s, `index, follow`, canonical certo, Pixel da Meta (`fbq`) e Clarity carregando, sem erro de script, sem imagem quebrada, sem rolagem lateral em 390px e 1366px.
+- O link da bio com os parâmetros do Instagram (`utm_source=ig...`) abre a página nova; os cartões levam às duas LPs.
+- O botão flutuante de WhatsApp do site (do Elementor) não aparece nessas páginas; elas têm o WhatsApp na barra fixa e nos botões.
+- Não conferido: abertura dentro do app do Instagram em celular real.
+
+## Como atualizar depois
+1. Mudar `site/linknabio/montar.py`, `site/lp/montar_lp.py` ou os modelos; montar (`python site/linknabio/montar.py site/linknabio/imagens.json site/linknabio/previa.html` e `python site/lp/montar_lp.py`).
+2. `python site/publicar_paginas.py` (gera `blog/_gerador/wp/prosystem-blog/paginas/`).
+3. Copiar a pasta `paginas/` para `wp-content/plugins/prosystem-blog/` no servidor e limpar o cache (`wp cache flush`).
