@@ -13,7 +13,7 @@ if (!saida) throw new Error('informe o arquivo de saída');
 const ordem = (d) => (d.data.slice(7, 9) === '01' ? '13' : d.data.slice(7, 9)) + d.data.slice(4, 6);
 const telas = (p) => [...new Set([p.tela, p.capa && p.capa.tela, p.sol && p.sol.tela, p.fim && p.fim.tela, ...(p.itens || []).map((i) => i.tela)].filter(Boolean))]
   .filter((t) => !fs.existsSync(path.join(AQUI, 'mockups', t + '.png')));
-const legSuporte = fs.readFileSync(path.join(RAIZ, 'outputs/criativos/suporte/legendas.md'), 'utf8').split('## carrossel-farmacia-suporte-v3')[1].split('## Texto alternativo')[0].trim();
+const legSuporte = fs.readFileSync(path.join(RAIZ, 'outputs/criativos/suporte/legendas.md'), 'utf8').split('## carrossel-farmacia-suporte-v4')[1].split('## Texto alternativo')[0].trim();
 
 const posts = [...P.filter((p) => !p.pagina), ...PRONTAS].sort((a, b) => ordem(a).localeCompare(ordem(b))).map((p) => {
   let arqs;

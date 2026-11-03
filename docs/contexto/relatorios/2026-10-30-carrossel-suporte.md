@@ -70,3 +70,5 @@ A Jessica enviou a página 5 e pediu: "Troque essa foto, coloque um homem".
 - Verificado: página 5 vista em tamanho real, rosto inteiro e sorriso acima do painel; gerador sem estouro. Autor e licença "Free" lidos na página da foto; os termos completos da licença do Pexels não foram lidos.
 - Texto alternativo da página 5 em `legendas.md` atualizado para "atendente homem".
 - A Jessica autorizou ("pode alterar") e o "5 / 6" das páginas com foto cheia ganhou sombra escura e opacidade total. Página 5 vista em tamanho real: o número ficou legível sobre a camisa clara.
+- Documento de aprovação (https://claude.ai/artifact/3EWRqeFaTD2J6UuUeHwRoe): a imagem do post de 09/11 virou a grade das 6 páginas da v4 (rev 45). A decisão do post continua em branco, para a Jessica marcar.
+- Galeria publicada na versão 11. `pecas-dados.js` e `galeria.js` passaram a apontar para a v4; ao renomear a legenda para v4, a galeria teria parado de achar a legenda do suporte, e isso foi corrigido. `conferir.js` sem erro nos 46 posts.

@@ -412,7 +412,7 @@ const P = [
 
 // Peças prontas de outras produções: só a legenda é nova.
 const PRONTAS = [
-  { data: 'Seg 09/11', seg: 'Farmácia', arq: 'outputs/criativos/suporte/carrossel-farmacia-suporte-v3-<página>.png', formato: 'Carrossel V2', nota: 'Legenda e texto alternativo em `outputs/criativos/suporte/legendas.md`.' },
+  { data: 'Seg 09/11', seg: 'Farmácia', arq: 'outputs/criativos/suporte/carrossel-farmacia-suporte-v4-<página>.png', formato: 'Carrossel V2', nota: 'Legenda e texto alternativo em `outputs/criativos/suporte/legendas.md`.' },
   { data: 'Ter 10/11', seg: 'Farmácia', arq: 'outputs/criativos/depoimentos/depoimento-krisley-v2.png', formato: 'Depoimento', kw: 'sistema para farmácia',
     cap: `Sistema para farmácia é escolha de muitos anos. Quase 15 anos de empresa, duas farmácias e o mesmo sistema. Obrigado pela confiança, Krisley.\n\nEstá revendo o sistema da sua farmácia para 2027? ${CTA}`,
     tags: '#sistemaparafarmacia #depoimento #gestaodefarmacia #prosystem', alt: 'Depoimento de Krisley Kretli de Oliveira, dona de duas farmácias, com avaliação de cinco estrelas no Google.' },
