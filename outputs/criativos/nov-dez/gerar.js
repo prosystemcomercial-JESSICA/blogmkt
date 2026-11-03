@@ -102,7 +102,9 @@ function v3(c) {
   return out;
 }
 
-const frase = (c) => [pg(c.tema, 'bra', `${lo(1)}${logo(1)}<div class="frs"><h4${c.fs ? ` style="font-size:${px(c.fs)}"` : ''}>${c.titulo}</h4><p>${c.apoio}</p></div>`)];
+// Laço vermelho do Dezembro Vermelho, acima do título da frase.
+const LACO_VERMELHO = `<svg viewBox="0 0 100 140" style="width:${px(92)};height:${px(128)};fill:none;stroke-width:17;margin:0 auto ${px(36)};flex:none"><path d="M50 16C29 16 25 40 34 58L74 126" stroke="#a5161d"/><path d="M50 16C71 16 75 40 66 58L26 126" stroke="#d62828"/></svg>`;
+const frase = (c) => [pg(c.tema, 'bra', `${lo(1)}${logo(1)}<div class="frs">${c.laco === 'vermelho' ? LACO_VERMELHO : ''}<h4${c.fs ? ` style="font-size:${px(c.fs)}"` : ''}>${c.titulo}</h4><p>${c.apoio}</p></div>`)];
 // Título, tela, faixa e pílula. Três blocos de texto, como pede o caderno.
 function comTela(c) {
   const cl = c.fundo === 'bra' ? 'bra' : 'forte sob';

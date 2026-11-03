@@ -21,3 +21,29 @@ A Jessica pediu para melhorar o post `frase-dezembro-vermelho-v2`, tirando "Comp
 
 ## Pendente
 - A Jessica aprovar a arte (decide: Jessica).
+
+---
+
+## Continuação: laço vermelho na arte
+
+### Pedido
+"coloque o simbolo do dezembro vermelho" na peça `frase-dezembro-vermelho-v2`.
+
+### Feito
+- `outputs/criativos/nov-dez/gerar.js`: novo `LACO_VERMELHO` (mesmo desenho do laço do Novembro Azul, em dois vermelhos, sem o selo branco) e o tipo `frase` passa a aceitar `laco: 'vermelho'`, que põe o laço centralizado acima do título.
+- `outputs/criativos/nov-dez/pecas-dados.js`: `laco: 'vermelho'` na peça e texto alternativo citando o laço.
+- PNG gerado de novo: `outputs/criativos/nov-dez/pecas/frase-dezembro-vermelho-v2.png`.
+
+### Verificado
+- `node gerar.js frase-dezembro-vermelho-v2`: "sem estouro". Abri o PNG: laço vermelho acima do título, texto intacto.
+- Não verificado: `legendas.md` não foi regenerado (a legenda não mudou) e a galeria/Claude Docs não foram atualizados.
+
+### Decisões e porquês
+- Laço solto sobre o branco, sem o círculo branco do Novembro Azul: aqui o fundo já é branco e o círculo não apareceria.
+- O vermelho fica só no símbolo; o texto continua azul da marca.
+
+### Pendente
+- A Jessica aprovar a arte com o laço (decide: Jessica).
+
+### Próxima sessão
+- Se ela pedir ajuste de tamanho/posição do laço, mexer em `LACO_VERMELHO` em `gerar.js` e rodar `node gerar.js frase-dezembro-vermelho-v2`.
