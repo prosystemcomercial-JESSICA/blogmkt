@@ -34,3 +34,12 @@
 
 ## Próxima sessão
 - Ler os comentários das prévias, ajustar `montar_lp.py` / `lp.tpl.html`, rodar `python site/lp/montar_lp.py` e publicar nos mesmos links. Para o WordPress, trocar as imagens base64 por arquivos da biblioteca de mídia. Skills: `impeccable`, `webapp-testing`.
+
+## Continuação: colocar no link da bio (mesmo dia)
+- Jessica aprovou as LPs e pediu os cartões "Conheça" do link da bio levando a elas, **só no link da bio** (prosystemnet.com/linknabio, página 551 no WordPress, hoje feita no Elementor). Plantão: "vale para todos", então a linha "Atendimento em plantão" saiu dos cartões e da tabela das LPs.
+- Pronto no repositório (commit cc4c323):
+  - plugin ProSystem Blog 1.3.0: "página própria". A página cujo slug tem `paginas/<slug>/corpo.html` é desenhada por `templates/pagina-propria.php` com `wp_head`/`wp_footer` (mantém Yoast, Pixel da Meta via PixelYourSite e Clarity) e sem os estilos do tema. Só liga quando o slug está na opção `psb_paginas`; antes disso, prévia com `?psb_nova=1` (noindex);
+  - `site/publicar_paginas.py`: gera os corpos de `linknabio`, `sistema-para-farmacia` e `sistema-para-padaria`, com imagens em arquivo (bio 158 KB, LPs ~570 KB);
+  - cartões do link da bio apontam para https://prosystemnet.com/sistema-para-farmacia/ e /sistema-para-padaria/.
+- **Não aplicado no servidor:** o envio foi bloqueado pela checagem de segurança do Claude Code (escrita remota). Conferido antes: o plugin no servidor era igual ao 1.2.2 local; as páginas das LPs ainda não existem.
+- Passos para aplicar (com autorização): backup do banco (mysqldump) e do plugin em `~/backups-claude`; copiar o plugin; `php -l`; criar as páginas `sistema-para-farmacia` e `sistema-para-padaria` (fora do menu); testar `?psb_nova=1` nas três; `wp option update psb_paginas "linknabio,sistema-para-farmacia,sistema-para-padaria"`; conferir Pixel e Clarity no HTML. Para voltar: `wp option delete psb_paginas`.
