@@ -1,0 +1,51 @@
+# Publica no Instagram os posts de instagram/agenda.json cujo horário chegou.
+# O token fica no secret IG_TOKEN do repositório (Settings > Secrets and variables > Actions).
+name: Instagram
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+    inputs:
+      id:
+        description: 'Publicar agora este post da agenda (id). Vazio = só o que estiver na hora.'
+        required: false
+      teste:
+        description: 'Só conferir token e imagens, sem publicar'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: instagram
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Publicar
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: '17841407290869129'
+          PUBLICAR_ID: ${{ inputs.id }}
+        run: node instagram/publicar.mjs ${{ inputs.teste && '--teste' || '' }}
+
+      - name: Registrar na agenda
+        if: always()
+        run: |
+          git diff --quiet instagram/agenda.json && exit 0
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add instagram/agenda.json
+          git commit -m 'Instagram: agenda atualizada pela publicação automática'
+          git pull --rebase origin main
+          git push origin HEAD:main
