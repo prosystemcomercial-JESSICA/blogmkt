@@ -960,17 +960,23 @@ Fale com um especialista pelo link da bio.
 - A tela foi recortada sem nome, foto e contato do paciente da ficha de exemplo. Use o recorte no mockup, porque o original mostra uma foto com direito de uso não confirmado.
 
 
-### Qua 20/01: frase-dia-do-farmaceutico-v1
+### Qua 20/01: farmacia-dia-do-farmaceutico-v2
 
-Dia do Farmacêutico: hoje o dia é de quem nunca deixa o balcão na mão.
+Dia do Farmacêutico: por trás de cada receita, tem alguém cuidando de gente.
 
-De quem confere a receita, tira a dúvida e atende com calma mesmo com fila. A vocês, o nosso obrigado.
+É quem confere a receita, explica como tomar, tira a dúvida no balcão e atende com calma mesmo com fila. Muitas vezes, é o primeiro profissional de saúde que a pessoa procura.
+
+A todos os farmacêuticos, e em especial aos que estão com a gente no dia a dia, o nosso obrigado.
 
 Marque um farmacêutico que merece ler isso.
 
 #diadofarmaceutico #farmaceutico #farmacia
 
-**Texto alternativo:** Frase em azul sobre fundo branco: hoje o dia é de quem nunca deixa o balcão na mão. Feliz Dia do Farmacêutico.
+**Texto alternativo:** Farmacêutica de jaleco sorrindo enquanto pega um produto na prateleira, dentro de um losango, com a data 20 de janeiro e o texto: por trás de cada receita, tem alguém cuidando de gente. A todos os farmacêuticos, o nosso obrigado.
+
+**Conferir antes de publicar:**
+
+- A v1 (frase em fundo branco) fica guardada como referência em pecas/frase-dia-do-farmaceutico-v1.png.
 
 
 ### Sex 22/01: padaria-entregas-v1
