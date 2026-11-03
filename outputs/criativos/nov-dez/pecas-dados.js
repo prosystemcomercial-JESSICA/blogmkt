@@ -379,9 +379,7 @@ ${CTA}`,
   foto: 'farmaceutica-receita', yLos: 289, posicao: '55% 40%', pilula: '20 de janeiro · Dia do Farmacêutico',
   titulo: 'Por trás de cada receita, <b>tem alguém cuidando de gente.</b>', apoio: 'A todos os farmacêuticos, o nosso obrigado.',
   kw: 'Dia do Farmacêutico',
-  cap: 'Dia do Farmacêutico: por trás de cada receita, tem alguém cuidando de gente.\n\nÉ quem confere a receita, explica como tomar, tira a dúvida no balcão e atende com calma mesmo com fila. Muitas vezes, é o primeiro profissional de saúde que a pessoa procura.\n\nA todos os farmacêuticos, e em especial aos que estão com a gente no dia a dia, o nosso obrigado.\n\nMarque um farmacêutico que merece ler isso.
-
-Foto: Cristine Rochol / PMPA.',
+  cap: 'Dia do Farmacêutico: por trás de cada receita, tem alguém cuidando de gente.\n\nÉ quem confere a receita, explica como tomar, tira a dúvida no balcão e atende com calma mesmo com fila. Muitas vezes, é o primeiro profissional de saúde que a pessoa procura.\n\nA todos os farmacêuticos, e em especial aos que estão com a gente no dia a dia, o nosso obrigado.\n\nMarque um farmacêutico que merece ler isso.\n\nFoto: Cristine Rochol / PMPA.',
   tags: '#diadofarmaceutico #farmaceutico #farmacia',
   alts: ['Farmacêutica de jaleco escrevendo uma receita no balcão, com prateleiras de remédios ao fundo, dentro de um losango, com a data 20 de janeiro e o texto: por trás de cada receita, tem alguém cuidando de gente. A todos os farmacêuticos, o nosso obrigado.'],
   conferir: ['A v1 (frase em fundo branco) fica guardada como referência em pecas/frase-dia-do-farmaceutico-v1.png.', 'Foto real de uma farmácia distrital de Porto Alegre (Cristine Rochol / PMPA), licença que exige o crédito (já está na legenda). Não há autorização da pessoa fotografada.'] },

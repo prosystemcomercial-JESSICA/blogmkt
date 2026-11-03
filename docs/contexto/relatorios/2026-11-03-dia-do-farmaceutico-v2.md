@@ -28,3 +28,11 @@ A Jessica achou a v1 (frase azul em fundo branco) simples demais: "é uma homena
 
 ## Próxima sessão
 Mostrar o PNG à Jessica. Se aprovado, travar a peça e registrar o tipo "Homenagem" no caderno. Ler o caderno de marca antes de mexer.
+
+## Atualização (mesmo dia): troca da foto
+
+- **Pedido:** "troque a foto, esta repetindo demais o personagem". A `farmaceutica-recorte` aparece em 6 peças.
+- **Feito:** entrou a foto nova `outputs/criativos/nov-dez/fotos/farmaceutica-receita.jpg`: farmacêutica escrevendo uma receita no balcão de uma farmácia distrital de Porto Alegre. É um recorte do original do Commons. A licença permite uso comercial e exige o crédito "Cristine Rochol / PMPA", que foi para a legenda e para `fotos/CREDITOS.md`. O recorte deixa de fora o aviso "Farmácia Distrital / Cartão SUS", para a farmácia não parecer pública.
+- **Descartadas:** as outras fotos do banco (uma tem tablet, outra mostra o senhor ainda em avaliação no caderno, outra tem rótulo em inglês). Também ficaram de fora o Unsplash (só foto paga para o tema), o Pexels (pessoas sem aparência brasileira) e a série da Agência Senado (marcas à mostra e nenhum farmacêutico em destaque).
+- **Verificado:** a peça foi gerada sem estouro e conferida visualmente. `pecas-dados.js` carrega no node. Uma edição intermediária quebrou a string da legenda e foi corrigida neste commit.
+- **Pendente:** não há autorização da pessoa fotografada. A licença cobre a foto, não o direito de imagem. Se a Jessica quiser segurança total, a alternativa é uma foto própria de cliente.
