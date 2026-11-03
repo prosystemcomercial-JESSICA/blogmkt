@@ -9,8 +9,8 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Data | Para quem | Peça | Formato | Mockup em falta |
 |---|---|---|---|---|
 | Qua 04/11 | Farmácia | `carrossel-farmacia-reforma-tributaria-v1` | Carrossel V2 | `painel-estoque` |
-| Sex 06/11 | Padaria | `carrossel-padaria-reforma-tributaria-v1` | Carrossel V3 | - |
-| Seg 09/11 | Farmácia | `carrossel-farmacia-suporte-v3-<página>.png` | Carrossel V2 | - |
+| Sex 06/11 | Padaria | `carrossel-padaria-reforma-tributaria-v2` | Carrossel V3 | - |
+| Seg 09/11 | Farmácia | `carrossel-farmacia-suporte-v4-<página>.png` | Carrossel V2 | - |
 | Ter 10/11 | Farmácia | `depoimento-krisley-v2.png` | Depoimento | - |
 | Qua 11/11 | Padaria | `carrossel-padaria-trigo-v1` | Carrossel V3 | `precificacao` |
 | Sex 13/11 | Farmácia | `canetas-emagrecedoras-v2` | Estático com tela | `dias-sem-giro` |
@@ -39,8 +39,8 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Qua 16/12 | Os dois | `frase-escala-hoje-v2` | Frase de impacto | - |
 | Sex 18/12 | Padaria | `padaria-curva-abc-v1` | Estático com tela | `curva-abc` |
 | Seg 21/12 | Farmácia | `frase-farmacia-receita-v1` | Frase de impacto | - |
-| Sex 25/12 | Os dois | `natal-v4` | Foto com losango e linha | - |
-| Sex 01/01 | Os dois | `ano-novo-v2` | Foto com linha | - |
+| Sex 25/12 | Os dois | `natal-v5` | Foto com losango e linha | - |
+| Sex 01/01 | Os dois | `ano-novo-v3` | Foto com linha | - |
 | Seg 04/01 | Farmácia | `farmacia-cbs-v1` | Estático com tela | `precificacao` |
 | Qua 06/01 | Padaria | `padaria-dia-de-reis-v1` | Padaria com foto | - |
 | Qui 07/01 | Padaria | `padaria-simples-nota-v1` | Foto com painel | - |
@@ -112,7 +112,7 @@ Fale com um especialista pelo link da bio.
 - A tela mostra "Drogaria Modelo" com um CNPJ, embora o LEIA-ME das telas diga que os CNPJs estão cobertos. O dado é fictício; cubra no mockup.
 
 
-### Sex 06/11: carrossel-padaria-reforma-tributaria-v1
+### Sex 06/11: carrossel-padaria-reforma-tributaria-v2
 
 Reforma tributária nas padarias: em 2027, um cupom pode ter várias regras.
 
@@ -126,7 +126,7 @@ Fale com um especialista pelo link da bio.
 
 **Texto alternativo:**
 
-1. Pães em uma grade, com o título: em 2027, o pão francês zera, e o resto do cupom?
+1. Pães em uma grade, com o título: em 2027, o pão francês zera o imposto, e o resto do cupom?
 2. Pães em uma grade e o texto: pão francês, zero.
 3. Mãos segurando massa e o texto: feito na loja, regra própria.
 4. Pães em uma prateleira e o texto: revenda fora do desconto.
@@ -139,7 +139,7 @@ Fale com um especialista pelo link da bio.
 - A regra dos 40% veio de parecer jurídico; os artigos não foram lidos no Planalto.
 
 
-### Seg 09/11: carrossel-farmacia-suporte-v3-<página>.png
+### Seg 09/11: carrossel-farmacia-suporte-v4-<página>.png
 
 *Legenda e texto alternativo em `outputs/criativos/suporte/legendas.md`.*
 
@@ -195,7 +195,7 @@ Fale com um especialista pelo link da bio.
 
 #gestaodefarmacia #estoque #comprasnafarmacia #sistemaparafarmacia
 
-**Texto alternativo:** Caneta de aplicação branca, sem marca, e o relatório do Prosystem de produtos sem giro, filtrado por 30 dias sem venda, com o título: a caneta de semaglutida deve ficar mais barata, e a que está parada no seu estoque?
+**Texto alternativo:** Caneta de aplicação branca, sem marca, e o relatório do Prosystem de produtos sem giro, filtrado por 30 dias sem venda, com o título: a caneta emagrecedora deve ficar mais barata, e a que está parada no seu estoque?
 
 **Conferir antes de publicar:**
 
@@ -254,7 +254,7 @@ Mostre este post para quem atende na sua farmácia.
 
 #novembroazul #saudedohomem #farmacia
 
-**Texto alternativo:** Farmacêutico de jaleco conferindo produtos entre as prateleiras, com o texto: Novembro Azul, quem lembra o homem de se cuidar?
+**Texto alternativo:** Farmacêutico de jaleco conferindo produtos entre as prateleiras, com o laço azul do Novembro Azul e o texto: Novembro Azul, quem lembra o homem de se cuidar?
 
 **Conferir antes de publicar:**
 
@@ -283,20 +283,24 @@ Fale com um especialista pelo link da bio.
 
 ### Qui 19/11: padaria-escala-6x1-v1
 
-Fim da escala 6x1 na padaria: em 16 de dezembro, valem duas folgas por semana e 42 horas, sem reduzir salário.
+Fim da escala 6x1 na padaria: a partir de 16 de dezembro, valem duas folgas por semana e 42 horas, sem reduzir salário.
 
-A Fenacon calcula a hora 4,8% mais cara nessa etapa. Em dezembro de 2027 vem a segunda, com 40 horas e hora 10% mais cara. E tudo isso começa em cima do Natal.
+A Fenacon calcula a hora do funcionário 4,8% mais cara nessa etapa. Em dezembro de 2027 vem a segunda, com 40 horas e hora 10% mais cara. E tudo começa em cima do Natal.
 
-Refaça a escala agora, olhando os dias e os horários em que a loja mais vende. Converse com seu contador e seu sindicato.
+Com menos horas, a escala precisa seguir o movimento da loja. Na versão Plus do Prosystem, o painel de indicadores mostra vendas e atendimentos por período, com o gráfico dia a dia. Assim você vê quais dias pedem mais gente no balcão. Converse também com seu contador e seu sindicato.
 
-#escala6x1 #padaria #gestaodepadaria #panificacao
+Fale com um especialista pelo link da bio.
 
-**Texto alternativo:** Padeiro sovando massa, com o texto: fim da escala 6x1, a hora do funcionário fica 4,8% mais cara.
+#escala6x1 #padaria #gestaodepadaria #sistemaparapadaria
+
+**Texto alternativo:** Padeiro sovando massa e os totais do painel do Prosystem, com atendimentos e média diária de vendas, e o título: fim da escala 6x1, menos horas de equipe, use cada uma onde a padaria mais vende.
 
 **Conferir antes de publicar:**
 
 - Data: a Fenacon conta 16/12, parte da imprensa fala em 15/12.
 - Não é consultoria trabalhista: manter a frase do contador e do sindicato.
+- Painel de indicadores: só versão Plus. Não prometer vendas por hora: não está confirmado.
+- A faixa de totais saiu do painel da Drogaria Modelo (valores fictícios); se possível, mockup com números de padaria.
 
 
 ### Sáb 21/11: farmacia-dia-da-dengue-v3
@@ -694,7 +698,7 @@ Marque quem atende no balcão.
 **Texto alternativo:** Frase em azul sobre fundo branco: foto de receita não é receita eletrônica.
 
 
-### Sex 25/12: natal-v4
+### Sex 25/12: natal-v5
 
 Tem quem passa a véspera de Natal atrás do balcão, atendendo a última receita ou entregando a última encomenda.
 
@@ -702,14 +706,14 @@ A vocês, que trabalham para o Natal dos outros dar certo, o nosso obrigado e um
 
 #feliznatal #farmacia #padaria
 
-**Texto alternativo:** Árvore de Natal com milhares de luzes sobre um losango azul, com uma linha branca como guirlanda, e o texto: Feliz Natal a quem trabalha para o Natal dos outros dar certo.
+**Texto alternativo:** Árvore de Natal com milhares de luzes sobre um losango azul, com uma linha branca como guirlanda, e o texto: Depois de um dezembro corrido, um Natal tranquilo.
 
 **Conferir antes de publicar:**
 
 - Exceção à pausa de 23/12 a 02/01, a pedido da Jessica: deixar agendado.
 
 
-### Sex 01/01: ano-novo-v2
+### Sex 01/01: ano-novo-v3
 
 Feliz 2027!
 
@@ -719,7 +723,7 @@ Obrigado por mais um ano com a gente.
 
 #feliz2027 #anonovo #farmacia #padaria
 
-**Texto alternativo:** Fogos de artifício no céu noturno, com uma linha branca subindo do texto até os fogos, e o texto: Feliz 2027 a quem abre a loja todo dia.
+**Texto alternativo:** Fogos de artifício no céu noturno, com uma linha branca subindo do texto até os fogos, e o texto: Um 2027 de portas abertas e caixa no azul.
 
 **Conferir antes de publicar:**
 
