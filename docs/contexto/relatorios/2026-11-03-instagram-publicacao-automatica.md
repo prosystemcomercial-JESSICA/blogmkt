@@ -34,9 +34,18 @@ A Jessica pediu o passo a passo para criar o app de automação de postagem no I
 - A pedido da Jessica, publiquei pelo script local, com `--agora`: https://www.instagram.com/p/DfSNk7WgOdT/ às 12h32 (commit `c45331e`).
 - **Conclusão:** o `schedule` do GitHub não basta para cumprir o horário. É preciso um disparo externo.
 
+## Disparo pela VPS (aprovado pela Jessica)
+- `instagram/disparo.mjs` foi instalado na VPS do CRM Comercial, em `/usr/local/lib/instagram-disparo/`.
+- O cron do root roda o disparo a cada 5 minutos, com `flock`, e grava o log em `/var/log/instagram-disparo.log`.
+- O disparo só aciona o workflow quando há um post `agendado` cujo horário já passou e nenhuma execução está na fila ou em andamento.
+- A chave `GH_DISPARO` fica em `/etc/instagram-disparo.env` (chmod 600). Sem ela, o disparo não faz nada.
+- O workflow passou a fazer o checkout da `main` mais recente. Sem isso, uma execução que esperou na fila poderia publicar o mesmo post de novo.
+- O agendamento do próprio GitHub foi mantido como reserva.
+- Também anotei a instalação em `C:\Users\prosy\CONTEXTO-CRM-COMERCIAL-LOCAL.md`.
+
 ## Pendente
-- A Jessica cria o secret `IG_TOKEN` no GitHub (Settings → Secrets and variables → Actions).
-- Confirmar que o post saiu e conferir o link em `instagram/agenda.json`.
+- A Jessica cria o token fine-grained (só o repositório blogmkt, Actions: Read and write) e salva como `GH_DISPARO=` no `.env`. Depois, eu copio para a VPS sem exibir o token.
+- O secret `IG_TOKEN` já foi criado no GitHub, e o teste no Actions passou.
 - Agendar os próximos posts. O post de 06/11 sai da grade, e a Jessica decide o que entra no lugar.
 
 ## Próxima sessão

@@ -55,7 +55,7 @@ async function aguardar(id) {
 }
 
 // Link público da imagem no repositório (que é público). O SHA evita cache de versão antiga.
-const link = (arq) => `https://raw.githubusercontent.com/${REPO}/${process.env.GITHUB_SHA || 'main'}/${arq}`;
+const link = (arq) => `https://raw.githubusercontent.com/${REPO}/${process.env.IMG_SHA || process.env.GITHUB_SHA || 'main'}/${arq}`;
 
 async function publicar(post) {
   const legenda = post.legenda + (post.tags ? `\n\n${post.tags}` : '');

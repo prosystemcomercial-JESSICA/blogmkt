@@ -26,7 +26,11 @@ jobs:
   publicar:
     runs-on: ubuntu-latest
     steps:
+      # Sempre a main mais recente: uma execução que esperou na fila precisa ver a agenda já
+      # atualizada pela anterior, senão publica o mesmo post de novo.
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - uses: actions/setup-node@v4
         with:
@@ -37,7 +41,7 @@ jobs:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           IG_USER_ID: '17841407290869129'
           PUBLICAR_ID: ${{ inputs.id }}
-        run: node instagram/publicar.mjs ${{ inputs.teste && '--teste' || '' }}
+        run: IMG_SHA=$(git rev-parse HEAD) node instagram/publicar.mjs ${{ inputs.teste && '--teste' || '' }}
 
       - name: Registrar na agenda
         if: always()
