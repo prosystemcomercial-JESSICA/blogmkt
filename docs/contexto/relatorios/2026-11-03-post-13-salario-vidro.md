@@ -37,3 +37,9 @@ Abrir `outputs/criativos/nov-dez/pecas/padaria-13-salario-v2.png` e aplicar o qu
 
 ## Aprovação
 - A Jessica aprovou as cinco ("perfeito"). Todas receberam `travada: true` em `pecas-dados.js` e não são mais geradas de novo.
+
+## Documento do que falta aprovar
+- Criado em Claude Docs: "Criativos que faltam aprovar", https://claude.ai/artifact/3nx4JXdXoomuc4SZF91rCj
+- Lista as 32 peças sem `travada: true` em `pecas-dados.js` (de 42), com data, título, mockup que falta, o que conferir e um status para a Jessica marcar (Aguardando, Aprovado, Ajustar).
+- 18 peças dependem de mockup da Jessica.
+- Próxima sessão: ler os status do documento, travar as aprovadas e refazer as marcadas com Ajustar.
