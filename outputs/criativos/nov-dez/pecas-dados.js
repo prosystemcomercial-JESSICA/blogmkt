@@ -51,11 +51,11 @@ const P = [
   conferir: ['A alta de 9% é do grão, não da farinha.', 'Tela pequena e antiga: pedir captura nova à equipe de produto.', 'Produto: a precificação vale sem ajuste na padaria?'] },
 
 { data: 'Sex 13/11', seg: 'Farmácia', id: 'canetas-emagrecedoras-v2', tipo: 'comTela', tema: 'azul', formato: 'Estático com tela', fundo: 'forte',
-  titulo: 'A caneta deve ficar mais barata. <b>E a que você já comprou?</b>', fs: 68, tela: 'dias-sem-giro', faixa: 'O Prosystem mostra há quantos dias cada produto não vende.', pilula: 'Leia a legenda',
+  titulo: 'A caneta emagrecedora deve ficar mais barata. <b>E a que está parada no seu estoque?</b>', fs: 64, tela: 'dias-sem-giro', fotoCima: 'caneta-branca', faixa: 'Veja no Prosystem quais produtos não vendem há 30 dias e decida antes de o preço cair.', pilula: 'Leia a legenda',
   kw: 'canetas emagrecedoras na farmácia',
   cap: `Canetas emagrecedoras na farmácia: com mais opções e genéricos, comprar errado custa caro.\n\nA expectativa do mercado é de alternativas mais baratas nos próximos anos. Produto caro parado na prateleira é dinheiro preso, e o valor dele pode cair.\n\nNo Prosystem, o relatório de dias sem giro mostra o que está parado para você comprar melhor em 2027.\n\n${CTA}`,
   tags: '#gestaodefarmacia #estoque #comprasnafarmacia #sistemaparafarmacia',
-  alts: ['Relatório do Prosystem de produtos sem giro, filtrado por dias sem venda, com o título: a caneta deve ficar mais barata, e a que você já comprou?'],
+  alts: ['Caneta de aplicação branca, sem marca, e o relatório do Prosystem de produtos sem giro, filtrado por 30 dias sem venda, com o título: a caneta emagrecedora deve ficar mais barata, e a que está parada no seu estoque?'],
   conferir: ['Só gestão: não falar de emagrecimento, não citar marca nem mostrar aplicação.', 'A queda de preço é expectativa, não fato: manter "deve".'] },
 
 { data: 'Seg 16/11', seg: 'Padaria', id: 'padaria-pix-caixa-v1', tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte',

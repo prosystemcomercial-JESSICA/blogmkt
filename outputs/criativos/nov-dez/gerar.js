@@ -105,7 +105,11 @@ function comTela(c) {
   const alturaTitulo = c.alturaTitulo || 270;
   const y = 176 + alturaTitulo + 16; const h = 1350 - y - (c.pilula ? 330 : 240);
   // Com foto: a tela é só uma faixa de totais, sobre a foto do assunto.
-  const miolo = c.foto
+  // Com fotoCima: a foto do produto em cartão inclinado e a tela inteira logo abaixo, sobrepondo a borda da foto.
+  const hTela = 920 / proporcao(arqTela(c.tela)); const yFoto = y + 30; const hFoto = h - hTela - 45;
+  const miolo = c.fotoCima
+    ? `<div class="atr" style="left:${px(150)};top:${px(yFoto)};width:${px(780)};height:${px(hFoto)};transform:rotate(3deg)"></div><img class="car" src="${img(c.fotoCima)}" alt="" style="left:${px(150)};top:${px(yFoto)};width:${px(780)};height:${px(hFoto)};transform:rotate(-2deg)">${tela(c.tela, 80, yFoto + hFoto - 60, 920, hTela)}`
+    : c.foto
     ? `<img class="car" src="${img(c.foto)}" alt="" style="left:${px(80)};top:${px(y)};width:${px(920)};height:${px(h)}">${tela(c.tela, 110, y + h - 130, 860, 100)}`
     : tela(c.tela, 80, y, 920, h);
   return [pg(c.tema, cl, `${lo(c.fundo === 'bra')}${logo(c.fundo === 'bra')}<div class="col" style="justify-content:flex-start"><h2 style="font-size:${px(c.fs || 74)}">${c.titulo}</h2></div>${miolo}<div style="position:absolute;left:${px(80)};right:${px(80)};bottom:${px(66)};display:flex;flex-direction:column;align-items:center;gap:${px(22)};z-index:6"><p class="fx">${c.faixa}</p>${c.pilula ? `<span class="${pil}">${c.pilula}</span>` : ''}</div>`)];

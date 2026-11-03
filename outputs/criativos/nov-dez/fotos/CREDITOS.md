@@ -17,3 +17,4 @@ Wikimedia Commons. Licença lida nos dados de cada arquivo em 31/10/2026.
 - `protetor-praia.jpg`: Karola G, licença Pexels, https://www.pexels.com/photo/a-woman-holding-a-blue-plastic-bottle-while-putting-a-lotion-on-her-leg-5202456/
 
 Os recortes `prateleiras-desfocadas`, `farmaceutica-recorte` e `paes-prateleira-sem-etiqueta` têm os créditos em `outputs/criativos/modelos/carrossel/fotos/CREDITOS.md`.
+- `caneta-branca.jpg`: PerPlex, Public domain, https://commons.wikimedia.org/wiki/File:Insulin_pen.JPG (só a caneta branca, sem a agulha, com o texto do cartucho desfocado), baixada em 03/11/2026
