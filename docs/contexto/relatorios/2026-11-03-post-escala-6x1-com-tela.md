@@ -20,5 +20,5 @@ A Jessica perguntou "qual o sentido desse post?". A peça era só uma notícia t
 - Formato estático, não carrossel: o post sai em 19/11 e o recado cabe em uma peça.
 
 ## Pendente
-- A Jessica aprovar a arte (decide: Jessica).
+- Nada na arte: a Jessica aprovou em 03/11/2026, e a peça ficou `travada: true` em `pecas-dados.js` (não é gerada de novo).
 - Opcional: mockup próprio com números de padaria em `mockups/painel-vendas-totais.png`.

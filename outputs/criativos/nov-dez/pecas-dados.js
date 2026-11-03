@@ -74,7 +74,7 @@ const P = [
   alts: ['Aviso do Prosystem informando um desconto autorizado com login, e o título: quem liberou esse desconto?'],
   conferir: ['Mockup em notebook ou desktop: celular é proibido, mesmo sendo conversa de WhatsApp.'] },
 
-{ data: 'Qui 19/11', seg: 'Padaria', id: 'padaria-escala-6x1-v1', tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte', foto: 'sovando-massa',
+{ data: 'Qui 19/11', seg: 'Padaria', id: 'padaria-escala-6x1-v1', travada: true, tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte', foto: 'sovando-massa',
   titulo: 'Fim da escala 6x1: menos horas de equipe. <b>Use cada uma onde a padaria mais vende.</b>', fs: 62, alturaTitulo: 230, tela: 'painel-vendas-totais', faixa: 'No painel do Prosystem, veja vendas e atendimentos dia a dia. Versão Plus.', pilula: 'Leia a legenda',
   kw: 'fim da escala 6x1 na padaria',
   cap: `Fim da escala 6x1 na padaria: a partir de 16 de dezembro, valem duas folgas por semana e 42 horas, sem reduzir salário.
