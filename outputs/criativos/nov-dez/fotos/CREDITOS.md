@@ -18,3 +18,4 @@ Wikimedia Commons. Licença lida nos dados de cada arquivo em 31/10/2026.
 
 Os recortes `prateleiras-desfocadas`, `farmaceutica-recorte` e `paes-prateleira-sem-etiqueta` têm os créditos em `outputs/criativos/modelos/carrossel/fotos/CREDITOS.md`.
 - `caneta-branca.jpg`: PerPlex, Public domain, https://commons.wikimedia.org/wiki/File:Insulin_pen.JPG (só a caneta branca, sem a agulha, com o texto do cartucho desfocado), baixada em 03/11/2026
+- `panetone-natal.jpg`: N i c o l a, from Fiumicino (Rome), Italy (https://www.flickr.com/people/15216811@N06), CC BY 2.0 (crédito obrigatório), https://commons.wikimedia.org/wiki/File:Panettone_-_Nicolettone_2017_-_IMG_7092_(31752504105).jpg, baixada em 03/11/2026 para o Dia de Reis (06/01)

@@ -18,7 +18,7 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Seg 16/11 | Padaria | `padaria-pix-caixa-v1` | Estático com tela | `whats-fechamento-v2` |
 | Ter 17/11 | Farmácia | `farmacia-novembro-azul-v2` | Foto com painel | - |
 | Qua 18/11 | Farmácia | `farmacia-quem-liberou-desconto-v1` | Estático com tela | `whats-desconto` |
-| Qui 19/11 | Padaria | `padaria-escala-6x1-v1` | Foto com painel | - |
+| Qui 19/11 | Padaria | `padaria-escala-6x1-v1` | Estático com tela | `painel-vendas-totais` |
 | Sáb 21/11 | Farmácia | `farmacia-dia-da-dengue-v4` | Foto com painel | - |
 | Dom 22/11 | Farmácia | `frase-antimicrobianos-v2` | Frase de impacto | - |
 | Seg 23/11 | Farmácia | `carrossel-farmacia-black-friday-v2` | Carrossel V3 | `analise-descontos` |
@@ -29,19 +29,19 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Ter 01/12 | Farmácia | `frase-dezembro-vermelho-v2` | Frase de impacto | - |
 | Qua 02/12 | Farmácia | `farmacia-escala-5x2-v2` | Foto com painel | - |
 | Qui 03/12 | Farmácia | `farmacia-dezembro-laranja-v2` | Foto com painel | - |
-| Sex 04/12 | Padaria | `carrossel-padaria-sangria-v2` | Carrossel V2 | `sangria-bloqueio`, `sangria-aviso`, `sangria-registro` |
+| Sex 04/12 | Padaria | `carrossel-padaria-sangria-v2` | Carrossel V2 | `sangria-aviso`, `sangria-bloqueio`, `sangria-registro` |
 | Seg 07/12 | Farmácia | `carrossel-farmacia-popular-v2` | Carrossel V2 | `receitas-scanner` |
 | Ter 08/12 | Os dois | `depoimento-samuel-v2.png` | Depoimento | - |
 | Qua 09/12 | Padaria | `padaria-dia-da-culinaria-v2` | Padaria com foto | - |
 | Qui 10/12 | Padaria | `padaria-combos-v2` | Estático com tela | `combo-totais` |
-| Sex 11/12 | Farmácia | `carrossel-farmacia-uso-continuo-v3` | Carrossel V2 | `uso-continuo-alerta`, `uso-continuo-proxima-compra`, `uso-continuo-relatorio` |
+| Sex 11/12 | Farmácia | `carrossel-farmacia-uso-continuo-v3` | Carrossel V2 | `uso-continuo-proxima-compra`, `uso-continuo-alerta`, `uso-continuo-relatorio` |
 | Seg 14/12 | Padaria | `padaria-fechamento-caixa-v1` | Estático com tela | `fechamento-caixa` |
 | Qua 16/12 | Os dois | `frase-escala-hoje-v2` | Frase de impacto | - |
 | Sex 18/12 | Padaria | `padaria-curva-abc-v1` | Estático com tela | `curva-abc` |
 | Seg 21/12 | Farmácia | `frase-farmacia-receita-v1` | Frase de impacto | - |
 | Sex 25/12 | Os dois | `natal-v5` | Foto com losango e linha | - |
 | Sex 01/01 | Os dois | `ano-novo-v3` | Foto com linha | - |
-| Seg 04/01 | Farmácia | `farmacia-cbs-v1` | Estático com tela | `precificacao` |
+| Seg 04/01 | Farmácia | `farmacia-cbs-v1` | Frase de impacto | - |
 | Qua 06/01 | Padaria | `padaria-dia-de-reis-v1` | Padaria com foto | - |
 | Qui 07/01 | Padaria | `padaria-simples-nota-v2` | Foto com painel | - |
 | Sex 08/01 | Farmácia | `farmacia-mercado-2027-v1` | Estático com tela | `painel-vendas` |
@@ -62,18 +62,19 @@ Só em notebook ou desktop, em balcão do segmento ou escritório. Salve em `moc
 | Tela | Datas |
 |---|---|
 | `painel-estoque` | Qua 04/11 |
-| `precificacao` | Qua 11/11, Seg 04/01 |
+| `precificacao` | Qua 11/11 |
 | `dias-sem-giro` | Sex 13/11 |
 | `whats-fechamento-v2` | Seg 16/11 |
 | `whats-desconto` | Qua 18/11 |
+| `painel-vendas-totais` | Qui 19/11 |
 | `analise-descontos` | Seg 23/11 |
-| `sangria-bloqueio` | Sex 04/12 |
 | `sangria-aviso` | Sex 04/12 |
+| `sangria-bloqueio` | Sex 04/12 |
 | `sangria-registro` | Sex 04/12 |
 | `receitas-scanner` | Seg 07/12 |
 | `combo-totais` | Qui 10/12 |
-| `uso-continuo-alerta` | Sex 11/12 |
 | `uso-continuo-proxima-compra` | Sex 11/12 |
+| `uso-continuo-alerta` | Sex 11/12 |
 | `uso-continuo-relatorio` | Sex 11/12, Sáb 14/11 |
 | `fechamento-caixa` | Seg 14/12 |
 | `curva-abc` | Sex 18/12 |
@@ -195,7 +196,7 @@ Fale com um especialista pelo link da bio.
 
 #gestaodefarmacia #estoque #comprasnafarmacia #sistemaparafarmacia
 
-**Texto alternativo:** Caneta de aplicação branca, sem marca, e o relatório do Prosystem de produtos sem giro, filtrado por 30 dias sem venda, com o título: a caneta emagrecedora deve ficar mais barata, e a que está parada no seu estoque?
+**Texto alternativo:** Caneta de aplicação branca, sem marca, e o relatório do Prosystem de produtos sem giro, filtrado por 30 dias sem venda, com o título: a caneta de semaglutida deve ficar mais barata, e a que está parada no seu estoque?
 
 **Conferir antes de publicar:**
 
@@ -458,7 +459,7 @@ Atendimento discreto também é o que faz o cliente voltar.
 
 #dezembrovermelho #farmacia #atendimento
 
-**Texto alternativo:** Frase em azul sobre fundo branco: Dezembro Vermelho, no balcão, sigilo também é cuidado.
+**Texto alternativo:** Laço vermelho e frase em azul sobre fundo branco: Dezembro Vermelho, no balcão, sigilo também é cuidado.
 
 **Conferir antes de publicar:**
 
@@ -516,12 +517,12 @@ Quer esse controle na sua padaria? Fale com um especialista pelo link da bio.
 
 **Texto alternativo:**
 
-1. Aviso de caixa bloqueado sobre pães em uma prateleira, com o título: quanto dinheiro tem na sua gaveta agora?
+1. Pães em uma prateleira, com o título: quanto dinheiro tem na sua gaveta agora?
 2. Aviso do Prosystem pedindo a sangria programada e o texto: chegou no valor, o caixa avisa.
 3. Aviso de caixa bloqueado e o texto: passou do limite, o caixa trava.
 4. Tela de registro de sangria do Prosystem e o texto: toda retirada fica registrada.
-5. Aviso de sangria sobre um carrinho de pães e o texto: sangria com regra, sem depender da memória.
-6. Tela de registro de sangria e o convite para ter esse controle na padaria.
+5. Carrinho de pães e o texto: sangria com regra, sem depender da memória.
+6. Pães em uma prateleira e o convite para ter esse controle na padaria.
 
 **Conferir antes de publicar:**
 
@@ -543,12 +544,12 @@ Fale com um especialista pelo link da bio.
 
 **Texto alternativo:**
 
-1. Tela do scanner de receitas do Prosystem sobre uma medição de pressão, com o título: Farmácia Popular, multa de até 20%.
+1. Medição de pressão, com o título: Farmácia Popular, multa de até 20%.
 2. Prateleiras de farmácia e o texto: a fiscalização ficou automática.
 3. Calculadora e o texto: a multa cresceu, de 10% para 20%.
 4. Mãos digitando em um teclado e o texto: guarde por 5 anos, de preferência em meio digital.
 5. Tela do scanner de receitas e o texto: receita guardada, sem pilha de caixa.
-6. Tela do scanner de receitas e o convite para organizar isso na farmácia.
+6. Prateleiras de farmácia e o convite para organizar isso na farmácia.
 
 **Conferir antes de publicar:**
 
@@ -617,12 +618,12 @@ Fale com um especialista pelo link da bio.
 
 **Texto alternativo:**
 
-1. Alerta do Prosystem de que a medicação do cliente está para acabar, com o título: o remédio do seu cliente acaba em 8 dias.
+1. Comprimidos coloridos, com o título: o remédio do seu cliente acaba em 8 dias.
 2. Tela de próxima compra do Prosystem e o texto: na venda, o sistema marca a data.
 3. Alerta no balcão e o texto: ele volta, e o balcão é avisado.
 4. Relatório de clientes de uso contínuo e o texto: quem deve comprar vira lista.
-5. Alerta do Prosystem e o texto: lembre antes da outra farmácia, 13% já compram pelo WhatsApp.
-6. Alerta do Prosystem e o convite para ver o uso contínuo na farmácia.
+5. Cartelas de comprimidos e o texto: lembre antes da outra farmácia, 13% já compram pelo WhatsApp.
+6. Prateleiras de farmácia e o convite para ver o uso contínuo na farmácia.
 
 **Conferir antes de publicar:**
 
@@ -736,18 +737,18 @@ Reforma tributária na farmácia em 2027: a CBS já está valendo, com taxa de [
 
 Se o preço da sua loja foi feito com o imposto antigo, esta é a semana de sentar com o contador e refazer a conta. Remédio registrado tem regra própria, com corte de 60%.
 
-Na Precificação do Prosystem, a composição de custo e a fórmula de preço ficam na mesma tela.
+O Prosystem já está preparado para o IBS e a CBS, e na Precificação a composição de custo e a fórmula de preço ficam na mesma tela.
 
 Fale com um especialista pelo link da bio.
 
-#reformatributaria #cbs #gestaodefarmacia #sistemaparafarmacia
+#reformatributaria #cbs #ibs #gestaodefarmacia #sistemaparafarmacia
 
-**Texto alternativo:** Tela de precificação do Prosystem com as fórmulas do preço de venda, e o título: 2027 começou, e a CBS também, você já refez a conta?
+**Texto alternativo:** Frase em azul sobre fundo branco: a Prosystem já está pronta para o IBS e a CBS. E a sua farmácia?
 
 **Conferir antes de publicar:**
 
 - Só publicar depois de o Senado fixar a taxa, ou de confirmar que os 11,3% valeram. Preencher o trecho entre colchetes da legenda.
-- A tela cita ICMS_ST e é pequena e antiga: pedir captura nova.
+- Confirmar com o produto que o sistema já emite com IBS e CBS antes de publicar: a peça promete isso.
 
 
 ### Qua 06/01: padaria-dia-de-reis-v1
@@ -928,8 +929,8 @@ Fale com um especialista pelo link da bio.
 2. Prateleiras de farmácia e o texto: atendeu e ficou na memória?
 3. Mãos digitando e o texto: registre cada atendimento.
 4. Ficha de anamnese do Prosystem e o texto: a ficha fica pronta.
-5. Ficha de anamnese do Prosystem e o texto: o trabalho do farmacêutico à vista.
-6. Ficha de anamnese e o convite para ver a ficha na farmácia.
+5. Cartelas de comprimidos e o texto: o trabalho do farmacêutico à vista.
+6. Prateleiras de farmácia e o convite para ver a ficha na farmácia.
 
 **Conferir antes de publicar:**
 

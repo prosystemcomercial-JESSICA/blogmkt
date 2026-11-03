@@ -226,12 +226,12 @@ ${CTA}`,
   conferir: [] },
 
 { data: 'Seg 11/01', seg: 'Padaria', id: 'frase-padaria-sobra-v1', tipo: 'frase', tema: 'lar', formato: 'Frase de impacto',
-  titulo: 'Pão que sobra também é <b>prejuízo.</b>', apoio: 'Marque o dono da padaria.',
+  titulo: 'Pão que sobra também é <b>prejuízo.</b>', apoio: 'Novo artigo no ar!',
   kw: 'sobra de pão na padaria',
   cap: 'Sobra de pão na padaria é dinheiro que foi para o lixo. Quanto sobrou ontem na sua?\n\nPassado o Natal, vale olhar esse número com calma e seguir 2027 sabendo quanto produzir.\n\nMarque o dono da padaria.',
   tags: '#padaria #gestaodepadaria #panificacao',
   alts: ['Frase em laranja sobre fundo branco: pão que sobra também é prejuízo.'],
-  conferir: ['O termo "sobra de pão" não veio das sugestões do Google: conferir o volume.', 'O plano liga este post ao artigo de sobras: citar o blog na legenda quando o artigo estiver no ar.'] },
+  conferir: ['O termo "sobra de pão" não veio das sugestões do Google: conferir o volume.'] },
 
 { data: 'Sex 25/12', seg: 'Os dois', id: 'natal-v5', travada: true, tipo: 'natalRico', tema: 'azul', formato: 'Foto com losango e linha', nova: true, semAno: true, foto: 'arvore-natal-berlim',
   titulo: 'Depois de um dezembro corrido, <b>um Natal tranquilo.</b>', fs: 68, apoio: 'Boas festas a você e a toda a sua equipe.',
@@ -252,7 +252,7 @@ ${CTA}`,
   conferir: ['Exceção à pausa de 23/12 a 02/01, a pedido da Jessica: deixar agendado.'] },
 
 { data: 'Seg 04/01', seg: 'Farmácia', id: 'farmacia-cbs-v1', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto', nova: true, fs: 88,
-  titulo: 'A Prosystem já está pronta para o IBS e a CBS. <b>E a sua farmácia?</b>', apoio: '2027 começou: hora de refazer a conta do preço.',
+  titulo: 'A Prosystem já está pronta para o IBS e a CBS.<br><b>E a sua farmácia?</b>', apoio: '2027 começou: hora de refazer o preço.',
   kw: 'reforma tributária na farmácia',
   cap: `Reforma tributária na farmácia em 2027: a CBS já está valendo, com taxa de [CONFIRMAR A TAXA E A FONTE NO DIA].
 
@@ -406,12 +406,12 @@ ${CTA}`,
   alts: ['Mãos segurando uma bola de massa, com o texto: por trás de cada fornada, tem quem chegou antes do sol. Feliz Dia do Profissional da Culinária.'],
   conferir: ['A data vem de uma só fonte do setor, sem lei ou calendário oficial: confirmar antes de publicar.'] },
 
-{ data: 'Qua 06/01', seg: 'Padaria', id: 'padaria-dia-de-reis-v1', tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', nova: true, foto: 'panetone-mesa', pilula: 'Leia a legenda', fs: 88,
+{ data: 'Qua 06/01', seg: 'Padaria', id: 'padaria-dia-de-reis-v1', tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', nova: true, foto: 'panetone-natal', pilula: 'Leia a legenda', fs: 88,
   titulo: 'Dia de Reis: a festa acabou. <b>E o panetone que sobrou?</b>',
   kw: 'panetone na padaria',
   cap: `Panetone na padaria: hoje é Dia de Reis, a temporada acaba, e o que ficou na prateleira vira dinheiro parado.\n\nVale olhar agora quanto sobrou e quanto foi vendido, para fazer a compra e a produção do próximo Natal com número na mão. É um bom jeito de começar 2027.\n\nNo Prosystem, o relatório de dias sem giro mostra há quanto tempo cada produto não vende.\n\n${CTA}`,
   tags: '#panetone #padaria #gestaodepadaria #sistemaparapadaria',
-  alts: ['Panetone polvilhado com açúcar sobre um prato dourado, com o texto: Dia de Reis, a festa acabou, e o panetone que sobrou?'],
+  alts: ['Panetone cortado, com uma fatia saindo, em frente a uma árvore de Natal iluminada, com o texto: Dia de Reis, a festa acabou, e o panetone que sobrou?'],
   conferir: ['Produto: o relatório de dias sem giro vale sem ajuste na padaria?'] },
 
 { data: 'Dom 31/01', seg: 'Farmácia', id: 'frase-janeiro-roxo-v2', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto', nova: true, semAno: true, fs: 92,
