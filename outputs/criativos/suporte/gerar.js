@@ -12,7 +12,7 @@ const FOTOS = '../modelos/carrossel/fotos';
 const SITE = 'prosystemnet.com.br';
 
 const c = {
-  id: 'carrossel-farmacia-suporte-v3',
+  id: 'carrossel-farmacia-suporte-v4',
   tema: 'azul',
   capa: { titulo: 'Travou na farmácia? <b>Chame o suporte assim.</b>', apoio: '3 passos para resolver mais rápido', foto: 'L:teclado-azul' },
   itens: [
@@ -20,7 +20,7 @@ const c = {
     { n: 2, titulo: 'Conte <b>o problema</b> do seu jeito.', apoio: 'Pode ser por <b>áudio, texto ou print da tela.</b>', foto: 'L:maos-digitando' },
     { n: 3, titulo: 'Deixe o <b>acesso remoto</b> pronto.', apoio: 'Abra o programa e passe ao técnico o número de <b>“Este Dispositivo”.</b>', foto: 'L:maos-teclado-mesa' },
   ],
-  sol: { titulo: 'Do outro lado, gente que conhece o sistema', apoio: 'Suporte humanizado, das 7h às 22h, inclusive sábado e domingo.', foto: 'L:atendente-suporte' },
+  sol: { titulo: 'Do outro lado, gente que conhece o sistema', apoio: 'Suporte humanizado, das 7h às 22h, inclusive sábado e domingo.', foto: 'L:atendente-suporte-homem', pos: '45% 50%' },
   fim: { titulo: 'Mostre este passo a passo para <b>sua equipe.</b>', foto: 'cartelas-azuis' },
 };
 
@@ -76,7 +76,7 @@ const pg = (i, cls, html) => `<section class="pg ${cls}" data-nome="${c.id}-${i}
 const paginas = [
   pg(1, 'sobre', `<img class="cheia" src="${foto(c.capa.foto)}" alt=""><div class="topo-sombra"></div><div class="v2-cap-grad"></div>${claro}<i class="los" style="left:930px;top:30px"></i><div class="v2-cap"><h2>${c.capa.titulo}</h2><p>${c.capa.apoio}</p><span class="pil contorno">Arraste para o lado →</span></div>`),
   ...c.itens.map((it, k) => pg(k + 2, '', `<img class="v2-foto" src="${foto(it.foto)}" alt=""><div class="topo-sombra"></div>${claro}<div class="v2-sel"><span>${it.n}</span></div><div class="v2-txt"><h2>${it.titulo}</h2><p class="faixa">${it.apoio}</p></div>${num(k + 2)}`)),
-  pg(5, 'sobre', `<img class="cheia" src="${foto(c.sol.foto)}" alt="" style="object-position:0% 50%"><div class="topo-sombra"></div>${claro}<div class="v2-painel"><h2>${c.sol.titulo}</h2><p>${c.sol.apoio}</p></div>${num(5)}`),
+  pg(5, 'sobre', `<img class="cheia" src="${foto(c.sol.foto)}" alt="" style="object-position:${c.sol.pos}"><div class="topo-sombra"></div>${claro}<div class="v2-painel"><h2>${c.sol.titulo}</h2><p>${c.sol.apoio}</p></div>${num(5)}`),
   pg(6, 'forte', `<img class="v2-fim-foto" src="${foto(c.fim.foto)}" alt=""><div class="topo-sombra"></div>${claro}<div class="v2-fim"><h2>${c.fim.titulo}</h2>${provas}<span class="pil">Salve este post</span><div class="site">${SITE}</div></div>`),
 ];
 
