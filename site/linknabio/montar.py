@@ -1,6 +1,6 @@
 """Monta a prévia do link na bio: troca os {{marcadores}} do modelo pelos links, depoimentos e imagens embutidas.
 Uso: python site/linknabio/montar.py <imgs.json> <saida.html>"""
-import json, sys, html
+import base64, html, io, json, sys
 from pathlib import Path
 
 AQUI = Path(__file__).parent
@@ -13,18 +13,25 @@ LINKS = [  # (sigla no losango, título, apoio, url, destaque)
     ("PS", "Conheça o sistema", "Ferramentas, planos e funções do Prosystem", "https://prosystemnet.com/", False),
 ]
 
-# Avaliações reais do Google (autorizadas em 30/10/2026), trechos sem alterar o sentido
-DEPOS = [
-    ("Rodrigo Amancio", "Trabalho com eles há 13 anos e não pretendo mudar. Me atendem super bem e com rapidez e sempre resolvem as minhas demandas."),
-    ("Samuel Ferreira", "O sistema é excelente, tudo funciona. Suporte humanizado de segunda a sexta e também sábado e domingo, sem aquelas frescuras de falar com robô."),
-    ("Thalita Silva", "Sistema muito bem estruturado, de fácil acesso, atendimento nota 1000, todos muito atenciosos e prestativos."),
-    ("Sirleia Moreira", "Sistema muito fácil de trabalhar e eles dão ótima assistência."),
-    ("Verônica Xavier", "Atendimento excelente, serviço de ótima qualidade e muita atenção aos detalhes. Recomendo."),
-    ("Juliana Barcellos Brejenski", "Atendimento sempre rápido, e com excelência."),
+# Prints das avaliações do Google (autorizadas em 30/10/2026). Ficam só neste computador, fora do git,
+# por isso a previa.html montada também fica fora do git.
+PRINTS_DIR = AQUI.parent.parent / "banco imagens" / "depoimentos-google"
+PRINTS = [  # (arquivo, nome para o texto alternativo)
+    ("152647", "Rodrigo Amancio"), ("153223", "Krisley Kretli de Oliveira"), ("152409", "Samuel Ferreira"),
+    ("152618", "Thalita Silva"), ("153201", "Paulo Siqueira"), ("152924", "Verônica Xavier"),
+    ("153108", "Katiane Avancini"), ("152546", "Sirleia Moreira"), ("152501", "Claudiele Castro"),
 ]
 
-ESTRELA = ('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" '
-           'fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg>')
+
+def print_base64(cod):
+    """Corta a sobra branca do print e devolve como PNG em base64."""
+    from PIL import Image, ImageChops
+    im = Image.open(PRINTS_DIR / f"Captura de tela 2026-10-30 {cod}.png").convert("RGB")
+    caixa = ImageChops.difference(im, Image.new("RGB", im.size, "white")).getbbox()
+    im = im.crop((0, 0, im.width, min(im.height, caixa[3] + 14)))
+    b = io.BytesIO()
+    im.quantize(colors=96).save(b, "PNG", optimize=True)
+    return "data:image/png;base64," + base64.b64encode(b.getvalue()).decode()
 
 
 def links():
@@ -39,9 +46,8 @@ def links():
 
 def depos():
     return "".join(
-        f'<figure class="cit" style="margin:0"><blockquote>{html.escape(t)}</blockquote><footer>'
-        f'<span class="estrelas" aria-label="5 estrelas">{ESTRELA * 5}</span><strong>{html.escape(n)}</strong></footer></figure>'
-        for n, t in DEPOS)
+        f'<figure class="cit"><img src="{print_base64(cod)}" alt="Avaliação de 5 estrelas de {html.escape(n)} no Google" loading="lazy"></figure>'
+        for cod, n in PRINTS)
 
 
 def main(imgs, saida):

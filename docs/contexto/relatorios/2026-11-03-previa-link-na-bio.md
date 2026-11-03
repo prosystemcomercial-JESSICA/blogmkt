@@ -14,8 +14,15 @@
 - Conteúdo: hero em degradê azul com losangos, título com peso 300 e 800, status do suporte pelo horário de Brasília, provas (+600 clientes, +16 anos, 7h–22h), 4 links (WhatsApp, Blog, E-book de precificação, site), cartões Farmácia (azul) e Padaria (laranja, sem azul), 3 artigos do blog, avaliações do Google em faixa rolando, bloco de suporte com régua de 24 horas e redes.
 - Movimento: título palavra a palavra, revelação ao rolar, foto que abre do recorte, losangos com parallax, barra de progresso, barra fixa com WhatsApp após o hero, contadores, luz que segue o mouse no desktop. Tudo desligado com "reduzir movimento".
 
+### Depois: prints do Google no lugar do texto (pedido "já tenho os prints de lá")
+- A faixa de avaliações passou a mostrar os próprios prints, cortados na sobra branca: Rodrigo Amancio, Krisley Kretli de Oliveira, Samuel Ferreira, Thalita Silva, Paulo Siqueira, Verônica Xavier, Katiane Avancini, Sirleia Moreira e Claudiele Castro (`PRINTS` em `montar.py`, lidos de `banco imagens/depoimentos-google/`).
+- Fora: Juliana (o print mostra o botão "Responder" do administrador e o selo "NOVO"), Tatiana e Luíria (falam em atendimento a qualquer hora / 24 horas), Anisete (4 estrelas).
+- `previa.html` saiu do git (`.gitignore`), porque leva os prints embutidos e eles ficam só neste computador. Para remontar: `python site/linknabio/montar.py site/linknabio/imagens.json site/linknabio/previa.html`.
+- Os prints têm as estrelas amarelas do próprio Google; a regra das estrelas brancas vale para as artes, e aqui o print é a prova.
+- A prévia está compartilhada como "qualquer pessoa com o link" (mudança feita pela Jessica).
+
 ## Verificado
-- Capturas em 390px e 1366px (Playwright): sem rolagem lateral e sem erro de script. Corrigidos depois da captura: títulos dos links brancos sobre branco no desktop e régua de horas desalinhada.
+- Capturas em 390px e 1366px (Playwright): sem rolagem lateral e sem erro de script. Faixa dos prints conferida nas duas larguras; no celular o texto do print fica pequeno (cartão a 90% da tela). Corrigidos depois da captura: títulos dos links brancos sobre branco no desktop e régua de horas desalinhada.
 - Não verificado: a versão corrigida não teve nova captura; não testado em celular real nem dentro do navegador do Instagram.
 
 ## Decisões e porquês

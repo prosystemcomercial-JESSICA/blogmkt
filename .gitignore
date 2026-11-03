@@ -19,3 +19,6 @@ banco imagens/telas-prosystem/_originais/
 
 # Prints e transcrição de avaliações com nomes completos de clientes (repositório público)
 banco imagens/depoimentos-google/
+
+# Prévia do link na bio montada: tem os prints do Google embutidos (ficam só neste computador)
+site/linknabio/previa.html
