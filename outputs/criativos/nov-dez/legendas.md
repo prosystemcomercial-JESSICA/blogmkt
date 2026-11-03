@@ -852,7 +852,7 @@ Mostre este post para quem cuida da equipe na sua loja.
 
 #janeirobranco #saudemental #gestaodeequipe
 
-**Texto alternativo:** Frase em azul sobre fundo branco: Janeiro Branco, quem cuida de quem atende o dia inteiro?
+**Texto alternativo:** Laço branco e frase em azul sobre fundo branco: Janeiro Branco, quem cuida de quem atende o dia inteiro?
 
 **Conferir antes de publicar:**
 
