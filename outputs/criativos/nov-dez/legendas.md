@@ -763,6 +763,8 @@ No Prosystem, o relatório de dias sem giro mostra há quanto tempo cada produto
 
 Fale com um especialista pelo link da bio.
 
+Foto: N i c o l a (Flickr), licença CC BY 2.0.
+
 #panetone #padaria #gestaodepadaria #sistemaparapadaria
 
 **Texto alternativo:** Panetone cortado, com uma fatia saindo, em frente a uma árvore de Natal iluminada, com o texto: Dia de Reis, a festa acabou, e o panetone que sobrou?

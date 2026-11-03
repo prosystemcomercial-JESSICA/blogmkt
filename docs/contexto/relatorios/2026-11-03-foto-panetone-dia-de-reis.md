@@ -26,3 +26,6 @@
 
 ## Aprovação
 A Jessica aprovou a peça com a foto nova, e ela foi marcada com `travada: true` em `pecas-dados.js`.
+
+## Crédito na legenda
+A Jessica concordou: a legenda (`cap` em `pecas-dados.js` e `legendas.md`) termina com "Foto: N i c o l a (Flickr), licença CC BY 2.0.", que atende a licença.
