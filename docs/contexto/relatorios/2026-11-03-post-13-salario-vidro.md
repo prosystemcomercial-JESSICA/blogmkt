@@ -46,3 +46,5 @@ Abrir `outputs/criativos/nov-dez/pecas/padaria-13-salario-v2.png` e aplicar o qu
 - Pedido seguinte: "quero ver tudo para que eu possa aprovar, assim como o anterior". O mesmo documento passou a seguir o modelo do de aprovação (3EWRqeFaTD2J6UuUeHwRoe): cada post tem a imagem, a tabela de Decisão (Aprovado, Alterar, Trocar) com "O que alterar", a legenda com as tags e o que conferir, divididos por mês.
 - Imagens: o PNG de cada estático e uma grade 3×2 com as 6 páginas de cada carrossel, enviadas como assets do documento (32 arquivos).
 - Não verificado: como as imagens aparecem abertas no documento.
+- `carrossel-padaria-reforma-tributaria-v2` (06/11) já foi publicado: saiu do documento e recebeu `travada: true`. Resumo atualizado para 31 pendentes.
+- No documento, a Jessica marcou 04/11 (reforma da farmácia) como Aprovado. Não travei, porque a peça ainda espera o mockup `painel-estoque` e precisa ser gerada de novo quando ele chegar.

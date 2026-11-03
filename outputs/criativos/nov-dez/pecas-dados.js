@@ -20,7 +20,7 @@ const P = [
   alts: ['Painel do Prosystem sobre prateleiras de farmácia, com o título: em 2027 o imposto muda, quanto vale o seu estoque?', 'Prateleiras de farmácia e o texto: PIS e Cofins acabam, entra a CBS.', 'Farmacêutica pegando um produto na prateleira e o texto: remédio paga menos.', 'Calculadora e caneta sobre papel e o texto: o estoque entra na conta da virada.', 'Painel do Prosystem com itens e custo do estoque, plano Plus.', 'Painel do Prosystem e o convite para falar com um especialista.'],
   conferir: ['Taxa da CBS: 11,3% é cálculo do TCU; o Senado decide até dezembro. A peça não cita o número.', 'Não prometer economia nem crédito de estoque.', 'A tela mostra "Drogaria Modelo" com um CNPJ, embora o LEIA-ME das telas diga que os CNPJs estão cobertos. O dado é fictício; cubra no mockup.'] },
 
-{ data: 'Sex 06/11', seg: 'Padaria', id: 'carrossel-padaria-reforma-tributaria-v2', tipo: 'v3', tema: 'lar', formato: 'Carrossel V3',
+{ data: 'Sex 06/11', seg: 'Padaria', id: 'carrossel-padaria-reforma-tributaria-v2', travada: true, tipo: 'v3', tema: 'lar', formato: 'Carrossel V3',
   capa: { foto: 'paes-grade', fs: 96, titulo: 'Em 2027, o pão francês zera o imposto. <b>E o resto do cupom?</b>' },
   itens: [
     { n: 1, foto: 'paes-grade', titulo: 'Pão francês: <b>zero.</b>', apoio: 'A lei zera os impostos novos, CBS e IBS, para o pão francês.' },
