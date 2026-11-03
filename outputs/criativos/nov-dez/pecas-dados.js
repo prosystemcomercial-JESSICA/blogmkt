@@ -375,7 +375,7 @@ ${CTA}`,
   alts: ['Farmacêutico de jaleco conferindo produtos entre as prateleiras, com o laço azul do Novembro Azul e o texto: Novembro Azul, quem lembra o homem de se cuidar?'],
   conferir: ['Data de saúde: a peça incentiva procurar o médico, sem orientar tratamento.', 'As fontes são reportagens que citam o Ministério da Saúde. Não confirmei o dia 17/11, por isso a peça não diz "hoje".'] },
 
-{ data: 'Dom 22/11', seg: 'Farmácia', id: 'frase-antimicrobianos-v2', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto', nova: true, semAno: true, fs: 92,
+{ data: 'Dom 22/11', seg: 'Farmácia', id: 'frase-antimicrobianos-v2', travada: true, tipo: 'frase', tema: 'azul', formato: 'Frase de impacto', nova: true, semAno: true, fs: 92,
   titulo: 'Antibiótico sem receita? <b>No balcão, a resposta é não.</b>', apoio: 'A venda exige receita,<br>que fica retida na farmácia.',
   kw: 'antibiótico na farmácia',
   cap: 'Antibiótico na farmácia só sai com receita, que fica retida e é escriturada.\n\nEsta é a Semana Mundial de Conscientização sobre o Uso de Antimicrobianos, de 18 a 24 de novembro. Usar antibiótico sem indicação ajuda a criar resistência, e quem atende no balcão faz parte desse cuidado.\n\nA regra é da Anvisa e vale para toda farmácia e drogaria do país.',

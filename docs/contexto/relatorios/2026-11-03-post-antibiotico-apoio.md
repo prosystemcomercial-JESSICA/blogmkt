@@ -20,4 +20,4 @@ A Jessica pediu para tirar "Marque o farmacêutico da sua loja." do post `frase-
 - A legenda já abria com "só sai com receita", então o fecho cita a Anvisa em vez de repetir a regra.
 
 ## Pendente
-- A Jessica aprovar a arte (decide: Jessica).
+- Nada. A Jessica aprovou a arte em 03/11/2026, e a peça ficou `travada: true` em `pecas-dados.js` (não é gerada de novo).
