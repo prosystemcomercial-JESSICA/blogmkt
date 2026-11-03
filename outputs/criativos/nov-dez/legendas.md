@@ -15,7 +15,7 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Qua 11/11 | Padaria | `carrossel-padaria-trigo-v1` | Carrossel V3 | `precificacao` |
 | Sex 13/11 | Farmácia | `canetas-emagrecedoras-v2` | Estático com tela | `dias-sem-giro` |
 | Sáb 14/11 | Farmácia | `farmacia-dia-do-diabetes-v2` | Estático com tela | `uso-continuo-relatorio` |
-| Seg 16/11 | Padaria | `padaria-pix-caixa-v1` | Estático com tela | `whats-fechamento` |
+| Seg 16/11 | Padaria | `padaria-pix-caixa-v1` | Estático com tela | `whats-fechamento-v2` |
 | Ter 17/11 | Farmácia | `farmacia-novembro-azul-v1` | Foto com painel | - |
 | Qua 18/11 | Farmácia | `farmacia-quem-liberou-desconto-v1` | Estático com tela | `whats-desconto` |
 | Qui 19/11 | Padaria | `padaria-escala-6x1-v1` | Foto com painel | - |
@@ -64,7 +64,7 @@ Só em notebook ou desktop, em balcão do segmento ou escritório. Salve em `moc
 | `painel-estoque` | Qua 04/11 |
 | `precificacao` | Qua 11/11, Seg 04/01 |
 | `dias-sem-giro` | Sex 13/11 |
-| `whats-fechamento` | Seg 16/11 |
+| `whats-fechamento-v2` | Seg 16/11 |
 | `whats-desconto` | Qua 18/11 |
 | `analise-descontos` | Seg 23/11 |
 | `sangria-bloqueio` | Sex 04/12 |
@@ -235,11 +235,12 @@ Quer ver na sua padaria? Fale com um especialista pelo link da bio.
 
 #padaria #fechamentodecaixa #pix #sistemaparapadaria
 
-**Texto alternativo:** Resumo do fechamento de caixa do Prosystem com vendas por dinheiro, cartão e Pix, e o título: o dinheiro saiu da gaveta, você acompanha?
+**Texto alternativo:** Resumo do fechamento de caixa do Prosystem com a sangria e as vendas em dinheiro, cartão, convênio e Pix marcadas, e o título: feche o caixa sabendo para onde foi cada real.
 
 **Conferir antes de publicar:**
 
 - Mockup em notebook ou desktop: celular é proibido, mesmo sendo conversa de WhatsApp.
+- A tela foi refeita em 03/11/2026 (tela-fechamento.js): sem os sublinhados do WhatsApp, data de 2026 e valores fictícios que fecham (venda líquida = total de pagamentos).
 - Não prometer conciliação de Pix com o banco: ainda não confirmada.
 
 
@@ -290,7 +291,7 @@ Refaça a escala agora, olhando os dias e os horários em que a loja mais vende.
 
 #escala6x1 #padaria #gestaodepadaria #panificacao
 
-**Texto alternativo:** Padeiro sovando massa, com o texto: fim da escala 6x1, a hora fica 4,8% mais cara.
+**Texto alternativo:** Padeiro sovando massa, com o texto: fim da escala 6x1, a hora do funcionário fica 4,8% mais cara.
 
 **Conferir antes de publicar:**
 

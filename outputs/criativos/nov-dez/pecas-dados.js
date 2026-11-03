@@ -59,12 +59,12 @@ const P = [
   conferir: ['Só gestão: não falar de emagrecimento, não citar marca nem mostrar aplicação.', 'A queda de preço é expectativa, não fato: manter "deve".'] },
 
 { data: 'Seg 16/11', seg: 'Padaria', id: 'padaria-pix-caixa-v1', tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte',
-  titulo: 'O dinheiro saiu da gaveta. <b>Você acompanha?</b>', tela: 'whats-fechamento', faixa: 'Pix, cartão e dinheiro no resumo do caixa. Versão Plus.', pilula: 'Leia a legenda',
+  titulo: 'Feche o caixa sabendo <b>para onde foi cada real.</b>', fs: 70, alturaTitulo: 210, tela: 'whats-fechamento-v2', faixa: 'Vendas, sangrias e cada forma de pagamento num resumo só. Versão Plus.', pilula: 'Fale com um especialista',
   kw: 'programa para padaria',
   cap: `Programa para padaria com caixa: você sabe quanto entrou em Pix, cartão e dinheiro?\n\nDesde outubro, o Pix por aproximação não tem mais o limite próprio de R$ 500. Cada vez menos dinheiro passa pela gaveta, e conferir o dia fica mais difícil. Para entrar em 2027 com o caixa claro, olhe cada forma de pagamento.\n\nNa versão Plus do Prosystem, o resumo do fechamento chega no WhatsApp de quem você escolher, separado por forma de pagamento.\n\nQuer ver na sua padaria? ${CTA}`,
   tags: '#padaria #fechamentodecaixa #pix #sistemaparapadaria',
-  alts: ['Resumo do fechamento de caixa do Prosystem com vendas por dinheiro, cartão e Pix, e o título: o dinheiro saiu da gaveta, você acompanha?'],
-  conferir: ['Mockup em notebook ou desktop: celular é proibido, mesmo sendo conversa de WhatsApp.', 'Não prometer conciliação de Pix com o banco: ainda não confirmada.'] },
+  alts: ['Resumo do fechamento de caixa do Prosystem com a sangria e as vendas em dinheiro, cartão, convênio e Pix marcadas, e o título: feche o caixa sabendo para onde foi cada real.'],
+  conferir: ['Mockup em notebook ou desktop: celular é proibido, mesmo sendo conversa de WhatsApp.', 'A tela foi refeita em 03/11/2026 (tela-fechamento.js): sem os sublinhados do WhatsApp, data de 2026 e valores fictícios que fecham (venda líquida = total de pagamentos).', 'Não prometer conciliação de Pix com o banco: ainda não confirmada.'] },
 
 { data: 'Qua 18/11', seg: 'Farmácia', id: 'farmacia-quem-liberou-desconto-v1', tipo: 'comTela', tema: 'azul', formato: 'Estático com tela', fundo: 'forte',
   titulo: 'Quem liberou <b>esse desconto?</b>', fs: 84, alturaTitulo: 210, tela: 'whats-desconto', faixa: 'Autorizou com login, o aviso chega para você. Versão Plus.', pilula: 'Leia a legenda',
@@ -75,11 +75,11 @@ const P = [
   conferir: ['Mockup em notebook ou desktop: celular é proibido, mesmo sendo conversa de WhatsApp.'] },
 
 { data: 'Qui 19/11', seg: 'Padaria', id: 'padaria-escala-6x1-v1', tipo: 'fotoPainel', tema: 'lar', formato: 'Foto com painel', foto: 'sovando-massa',
-  titulo: 'Fim da escala 6x1: a hora fica <b>4,8% mais cara.</b>', fs: 74, faixa: 'Em dezembro de 2027, 10%. Conta da Fenacon.', pilula: 'Leia a legenda',
+  titulo: 'Fim da escala 6x1:<br><b>a hora do funcionário fica 4,8% mais cara.</b>', fs: 66, faixa: 'Em 16/12, a semana cai para 42 horas com o mesmo salário. Em dezembro de 2027, cai para 40 e a hora sobe 10%.', pilula: 'Leia a legenda',
   kw: 'fim da escala 6x1 na padaria',
   cap: 'Fim da escala 6x1 na padaria: em 16 de dezembro, valem duas folgas por semana e 42 horas, sem reduzir salário.\n\nA Fenacon calcula a hora 4,8% mais cara nessa etapa. Em dezembro de 2027 vem a segunda, com 40 horas e hora 10% mais cara. E tudo isso começa em cima do Natal.\n\nRefaça a escala agora, olhando os dias e os horários em que a loja mais vende. Converse com seu contador e seu sindicato.',
   tags: '#escala6x1 #padaria #gestaodepadaria #panificacao',
-  alts: ['Padeiro sovando massa, com o texto: fim da escala 6x1, a hora fica 4,8% mais cara.'],
+  alts: ['Padeiro sovando massa, com o texto: fim da escala 6x1, a hora do funcionário fica 4,8% mais cara.'],
   conferir: ['Data: a Fenacon conta 16/12, parte da imprensa fala em 15/12.', 'Não é consultoria trabalhista: manter a frase do contador e do sindicato.'] },
 
 { data: 'Seg 23/11', seg: 'Farmácia', id: 'carrossel-farmacia-black-friday-v2', tipo: 'v3', tema: 'azul', formato: 'Carrossel V3', nova: true,
