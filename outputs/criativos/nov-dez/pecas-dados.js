@@ -361,7 +361,7 @@ const P = [
   alts: ['Painel de delivery do Prosystem com atendimentos, valor médio e evolução de vendas, e o título: cadê o entregador? E o dinheiro da entrega?'],
   conferir: ['Produto: a Gestão de entregas vale em padaria?', 'O painel é de plano Plus e foi recortado sem o nome "Drogaria Modelo".', 'A tela mostra tempo médio de entrega de 3h 19m, dado fictício que não ajuda a venda: pedir outra captura ou cobrir no mockup.', 'A tela diz "Ticket médio". Se ficar legível no mockup, é a palavra difícil da peça.'] },
 
-{ data: 'Ter 17/11', seg: 'Farmácia', id: 'farmacia-novembro-azul-v1', tipo: 'fotoPainel', tema: 'azul', formato: 'Foto com painel', nova: true, semAno: true, foto: 'farmaceutico-conferindo', posicao: '8% 20%', ajuste: 'transform-origin:0 0;transform:scale(1.5)',
+{ data: 'Ter 17/11', seg: 'Farmácia', id: 'farmacia-novembro-azul-v1', tipo: 'fotoPainel', tema: 'azul', formato: 'Foto com painel', nova: true, semAno: true,  laco: true, foto: 'farmaceutico-conferindo', posicao: '8% 20%', ajuste: 'transform-origin:0 0;transform:scale(1.5)',
   titulo: 'Novembro Azul: <b>quem lembra o homem de se cuidar?</b>', fs: 72, faixa: 'No balcão, uma conversa pode levar ao médico.', pilula: 'Leia a legenda',
   kw: '',
   cap: 'Novembro Azul é o mês de falar da saúde do homem, e muitas vezes ele aparece primeiro na farmácia, não no consultório.\n\nA campanha começou com o câncer de próstata e hoje lembra também de glicemia e vacina em dia. No balcão, uma conversa simples pode ser o empurrão para marcar a consulta.\n\nMostre este post para quem atende na sua farmácia.',
