@@ -217,7 +217,7 @@ ${CTA}`,
   alts: ['Tela da curva ABC do Prosystem, que separa os produtos por valor e quantidade, com o título: mais padarias em 2027, o que sustenta a sua?'],
   conferir: ['Tela de configuração, pouco vendedora: pedir uma com o resultado, sem nomes de remédio.', 'Os números do setor vêm de reportagem; o encarte oficial da ABIP não foi lido.'] },
 
-{ data: 'Seg 21/12', seg: 'Farmácia', id: 'frase-farmacia-receita-v1', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto',
+{ data: 'Seg 21/12', seg: 'Farmácia', id: 'frase-farmacia-receita-v1', travada: true, tipo: 'frase', tema: 'azul', formato: 'Frase de impacto',
   titulo: 'Foto de receita <b>não é receita eletrônica.</b>', apoio: 'Leia a legenda.',
   kw: 'receita eletrônica na farmácia',
   cap: 'Receita eletrônica na farmácia: foto, digitalização ou PDF feito a partir do papel não vale como receita eletrônica.\n\nE tem mais uma dúvida comum. O SNCR não substitui o SNGPC: um cuida do número e do uso da receita, o outro segue na escrituração. A transição do SNCR vai até 3 de março de 2027.\n\nMarque quem atende no balcão.',

@@ -16,3 +16,5 @@
 **Pendente:** a Jessica decide se a legenda também perde o "Marque quem atende no balcão.". As mudanças sem commit de outra sessão continuam no `git status`.
 
 **Próxima sessão:** se a legenda também mudar, editar o campo `cap` da peça em `pecas-dados.js` e o trecho correspondente em `outputs/criativos/nov-dez/legendas.md`.
+
+**Aprovação:** a Jessica aprovou a peça e ela foi marcada com `travada: true` em `pecas-dados.js`.
