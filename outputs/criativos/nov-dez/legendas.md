@@ -15,7 +15,7 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Qua 11/11 | Padaria | `carrossel-padaria-trigo-v1` | Carrossel V3 | `precificacao` |
 | Sex 13/11 | Farmácia | `canetas-emagrecedoras-v2` | Estático com tela | `dias-sem-giro` |
 | Sáb 14/11 | Farmácia | `farmacia-dia-do-diabetes-v2` | Estático com tela | `uso-continuo-relatorio` |
-| Seg 16/11 | Padaria | `padaria-pix-caixa-v1` | Estático com tela | `whats-fechamento-v2` |
+| Seg 16/11 | Padaria | `padaria-pix-caixa-v1` | Estático com tela | - |
 | Ter 17/11 | Farmácia | `farmacia-novembro-azul-v2` | Foto com painel | - |
 | Qua 18/11 | Farmácia | `farmacia-quem-liberou-desconto-v1` | Estático com tela | `whats-desconto` |
 | Qui 19/11 | Padaria | `padaria-escala-6x1-v1` | Estático com tela | `painel-vendas-totais` |
@@ -66,7 +66,6 @@ Só em notebook ou desktop, em balcão do segmento ou escritório. Salve em `moc
 | `painel-estoque` | Qua 04/11 |
 | `precificacao` | Qua 11/11, Qui 14/01 |
 | `dias-sem-giro` | Sex 13/11 |
-| `whats-fechamento-v2` | Seg 16/11 |
 | `whats-desconto` | Qua 18/11 |
 | `painel-vendas-totais` | Qui 19/11 |
 | `analise-descontos` | Seg 23/11 |
@@ -242,7 +241,7 @@ Quer ver na sua padaria? Fale com um especialista pelo link da bio.
 
 **Conferir antes de publicar:**
 
-- Mockup em notebook ou desktop: celular é proibido, mesmo sendo conversa de WhatsApp.
+- Aprovada sem mockup pela Jessica em 03/11/2026: a tela entra no cartão, como está.
 - A tela foi refeita em 03/11/2026 (tela-fechamento.js): sem os sublinhados do WhatsApp, data de 2026 e valores fictícios que fecham (venda líquida = total de pagamentos).
 - Não prometer conciliação de Pix com o banco: ainda não confirmada.
 

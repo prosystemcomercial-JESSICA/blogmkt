@@ -58,13 +58,13 @@ const P = [
   alts: ['Caneta de aplicação branca, sem marca, e o relatório do Prosystem de produtos sem giro, filtrado por 30 dias sem venda, com o título: a caneta de semaglutida deve ficar mais barata, e a que está parada no seu estoque?'],
   conferir: ['Só gestão: não falar de emagrecimento, não citar marca nem mostrar aplicação.', 'A queda de preço é expectativa, não fato: manter "deve".'] },
 
-{ data: 'Seg 16/11', seg: 'Padaria', id: 'padaria-pix-caixa-v1', tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte',
+{ data: 'Seg 16/11', seg: 'Padaria', id: 'padaria-pix-caixa-v1', travada: true, semMockup: true, tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte',
   titulo: 'Feche o caixa sabendo <b>para onde foi cada real.</b>', fs: 70, alturaTitulo: 210, tela: 'whats-fechamento-v2', faixa: 'Vendas, sangrias e cada forma de pagamento num resumo só. Versão Plus.', pilula: 'Fale com um especialista',
   kw: 'programa para padaria',
   cap: `Programa para padaria com caixa: você sabe quanto entrou em Pix, cartão e dinheiro?\n\nDesde outubro, o Pix por aproximação não tem mais o limite próprio de R$ 500. Cada vez menos dinheiro passa pela gaveta, e conferir o dia fica mais difícil. Para entrar em 2027 com o caixa claro, olhe cada forma de pagamento.\n\nNa versão Plus do Prosystem, o resumo do fechamento chega no WhatsApp de quem você escolher, separado por forma de pagamento.\n\nQuer ver na sua padaria? ${CTA}`,
   tags: '#padaria #fechamentodecaixa #pix #sistemaparapadaria',
   alts: ['Resumo do fechamento de caixa do Prosystem com a sangria e as vendas em dinheiro, cartão, convênio e Pix marcadas, e o título: feche o caixa sabendo para onde foi cada real.'],
-  conferir: ['Mockup em notebook ou desktop: celular é proibido, mesmo sendo conversa de WhatsApp.', 'A tela foi refeita em 03/11/2026 (tela-fechamento.js): sem os sublinhados do WhatsApp, data de 2026 e valores fictícios que fecham (venda líquida = total de pagamentos).', 'Não prometer conciliação de Pix com o banco: ainda não confirmada.'] },
+  conferir: ['Aprovada sem mockup pela Jessica em 03/11/2026: a tela entra no cartão, como está.', 'A tela foi refeita em 03/11/2026 (tela-fechamento.js): sem os sublinhados do WhatsApp, data de 2026 e valores fictícios que fecham (venda líquida = total de pagamentos).', 'Não prometer conciliação de Pix com o banco: ainda não confirmada.'] },
 
 { data: 'Qua 18/11', seg: 'Farmácia', id: 'farmacia-quem-liberou-desconto-v1', tipo: 'comTela', tema: 'azul', formato: 'Estático com tela', fundo: 'forte',
   titulo: 'Quem liberou <b>esse desconto?</b>', fs: 84, alturaTitulo: 210, tela: 'whats-desconto', faixa: 'Autorizou com login, o aviso chega para você. Versão Plus.', pilula: 'Leia a legenda',
@@ -463,7 +463,7 @@ function legendas(usadas) {
   const todas = [...P.filter((p) => !p.pagina), ...PRONTAS].sort((a, b) => ordem(a).localeCompare(ordem(b)));
   const telaDe = (p) => [p.tela, p.capa && p.capa.tela, p.sol && p.sol.tela, p.fim && p.fim.tela, ...(p.itens || []).map((i) => i.tela)].filter(Boolean);
   const fs = require('fs'); const path = require('path');
-  const faltam = (p) => [...new Set(telaDe(p))].filter((t) => !fs.existsSync(path.join(__dirname, 'mockups', t + '.png')));
+  const faltam = (p) => p.semMockup ? [] : [...new Set(telaDe(p))].filter((t) => !fs.existsSync(path.join(__dirname, 'mockups', t + '.png')));
   let s = '# Peças de 04/11/2026 a 31/01/2027: legendas, texto alternativo e o que falta\n\nArquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e gere de novo. As imagens ficam em `pecas/`, exceto as de outras produções, que têm o caminho indicado.\n\n**Pausa de 23/12 a 02/01: nenhuma publicação, exceto Natal (25/12) e Ano Novo (01/01).** **Nada aqui foi publicado.** Enquanto houver mockup em falta, a peça mostra a tela em um cartão provisório e não deve ser publicada.\n\n## Calendário\n\n| Data | Para quem | Peça | Formato | Mockup em falta |\n|---|---|---|---|---|\n';
   for (const p of todas) {
     const m = p.arq ? [] : faltam(p);

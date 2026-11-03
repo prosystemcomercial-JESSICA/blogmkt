@@ -17,7 +17,7 @@ A Jessica mandou o post "O dinheiro saiu da gaveta. Você acompanha?" e disse: "
 
 ## Verificado
 - A peça foi gerada com `node outputs/criativos/nov-dez/gerar.js padaria-pix-caixa-v1`, com resultado "sem estouro", e conferida em tamanho real.
-- Não verificado: como a peça fica com o mockup da Jessica em notebook. A tela continua num cartão provisório.
+- Depois, a Jessica aprovou a peça sem mockup: "nao precisa de mockup, esta aprovado assim".
 
 ## Decisões e porquês
 - Os destaques ficam dentro da tela, não em chamadas de texto ao lado. Assim a peça respeita o limite de 3 blocos de texto do caderno, e o destaque continua valendo quando a Jessica fizer o mockup.
@@ -25,8 +25,8 @@ A Jessica mandou o post "O dinheiro saiu da gaveta. Você acompanha?" e disse: "
 - A tela antiga foi mantida e a nova recebeu o sufixo `-v2`, porque o blog e o feed simulado usam o print original.
 
 ## Pendente
-- Mockup de `whats-fechamento-v2` em notebook ou desktop: fica com a Jessica.
+- Nenhuma pendência na peça. Ela foi aprovada como está e marcada com `travada: true, semMockup: true` em `pecas-dados.js`, então o gerador não a refaz e não a lista como mockup em falta.
 - O `git status` mostrava alterações que não são desta tarefa: `docs/conteudo-prosystem/feed-editoriais.html`, `feed_modelo.html` e `pecas/padaria-escala-6x1-v1.png`. Ficaram fora do commit.
 
 ## Próxima sessão
-Quando o mockup chegar em `outputs/criativos/nov-dez/mockups/whats-fechamento-v2.png`, rode `node outputs/criativos/nov-dez/gerar.js padaria-pix-caixa-v1` e confira a peça.
+A peça está pronta para publicar em 16/11. Para mudar algo nela, tire o `travada: true` antes de gerar de novo.
