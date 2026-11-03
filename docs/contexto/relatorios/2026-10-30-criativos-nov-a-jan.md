@@ -194,3 +194,11 @@ Resolvido na atualização abaixo.
 **Feito:** `carrossel-padaria-reforma-tributaria-v2`, com a capa "Em 2027, o pão francês zera o imposto. E o resto do cupom?" e o texto alternativo da capa ajustado. As páginas 2 a 6 são cópias exatas dos arquivos da v1. A nova renderização tinha só diferenças de suavização no texto, e por isso não foi usada. A imagem foi trocada no documento de aprovação (rev 39), e a galeria foi publicada na versão 8.
 
 **Verificado:** capa vista em tamanho real, com 4 linhas de título e sem encostar na foto; `conferir.js` sem erro nos 46 posts. **Não verificado:** a capa não foi vista em celular.
+
+## Atualização de 03/11/2026: texto novo do Ano Novo
+
+**Pedido:** variações do texto do post de Ano Novo, mantendo o visual. A Jessica escolheu a opção 2.
+
+**Feito:** `ano-novo-v3`, com o título "Um 2027 de portas abertas e caixa no azul." e o apoio "Obrigado por confiar na ProSystem mais um ano.". O título passou a ter 3 linhas, e o laço da linha subiu cerca de 110 px para não tocar no texto. A peça ficou travada (`travada: true`). A `ano-novo-v2` continua igual na pasta `pecas`. A legenda do post não mudou. A imagem foi trocada no documento de aprovação (rev 40), e a galeria foi publicada na versão 9.
+
+**Verificado:** peça vista em tamanho real; `conferir.js` sem erro nos 46 posts. **Não verificado:** a peça não foi vista em celular.
