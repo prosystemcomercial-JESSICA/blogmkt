@@ -12,7 +12,7 @@ Jessica, com print da peça `frase-janeiro-branco-v1`: "coloque o simbolo oficia
 
 ## Verificado
 - `node gerar.js frase-janeiro-branco-v1`: "sem estouro". PNG conferido visualmente: o laço fica acima do título, no mesmo lugar e tamanho do laço do Dezembro Vermelho.
-- A Jessica ainda não aprovou a peça (não verificado).
+- Aprovada pela Jessica em 03/11/2026.
 
 ## Decisões e porquês
 - Símbolo usado: o laço branco, que é o símbolo usado na campanha. Não usei a logomarca do Instituto Janeiro Branco (marca de terceiro).
