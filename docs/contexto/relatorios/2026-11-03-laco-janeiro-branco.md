@@ -19,8 +19,8 @@ Jessica, com print da peça `frase-janeiro-branco-v1`: "coloque o simbolo oficia
 - Branco no fundo branco some, então o laço tem contorno `#6f8fb8` e a parte de trás num cinza-azulado claro. A primeira versão, com contorno mais claro, ficou apagada demais.
 
 ## Pendente
-- Jessica aprova o laço ou pede outro tratamento (por exemplo, laço dentro de um selo azul, como o do Novembro Azul).
+- ~~Aprovação do laço~~: aprovado pela Jessica em 03/11/2026; peça travada (`travada: true`).
 - Continua a dúvida original da peça: se a data de saúde combina com a marca (decide a Jessica).
 
 ## Próxima sessão
-Se ela pedir ajuste, mexer em `LACO_BRANCO` em `gerar.js` e rodar `node gerar.js frase-janeiro-branco-v1`. Se aprovar, marcar `travada: true` na peça em `pecas-dados.js`.
+Peça aprovada e travada: não gerar de novo. Para mudar, a Jessica precisa pedir e tirar `travada: true` em `pecas-dados.js`.
