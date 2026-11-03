@@ -15,9 +15,17 @@ A Jessica achou confuso o texto do post `canetas-emagrecedoras-v2` ("vamos melho
 - Peça gerada de novo: `outputs/criativos/nov-dez/pecas/canetas-emagrecedoras-v2.png`. O texto alternativo também mudou em `legendas.md`.
 - O título e a faixa novos também foram para `docs/conteudo-prosystem/feed_modelo.html` e `feed-editoriais.html`.
 
+## Documento de aprovação (pedido: "aprovado, atualize no documento para aprovação, assim como todas as alterações que venho pedindo")
+Documento: https://claude.ai/artifact/3EWRqeFaTD2J6UuUeHwRoe. Imagens enviadas como assets e trocadas na rev 59.
+- 13/11, canetas: imagem nova; decisão marcada como Aprovado.
+- 16/11, Pix: imagem nova; linha de formato com a tela `whats-fechamento-v2`; "A conferir" sobre o mockup e a conciliação de Pix. A decisão continua em branco.
+- 17/11, Novembro Azul: imagem com o laço; "A conferir" diz que a foto ainda espera um farmacêutico atendendo um cliente homem. A decisão continua em branco.
+- 19/11, escala 6x1: imagem nova, formato "Estático com tela", legenda atual (painel de indicadores, CTA e tags) e "A conferir"; decisão marcada como Aprovado (aprovado e travado na outra sessão).
+- Natal, Ano Novo, suporte v4, reforma da padaria e antibiótico já estavam atualizados no documento por outras sessões.
+
 ## Verificado
 - `node outputs/criativos/nov-dez/gerar.js canetas-emagrecedoras-v2`: "sem estouro". Abri o PNG e conferi o espaço entre o título e a foto.
-- Não verificado: a galeria de revisão (`galeria.js`) não foi republicada, e o documento de planejamento no Claude Docs não foi alterado.
+- Não verificado: a galeria de revisão (`galeria.js`) não foi republicada, e o planejamento (Jqb8G2Q2Z1QW8MqauJ2VUv) não foi alterado. As contagens do topo do documento de aprovação não foram recalculadas.
 
 ## Decisões e porquês
 - **Selo:** continua "Dias Sem Giro: 30 dias", e não "Relatório Dias Sem Giro" como dizia a opção A. A regra do caderno (`DESTAQUE` em `gerar.js`) manda repetir o texto real da tela, sem trocar as palavras.
@@ -26,7 +34,7 @@ A Jessica achou confuso o texto do post `canetas-emagrecedoras-v2` ("vamos melho
 - **Escolha da foto:** todas as outras fotos livres de caneta mostram marca (Novo Nordisk, Lilly, Ozempic, Mounjaro). A escolhida é uma caneta de demonstração sem marca. A qualidade é razoável: fundo de couro escuro e flash.
 
 ## Pendente
-- A Jessica aprovar a arte final e dizer se a legenda também deve deixar de usar "emagrecedoras" (decide: Jessica).
+- Arte aprovada em 03/11/2026. Falta só a Jessica dizer se a legenda também deve deixar de usar "emagrecedoras" (decide: Jessica).
 - Se ela tiver foto própria melhor (caneta sem marca, fundo claro), basta trocar `fotos/caneta-branca.jpg` e gerar de novo.
 
 ## Próxima sessão
