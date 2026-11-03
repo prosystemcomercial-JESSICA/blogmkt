@@ -1,8 +1,8 @@
 # Legenda do carrossel do suporte
 
-Publicação: 6 páginas, 1080×1350, no modelo V2 do caderno de marca, nos arquivos `carrossel-farmacia-suporte-v3-<página>.png`. Para regenerar, use `gerar.js`. A v1 e a v2 ficam só como referência e não devem ser usadas.
+Publicação: 6 páginas, 1080×1350, no modelo V2 do caderno de marca, nos arquivos `carrossel-farmacia-suporte-v4-<página>.png`. Para regenerar, use `gerar.js`. A v1, a v2 e a v3 ficam só como referência e não devem ser usadas.
 
-## carrossel-farmacia-suporte-v3
+## carrossel-farmacia-suporte-v4
 
 Suporte de sistema para farmácia precisa ser fácil de chamar, principalmente quando o computador trava com fila no balcão. Para resolver mais rápido, siga estes 3 passos:
 
@@ -28,5 +28,5 @@ No Instagram, em "Configurações avançadas" > "Escrever texto alternativo", an
 2. Prateleiras de farmácia desfocadas e o passo 1: chame o suporte no WhatsApp e diga a loja e o computador.
 3. Mãos digitando em um teclado e o passo 2: conte o problema por áudio, texto ou print da tela.
 4. Mãos em um teclado sobre mesa de madeira e o passo 3: abra o acesso remoto e passe o número de "Este Dispositivo".
-5. Atendente sorrindo, de fone com microfone: suporte humanizado, das 7h às 22h, inclusive sábado e domingo.
+5. Atendente homem sorrindo, de fone com microfone: suporte humanizado, das 7h às 22h, inclusive sábado e domingo.
 6. Cartelas de comprimidos e o convite para salvar o post e mostrar o passo a passo à equipe.

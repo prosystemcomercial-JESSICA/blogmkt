@@ -61,3 +61,12 @@ Montar o editorial de novembro de 2026 e os posts do Perfil da Empresa no Google
 - Conferir a regra de postagens na ajuda do Google (support.google.com/business/answer/7213077), que também não abriu. Guias de terceiros citam 1.500 caracteres e imagem 4:3 de 1200×900, sem confirmação oficial.
 - Corrigir o artigo do SNCR no site, com autorização da Jessica, antes de divulgá-lo.
 - Skills: `blog-post`, `ai-seo`, `relatorio-final`.
+
+## Atualização de 03/11/2026 (versão v4)
+A Jessica enviou a página 5 e pediu: "Troque essa foto, coloque um homem".
+- Peças `carrossel-farmacia-suporte-v4-<página>.png`. Só a foto da página 5 mudou; a v1, a v2 e a v3 ficam como referência e não devem ser usadas.
+- Foto: `fotos/atendente-suporte-homem.jpg`, de banco de imagens (Pexels, Mikhail Nilov). Não é da equipe da ProSystem. A posição da foto agora fica no campo `pos` de `sol`, em `gerar.js`.
+- Testadas e descartadas: um close de rapaz com fone (rosto grande demais, logo no cabelo) e um homem de óculos na estação (sorriso coberto pelo painel). Outra foto do mesmo modelo cortava o alto da cabeça.
+- Verificado: página 5 vista em tamanho real, rosto inteiro e sorriso acima do painel; gerador sem estouro. Autor e licença "Free" lidos na página da foto; os termos completos da licença do Pexels não foram lidos.
+- Texto alternativo da página 5 em `legendas.md` atualizado para "atendente homem".
+- Não verificado: o "5 / 6" continua com pouco contraste sobre a camisa clara, como já estava na v3.
