@@ -326,7 +326,7 @@ Antibiótico na farmácia só sai com receita, que fica retida e é escriturada.
 
 Esta é a Semana Mundial de Conscientização sobre o Uso de Antimicrobianos, de 18 a 24 de novembro. Usar antibiótico sem indicação ajuda a criar resistência, e quem atende no balcão faz parte desse cuidado.
 
-Marque o farmacêutico da sua loja.
+A regra é da Anvisa e vale para toda farmácia e drogaria do país.
 
 #antibioticos #usoresponsavel #farmacia #farmaceutico
 
