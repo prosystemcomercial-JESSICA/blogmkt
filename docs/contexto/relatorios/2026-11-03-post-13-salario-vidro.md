@@ -34,3 +34,6 @@ Abrir `outputs/criativos/nov-dez/pecas/padaria-13-salario-v2.png` e aplicar o qu
 - O vidro ficou mais denso (de .62/.34 para .74/.5), porque nas fotos claras o azul ficava lavado. Isso escurece um pouco o 13º já aprovado.
 - Verificado: as cinco geradas sem estouro e conferidas em tamanho real e reduzido.
 - Pendente: a Jessica aprovar as quatro; aprovadas, marcar `travada: true`.
+
+## Aprovação
+- A Jessica aprovou as cinco ("perfeito"). Todas receberam `travada: true` em `pecas-dados.js` e não são mais geradas de novo.
