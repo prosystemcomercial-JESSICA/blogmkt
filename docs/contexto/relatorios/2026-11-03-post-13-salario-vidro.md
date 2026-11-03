@@ -43,3 +43,6 @@ Abrir `outputs/criativos/nov-dez/pecas/padaria-13-salario-v2.png` e aplicar o qu
 - Lista as 32 peças sem `travada: true` em `pecas-dados.js` (de 42), com data, título, mockup que falta, o que conferir e um status para a Jessica marcar (Aguardando, Aprovado, Ajustar).
 - 18 peças dependem de mockup da Jessica.
 - Próxima sessão: ler os status do documento, travar as aprovadas e refazer as marcadas com Ajustar.
+- Pedido seguinte: "quero ver tudo para que eu possa aprovar, assim como o anterior". O mesmo documento passou a seguir o modelo do de aprovação (3EWRqeFaTD2J6UuUeHwRoe): cada post tem a imagem, a tabela de Decisão (Aprovado, Alterar, Trocar) com "O que alterar", a legenda com as tags e o que conferir, divididos por mês.
+- Imagens: o PNG de cada estático e uma grade 3×2 com as 6 páginas de cada carrossel, enviadas como assets do documento (32 arquivos).
+- Não verificado: como as imagens aparecem abertas no documento.
