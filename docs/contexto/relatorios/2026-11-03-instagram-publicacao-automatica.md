@@ -44,7 +44,9 @@ A Jessica pediu o passo a passo para criar o app de automação de postagem no I
 - Também anotei a instalação em `C:\Users\prosy\CONTEXTO-CRM-COMERCIAL-LOCAL.md`.
 
 ## Pendente
-- A Jessica cria o token fine-grained (só o repositório blogmkt, Actions: Read and write) e salva como `GH_DISPARO=` no `.env`. Depois, eu copio para a VPS sem exibir o token.
+- `GH_DISPARO` foi criado pela Jessica e copiado para a VPS sem ser exibido. Conferido: a leitura respondeu HTTP 200, o disparo de teste da VPS respondeu HTTP 204 e a execução de teste 41667250823 terminou com sucesso (@prosystemoficial, 1 de 100 posts).
+- **Não verificado:** um post real saindo no horário pelo disparo da VPS. A prova vem no próximo post agendado.
+- Os próximos posts da agenda dependem do que a Jessica decidir para a grade.
 - O secret `IG_TOKEN` já foi criado no GitHub, e o teste no Actions passou.
 - Agendar os próximos posts. O post de 06/11 sai da grade, e a Jessica decide o que entra no lugar.
 
