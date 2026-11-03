@@ -39,6 +39,8 @@ const AJUSTES = `
 .dq span{display:inline-block;padding:12px 26px;border-radius:14px;background:#fff;color:var(--tin);font-size:31px;font-weight:800;box-shadow:0 10px 24px rgba(var(--sb),.4)}
 .estr{display:flex;gap:8px;justify-content:center}
 .estr svg{width:38px;height:38px;fill:#fff}
+.laco{position:absolute;top:-62px;left:50%;margin-left:-62px;width:124px;height:124px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(var(--sb),.35)}
+.laco svg{width:62px;height:86px;fill:none;stroke-width:17}
 `;
 
 // ---------- blocos das peças (mesmos do feed simulado) ----------
@@ -114,7 +116,9 @@ function comTela(c) {
     : tela(c.tela, 80, y, 920, h);
   return [pg(c.tema, cl, `${lo(c.fundo === 'bra')}${logo(c.fundo === 'bra')}<div class="col" style="justify-content:flex-start"><h2 style="font-size:${px(c.fs || 74)}">${c.titulo}</h2></div>${miolo}<div style="position:absolute;left:${px(80)};right:${px(80)};bottom:${px(66)};display:flex;flex-direction:column;align-items:center;gap:${px(22)};z-index:6"><p class="fx">${c.faixa}</p>${c.pilula ? `<span class="${pil}">${c.pilula}</span>` : ''}</div>`)];
 }
-const fotoPainel = (c) => [pg(c.tema, 'sob', `<img class="cheia" src="${img(c.foto)}" alt="" style="object-position:${c.posicao || '50% 30%'};${c.ajuste || ''}"><div class="tom"${c.tomFraco ? ' style="opacity:.25"' : ''}></div><div class="som"></div>${c.losangos ? `<i class="g" style="width:${px(310)};height:${px(310)};top:${px(-150)};left:${px(-120)};z-index:6"></i><i class="gf" style="width:${px(220)};height:${px(220)};top:${px(-90)};right:${px(-70)};z-index:6"></i>` : ''}${logo()}<div class="pnl"${c.painelTopo ? ` style="top:${c.painelTopo}px"` : ''}><h2 style="font-size:${px(c.fs || 82)}">${c.titulo}</h2><p class="fx">${c.faixa}</p><span class="pl o">${c.pilula}</span></div>`)];
+// Laço azul do Novembro Azul, num selo branco sobre a borda de cima do painel.
+const LACO = `<div class="laco"><svg viewBox="0 0 100 140"><path d="M50 16C29 16 25 40 34 58L74 126" stroke="#0f4c96"/><path d="M50 16C71 16 75 40 66 58L26 126" stroke="#2f8de4"/></svg></div>`;
+const fotoPainel = (c) => [pg(c.tema, 'sob', `<img class="cheia" src="${img(c.foto)}" alt="" style="object-position:${c.posicao || '50% 30%'};${c.ajuste || ''}"><div class="tom"${c.tomFraco ? ' style="opacity:.25"' : ''}></div><div class="som"></div>${c.losangos ? `<i class="g" style="width:${px(310)};height:${px(310)};top:${px(-150)};left:${px(-120)};z-index:6"></i><i class="gf" style="width:${px(220)};height:${px(220)};top:${px(-90)};right:${px(-70)};z-index:6"></i>` : ''}${logo()}<div class="pnl"${c.painelTopo ? ` style="top:${c.painelTopo}px"` : ''}>${c.laco ? LACO : ''}<h2 style="font-size:${px(c.fs || 82)}">${c.titulo}</h2><p class="fx">${c.faixa}</p><span class="pl o">${c.pilula}</span></div>`)];
 // Padaria com foto: título, foto em cartão e pílula branca.
 const padariaFoto = (c) => [pg(c.tema, 'forte', `${c.tras ? '' : lo()}${linha(c.tras, '#fff', 2)}${logo()}<div class="c3"><h2 style="font-size:${px(c.fs || 96)}">${c.titulo}</h2></div><div class="atr" style="left:${px(120)};top:${px(520)};width:${px(840)};height:${px(600)};transform:rotate(3deg)"></div><img class="car" src="${img(c.foto)}" alt="" style="left:${px(120)};top:${px(520)};width:${px(840)};height:${px(600)};transform:rotate(-2deg)">${linha(c.frente, '#fff', 5)}${pilAbs('pl', c.pilula)}`)];
 // Linha única sobre a foto, com partes atrás e à frente do assunto. Conceito do reel de @thiagor.designer, pedido em 31/10/2026.
