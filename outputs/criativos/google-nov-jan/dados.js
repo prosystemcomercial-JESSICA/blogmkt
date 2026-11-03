@@ -158,7 +158,7 @@ No blog, veja o modelo de registro e o que fazer com o pão que sobrou.`,
   },
   {
     data: '2027-01-14', dia: 'Qui 14/01', seg: 'Farmácia', id: 'sncr-receita-eletronica-controlados', tema: 'azul',
-    foto: 'conferindo-frasco', posicao: '50% 35%',
+    foto: 'teclado-azul', posicao: '50% 50%',
     palavra: 'receita eletrônica de controlados',
     titulo: 'Receita eletrônica de controlados <b>com numeração do SNCR.</b>',
     faixa: 'O papel continua valendo. O SNCR não substitui o SNGPC.', pilula: 'Leia no blog',

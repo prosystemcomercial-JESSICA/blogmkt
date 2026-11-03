@@ -26,7 +26,7 @@ const px = (n) => `calc(${n}*var(--u))`;
 const AJUSTES = `
 .post{aspect-ratio:4/3}
 .tom{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(var(--sb),.8) 0%,rgba(var(--sb),.15) 24%,rgba(var(--mar),.3) 40%,rgba(var(--mar),.9) 62%,rgba(var(--mar),.97) 100%)}
-.lg{top:${px(38)};width:${px(250)}}
+.lg{top:${px(36)};width:${px(300)}}
 .bloco{position:absolute;left:${px(150)};right:${px(150)};bottom:${px(58)};z-index:7;display:flex;flex-direction:column;align-items:center;gap:${px(20)};text-align:center}
 .bloco h2{font-size:${px(58)};line-height:1.08}
 .bloco .fx{font-size:${px(27)};padding:${px(16)} ${px(28)}}
