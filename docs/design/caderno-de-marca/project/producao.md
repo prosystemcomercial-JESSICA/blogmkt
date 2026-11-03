@@ -63,6 +63,8 @@ Para um carrossel novo, altere os textos e as fotos no início do gerador, em `c
 **Carrossel**
 - Todas as páginas no mesmo modelo.
 - Contador de página presente nas páginas 2 a 5.
+- Capa sem tela do sistema, sempre que possível.
+- Cada tela do sistema em um só slide. Sem tela nova para mostrar, o slide fica só com a foto: nunca repetir a mesma tela.
 - Conferido no tamanho real e reduzido, como aparece no celular.
 
 **Entrega**
