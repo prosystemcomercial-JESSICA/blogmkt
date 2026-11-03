@@ -25,7 +25,7 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Ter 24/11 | Farmácia | `carrossel-farmacia-depoimento-v3-<página>.png` | Carrossel V3 de depoimento | - |
 | Qua 25/11 | Padaria | `padaria-encomendas-natal-v2` | Padaria com foto | - |
 | Sex 27/11 | Farmácia | `frase-farmacia-lucro-v1` | Frase de impacto | - |
-| Seg 30/11 | Padaria | `padaria-13-salario-v1` | Foto com painel (o plano pedia estático com tela) | - |
+| Seg 30/11 | Padaria | `padaria-13-salario-v2` | Foto com painel de vidro (o plano pedia estático com tela) | - |
 | Ter 01/12 | Farmácia | `frase-dezembro-vermelho-v2` | Frase de impacto | - |
 | Qua 02/12 | Farmácia | `farmacia-escala-5x2-v1` | Foto com painel | - |
 | Qui 03/12 | Farmácia | `farmacia-dezembro-laranja-v2` | Foto com painel | - |
@@ -427,7 +427,7 @@ Quanto sobrou da sua última promoção? Se a resposta demorou, fale com um espe
 - Termo com volume de busca não conferido.
 
 
-### Seg 30/11: padaria-13-salario-v1
+### Seg 30/11: padaria-13-salario-v2
 
 Fluxo de caixa da padaria: hoje vence a primeira parcela do 13º, e a segunda vai até 18 de dezembro.
 
@@ -454,7 +454,7 @@ Hoje é o Dia Mundial de Luta contra a Aids, e começa o Dezembro Vermelho.
 
 Na farmácia, cuidado também é falar baixo, atender com discrição e tratar cada compra com respeito. Quem entra na sua loja precisa se sentir seguro para pedir o que precisa.
 
-Compartilhe com a sua equipe.
+Atendimento discreto também é o que faz o cliente voltar.
 
 #dezembrovermelho #farmacia #atendimento
 

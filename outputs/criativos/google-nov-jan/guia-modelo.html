@@ -1,0 +1,147 @@
+<title>Google ProSystem até 20/01</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout: guia de trabalho em uma coluna; cada post é uma ficha com imagem à esquerda e texto pronto para copiar. */
+:root{
+  --bg:#F3F6FB; --card:#FFFFFF; --fg:#0E1B33; --mut:#566582; --linha:#D9E1EE;
+  --azul:#2E6DB4; --ciano:#38C8F8; --lar:#C2410C; --lar-bg:#FDEBDD; --azul-bg:#E3EDF9; --cod:#EEF2F8;
+  --f-tit:'Montserrat',Arial,sans-serif; --f-txt:'Source Sans 3','Segoe UI',Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0A1222; --card:#111C31; --fg:#E7EEF9; --mut:#9AA9C4; --linha:#24324D;
+  --azul:#6FA6E6; --ciano:#5ED3FA; --lar:#F59A5C; --lar-bg:#3A2114; --azul-bg:#16294A; --cod:#172440; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0A1222; --card:#111C31; --fg:#E7EEF9; --mut:#9AA9C4; --linha:#24324D;
+  --azul:#6FA6E6; --ciano:#5ED3FA; --lar:#F59A5C; --lar-bg:#3A2114; --azul-bg:#16294A; --cod:#172440; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-txt);font-size:17px;line-height:1.55}
+.pag{max-width:1080px;margin:0 auto;padding-block:40px 80px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:44px}
+h1,h2,h3{font-family:var(--f-tit);margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1{font-weight:300;font-size:clamp(30px,5vw,46px);line-height:1.08}
+h1 b{font-weight:800}
+h2{font-weight:800;font-size:24px}
+h3{font-weight:700;font-size:19px;line-height:1.25}
+p{margin:0;max-width:68ch}
+a{color:var(--azul)}
+.rotulo{font-family:var(--f-tit);font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--azul)}
+header{display:flex;flex-direction:column;gap:16px;padding-bottom:28px;border-bottom:2px solid var(--linha)}
+.resumo{display:flex;flex-wrap:wrap;gap:10px 28px;color:var(--mut);font-size:15px}
+.resumo strong{color:var(--fg);font-family:var(--f-tit)}
+section{display:flex;flex-direction:column;gap:18px}
+ol.passos{margin:0;padding:0;list-style:none;display:grid;gap:12px;counter-reset:n}
+ol.passos li{counter-increment:n;display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start;background:var(--card);border:1px solid var(--linha);border-radius:14px;padding:14px 18px}
+ol.passos li::before{content:counter(n);width:32px;height:32px;border-radius:9px;transform:rotate(45deg) scale(.85);background:linear-gradient(135deg,var(--azul),var(--ciano));color:#fff;font-family:var(--f-tit);font-weight:800;display:flex;align-items:center;justify-content:center}
+ol.passos li span{min-width:0}
+ol.passos b{font-weight:600}
+.regras{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.regras div{background:var(--card);border:1px solid var(--linha);border-radius:14px;padding:14px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.regras strong{font-family:var(--f-tit);font-size:15px}
+.regras span{color:var(--mut);font-size:15px}
+.tab{overflow-x:auto;background:var(--card);border:1px solid var(--linha);border-radius:14px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:left;padding:10px 16px;border-bottom:1px solid var(--linha);vertical-align:top}
+th{font-family:var(--f-tit);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+tr:last-child td{border-bottom:0}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}
+tr.pausa td{color:var(--mut);font-style:italic;background:var(--cod)}
+.post{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:24px;background:var(--card);border:1px solid var(--linha);border-radius:18px;padding:20px;scroll-margin-top:16px}
+.post-img img{display:block;width:100%;height:auto;border-radius:10px;aspect-ratio:4/3;max-width:100%}
+.post-corpo{display:flex;flex-direction:column;gap:14px;min-width:0}
+.post-topo{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.data{font-family:var(--f-tit);font-weight:800;font-size:15px;font-variant-numeric:tabular-nums}
+.seg{font-size:13px;font-weight:600;padding:3px 10px;border-radius:99px}
+.seg-azul{background:var(--azul-bg);color:var(--azul)}
+.seg-lar{background:var(--lar-bg);color:var(--lar)}
+.campos{margin:0;display:grid;gap:6px;font-size:15px}
+.campos div{display:grid;grid-template-columns:90px 1fr;gap:10px}
+.campos dt{color:var(--mut)}
+.campos dd{margin:0;min-width:0;overflow-wrap:anywhere;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center}
+.campos small{flex-basis:100%;color:var(--mut)}
+code{font-size:13px;background:var(--cod);padding:1px 5px;border-radius:5px}
+.texto-topo{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--mut)}
+pre.texto{margin:0;white-space:pre-wrap;font-family:var(--f-txt);font-size:15px;line-height:1.5;background:var(--cod);border-radius:10px;padding:14px 16px;max-height:340px;overflow:auto}
+button.copiar{font:600 14px var(--f-txt);border:1.5px solid var(--azul);background:var(--azul);color:#fff;border-radius:99px;padding:6px 16px;cursor:pointer}
+button.copiar.mini{background:transparent;color:var(--azul);padding:2px 10px;font-size:12px}
+button.copiar:focus-visible{outline:3px solid var(--ciano);outline-offset:2px}
+button.copiar.ok{background:transparent;color:var(--azul)}
+.aviso{border-left:4px solid var(--lar);background:var(--card);border-radius:0 14px 14px 0;padding:14px 18px;display:flex;flex-direction:column;gap:6px}
+.aviso ul{margin:0;padding-left:20px;display:grid;gap:6px}
+@media (max-width:760px){.post{grid-template-columns:1fr}.campos div{grid-template-columns:76px 1fr}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+
+<main class="pag">
+<header>
+  <span class="rotulo">Perfil da Empresa no Google · ProSystem Sistemas</span>
+  <h1>11 postagens prontas, <b>de 05/11/2026 a 20/01/2027</b></h1>
+  <p>Cada ficha abaixo tem a imagem, o texto para colar, o botão, o link e a data para programar. Todas são do tipo <b>Atualização</b> e saem às 9h. Não há postagens de 23/12 a 02/01, por causa da pausa do planejamento.</p>
+  <div class="resumo"><span><strong>11</strong> postagens</span><span><strong>4</strong> de farmácia</span><span><strong>4</strong> de padaria</span><span><strong>3</strong> para os dois</span><span>Imagem <strong>1200 × 900</strong>, JPG</span></div>
+</header>
+
+<section>
+  <h2>Como programar cada postagem</h2>
+  <ol class="passos">
+    <li><span>Entre na conta Google que administra o perfil da ProSystem e abra o <b>Perfil da Empresa</b> (pesquise "ProSystem Sistemas" no Google ou acesse business.google.com).</span></li>
+    <li><span>Clique em <b>Adicionar atualização</b> (ou <b>Criar postagem</b>) e escolha o tipo <b>Atualização</b>.</span></li>
+    <li><span>Em <b>Adicionar fotos</b>, envie a imagem da ficha. Use o arquivo da pasta <code>outputs/criativos/google-nov-jan/imagens</code> ou abra o nome do arquivo na ficha e salve a imagem.</span></li>
+    <li><span>Clique em <b>Copiar texto</b> na ficha e cole na descrição.</span></li>
+    <li><span>Em <b>Adicionar um botão</b>, escolha <b>Saiba mais</b> e cole o link da ficha.</span></li>
+    <li><span>Ligue <b>Programar esta postagem</b> e escolha a data e a hora da ficha. Deixe <b>Repetições</b> desligado.</span></li>
+    <li><span>Clique em <b>Programar</b>. Depois da data, confira se a postagem aparece como <b>Ativa</b>. Se aparecer <b>Não aprovada</b>, veja o motivo no próprio perfil e me mande.</span></li>
+  </ol>
+</section>
+
+<section>
+  <h2>Regras que os textos já seguem</h2>
+  <div class="regras">
+    <div><strong>Sem telefone e sem e-mail</strong><span>A política do Google não aceita contato no texto. O telefone fica no próprio perfil.</span></div>
+    <div><strong>Sem link de rede social</strong><span>Os botões levam só ao site prosystemnet.com, em páginas que estavam no ar em 03/11.</span></div>
+    <div><strong>Sem falar de remédio</strong><span>O Google limita conteúdo sobre produtos farmacêuticos. Os posts falam de gestão, e as fotos não mostram embalagens.</span></div>
+    <div><strong>Palavra-chave na primeira frase</strong><span>As primeiras palavras aparecem na prévia do Google. Todas citam 2027 e têm menos de 1.500 caracteres.</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Calendário</h2>
+  <div class="tab"><table>
+    <thead><tr><th>Data</th><th>Para quem</th><th>Postagem</th></tr></thead>
+    <tbody>
+<!--TABELA-->
+    </tbody>
+  </table></div>
+</section>
+
+<div class="aviso">
+  <strong>Antes de programar, confira</strong>
+  <ul>
+    <li><b>25/11, encomendas de Natal:</b> o artigo do blog ainda não está publicado. O botão leva à página de padaria. Se o artigo estiver no ar até lá, troque pelo link indicado na ficha.</li>
+    <li><b>14/01, SNCR:</b> o artigo do blog ainda escreve "a partir de 30 de outubro" no futuro. A correção estava prevista para 04/11. Confira se ela já foi feita.</li>
+    <li><b>17/12, WhatsApp:</b> a função é da versão Plus, e o texto diz isso.</li>
+  </ul>
+</div>
+
+<section>
+  <h2>Postagens</h2>
+<!--POSTS-->
+</section>
+</main>
+
+<script>
+document.querySelectorAll('button.copiar').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var alvo = document.getElementById(b.dataset.alvo);
+    var txt = alvo.textContent;
+    var feito = function () { var t = b.textContent; b.textContent = 'Copiado'; b.classList.add('ok'); setTimeout(function () { b.textContent = t; b.classList.remove('ok'); }, 1800); };
+    var selecionar = function () {
+      if (alvo.hidden) { alvo.hidden = false; }
+      var r = document.createRange(); r.selectNodeContents(alvo);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      b.textContent = 'Use Ctrl+C';
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(feito).catch(selecionar);
+    } else { selecionar(); }
+  });
+});
+</script>
