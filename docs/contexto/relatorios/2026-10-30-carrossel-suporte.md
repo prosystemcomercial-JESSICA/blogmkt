@@ -69,4 +69,4 @@ A Jessica enviou a página 5 e pediu: "Troque essa foto, coloque um homem".
 - Testadas e descartadas: um close de rapaz com fone (rosto grande demais, logo no cabelo) e um homem de óculos na estação (sorriso coberto pelo painel). Outra foto do mesmo modelo cortava o alto da cabeça.
 - Verificado: página 5 vista em tamanho real, rosto inteiro e sorriso acima do painel; gerador sem estouro. Autor e licença "Free" lidos na página da foto; os termos completos da licença do Pexels não foram lidos.
 - Texto alternativo da página 5 em `legendas.md` atualizado para "atendente homem".
-- Não verificado: o "5 / 6" continua com pouco contraste sobre a camisa clara, como já estava na v3.
+- A Jessica autorizou ("pode alterar") e o "5 / 6" das páginas com foto cheia ganhou sombra escura e opacidade total. Página 5 vista em tamanho real: o número ficou legível sobre a camisa clara.
