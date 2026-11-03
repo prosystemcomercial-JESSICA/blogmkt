@@ -814,7 +814,7 @@ Sobra de pão na padaria é dinheiro que foi para o lixo. Quanto sobrou ontem na
 
 Passado o Natal, vale olhar esse número com calma e seguir 2027 sabendo quanto produzir.
 
-Marque o dono da padaria.
+Novo artigo no ar: o passo a passo para controlar as sobras e ajustar a produção está no blog, no link da bio. Marque o dono da padaria.
 
 #padaria #gestaodepadaria #panificacao
 
@@ -823,7 +823,6 @@ Marque o dono da padaria.
 **Conferir antes de publicar:**
 
 - O termo "sobra de pão" não veio das sugestões do Google: conferir o volume.
-- O plano liga este post ao artigo de sobras: citar o blog na legenda quando o artigo estiver no ar.
 
 
 ### Ter 12/01: depoimento-rodrigo-v2.png
