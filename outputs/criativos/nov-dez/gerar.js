@@ -148,7 +148,7 @@ const DADOS = require('./pecas-dados.js');
     for (let i = 0; i < paginas.length; i++) {
       const nome = paginas.length > 1 ? `${c.id}-${i + 1}` : c.id;
       const html = `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;800&display=swap" rel="stylesheet"><style>*{box-sizing:border-box}html,body{margin:0}${css}${AJUSTES}</style></head><body><div class="post" style="width:1080px">${paginas[i]}</div></body></html>`;
-      const tmp = path.join(AQUI, '_pagina.html');
+      const tmp = path.join(require('os').tmpdir(), 'prosystem-nov-dez-pagina.html');
       fs.writeFileSync(tmp, html);
       await p.goto(url(tmp), { waitUntil: 'networkidle0', timeout: 90000 });
       await p.evaluate(() => document.fonts.ready);
@@ -170,7 +170,7 @@ const DADOS = require('./pecas-dados.js');
       });
       fora.forEach((f) => problemas.push(`${nome}: ${f}`));
       await p.screenshot({ path: path.join(SAIDA, nome + '.png'), clip: { x: 0, y: 0, width: 1080, height: 1350 } });
-      fs.unlinkSync(tmp);
+      fs.rmSync(tmp, { force: true });
     }
   }
   await b.close();
