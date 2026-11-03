@@ -415,7 +415,7 @@ Margem de lucro na farmácia: na Black Friday, a venda sobe, mas é o que sobra 
 
 Hoje, repare em quanto você está vendendo e em quanto está ficando.
 
-Marque quem olha o caixa da farmácia.
+Quanto sobrou da sua última promoção? Se a resposta demorou, fale com um especialista pelo link da bio.
 
 #blackfriday #margemdelucro #gestaodefarmacia #farmacia
 
