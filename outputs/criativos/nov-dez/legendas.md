@@ -54,7 +54,7 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Ter 19/01 | Farmácia | `carrossel-farmacia-atencao-farmaceutica-v2` | Carrossel V2 | `atencao-anamnese` |
 | Qua 20/01 | Farmácia | `frase-dia-do-farmaceutico-v1` | Frase de impacto | - |
 | Sex 22/01 | Padaria | `padaria-entregas-v1` | Estático com tela | `painel-entregas` |
-| Seg 25/01 | Padaria | `frase-padaria-registro-sobras-v1` | Frase de impacto | - |
+| Seg 25/01 | Padaria | `frase-padaria-registro-sobras-v2` | Frase de impacto em vídeo (MP4, 9 s; o PNG é a capa) | - |
 | Dom 31/01 | Farmácia | `frase-janeiro-roxo-v2` | Frase de impacto | - |
 
 ## Mockups que a Jessica precisa fazer
@@ -996,7 +996,7 @@ Fale com um especialista pelo link da bio.
 - A tela diz "Ticket médio". Se ficar legível no mockup, é a palavra difícil da peça.
 
 
-### Seg 25/01: frase-padaria-registro-sobras-v1
+### Seg 25/01: frase-padaria-registro-sobras-v2
 
 Controle de sobras na padaria começa com um caderno, uma balança e cinco minutos no fim do dia.
 
@@ -1008,7 +1008,7 @@ Marque o dono da padaria.
 
 #padaria #gestaodepadaria #panificacao #sistemaparapadaria
 
-**Texto alternativo:** Frase em laranja sobre fundo branco: sobra sem registro vira opinião, sobra registrada vira decisão para a fornada de amanhã.
+**Texto alternativo:** Vídeo sem som. Frase em laranja sobre fundo branco, aparecendo palavra por palavra: sobra sem registro vira opinião, sobra registrada vira decisão para a fornada de amanhã. A palavra opinião balança e embaça; a palavra decisão entra com destaque e ganha um grifo.
 
 **Conferir antes de publicar:**
 

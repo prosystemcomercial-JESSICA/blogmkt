@@ -141,9 +141,13 @@ const natalRico = (c) => [pg(c.tema, 'sob', `<div style="position:absolute;inset
 const tatiana5 = (c) => [pg('azul', 'forte sob', `${lo()}${logo()}<div class="atr" style="left:${px(190)};top:${px(200)};width:${px(700)};height:${px(530)};transform:rotate(3deg)"></div><img class="car" src="${img('atendente-suporte')}" alt="" style="left:${px(190)};top:${px(200)};width:${px(700)};height:${px(530)};transform:rotate(-2deg);object-position:50% 25%"><div class="s3"><h2>“Só tenho a <b>agradecer</b> por todo o suporte e comprometimento oferecidos pela equipe.”</h2><p><b>Tatiana Souza</b><br>Farmácia Pharmavida</p><div class="estr">${'<svg viewBox="0 0 24 24"><polygon points="12,2.6 14.9,8.6 21.5,9.5 16.7,14.1 17.9,20.7 12,17.5 6.1,20.7 7.3,14.1 2.5,9.5 9.1,8.6" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg>'.repeat(5)}</div></div>${num(5)}`)];
 const RENDER = { v2, v3, frase, comTela, fotoPainel, fotoLinha, natalRico, padariaFoto, tatiana5 };
 
+// Página completa, com fonte e estilos. Também usada por motion.js, que anima a mesma página.
+const documento = (pagina, extra = '') => `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;800&display=swap" rel="stylesheet"><style>*{box-sizing:border-box}html,body{margin:0}${css}${AJUSTES}</style></head><body><div class="post" style="width:1080px">${pagina}</div>${extra}</body></html>`;
+module.exports = { RENDER, documento, url };
+
 const DADOS = require('./pecas-dados.js');
 
-(async () => {
+if (require.main === module) (async () => {
   fs.mkdirSync(SAIDA, { recursive: true });
   const filtro = process.argv[2];
   const lista = DADOS.P.filter((p) => !filtro || p.id === filtro);
@@ -157,7 +161,7 @@ const DADOS = require('./pecas-dados.js');
     if (c.travada) continue;
     for (let i = 0; i < paginas.length; i++) {
       const nome = paginas.length > 1 ? `${c.id}-${i + 1}` : c.id;
-      const html = `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;800&display=swap" rel="stylesheet"><style>*{box-sizing:border-box}html,body{margin:0}${css}${AJUSTES}</style></head><body><div class="post" style="width:1080px">${paginas[i]}</div></body></html>`;
+      const html = documento(paginas[i]);
       const tmp = path.join(require('os').tmpdir(), 'prosystem-nov-dez-pagina.html');
       fs.writeFileSync(tmp, html);
       await p.goto(url(tmp), { waitUntil: 'networkidle0', timeout: 90000 });
