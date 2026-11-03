@@ -195,7 +195,7 @@ Fale com um especialista pelo link da bio.
 
 #gestaodefarmacia #estoque #comprasnafarmacia #sistemaparafarmacia
 
-**Texto alternativo:** Caneta de aplicação branca, sem marca, e o relatório do Prosystem de produtos sem giro, filtrado por 30 dias sem venda, com o título: a caneta emagrecedora deve ficar mais barata, e a que está parada no seu estoque?
+**Texto alternativo:** Caneta de aplicação branca, sem marca, e o relatório do Prosystem de produtos sem giro, filtrado por 30 dias sem venda, com o título: a caneta de semaglutida deve ficar mais barata, e a que está parada no seu estoque?
 
 **Conferir antes de publicar:**
 

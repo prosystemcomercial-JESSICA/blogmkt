@@ -51,11 +51,11 @@ const P = [
   conferir: ['A alta de 9% é do grão, não da farinha.', 'Tela pequena e antiga: pedir captura nova à equipe de produto.', 'Produto: a precificação vale sem ajuste na padaria?'] },
 
 { data: 'Sex 13/11', seg: 'Farmácia', id: 'canetas-emagrecedoras-v2', tipo: 'comTela', tema: 'azul', formato: 'Estático com tela', fundo: 'forte',
-  titulo: 'A caneta emagrecedora deve ficar mais barata. <b>E a que está parada no seu estoque?</b>', fs: 64, tela: 'dias-sem-giro', fotoCima: 'caneta-branca', faixa: 'Veja no Prosystem quais produtos não vendem há 30 dias e decida antes de o preço cair.', pilula: 'Leia a legenda',
+  titulo: 'A caneta de semaglutida deve ficar mais barata. <b>E a que está parada no seu estoque?</b>', fs: 64, tela: 'dias-sem-giro', fotoCima: 'caneta-branca', faixa: 'Veja no Prosystem quais produtos não vendem há 30 dias e decida antes de o preço cair.', pilula: 'Leia a legenda',
   kw: 'canetas emagrecedoras na farmácia',
   cap: `Canetas emagrecedoras na farmácia: com mais opções e genéricos, comprar errado custa caro.\n\nA expectativa do mercado é de alternativas mais baratas nos próximos anos. Produto caro parado na prateleira é dinheiro preso, e o valor dele pode cair.\n\nNo Prosystem, o relatório de dias sem giro mostra o que está parado para você comprar melhor em 2027.\n\n${CTA}`,
   tags: '#gestaodefarmacia #estoque #comprasnafarmacia #sistemaparafarmacia',
-  alts: ['Caneta de aplicação branca, sem marca, e o relatório do Prosystem de produtos sem giro, filtrado por 30 dias sem venda, com o título: a caneta emagrecedora deve ficar mais barata, e a que está parada no seu estoque?'],
+  alts: ['Caneta de aplicação branca, sem marca, e o relatório do Prosystem de produtos sem giro, filtrado por 30 dias sem venda, com o título: a caneta de semaglutida deve ficar mais barata, e a que está parada no seu estoque?'],
   conferir: ['Só gestão: não falar de emagrecimento, não citar marca nem mostrar aplicação.', 'A queda de preço é expectativa, não fato: manter "deve".'] },
 
 { data: 'Seg 16/11', seg: 'Padaria', id: 'padaria-pix-caixa-v1', tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte',
@@ -74,13 +74,19 @@ const P = [
   alts: ['Aviso do Prosystem informando um desconto autorizado com login, e o título: quem liberou esse desconto?'],
   conferir: ['Mockup em notebook ou desktop: celular é proibido, mesmo sendo conversa de WhatsApp.'] },
 
-{ data: 'Qui 19/11', seg: 'Padaria', id: 'padaria-escala-6x1-v1', tipo: 'fotoPainel', tema: 'lar', formato: 'Foto com painel', foto: 'sovando-massa',
-  titulo: 'Fim da escala 6x1:<br><b>a hora do funcionário fica 4,8% mais cara.</b>', fs: 66, faixa: 'Em 16/12, a semana cai para 42 horas com o mesmo salário. Em dezembro de 2027, cai para 40 e a hora sobe 10%.', pilula: 'Leia a legenda',
+{ data: 'Qui 19/11', seg: 'Padaria', id: 'padaria-escala-6x1-v1', tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte', foto: 'sovando-massa',
+  titulo: 'Fim da escala 6x1: menos horas de equipe. <b>Use cada uma onde a padaria mais vende.</b>', fs: 62, alturaTitulo: 230, tela: 'painel-vendas-totais', faixa: 'No painel do Prosystem, veja vendas e atendimentos dia a dia. Versão Plus.', pilula: 'Leia a legenda',
   kw: 'fim da escala 6x1 na padaria',
-  cap: 'Fim da escala 6x1 na padaria: em 16 de dezembro, valem duas folgas por semana e 42 horas, sem reduzir salário.\n\nA Fenacon calcula a hora 4,8% mais cara nessa etapa. Em dezembro de 2027 vem a segunda, com 40 horas e hora 10% mais cara. E tudo isso começa em cima do Natal.\n\nRefaça a escala agora, olhando os dias e os horários em que a loja mais vende. Converse com seu contador e seu sindicato.',
-  tags: '#escala6x1 #padaria #gestaodepadaria #panificacao',
-  alts: ['Padeiro sovando massa, com o texto: fim da escala 6x1, a hora do funcionário fica 4,8% mais cara.'],
-  conferir: ['Data: a Fenacon conta 16/12, parte da imprensa fala em 15/12.', 'Não é consultoria trabalhista: manter a frase do contador e do sindicato.'] },
+  cap: `Fim da escala 6x1 na padaria: a partir de 16 de dezembro, valem duas folgas por semana e 42 horas, sem reduzir salário.
+
+A Fenacon calcula a hora do funcionário 4,8% mais cara nessa etapa. Em dezembro de 2027 vem a segunda, com 40 horas e hora 10% mais cara. E tudo começa em cima do Natal.
+
+Com menos horas, a escala precisa seguir o movimento da loja. Na versão Plus do Prosystem, o painel de indicadores mostra vendas e atendimentos por período, com o gráfico dia a dia. Assim você vê quais dias pedem mais gente no balcão. Converse também com seu contador e seu sindicato.
+
+${CTA}`,
+  tags: '#escala6x1 #padaria #gestaodepadaria #sistemaparapadaria',
+  alts: ['Padeiro sovando massa e os totais do painel do Prosystem, com atendimentos e média diária de vendas, e o título: fim da escala 6x1, menos horas de equipe, use cada uma onde a padaria mais vende.'],
+  conferir: ['Data: a Fenacon conta 16/12, parte da imprensa fala em 15/12.', 'Não é consultoria trabalhista: manter a frase do contador e do sindicato.', 'Painel de indicadores: só versão Plus. Não prometer vendas por hora: não está confirmado.', 'A faixa de totais saiu do painel da Drogaria Modelo (valores fictícios); se possível, mockup com números de padaria.'] },
 
 { data: 'Seg 23/11', seg: 'Farmácia', id: 'carrossel-farmacia-black-friday-v2', tipo: 'v3', tema: 'azul', formato: 'Carrossel V3', nova: true,
   capa: { foto: 'cartelas-detalhe', fs: 104, titulo: 'Black Friday: <b>esse desconto se pagou?</b>' },
