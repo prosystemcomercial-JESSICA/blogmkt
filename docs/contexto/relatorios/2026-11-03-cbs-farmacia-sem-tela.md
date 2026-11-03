@@ -29,3 +29,6 @@ Se a Jessica preferir o fundo azul forte, criar uma variação da frase em `gera
 
 ## Atualização: aprovada
 A Jessica aprovou a peça. Ela ficou travada (`travada: true` em `pecas-dados.js`): o gerador não a refaz mais. A pendência de confirmar com o produto que o sistema está pronto para IBS e CBS continua antes da publicação.
+
+## Atualização: legenda sem a taxa
+A pedido da Jessica ("faça o que for mais coerente"), a taxa da CBS saiu da legenda: o trecho entre colchetes virou "a CBS já está valendo." e saiu o item de esperar o Senado fixar a taxa. Ficou só um item para conferir: confirmar que o sistema já emite com IBS e CBS. A arte não mudou.

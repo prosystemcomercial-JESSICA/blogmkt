@@ -263,7 +263,7 @@ ${CTA}`,
 { data: 'Seg 04/01', seg: 'Farmácia', id: 'farmacia-cbs-v1', travada: true, tipo: 'frase', tema: 'azul', formato: 'Frase de impacto', nova: true, fs: 88,
   titulo: 'A Prosystem já está pronta para o IBS e a CBS.<br><b>E a sua farmácia?</b>', apoio: '2027 começou: hora de refazer o preço.',
   kw: 'reforma tributária na farmácia',
-  cap: `Reforma tributária na farmácia em 2027: a CBS já está valendo, com taxa de [CONFIRMAR A TAXA E A FONTE NO DIA].
+  cap: `Reforma tributária na farmácia em 2027: a CBS já está valendo.
 
 Se o preço da sua loja foi feito com o imposto antigo, esta é a semana de sentar com o contador e refazer a conta. Remédio registrado tem regra própria, com corte de 60%.
 
@@ -272,7 +272,7 @@ O Prosystem já está preparado para o IBS e a CBS, e na Precificação a compos
 ${CTA}`,
   tags: '#reformatributaria #cbs #ibs #gestaodefarmacia #sistemaparafarmacia',
   alts: ['Frase em azul sobre fundo branco: a Prosystem já está pronta para o IBS e a CBS. E a sua farmácia?'],
-  conferir: ['Só publicar depois de o Senado fixar a taxa, ou de confirmar que os 11,3% valeram. Preencher o trecho entre colchetes da legenda.', 'Confirmar com o produto que o sistema já emite com IBS e CBS antes de publicar: a peça promete isso.'] },
+  conferir: ['Confirmar com o produto que o sistema já emite com IBS e CBS antes de publicar: a peça promete isso.'] },
 
 { data: 'Qui 14/01', seg: 'Farmácia', id: 'farmacia-cbs-tela-v1', travada: true, tipo: 'comTela', tema: 'azul', formato: 'Estático com tela', fundo: 'forte', nova: true,
   titulo: '2027 começou, e a CBS também. <b>Você já refez a conta?</b>', fs: 70, tela: 'precificacao', faixa: 'Custo e fórmula de preço na mesma tela do Prosystem.', pilula: 'Leia a legenda',
@@ -376,7 +376,7 @@ ${CTA}`,
   conferir: ['Produto: a Atenção farmacêutica segue como na base?', 'A tela foi recortada sem nome, foto e contato do paciente da ficha de exemplo. Use o recorte no mockup, porque o original mostra uma foto com direito de uso não confirmado.'] },
 
 { data: 'Qua 20/01', seg: 'Farmácia', id: 'farmacia-dia-do-farmaceutico-v2', tipo: 'homenagem', tema: 'azul', formato: 'Homenagem', nova: true, semAno: true, fs: 74,
-  foto: 'farmaceutica-recorte', yLos: 289, posicao: '30% 20%', pilula: '20 de janeiro · Dia do Farmacêutico',
+  foto: 'farmaceutica-receita', yLos: 289, posicao: '50% 45%', pilula: '20 de janeiro · Dia do Farmacêutico',
   titulo: 'Por trás de cada receita, <b>tem alguém cuidando de gente.</b>', apoio: 'A todos os farmacêuticos, o nosso obrigado.',
   kw: 'Dia do Farmacêutico',
   cap: 'Dia do Farmacêutico: por trás de cada receita, tem alguém cuidando de gente.\n\nÉ quem confere a receita, explica como tomar, tira a dúvida no balcão e atende com calma mesmo com fila. Muitas vezes, é o primeiro profissional de saúde que a pessoa procura.\n\nA todos os farmacêuticos, e em especial aos que estão com a gente no dia a dia, o nosso obrigado.\n\nMarque um farmacêutico que merece ler isso.',

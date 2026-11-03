@@ -52,7 +52,7 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Sex 15/01 | Farmácia | `carrossel-farmacia-sncr-v2` | Carrossel V3 | - |
 | Seg 18/01 | Padaria | `carrossel-padaria-lucro-por-produto-v2` | Carrossel V3 | `rentabilidade-relatorio` |
 | Ter 19/01 | Farmácia | `carrossel-farmacia-atencao-farmaceutica-v2` | Carrossel V2 | `atencao-anamnese` |
-| Qua 20/01 | Farmácia | `frase-dia-do-farmaceutico-v1` | Frase de impacto | - |
+| Qua 20/01 | Farmácia | `farmacia-dia-do-farmaceutico-v2` | Homenagem | - |
 | Sex 22/01 | Padaria | `padaria-entregas-v1` | Estático com tela | `painel-entregas` |
 | Seg 25/01 | Padaria | `frase-padaria-registro-sobras-v2` | Frase de impacto em vídeo (MP4, 9 s; o PNG é a capa) | - |
 | Dom 31/01 | Farmácia | `frase-janeiro-roxo-v2` | Frase de impacto | - |
@@ -734,7 +734,7 @@ Obrigado por mais um ano com a gente.
 
 ### Seg 04/01: farmacia-cbs-v1
 
-Reforma tributária na farmácia em 2027: a CBS já está valendo, com taxa de [CONFIRMAR A TAXA E A FONTE NO DIA].
+Reforma tributária na farmácia em 2027: a CBS já está valendo.
 
 Se o preço da sua loja foi feito com o imposto antigo, esta é a semana de sentar com o contador e refazer a conta. Remédio registrado tem regra própria, com corte de 60%.
 
@@ -748,7 +748,6 @@ Fale com um especialista pelo link da bio.
 
 **Conferir antes de publicar:**
 
-- Só publicar depois de o Senado fixar a taxa, ou de confirmar que os 11,3% valeram. Preencher o trecho entre colchetes da legenda.
 - Confirmar com o produto que o sistema já emite com IBS e CBS antes de publicar: a peça promete isso.
 
 
