@@ -969,13 +969,16 @@ A todos os farmacêuticos, e em especial aos que estão com a gente no dia a dia
 
 Marque um farmacêutico que merece ler isso.
 
+Foto: Cristine Rochol / PMPA.
+
 #diadofarmaceutico #farmaceutico #farmacia
 
-**Texto alternativo:** Farmacêutica de jaleco sorrindo enquanto pega um produto na prateleira, dentro de um losango, com a data 20 de janeiro e o texto: por trás de cada receita, tem alguém cuidando de gente. A todos os farmacêuticos, o nosso obrigado.
+**Texto alternativo:** Farmacêutica de jaleco escrevendo uma receita no balcão, com prateleiras de remédios ao fundo, dentro de um losango, com a data 20 de janeiro e o texto: por trás de cada receita, tem alguém cuidando de gente. A todos os farmacêuticos, o nosso obrigado.
 
 **Conferir antes de publicar:**
 
 - A v1 (frase em fundo branco) fica guardada como referência em pecas/frase-dia-do-farmaceutico-v1.png.
+- Foto real de uma farmácia distrital de Porto Alegre (Cristine Rochol / PMPA), licença que exige o crédito (já está na legenda). Não há autorização da pessoa fotografada.
 
 
 ### Sex 22/01: padaria-entregas-v1
