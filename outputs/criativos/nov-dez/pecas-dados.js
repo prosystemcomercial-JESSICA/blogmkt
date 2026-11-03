@@ -366,7 +366,7 @@ const P = [
   kw: '',
   cap: 'Novembro Azul é o mês de falar da saúde do homem, e muitas vezes ele aparece primeiro na farmácia, não no consultório.\n\nA campanha começou com o câncer de próstata e hoje lembra também de glicemia e vacina em dia. No balcão, uma conversa simples pode ser o empurrão para marcar a consulta.\n\nMostre este post para quem atende na sua farmácia.',
   tags: '#novembroazul #saudedohomem #farmacia',
-  alts: ['Farmacêutico de jaleco conferindo produtos entre as prateleiras, com o texto: Novembro Azul, quem lembra o homem de se cuidar?'],
+  alts: ['Farmacêutico de jaleco conferindo produtos entre as prateleiras, com o laço azul do Novembro Azul e o texto: Novembro Azul, quem lembra o homem de se cuidar?'],
   conferir: ['Data de saúde: a peça incentiva procurar o médico, sem orientar tratamento.', 'As fontes são reportagens que citam o Ministério da Saúde. Não confirmei o dia 17/11, por isso a peça não diz "hoje".'] },
 
 { data: 'Dom 22/11', seg: 'Farmácia', id: 'frase-antimicrobianos-v2', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto', nova: true, semAno: true, fs: 92,
