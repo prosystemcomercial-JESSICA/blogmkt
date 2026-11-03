@@ -22,3 +22,7 @@ banco imagens/depoimentos-google/
 
 # Prévia do link na bio montada: tem os prints do Google embutidos (ficam só neste computador)
 site/linknabio/previa.html
+
+# LPs montadas (saída do site/lp/montar_lp.py)
+site/lp/farmacia.html
+site/lp/padaria.html

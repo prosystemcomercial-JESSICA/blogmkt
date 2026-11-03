@@ -5,6 +5,9 @@ from pathlib import Path
 
 AQUI = Path(__file__).parent
 WA = "https://api.whatsapp.com/message/6BX6LTHQ6SUWB1?autoload=1&amp;app_absent=0"
+# Destino dos cartões de segmento: por enquanto, as prévias das LPs (site/lp). No site, trocar pelos endereços das páginas.
+LP_FARMACIA = "https://claude.ai/artifact/RgoAoEjoV4fMAPazhA6zWG"
+LP_PADARIA = "https://claude.ai/artifact/AvgXmvxUuNJhh71qc7QiRB"
 
 LINKS = [  # (sigla no losango, título, apoio, url, destaque)
     ("WA", "Fale com um especialista", "WhatsApp, das 7h às 22h, todos os dias", WA, True),
@@ -56,7 +59,7 @@ def depos():
 def main(imgs, saida):
     img = json.loads(Path(imgs).read_text())
     s = (AQUI / "linknabio.tpl.html").read_text(encoding="utf-8")
-    troca = {"links": links(), "depos": depos(), "wa": WA, **img}
+    troca = {"links": links(), "depos": depos(), "wa": WA, "lp_farmacia": LP_FARMACIA, "lp_padaria": LP_PADARIA, **img}
     for k, v in troca.items():
         s = s.replace("{{" + k + "}}", v)
     assert "{{" not in s, "marcador sem valor"

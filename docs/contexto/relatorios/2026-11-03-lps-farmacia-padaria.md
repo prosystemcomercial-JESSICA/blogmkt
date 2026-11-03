@@ -1,0 +1,36 @@
+# 03/11/2026 — LPs do Prosystem para farmácia e para padaria
+
+## Pedido
+"vamos criar duas lps para apresentar o sistema para farmacia e o sistema para padarias, use a base de conhecimento para apresentar os planos e para apresentar algumas ferramentas, com motion, movimentos de rolagens, carrosseis, no design system e tecnologico". No meio: "você vai colocar nos cards que direcionam para farmácia e padaria no link da Bio" (sim).
+
+## Feito
+- Prévias (privadas): farmácia https://claude.ai/artifact/RgoAoEjoV4fMAPazhA6zWG e padaria https://claude.ai/artifact/AvgXmvxUuNJhh71qc7QiRB. **Nada foi aplicado no site.**
+- `site/lp/`:
+  - `lp.tpl.html`: modelo único; a cor vem do segmento (farmácia azul, padaria laranja sem azul);
+  - `montar_lp.py`: conteúdo das duas páginas e montagem; gera `farmacia.html` e `padaria.html` (fora do git, ~950 KB cada, com imagens embutidas);
+  - `planos-prosystem-2025.csv`: tabela oficial copiada da base (`suporte-tecnico/procedimentos-e-orientacoes/planos-prosystem-2025`, atualizada em 06/02/2025). Colunas MEI, Loja Basic/Pro/Plus, Farma Basic/Pro/Plus.
+- Seções: hero com telas reais flutuando (seguem o mouse e a rolagem), faixa de funções correndo, 3 dores (hooks do `docs/conteudo-prosystem/mapa-funcoes.csv`), carrossel de ferramentas (setas, pontos, arrastar, avanço automático), "Um dia na sua farmácia/padaria" (no desktop a tela fica fixa e troca ao rolar), 3 planos + tabela "comparar função por função", avaliações do Google em texto, suporte com régua de horas, chamada final com foto.
+- Planos: farmácia usa Farma Basic/Pro/Plus; padaria usa **Loja** Basic/Pro/Plus. O script confere cada item dos cartões contra a tabela oficial e para se algo não estiver no plano. Sem preço.
+- Link na bio (`site/linknabio/`): os cartões Farmácia e Padaria levam às prévias das LPs (`LP_FARMACIA`/`LP_PADARIA` em `montar.py`). Texto corrigido: o de padaria citava ficha técnica e controle de sobras, que **não existem** na base; o de farmácia citava receita eletrônica de controlados, não conferida.
+
+## Verificado
+- Base de conhecimento varrida: 140 artigos. Confirmados na base: balança lida no caixa (artigos Toledo/Filizola citam o pão francês), leitura da etiqueta da balança, biometria (artigo de 2026, cita farmácia), Dashboard só Plus, Avisos via WhatsApp só "versão Plus", Controle de mesas só Loja Plus.
+- Capturas 390px e 1366px das duas LPs: sem rolagem lateral e sem erro de script. Corrigidos depois: selo de plano gigante no carrossel, print do WhatsApp grande demais no hero, botão da barra cobrindo o logo no celular. A versão corrigida não teve nova captura.
+- Não verificado: celular real e navegador do Instagram; se a tabela de 2025 ainda vale em 2026.
+
+## Decisões e porquês
+- Telas reais, em cartão plano, sem aparelho (mockup em notebook/desktop é com a Jessica). Na padaria só telas neutras (sem remédio e sem "Drogaria Modelo"); balança e mesas sem tela, em cartão de texto.
+- Selos de plano só onde a base diz o plano (Plus, Pro e Plus, Loja Plus). Nas demais ferramentas, sem selo.
+- Encomendas fora da padaria: o mapa avisa para não vender como pedido de bolo sem confirmar com produto.
+- Biometria só na farmácia (o artigo fala de farmácia).
+- Avaliações: na padaria sem Krisley (fala de farmácias).
+
+## Pendente (Jessica / produto decidem)
+- A tabela "Planos Prosystem 2025" ainda vale? Padaria é mesmo a linha Loja?
+- **Atendimento em plantão** aparece só nos planos Pro e Plus. As páginas dizem "suporte das 7h às 22h, inclusive sábado e domingo" para todos: confirmar se o fim de semana vale para o Basic.
+- Avisos via WhatsApp: a tabela não lista; a base diz "versão Plus". Confirmar se vale para Loja Plus.
+- Destino final: criar as páginas no WordPress (sugestão de endereço: /sistema-para-farmacia/ e /sistema-para-padaria/) e trocar `LP_FARMACIA`/`LP_PADARIA` no link da bio. As páginas antigas /drogaria/ e /padaria/ continuam no ar.
+- Os cartões "Quero o Farma/Loja ..." levam ao mesmo WhatsApp; se houver formulário ou link por plano, trocar.
+
+## Próxima sessão
+- Ler os comentários das prévias, ajustar `montar_lp.py` / `lp.tpl.html`, rodar `python site/lp/montar_lp.py` e publicar nos mesmos links. Para o WordPress, trocar as imagens base64 por arquivos da biblioteca de mídia. Skills: `impeccable`, `webapp-testing`.

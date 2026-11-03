@@ -1,0 +1,117 @@
+funcao;mei;loja_basic;loja_pro;loja_plus;farma_basic;farma_pro;farma_plus
+Finaliza Venda - F3;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Orçamento - F1;Não;Sim;Sim;Sim;Sim;Sim;Sim
+Caixa Central - F4;Não;Sim;Sim;Sim;Sim;Sim;Sim
+Conferência Cega Vendas;Não;Não;Sim;Sim;Não;Sim;Sim
+Pesquisa Analítica - F2;Não;Não;Sim;Sim;Não;Sim;Sim
+PBM;Não;Não;Não;Não;Não;Sim;Sim
+Devolução - F5;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Serviços;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Manipulação;Não;Não;Não;Não;Não;Não;Sim
+Cliente;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Encomenda;Não;Não;Sim;Sim;Não;Sim;Sim
+Recarga - Alt+F1;Não;Sim;Sim;Sim;Sim;Sim;Sim
+Nfe;Não;Sim;Sim;Sim;Sim;Sim;Sim
+Consulta Preço - F11;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Movimentação - F7;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Contas a Receber - F6;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Fechamento - F9;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Sangrias/Suprim. - F8;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Funções - Alt+F10;Não;Sim;Sim;Sim;Sim;Sim;Sim
+Menu Fiscal - F10;Não;Sim;Sim;Sim;Sim;Sim;Sim
+ECF - Alt+F12;Não;Sim;Sim;Sim;Sim;Sim;Sim
+Entregas - F12;Não;Não;Sim;Sim;Não;Sim;Sim
+Venda TEF;Não;Sim;Sim;Sim;Sim;Sim;Sim
+Preferências - Alt+F11;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Balanço;Não;Sim;Sim;Sim;Sim;Sim;Sim
+Atual. Produtos - Alt+F2;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Abre Gaveta - Alt+F7;Não;Sim;Sim;Sim;Sim;Sim;Sim
+Sistema;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Sistema>Calculadora;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Sistema>Auditoria;Não;Não;Sim;Sim;Não;Sim;Sim
+Sistema>Copia de Segurança;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Sistema>Configurações;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Sistema>Efetua Logoff;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Sistema>Plano de Senhas;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Sistema>Manutenção;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Sistema>Finalizar;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Editar;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Editar>Todos;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Cadastros;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Cadastros>Clientes;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Cadastros>Email;Não;Não;Não;Sim;Não;Não;Sim
+Cadastros>Empresas;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Cadastros>Prescritores;Não;Não;Não;Não;Não;Sim;Sim
+Auxiliares;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Auxiliares>Financeiro;Não;Não;Sim;Sim;Não;Sim;Sim
+Auxiliares>Funcionários;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Auxiliares>Funcionários> Cadastro;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Auxiliares>Funcionários> Registro de Ponto;Não;Não;Sim;Sim;Não;Sim;Sim
+Auxiliares>Profissões;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Auxiliares>Produtos;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Auxiliares>Produtos> Grupos;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Auxiliares>Produtos> Sub-Grupos;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Auxiliares>Produtos> Classes;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Auxiliares>Produtos> Seção;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Auxiliares>Produtos> Família;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Auxiliares>Produtos>Gêneros;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Auxiliares>Produtos>PBM;Não;Não;Não;Não;Não;Sim;Sim
+Auxiliares>Produtos>Tablóides;Não;Não;Sim;Sim;Não;Sim;Sim
+Auxiliares>Fiscal - Tabelas;Não;Sim;Sim;Sim;Sim;Sim;Sim
+Auxiliares>Alterações CST/CFOP;Não;Sim;Sim;Sim;Sim;Sim;Sim
+Auxiliares>Políticas de Preços;Não;Não;Não;Sim;Não;Sim;Sim
+Auxiliares>CEP;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Auxiliares>Localidades;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Auxiliares>Especialidades;Não;Não;Não;Sim;Não;Sim;Sim
+Auxiliares>Classes Terapêuticas;Não;Não;Não;Sim;Sim;Sim;Sim
+Auxiliares>Genéricos;Não;Não;Não;Sim;Sim;Sim;Sim
+Auxiliares>Cores & Modelos;Não;Não;Não;Sim;Não;Sim;Sim
+Auxiliares>Tabela de comissões;Não;Não;Não;Sim;Não;Sim;Sim
+Auxiliares>Filiais;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Auxiliares>Clientes;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Auxiliares>Clientes>Grupos;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Auxiliares>Clientes>Sub-grupos;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Auxiliares>Clientes> Características (AF);Não;Não;Não;Não;Não;Não;Sim
+Produtos;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Produtos>Movimentação;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Produtos>Movimentação> Movimentação;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Produtos>Movimentação> Confirmação de Estoque;Não;Não;Sim;Sim;Não;Sim;Sim
+Produtos>Movimentação> Conferência Cega Entradas;Não;Não;Sim;Sim;Não;Sim;Sim
+Produtos>Movimentação>Notas Divergentes Confirmadas;Não;Não;Sim;Sim;Não;Sim;Sim
+Produtos>Movimentação> Produção;Não;Não;Sim;Sim;Não;Sim;Sim
+Produtos>Consultas;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Produtos>Atualizações Preços/Dic;Não;Não;Não;Não;Sim;Sim;Sim
+Produtos>Balanço;Não;Sim;Sim;Sim;Sim;Sim;Sim
+Produtos>Análises & Processamentos;Não;Não;Não;Sim;Não;Não;Sim
+Produtos>Fiscal;Não;Sim;Sim;Sim;Sim;Sim;Sim
+Produtos>Fiscal>ECF;Não;Sim;Sim;Sim;Sim;Sim;Sim
+Produtos>Fiscal>Sintegra;Não;Sim;Sim;Sim;Sim;Sim;Sim
+Produtos>Fiscal>Nota Série D;Não;Sim;Sim;Sim;Sim;Sim;Sim
+Produtos>Fiscal>Sped;Não;Sim;Sim;Sim;Sim;Sim;Sim
+Produtos>Fiscal>Tributação;Não;Sim;Sim;Sim;Sim;Sim;Sim
+Produtos>Fiscal>Redução ICMS;Não;Não;Sim;Sim;Não;Sim;Sim
+Produtos>Fiscal>XML Validação;Não;Sim;Sim;Sim;Sim;Sim;Sim
+Produtos>Controlado;Não;Não;Não;Não;Não;Sim;Sim
+Financeiro;Não;Não;Sim;Sim;Não;Sim;Sim
+Financeiro>Movimentação;Não;Não;Sim;Sim;Não;Sim;Sim
+Financeiro>Cheques;Não;Não;Sim;Sim;Não;Sim;Sim
+Financeiro>Caixa;Não;Não;Sim;Sim;Não;Sim;Sim
+Financeiro>Fluxo de caixa;Não;Não;Não;Sim;Não;Não;Sim
+Financeiro>Banco;Não;Não;Não;Sim;Não;Não;Sim
+Financeiro>Sangrias;Não;Não;Sim;Sim;Não;Sim;Sim
+Financeiro>Boleto bancário;Não;Não;Não;Sim;Não;Não;Sim
+Financeiro>Orçamento;Não;Não;Sim;Sim;Não;Sim;Sim
+Financeiro>Meta funcionário;Não;Não;Não;Sim;Não;Não;Sim
+Financeiro>Demonstrativos de Resultados;Não;Não;Não;Sim;Não;Não;Sim
+Transporte;Não;Não;Sim;Sim;Não;Sim;Sim
+Serviços;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Extintor;Não;Não;Não;Sim;Não;Não;Não
+Manipulação;Não;Não;Não;Não;Não;Não;Sim
+Ajuda;Sim;Sim;Sim;Sim;Sim;Sim;Sim
+Gerencial;Não;Não;Sim;Sim;Não;Sim;Sim
+Dashboard;Não;Não;Não;Sim;Não;Não;Sim
+Controle de Mesas;Não;Não;Não;Sim;Não;Não;Não
+Integrações *;Não;Não;Sim;Sim;Não;Sim;Sim
+Acompanhamento SPED **;Não;Não;Não;Não;Não;Não;Não
+Comunicação **;Não;Não;Não;Não;Não;Não;Não
+Atendimento Plantão;Não;Não;Sim;Sim;Não;Sim;Sim
