@@ -26,3 +26,6 @@ Na peça `farmacia-cbs-v1` (Seg 04/01): "Tire a tela do sistema e melhore essa c
 
 ## Próxima sessão
 Se a Jessica preferir o fundo azul forte, criar uma variação da frase em `gerar.js` (tipo `frase` com fundo `forte`) e regerar com `node outputs/criativos/nov-dez/gerar.js farmacia-cbs-v1`.
+
+## Atualização: aprovada
+A Jessica aprovou a peça. Ela ficou travada (`travada: true` em `pecas-dados.js`): o gerador não a refaz mais. A pendência de confirmar com o produto que o sistema está pronto para IBS e CBS continua antes da publicação.

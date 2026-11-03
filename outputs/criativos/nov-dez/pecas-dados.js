@@ -251,7 +251,7 @@ ${CTA}`,
   alts: ['Fogos de artifício no céu noturno, com uma linha branca subindo do texto até os fogos, e o texto: Um 2027 de portas abertas e caixa no azul.'],
   conferir: ['Exceção à pausa de 23/12 a 02/01, a pedido da Jessica: deixar agendado.'] },
 
-{ data: 'Seg 04/01', seg: 'Farmácia', id: 'farmacia-cbs-v1', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto', nova: true, fs: 88,
+{ data: 'Seg 04/01', seg: 'Farmácia', id: 'farmacia-cbs-v1', travada: true, tipo: 'frase', tema: 'azul', formato: 'Frase de impacto', nova: true, fs: 88,
   titulo: 'A Prosystem já está pronta para o IBS e a CBS.<br><b>E a sua farmácia?</b>', apoio: '2027 começou: hora de refazer o preço.',
   kw: 'reforma tributária na farmácia',
   cap: `Reforma tributária na farmácia em 2027: a CBS já está valendo, com taxa de [CONFIRMAR A TAXA E A FONTE NO DIA].
