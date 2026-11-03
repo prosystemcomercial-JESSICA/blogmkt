@@ -29,7 +29,7 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Ter 01/12 | Farmácia | `frase-dezembro-vermelho-v2` | Frase de impacto | - |
 | Qua 02/12 | Farmácia | `farmacia-escala-5x2-v2` | Foto com painel | - |
 | Qui 03/12 | Farmácia | `farmacia-dezembro-laranja-v2` | Foto com painel | - |
-| Sex 04/12 | Padaria | `carrossel-padaria-sangria-v2` | Carrossel V2 | `sangria-aviso`, `sangria-bloqueio`, `sangria-registro` |
+| Sex 04/12 | Padaria | `carrossel-padaria-sangria-v2` | Carrossel V2 | `sangria-aviso`, `sangria-registro` |
 | Seg 07/12 | Farmácia | `carrossel-farmacia-popular-v2` | Carrossel V2 | `receitas-scanner` |
 | Ter 08/12 | Os dois | `depoimento-samuel-v2.png` | Depoimento | - |
 | Qua 09/12 | Padaria | `padaria-dia-da-culinaria-v2` | Padaria com foto | - |
@@ -70,7 +70,6 @@ Só em notebook ou desktop, em balcão do segmento ou escritório. Salve em `moc
 | `painel-vendas-totais` | Qui 19/11 |
 | `analise-descontos` | Seg 23/11 |
 | `sangria-aviso` | Sex 04/12 |
-| `sangria-bloqueio` | Sex 04/12 |
 | `sangria-registro` | Sex 04/12 |
 | `receitas-scanner` | Seg 07/12 |
 | `combo-totais` | Qui 10/12 |
