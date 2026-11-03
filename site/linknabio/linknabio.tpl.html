@@ -146,9 +146,12 @@ h2{margin:0 0 28px;font-size:clamp(1.6rem,4.6vw,2.4rem);line-height:1.12;font-we
 .trilho{display:flex;gap:16px;width:max-content;animation:rola 46s linear infinite}
 .trilho:hover{animation-play-state:paused}
 @keyframes rola{to{transform:translateX(-50%)}}
-.cit{margin:0;width:min(90vw,430px);flex:none;align-self:start;background:var(--branco);border-radius:var(--raio-painel);padding:12px 8px 4px;box-shadow:0 18px 40px rgba(8,19,48,.28);transition:transform .45s var(--ease)}
-.cit:hover{transform:translateY(-4px) rotate(-.4deg)}
-.cit img{display:block;width:100%;height:auto}
+.cit{margin:0;width:min(80vw,340px);flex:none;display:flex;flex-direction:column;gap:14px;background:rgba(8,19,48,.24);border:1px solid rgba(255,255,255,.22);border-radius:var(--raio-cartao);padding:22px;transition:transform .45s var(--ease),background .45s}
+.cit:hover{transform:translateY(-4px);background:rgba(8,19,48,.34)}
+.cit blockquote{margin:0;font-size:.9375rem;font-weight:500;line-height:1.5;flex:1}
+.cit figcaption{font-size:.875rem;font-weight:800}
+.estrelas{display:flex;gap:4px}
+.estrelas svg{width:18px;height:18px}
 .fonte{margin-top:22px;font-size:.75rem;opacity:.85}
 
 /* Suporte */
@@ -300,7 +303,7 @@ h2{margin:0 0 28px;font-size:clamp(1.6rem,4.6vw,2.4rem);line-height:1.12;font-we
     <h2 class="rv" id="depo-t">Quem usa, <b>recomenda</b>.</h2>
   </div>
   <div class="trilho" id="trilho">{{depos}}{{depos}}</div>
-  <div class="wrap"><p class="fonte">Prints de avaliações reais de clientes no perfil da ProSystem no Google. Passe o mouse para pausar.</p></div>
+  <div class="wrap"><p class="fonte">Avaliações reais de clientes, publicadas no perfil da ProSystem no Google.</p></div>
 </section>
 
 <section>

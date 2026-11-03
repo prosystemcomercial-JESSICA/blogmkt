@@ -1,6 +1,6 @@
 """Monta a prévia do link na bio: troca os {{marcadores}} do modelo pelos links, depoimentos e imagens embutidas.
 Uso: python site/linknabio/montar.py <imgs.json> <saida.html>"""
-import base64, html, io, json, sys
+import html, json, sys
 from pathlib import Path
 
 AQUI = Path(__file__).parent
@@ -13,25 +13,27 @@ LINKS = [  # (sigla no losango, título, apoio, url, destaque)
     ("PS", "Conheça o sistema", "Ferramentas, planos e funções do Prosystem", "https://prosystemnet.com/", False),
 ]
 
-# Prints das avaliações do Google (autorizadas em 30/10/2026). Ficam só neste computador, fora do git,
-# por isso a previa.html montada também fica fora do git.
-PRINTS_DIR = AQUI.parent.parent / "banco imagens" / "depoimentos-google"
-PRINTS = [  # (arquivo, nome para o texto alternativo)
-    ("152647", "Rodrigo Amancio"), ("153223", "Krisley Kretli de Oliveira"), ("152409", "Samuel Ferreira"),
-    ("152618", "Thalita Silva"), ("153201", "Paulo Siqueira"), ("152924", "Verônica Xavier"),
-    ("153108", "Katiane Avancini"), ("152546", "Sirleia Moreira"), ("152501", "Claudiele Castro"),
+# Avaliações do Google (autorizadas em 30/10/2026): texto completo, como está no Google, e a nota de cada uma.
+# Só sai o emoji. Fonte: banco imagens/depoimentos-google/transcricao.md (fora do git).
+DEPOS = [  # (nome, estrelas, texto)
+    ("Rodrigo Amancio", 5, "Trabalho com eles a 13 anos e não pretendo mudar. Me atendem super bem e com rapidez e sempre resolvem as minhas demandas de maneira muito eficaz. São nota 1000 e estão de parabéns."),
+    ("Krisley Kretli de Oliveira", 5, "Eu tenho duas farmácias e a quase 15 anos de empresa trabalho com o software da Prosystem! Amo o trabalho deles,o programa é super simples de aprender e o suporte que eles oferecem é super ágil e eficaz"),
+    ("Samuel Ferreira", 5, "O sistema é excelente, tudo funciona, muito personalizável, integração, detalhamentos e o suporte humanizado tanto segunda a sexta quando sábado e domingo, sem aquelas frescuras de falar com robô. O suporte do Matheus de Carvalho excelente"),
+    ("Thalita Silva", 5, "Sistema muito bem estruturado de fácil acesso, atendimento nota 1000, todos muito atenciosos e prestativos quando precisamos!!!"),
+    ("Paulo Siqueira", 5, "A Prossystem foi o programa que resolveu aqui na loja, já tive outros mas o único que os funcionários não reclamam aqui é a Prossystem, suporte na hora que precisa, temos o telefone direto com o técnico responsável, recomendo demais"),
+    ("Verônica Xavier", 5, "Tive uma experiência incrível com a Prosystem! Atendimento excelente, serviço de ótima qualidade e muita atenção aos detalhes. Recomendo para quem procura confiança e profissionalismo."),
+    ("Katiane Avancini", 5, "Trabalhamos com a Prossystem a muitos anos, nos atendem rapidamente em tudo que precisamos do sistema! A pessoa que nos atende João Vitor super educado e sempre rápido."),
+    ("Sirleia Moreira", 5, "Sistema muito fácil de trabalhar e eles dão ótima assistência."),
+    ("Claudiele Castro", 5, "Sistema muito bom. Aprovado. Técnico João Victor nos atende com extrema qualidade e paciência."),
 ]
 
+# Estrela branca de pontas redondas (caderno de marca); a apagada é só contorno
+ESTRELA = ('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9L3.4 9.5l6-.8z" '
+           'fill="{f}" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/></svg>')
 
-def print_base64(cod):
-    """Corta a sobra branca do print e devolve como PNG em base64."""
-    from PIL import Image, ImageChops
-    im = Image.open(PRINTS_DIR / f"Captura de tela 2026-10-30 {cod}.png").convert("RGB")
-    caixa = ImageChops.difference(im, Image.new("RGB", im.size, "white")).getbbox()
-    im = im.crop((0, 0, im.width, min(im.height, caixa[3] + 14)))
-    b = io.BytesIO()
-    im.quantize(colors=96).save(b, "PNG", optimize=True)
-    return "data:image/png;base64," + base64.b64encode(b.getvalue()).decode()
+
+def estrelas(n):
+    return ESTRELA.format(f="#FFFFFF") * n + ESTRELA.format(f="none") * (5 - n)
 
 
 def links():
@@ -46,8 +48,9 @@ def links():
 
 def depos():
     return "".join(
-        f'<figure class="cit"><img src="{print_base64(cod)}" alt="Avaliação de 5 estrelas de {html.escape(n)} no Google" loading="lazy"></figure>'
-        for cod, n in PRINTS)
+        f'<figure class="cit"><span class="estrelas" role="img" aria-label="{n} de 5 estrelas">{estrelas(n)}</span>'
+        f'<blockquote>{html.escape(t)}</blockquote><figcaption>{html.escape(nome)}</figcaption></figure>'
+        for nome, n, t in DEPOS)
 
 
 def main(imgs, saida):
