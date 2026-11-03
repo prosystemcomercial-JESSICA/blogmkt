@@ -186,3 +186,11 @@ Resolvido na atualização abaixo.
 **Feito:** decisão "Aprovado" marcada no post de 03/12 do documento de aprovação e `travada: true` em `farmacia-dezembro-laranja-v2`, em `outputs/criativos/nov-dez/pecas-dados.js`. O arquivo da peça não mudou.
 
 **Verificado:** o documento confirmou a opção "Aprovado" nessa linha; `conferir.js` sem erro nos 46 posts.
+
+## Atualização de 03/11/2026: capa do carrossel de padaria (reforma tributária)
+
+**Pedido:** "zera o que? Coloque zera o imposto, apenas esse complemento na capa, restante do conteudo nao é para mudar nada".
+
+**Feito:** `carrossel-padaria-reforma-tributaria-v2`, com a capa "Em 2027, o pão francês zera o imposto. E o resto do cupom?" e o texto alternativo da capa ajustado. As páginas 2 a 6 são cópias exatas dos arquivos da v1. A nova renderização tinha só diferenças de suavização no texto, e por isso não foi usada. A imagem foi trocada no documento de aprovação (rev 39), e a galeria foi publicada na versão 8.
+
+**Verificado:** capa vista em tamanho real, com 4 linhas de título e sem encostar na foto; `conferir.js` sem erro nos 46 posts. **Não verificado:** a capa não foi vista em celular.
