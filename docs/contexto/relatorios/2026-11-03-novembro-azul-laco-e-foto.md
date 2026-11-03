@@ -18,7 +18,7 @@ Na peça `farmacia-novembro-azul-v1`, a Jessica pediu: "coloca um homem, atenden
 - Não fiz imagem por IA, porque o caderno pede foto real com pessoas brasileiras e "sem cara de IA".
 
 ## Pendente
-- A Jessica decide a foto: mandar uma (banco pago ou foto própria) ou aceitar uma das opções com cliente mulher.
+- Nada. A Jessica aprovou a peça como está, com a foto atual e o laço. Outra sessão já tinha travado a versão `farmacia-novembro-azul-v2` (painel de vidro, com o laço) no commit `de99a77`.
 
 ## Próxima sessão
-Com a foto em mãos, salvar em `outputs/criativos/nov-dez/fotos/<nome>.jpg`, registrar o crédito em `fotos/CREDITOS.md`, trocar `foto`, `posicao` e `ajuste` e atualizar `alts` em `pecas-dados.js`. Depois rodar `node outputs/criativos/nov-dez/gerar.js`. Ler antes o caderno de marca em `docs/design/caderno-de-marca/project/`.
+Nada a fazer nesta peça. Se ela pedir para trocar a foto mais tarde: com a foto em mãos, salvar em `outputs/criativos/nov-dez/fotos/<nome>.jpg`, registrar o crédito em `fotos/CREDITOS.md`, trocar `foto`, `posicao` e `ajuste` e atualizar `alts` em `pecas-dados.js`. Depois rodar `node outputs/criativos/nov-dez/gerar.js`. Ler antes o caderno de marca em `docs/design/caderno-de-marca/project/`.
