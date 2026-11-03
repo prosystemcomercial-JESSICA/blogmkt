@@ -12,6 +12,7 @@ Cada tipo tem um exemplo ao vivo em Componentes. Os textos dos exemplos só most
 | Meme | Humor do setor | Texto, imagem em cartão e desfecho | Exemplo. **Em aberto:** origem das imagens |
 | Depoimento | Prova social | Citação em cartão branco, nome e cidade | Peças com clientes reais e autorizados em `outputs/criativos/depoimentos/` |
 | Padaria com foto | Dor e conteúdo de padaria | Título, foto em cartão e pílula branca | Exemplo |
+| Story de artigo | Divulgar artigo novo do blog com a figurinha de link | 1080×1920, selo "Novo artigo no blog", título, apoio e pílula "Toque no link e leia ↓". Nada nos 250px do alto nem nos 340px de baixo; a faixa de 1300 a 1580px fica livre para a figurinha | Primeiros em `outputs/criativos/nov-dez/stories/` (03/11/2026), aguardando aprovação |
 
 A Jessica pediu "carrossel, estático, frases de impacto que chamam atenção, memes, depoimentos e etc". Outros tipos entram aqui quando forem criados e aprovados.
 
