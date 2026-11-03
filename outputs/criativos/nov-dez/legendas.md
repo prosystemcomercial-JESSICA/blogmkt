@@ -2,26 +2,26 @@
 
 Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e gere de novo. As imagens ficam em `pecas/`, exceto as de outras produções, que têm o caminho indicado.
 
-**Pausa de 23/12 a 02/01: nenhuma publicação, exceto Natal (25/12) e Ano Novo (01/01).** **Nada aqui foi publicado.** Enquanto houver mockup em falta, a peça mostra a tela em um cartão provisório e não deve ser publicada.
+**Pausa de 23/12 a 02/01: nenhuma publicação, exceto Natal (25/12) e Ano Novo (01/01).** **Nada aqui foi publicado.** Em 03/11/2026 a Jessica aprovou todas as peças sem mockup: as telas ficam no cartão e as peças estão travadas. Peça nova que pedir mockup aparece na lista abaixo.
 
 ## Calendário
 
 | Data | Para quem | Peça | Formato | Mockup em falta |
 |---|---|---|---|---|
-| Qua 04/11 | Farmácia | `carrossel-farmacia-reforma-tributaria-v1` | Carrossel V2 | `painel-estoque` |
+| Qua 04/11 | Farmácia | `carrossel-farmacia-reforma-tributaria-v1` | Carrossel V2 | - |
 | Sex 06/11 | Padaria | `carrossel-padaria-reforma-tributaria-v2` | Carrossel V3 | - |
 | Seg 09/11 | Farmácia | `carrossel-farmacia-suporte-v4-<página>.png` | Carrossel V2 | - |
 | Ter 10/11 | Farmácia | `depoimento-krisley-v2.png` | Depoimento | - |
-| Qua 11/11 | Padaria | `carrossel-padaria-trigo-v1` | Carrossel V3 | `precificacao` |
-| Sex 13/11 | Farmácia | `canetas-emagrecedoras-v2` | Estático com tela | `dias-sem-giro` |
-| Sáb 14/11 | Farmácia | `farmacia-dia-do-diabetes-v2` | Estático com tela | `uso-continuo-relatorio` |
+| Qua 11/11 | Padaria | `carrossel-padaria-trigo-v1` | Carrossel V3 | - |
+| Sex 13/11 | Farmácia | `canetas-emagrecedoras-v2` | Estático com tela | - |
+| Sáb 14/11 | Farmácia | `farmacia-dia-do-diabetes-v2` | Estático com tela | - |
 | Seg 16/11 | Padaria | `padaria-pix-caixa-v1` | Estático com tela | - |
 | Ter 17/11 | Farmácia | `farmacia-novembro-azul-v2` | Foto com painel | - |
-| Qua 18/11 | Farmácia | `farmacia-quem-liberou-desconto-v1` | Estático com tela | `whats-desconto` |
-| Qui 19/11 | Padaria | `padaria-escala-6x1-v1` | Estático com tela | `painel-vendas-totais` |
+| Qua 18/11 | Farmácia | `farmacia-quem-liberou-desconto-v1` | Estático com tela | - |
+| Qui 19/11 | Padaria | `padaria-escala-6x1-v1` | Estático com tela | - |
 | Sáb 21/11 | Farmácia | `farmacia-dia-da-dengue-v4` | Foto com painel | - |
 | Dom 22/11 | Farmácia | `frase-antimicrobianos-v2` | Frase de impacto | - |
-| Seg 23/11 | Farmácia | `carrossel-farmacia-black-friday-v2` | Carrossel V3 | `analise-descontos` |
+| Seg 23/11 | Farmácia | `carrossel-farmacia-black-friday-v2` | Carrossel V3 | - |
 | Ter 24/11 | Farmácia | `carrossel-farmacia-depoimento-v3-<página>.png` | Carrossel V3 de depoimento | - |
 | Qua 25/11 | Padaria | `padaria-encomendas-natal-v2` | Padaria com foto | - |
 | Sex 27/11 | Farmácia | `frase-farmacia-lucro-v1` | Frase de impacto | - |
@@ -29,31 +29,31 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Ter 01/12 | Farmácia | `frase-dezembro-vermelho-v2` | Frase de impacto | - |
 | Qua 02/12 | Farmácia | `farmacia-escala-5x2-v2` | Foto com painel | - |
 | Qui 03/12 | Farmácia | `farmacia-dezembro-laranja-v2` | Foto com painel | - |
-| Sex 04/12 | Padaria | `carrossel-padaria-sangria-v2` | Carrossel V2 | `sangria-aviso`, `sangria-registro` |
-| Seg 07/12 | Farmácia | `carrossel-farmacia-popular-v2` | Carrossel V2 | `receitas-scanner` |
+| Sex 04/12 | Padaria | `carrossel-padaria-sangria-v2` | Carrossel V2 | - |
+| Seg 07/12 | Farmácia | `carrossel-farmacia-popular-v2` | Carrossel V2 | - |
 | Ter 08/12 | Os dois | `depoimento-samuel-v2.png` | Depoimento | - |
 | Qua 09/12 | Padaria | `padaria-dia-da-culinaria-v2` | Padaria com foto | - |
-| Qui 10/12 | Padaria | `padaria-combos-v2` | Estático com tela | `combo-totais` |
-| Sex 11/12 | Farmácia | `carrossel-farmacia-uso-continuo-v3` | Carrossel V2 | `uso-continuo-proxima-compra`, `uso-continuo-alerta`, `uso-continuo-relatorio` |
-| Seg 14/12 | Padaria | `padaria-fechamento-caixa-v1` | Estático com tela | `fechamento-caixa` |
+| Qui 10/12 | Padaria | `padaria-combos-v2` | Estático com tela | - |
+| Sex 11/12 | Farmácia | `carrossel-farmacia-uso-continuo-v3` | Carrossel V2 | - |
+| Seg 14/12 | Padaria | `padaria-fechamento-caixa-v1` | Estático com tela | - |
 | Qua 16/12 | Os dois | `frase-escala-hoje-v2` | Frase de impacto | - |
-| Sex 18/12 | Padaria | `padaria-curva-abc-v1` | Estático com tela | `curva-abc` |
+| Sex 18/12 | Padaria | `padaria-curva-abc-v1` | Estático com tela | - |
 | Seg 21/12 | Farmácia | `frase-farmacia-receita-v1` | Frase de impacto | - |
 | Sex 25/12 | Os dois | `natal-v5` | Foto com losango e linha | - |
 | Sex 01/01 | Os dois | `ano-novo-v3` | Foto com linha | - |
 | Seg 04/01 | Farmácia | `farmacia-cbs-v1` | Frase de impacto | - |
 | Qua 06/01 | Padaria | `padaria-dia-de-reis-v1` | Padaria com foto | - |
 | Qui 07/01 | Padaria | `padaria-simples-nota-v2` | Foto com painel | - |
-| Sex 08/01 | Farmácia | `farmacia-mercado-2027-v1` | Estático com tela | `painel-vendas` |
+| Sex 08/01 | Farmácia | `farmacia-mercado-2027-v1` | Estático com tela | - |
 | Seg 11/01 | Padaria | `frase-padaria-sobra-v1` | Frase de impacto | - |
 | Ter 12/01 | Os dois | `depoimento-rodrigo-v2.png` | Depoimento | - |
 | Qua 13/01 | Os dois | `frase-janeiro-branco-v1` | Frase de impacto | - |
-| Qui 14/01 | Farmácia | `farmacia-cbs-tela-v1` | Estático com tela | `precificacao` |
+| Qui 14/01 | Farmácia | `farmacia-cbs-tela-v1` | Estático com tela | - |
 | Sex 15/01 | Farmácia | `carrossel-farmacia-sncr-v2` | Carrossel V3 | - |
-| Seg 18/01 | Padaria | `carrossel-padaria-lucro-por-produto-v2` | Carrossel V3 | `rentabilidade-relatorio` |
-| Ter 19/01 | Farmácia | `carrossel-farmacia-atencao-farmaceutica-v2` | Carrossel V2 | `atencao-anamnese` |
+| Seg 18/01 | Padaria | `carrossel-padaria-lucro-por-produto-v2` | Carrossel V3 | - |
+| Ter 19/01 | Farmácia | `carrossel-farmacia-atencao-farmaceutica-v2` | Carrossel V2 | - |
 | Qua 20/01 | Farmácia | `farmacia-dia-do-farmaceutico-v2` | Homenagem | - |
-| Sex 22/01 | Padaria | `padaria-entregas-v1` | Estático com tela | `painel-entregas` |
+| Sex 22/01 | Padaria | `padaria-entregas-v1` | Estático com tela | - |
 | Seg 25/01 | Padaria | `frase-padaria-registro-sobras-v2` | Frase de impacto em vídeo (MP4, 9 s; o PNG é a capa) | - |
 | Dom 31/01 | Farmácia | `frase-janeiro-roxo-v2` | Frase de impacto | - |
 
@@ -63,25 +63,7 @@ Só em notebook ou desktop, em balcão do segmento ou escritório. Salve em `moc
 
 | Tela | Datas |
 |---|---|
-| `painel-estoque` | Qua 04/11 |
-| `precificacao` | Qua 11/11, Qui 14/01 |
-| `dias-sem-giro` | Sex 13/11 |
-| `whats-desconto` | Qua 18/11 |
-| `painel-vendas-totais` | Qui 19/11 |
-| `analise-descontos` | Seg 23/11 |
-| `sangria-aviso` | Sex 04/12 |
-| `sangria-registro` | Sex 04/12 |
-| `receitas-scanner` | Seg 07/12 |
-| `combo-totais` | Qui 10/12 |
-| `uso-continuo-proxima-compra` | Sex 11/12 |
-| `uso-continuo-alerta` | Sex 11/12 |
-| `uso-continuo-relatorio` | Sex 11/12, Sáb 14/11 |
-| `fechamento-caixa` | Seg 14/12 |
-| `curva-abc` | Sex 18/12 |
-| `painel-vendas` | Sex 08/01 |
-| `rentabilidade-relatorio` | Seg 18/01 |
-| `atencao-anamnese` | Ter 19/01 |
-| `painel-entregas` | Sex 22/01 |
+| - | Nenhum mockup em falta |
 
 ## Legendas
 
@@ -519,7 +501,7 @@ Quer esse controle na sua padaria? Fale com um especialista pelo link da bio.
 
 1. Pães em uma prateleira, com o título: quanto dinheiro tem na sua gaveta agora?
 2. Aviso do Prosystem pedindo a sangria programada e o texto: chegou no valor, o caixa avisa.
-3. Aviso de caixa bloqueado e o texto: passou do limite, o caixa trava.
+3. Grade de pães e o texto: passou do limite, o caixa trava.
 4. Tela de registro de sangria do Prosystem e o texto: toda retirada fica registrada.
 5. Carrinho de pães e o texto: sangria com regra, sem depender da memória.
 6. Pães em uma prateleira e o convite para ter esse controle na padaria.

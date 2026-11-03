@@ -5,7 +5,7 @@ const FOTO_FA = 'farmaceutica-recorte';
 const CTA = 'Fale com um especialista pelo link da bio.';
 
 const P = [
-{ data: 'Qua 04/11', seg: 'Farmácia', id: 'carrossel-farmacia-reforma-tributaria-v1', tipo: 'v2', tema: 'azul', formato: 'Carrossel V2',
+{ data: 'Qua 04/11', seg: 'Farmácia', id: 'carrossel-farmacia-reforma-tributaria-v1', travada: true, semMockup: true, tipo: 'v2', tema: 'azul', formato: 'Carrossel V2',
   capa: { foto: FOTO_PR, tela: 'painel-estoque', titulo: 'Em 2027 o imposto muda. <b>Quanto vale o seu estoque?</b>', apoio: 'A virada é em 1º de janeiro.' },
   itens: [
     { foto: FOTO_PR, titulo: 'PIS e Cofins <b>acabam.</b>', apoio: 'Entra a CBS, o imposto novo. A taxa ainda depende do Senado.' },
@@ -35,7 +35,7 @@ const P = [
   alts: ['Pães em uma grade, com o título: em 2027, o pão francês zera o imposto, e o resto do cupom?', 'Pães em uma grade e o texto: pão francês, zero.', 'Mãos segurando massa e o texto: feito na loja, regra própria.', 'Pães em uma prateleira e o texto: revenda fora do desconto.', 'Carrinho com pães e o texto: cada produto precisa estar bem cadastrado.', 'Pães e forno, com o convite para deixar a padaria pronta para 2027.'],
   conferir: ['Produto: o que já está pronto para padaria e para o Simples em 2027?', 'A regra dos 40% veio de parecer jurídico; os artigos não foram lidos no Planalto.'] },
 
-{ data: 'Qua 11/11', seg: 'Padaria', id: 'carrossel-padaria-trigo-v1', tipo: 'v3', tema: 'lar', formato: 'Carrossel V3',
+{ data: 'Qua 11/11', seg: 'Padaria', id: 'carrossel-padaria-trigo-v1', travada: true, semMockup: true, tipo: 'v3', tema: 'lar', formato: 'Carrossel V3',
   capa: { foto: 'farinha-trigo', titulo: 'O trigo subiu. <b>E o preço do seu pão?</b>' },
   itens: [
     { n: 1, foto: 'farinha-trigo', titulo: 'Menos trigo <b>no Brasil.</b>', apoio: 'A Conab prevê produção 26% menor em 2026.' },
@@ -50,7 +50,7 @@ const P = [
   alts: ['Farinha e espigas de trigo, com o título: o trigo subiu, e o preço do seu pão?', 'Farinha e trigo e o texto: a Conab prevê produção 26% menor em 2026.', 'Pães em uma grade e o texto: o grão subiu perto de 9% no Paraná.', 'Forno aberto e o texto: custo mudou, a conta muda.', 'Tela de precificação do Prosystem, com a composição de custo e as fórmulas do preço de venda.', 'Pães e o convite para ver essa conta na padaria.'],
   conferir: ['A alta de 9% é do grão, não da farinha.', 'Tela pequena e antiga: pedir captura nova à equipe de produto.', 'Produto: a precificação vale sem ajuste na padaria?'] },
 
-{ data: 'Sex 13/11', seg: 'Farmácia', id: 'canetas-emagrecedoras-v2', tipo: 'comTela', tema: 'azul', formato: 'Estático com tela', fundo: 'forte',
+{ data: 'Sex 13/11', seg: 'Farmácia', id: 'canetas-emagrecedoras-v2', travada: true, semMockup: true, tipo: 'comTela', tema: 'azul', formato: 'Estático com tela', fundo: 'forte',
   titulo: 'A caneta de semaglutida deve ficar mais barata. <b>E a que está parada no seu estoque?</b>', fs: 64, tela: 'dias-sem-giro', fotoCima: 'caneta-branca', faixa: 'Veja no Prosystem quais produtos não vendem há 30 dias e decida antes de o preço cair.', pilula: 'Leia a legenda',
   kw: 'canetas emagrecedoras na farmácia',
   cap: `Canetas emagrecedoras na farmácia: com mais opções e genéricos, comprar errado custa caro.\n\nA expectativa do mercado é de alternativas mais baratas nos próximos anos. Produto caro parado na prateleira é dinheiro preso, e o valor dele pode cair.\n\nNo Prosystem, o relatório de dias sem giro mostra o que está parado para você comprar melhor em 2027.\n\n${CTA}`,
@@ -66,7 +66,7 @@ const P = [
   alts: ['Resumo do fechamento de caixa do Prosystem com a sangria e as vendas em dinheiro, cartão, convênio e Pix marcadas, e o título: feche o caixa sabendo para onde foi cada real.'],
   conferir: ['Aprovada sem mockup pela Jessica em 03/11/2026: a tela entra no cartão, como está.', 'A tela foi refeita em 03/11/2026 (tela-fechamento.js): sem os sublinhados do WhatsApp, data de 2026 e valores fictícios que fecham (venda líquida = total de pagamentos).', 'Não prometer conciliação de Pix com o banco: ainda não confirmada.'] },
 
-{ data: 'Qua 18/11', seg: 'Farmácia', id: 'farmacia-quem-liberou-desconto-v1', tipo: 'comTela', tema: 'azul', formato: 'Estático com tela', fundo: 'forte',
+{ data: 'Qua 18/11', seg: 'Farmácia', id: 'farmacia-quem-liberou-desconto-v1', travada: true, semMockup: true, tipo: 'comTela', tema: 'azul', formato: 'Estático com tela', fundo: 'forte',
   titulo: 'Quem liberou <b>esse desconto?</b>', fs: 84, alturaTitulo: 210, tela: 'whats-desconto', faixa: 'Autorizou com login, o aviso chega para você. Versão Plus.', pilula: 'Leia a legenda',
   kw: 'sistema para drogaria',
   cap: `Sistema para drogaria com controle de desconto: você fica sabendo quando alguém libera um desconto?\n\nO desconto vira hábito no balcão, e ninguém mede o efeito no lucro. Para 2027, vale revisar isso desde já, e a Black Friday é um bom teste.\n\nNa versão Plus do Prosystem, a autorização com login pode gerar um aviso no WhatsApp do responsável.\n\n${CTA}`,
@@ -74,7 +74,7 @@ const P = [
   alts: ['Aviso do Prosystem informando um desconto autorizado com login, e o título: quem liberou esse desconto?'],
   conferir: ['Mockup em notebook ou desktop: celular é proibido, mesmo sendo conversa de WhatsApp.'] },
 
-{ data: 'Qui 19/11', seg: 'Padaria', id: 'padaria-escala-6x1-v1', travada: true, tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte', foto: 'sovando-massa',
+{ data: 'Qui 19/11', seg: 'Padaria', id: 'padaria-escala-6x1-v1', travada: true, semMockup: true, tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte', foto: 'sovando-massa',
   titulo: 'Fim da escala 6x1: menos horas de equipe. <b>Use cada uma onde a padaria mais vende.</b>', fs: 62, alturaTitulo: 230, tela: 'painel-vendas-totais', faixa: 'No painel do Prosystem, veja vendas e atendimentos dia a dia. Versão Plus.', pilula: 'Leia a legenda',
   kw: 'fim da escala 6x1 na padaria',
   cap: `Fim da escala 6x1 na padaria: a partir de 16 de dezembro, valem duas folgas por semana e 42 horas, sem reduzir salário.
@@ -88,7 +88,7 @@ ${CTA}`,
   alts: ['Padeiro sovando massa e os totais do painel do Prosystem, com atendimentos e média diária de vendas, e o título: fim da escala 6x1, menos horas de equipe, use cada uma onde a padaria mais vende.'],
   conferir: ['Data: a Fenacon conta 16/12, parte da imprensa fala em 15/12.', 'Não é consultoria trabalhista: manter a frase do contador e do sindicato.', 'Painel de indicadores: só versão Plus. Não prometer vendas por hora: não está confirmado.', 'A faixa de totais saiu do painel da Drogaria Modelo (valores fictícios); se possível, mockup com números de padaria.'] },
 
-{ data: 'Seg 23/11', seg: 'Farmácia', id: 'carrossel-farmacia-black-friday-v2', tipo: 'v3', tema: 'azul', formato: 'Carrossel V3', nova: true,
+{ data: 'Seg 23/11', seg: 'Farmácia', id: 'carrossel-farmacia-black-friday-v2', travada: true, semMockup: true, tipo: 'v3', tema: 'azul', formato: 'Carrossel V3', nova: true,
   capa: { foto: 'cartelas-detalhe', fs: 104, titulo: 'Black Friday: <b>esse desconto se pagou?</b>' },
   itens: [
     { n: 1, foto: 'cartelas-azuis', titulo: 'Vendeu muito. <b>Sobrou quanto?</b>', apoio: 'Com desconto, o caixa enche e o lucro pode encolher.' },
@@ -103,7 +103,7 @@ ${CTA}`,
   alts: ['Comprimidos em embalagens abertas, em cartão inclinado, com o título: Black Friday, esse desconto se pagou?', 'Cartelas de comprimidos e o texto: vendeu muito, sobrou quanto?', 'Calculadora em losango e o texto: olhe o lucro, não só a venda.', 'Prateleiras de farmácia desfocadas e o texto: faça a conta antes de sexta.', 'Tela da Análise de descontos do Prosystem, com venda, lucro e desconto por grupo de produto.', 'Fotos de farmácia e o convite para saber se o desconto se paga.'],
   conferir: ['Produto: a Análise de descontos segue com essa tela? Afeta também o artigo de 24/11.', 'Termo "desconto na farmácia" com volume de busca não conferido.'] },
 
-{ data: 'Ter 24/11', seg: 'Farmácia', id: 'carrossel-farmacia-depoimento-v3-5', tipo: 'tatiana5', formato: 'Página 5 da v3 do carrossel da Tatiana', pagina: true },
+{ data: 'Ter 24/11', seg: 'Farmácia', id: 'carrossel-farmacia-depoimento-v3-5', travada: true, semMockup: true, tipo: 'tatiana5', formato: 'Página 5 da v3 do carrossel da Tatiana', pagina: true },
 
 { data: 'Qua 25/11', seg: 'Padaria', id: 'padaria-encomendas-natal-v2', travada: true, tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', nova: true, foto: 'carrinho-paes', pilula: 'Leia a legenda',
   tras: 'M850,590 C500,800 200,900 90,1010 C30,1090 120,1190 300,1205 C370,1212 400,1225 425,1245',
@@ -140,7 +140,7 @@ ${CTA}`,
   alts: ['Farmacêutica pegando um produto na prateleira, com o texto: duas folgas a partir de 16/12, quem fica no balcão?'],
   conferir: ['Data: a Fenacon conta 16/12, parte da imprensa fala em 15/12.', 'Produto: com relatório de vendas por hora, esta peça ganha tela.', '"Ponto mais apertado" é inferência nossa, sem posição de Abrafarma ou Febrafar.'] },
 
-{ data: 'Sex 04/12', seg: 'Padaria', id: 'carrossel-padaria-sangria-v2', tipo: 'v2', tema: 'lar', formato: 'Carrossel V2',
+{ data: 'Sex 04/12', seg: 'Padaria', id: 'carrossel-padaria-sangria-v2', travada: true, semMockup: true, tipo: 'v2', tema: 'lar', formato: 'Carrossel V2',
   capa: { foto: 'paes-prateleira-sem-etiqueta', titulo: 'Quanto dinheiro tem na sua <b>gaveta agora?</b>', apoio: 'Sangria que depende de memória falha.' },
   itens: [
     { foto: 'paes-prateleira-sem-etiqueta', tela: 'sangria-aviso', titulo: 'Chegou no valor, o caixa <b>avisa.</b>', apoio: 'Exemplo: a partir de R$ 600 em dinheiro. A venda continua.' },
@@ -155,7 +155,7 @@ ${CTA}`,
   alts: ['Pães em uma prateleira, com o título: quanto dinheiro tem na sua gaveta agora?', 'Aviso do Prosystem pedindo a sangria programada e o texto: chegou no valor, o caixa avisa.', 'Grade de pães e o texto: passou do limite, o caixa trava.', 'Tela de registro de sangria do Prosystem e o texto: toda retirada fica registrada.', 'Carrinho de pães e o texto: sangria com regra, sem depender da memória.', 'Pães em uma prateleira e o convite para ter esse controle na padaria.'],
   conferir: ['Produto: a função vale sem ajuste na padaria?', 'A tela de registro tem "centro de custo" e um lançamento de gasolina: conferir no mockup.'] },
 
-{ data: 'Seg 07/12', seg: 'Farmácia', id: 'carrossel-farmacia-popular-v2', tipo: 'v2', tema: 'azul', formato: 'Carrossel V2',
+{ data: 'Seg 07/12', seg: 'Farmácia', id: 'carrossel-farmacia-popular-v2', travada: true, semMockup: true, tipo: 'v2', tema: 'azul', formato: 'Carrossel V2',
   capa: { foto: 'pressao-mesa', titulo: 'Farmácia Popular: multa de <b>até 20%.</b>', apoio: 'As regras mudaram em agosto.' },
   itens: [
     { foto: FOTO_PR, titulo: 'A fiscalização ficou <b>automática.</b>', apoio: 'O monitoramento separa por risco e pode suspender a farmácia antes.' },
@@ -170,7 +170,7 @@ ${CTA}`,
   alts: ['Medição de pressão, com o título: Farmácia Popular, multa de até 20%.', 'Prateleiras de farmácia e o texto: a fiscalização ficou automática.', 'Calculadora e o texto: a multa cresceu, de 10% para 20%.', 'Mãos digitando em um teclado e o texto: guarde por 5 anos, de preferência em meio digital.', 'Tela do scanner de receitas e o texto: receita guardada, sem pilha de caixa.', 'Prateleiras de farmácia e o convite para organizar isso na farmácia.'],
   conferir: ['Produto: o scanner atende a portaria nova? O artigo da base é antigo.', 'Conferir a portaria no Diário Oficial: uma fonte cita republicação em 24/09.'] },
 
-{ data: 'Qui 10/12', seg: 'Padaria', id: 'padaria-combos-v2', tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte', nova: true,
+{ data: 'Qui 10/12', seg: 'Padaria', id: 'padaria-combos-v2', travada: true, semMockup: true, tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte', nova: true,
   titulo: 'Leve 3, pague 2 <b>sem calculadora no caixa</b>', fs: 78, alturaTitulo: 230, foto: 'croissants-bandeja', tela: 'combo-totais', faixa: 'Cadastre o combo uma vez. O desconto entra na venda.', pilula: 'Leia a legenda',
   kw: 'sistema para padaria',
   cap: `Sistema para padaria com PDV: promoção feita de cabeça no caixa vira erro e desconto indevido, ainda mais com kit de Natal.\n\nNo Prosystem, você cadastra leve e pague, desconto progressivo e kits. Na venda, o caixa não precisa fazer conta. Vale começar agora e levar o costume para 2027.\n\n${CTA}`,
@@ -178,7 +178,7 @@ ${CTA}`,
   alts: ['Croissants em uma bandeja e os totais da venda com desconto no Prosystem, com o título: leve 3, pague 2 sem calculadora no caixa.'],
   conferir: ['Produto: combos valem sem ajuste na padaria?', 'As telas da base têm marca de produto e imagem de farmácia. Só os totais foram usados: pedir captura de combo com itens de padaria.', 'Os totais mostram 16,66% de desconto, de um kit com o segundo item a 50%. Não é um leve 3, pague 2 exato: a captura nova resolve.'] },
 
-{ data: 'Sex 11/12', seg: 'Farmácia', id: 'carrossel-farmacia-uso-continuo-v3', tipo: 'v2', tema: 'azul', formato: 'Carrossel V2',
+{ data: 'Sex 11/12', seg: 'Farmácia', id: 'carrossel-farmacia-uso-continuo-v3', travada: true, semMockup: true, tipo: 'v2', tema: 'azul', formato: 'Carrossel V2',
   capa: { foto: 'comprimidos-coloridos', titulo: 'O remédio do seu cliente acaba em <b>8 dias.</b>', apoio: 'Quem vai lembrar dele primeiro?' },
   itens: [
     { foto: FOTO_PR, tela: 'uso-continuo-proxima-compra', titulo: 'Na venda, o sistema <b>marca a data.</b>', apoio: 'Você informa como o cliente toma o remédio. O Prosystem calcula a próxima compra.' },
@@ -193,7 +193,7 @@ ${CTA}`,
   alts: ['Comprimidos coloridos, com o título: o remédio do seu cliente acaba em 8 dias.', 'Tela de próxima compra do Prosystem e o texto: na venda, o sistema marca a data.', 'Alerta no balcão e o texto: ele volta, e o balcão é avisado.', 'Relatório de clientes de uso contínuo e o texto: quem deve comprar vira lista.', 'Cartelas de comprimidos e o texto: lembre antes da outra farmácia, 13% já compram pelo WhatsApp.', 'Prateleiras de farmácia e o convite para ver o uso contínuo na farmácia.'],
   conferir: ['O contato com o cliente envolve dado de saúde: manter a menção à autorização e à LGPD.', 'A tela de próxima compra tem "Posologia" e contorno vermelho original da base.'] },
 
-{ data: 'Seg 14/12', seg: 'Padaria', id: 'padaria-fechamento-caixa-v1', tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte',
+{ data: 'Seg 14/12', seg: 'Padaria', id: 'padaria-fechamento-caixa-v1', travada: true, semMockup: true, tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte',
   titulo: 'Fechou o caixa. Faltou dinheiro. <b>E agora?</b>', tela: 'fechamento-caixa', faixa: 'O que foi informado e o que foi vendido, lado a lado.', pilula: 'Leia a legenda',
   kw: 'sistema para padaria',
   cap: `Sistema para padaria com fechamento de caixa: quando falta dinheiro, você precisa saber onde olhar.\n\nNo Prosystem, o fechamento mostra o que foi informado e o que foi vendido em cada forma de pagamento. A diferença aparece na tela, sem refazer a conta na calculadora.\n\nEntre em 2027 com o caixa conferido todo dia. ${CTA}`,
@@ -209,7 +209,7 @@ ${CTA}`,
   alts: ['Frase em azul sobre fundo branco: hoje acaba a escala 6x1, sua loja está pronta?'],
   conferir: ['Data: a Fenacon conta 16/12, parte da imprensa fala em 15/12. Se for 15/12, o "hoje" muda.', 'Saiu em azul: peça para os dois segmentos segue o padrão do feed.'] },
 
-{ data: 'Sex 18/12', seg: 'Padaria', id: 'padaria-curva-abc-v1', tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte',
+{ data: 'Sex 18/12', seg: 'Padaria', id: 'padaria-curva-abc-v1', travada: true, semMockup: true, tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte',
   titulo: 'Mais padarias em 2027. <b>O que sustenta a sua?</b>', tela: 'curva-abc', faixa: 'A curva ABC mostra os produtos que mais pesam no seu resultado.', pilula: 'Leia a legenda',
   kw: 'como aumentar as vendas na padaria',
   cap: `Como aumentar as vendas na padaria em 2027, com mais concorrência e menos gente entrando?\n\nDe janeiro a setembro de 2026, abriram 81.437 pequenos negócios de panificação no Brasil, segundo o Sebrae. E um levantamento do setor mostrou fluxo 2,31% menor, com valor médio de cada compra 5,75% maior.\n\nCom menos gente na porta, cada venda conta mais. A curva ABC do Prosystem separa os produtos que sustentam a loja dos que quase não vendem.\n\n${CTA}`,
@@ -274,7 +274,7 @@ ${CTA}`,
   alts: ['Frase em azul sobre fundo branco: a Prosystem já está pronta para o IBS e a CBS. E a sua farmácia?'],
   conferir: ['Confirmar com o produto que o sistema já emite com IBS e CBS antes de publicar: a peça promete isso.'] },
 
-{ data: 'Qui 14/01', seg: 'Farmácia', id: 'farmacia-cbs-tela-v1', travada: true, tipo: 'comTela', tema: 'azul', formato: 'Estático com tela', fundo: 'forte', nova: true,
+{ data: 'Qui 14/01', seg: 'Farmácia', id: 'farmacia-cbs-tela-v1', travada: true, semMockup: true, tipo: 'comTela', tema: 'azul', formato: 'Estático com tela', fundo: 'forte', nova: true,
   titulo: '2027 começou, e a CBS também. <b>Você já refez a conta?</b>', fs: 70, tela: 'precificacao', faixa: 'Custo e fórmula de preço na mesma tela do Prosystem.', pilula: 'Leia a legenda',
   kw: 'preço da farmácia com a CBS',
   cap: `Preço da farmácia com a CBS: a reforma tributária entrou em 2027, e o preço de cada produto precisa acompanhar.\n\nRefazer a conta é rever custo, imposto e margem item por item. Remédio registrado tem regra própria, com corte de 60%. Confirme com seu contador como isso fica na sua loja.\n\nNa Precificação do Prosystem, a composição de custo e a fórmula de preço ficam na mesma tela.\n\n${CTA}`,
@@ -290,7 +290,7 @@ ${CTA}`,
   alts: ['Pães em embalagem de papel, com o texto: sua padaria é do Simples? A nota já mudou.'],
   conferir: ['Produto: o que já está pronto para o Simples em 2027? A peça não promete função.', 'As regras vêm de escritório de advocacia e da Receita: reconferir em dezembro.'] },
 
-{ data: 'Sex 08/01', seg: 'Farmácia', id: 'farmacia-mercado-2027-v1', tipo: 'comTela', tema: 'azul', formato: 'Estático com tela', fundo: 'bra',
+{ data: 'Sex 08/01', seg: 'Farmácia', id: 'farmacia-mercado-2027-v1', travada: true, semMockup: true, tipo: 'comTela', tema: 'azul', formato: 'Estático com tela', fundo: 'bra',
   titulo: 'O mercado cresce em 2027. <b>E a sua farmácia?</b>', tela: 'painel-vendas', faixa: 'Vendas, lucro médio e desconto no mesmo painel. Plano Plus.', pilula: 'Leia a legenda',
   kw: 'sistema para farmácia e drogaria',
   cap: `Sistema para farmácia e drogaria: você consegue ver em 30 segundos se a sua loja cresceu?\n\nO Close-Up projeta para 2027 um ritmo parecido com o de 2026, perto de 13% em valor. Só que, em 2025, as farmácias independentes fecharam mais lojas do que abriram: foram 1.096 a menos.\n\nNo plano Plus do Prosystem, o painel mostra vendas, lucro médio, desconto e valor médio de cada compra por período.\n\n${CTA}`,
@@ -298,7 +298,7 @@ ${CTA}`,
   alts: ['Painel do Prosystem com total de vendas, lucro médio, desconto e gráfico de evolução, e o título: o mercado cresce em 2027, e a sua farmácia?'],
   conferir: ['Saldo de 1.096 lojas: abrir a fonte original (IQVIA ou Febrafar) antes de publicar.', 'A tela cita "Drogaria Modelo": só em peça de farmácia.'] },
 
-{ data: 'Sáb 14/11', seg: 'Farmácia', id: 'farmacia-dia-do-diabetes-v2', tipo: 'comTela', tema: 'azul', formato: 'Estático com tela', fundo: 'forte', nova: true,
+{ data: 'Sáb 14/11', seg: 'Farmácia', id: 'farmacia-dia-do-diabetes-v2', travada: true, semMockup: true, tipo: 'comTela', tema: 'azul', formato: 'Estático com tela', fundo: 'forte', nova: true,
   titulo: 'Hoje é o Dia Mundial do Diabetes. <b>Quem lembra seu cliente de repor o remédio?</b>', fs: 62, alturaTitulo: 290, tela: 'uso-continuo-relatorio', faixa: 'O relatório do Prosystem mostra quem deve comprar em cada período.', pilula: 'Leia a legenda',
   kw: 'uso contínuo na farmácia',
   cap: `Uso contínuo na farmácia: hoje, Dia Mundial do Diabetes, vale olhar para quem depende do remédio todo mês.\n\nQuem usa medicamento de uso contínuo nem sempre avisa quando vai comprar de novo. Lembrar da reposição é um cuidado com o cliente, e é também o que mantém esse cliente na sua loja em 2027.\n\nNo Prosystem, um relatório mostra quais clientes de uso contínuo devem comprar em cada período. Contato com o cliente, só com a autorização dele.\n\nO tratamento é sempre com o médico. ${CTA}`,
@@ -345,7 +345,7 @@ ${CTA}`,
   alts: ['Mãos em um teclado, em cartão inclinado, com o título: SNCR, faltam 47 dias, sua equipe já tem acesso?', 'Farmacêutica na prateleira e o texto: quem opera precisa de perfil.', 'Cartelas de comprimidos, em losango, e o texto: uma etapa a mais no balcão.', 'Prateleiras de farmácia desfocadas e o texto: o SNGPC continua.', 'Mãos digitando e o texto: treine a equipe antes de 3 de março.', 'Fotos de farmácia e a pergunta: sua farmácia está pronta para 3 de março?'],
   conferir: ['Só publicar em 15/01: a contagem de 47 dias vale para esta data.', 'Reconferir o prazo na Anvisa: só a notícia de 29/10/2026 foi lida, e a cartilha ainda cita outra data.', 'Sem ferramenta: não foi confirmada integração do SNCR com o Prosystem.'] },
 
-{ data: 'Seg 18/01', seg: 'Padaria', id: 'carrossel-padaria-lucro-por-produto-v2', tipo: 'v3', tema: 'lar', formato: 'Carrossel V3', nova: true,
+{ data: 'Seg 18/01', seg: 'Padaria', id: 'carrossel-padaria-lucro-por-produto-v2', travada: true, semMockup: true, tipo: 'v3', tema: 'lar', formato: 'Carrossel V3', nova: true,
   capa: { foto: 'paezinhos-cesta', fs: 96, titulo: 'Qual produto vende muito e <b>não deixa lucro?</b>' },
   itens: [
     { n: 1, foto: 'carrinho-paes', titulo: 'Sai todo dia. <b>Sobra quanto?</b>', apoio: 'Vender muito não quer dizer lucrar muito.' },
@@ -360,7 +360,7 @@ ${CTA}`,
   alts: ['Pãezinhos em uma cesta, com o título: qual produto vende muito e não deixa lucro?', 'Carrinho de pães e o texto: sai todo dia, sobra quanto?', 'Forno em losango e o texto: o custo mudou no ano.', 'Padeiro sovando massa e o texto: comece pelos que mais vendem.', 'Tela de relatórios de lucro do Prosystem, com as opções geral, positivos e negativos.', 'Pães e o convite para ver o relatório na padaria.'],
   conferir: ['Produto: o relatório vale sem ajuste na padaria?', 'A tela é só a lista de relatórios. Pedir captura do resultado, com produtos de padaria.'] },
 
-{ data: 'Ter 19/01', seg: 'Farmácia', id: 'carrossel-farmacia-atencao-farmaceutica-v2', tipo: 'v2', tema: 'azul', formato: 'Carrossel V2', nova: true,
+{ data: 'Ter 19/01', seg: 'Farmácia', id: 'carrossel-farmacia-atencao-farmaceutica-v2', travada: true, semMockup: true, tipo: 'v2', tema: 'azul', formato: 'Carrossel V2', nova: true,
   capa: { foto: 'farmaceutica-pressao', titulo: 'Seu farmacêutico atende. <b>Onde fica o histórico?</b>', apoio: 'Amanhã é o Dia do Farmacêutico.' },
   itens: [
     { foto: FOTO_PR, titulo: 'Atendeu e ficou <b>na memória?</b>', apoio: 'Sem registro, o próximo atendimento começa do zero.' },
@@ -384,7 +384,7 @@ ${CTA}`,
   alts: ['Farmacêutica de jaleco escrevendo uma receita no balcão, com prateleiras de remédios ao fundo, dentro de um losango, com a data 20 de janeiro e o texto: por trás de cada receita, tem alguém cuidando de gente. A todos os farmacêuticos, o nosso obrigado.'],
   conferir: ['A v1 (frase em fundo branco) fica guardada como referência em pecas/frase-dia-do-farmaceutico-v1.png.', 'Foto real de uma farmácia distrital de Porto Alegre (Cristine Rochol / PMPA), licença que exige o crédito (já está na legenda). Não há autorização da pessoa fotografada.'] },
 
-{ data: 'Sex 22/01', seg: 'Padaria', id: 'padaria-entregas-v1', tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte', nova: true,
+{ data: 'Sex 22/01', seg: 'Padaria', id: 'padaria-entregas-v1', travada: true, semMockup: true, tipo: 'comTela', tema: 'lar', formato: 'Estático com tela', fundo: 'forte', nova: true,
   titulo: 'Cadê o entregador? <b>E o dinheiro da entrega?</b>', fs: 74, tela: 'painel-entregas', faixa: 'Saída, baixa e acerto de cada entrega, ligados ao fechamento.', pilula: 'Leia a legenda',
   kw: 'sistema para padaria e lanchonete',
   cap: `Sistema para padaria e lanchonete com entrega: você sabe o que saiu, com quem está e o que falta acertar?\n\nQuando a entrega fica no papel, o dinheiro volta depois, e ninguém confere direito. Em 2027, cada venda vai contar mais.\n\nNo Prosystem, a Gestão de entregas controla a saída e a baixa, liga tudo ao fechamento e mostra relatórios por período e por entregador.\n\n${CTA}`,
@@ -465,7 +465,7 @@ function legendas(usadas) {
   const telaDe = (p) => [p.tela, p.capa && p.capa.tela, p.sol && p.sol.tela, p.fim && p.fim.tela, ...(p.itens || []).map((i) => i.tela)].filter(Boolean);
   const fs = require('fs'); const path = require('path');
   const faltam = (p) => p.semMockup ? [] : [...new Set(telaDe(p))].filter((t) => !fs.existsSync(path.join(__dirname, 'mockups', t + '.png')));
-  let s = '# Peças de 04/11/2026 a 31/01/2027: legendas, texto alternativo e o que falta\n\nArquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e gere de novo. As imagens ficam em `pecas/`, exceto as de outras produções, que têm o caminho indicado.\n\n**Pausa de 23/12 a 02/01: nenhuma publicação, exceto Natal (25/12) e Ano Novo (01/01).** **Nada aqui foi publicado.** Enquanto houver mockup em falta, a peça mostra a tela em um cartão provisório e não deve ser publicada.\n\n## Calendário\n\n| Data | Para quem | Peça | Formato | Mockup em falta |\n|---|---|---|---|---|\n';
+  let s = '# Peças de 04/11/2026 a 31/01/2027: legendas, texto alternativo e o que falta\n\nArquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e gere de novo. As imagens ficam em `pecas/`, exceto as de outras produções, que têm o caminho indicado.\n\n**Pausa de 23/12 a 02/01: nenhuma publicação, exceto Natal (25/12) e Ano Novo (01/01).** **Nada aqui foi publicado.** Em 03/11/2026 a Jessica aprovou todas as peças sem mockup: as telas ficam no cartão e as peças estão travadas. Peça nova que pedir mockup aparece na lista abaixo.\n\n## Calendário\n\n| Data | Para quem | Peça | Formato | Mockup em falta |\n|---|---|---|---|---|\n';
   for (const p of todas) {
     const m = p.arq ? [] : faltam(p);
     s += `| ${p.data} | ${p.seg} | \`${p.arq ? p.arq.split('/').pop() : p.id}\` | ${p.formato} | ${m.length ? m.map((x) => '`' + x + '`').join(', ') : '-'} |\n`;
@@ -473,6 +473,7 @@ function legendas(usadas) {
   const mapa = {};
   for (const p of P) for (const t of faltam(p)) (mapa[t] = mapa[t] || []).push(p.data);
   s += '\n## Mockups que a Jessica precisa fazer\n\nSó em notebook ou desktop, em balcão do segmento ou escritório. Salve em `mockups/<nome da tela>.png`, com fundo transparente, e rode `gerar.js`: o mockup entra no lugar do cartão. Os originais estão em `banco imagens/telas-para-mockup/00-recortadas/`; os recortes feitos nesta produção estão em `telas/`.\n\n| Tela | Datas |\n|---|---|\n';
+  if (!Object.keys(mapa).length) s += '| - | Nenhum mockup em falta |\n';
   for (const t of Object.keys(mapa).sort((a, b) => ordem({ data: mapa[a][0] }).localeCompare(ordem({ data: mapa[b][0] })))) s += `| \`${t}\` | ${[...new Set(mapa[t])].join(', ')} |\n`;
   s += '\n## Legendas\n';
   for (const p of todas) {
