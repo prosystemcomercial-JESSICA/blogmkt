@@ -251,13 +251,19 @@ ${CTA}`,
   alts: ['Fogos de artifício no céu noturno, com uma linha branca subindo do texto até os fogos, e o texto: Um 2027 de portas abertas e caixa no azul.'],
   conferir: ['Exceção à pausa de 23/12 a 02/01, a pedido da Jessica: deixar agendado.'] },
 
-{ data: 'Seg 04/01', seg: 'Farmácia', id: 'farmacia-cbs-v1', tipo: 'comTela', tema: 'azul', formato: 'Estático com tela', fundo: 'forte', nova: true,
-  titulo: '2027 começou, e a CBS também. <b>Você já refez a conta?</b>', fs: 70, tela: 'precificacao', faixa: 'Custo e fórmula de preço na mesma tela do Prosystem.', pilula: 'Leia a legenda',
+{ data: 'Seg 04/01', seg: 'Farmácia', id: 'farmacia-cbs-v1', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto', nova: true, fs: 88,
+  titulo: 'A Prosystem já está pronta para o IBS e a CBS. <b>E a sua farmácia?</b>', apoio: '2027 começou: hora de refazer a conta do preço.',
   kw: 'reforma tributária na farmácia',
-  cap: `Reforma tributária na farmácia em 2027: a CBS já está valendo, com taxa de [CONFIRMAR A TAXA E A FONTE NO DIA].\n\nSe o preço da sua loja foi feito com o imposto antigo, esta é a semana de sentar com o contador e refazer a conta. Remédio registrado tem regra própria, com corte de 60%.\n\nNa Precificação do Prosystem, a composição de custo e a fórmula de preço ficam na mesma tela.\n\n${CTA}`,
-  tags: '#reformatributaria #cbs #gestaodefarmacia #sistemaparafarmacia',
-  alts: ['Tela de precificação do Prosystem com as fórmulas do preço de venda, e o título: 2027 começou, e a CBS também, você já refez a conta?'],
-  conferir: ['Só publicar depois de o Senado fixar a taxa, ou de confirmar que os 11,3% valeram. Preencher o trecho entre colchetes da legenda.', 'A tela cita ICMS_ST e é pequena e antiga: pedir captura nova.'] },
+  cap: `Reforma tributária na farmácia em 2027: a CBS já está valendo, com taxa de [CONFIRMAR A TAXA E A FONTE NO DIA].
+
+Se o preço da sua loja foi feito com o imposto antigo, esta é a semana de sentar com o contador e refazer a conta. Remédio registrado tem regra própria, com corte de 60%.
+
+O Prosystem já está preparado para o IBS e a CBS, e na Precificação a composição de custo e a fórmula de preço ficam na mesma tela.
+
+${CTA}`,
+  tags: '#reformatributaria #cbs #ibs #gestaodefarmacia #sistemaparafarmacia',
+  alts: ['Frase em azul sobre fundo branco: a Prosystem já está pronta para o IBS e a CBS. E a sua farmácia?'],
+  conferir: ['Só publicar depois de o Senado fixar a taxa, ou de confirmar que os 11,3% valeram. Preencher o trecho entre colchetes da legenda.', 'Confirmar com o produto que o sistema já emite com IBS e CBS antes de publicar: a peça promete isso.'] },
 
 { data: 'Qui 07/01', seg: 'Padaria', id: 'padaria-simples-nota-v2', travada: true, tipo: 'fotoPainel', vidro: true, cantos: true, losangos: true, tema: 'lar', formato: 'Foto com painel', nova: true, foto: 'embalagem-papel',
   titulo: 'Sua padaria é do Simples? <b>A nota já mudou.</b>', fs: 76, faixa: 'Confirme com seu contador como ficou na sua loja.', pilula: 'Leia a legenda',
