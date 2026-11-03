@@ -33,9 +33,13 @@ const AJUSTES = `
 .bloco .pl{font-size:${px(25)};padding:${px(13)} ${px(34)}}
 `;
 
+// desfoque: a foto inteira (número, em px) ou só uma região ([x%, y%, raio em px]), para esconder marca ou texto legível.
 function peca(c) {
+  const base = `inset:0;width:100%;height:100%;object-position:${c.posicao}`;
+  const tudo = typeof c.desfoque === 'number' ? `;filter:blur(${c.desfoque}px);transform:scale(1.04)` : '';
+  const regiao = Array.isArray(c.desfoque) ? `<img class="ft" src="${img(c.foto)}" alt="" style="${base};z-index:1;filter:blur(9px);-webkit-mask-image:radial-gradient(circle ${c.desfoque[2]}px at ${c.desfoque[0]}% ${c.desfoque[1]}%,#000 60%,transparent 100%)">` : '';
   return `<div class="p ${c.tema} sob">
-<img class="ft" src="${img(c.foto)}" alt="" style="inset:0;width:100%;height:100%;object-position:${c.posicao}">
+<img class="ft" src="${img(c.foto)}" alt="" style="${base}${tudo}">${regiao}
 <div class="tom"></div>
 <i class="g" style="width:${px(260)};height:${px(260)};top:${px(-130)};left:${px(-110)};z-index:3"></i>
 <i class="gf" style="width:${px(180)};height:${px(180)};top:${px(-80)};right:${px(-60)};z-index:3"></i>
@@ -100,7 +104,7 @@ function guiaHtml() {
 <div><dt>Programar</dt><dd>${d} às 09:00</dd></div>
 <div><dt>Botão</dt><dd>${c.botao}</dd></div>
 <div><dt>Link</dt><dd><a href="${c.link}" target="_blank" rel="noopener">${c.link.replace('https://', '')}</a><button class="copiar mini" data-alvo="l${i}">Copiar link</button><span hidden id="l${i}">${c.link}</span>${c.linkDepois ? `<small>Se o artigo já estiver no ar, use <code>${c.linkDepois.replace('https://', '')}</code>.</small>` : ''}</dd></div>
-<div><dt>Imagem</dt><dd><a href="imagens/${arquivo(c)}" target="_blank" rel="noopener">${arquivo(c)}</a></dd></div>
+<div><dt>Imagem</dt><dd><code>${arquivo(c)}</code></dd></div>
 </dl>
 <div class="texto-topo"><span>Texto da postagem · ${c.texto.length} caracteres</span><button class="copiar" data-alvo="t${i}">Copiar texto</button></div>
 <pre class="texto" id="t${i}">${esc(c.texto)}</pre>

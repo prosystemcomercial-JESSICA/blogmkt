@@ -41,7 +41,7 @@ No blog, veja como montar a ficha técnica da padaria e padronizar o rendimento 
   },
   {
     data: '2026-11-19', dia: 'Qui 19/11', seg: 'Farmácia', id: 'black-friday-farmacia-desconto-margem', tema: 'azul',
-    foto: 'prateleiras-escuras', posicao: '50% 50%',
+    foto: 'prateleiras-escuras', posicao: '50% 50%', desfoque: 7,
     palavra: 'desconto na Black Friday',
     titulo: 'Desconto de 10% <b>pede 50% a mais de venda.</b>',
     faixa: 'Com margem de 30%, é a conta para empatar o lucro.', pilula: 'Faça a conta antes de 27/11',
@@ -174,7 +174,7 @@ No blog, veja o passo a passo do SNCR na drogaria.`,
   },
   {
     data: '2027-01-20', dia: 'Qua 20/01', seg: 'Farmácia', id: 'dia-do-farmaceutico', tema: 'azul',
-    foto: 'farmaceutica-prateleira', posicao: '50% 30%',
+    foto: 'farmaceutica-prateleira', posicao: '50% 30%', desfoque: [79, 24, 120],
     palavra: 'Dia do Farmacêutico',
     titulo: 'Feliz Dia do <b>Farmacêutico.</b>',
     faixa: '20 de janeiro. Obrigado a quem cuida no balcão.', pilula: 'ProSystem Sistemas',
