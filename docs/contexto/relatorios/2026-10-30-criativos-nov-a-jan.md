@@ -202,3 +202,11 @@ Resolvido na atualização abaixo.
 **Feito:** `ano-novo-v3`, com o título "Um 2027 de portas abertas e caixa no azul." e o apoio "Obrigado por confiar na ProSystem mais um ano.". O título passou a ter 3 linhas, e o laço da linha subiu cerca de 110 px para não tocar no texto. A peça ficou travada (`travada: true`). A `ano-novo-v2` continua igual na pasta `pecas`. A legenda do post não mudou. A imagem foi trocada no documento de aprovação (rev 40), e a galeria foi publicada na versão 9.
 
 **Verificado:** peça vista em tamanho real; `conferir.js` sem erro nos 46 posts. **Não verificado:** a peça não foi vista em celular.
+
+## Atualização de 03/11/2026: texto novo do Natal
+
+**Pedido:** variações do texto do post de Natal, mantendo o visual. A Jessica escolheu a opção 4.
+
+**Feito:** `natal-v5`, com o título "Depois de um dezembro corrido, um Natal tranquilo." e o apoio "Boas festas a você e a toda a sua equipe.". O visual da v4 continua igual, e a peça ficou travada. A legenda do post não mudou e ainda usa a frase antiga, "trabalham para o Natal dos outros dar certo". A imagem foi trocada no documento de aprovação (rev 43), e a galeria foi publicada na versão 10. Nesse meio-tempo, a Jessica marcou como aprovados os carrosséis de reforma tributária de 04/11 e 06/11; essas marcações foram mantidas.
+
+**Verificado:** peça vista em tamanho real, com 3 linhas de título sem encostar na árvore; `conferir.js` sem erro nos 46 posts. **Não verificado:** a peça não foi vista em celular.

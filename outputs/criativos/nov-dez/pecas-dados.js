@@ -226,12 +226,12 @@ const P = [
   alts: ['Frase em laranja sobre fundo branco: pão que sobra também é prejuízo.'],
   conferir: ['O termo "sobra de pão" não veio das sugestões do Google: conferir o volume.', 'O plano liga este post ao artigo de sobras: citar o blog na legenda quando o artigo estiver no ar.'] },
 
-{ data: 'Sex 25/12', seg: 'Os dois', id: 'natal-v4', tipo: 'natalRico', tema: 'azul', formato: 'Foto com losango e linha', nova: true, semAno: true, foto: 'arvore-natal-berlim',
-  titulo: 'Feliz Natal a quem trabalha para <b>o Natal dos outros dar certo.</b>', fs: 68, apoio: 'O nosso obrigado por mais um ano de balcão.',
+{ data: 'Sex 25/12', seg: 'Os dois', id: 'natal-v5', travada: true, tipo: 'natalRico', tema: 'azul', formato: 'Foto com losango e linha', nova: true, semAno: true, foto: 'arvore-natal-berlim',
+  titulo: 'Depois de um dezembro corrido, <b>um Natal tranquilo.</b>', fs: 68, apoio: 'Boas festas a você e a toda a sua equipe.',
   kw: '',
   cap: 'Tem quem passa a véspera de Natal atrás do balcão, atendendo a última receita ou entregando a última encomenda.\n\nA vocês, que trabalham para o Natal dos outros dar certo, o nosso obrigado e um Feliz Natal.',
   tags: '#feliznatal #farmacia #padaria',
-  alts: ['Árvore de Natal com milhares de luzes sobre um losango azul, com uma linha branca como guirlanda, e o texto: Feliz Natal a quem trabalha para o Natal dos outros dar certo.'],
+  alts: ['Árvore de Natal com milhares de luzes sobre um losango azul, com uma linha branca como guirlanda, e o texto: Depois de um dezembro corrido, um Natal tranquilo.'],
   conferir: ['Exceção à pausa de 23/12 a 02/01, a pedido da Jessica: deixar agendado.'] },
 
 { data: 'Sex 01/01', seg: 'Os dois', id: 'ano-novo-v3', travada: true, tipo: 'fotoLinha', tema: 'azul', formato: 'Foto com linha', nova: true, foto: 'fogos-ano-novo', posicao: '50% 30%',
