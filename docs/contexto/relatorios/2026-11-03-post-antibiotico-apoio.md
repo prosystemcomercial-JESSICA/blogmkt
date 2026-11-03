@@ -13,7 +13,7 @@ A Jessica pediu para tirar "Marque o farmacêutico da sua loja." do post `frase-
 ## Verificado
 - `node outputs/criativos/nov-dez/gerar.js frase-antimicrobianos-v2`: "sem estouro". Abri o PNG e conferi as duas linhas do apoio.
 - Busca no repositório: "Marque o farmacêutico" não aparece mais.
-- Não verificado: a galeria de revisão (`galeria.js`) não foi republicada, e o planejamento no Claude Docs não foi alterado.
+- Documento de aprovação (https://claude.ai/artifact/3EWRqeFaTD2J6UuUeHwRoe), post de 22/11: imagem nova e última linha da legenda trocadas; a decisão já estava como Aprovado. A galeria de revisão (`galeria.js`) não foi republicada.
 
 ## Decisões e porquês
 - O apoio repete a regra (receita retida), que é informação, e não pede ação do leitor.
