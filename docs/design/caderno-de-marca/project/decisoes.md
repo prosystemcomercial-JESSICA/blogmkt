@@ -19,6 +19,7 @@
 | 30/10/2026 | Telas reais do Prosystem podem aparecer nas peças, em mockup. Os dados das telas da base são fictícios | "Quero usar os mockups das telas também do Prosystem", "Esses dados que constam nas telas são fictícios" |
 | 30/10/2026 | A Jessica faz os mockups de tela; os gerados por código foram reprovados | "separe as telas que eu faço os mockups" |
 | 03/11/2026 | Carrossel: capa sem tela do sistema, sempre que possível. Cada tela aparece em um só slide; é melhor um slide sem tela do que repetir | "Tire a imagem do sistema da Capa", "nao repita o mesmo, é melhor deixar sem do que repetir, coloque isso como regra para as demais produções" |
+| 03/11/2026 | Homenagem ao cliente (Dia do Farmacêutico) com a foto da pessoa em losango, sem frase solta em fundo branco. Não repetir a mesma pessoa de outras peças | "precisa ser melhor, mais especial", "troque a foto, esta repetindo demais o personagem", "Aprovado" |
 | 30/10/2026 | Tipos de post da próxima fase | "carrossel, estático, frases de impacto [...] memes, depoimentos e etc" |
 | 05/08/2026 | Hero com Modelo nos anúncios ANI01 a ANI06 | `briefings/farmacia-hero-modelo.md` |
 | Maio e junho de 2026 | Sem amarelo, sem texto em inglês, sem cara de IA | Correções feitas ao longo das criações |

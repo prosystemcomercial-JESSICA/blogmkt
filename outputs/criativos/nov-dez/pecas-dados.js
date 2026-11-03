@@ -375,7 +375,7 @@ ${CTA}`,
   alts: ['Profissional de jaleco medindo a pressão de um homem, com o título: seu farmacêutico atende, onde fica o histórico?', 'Prateleiras de farmácia e o texto: atendeu e ficou na memória?', 'Mãos digitando e o texto: registre cada atendimento.', 'Ficha de anamnese do Prosystem e o texto: a ficha fica pronta.', 'Cartelas de comprimidos e o texto: o trabalho do farmacêutico à vista.', 'Prateleiras de farmácia e o convite para ver a ficha na farmácia.'],
   conferir: ['Produto: a Atenção farmacêutica segue como na base?', 'A tela foi recortada sem nome, foto e contato do paciente da ficha de exemplo. Use o recorte no mockup, porque o original mostra uma foto com direito de uso não confirmado.'] },
 
-{ data: 'Qua 20/01', seg: 'Farmácia', id: 'farmacia-dia-do-farmaceutico-v2', tipo: 'homenagem', tema: 'azul', formato: 'Homenagem', nova: true, semAno: true, fs: 74,
+{ data: 'Qua 20/01', seg: 'Farmácia', id: 'farmacia-dia-do-farmaceutico-v2', travada: true, tipo: 'homenagem', tema: 'azul', formato: 'Homenagem', nova: true, semAno: true, fs: 74,
   foto: 'farmaceutica-receita', yLos: 289, posicao: '55% 40%', pilula: '20 de janeiro · Dia do Farmacêutico',
   titulo: 'Por trás de cada receita, <b>tem alguém cuidando de gente.</b>', apoio: 'A todos os farmacêuticos, o nosso obrigado.',
   kw: 'Dia do Farmacêutico',

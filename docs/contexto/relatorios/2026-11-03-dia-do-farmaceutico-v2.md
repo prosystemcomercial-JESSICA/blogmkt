@@ -36,3 +36,9 @@ Mostrar o PNG à Jessica. Se aprovado, travar a peça e registrar o tipo "Homena
 - **Descartadas:** as outras fotos do banco (uma tem tablet, outra mostra o senhor ainda em avaliação no caderno, outra tem rótulo em inglês). Também ficaram de fora o Unsplash (só foto paga para o tema), o Pexels (pessoas sem aparência brasileira) e a série da Agência Senado (marcas à mostra e nenhum farmacêutico em destaque).
 - **Verificado:** a peça foi gerada sem estouro e conferida visualmente. `pecas-dados.js` carrega no node. Uma edição intermediária quebrou a string da legenda e foi corrigida neste commit.
 - **Pendente:** não há autorização da pessoa fotografada. A licença cobre a foto, não o direito de imagem. Se a Jessica quiser segurança total, a alternativa é uma foto própria de cliente.
+
+## Aprovação
+
+- A Jessica aprovou a v2 com a foto nova ("Aprovado"). A peça recebeu `travada: true` em `pecas-dados.js`, e o gerador não a refaz mais.
+- O tipo "Homenagem" foi registrado em `docs/design/caderno-de-marca/project/tipos-de-posts.md`, e a decisão em `decisoes.md`.
+- Ainda pendente: o planejamento em Claude Docs cita a v1 de 20/01.
