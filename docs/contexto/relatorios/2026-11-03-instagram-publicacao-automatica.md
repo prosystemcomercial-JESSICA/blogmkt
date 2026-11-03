@@ -29,6 +29,11 @@ A Jessica pediu o passo a passo para criar o app de automação de postagem no I
 - **Token sem vencimento:** com vencimento de 60 dias, a automação pararia sozinha. Se ele vazar, o botão "Anular tokens" no Business Manager derruba o token.
 - **Post de hoje:** o primeiro post aprovado (farmácia 04/11) ainda espera o mockup `painel-estoque` e mostra o CNPJ fictício. Por isso a Jessica escolheu a padaria (06/11), que foi aprovada e está pronta.
 
+## Atualização das 12h33
+- O post foi reagendado para 12h30, mas até 12h32 o agendamento do GitHub (`schedule`) **não tinha rodado nenhuma vez**, cerca de 1h20 depois de o workflow ser criado.
+- A pedido da Jessica, publiquei pelo script local, com `--agora`: https://www.instagram.com/p/DfSNk7WgOdT/ às 12h32 (commit `c45331e`).
+- **Conclusão:** o `schedule` do GitHub não basta para cumprir o horário. É preciso um disparo externo.
+
 ## Pendente
 - A Jessica cria o secret `IG_TOKEN` no GitHub (Settings → Secrets and variables → Actions).
 - Confirmar que o post saiu e conferir o link em `instagram/agenda.json`.
