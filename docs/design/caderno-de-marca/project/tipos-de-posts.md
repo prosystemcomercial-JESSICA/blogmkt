@@ -6,6 +6,7 @@ Cada tipo tem um exemplo ao vivo em Componentes. Os textos dos exemplos só most
 |---|---|---|---|
 | Carrossel V2: foto em destaque | Conteúdo educativo em sequência | 6 páginas, foto grande em todas | Modelo escolhido |
 | Carrossel V3: impacto | Conteúdo educativo em sequência, com capa provocativa | 6 páginas, título gigante, foto cheia e losango | Modelo escolhido |
+| Carrossel V4: instrução | Ensinar o dono a corrigir um erro comum, em passos, com voz de especialista | 6 páginas, foto cheia escurecida, tarja com o público, as desculpas entre aspas e "Eu pararia aqui." | Proposta de 04/11/2026, aguardando aprovação. Exemplos em `outputs/criativos/modelos/instrucao/` |
 | Estático com produto | Notícia e tendência | Título, faixa, pílula e produto em destaque | Exemplo |
 | Foto com painel | Dor do dia a dia | Foto em tom azul e painel central | Exemplo |
 | Frase de impacto | Compartilhamento e marcação | Só tipografia sobre branco, com losangos nos cantos | Exemplo |
@@ -45,6 +46,27 @@ Sequência de 6 páginas, comum aos dois modelos: capa, 3 páginas de conteúdo,
 | 3. Conteúdo | Fundo branco, foto dentro de um losango, número grande, título e faixa de apoio |
 | 5. Solução | Fundo em degradê, foto em cartão inclinado, título e apoio |
 | 6. Chamada | Fundo em degradê, pergunta, provas, pílula, site e duas fotos em cartões inclinados |
+
+### V4: instrução (proposta de 04/11/2026)
+
+Adaptação do post de instrução do @rotaconsultoria (https://www.instagram.com/p/DfGsQ09AD2c/), que a Jessica mandou como referência: "é de instrução, adeque para que possamos criar o conteúdo assim". É um modelo próprio, que também não se mistura com V2 e V3. Gerador: `outputs/criativos/modelos/instrucao/gerar.js`.
+
+**Voz:** especialista falando direto com o dono, em primeira pessoa. A capa chama o público ("Dono de farmácia...") e manda olhar para um problema. A página 2 mostra a cena de sempre, com as desculpas de quem erra entre aspas, e fecha com o veredito "Eu pararia aqui.". Depois vêm 3 passos práticos, que servem mesmo sem sistema, e só a última página apresenta o Prosystem.
+
+| Página | Layout |
+|---|---|
+| 1. Capa | Foto cheia, tarja com o público em caixa alta, título fino com o final em extrabold itálico destacado e pílula "Arraste para o lado →" |
+| 2. Cena | Frase da situação, 3 desculpas em tarjas e "Eu pararia aqui." em caixa alta |
+| 3 a 5. Passos | Tarja "Passo 1, 2, 3", título fino e extrabold e faixa de apoio |
+| 6. Solução e chamada | O que o Prosystem faz, faixa com as funções, provas, pílula "Fale com um especialista" e site |
+
+**O que mudou em relação à referência:**
+- **Tarjas:** a referência usa amarelo, que é proibido. Na farmácia, a tarja é laranja `#F88818` com texto `azul-noite`. Na padaria, é branca com texto laranja-queimado.
+- **Fonte:** só Montserrat, no lugar da fonte condensada.
+- **Fundo:** o degradê do segmento escurece a foto da metade para baixo, e o texto fica sempre na parte escura. Losangos em contorno nos cantos e logo no alto.
+- **Fotos:** sem marca de remédio e sem texto em inglês. A referência mostra caixas de Dorflex e placas em inglês, com cara de imagem gerada.
+- **Blocos de texto:** a página 2 tem mais de 3 blocos (frase, desculpas e veredito). É uma exceção do modelo, porque a lista de desculpas é o que dá o tom.
+- **Funções:** a página 6 só cita funções do mapa de funções.
 
 ## Modelo fora do padrão do feed: Hero com Modelo
 
