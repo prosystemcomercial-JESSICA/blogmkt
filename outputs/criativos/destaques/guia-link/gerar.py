@@ -24,7 +24,7 @@ for d, w, k, n, dest, ext, l, t in S:
     ]
     li = "".join(f'<li><label><input type="checkbox" id="{k}-{i}"><span>{p}</span></label></li>' for i, p in enumerate(passos))
     rot = "Abrir vídeo para salvar" if ext == "mp4" else "Abrir imagem para salvar"
-    cards += f'''<article class="card"><header><div class="data"><b>{d[:5]}</b><span>{w} · {d[6:]}</span></div><div><h2>{n}</h2><p>Destaque: <b>{dest}</b></p></div></header>
+    cards += f'''<article class="card"><header><div class="data"><b>{d[:5]}</b><span>{w} · {d[6:]}</span><i>10h</i></div><div><h2>{n}</h2><p>Destaque: <b>{dest}</b></p></div></header>
 <div class="corpo"><img src="p/destaque-{k}.jpg" alt="Story {n}" loading="lazy" width="540" height="960"><div class="info">
 <a class="baixar" href="{R}destaque-{k}.{ext}" target="_blank" rel="noopener">{rot}</a>
 <div class="campo"><span>Link da figurinha</span><div class="copiar"><code id="l-{k}">{l}</code><button type="button" data-copiar="l-{k}">Copiar</button></div></div>
@@ -45,7 +45,7 @@ main{display:flex;flex-direction:column;gap:22px;padding-block:28px 60px}
 .card{background:var(--cartao);border:1px solid var(--linha);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:16px}
 .card header{display:flex;gap:16px;align-items:center}
 .data{flex:none;background:var(--laranja);color:#081330;border-radius:14px;padding:8px 12px;display:flex;flex-direction:column;align-items:center;min-width:84px}
-.data b{font-size:24px;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}.data span{font-size:12px;font-weight:700;text-transform:uppercase}
+.data b{font-size:24px;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}.data i{font-style:normal;font-weight:800;font-size:15px;margin-top:2px}.data span{font-size:12px;font-weight:700;text-transform:uppercase}
 h2{margin:0;font-size:21px;font-weight:800}.card header p{margin:2px 0 0;color:var(--apoio)}
 .corpo{display:grid;grid-template-columns:170px 1fr;gap:18px;align-items:start}
 .corpo img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:12px;display:block;background:var(--linha)}
@@ -71,7 +71,7 @@ html = f'''<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta n
 <title>Stories com Link</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&display=swap">
 <style>{CSS}</style></head><body>
-<header class="topo"><div class="in"><small>Instagram · Destaques</small><h1>Stories com <b>link</b></h1><p>Estes 6 stories levam figurinha de link, e a API não consegue colocá-la. No dia marcado, salve o arquivo, poste pelo app com a figurinha e coloque no destaque. Os itens que você marcar ficam salvos neste aparelho.</p></div></header>
+<header class="topo"><div class="in"><small>Instagram · Destaques</small><h1>Stories com <b>link</b></h1><p>Estes 6 stories levam figurinha de link, e a API não consegue colocá-la. No dia e na hora marcados (sempre às 10h, o mesmo horário dos stories da API), salve o arquivo, poste pelo app com a figurinha e coloque no destaque. Os itens que você marcar ficam salvos neste aparelho.</p></div></header>
 <main class="in">{cards}</main>
 <script>{JS}</script></body></html>'''
 
