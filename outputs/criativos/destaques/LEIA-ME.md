@@ -18,6 +18,22 @@ Aguardando aprovação da Jessica.
 | 6 | Depoimentos | "Depoimentos" | 5 | 1 |
 | 7 | Contato | "Redes Sociais" | 3 | 1 |
 
+## Publicação (escolha da Jessica em 04/11/2026: API, um destaque por dia)
+
+Os stories sem link estão em `instagram/agenda.json` (tipo `stories`, arquivos em `instagram/midia/destaques/`) e sobem pela API às 10h, na ordem. A ordem dos dias é invertida porque o destaque criado por último aparece primeiro no perfil:
+
+| Dia | Destaque | API | Jessica pelo app |
+|---|---|---|---|
+| 05/11 | Contato | nada | Contato 1, 2 e 3 com link; cria o destaque; apaga "Redes Sociais" |
+| 06/11 | Depoimentos | 1 a 5 | cria o destaque; apaga o antigo |
+| 07/11 | Suporte | 1 a 3 | cria o destaque |
+| 08/11 | Integrações | 1 e 2 | Integrações 3 com link; cria o destaque; apaga o antigo |
+| 09/11 | Ferramentas | 1 a 32 | Ferramentas 33 com link; cria o destaque; apaga o antigo |
+| 10/11 | Segmentos | 1 a 4 | cria o destaque; apaga "Nossos Nichos" |
+| 11/11 | Quem somos | 1 a 3 | Quem somos 4 com link; cria o destaque; apaga os dois antigos |
+
+A API não cria destaque, não troca capa e não põe figurinha de link. Guia da Jessica com os arquivos, os links para copiar e as capas: https://claude.ai/artifact/1W8HvbsL5WdYmk9bP6yNR1
+
 ## Figurinha de link
 
 Os stories abaixo deixam a faixa de 1300 a 1580px livre, logo abaixo da pílula "Toque no link ↓":
@@ -27,7 +43,7 @@ Os stories abaixo deixam a faixa de 1300 a 1580px livre, logo abaixo da pílula 
 | Quem somos 4 | https://prosystemnet.com/linknabio |
 | Ferramentas 33 | WhatsApp do comercial |
 | Integrações 3 | WhatsApp do comercial |
-| Contato 1 | WhatsApp do comercial |
+| Contato 1 | WhatsApp do comercial, com mensagem pronta (links exatos no guia) |
 | Contato 2 | https://prosystemnet.com/blog/ |
 | Contato 3 | https://prosystemnet.com/ebook/ |
 

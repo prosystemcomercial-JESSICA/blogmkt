@@ -37,5 +37,13 @@ Jessica: "vamos criar alguns stories para colocarmos nos destaques do instagram,
 - Decisões: só recursos com fonte (LP, tabela Planos 2025, peças do feed). Farmácia e padaria em stories separados, padaria em laranja; o índice cita os dois por ser institucional. Plano informado quando a fonte diz (Plus, Pro e Plus, Farma Plus). Biometria entra como "Novidade", como na LP.
 - Pendente: aprovação da Jessica; 33 stories é sequência longa, se ela preferir dá para dividir em dois destaques (ex.: "Ferramentas" e "Farmácia e padaria").
 
+## Publicação (mesmo dia)
+- Pedido: "como podemos fazer essas postagens agora? incluindo as capas"; depois: um documento com os stories de link para baixar e o link para copiar.
+- Escolha da Jessica: API, um destaque por dia (06 a 11/11, 10h); Contato (05/11) e os 6 stories com link ela posta pelo app.
+- Feito: `instagram/publicar.mjs` ganhou o tipo `stories` (publica em ordem e guarda o progresso em `feitos`, para continuar sem repetir); 6 entradas em `instagram/agenda.json`; JPG e MP4 em `instagram/midia/destaques/` (commit 0a926b5). Guia: https://claude.ai/artifact/1W8HvbsL5WdYmk9bP6yNR1
+- Verificado: `publicar.mjs --teste` lista as 6 entradas com todos os arquivos; contêiner de story criado pela API a partir do GitHub com vídeo e com imagem, ambos FINISHED, sem publicar; links dos arquivos no guia respondem 200.
+- Não verificado: a publicação real de stories pela API (primeira em 06/11 às 10h, pelo disparo da VPS e o GitHub Actions).
+- Decisão: ordem invertida dos dias porque o destaque criado por último aparece primeiro no perfil.
+
 ## Próxima sessão
 Perguntar o que a Jessica aprovou. Ajuste vira v2: mude o sufixo `-v1` no gerador e gere de novo com `node outputs/criativos/destaques/gerar-destaques.js png <id>` (e `mp4 <id>` nas aberturas). Antes de criar peça nova, leia o caderno de marca.
