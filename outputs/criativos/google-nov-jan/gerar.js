@@ -1,11 +1,15 @@
 // Gera as imagens das postagens do Google (1200×900, JPG), confere os textos e monta guia.html e GUIA.md.
 // Os estilos vêm de docs/conteudo-prosystem/feed_modelo.html, como em ../nov-dez/gerar.js, com a peça em 4:3.
 // O título, a faixa e a pílula ficam no quadrado central, porque o Google às vezes corta a imagem em quadrado.
-// Uso: node outputs/criativos/google-nov-jan/gerar.js [id do post]
+// Uso: node outputs/criativos/google-nov-jan/gerar.js [id do post | todas]. Sem argumento, gera só as imagens das novas.
 const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
-const { P } = require('./dados.js');
+const { P: JA } = require('./dados.js');
+const { N } = require('./dados-novos.js');
+// JA: as 11 já programadas pela Jessica (03/11/2026). N: as novas de 04/11/2026. O guia traz fichas só das novas.
+JA.forEach((c) => { c.programada = true; });
+const P = [...JA, ...N].sort((a, b) => a.data.localeCompare(b.data));
 
 const AQUI = __dirname;
 const RAIZ = path.join(AQUI, '..', '..', '..');
@@ -76,16 +80,16 @@ function conferir() {
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 function guiaMd() {
-  const linhas = P.map((c) => `| ${c.dia} | ${c.seg} | \`imagens/${arquivo(c)}\` | ${c.botao} | ${c.link} |`);
-  const posts = P.map((c) => `## ${c.dia}/${c.data.slice(0, 4)} · ${c.seg}\n\n- **Imagem:** \`imagens/${arquivo(c)}\`\n- **Programar para:** ${c.data.split('-').reverse().join('/')}, 09:00\n- **Botão:** ${c.botao} → ${c.link}${c.linkDepois ? `\n- **Se o artigo já estiver no ar:** ${c.linkDepois}` : ''}\n- **Palavra-chave:** ${c.palavra}\n\n${c.texto}\n`);
-  return `# Postagens do Google: 05/11/2026 a 20/01/2027
+  const linhas = P.map((c) => `| ${c.dia} | ${c.seg} | ${c.programada ? 'Já programada' : 'Nova'} | \`imagens/${arquivo(c)}\` | ${c.botao} | ${c.link} |`);
+  const posts = N.map((c) => `## ${c.dia}/${c.data.slice(0, 4)} · ${c.seg}\n\n- **Imagem:** \`imagens/${arquivo(c)}\`\n- **Programar para:** ${c.data.split('-').reverse().join('/')}, 09:00\n- **Botão:** ${c.botao} → ${c.link}${c.linkDepois ? `\n- **Se o artigo já estiver no ar:** ${c.linkDepois}` : ''}\n- **Palavra-chave:** ${c.palavra}\n\n${c.texto}\n`);
+  return `# Postagens do Google: 05/11/2026 a 30/01/2027
 
-Arquivo gerado por \`gerar.js\`. Para mudar um texto, altere \`dados.js\` e gere de novo. O guia visual, com botão de copiar, sai em \`guia.html\`.
+Arquivo gerado por \`gerar.js\`. As 11 de \`dados.js\` já foram programadas; as ${N.length} novas estão em \`dados-novos.js\`. Para mudar um texto, altere o arquivo e gere de novo. O guia visual, com botão de copiar, sai em \`guia.html\`.
 
-Tipo de postagem: **Atualização**, em todas. Horário: 9h. Pausa de 23/12 a 02/01.
+Tipo de postagem: **Atualização**, em todas. Horário: 9h. Pelo menos 3 por semana, sem pausa no fim de ano.
 
-| Data | Para quem | Imagem | Botão | Link |
-|---|---|---|---|---|
+| Data | Para quem | Situação | Imagem | Botão | Link |
+|---|---|---|---|---|---|
 ${linhas.join('\n')}
 
 ${posts.join('\n')}`;
@@ -93,7 +97,8 @@ ${posts.join('\n')}`;
 
 function guiaHtml() {
   const modelo = fs.readFileSync(path.join(AQUI, 'guia-modelo.html'), 'utf8');
-  const cartoes = P.map((c, i) => {
+  const cartoes = N.map((c) => {
+    const i = P.indexOf(c);
     const d = c.data.split('-').reverse().join('/');
     return `<article class="post" id="p${i + 1}">
 <div class="post-img"><img src="imagens/${arquivo(c)}" alt="${esc(semTags(c.titulo))}" loading="lazy" width="1200" height="900"></div>
@@ -111,8 +116,13 @@ function guiaHtml() {
 </div>
 </article>`;
   });
-  const tabela = P.map((c, i) => `${i && P[i - 1].data < '2026-12-23' && c.data > '2027-01-02' ? '<tr class="pausa"><td class="num">23/12 a 02/01</td><td>-</td><td>Pausa, sem postagem no Google</td></tr>\n' : ''}<tr><td class="num">${c.dia}</td><td>${c.seg}</td><td><a href="#p${i + 1}">${esc(semTags(c.titulo))}</a></td></tr>`).join('\n');
-  return modelo.replace('<!--TABELA-->', tabela).replace('<!--POSTS-->', cartoes.join('\n'));
+  const tabela = P.map((c, i) => c.programada
+    ? `<tr class="pausa"><td class="num">${c.dia}</td><td>${c.seg}</td><td>${esc(semTags(c.titulo))}</td><td>Já programada</td></tr>`
+    : `<tr><td class="num">${c.dia}</td><td>${c.seg}</td><td><a href="#p${i + 1}">${esc(semTags(c.titulo))}</a></td><td><b>Programar</b></td></tr>`).join('\n');
+  const conta = (s) => N.filter((c) => c.seg === s).length;
+  return modelo.replace('<!--TABELA-->', tabela).replace('<!--POSTS-->', cartoes.join('\n'))
+    .replace(/<!--N-->/g, N.length).replace(/<!--TOTAL-->/g, P.length)
+    .replace('<!--F-->', conta('Farmácia')).replace('<!--PA-->', conta('Padaria')).replace('<!--D-->', conta('Os dois'));
 }
 
 (async () => {
@@ -122,7 +132,7 @@ function guiaHtml() {
   const b = await puppeteer.launch({ headless: 'new', args: ['--allow-file-access-from-files'] });
   const p = await b.newPage();
   await p.setViewport({ width: 1200, height: 900, deviceScaleFactor: 1 });
-  for (const c of P.filter((x) => !filtro || x.id === filtro)) {
+  for (const c of (filtro === 'todas' ? P : filtro ? P.filter((x) => x.id === filtro) : N)) {
     const html = `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;800&display=swap" rel="stylesheet"><style>*{box-sizing:border-box}html,body{margin:0}${css}${AJUSTES}</style></head><body><div class="post" style="width:1200px">${peca(c)}</div></body></html>`;
     const tmp = path.join(require('os').tmpdir(), 'prosystem-google-pagina.html');
     fs.writeFileSync(tmp, html);
@@ -144,7 +154,7 @@ function guiaHtml() {
     fs.rmSync(tmp, { force: true });
   }
   await b.close();
-  if (!filtro) {
+  if (!filtro || filtro === 'todas') {
     fs.writeFileSync(path.join(AQUI, 'GUIA.md'), guiaMd());
     fs.writeFileSync(path.join(AQUI, 'guia.html'), guiaHtml());
   }
