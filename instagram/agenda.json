@@ -31,9 +31,9 @@
   },
   {
     "id": "carrossel-farmacia-reforma-tributaria-v1",
-    "quando": "2026-11-04T14:30:00-03:00",
+    "quando": "2026-11-04T16:00:00-03:00",
     "tipo": "carrossel",
-    "nota": "Feed Qua 04/11, Carrossel V2.",
+    "nota": "Feed Qua 04/11, Carrossel V2. Refeito em 04/11: a 1ª versão (link https://www.instagram.com/p/DfU_4S5jfm5/, apagada pela Jessica) tinha tela na capa e a mesma tela em 3 slides.",
     "imagens": [
       "instagram/midia/carrossel-farmacia-reforma-tributaria-v1-1.jpg",
       "instagram/midia/carrossel-farmacia-reforma-tributaria-v1-2.jpg",
@@ -44,10 +44,7 @@
     ],
     "legenda": "Reforma tributária na farmácia em 2027: o que conferir antes de 1º de janeiro.\n\nO PIS e a Cofins acabam e entra a CBS, o imposto novo. Remédio registrado paga menos, mas a conta de quem tem estoque precisa ser feita com o contador. E essa conversa começa por uma pergunta simples: quanto você tem na prateleira hoje?\n\nNo plano Plus do Prosystem, o painel mostra itens e custo do estoque na mesma tela.\n\nFale com um especialista pelo link da bio.",
     "tags": "#reformatributaria #gestaodefarmacia #sistemaparafarmacia #drogaria",
-    "status": "publicado",
-    "publicado_em": "2026-11-04T17:31:01.487Z",
-    "media_id": "18115380026179165",
-    "link": "https://www.instagram.com/p/DfU_4S5jfm5/"
+    "status": "agendado"
   },
   {
     "id": "destaque-quem-somos-v1-1",

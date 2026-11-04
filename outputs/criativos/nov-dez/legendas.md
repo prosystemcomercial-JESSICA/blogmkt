@@ -114,12 +114,12 @@ Fale com um especialista pelo link da bio.
 
 **Texto alternativo:**
 
-1. Painel do Prosystem sobre prateleiras de farmácia, com o título: em 2027 o imposto muda, quanto vale o seu estoque?
+1. Prateleiras de farmácia desfocadas, com o título: em 2027 o imposto muda, quanto vale o seu estoque?
 2. Prateleiras de farmácia e o texto: PIS e Cofins acabam, entra a CBS.
 3. Farmacêutica pegando um produto na prateleira e o texto: remédio paga menos.
 4. Calculadora e caneta sobre papel e o texto: o estoque entra na conta da virada.
 5. Painel do Prosystem com itens e custo do estoque, plano Plus.
-6. Painel do Prosystem e o convite para falar com um especialista.
+6. Farmacêutica com uma receita e o convite para falar com um especialista.
 
 **Conferir antes de publicar:**
 

@@ -6,18 +6,18 @@ const CTA = 'Fale com um especialista pelo link da bio.';
 
 const P = [
 { data: 'Qua 04/11', seg: 'Farmácia', id: 'carrossel-farmacia-reforma-tributaria-v1', travada: true, semMockup: true, tipo: 'v2', tema: 'azul', formato: 'Carrossel V2',
-  capa: { foto: FOTO_PR, tela: 'painel-estoque', titulo: 'Em 2027 o imposto muda. <b>Quanto vale o seu estoque?</b>', apoio: 'A virada é em 1º de janeiro.' },
+  capa: { foto: FOTO_PR, titulo: 'Em 2027 o imposto muda. <b>Quanto vale o seu estoque?</b>', apoio: 'A virada é em 1º de janeiro.' },
   itens: [
     { foto: FOTO_PR, titulo: 'PIS e Cofins <b>acabam.</b>', apoio: 'Entra a CBS, o imposto novo. A taxa ainda depende do Senado.' },
     { foto: FOTO_FA, titulo: 'Remédio paga <b>menos.</b>', apoio: 'A lei corta 60% do imposto novo do remédio registrado. Alguns ficam com zero.' },
     { foto: 'calculadora', titulo: 'O estoque entra na <b>conta da virada.</b>', apoio: 'Pergunte ao contador como ficam os produtos que você já comprou.' },
   ],
   sol: { foto: FOTO_PR, tela: 'painel-estoque', titulo: 'Seu estoque em um só painel', apoio: 'Itens e custo na mesma tela. Painel de indicadores, plano Plus.' },
-  fim: { foto: FOTO_PR, tela: 'painel-estoque', titulo: 'Quer ver o painel da <b>sua farmácia?</b>' },
+  fim: { foto: 'farmaceutica-receita', titulo: 'Quer ver o painel da <b>sua farmácia?</b>' },
   kw: 'reforma tributária na farmácia',
   cap: `Reforma tributária na farmácia em 2027: o que conferir antes de 1º de janeiro.\n\nO PIS e a Cofins acabam e entra a CBS, o imposto novo. Remédio registrado paga menos, mas a conta de quem tem estoque precisa ser feita com o contador. E essa conversa começa por uma pergunta simples: quanto você tem na prateleira hoje?\n\nNo plano Plus do Prosystem, o painel mostra itens e custo do estoque na mesma tela.\n\n${CTA}`,
   tags: '#reformatributaria #gestaodefarmacia #sistemaparafarmacia #drogaria',
-  alts: ['Painel do Prosystem sobre prateleiras de farmácia, com o título: em 2027 o imposto muda, quanto vale o seu estoque?', 'Prateleiras de farmácia e o texto: PIS e Cofins acabam, entra a CBS.', 'Farmacêutica pegando um produto na prateleira e o texto: remédio paga menos.', 'Calculadora e caneta sobre papel e o texto: o estoque entra na conta da virada.', 'Painel do Prosystem com itens e custo do estoque, plano Plus.', 'Painel do Prosystem e o convite para falar com um especialista.'],
+  alts: ['Prateleiras de farmácia desfocadas, com o título: em 2027 o imposto muda, quanto vale o seu estoque?', 'Prateleiras de farmácia e o texto: PIS e Cofins acabam, entra a CBS.', 'Farmacêutica pegando um produto na prateleira e o texto: remédio paga menos.', 'Calculadora e caneta sobre papel e o texto: o estoque entra na conta da virada.', 'Painel do Prosystem com itens e custo do estoque, plano Plus.', 'Farmacêutica com uma receita e o convite para falar com um especialista.'],
   conferir: ['Taxa da CBS: 11,3% é cálculo do TCU; o Senado decide até dezembro. A peça não cita o número.', 'Não prometer economia nem crédito de estoque.', 'A tela mostra "Drogaria Modelo" com um CNPJ, embora o LEIA-ME das telas diga que os CNPJs estão cobertos. O dado é fictício; cubra no mockup.'] },
 
 { data: 'Sex 06/11', seg: 'Padaria', id: 'carrossel-padaria-reforma-tributaria-v2', travada: true, tipo: 'v3', tema: 'lar', formato: 'Carrossel V3',
