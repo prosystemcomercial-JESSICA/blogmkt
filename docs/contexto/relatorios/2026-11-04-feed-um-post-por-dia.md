@@ -17,6 +17,7 @@ A Jessica viu que, depois de 04/11, o próximo post era só em 09/11 (o carrosse
   - modo `pendentes`, que mostra só as peças não travadas;
   - correção: peça com `semMockup` não aparece mais como "Aguarda mockup".
 - Página de revisão (privada): https://claude.ai/artifact/DBbMzwYV9JdsQipzUFn15b
+- Documento de aprovação (Claude Docs), com as colunas Decisão (Aprovado ou Alterar) e O que alterar, mais a lista do que confirmar: https://claude.ai/artifact/6KR6hRQrSnJMKr3xwWUpiK
 
 ## Verificado
 - `gerar.js` rodou com "sem estouro" nas 33 peças.
@@ -42,4 +43,4 @@ A Jessica viu que, depois de 04/11, o próximo post era só em 09/11 (o carrosse
 - Programar a publicação, pelo `instagram/agenda.json` ou manualmente.
 
 ## Próxima sessão
-Abra a página de revisão e aplique as notas da Jessica em `pecas-dias-extras.js`. Depois rode `node outputs/criativos/nov-dez/gerar.js <id>` e, para a página, `galeria.js <saída> pendentes`, publicando na mesma URL. Skills: `relatorio-final`; leia o caderno de marca antes de mudar qualquer peça.
+Leia o documento de aprovação, aplique as notas da Jessica em `pecas-dias-extras.js`. Depois rode `node outputs/criativos/nov-dez/gerar.js <id>` e, para a página, `galeria.js <saída> pendentes`, publicando na mesma URL. Skills: `relatorio-final`; leia o caderno de marca antes de mudar qualquer peça.
