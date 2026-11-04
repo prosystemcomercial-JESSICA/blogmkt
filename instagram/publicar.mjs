@@ -44,14 +44,14 @@ async function api(metodo, rota, params = {}) {
 const espera = (ms) => new Promise((ok) => setTimeout(ok, ms));
 
 // O Instagram baixa a imagem pelo link; o contêiner só pode ser publicado com status FINISHED.
-async function aguardar(id) {
-  for (let i = 0; i < 30; i++) {
+async function aguardar(id, vezes = 30) {
+  for (let i = 0; i < vezes; i++) {
     const { status_code: s } = await api('GET', `/${id}`, { fields: 'status_code' });
     if (s === 'FINISHED') return;
     if (s === 'ERROR' || s === 'EXPIRED') throw new Error(`contêiner ${id} ficou ${s}`);
     await espera(5000);
   }
-  throw new Error(`contêiner ${id} não ficou pronto em 2,5 minutos`);
+  throw new Error(`contêiner ${id} não ficou pronto em ${vezes * 5} segundos`);
 }
 
 // Link público da imagem no repositório (que é público). O SHA evita cache de versão antiga.
@@ -80,7 +80,11 @@ async function publicar(post) {
   if (post.tipo === 'stories') return publicarStories(post);
   const legenda = post.legenda + (post.tags ? `\n\n${post.tags}` : '');
   let criacao;
-  if (post.imagens.length === 1) {
+  if (post.tipo === 'reels') {
+    // Vídeo no feed: vai como Reels, também na grade, com a capa em JPG. O vídeo demora mais para processar.
+    criacao = (await api('POST', `/${IG}/media`, { media_type: 'REELS', video_url: link(post.imagens[0]), caption: legenda, share_to_feed: 'true', ...(post.capa ? { cover_url: link(post.capa) } : {}) })).id;
+    await aguardar(criacao, 120);
+  } else if (post.imagens.length === 1) {
     criacao = (await api('POST', `/${IG}/media`, { image_url: link(post.imagens[0]), caption: legenda })).id;
   } else {
     const filhos = [];

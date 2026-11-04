@@ -1,6 +1,6 @@
 // Peças que completam o feed com um post por dia, inclusive sábado e domingo (pedido da Jessica em 04/11/2026).
 // Os dias que já tinham post ficam como estão. A pausa de 23/12 a 02/01 continua, só com Natal e Ano Novo.
-// Aprovação da Jessica em 04/11/2026: 29 travadas. 13/12, 17/12, 20/12 e 16/01 foram refeitas e aguardam nova aprovação.
+// Aprovação da Jessica em 04/11/2026: todas travadas (13/12, 17/12, 20/12 e 16/01 depois de refeitas). Programadas no instagram/agenda.json.
 const CTA = 'Fale com um especialista pelo link da bio.';
 const N = { nova: true, semMockup: true };
 
@@ -118,7 +118,7 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   alts: ['Farmacêutica conferindo um frasco de remédio, com o título: se esse lote for recolhido, você sabe para quem vendeu?'],
   conferir: ['O rótulo do frasco, em inglês, foi desfocado. Confira em tamanho real.'] },
 
-{ ...N, data: 'Dom 13/12', seg: 'Padaria', id: 'frase-padaria-gestao-v1', tipo: 'frase', tema: 'lar', formato: 'Frase de impacto',
+{ ...N, travada: true, data: 'Dom 13/12', seg: 'Padaria', id: 'frase-padaria-gestao-v1', tipo: 'frase', tema: 'lar', formato: 'Frase de impacto',
   titulo: 'Pão bom vende. <b>Gestão boa dá lucro.</b>', apoio: 'Em 2027, olhe o lucro de cada produto, não só a venda.', fs: 120,
   kw: 'gestão de padaria',
   cap: `Gestão de padaria é o que transforma fila no balcão em dinheiro no fim do mês.\n\nEm dezembro, a padaria vende muito. Aproveite para anotar quais produtos puxaram a venda e quais deram lucro de verdade. Nem sempre são os mesmos, e essa lista é o começo do planejamento de 2027.\n\nQuer ver o lucro por produto na sua padaria? ${CTA}`,
@@ -136,7 +136,7 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   alts: ['Padeira colocando uma assadeira no forno, com o título: a jornada muda nesta semana, o ponto da equipe está no sistema?'],
   conferir: ['Não é consultoria trabalhista e não promete validade legal do ponto: manter a frase do contador e do sindicato.', 'Data da nova jornada: a Fenacon conta 16/12; parte da imprensa fala em 15/12. Por isso "nesta semana".', 'Foto: CC BY 2.0, crédito obrigatório: já está no fim da legenda.'] },
 
-{ ...N, data: 'Qui 17/12', seg: 'Padaria', id: 'padaria-lucro-panetone-v1', tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', foto: 'panetone-grade', pilula: 'Leia a legenda',
+{ ...N, travada: true, data: 'Qui 17/12', seg: 'Padaria', id: 'padaria-lucro-panetone-v1', tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', foto: 'panetone-grade', pilula: 'Leia a legenda',
   titulo: 'Panetone vende muito. <b>Quanto sobra em cada um?</b>', fs: 92,
   kw: 'lucro do panetone',
   cap: `Lucro do panetone: ele vende muito em dezembro, mas a margem depende de quanto custaram o insumo, a embalagem e a hora de produção.\n\nFaça a conta de um panetone hoje, com o custo de hoje. Se a margem ficou apertada, ainda dá tempo de ajustar o preço ou o tamanho antes da semana do Natal. E guarde o número para o Natal de 2027.\n\nNo Prosystem, o relatório de rentabilidade mostra o resultado geral e por produto, com filtro dos que dão lucro ou prejuízo.\n\n${CTA}
@@ -154,7 +154,7 @@ Foto: N i c o l a (CC BY 2.0).`,
   alts: ['Aviso do Prosystem: caixa bloqueado, favor efetuar a sangria programada. Título: último sábado antes do Natal, quanto dinheiro tem na sua gaveta?'],
   conferir: ['O carrossel da sangria de 04/12 é de padaria e usa as telas de aviso e registro. Esta peça usa só a tela de bloqueio.'] },
 
-{ ...N, data: 'Dom 20/12', seg: 'Padaria', id: 'padaria-horario-festas-v1', tipo: 'fotoPainel', tema: 'lar', formato: 'Foto com painel de vidro', foto: 'paezinhos-cesta',
+{ ...N, travada: true, data: 'Dom 20/12', seg: 'Padaria', id: 'padaria-horario-festas-v1', tipo: 'fotoPainel', tema: 'lar', formato: 'Foto com painel de vidro', foto: 'paezinhos-cesta',
   vidro: true, cantos: true, losangos: true, posicao: '50% 50%',
   titulo: 'Horário diferente no Natal? <b>Avise assim.</b>', fs: 84, faixa: 'Dia por dia, encomendas e o mesmo texto em todo lugar.', pilula: 'Salve este post',
   kw: 'horário de funcionamento da padaria no Natal',
@@ -216,7 +216,7 @@ Boas festas! ${CTA}`,
   alts: ['Tela do caixa do Prosystem pedindo o motivo da exclusão do item, com as opções falta do produto, oferta da concorrência, problema no pagamento, tempo de atendimento e consulta de preço. Título: verão, o protetor acabou, o cliente foi para onde?'],
   conferir: ['A padaria recebeu a mesma função em 05/11, com o gráfico. Aqui entra a tela do motivo.'] },
 
-{ ...N, data: 'Sáb 16/01', seg: 'Os dois', id: 'frase-contador-arquivos-v1', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto',
+{ ...N, travada: true, data: 'Sáb 16/01', seg: 'Os dois', id: 'frase-contador-arquivos-v1', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto',
   titulo: 'O contador pediu os arquivos? <b>Envie tudo de uma vez.</b>', apoio: 'No Prosystem Fiscal, XML, SPED e relatórios vão juntos para a contabilidade.', fs: 110,
   kw: 'arquivos fiscais para o contador',
   cap: `Arquivos fiscais para o contador: todo mês ele pede XML, SPED e relatórios. O pedido continua. O que muda é o trabalho para mandar. Em 2027, com o imposto novo, essa troca fica ainda mais frequente.

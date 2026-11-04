@@ -68,3 +68,28 @@ Leia o documento de aprovação, aplique as notas da Jessica em `pecas-dias-extr
 ### Pendente
 - A Jessica aprovar as 4 refeitas no documento.
 - Os itens de "Para confirmar antes de publicar" continuam abertos.
+
+---
+
+## Continuação (04/11/2026): aprovação final e programação
+
+### Pedido
+"todos aprovados, agora programe".
+
+### Feito
+- As 4 refeitas foram travadas. As 33 peças novas estão aprovadas.
+- Novo `instagram/programar-feed.js`: lê `pecas-dados.js`, que traz as peças travadas e as prontas de outras produções, converte as imagens para JPEG em `instagram/midia/` e grava em `instagram/agenda.json`. Não toca em ids que já estão na agenda e recusa dois posts no mesmo dia.
+- **80 posts programados**, um por dia de 04/11/2026 a 31/01/2027, com a pausa de 23/12 a 02/01 (só Natal e Ano Novo):
+  - 66 imagens, 13 carrosséis e 1 vídeo;
+  - horário: 12h30, como o post de 03/11; hoje, 04/11, às 14h30, porque a programação foi feita às 13h40;
+  - o carrossel de padaria de 06/11 ficou de fora porque já foi publicado em 03/11.
+- `publicar.mjs` agora aceita vídeo no feed (`tipo: reels`: Reels com `share_to_feed` e capa JPG, com até 10 minutos de processamento), para o vídeo de 25/01.
+- A legenda do carrossel de suporte (09/11) vem de `outputs/criativos/suporte/legendas.md`.
+
+### Verificado
+- `publicar.mjs --teste`: token e conta ok e nenhum arquivo faltando. Nenhuma legenda passa de 2.200 caracteres nem de 30 hashtags.
+- **Não verificado:** o primeiro Reels pela API, que só roda em 25/01. Conferir nesse dia.
+
+### Pendente
+- Os itens de "Para confirmar antes de publicar" seguem abertos. Uma legenda mudada depois disso precisa ser trocada também em `agenda.json`, onde a legenda fica copiada.
+- O texto alternativo não vai pela API.
