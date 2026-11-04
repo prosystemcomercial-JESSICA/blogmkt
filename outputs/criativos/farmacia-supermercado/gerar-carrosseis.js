@@ -14,9 +14,9 @@ const SITE = 'prosystemnet.com.br';
 
 // Itens: cada foto entra em uma página só, sem tela do sistema (a Jessica faz os mockups, se quiser).
 const mercadoItens = [
-  { n: 1, titulo: 'Espaço <b>só da farmácia.</b>', apoio: 'Delimitado, separado e com <b>farmacêutico</b> durante todo o horário.', foto: 'farmaceutica-recorte' },
+  { n: 1, titulo: 'Espaço <b>só da farmácia.</b>', apoio: 'Delimitado, separado e com <b>farmacêutico</b> durante todo o horário.', foto: 'farmaceutica-receita' },
   { n: 2, titulo: 'Remédio <b>fora da gôndola</b> do corredor.', apoio: 'Controlado só é entregue <b>depois de pago</b> ou vai lacrado até o caixa.', foto: 'cartelas-detalhe' },
-  { n: 3, titulo: 'Lote e validade <b>em cada venda.</b>', apoio: 'Se um lote for recolhido, você precisa saber <b>para quem vendeu.</b>', foto: 'conferindo-frasco-sem-rotulo' },
+  { n: 3, titulo: 'Lote e validade <b>em cada venda.</b>', apoio: 'Se um lote for recolhido, você precisa saber <b>para quem vendeu.</b>', foto: 'farmaceutico-conferindo' },
 ];
 const farmaciaItens = [
   { n: 1, titulo: 'Lembre da reposição <b>antes do mercado.</b>', apoio: 'O sistema calcula a próxima compra do uso contínuo e <b>avisa o balcão.</b>', foto: 'comprimidos-coloridos' },
@@ -29,7 +29,7 @@ const carrosseis = [
     capa: { titulo: 'Farmácia no mercado: <b>a lei já permite.</b>', apoio: '3 regras antes de abrir a sua', foto: 'mercado-caixas' },
     itens: mercadoItens,
     sol: { titulo: 'Farmácia precisa de sistema de farmácia', apoio: 'Lote, validade, controlados e vendas da farmácia separadas.', foto: 'prateleiras-escuras' },
-    fim: { titulo: 'Vai abrir farmácia <b>no seu mercado?</b>', foto: 'corredor-seta' } },
+    fim: { titulo: 'Vai abrir farmácia <b>no seu mercado?</b>', foto: 'corredor-seta', pos: '50% 88%' } },
   { id: 'carrossel-farmacia-supermercado-v1', tema: 'azul', estilo: 'v3',
     capa: { titulo: 'O mercado agora <b>vende remédio.</b> E a sua farmácia?', foto: 'carrinho-compras' },
     itens: farmaciaItens,
@@ -130,7 +130,7 @@ function v2(c) {
     out.push(pg(c, k + 2, '', `<img class="v2-foto" src="${foto(it.foto)}" alt=""><div class="topo-sombra"></div>${claro}<div class="v2-sel"><span>${it.n}</span></div><div class="v2-txt"><h2>${it.titulo}</h2><p class="faixa">${it.apoio}</p></div>${num(k + 2)}`));
   });
   out.push(pg(c, 5, 'sobre', `<img class="cheia" src="${foto(c.sol.foto)}" alt=""><div class="topo-sombra"></div>${claro}<div class="v2-painel"><h2>${c.sol.titulo}</h2><p>${c.sol.apoio}</p></div>${num(5)}`));
-  out.push(pg(c, 6, 'forte', `<img class="v2-fim-foto" src="${foto(c.fim.foto)}" alt=""><div class="topo-sombra"></div>${claro}<div class="v2-fim"><h2>${c.fim.titulo}</h2>${provas}<span class="pil">Fale com um especialista</span><div class="site">${SITE}</div></div>`));
+  out.push(pg(c, 6, 'forte', `<img class="v2-fim-foto" src="${foto(c.fim.foto)}" alt="" style="object-position:${c.fim.pos || '50% 50%'}"><div class="topo-sombra"></div>${claro}<div class="v2-fim"><h2>${c.fim.titulo}</h2>${provas}<span class="pil">Fale com um especialista</span><div class="site">${SITE}</div></div>`));
   return out;
 }
 

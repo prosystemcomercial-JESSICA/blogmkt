@@ -44,8 +44,8 @@ def salvar(im, nome, largura=1600):
 # e as placas com a marca da rede bem desfocadas.
 im = Image.open(ORIG / "mercado-caixas.jpg").convert("RGB")
 w, h = im.size
-im = im.crop((int(w * 0.30), 0, w, h))
-im = desfoca(im, (0, 0.18, 1, 0.50), 18)
+im = im.crop((int(w * 0.30), int(h * 0.30), w, h))
+im = desfoca(im, (0, 0, 1, 0.30), 18)
 im = im.filter(ImageFilter.GaussianBlur(4))
 salvar(sem_amarelo(im), "mercado-caixas")
 
