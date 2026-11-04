@@ -42,20 +42,20 @@ def salvar(im, nome, largura=1600):
 
 # Caixas do supermercado: corte no lado direito, onde estão os caixas; tudo levemente desfocado
 # e as placas com a marca da rede bem desfocadas.
-im = Image.open(ORIG / "mercado-caixas.jpg").convert("RGB")
+im = sem_amarelo(Image.open(ORIG / "mercado-caixas.jpg").convert("RGB"))
 w, h = im.size
 im = im.crop((int(w * 0.30), int(h * 0.30), w, h))
-im = desfoca(im, (0, 0, 1, 0.30), 18)
+im = desfoca(im, (0, 0, 1, 0.36), 20)
 im = im.filter(ImageFilter.GaussianBlur(4))
-salvar(sem_amarelo(im), "mercado-caixas")
+salvar(im, "mercado-caixas")
 
 # Carrinho: os pacotes dentro dele e o adesivo do chão desfocados.
-im = Image.open(ORIG / "carrinho-compras.jpg").convert("RGB")
+im = sem_amarelo(Image.open(ORIG / "carrinho-compras.jpg").convert("RGB"))
 im = desfoca(im, (0.30, 0.28, 0.82, 0.78), 26)
 im = desfoca(im, (0.82, 0.30, 1, 0.55), 26)
-salvar(sem_amarelo(im), "carrinho-compras")
+salvar(im, "carrinho-compras")
 
 # Corredor com seta no chão: o alto (pessoas, preços e placas) desfocado.
-im = Image.open(ORIG / "corredor-seta.jpg").convert("RGB")
+im = sem_amarelo(Image.open(ORIG / "corredor-seta.jpg").convert("RGB"))
 im = desfoca(im, (0, 0, 1, 0.33), 24)
-salvar(sem_amarelo(im), "corredor-seta", largura=1200)
+salvar(im, "corredor-seta", largura=1200)

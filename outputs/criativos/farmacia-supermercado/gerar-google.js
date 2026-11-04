@@ -135,6 +135,5 @@ function conferir() {
 - Caracteres: ${c.texto.length}
 
 ${c.texto}
-`).join('
-'));
+`).join('\n'));
 })();
