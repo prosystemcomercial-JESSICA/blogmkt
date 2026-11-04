@@ -172,7 +172,7 @@ function rede() {
   const cx = 540, cy = 1260;
   const nos = [['TEF', -330, -200], ['Farmácia Popular', 260, -230], ['Tray', -380, 60], ['Imendes', 370, 40], ['Napp', -250, 270], ['Balanço Coletor', 250, 280]];
   const linhas = nos.map(([, dx, dy]) => `<path data-a="draw" d="M${cx} ${cy} Q ${cx + dx * 0.5} ${cy + dy * 0.1} ${cx + dx} ${cy + dy}"/>`).join('');
-  return `<svg viewBox="0 0 1080 1920" style="position:absolute;inset:0;width:100%;height:100%;z-index:3" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 14">${linhas}</svg>`
+  return `<svg viewBox="0 0 1080 1920" style="position:absolute;inset:0;width:100%;height:100%;z-index:3" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="3" stroke-linecap="round">${linhas}</svg>`
     + `<i class="g" data-a="pop" style="left:${cx - 170}px;top:${cy - 170}px;width:340px;height:340px;z-index:3;border-color:rgba(56,200,248,.9)"></i>`
     + `<div data-a="pop" style="position:absolute;left:${cx - 125}px;top:${cy - 125}px;width:250px;height:250px;transform:rotate(45deg);border-radius:50px;background:#fff;z-index:4;box-shadow:0 26px 60px rgba(8,19,48,.45);display:flex;align-items:center;justify-content:center"><img src="${url(path.join(LOGOS, 'logo-dark.png'))}" alt="" style="width:200px;transform:rotate(-45deg);max-width:none"></div>`
     + `<div data-a="stagger">${nos.map(([n, dx, dy]) => `<div class="no" style="left:${cx + dx}px;top:${cy + dy}px">${n}</div>`).join('')}</div>`;
