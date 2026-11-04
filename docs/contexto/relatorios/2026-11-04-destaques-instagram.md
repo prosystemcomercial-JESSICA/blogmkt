@@ -57,3 +57,7 @@ Jessica: "vamos criar alguns stories para colocarmos nos destaques do instagram,
 
 ## Próxima sessão
 Perguntar o que a Jessica aprovou. Ajuste vira v2: mude o sufixo `-v1` no gerador e gere de novo com `node outputs/criativos/destaques/gerar-destaques.js png <id>` (e `mp4 <id>` nas aberturas). Antes de criar peça nova, leia o caderno de marca.
+
+## Atualização: depoimento postado à mão
+
+A Jessica postou o **Depoimentos 1** pelo app em 04/11. Na `instagram/agenda.json` a entrada `destaque-depoimentos-v1-1` virou `status: publicado-manual` (data 04/11), então a API não o publica de novo em 14/11. O guia de postagem mostra esse story como "Já postado". Os Depoimentos 2 a 5 continuam agendados (24/11, 05/01, 11/02, 01/04).

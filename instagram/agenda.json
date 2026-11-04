@@ -259,10 +259,10 @@
   },
   {
     "id": "destaque-depoimentos-v1-1",
-    "quando": "2026-11-14T10:00:00-03:00",
+    "quando": "2026-11-04T10:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
-    "nota": "Destaque depoimentos, story 1. Depois a Jessica adiciona ao destaque pelo app.",
+    "status": "publicado-manual",
+    "nota": "Destaque depoimentos, story 1. Já postado pela Jessica pelo app em 04/11/2026; a API não publica.",
     "midias": [
       "instagram/midia/destaques/destaque-depoimentos-v1-1.mp4"
     ]
