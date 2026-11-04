@@ -23,11 +23,18 @@
     "id": "destaque-depoimentos-v1-1",
     "quando": "2026-11-04T10:00:00-03:00",
     "tipo": "stories",
-    "status": "publicado-manual",
-    "nota": "Destaque depoimentos, story 1. Já postado pela Jessica pelo app em 04/11/2026; a API não publica.",
+    "status": "publicado",
+    "nota": "Destaque depoimentos, story 1. Publicado pela API a pedido da Jessica em 04/11/2026.",
     "midias": [
       "instagram/midia/destaques/destaque-depoimentos-v1-1.mp4"
-    ]
+    ],
+    "ids": [
+      "18092334428303011"
+    ],
+    "feitos": 1,
+    "publicado_em": "2026-11-04T18:47:36.979Z",
+    "media_id": "18092334428303011",
+    "link": "https://www.instagram.com/stories/prosystemoficial/"
   },
   {
     "id": "carrossel-farmacia-reforma-tributaria-v1",

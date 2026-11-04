@@ -65,3 +65,7 @@ A Jessica postou o **Depoimentos 1** pelo app em 04/11. Na `instagram/agenda.jso
 ## Atualização: caixa de marcar no calendário
 
 Pedido: "coloque um checkbox para que eu marque o que eu ja postei". O calendário do guia (https://claude.ai/artifact/1W8HvbsL5WdYmk9bP6yNR1, versão 5) ganhou a coluna **Postado**, com uma caixa por story (55). A linha marcada fica riscada e há um contador "X de 55 stories postados". O Depoimentos 1 já vem marcado. A marcação fica salva no navegador do aparelho onde ela marcar (localStorage), não sincroniza entre celular e computador. O gerador do guia fica fora do repositório (scratchpad da sessão).
+
+## Atualização: Depoimentos 1 publicado pela API
+
+Pedido: "post qualquer um dos depoimentos, de preferencia o primeiro". O Depoimentos 1 (MP4) foi publicado pela API em 04/11 com `node instagram/publicar.mjs --agora destaque-depoimentos-v1-1`; o resultado foi "Publicado". Na agenda ele está `status: publicado`, então não sai de novo em 14/11. É o primeiro story publicado pela API (o fluxo de stories foi confirmado). O guia mostra esse story como "Já postado".
