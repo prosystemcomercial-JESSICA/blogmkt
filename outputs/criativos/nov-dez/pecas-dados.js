@@ -440,6 +440,8 @@ ${CTA}`,
   alts: ['Laço roxo e frase em azul sobre fundo branco: Janeiro Roxo, hanseníase tem cura e tratamento pelo SUS.'],
   conferir: ['Data de saúde: a peça encaminha para a unidade de saúde, sem orientar tratamento.', 'Cura e gratuidade vêm de secretarias de saúde, sem abrir a página do Ministério.', 'O post amplia o calendário de 22/01 para 31/01.'] },
 ];
+// Dias que faltavam para ter um post por dia (04/11/2026).
+P.push(...require('./pecas-dias-extras.js'));
 
 // Peças prontas de outras produções: só a legenda é nova.
 const PRONTAS = [

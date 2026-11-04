@@ -60,6 +60,9 @@ const DESTAQUE = {
   'dias-sem-giro': 'Dias Sem Giro: 30 dias',
   'painel-estoque': 'Inventário (custo): R$ 915.912,20',
   'rentabilidade-relatorio': '0-Geral   1-Positivos   2-Negativos',
+  'perda-vendas-motivo': 'Informe motivo da exclusão do item',
+  'metas-subgrupo': 'GENÉRICO - USO - Meta: 3,000.00 - Resta: 76.14%',
+  'fidelimax-pontos': 'Cliente pontuado com sucesso no programa fidelimax!',
 };
 function tela(n, x, y, w, h, giro = 0) {
   usadas.add(n);
@@ -122,7 +125,8 @@ function comTela(c) {
     ? `<div class="atr" style="left:${px(150)};top:${px(yFoto)};width:${px(780)};height:${px(hFoto)};transform:rotate(3deg)"></div><img class="car" src="${img(c.fotoCima)}" alt="" style="left:${px(150)};top:${px(yFoto)};width:${px(780)};height:${px(hFoto)};transform:rotate(-2deg)">${tela(c.tela, 80, yFoto + hFoto - 60, 920, hTela)}`
     : c.foto
     ? `<img class="car" src="${img(c.foto)}" alt="" style="left:${px(80)};top:${px(y)};width:${px(920)};height:${px(h)}">${tela(c.tela, 110, y + h - 130, 860, 100)}`
-    : tela(c.tela, 80, y, 920, h);
+    : c.telaLarg ? tela(c.tela, 540 - c.telaLarg / 2, y, c.telaLarg, h - 70) : tela(c.tela, 80, y, 920, h);
+  // telaLarg: tela pequena da base, que perderia nitidez esticada a 920 px; sobra espaço para o destaque ampliado.
   return [pg(c.tema, cl, `${lo(c.fundo === 'bra')}${logo(c.fundo === 'bra')}<div class="col" style="justify-content:flex-start"><h2 style="font-size:${px(c.fs || 74)}">${c.titulo}</h2></div>${miolo}<div style="position:absolute;left:${px(80)};right:${px(80)};bottom:${px(66)};display:flex;flex-direction:column;align-items:center;gap:${px(22)};z-index:6"><p class="fx">${c.faixa}</p>${c.pilula ? `<span class="${pil}">${c.pilula}</span>` : ''}</div>`)];
 }
 // Laço azul do Novembro Azul, num selo branco sobre a borda de cima do painel.

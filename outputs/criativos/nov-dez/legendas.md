@@ -9,52 +9,85 @@ Arquivo gerado por `gerar.js`. Para mudar um texto, altere `pecas-dados.js` e ge
 | Data | Para quem | Peça | Formato | Mockup em falta |
 |---|---|---|---|---|
 | Qua 04/11 | Farmácia | `carrossel-farmacia-reforma-tributaria-v1` | Carrossel V2 | - |
+| Qui 05/11 | Padaria | `padaria-perda-de-vendas-v1` | Estático com tela | - |
 | Sex 06/11 | Padaria | `carrossel-padaria-reforma-tributaria-v2` | Carrossel V3 | - |
+| Sex 06/11 | Farmácia | `farmacia-sugestao-de-compras-v1` | Foto com painel de vidro | - |
+| Sáb 07/11 | Padaria | `padaria-balanca-pao-frances-v1` | Padaria com foto | - |
+| Dom 08/11 | Farmácia | `frase-farmacia-falta-de-produto-v1` | Frase de impacto | - |
 | Seg 09/11 | Farmácia | `carrossel-farmacia-suporte-v4-<página>.png` | Carrossel V2 | - |
 | Ter 10/11 | Farmácia | `depoimento-krisley-v2.png` | Depoimento | - |
 | Qua 11/11 | Padaria | `carrossel-padaria-trigo-v1` | Carrossel V3 | - |
+| Qui 12/11 | Padaria | `padaria-ticket-medio-v1` | Foto com painel de vidro | - |
 | Sex 13/11 | Farmácia | `canetas-emagrecedoras-v2` | Estático com tela | - |
 | Sáb 14/11 | Farmácia | `farmacia-dia-do-diabetes-v2` | Estático com tela | - |
+| Dom 15/11 | Os dois | `frase-suporte-domingo-feriado-v1` | Frase de impacto | - |
 | Seg 16/11 | Padaria | `padaria-pix-caixa-v1` | Estático com tela | - |
 | Ter 17/11 | Farmácia | `farmacia-novembro-azul-v2` | Foto com painel | - |
 | Qua 18/11 | Farmácia | `farmacia-quem-liberou-desconto-v1` | Estático com tela | - |
 | Qui 19/11 | Padaria | `padaria-escala-6x1-v1` | Estático com tela | - |
+| Sex 20/11 | Padaria | `padaria-producao-dezembro-v1` | Padaria com foto | - |
 | Sáb 21/11 | Farmácia | `farmacia-dia-da-dengue-v4` | Foto com painel | - |
 | Dom 22/11 | Farmácia | `frase-antimicrobianos-v2` | Frase de impacto | - |
 | Seg 23/11 | Farmácia | `carrossel-farmacia-black-friday-v2` | Carrossel V3 | - |
 | Ter 24/11 | Farmácia | `carrossel-farmacia-depoimento-v3-<página>.png` | Carrossel V3 de depoimento | - |
 | Qua 25/11 | Padaria | `padaria-encomendas-natal-v2` | Padaria com foto | - |
+| Qui 26/11 | Farmácia | `farmacia-metas-black-friday-v1` | Estático com tela | - |
 | Sex 27/11 | Farmácia | `frase-farmacia-lucro-v1` | Frase de impacto | - |
+| Sáb 28/11 | Padaria | `padaria-contas-a-pagar-v1` | Estático com tela | - |
+| Dom 29/11 | Farmácia | `frase-farmacia-quem-mexeu-no-preco-v1` | Frase de impacto | - |
 | Seg 30/11 | Padaria | `padaria-13-salario-v2` | Foto com painel de vidro (o plano pedia estático com tela) | - |
 | Ter 01/12 | Farmácia | `frase-dezembro-vermelho-v2` | Frase de impacto | - |
 | Qua 02/12 | Farmácia | `farmacia-escala-5x2-v2` | Foto com painel | - |
 | Qui 03/12 | Farmácia | `farmacia-dezembro-laranja-v2` | Foto com painel | - |
 | Sex 04/12 | Padaria | `carrossel-padaria-sangria-v2` | Carrossel V2 | - |
+| Sáb 05/12 | Padaria | `padaria-recebimento-farinha-v1` | Padaria com foto | - |
+| Dom 06/12 | Farmácia | `frase-farmacia-estoque-parado-v1` | Frase de impacto | - |
 | Seg 07/12 | Farmácia | `carrossel-farmacia-popular-v2` | Carrossel V2 | - |
 | Ter 08/12 | Os dois | `depoimento-samuel-v2.png` | Depoimento | - |
 | Qua 09/12 | Padaria | `padaria-dia-da-culinaria-v2` | Padaria com foto | - |
 | Qui 10/12 | Padaria | `padaria-combos-v2` | Estático com tela | - |
 | Sex 11/12 | Farmácia | `carrossel-farmacia-uso-continuo-v3` | Carrossel V2 | - |
+| Sáb 12/12 | Farmácia | `farmacia-lote-recolhimento-v1` | Foto com painel de vidro | - |
+| Dom 13/12 | Padaria | `frase-padaria-gestao-v1` | Frase de impacto | - |
 | Seg 14/12 | Padaria | `padaria-fechamento-caixa-v1` | Estático com tela | - |
+| Ter 15/12 | Padaria | `padaria-ponto-equipe-v1` | Padaria com foto | - |
 | Qua 16/12 | Os dois | `frase-escala-hoje-v2` | Frase de impacto | - |
+| Qui 17/12 | Padaria | `padaria-lucro-panetone-v1` | Padaria com foto | - |
 | Sex 18/12 | Padaria | `padaria-curva-abc-v1` | Estático com tela | - |
+| Sáb 19/12 | Farmácia | `farmacia-sangria-natal-v1` | Estático com tela | - |
+| Dom 20/12 | Padaria | `padaria-horario-festas-v1` | Foto com painel de vidro | - |
 | Seg 21/12 | Farmácia | `frase-farmacia-receita-v1` | Frase de impacto | - |
+| Ter 22/12 | Os dois | `fim-de-ano-3-numeros-v1` | Estático com tela | - |
 | Sex 25/12 | Os dois | `natal-v5` | Foto com losango e linha | - |
 | Sex 01/01 | Os dois | `ano-novo-v3` | Foto com linha | - |
+| Dom 03/01 | Padaria | `padaria-preco-2027-v1` | Padaria com foto | - |
 | Seg 04/01 | Farmácia | `farmacia-cbs-v1` | Frase de impacto | - |
+| Ter 05/01 | Os dois | `avisos-whatsapp-config-v1` | Estático com tela | - |
 | Qua 06/01 | Padaria | `padaria-dia-de-reis-v1` | Padaria com foto | - |
 | Qui 07/01 | Padaria | `padaria-simples-nota-v2` | Foto com painel | - |
 | Sex 08/01 | Farmácia | `farmacia-mercado-2027-v1` | Estático com tela | - |
+| Sáb 09/01 | Padaria | `frase-padaria-cadastro-v1` | Frase de impacto | - |
+| Dom 10/01 | Farmácia | `farmacia-perda-de-vendas-verao-v1` | Estático com tela | - |
 | Seg 11/01 | Padaria | `frase-padaria-sobra-v1` | Frase de impacto | - |
 | Ter 12/01 | Os dois | `depoimento-rodrigo-v2.png` | Depoimento | - |
 | Qua 13/01 | Os dois | `frase-janeiro-branco-v1` | Frase de impacto | - |
 | Qui 14/01 | Farmácia | `farmacia-cbs-tela-v1` | Estático com tela | - |
 | Sex 15/01 | Farmácia | `carrossel-farmacia-sncr-v2` | Carrossel V3 | - |
+| Sáb 16/01 | Os dois | `frase-contador-arquivos-v1` | Frase de impacto | - |
+| Dom 17/01 | Padaria | `padaria-login-ferias-v1` | Foto com painel de vidro | - |
 | Seg 18/01 | Padaria | `carrossel-padaria-lucro-por-produto-v2` | Carrossel V3 | - |
 | Ter 19/01 | Farmácia | `carrossel-farmacia-atencao-farmaceutica-v2` | Carrossel V2 | - |
 | Qua 20/01 | Farmácia | `farmacia-dia-do-farmaceutico-v2` | Homenagem | - |
+| Qui 21/01 | Farmácia | `frase-farmacia-biometria-v1` | Frase de impacto | - |
 | Sex 22/01 | Padaria | `padaria-entregas-v1` | Estático com tela | - |
+| Sáb 23/01 | Farmácia | `frase-farmacia-uso-continuo-v1` | Frase de impacto | - |
+| Dom 24/01 | Os dois | `notas-sefaz-cnpj-v1` | Foto com painel de vidro | - |
 | Seg 25/01 | Padaria | `frase-padaria-registro-sobras-v2` | Frase de impacto em vídeo (MP4, 9 s; o PNG é a capa) | - |
+| Ter 26/01 | Farmácia | `farmacia-fidelimax-v1` | Estático com tela | - |
+| Qua 27/01 | Padaria | `frase-padaria-contagem-v1` | Frase de impacto | - |
+| Qui 28/01 | Os dois | `suporte-troca-de-sistema-v1` | Foto com painel de vidro | - |
+| Sex 29/01 | Padaria | `padaria-carnaval-producao-v1` | Padaria com foto | - |
+| Sáb 30/01 | Farmácia | `farmacia-pre-vencidos-v1` | Foto com painel de vidro | - |
 | Dom 31/01 | Farmácia | `frase-janeiro-roxo-v2` | Frase de impacto | - |
 
 ## Mockups que a Jessica precisa fazer
@@ -95,6 +128,26 @@ Fale com um especialista pelo link da bio.
 - A tela mostra "Drogaria Modelo" com um CNPJ, embora o LEIA-ME das telas diga que os CNPJs estão cobertos. O dado é fictício; cubra no mockup.
 
 
+### Qui 05/11: padaria-perda-de-vendas-v1
+
+Perda de vendas na padaria é o dinheiro que nunca chega ao caixa: o cliente pediu, não tinha, e foi embora.
+
+O caixa mostra o que você vendeu. O que deixou de vender some sem explicação. Falta de produto, preço da concorrência, demora no atendimento: cada motivo pede uma ação diferente para 2027.
+
+No Prosystem, quando um item é excluído da venda, o caixa registra o motivo. Depois, o relatório e o gráfico mostram onde a padaria mais perde.
+
+Fale com um especialista pelo link da bio.
+
+#padaria #gestaodepadaria #perdadevendas #sistemaparapadaria
+
+**Texto alternativo:** Gráfico do Prosystem com as vendas perdidas por motivo: falta do produto, oferta da concorrência, consulta de preço, problema no pagamento e tempo de atendimento. Título: o cliente pediu, não tinha, essa venda não aparece no caixa.
+
+**Conferir antes de publicar:**
+
+- O gráfico é da base de conhecimento, com dados fictícios. Os motivos da tela são de uso geral, sem citar farmácia.
+- Produto: o motivo é pedido sempre que o item é excluído ou só quando a função está ligada?
+
+
 ### Sex 06/11: carrossel-padaria-reforma-tributaria-v2
 
 Reforma tributária nas padarias: em 2027, um cupom pode ter várias regras.
@@ -120,6 +173,65 @@ Fale com um especialista pelo link da bio.
 
 - Produto: o que já está pronto para padaria e para o Simples em 2027?
 - A regra dos 40% veio de parecer jurídico; os artigos não foram lidos no Planalto.
+
+
+### Sex 06/11: farmacia-sugestao-de-compras-v1
+
+Compras na farmácia para dezembro: o pedido feito de memória costuma faltar no que gira e sobrar no que fica parado.
+
+O fim de ano traz mais movimento e menos tempo para montar pedido. Comprar pelo histórico de venda deixa o estoque pronto para as festas e o caixa mais leve para começar 2027.
+
+No Prosystem, a sugestão de compras usa o estoque mínimo e máximo, a média de venda, a curva e os dias sem giro, com as encomendas na mesma tela. Ela funciona melhor com o estoque em dia.
+
+Fale com um especialista pelo link da bio.
+
+#gestaodefarmacia #comprasnafarmacia #estoque #sistemaparafarmacia
+
+**Texto alternativo:** Farmacêutico no computador do balcão atendendo uma cliente, com o título: dezembro vende mais, seu pedido sai do histórico ou da memória?
+
+**Conferir antes de publicar:**
+
+- Foto de domínio público (Marinha dos EUA), com a estante desfocada para esconder os rótulos em inglês. Confira em tamanho real.
+- A sugestão depende de estoque correto: a legenda já diz isso.
+
+
+### Sáb 07/11: padaria-balanca-pao-frances-v1
+
+Balança da padaria em dia é dinheiro certo no caixa: desde 2006, o pão francês é vendido por quilo, e a balança decide o preço de cada saco.
+
+3 cuidados para o sábado de pão:
+
+1. A balança comercial passa por verificação periódica do Inmetro, em geral uma vez por ano. Guarde o comprovante.
+2. Deixe o preço do quilo visível para o cliente.
+3. Confira se o preço do quilo no caixa é o mesmo da etiqueta.
+
+Aproveite e anote na agenda de 2027 a data da próxima verificação.
+
+Fale com um especialista pelo link da bio.
+
+Foto: Roosewelt Pinheiro/Agência Brasil (CC BY 3.0 BR).
+
+#padaria #paofrances #gestaodepadaria #panificacao
+
+**Texto alternativo:** Cesto cheio de pães franceses, com o título: pão francês se vende por quilo, sua balança está em dia?
+
+**Conferir antes de publicar:**
+
+- Venda por quilo: Portaria Inmetro 146/2006. Verificação periódica das balanças: Inmetro e Ipem do estado. Confirmar a periodicidade no estado antes de publicar.
+- Foto: CC BY 3.0 BR, crédito obrigatório: já está no fim da legenda.
+
+
+### Dom 08/11: frase-farmacia-falta-de-produto-v1
+
+Falta de produto na farmácia não aparece no caixa, mas aparece no caixa da farmácia ao lado.
+
+Nesta semana, peça para o balcão anotar cada item que o cliente pediu e não levou. No fim de sete dias, você vai saber o que precisa entrar no pedido de 2027.
+
+Quer que o sistema faça essa conta por você? Fale com um especialista pelo link da bio.
+
+#gestaodefarmacia #farmacia #estoque #sistemaparafarmacia
+
+**Texto alternativo:** Frase em azul sobre fundo branco: remédio que falta vira venda na farmácia ao lado.
 
 
 ### Seg 09/11: carrossel-farmacia-suporte-v4-<página>.png
@@ -166,6 +278,25 @@ Quer ver isso na sua padaria? Fale com um especialista pelo link da bio.
 - Produto: a precificação vale sem ajuste na padaria?
 
 
+### Qui 12/11: padaria-ticket-medio-v1
+
+Ticket médio da padaria é quanto cada cliente deixa no caixa, em média. E ele cresce com o que vai junto com o pão: o café, o leite, o frios, o doce.
+
+Antes de pensar em atrair mais gente, vale olhar quem já entra todo dia. Um item a mais por cliente faz diferença no fim do mês e no planejamento de 2027.
+
+Na versão Plus do Prosystem, o painel de indicadores mostra o ticket médio, o total de atendimentos e a média diária de vendas, com filtro por período.
+
+Fale com um especialista pelo link da bio.
+
+#padaria #ticketmedio #gestaodepadaria #sistemaparapadaria
+
+**Texto alternativo:** Pães redondos em prateleiras de uma padaria, com o título: seu cliente leva o pão, e o que mais?
+
+**Conferir antes de publicar:**
+
+- Painel de indicadores: só versão Plus.
+
+
 ### Sex 13/11: canetas-emagrecedoras-v2
 
 Canetas emagrecedoras na farmácia: com mais opções e genéricos, comprar errado custa caro.
@@ -204,6 +335,24 @@ O tratamento é sempre com o médico. Fale com um especialista pelo link da bio.
 
 - Data de saúde: a peça fala de lembrar a reposição, sem orientar tratamento.
 - A tela é a lista de relatórios, sem nome de remédio.
+
+
+### Dom 15/11: frase-suporte-domingo-feriado-v1
+
+Suporte de sistema para farmácia e padaria precisa estar lá quando a loja está aberta. E hoje, domingo de Proclamação da República, muita loja abriu.
+
+Na ProSystem, o suporte é humanizado, com especialistas técnicos, das 7h às 22h, inclusive sábado e domingo. O primeiro contato é pelo WhatsApp: você manda áudio, texto ou print da tela.
+
+Vai escolher o sistema da sua loja para 2027? Pergunte quem atende no domingo. Fale com um especialista pelo link da bio.
+
+#suporte #sistemaparafarmacia #sistemaparapadaria #prosystem
+
+**Texto alternativo:** Frase em azul sobre fundo branco: hoje é domingo e feriado, sua loja abriu, e o suporte? O da ProSystem atende das 7h às 22h, inclusive sábado e domingo.
+
+**Conferir antes de publicar:**
+
+- A frase não promete atendimento em feriado que não cai em fim de semana: 15/11/2026 é domingo. Confirmar com a Jessica se o suporte atende também nos feriados de semana.
+- O carrossel do suporte sai em 09/11: os dois posts se completam.
 
 
 ### Seg 16/11: padaria-pix-caixa-v1
@@ -284,6 +433,29 @@ Fale com um especialista pelo link da bio.
 - Não é consultoria trabalhista: manter a frase do contador e do sindicato.
 - Painel de indicadores: só versão Plus. Não prometer vendas por hora: não está confirmado.
 - A faixa de totais saiu do painel da Drogaria Modelo (valores fictícios); se possível, mockup com números de padaria.
+
+
+### Sex 20/11: padaria-producao-dezembro-v1
+
+Produção da padaria no fim de ano: quem planeja pelo dezembro passado erra menos na fornada e na compra de insumo.
+
+Faça hoje a pergunta: quanto você vendeu em cada semana de dezembro de 2025? Com esse número, dá para combinar a escala, o pedido de farinha e a produção, sem sobra e sem falta. É também um bom começo para 2027.
+
+Na versão Plus do Prosystem, o painel de indicadores filtra as vendas por período e compara com o ano anterior.
+
+Fale com um especialista pelo link da bio.
+
+Foto: Jeremy Keith (CC BY 2.0).
+
+#padaria #producao #gestaodepadaria #sistemaparapadaria
+
+**Texto alternativo:** Padeiro segurando uma assadeira com pães redondos recém-assados, com o título: dezembro vende mais, sua produção já sabe quanto?
+
+**Conferir antes de publicar:**
+
+- O painel tem a visão "Comparativa" na tela da base. Produto: a comparação com o ano anterior está confirmada?
+- Foto: CC BY 2.0, crédito obrigatório: já está no fim da legenda.
+- 20/11 é feriado da Consciência Negra: a peça não cita a data.
 
 
 ### Sáb 21/11: farmacia-dia-da-dengue-v4
@@ -392,6 +564,26 @@ O passo a passo completo está no blog, no link da bio. Salve este post e mostre
 - Sem ferramenta na peça: "Encomenda" no Prosystem é produto em falta, não pedido de padaria.
 
 
+### Qui 26/11: farmacia-metas-black-friday-v1
+
+Metas de vendas na farmácia funcionam quando a equipe vê o número no dia, e não só no fim do mês.
+
+Amanhã é Black Friday. Combine com o balcão qual grupo de produto merece atenção e acompanhe quanto falta ao longo do dia. É um bom ensaio para as metas de 2027.
+
+No Prosystem, as metas podem ser por fabricante, grupo, subgrupo ou geral, e o vendedor vê quanto falta ao registrar o ponto.
+
+Fale com um especialista pelo link da bio.
+
+#blackfriday #metasdevendas #gestaodefarmacia #sistemaparafarmacia
+
+**Texto alternativo:** Corredor de farmácia e a tela de metas do Prosystem, com meta, venda e quanto falta por subgrupo, e o título: amanhã é Black Friday, sua equipe sabe quanto falta para a meta?
+
+**Conferir antes de publicar:**
+
+- A tela só mostra os subgrupos (genérico, ético e similar). As linhas com nome de fabricante ficaram de fora.
+- Foto de domínio público (Força Aérea dos EUA), desfocada para esconder rótulos em inglês.
+
+
 ### Sex 27/11: frase-farmacia-lucro-v1
 
 Margem de lucro na farmácia: na Black Friday, a venda sobe, mas é o que sobra que paga as contas de 2027.
@@ -408,6 +600,45 @@ Quanto sobrou da sua última promoção? Se a resposta demorou, fale com um espe
 
 - Quando o artigo de margem for publicado, citar na legenda que ele está no blog.
 - Termo com volume de busca não conferido.
+
+
+### Sáb 28/11: padaria-contas-a-pagar-v1
+
+Contas a pagar da padaria em dezembro: 13º, fornecedores de Natal e impostos chegam juntos.
+
+A primeira parcela do 13º vence na segunda, 30/11. Saber hoje quanto vence nos próximos cinco dias evita correria no banco e juros no começo de 2027.
+
+Na versão Plus do Prosystem, o aviso de contas a pagar chega no WhatsApp de quem você escolher, com o que vence hoje, amanhã, nos próximos 5 dias, no mês e o que está em atraso.
+
+Fale com um especialista pelo link da bio.
+
+#padaria #contasapagar #fluxodecaixa #sistemaparapadaria
+
+**Texto alternativo:** Aviso de contas a pagar do Prosystem com os valores de hoje, amanhã, próximos 5 dias, mês atual e em atraso, e o título: o 13º vence na segunda, quanto mais vence nesta semana?
+
+**Conferir antes de publicar:**
+
+- A tela foi refeita em 04/11/2026 (tela-contas.js): mesmas linhas do aviso real, data do post e valores fictícios.
+- Mockup em notebook ou desktop, nunca em celular.
+
+
+### Dom 29/11: frase-farmacia-quem-mexeu-no-preco-v1
+
+Controle de preço na farmácia: depois da Black Friday, sempre aparece um preço que ninguém lembra de ter mudado.
+
+Antes de virar o ano, confira os preços que entraram em promoção e veja se voltaram ao normal. E combine quem pode alterar preço em 2027.
+
+No Prosystem, cada usuário tem os seus acessos, e a auditoria registra quem acessou ou alterou as funções protegidas.
+
+Fale com um especialista pelo link da bio.
+
+#gestaodefarmacia #controledeloja #auditoria #sistemaparafarmacia
+
+**Texto alternativo:** Frase em azul sobre fundo branco: quem mexeu nesse preço? No Prosystem, a auditoria registra quem alterou cada função protegida.
+
+**Conferir antes de publicar:**
+
+- Produto: a alteração de preço está entre as funções registradas pela auditoria?
 
 
 ### Seg 30/11: padaria-13-salario-v2
@@ -512,6 +743,41 @@ Quer esse controle na sua padaria? Fale com um especialista pelo link da bio.
 - A tela de registro tem "centro de custo" e um lançamento de gasolina: conferir no mockup.
 
 
+### Sáb 05/12: padaria-recebimento-farinha-v1
+
+Recebimento de mercadoria na padaria: em dezembro chega mais farinha, mais embalagem e mais caixa, e a conferência fica na correria.
+
+Quem recebe confere pela nota ou pela caixa? Se a pessoa já sabe o que a nota diz, ela tende a confirmar. A conferência às cegas, contando sem ver a nota, pega a diferença na hora.
+
+No Prosystem, a conferência é feita sem mostrar a nota: o sistema aponta as divergências e não confirma o estoque enquanto houver diferença. Um bom hábito para levar para 2027.
+
+Fale com um especialista pelo link da bio.
+
+#padaria #recebimento #estoque #sistemaparapadaria
+
+**Texto alternativo:** Farinha de trigo e espigas sobre uma mesa de madeira, com o título: a nota diz 10 sacos, chegaram 8, quem percebe?
+
+**Conferir antes de publicar:**
+
+- Função de artigo de 2020: confirmar com produto se a conferência segue assim.
+- A foto da farinha também abre o carrossel do trigo (11/11). São três semanas de distância.
+
+
+### Dom 06/12: frase-farmacia-estoque-parado-v1
+
+Estoque parado na farmácia é dinheiro que não volta para o caixa, justo no mês do 13º e das compras de fim de ano.
+
+Separe hoje a lista do que não vende há 30 dias. Dá para fazer promoção, trocar com o fornecedor ou simplesmente não comprar de novo em 2027.
+
+No Prosystem, o relatório de dias sem giro mostra o que está parado e o caixa mostra os dias sem giro de cada item.
+
+Fale com um especialista pelo link da bio.
+
+#gestaodefarmacia #estoque #produtossemgiro #sistemaparafarmacia
+
+**Texto alternativo:** Frase em azul sobre fundo branco: estoque parado em dezembro é dinheiro que não paga o 13º.
+
+
 ### Seg 07/12: carrossel-farmacia-popular-v2
 
 Farmácia Popular: novas regras, multa maior e fiscalização automática. Sua farmácia está preparada para 2027?
@@ -613,6 +879,38 @@ Fale com um especialista pelo link da bio.
 - A tela de próxima compra tem "Posologia" e contorno vermelho original da base.
 
 
+### Sáb 12/12: farmacia-lote-recolhimento-v1
+
+Controle de lote na farmácia: quando a Anvisa manda recolher um lote, a pergunta é para quem ele foi vendido.
+
+Sem o lote registrado na venda, a farmácia não sabe quem avisar nem quanto do lote ainda está na prateleira. Com o registro, a resposta sai em minutos. Vale arrumar isso antes de 2027.
+
+No Prosystem, o lote de cada venda fica registrado, e a tela de venda destaca os produtos pré-vencidos.
+
+Fale com um especialista pelo link da bio.
+
+#gestaodefarmacia #loteevalidade #farmacia #sistemaparafarmacia
+
+**Texto alternativo:** Farmacêutica conferindo um frasco de remédio, com o título: se esse lote for recolhido, você sabe para quem vendeu?
+
+**Conferir antes de publicar:**
+
+- O rótulo do frasco, em inglês, foi desfocado. Confira em tamanho real.
+
+
+### Dom 13/12: frase-padaria-gestao-v1
+
+Gestão de padaria é o que transforma fila no balcão em dinheiro no fim do mês.
+
+Em dezembro, a padaria vende muito. Aproveite para anotar quais produtos puxaram a venda e quais deram lucro de verdade. Nem sempre são os mesmos, e essa lista é o começo do planejamento de 2027.
+
+Quer ver o lucro por produto na sua padaria? Fale com um especialista pelo link da bio.
+
+#padaria #gestaodepadaria #panificacao #sistemaparapadaria
+
+**Texto alternativo:** Frase em laranja sobre fundo branco: pão bom vende, gestão boa faz sobrar.
+
+
 ### Seg 14/12: padaria-fechamento-caixa-v1
 
 Sistema para padaria com fechamento de caixa: quando falta dinheiro, você precisa saber onde olhar.
@@ -628,6 +926,29 @@ Entre em 2027 com o caixa conferido todo dia. Fale com um especialista pelo link
 **Conferir antes de publicar:**
 
 - Tela de 2021, sem linha de Pix: pedir captura atual à equipe de produto.
+
+
+### Ter 15/12: padaria-ponto-equipe-v1
+
+Controle de ponto na padaria fica mais importante com a nova jornada, que começa nesta semana: duas folgas e 42 horas.
+
+Com menos horas, cada entrada e saída conta. Ter o ponto no mesmo lugar das vendas ajuda a montar a escala de dezembro e a de 2027.
+
+No Prosystem, o funcionário registra o ponto no login, a loja pode impedir a venda sem ponto registrado, e há relatórios por período. Para as regras da jornada, converse com seu contador e seu sindicato.
+
+Fale com um especialista pelo link da bio.
+
+Foto: Jeremy Keith (CC BY 2.0).
+
+#padaria #controledeponto #escala6x1 #sistemaparapadaria
+
+**Texto alternativo:** Padeira colocando uma assadeira no forno, com o título: a jornada muda nesta semana, o ponto da equipe está no sistema?
+
+**Conferir antes de publicar:**
+
+- Não é consultoria trabalhista e não promete validade legal do ponto: manter a frase do contador e do sindicato.
+- Data da nova jornada: a Fenacon conta 16/12; parte da imprensa fala em 15/12. Por isso "nesta semana".
+- Foto: CC BY 2.0, crédito obrigatório: já está no fim da legenda.
 
 
 ### Qua 16/12: frase-escala-hoje-v2
@@ -646,6 +967,26 @@ Se a escala da sua loja ainda não mudou, converse hoje com seu contador e seu s
 
 - Data: a Fenacon conta 16/12, parte da imprensa fala em 15/12. Se for 15/12, o "hoje" muda.
 - Saiu em azul: peça para os dois segmentos segue o padrão do feed.
+
+
+### Qui 17/12: padaria-lucro-panetone-v1
+
+Lucro do panetone: ele vende muito em dezembro, mas a margem depende de quanto custaram o insumo, a embalagem e a hora de produção.
+
+Faça a conta de um panetone hoje, com o custo de hoje. Se a margem ficou apertada, ainda dá tempo de ajustar o preço ou o tamanho antes da semana do Natal. E guarde o número para o Natal de 2027.
+
+No Prosystem, o relatório de rentabilidade mostra o resultado geral e por produto, com filtro dos que dão lucro ou prejuízo.
+
+Fale com um especialista pelo link da bio.
+
+#padaria #panetone #natal #sistemaparapadaria
+
+**Texto alternativo:** Panetone com açúcar por cima sobre um prato, com o título: panetone vende muito, quanto sobra em cada um?
+
+**Conferir antes de publicar:**
+
+- Foto: CC0 (ver CREDITOS.md).
+- O carrossel de lucro por produto (18/01) usa a mesma função.
 
 
 ### Sex 18/12: padaria-curva-abc-v1
@@ -668,6 +1009,49 @@ Fale com um especialista pelo link da bio.
 - Os números do setor vêm de reportagem; o encarte oficial da ABIP não foi lido.
 
 
+### Sáb 19/12: farmacia-sangria-natal-v1
+
+Sangria de caixa na farmácia no fim de ano: com mais movimento, o dinheiro acumula na gaveta mais rápido do que parece.
+
+No pico, ninguém lembra de tirar o excesso. Defina hoje o valor máximo da gaveta e quem faz a sangria, e entre em 2027 com essa regra.
+
+No Prosystem, o caixa avisa quando chega a um valor e bloqueia as vendas em outro, até que a sangria seja feita.
+
+Fale com um especialista pelo link da bio.
+
+#gestaodefarmacia #sangria #caixa #sistemaparafarmacia
+
+**Texto alternativo:** Aviso do Prosystem: caixa bloqueado, favor efetuar a sangria programada. Título: último sábado antes do Natal, quanto dinheiro tem na sua gaveta?
+
+**Conferir antes de publicar:**
+
+- O carrossel da sangria de 04/12 é de padaria e usa as telas de aviso e registro. Esta peça usa só a tela de bloqueio.
+
+
+### Dom 20/12: padaria-horario-festas-v1
+
+Horário de funcionamento da padaria no Natal: o cliente que chega e encontra a porta fechada não volta tão cedo.
+
+4 lugares para atualizar ainda hoje:
+
+1. Cartaz no balcão e na porta.
+2. Perfil da empresa no Google, com o horário especial de 24, 25, 31 e 1º.
+3. Instagram e status do WhatsApp.
+4. Recado para quem tem encomenda marcada.
+
+E já anote o horário deste ano para repetir o que deu certo em 2027.
+
+Boas festas! Fale com um especialista pelo link da bio.
+
+#padaria #natal #encomendasdenatal #gestaodepadaria
+
+**Texto alternativo:** Cesta de pãezinhos coberta por um pano branco, com o título: véspera de Natal, avise o horário antes da fila.
+
+**Conferir antes de publicar:**
+
+- Sem ferramenta na peça: é dica de rotina.
+
+
 ### Seg 21/12: frase-farmacia-receita-v1
 
 Receita eletrônica na farmácia: foto, digitalização ou PDF feito a partir do papel não vale como receita eletrônica.
@@ -679,6 +1063,26 @@ Marque quem atende no balcão.
 #receitaeletronica #sncr #sngpc #farmacia
 
 **Texto alternativo:** Frase em azul sobre fundo branco: foto de receita não é receita eletrônica.
+
+
+### Ter 22/12: fim-de-ano-3-numeros-v1
+
+Planejamento 2027 para farmácia e padaria começa com três números de 2026: quanto vendeu, quanto sobrou e quanto cada cliente deixou no caixa.
+
+Tire esses números antes das festas e guarde. Em janeiro, eles mostram se a loja cresceu, onde o lucro apertou e qual meta faz sentido para o novo ano.
+
+Na versão Plus do Prosystem, o painel de indicadores mostra o total de vendas, o CMV, a rentabilidade média, o ticket médio e os atendimentos do período.
+
+Voltamos a postar em 3 de janeiro. Boas festas! Fale com um especialista pelo link da bio.
+
+#planejamento2027 #gestaodefarmacia #gestaodepadaria #prosystem
+
+**Texto alternativo:** Mãos digitando em um notebook e os cartões do painel de indicadores do Prosystem com total de vendas, CMV, rentabilidade média, ticket médio, total de atendimentos e média diária de vendas, e o título: antes de fechar o ano, olhe estes números.
+
+**Conferir antes de publicar:**
+
+- Último post antes da pausa (só Natal e Ano Novo até 03/01).
+- Painel de indicadores: só versão Plus. Os valores são fictícios, da base de conhecimento.
 
 
 ### Sex 25/12: natal-v5
@@ -713,6 +1117,26 @@ Obrigado por mais um ano com a gente.
 - Exceção à pausa de 23/12 a 02/01, a pedido da Jessica: deixar agendado.
 
 
+### Dom 03/01: padaria-preco-2027-v1
+
+Preço de venda na padaria em 2027: farinha, energia, embalagem e salários mudaram ao longo de 2026. E o preço do balcão?
+
+Comece o ano refazendo a conta dos dez produtos que mais vendem. Se o custo subiu e o preço ficou, a margem foi embora sem ninguém ver. E o imposto novo, a CBS, começou a valer agora em janeiro: confirme com seu contador.
+
+No Prosystem, a precificação coloca o custo de operar a loja na conta do preço de venda.
+
+Fale com um especialista pelo link da bio.
+
+#padaria #precificacao #gestaodepadaria #sistemaparapadaria
+
+**Texto alternativo:** Pães enrolados crus em uma assadeira perfurada, com o título: 2027 começou, seu preço acompanhou o custo?
+
+**Conferir antes de publicar:**
+
+- Foto do banco local da padaria (banco imagens/padaria), sem licença registrada. Confirmar o direito de uso.
+- A precificação também aparece no carrossel do trigo (11/11).
+
+
 ### Seg 04/01: farmacia-cbs-v1
 
 Reforma tributária na farmácia em 2027: a CBS já está valendo.
@@ -730,6 +1154,26 @@ Fale com um especialista pelo link da bio.
 **Conferir antes de publicar:**
 
 - Confirmar com o produto que o sistema já emite com IBS e CBS antes de publicar: a peça promete isso.
+
+
+### Ter 05/01: avisos-whatsapp-config-v1
+
+Avisos no WhatsApp do sistema da loja: em 2027, você não precisa estar no balcão para saber como foi o dia.
+
+Resumo de vendas, vendas por vendedor, metas, fechamento de caixa, contas a pagar, produtos a vencer, compras, inventário e login. Você escolhe o que recebe e com que frequência: diário, por fechamento ou os dois.
+
+Os avisos fazem parte da versão Plus do Prosystem, para farmácia e padaria.
+
+Fale com um especialista pelo link da bio.
+
+#whatsapp #gestaodefarmacia #gestaodepadaria #prosystem
+
+**Texto alternativo:** Tela de configuração dos avisos do Prosystem por WhatsApp, com resumo de vendas, metas, fechamento de caixa, contas a pagar, produtos a vencer, compras, inventário e login. Título: o que você quer saber sem ligar para a loja?
+
+**Conferir antes de publicar:**
+
+- Só versão Plus.
+- Mockup em notebook ou desktop, nunca em celular.
 
 
 ### Qua 06/01: padaria-dia-de-reis-v1
@@ -789,6 +1233,42 @@ Fale com um especialista pelo link da bio.
 
 - Saldo de 1.096 lojas: abrir a fonte original (IQVIA ou Febrafar) antes de publicar.
 - A tela cita "Drogaria Modelo": só em peça de farmácia.
+
+
+### Sáb 09/01: frase-padaria-cadastro-v1
+
+Cadastro de produtos na padaria virou assunto de dinheiro em 2027: com a reforma tributária, cada item pode ter uma regra diferente de imposto.
+
+Aproveite o movimento menor de janeiro para revisar os produtos que mais vendem: descrição, unidade, preço e classificação fiscal. O que é feito na loja e o que é revenda precisam estar separados.
+
+Confirme as regras com seu contador. Quer ajuda com o cadastro no sistema? Fale com um especialista pelo link da bio.
+
+#reformatributaria #padaria #gestaodepadaria #sistemaparapadaria
+
+**Texto alternativo:** Frase em laranja sobre fundo branco: janeiro é mais calmo, bom mês para arrumar o cadastro.
+
+**Conferir antes de publicar:**
+
+- Não detalhar alíquota nem classificação: a legenda manda ao contador.
+
+
+### Dom 10/01: farmacia-perda-de-vendas-verao-v1
+
+Perda de vendas na farmácia no verão: protetor solar, repelente e hidratação saem rápido, e a falta só aparece quando o cliente já foi embora.
+
+O caixa não registra a venda que não aconteceu. Mas dá para medir: falta do produto, preço da concorrência, problema no pagamento, demora no atendimento. Com o motivo anotado, você ajusta a compra de 2027 pelo que o cliente procurou.
+
+No Prosystem, ao excluir um item, o caixa pede o motivo. O relatório e o gráfico mostram quanto e por que a farmácia deixou de vender.
+
+Fale com um especialista pelo link da bio.
+
+#gestaodefarmacia #perdadevendas #verao #sistemaparafarmacia
+
+**Texto alternativo:** Tela do caixa do Prosystem pedindo o motivo da exclusão do item, com as opções falta do produto, oferta da concorrência, problema no pagamento, tempo de atendimento e consulta de preço. Título: verão, o protetor acabou, o cliente foi para onde?
+
+**Conferir antes de publicar:**
+
+- A padaria recebeu a mesma função em 05/11, com o gráfico. Aqui entra a tela do motivo.
 
 
 ### Seg 11/01: frase-padaria-sobra-v1
@@ -886,6 +1366,45 @@ Salve este post e mostre para quem atende no balcão. Para conhecer nosso sistem
 - Sem ferramenta: não foi confirmada integração do SNCR com o Prosystem.
 
 
+### Sáb 16/01: frase-contador-arquivos-v1
+
+Arquivos fiscais para o contador: todo mês a mesma mensagem pedindo XML, SPED e relatórios. Em 2027, com o imposto novo, a troca de arquivos fica ainda mais frequente.
+
+Combine com a contabilidade, logo no começo do ano, o que ela precisa receber e quando.
+
+No Prosystem Fiscal, os XMLs, o SPED, o Sintegra e os relatórios vão de uma vez para o FTP da contabilidade.
+
+Fale com um especialista pelo link da bio.
+
+#contabilidade #reformatributaria #sistemaparafarmacia #sistemaparapadaria
+
+**Texto alternativo:** Frase em azul sobre fundo branco: seu contador ainda precisa pedir os arquivos? O Prosystem Fiscal envia XML, SPED e relatórios de uma vez.
+
+**Conferir antes de publicar:**
+
+- Depende de a contabilidade ter FTP.
+- Função de artigo de 2020: confirmar com produto se o envio segue assim.
+
+
+### Dom 17/01: padaria-login-ferias-v1
+
+Controle de acesso no caixa da padaria: em janeiro, com gente de férias, é comum alguém usar a senha do colega para não parar o balcão.
+
+O problema aparece depois: um cancelamento, um desconto ou uma diferença no caixa sem saber quem foi. Para 2027, a regra é simples: cada pessoa com o seu login, inclusive quem cobre as férias.
+
+No Prosystem, cada usuário tem os seus acessos, e a auditoria registra quem acessou ou alterou as funções protegidas.
+
+Fale com um especialista pelo link da bio.
+
+#padaria #controledecaixa #gestaodepadaria #sistemaparapadaria
+
+**Texto alternativo:** Croissants dourados em uma assadeira, com o título: férias na equipe, senha emprestada no caixa?
+
+**Conferir antes de publicar:**
+
+- A foto mostra o que a padaria vende, não o caixa: é a mesma lógica das outras peças de foto com painel.
+
+
 ### Seg 18/01: carrossel-padaria-lucro-por-produto-v2
 
 Margem de lucro na padaria: passado o fim de ano, qual produto vendeu muito e não deixou lucro?
@@ -962,6 +1481,25 @@ Foto: Cristine Rochol / PMPA.
 - Foto real de uma farmácia distrital de Porto Alegre (Cristine Rochol / PMPA), licença que exige o crédito (já está na legenda). Não há autorização da pessoa fotografada.
 
 
+### Qui 21/01: frase-farmacia-biometria-v1
+
+Biometria no sistema da farmácia: quando a senha do gerente circula pelo balcão, o desconto e o cancelamento ficam sem dono.
+
+A digital não se empresta. Com ela, a farmácia sabe quem entrou no sistema e quem autorizou cada operação sensível. Uma mudança simples para começar 2027 com o balcão mais seguro.
+
+No Prosystem, o acesso e as liberações podem ser feitos por biometria.
+
+Fale com um especialista pelo link da bio.
+
+#gestaodefarmacia #biometria #seguranca #sistemaparafarmacia
+
+**Texto alternativo:** Frase em azul sobre fundo branco: senha emprestada é assinatura emprestada. No Prosystem, a liberação pode ser feita com a digital de quem autoriza.
+
+**Conferir antes de publicar:**
+
+- Novidade do artigo de 20/10/2026, sem tela na base. Confirmar com o Comercial se o leitor biométrico é vendido junto.
+
+
 ### Sex 22/01: padaria-entregas-v1
 
 Sistema para padaria e lanchonete com entrega: você sabe o que saiu, com quem está e o que falta acertar?
@@ -984,6 +1522,46 @@ Fale com um especialista pelo link da bio.
 - A tela diz "Ticket médio". Se ficar legível no mockup, é a palavra difícil da peça.
 
 
+### Sáb 23/01: frase-farmacia-uso-continuo-v1
+
+Cliente de uso contínuo é o cliente que volta todo mês, se a farmácia lembrar dele primeiro.
+
+Quem toma remédio todo dia raramente conta os comprimidos. Quando acaba, compra onde estiver mais perto. Avisar antes é cuidado com o cliente e venda garantida em 2027.
+
+No Prosystem, o uso contínuo calcula a próxima compra pela posologia e avisa o balcão nos dias anteriores.
+
+Fale com um especialista pelo link da bio.
+
+#usocontinuo #gestaodefarmacia #fidelizacao #sistemaparafarmacia
+
+**Texto alternativo:** Frase em azul sobre fundo branco: o cliente não lembra que o remédio vai acabar, a sua farmácia pode lembrar.
+
+**Conferir antes de publicar:**
+
+- O uso de dado de saúde do cliente exige cuidado com a LGPD: a legenda não fala em mensagem ao cliente.
+- O carrossel de uso contínuo saiu em 11/12.
+
+
+### Dom 24/01: notas-sefaz-cnpj-v1
+
+Manifesto de nota fiscal: toda nota emitida contra o seu CNPJ fica registrada na SEFAZ, mesmo que a mercadoria nunca tenha chegado.
+
+Sem olhar a lista, uma nota indevida passa sem ninguém saber, e digitar nota por nota toma tempo. Em 2027, com o imposto novo, a nota de entrada pesa ainda mais na conta.
+
+No Prosystem Gerencial, você vê as notas da SEFAZ, faz o manifesto e dá entrada no sistema pelo XML.
+
+Fale com um especialista pelo link da bio.
+
+#notafiscal #sefaz #gestaodefarmacia #gestaodepadaria
+
+**Texto alternativo:** Mão sobre um teclado iluminado, com o título: tem nota no seu CNPJ que você nem viu?
+
+**Conferir antes de publicar:**
+
+- Função de artigo de 2020: confirmar a tela e o fluxo atuais com produto.
+- Crédito de imposto e prazos de manifesto ficam com o contador: a legenda não promete.
+
+
 ### Seg 25/01: frase-padaria-registro-sobras-v2
 
 Controle de sobras na padaria começa com um caderno, uma balança e cinco minutos no fim do dia.
@@ -1002,6 +1580,101 @@ Marque o dono da padaria.
 
 - O artigo de sobras precisa estar publicado no blog antes desta data (a peça de 11/01 já anuncia que ele está no ar).
 - O termo "controle de sobras na padaria" não veio das sugestões do Google: conferir o volume.
+
+
+### Ter 26/01: farmacia-fidelimax-v1
+
+Programa de fidelidade para farmácia: desconto para todo mundo não cria motivo para voltar. Ponto e cashback, sim.
+
+O cliente que junta pontos pensa na sua farmácia antes da próxima compra. E você passa a saber quem compra, com que frequência e o que leva. Bom ponto de partida para 2027.
+
+No Prosystem, a integração com o Fidelimax pontua o cliente e faz o cashback direto no caixa.
+
+Fale com um especialista pelo link da bio.
+
+#fidelizacao #cashback #gestaodefarmacia #sistemaparafarmacia
+
+**Texto alternativo:** Mensagem do Prosystem no caixa: cliente pontuado com sucesso no programa Fidelimax. Título: seu cliente volta por hábito ou porque você deu um motivo?
+
+**Conferir antes de publicar:**
+
+- Fidelimax é parceiro: confirmar com o Comercial se a integração segue ativa e se pode ser citado.
+- A tela é pequena (374 px) e foi ampliada 2x: o texto também aparece ampliado logo abaixo.
+
+
+### Qua 27/01: frase-padaria-contagem-v1
+
+Inventário de estoque na padaria: com o movimento menor de janeiro, é a hora de contar o que tem de verdade na loja.
+
+Comece pelos insumos que mais pesam no custo: farinha, gordura, embalagem e bebidas de revenda. A diferença entre o sistema e a prateleira mostra onde está a perda e deixa a compra de 2027 mais certa.
+
+Quer fazer o balanço com o sistema? Fale com um especialista pelo link da bio.
+
+#padaria #inventario #estoque #gestaodepadaria
+
+**Texto alternativo:** Frase em laranja sobre fundo branco: quem conta o estoque em janeiro compra melhor o ano todo.
+
+**Conferir antes de publicar:**
+
+- Sem citar o app ContEstoque: não confirmado se segue disponível.
+
+
+### Qui 28/01: suporte-troca-de-sistema-v1
+
+Trocar o sistema da farmácia ou da padaria dá receio: e se o caixa parar? E se ninguém atender?
+
+Na ProSystem, o suporte é humanizado, com especialistas técnicos, das 7h às 22h, inclusive sábado e domingo. O primeiro contato é pelo WhatsApp, com áudio, texto ou print da tela. São mais de 600 clientes e mais de 16 anos de experiência.
+
+Está pensando em trocar de sistema em 2027? Fale com um especialista pelo link da bio.
+
+#sistemaparafarmacia #sistemaparapadaria #suporte #prosystem
+
+**Texto alternativo:** Mãos digitando em um teclado sobre a mesa, com o título: trocar de sistema dá medo, o que pesa é quem te atende depois.
+
+**Conferir antes de publicar:**
+
+- Provas usadas: +600 clientes e +16 anos (site) e o horário do suporte informado pela Jessica.
+
+
+### Sex 29/01: padaria-carnaval-producao-v1
+
+Planejamento da padaria no Carnaval: tem cidade que esvazia e tem bairro que lota. O que aconteceu na sua padaria no Carnaval do ano passado?
+
+Olhe as vendas dos dias de folia em 2026 antes de montar a escala e a produção de 2027. Assim você não sobra pão na terça nem falta no sábado.
+
+Na versão Plus do Prosystem, o painel de indicadores filtra as vendas por período, dia a dia.
+
+Fale com um especialista pelo link da bio.
+
+#padaria #carnaval #producao #sistemaparapadaria
+
+**Texto alternativo:** Padeiro e padeira sorrindo, com bandejas de massa e de folhados, com o título: fevereiro tem Carnaval, a produção já está planejada?
+
+**Conferir antes de publicar:**
+
+- Foto do banco local da padaria (banco imagens/padaria), sem licença registrada. Confirmar o direito de uso.
+- Modelos posando: o caderno prefere pessoas em ação e com aparência brasileira. Trocar a foto se preferir.
+- Carnaval de 2027: 6 a 10 de fevereiro.
+
+
+### Sáb 30/01: farmacia-pre-vencidos-v1
+
+Produtos vencidos na farmácia são prejuízo certo: não vendem, ocupam espaço e ainda dão trabalho para descartar.
+
+O produto perto de vencer ainda tem saída, se o balcão souber dele a tempo. Uma conferência mensal da validade, com a lista do que vence nos próximos 60 dias, já muda o resultado de 2027.
+
+No Prosystem, a tela de venda destaca os produtos pré-vencidos e o lote de cada venda fica registrado.
+
+Fale com um especialista pelo link da bio.
+
+#gestaodefarmacia #validade #estoque #sistemaparafarmacia
+
+**Texto alternativo:** Prateleiras de farmácia desfocadas, com o título: perto de vencer, ainda vende, vencido, é prejuízo.
+
+**Conferir antes de publicar:**
+
+- A peça de lote (12/12) usa a mesma função, com outro foco.
+- Não sugerir desconto em medicamento perto do vencimento sem checar a regra sanitária.
 
 
 ### Dom 31/01: frase-janeiro-roxo-v2

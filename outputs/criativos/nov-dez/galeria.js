@@ -1,5 +1,6 @@
 // Monta a página de revisão das peças de 04/11/2026 a 31/01/2027, com as imagens embutidas e a legenda de cada post.
-// Uso: node outputs/criativos/nov-dez/galeria.js <arquivo de saída .html>
+// Uso: node outputs/criativos/nov-dez/galeria.js <arquivo de saída .html> [pendentes]
+// Com "pendentes", a página mostra só as peças que ainda não foram aprovadas (sem travada).
 const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
@@ -9,17 +10,18 @@ const AQUI = __dirname;
 const RAIZ = path.join(AQUI, '..', '..', '..');
 const saida = process.argv[2];
 if (!saida) throw new Error('informe o arquivo de saída');
+const soPendentes = process.argv[3] === 'pendentes';
 
 const ordem = (d) => (d.data.slice(7, 9) === '01' ? '13' : d.data.slice(7, 9)) + d.data.slice(4, 6);
 const telas = (p) => [...new Set([p.tela, p.capa && p.capa.tela, p.sol && p.sol.tela, p.fim && p.fim.tela, ...(p.itens || []).map((i) => i.tela)].filter(Boolean))]
   .filter((t) => !fs.existsSync(path.join(AQUI, 'mockups', t + '.png')));
 const legSuporte = fs.readFileSync(path.join(RAIZ, 'outputs/criativos/suporte/legendas.md'), 'utf8').split('## carrossel-farmacia-suporte-v4')[1].split('## Texto alternativo')[0].trim();
 
-const posts = [...P.filter((p) => !p.pagina), ...PRONTAS].sort((a, b) => ordem(a).localeCompare(ordem(b))).map((p) => {
+const posts = [...P.filter((p) => !p.pagina && (!soPendentes || !p.travada)), ...(soPendentes ? [] : PRONTAS)].sort((a, b) => ordem(a).localeCompare(ordem(b))).map((p) => {
   let arqs;
   if (p.arq) arqs = p.arq.includes('<página>') ? [1, 2, 3, 4, 5, 6].map((i) => p.arq.replace('<página>', i)) : [p.arq];
   else arqs = p.tipo === 'v2' || p.tipo === 'v3' ? [1, 2, 3, 4, 5, 6].map((i) => `outputs/criativos/nov-dez/pecas/${p.id}-${i}.png`) : [`outputs/criativos/nov-dez/pecas/${p.id}.png`];
-  return { data: p.data, seg: p.seg, formato: p.formato, nome: p.arq ? p.arq.split('/').pop().replace('-<página>.png', '').replace('.png', '') : p.id, nova: !!p.nova, faltam: p.arq ? [] : telas(p), nota: p.nota || '', cap: p.cap ? `${p.cap}\n\n${p.tags}` : legSuporte, conferir: p.conferir || [], arqs };
+  return { data: p.data, seg: p.seg, formato: p.formato, nome: p.arq ? p.arq.split('/').pop().replace('-<página>.png', '').replace('.png', '') : p.id, nova: !!p.nova, faltam: p.arq || p.semMockup ? [] : telas(p), nota: p.nota || '', cap: p.cap ? `${p.cap}\n\n${p.tags}` : legSuporte, conferir: p.conferir || [], arqs };
 });
 
 // Miniaturas em JPEG, feitas com Pillow, para a página caber no limite de tamanho.
@@ -46,7 +48,7 @@ const cartao = (p, i) => `<article class="post" data-seg="${p.seg}" data-sit="${
   </details></article>`;
 const nFalta = posts.filter((p) => p.faltam.length).length;
 
-const html = `<title>Criativos Nov a Jan</title>
+const html = `<title>${soPendentes ? 'Um post por dia' : 'Criativos Nov a Jan'}</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&display=swap">
 <style>
@@ -79,8 +81,9 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;margin:10px 0;max-w
 details ul{margin:12px 0 0;padding-left:18px;color:var(--apoio);max-width:72ch}
 </style>
 <main class="fl">
-<h1>Criativos de <b>04/11 a 31/01</b></h1>
-<p class="lead">São ${posts.length} posts na ordem do planejamento, com pausa de 23/12 a 02/01, exceto Natal e Ano Novo. ${nFalta} mostram a tela em um cartão provisório e aguardam o seu mockup. Nada foi publicado.</p>
+${soPendentes ? `<h1>Um post <b>por dia</b></h1>
+<p class="lead">São ${posts.length} posts novos para os dias que estavam sem publicação, de 05/11 a 30/01, inclusive sábado e domingo. A pausa de 23/12 a 02/01 continua, só com Natal e Ano Novo. As telas ficam no cartão, como nas peças já aprovadas. Nada foi publicado.</p>` : `<h1>Criativos de <b>04/11 a 31/01</b></h1>
+<p class="lead">São ${posts.length} posts na ordem do planejamento, com pausa de 23/12 a 02/01, exceto Natal e Ano Novo. ${nFalta} mostram a tela em um cartão provisório e aguardam o seu mockup. Nada foi publicado.</p>`}
 <div class="filtros" id="filtros">
 <button type="button" data-f="" aria-pressed="true">Todos</button><button type="button" data-f="Farmácia" aria-pressed="false">Farmácia</button><button type="button" data-f="Padaria" aria-pressed="false">Padaria</button><button type="button" data-f="falta" aria-pressed="false">Aguardam mockup</button>
 </div>
