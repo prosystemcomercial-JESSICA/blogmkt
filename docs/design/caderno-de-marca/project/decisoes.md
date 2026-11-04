@@ -36,6 +36,19 @@
 | Hero com Modelo | Foi aprovado em agosto com azul-escuro. O feed passou a ser o padrão | Fora dos modelos novos | Manter nos anúncios já definidos |
 | Endereço do site | `prosystemnet.com.br` redireciona para `prosystemnet.com`. O briefing de agosto usa `.com` | `prosystemnet.com.br` | A confirmar |
 
+## Formato "foto com degradê" (04/11/2026)
+
+A Jessica gostou das postagens do Google (`outputs/criativos/google-nov-jan/`). O formato tem foto cheia no alto e degradê azul (farmácia ou os dois) ou laranja (padaria), que cobre a metade de baixo. Embaixo ficam o título em Montserrat 300/800, a faixa de apoio e a pílula. Os losangos ficam nos cantos.
+
+- **Onde já é usado:**
+  - postagens do Google, em 1200×900;
+  - stories do Instagram, em 1080×1920, gerados por `outputs/criativos/google-nov-jan/stories.js`.
+- **No feed:** passa a ser um formato do feed a partir de fevereiro de 2027, em 1080×1350. As peças de novembro a janeiro já aprovadas não mudam.
+- **Regras:**
+  - uma foto por peça, sem repetir na mesma semana;
+  - rosto e assunto da foto no terço de cima, porque o degradê cobre a metade de baixo;
+  - no story, nada nos 250 px do alto nem nos 340 px de baixo.
+
 ## Outras pendências
 
 - **Jessica:** revisar os textos de exemplo dos carrosséis.

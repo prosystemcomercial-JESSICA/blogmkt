@@ -93,3 +93,27 @@ Leia o documento de aprovação, aplique as notas da Jessica em `pecas-dias-extr
 ### Pendente
 - Os itens de "Para confirmar antes de publicar" seguem abertos. Uma legenda mudada depois disso precisa ser trocada também em `agenda.json`, onde a legenda fica copiada.
 - O texto alternativo não vai pela API.
+
+---
+
+## Continuação (04/11/2026): stories no visual do Google
+
+### Pedido
+"tem algo que podemos aproveitar nas postagens que programamos no google, gostei bastante daqueles posts", e depois "faça da forma mais interessante que achar".
+
+### Feito
+- `outputs/criativos/google-nov-jan/stories.js` transforma as postagens do Google em stories de 1080×1920, no mesmo visual. As imagens ficam em `stories/`.
+  - Onde o Google manda para o blog, a pílula diz "link na bio".
+  - O post de avaliação diz "Procure ProSystem no Google".
+- **36 stories** foram para `instagram/agenda.json` (`story-google-<id>`, `tipo: stories`), às 17h do mesmo dia da postagem do Google, de 05/11 a 30/01. As imagens estão em `instagram/midia/stories-google/`.
+- Pausa igual à do feed: ficaram de fora 23/12 (suporte nas festas), 29/12 (biometria) e 02/01 (planejamento). Ficaram o Natal (25/12) e o Feliz 2027 (31/12).
+- O formato "foto com degradê" foi registrado em `docs/design/caderno-de-marca/project/decisoes.md` e vai para o feed a partir de fevereiro.
+- Página de revisão: https://claude.ai/artifact/MtYZisF1EKc3gEZrH2YmbC
+
+### Verificado
+- O gerador conferiu as zonas seguras em todos os stories ("sem problema").
+- Vi todos em folhas de contato e dois em tamanho maior.
+- `publicar.mjs --teste`: nenhum arquivo faltando. Nenhum horário coincide com outro post: os destaques saem às 10h e o feed às 12h30.
+
+### Pendente
+- A Jessica ver os stories na página de revisão. O primeiro sai em 05/11, às 17h.

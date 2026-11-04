@@ -59,6 +59,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-reforma-tributaria-farmacia-2027",
+    "quando": "2026-11-05T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Qui 05/11.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-11-05-reforma-tributaria-farmacia-2027.jpg"
+    ]
+  },
+  {
     "id": "farmacia-sugestao-de-compras-v1",
     "quando": "2026-11-06T12:30:00-03:00",
     "tipo": "imagem",
@@ -69,6 +79,16 @@
     "legenda": "Compras na farmácia para dezembro: o pedido feito de memória costuma faltar no que gira e sobrar no que fica parado.\n\nO fim de ano traz mais movimento e menos tempo para montar pedido. Comprar pelo histórico de venda deixa o estoque pronto para as festas e o caixa mais leve para começar 2027.\n\nNo Prosystem, a sugestão de compras usa o estoque mínimo e máximo, a média de venda, a curva e os dias sem giro, com as encomendas na mesma tela. Ela funciona melhor com o estoque em dia.\n\nFale com um especialista pelo link da bio.",
     "tags": "#gestaodefarmacia #comprasnafarmacia #estoque #sistemaparafarmacia",
     "status": "agendado"
+  },
+  {
+    "id": "story-google-sugestao-de-compras-farmacia",
+    "quando": "2026-11-06T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Sex 06/11.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-11-06-sugestao-de-compras-farmacia.jpg"
+    ]
   },
   {
     "id": "destaque-segmentos-v1-1",
@@ -91,6 +111,16 @@
     "legenda": "Balança da padaria em dia é dinheiro certo no caixa: desde 2006, o pão francês é vendido por quilo, e a balança decide o preço de cada saco.\n\n3 cuidados para o sábado de pão:\n\n1. A balança comercial passa por verificação periódica do Inmetro, em geral uma vez por ano. Guarde o comprovante.\n2. Deixe o preço do quilo visível para o cliente.\n3. Confira se o preço do quilo no caixa é o mesmo da etiqueta.\n\nAproveite e anote na agenda de 2027 a data da próxima verificação.\n\nFale com um especialista pelo link da bio.\n\nFoto: Roosewelt Pinheiro/Agência Brasil (CC BY 3.0 BR).",
     "tags": "#padaria #paofrances #gestaodepadaria #panificacao",
     "status": "agendado"
+  },
+  {
+    "id": "story-google-perda-de-vendas-padaria",
+    "quando": "2026-11-07T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Sáb 07/11.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-11-07-perda-de-vendas-padaria.jpg"
+    ]
   },
   {
     "id": "frase-farmacia-falta-de-produto-v1",
@@ -154,6 +184,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-prosystem-sistema-farmacia-padaria",
+    "quando": "2026-11-10T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Ter 10/11.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-11-10-prosystem-sistema-farmacia-padaria.jpg"
+    ]
+  },
+  {
     "id": "carrossel-padaria-trigo-v1",
     "quando": "2026-11-11T12:30:00-03:00",
     "tipo": "carrossel",
@@ -193,6 +233,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-preco-pao-frances-ficha-tecnica",
+    "quando": "2026-11-12T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Qui 12/11.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-11-12-preco-pao-frances-ficha-tecnica.jpg"
+    ]
+  },
+  {
     "id": "canetas-emagrecedoras-v2",
     "quando": "2026-11-13T12:30:00-03:00",
     "tipo": "imagem",
@@ -225,6 +275,16 @@
     "legenda": "Uso contínuo na farmácia: hoje, Dia Mundial do Diabetes, vale olhar para quem depende do remédio todo mês.\n\nQuem usa medicamento de uso contínuo nem sempre avisa quando vai comprar de novo. Lembrar da reposição é um cuidado com o cliente, e é também o que mantém esse cliente na sua loja em 2027.\n\nNo Prosystem, um relatório mostra quais clientes de uso contínuo devem comprar em cada período. Contato com o cliente, só com a autorização dele.\n\nO tratamento é sempre com o médico. Fale com um especialista pelo link da bio.",
     "tags": "#diamundialdodiabetes #usocontinuo #farmacia #sistemaparafarmacia",
     "status": "agendado"
+  },
+  {
+    "id": "story-google-cartao-fidelidade-padaria",
+    "quando": "2026-11-14T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Sáb 14/11.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-11-14-cartao-fidelidade-padaria.jpg"
+    ]
   },
   {
     "id": "frase-suporte-domingo-feriado-v1",
@@ -283,6 +343,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-pix-fechamento-caixa-padaria",
+    "quando": "2026-11-17T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Ter 17/11.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-11-17-pix-fechamento-caixa-padaria.jpg"
+    ]
+  },
+  {
     "id": "farmacia-quem-liberou-desconto-v1",
     "quando": "2026-11-18T12:30:00-03:00",
     "tipo": "imagem",
@@ -317,6 +387,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-black-friday-farmacia-desconto-margem",
+    "quando": "2026-11-19T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Qui 19/11.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-11-19-black-friday-farmacia-desconto-margem.jpg"
+    ]
+  },
+  {
     "id": "padaria-producao-dezembro-v1",
     "quando": "2026-11-20T12:30:00-03:00",
     "tipo": "imagem",
@@ -349,6 +429,16 @@
     "legenda": "Sistema para farmácia ajuda a comprar certo: hoje é o Dia Nacional de Combate à Dengue, e a pergunta do dono é se o repelente vai faltar na prateleira.\n\nPedido feito de memória costuma errar para os dois lados: falta o que sai, sobra o que para. Para entrar em 2027 comprando melhor, vale olhar os números antes de fechar o pedido.\n\nA Sugestão de compras do Prosystem usa estoque mínimo e máximo, média de venda, curva e dias sem giro na mesma tela. Ela depende de estoque correto, por isso a contagem vem primeiro.\n\nFale com um especialista pelo link da bio.",
     "tags": "#combateadengue #gestaodefarmacia #comprasnafarmacia #sistemaparafarmacia",
     "status": "agendado"
+  },
+  {
+    "id": "story-google-auditoria-desconto-farmacia",
+    "quando": "2026-11-21T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Sáb 21/11.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-11-21-auditoria-desconto-farmacia.jpg"
+    ]
   },
   {
     "id": "frase-antimicrobianos-v2",
@@ -390,6 +480,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-metas-de-vendas-farmacia",
+    "quando": "2026-11-23T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Seg 23/11.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-11-23-metas-de-vendas-farmacia.jpg"
+    ]
+  },
+  {
     "id": "destaque-depoimentos-v1-2",
     "quando": "2026-11-24T10:00:00-03:00",
     "tipo": "stories",
@@ -429,6 +529,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-encomendas-natal-padaria",
+    "quando": "2026-11-25T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Qua 25/11.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-11-25-encomendas-natal-padaria.jpg"
+    ]
+  },
+  {
     "id": "destaque-ferramentas-v1-6",
     "quando": "2026-11-26T10:00:00-03:00",
     "tipo": "stories",
@@ -461,6 +571,16 @@
     "legenda": "Margem de lucro na farmácia: na Black Friday, a venda sobe, mas é o que sobra que paga as contas de 2027.\n\nHoje, repare em quanto você está vendendo e em quanto está ficando.\n\nQuanto sobrou da sua última promoção? Se a resposta demorou, fale com um especialista pelo link da bio.",
     "tags": "#blackfriday #margemdelucro #gestaodefarmacia #farmacia",
     "status": "agendado"
+  },
+  {
+    "id": "story-google-black-friday-hoje-farmacia",
+    "quando": "2026-11-27T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Sex 27/11.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-11-27-black-friday-hoje-farmacia.jpg"
+    ]
   },
   {
     "id": "destaque-quem-somos-v1-2",
@@ -541,6 +661,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-entregas-dezembro-padaria",
+    "quando": "2026-12-01T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Ter 01/12.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-12-01-entregas-dezembro-padaria.jpg"
+    ]
+  },
+  {
     "id": "farmacia-escala-5x2-v2",
     "quando": "2026-12-02T12:30:00-03:00",
     "tipo": "imagem",
@@ -575,6 +705,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-sangria-caixa-dezembro",
+    "quando": "2026-12-03T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Qui 03/12.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-12-03-sangria-caixa-dezembro.jpg"
+    ]
+  },
+  {
     "id": "carrossel-padaria-sangria-v2",
     "quando": "2026-12-04T12:30:00-03:00",
     "tipo": "carrossel",
@@ -602,6 +742,16 @@
     "legenda": "Recebimento de mercadoria na padaria: em dezembro chega mais farinha, mais embalagem e mais caixa, e a conferência fica na correria.\n\nQuem recebe confere pela nota ou pela caixa? Se a pessoa já sabe o que a nota diz, ela tende a confirmar. A conferência às cegas, contando sem ver a nota, pega a diferença na hora.\n\nNo Prosystem, a conferência é feita sem mostrar a nota: o sistema aponta as divergências e não confirma o estoque enquanto houver diferença. Um bom hábito para levar para 2027.\n\nFale com um especialista pelo link da bio.",
     "tags": "#padaria #recebimento #estoque #sistemaparapadaria",
     "status": "agendado"
+  },
+  {
+    "id": "story-google-recebimento-mercadoria-padaria",
+    "quando": "2026-12-05T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Sáb 05/12.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-12-05-recebimento-mercadoria-padaria.jpg"
+    ]
   },
   {
     "id": "frase-farmacia-estoque-parado-v1",
@@ -655,6 +805,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-controle-de-validade-farmacia",
+    "quando": "2026-12-08T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Ter 08/12.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-12-08-controle-de-validade-farmacia.jpg"
+    ]
+  },
+  {
     "id": "padaria-dia-da-culinaria-v2",
     "quando": "2026-12-09T12:30:00-03:00",
     "tipo": "imagem",
@@ -689,6 +849,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-kits-natal-padaria-combo",
+    "quando": "2026-12-10T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Qui 10/12.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-12-10-kits-natal-padaria-combo.jpg"
+    ]
+  },
+  {
     "id": "carrossel-farmacia-uso-continuo-v3",
     "quando": "2026-12-11T12:30:00-03:00",
     "tipo": "carrossel",
@@ -716,6 +886,16 @@
     "legenda": "Controle de lote na farmácia: quando a Anvisa manda recolher um lote, a pergunta é para quem ele foi vendido.\n\nSem o lote registrado na venda, a farmácia não sabe quem avisar nem quanto do lote ainda está na prateleira. Com o registro, a resposta sai em minutos. Vale arrumar isso antes de 2027.\n\nNo Prosystem, o lote de cada venda fica registrado, e a tela de venda destaca os produtos pré-vencidos.\n\nFale com um especialista pelo link da bio.",
     "tags": "#gestaodefarmacia #loteevalidade #farmacia #sistemaparafarmacia",
     "status": "agendado"
+  },
+  {
+    "id": "story-google-estoque-parado-farmacia",
+    "quando": "2026-12-12T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Sáb 12/12.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-12-12-estoque-parado-farmacia.jpg"
+    ]
   },
   {
     "id": "frase-padaria-gestao-v1",
@@ -764,6 +944,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-fluxo-de-caixa-janeiro-padaria",
+    "quando": "2026-12-15T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Ter 15/12.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-12-15-fluxo-de-caixa-janeiro-padaria.jpg"
+    ]
+  },
+  {
     "id": "frase-escala-hoje-v2",
     "quando": "2026-12-16T12:30:00-03:00",
     "tipo": "imagem",
@@ -798,6 +988,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-fechamento-caixa-whatsapp",
+    "quando": "2026-12-17T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Qui 17/12.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-12-17-fechamento-caixa-whatsapp.jpg"
+    ]
+  },
+  {
     "id": "padaria-curva-abc-v1",
     "quando": "2026-12-18T12:30:00-03:00",
     "tipo": "imagem",
@@ -822,6 +1022,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-escala-fim-de-ano-farmacia",
+    "quando": "2026-12-19T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Sáb 19/12.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-12-19-escala-fim-de-ano-farmacia.jpg"
+    ]
+  },
+  {
     "id": "padaria-horario-festas-v1",
     "quando": "2026-12-20T12:30:00-03:00",
     "tipo": "imagem",
@@ -844,6 +1054,16 @@
     "legenda": "Receita eletrônica na farmácia: foto, digitalização ou PDF feito a partir do papel não vale como receita eletrônica.\n\nE tem mais uma dúvida comum. O SNCR não substitui o SNGPC: um cuida do número e do uso da receita, o outro segue na escrituração. A transição do SNCR vai até 3 de março de 2027.\n\nMarque quem atende no balcão.",
     "tags": "#receitaeletronica #sncr #sngpc #farmacia",
     "status": "agendado"
+  },
+  {
+    "id": "story-google-horario-fim-de-ano-padaria",
+    "quando": "2026-12-21T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Seg 21/12.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-12-21-horario-fim-de-ano-padaria.jpg"
+    ]
   },
   {
     "id": "destaque-ferramentas-v1-10",
@@ -890,6 +1110,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-feliz-natal-prosystem",
+    "quando": "2026-12-25T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Sex 25/12.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-12-25-feliz-natal-prosystem.jpg"
+    ]
+  },
+  {
     "id": "destaque-ferramentas-v1-12",
     "quando": "2026-12-29T10:00:00-03:00",
     "tipo": "stories",
@@ -907,6 +1137,16 @@
     "nota": "Destaque ferramentas, story 13. Depois a Jessica adiciona ao destaque pelo app.",
     "midias": [
       "instagram/midia/destaques/destaque-ferramentas-v1-13.jpg"
+    ]
+  },
+  {
+    "id": "story-google-feliz-2027-prosystem",
+    "quando": "2026-12-31T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Qui 31/12.",
+    "midias": [
+      "instagram/midia/stories-google/story-2026-12-31-feliz-2027-prosystem.jpg"
     ]
   },
   {
@@ -968,6 +1208,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-falta-de-produto-verao-farmacia",
+    "quando": "2027-01-05T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Ter 05/01.",
+    "midias": [
+      "instagram/midia/stories-google/story-2027-01-05-falta-de-produto-verao-farmacia.jpg"
+    ]
+  },
+  {
     "id": "padaria-dia-de-reis-v1",
     "quando": "2027-01-06T12:30:00-03:00",
     "tipo": "imagem",
@@ -1002,6 +1252,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-simples-nacional-2027-ibs-cbs",
+    "quando": "2027-01-07T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Qui 07/01.",
+    "midias": [
+      "instagram/midia/stories-google/story-2027-01-07-simples-nacional-2027-ibs-cbs.jpg"
+    ]
+  },
+  {
     "id": "farmacia-mercado-2027-v1",
     "quando": "2027-01-08T12:30:00-03:00",
     "tipo": "imagem",
@@ -1024,6 +1284,16 @@
     "legenda": "Cadastro de produtos na padaria virou assunto de dinheiro em 2027: com a reforma tributária, cada item pode ter uma regra diferente de imposto.\n\nAproveite o movimento menor de janeiro para revisar os produtos que mais vendem: descrição, unidade, preço e classificação fiscal. O que é feito na loja e o que é revenda precisam estar separados.\n\nConfirme as regras com seu contador. Quer ajuda com o cadastro no sistema? Fale com um especialista pelo link da bio.",
     "tags": "#reformatributaria #padaria #gestaodepadaria #sistemaparapadaria",
     "status": "agendado"
+  },
+  {
+    "id": "story-google-farmacia-independente-2027",
+    "quando": "2027-01-09T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Sáb 09/01.",
+    "midias": [
+      "instagram/midia/stories-google/story-2027-01-09-farmacia-independente-2027.jpg"
+    ]
   },
   {
     "id": "farmacia-perda-de-vendas-verao-v1",
@@ -1072,6 +1342,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-sobra-de-pao-padaria",
+    "quando": "2027-01-12T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Ter 12/01.",
+    "midias": [
+      "instagram/midia/stories-google/story-2027-01-12-sobra-de-pao-padaria.jpg"
+    ]
+  },
+  {
     "id": "frase-janeiro-branco-v1",
     "quando": "2027-01-13T12:30:00-03:00",
     "tipo": "imagem",
@@ -1106,6 +1386,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-sncr-receita-eletronica-controlados",
+    "quando": "2027-01-14T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Qui 14/01.",
+    "midias": [
+      "instagram/midia/stories-google/story-2027-01-14-sncr-receita-eletronica-controlados.jpg"
+    ]
+  },
+  {
     "id": "carrossel-farmacia-sncr-v2",
     "quando": "2027-01-15T12:30:00-03:00",
     "tipo": "carrossel",
@@ -1135,6 +1425,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-arquivos-contador-padaria",
+    "quando": "2027-01-16T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Sáb 16/01.",
+    "midias": [
+      "instagram/midia/stories-google/story-2027-01-16-arquivos-contador-padaria.jpg"
+    ]
+  },
+  {
     "id": "padaria-login-ferias-v1",
     "quando": "2027-01-17T12:30:00-03:00",
     "tipo": "imagem",
@@ -1162,6 +1462,16 @@
     "legenda": "Margem de lucro na padaria: passado o fim de ano, qual produto vendeu muito e não deixou lucro?\n\nO movimento de dezembro esconde esse problema. Começar 2027 sabendo o que sustenta a loja muda o preço, a produção e a compra.\n\nNo Prosystem, o relatório mostra o lucro geral e por produto, e dá para filtrar quem ficou no positivo e quem ficou no negativo.\n\nQuer ver na sua padaria? Fale com um especialista pelo link da bio.",
     "tags": "#margemdelucro #padaria #gestaodepadaria #sistemaparapadaria",
     "status": "agendado"
+  },
+  {
+    "id": "story-google-lucro-por-produto-padaria",
+    "quando": "2027-01-18T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Seg 18/01.",
+    "midias": [
+      "instagram/midia/stories-google/story-2027-01-18-lucro-por-produto-padaria.jpg"
+    ]
   },
   {
     "id": "destaque-ferramentas-v1-17",
@@ -1203,6 +1513,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-dia-do-farmaceutico",
+    "quando": "2027-01-20T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Qua 20/01.",
+    "midias": [
+      "instagram/midia/stories-google/story-2027-01-20-dia-do-farmaceutico.jpg"
+    ]
+  },
+  {
     "id": "destaque-quem-somos-v1-3",
     "quando": "2027-01-21T10:00:00-03:00",
     "tipo": "stories",
@@ -1235,6 +1555,16 @@
     "legenda": "Sistema para padaria e lanchonete com entrega: você sabe o que saiu, com quem está e o que falta acertar?\n\nQuando a entrega fica no papel, o dinheiro volta depois, e ninguém confere direito. Em 2027, cada venda vai contar mais.\n\nNo Prosystem, a Gestão de entregas controla a saída e a baixa, liga tudo ao fechamento e mostra relatórios por período e por entregador.\n\nFale com um especialista pelo link da bio.",
     "tags": "#delivery #padaria #gestaodepadaria #sistemaparapadaria",
     "status": "agendado"
+  },
+  {
+    "id": "story-google-avaliacao-prosystem-google",
+    "quando": "2027-01-22T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Sex 22/01.",
+    "midias": [
+      "instagram/midia/stories-google/story-2027-01-22-avaliacao-prosystem-google.jpg"
+    ]
   },
   {
     "id": "frase-farmacia-uso-continuo-v1",
@@ -1296,6 +1626,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-nota-fiscal-cnpj-padaria",
+    "quando": "2027-01-26T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Ter 26/01.",
+    "midias": [
+      "instagram/midia/stories-google/story-2027-01-26-nota-fiscal-cnpj-padaria.jpg"
+    ]
+  },
+  {
     "id": "frase-padaria-contagem-v1",
     "quando": "2027-01-27T12:30:00-03:00",
     "tipo": "imagem",
@@ -1330,6 +1670,16 @@
     "status": "agendado"
   },
   {
+    "id": "story-google-trocar-sistema-farmacia",
+    "quando": "2027-01-28T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Qui 28/01.",
+    "midias": [
+      "instagram/midia/stories-google/story-2027-01-28-trocar-sistema-farmacia.jpg"
+    ]
+  },
+  {
     "id": "padaria-carnaval-producao-v1",
     "quando": "2027-01-29T12:30:00-03:00",
     "tipo": "imagem",
@@ -1352,6 +1702,16 @@
     "legenda": "Produtos vencidos na farmácia são prejuízo certo: não vendem, ocupam espaço e ainda dão trabalho para descartar.\n\nO produto perto de vencer ainda tem saída, se o balcão souber dele a tempo. Uma conferência mensal da validade, com a lista do que vence nos próximos 60 dias, já muda o resultado de 2027.\n\nNo Prosystem, a tela de venda destaca os produtos pré-vencidos e o lote de cada venda fica registrado.\n\nFale com um especialista pelo link da bio.",
     "tags": "#gestaodefarmacia #validade #estoque #sistemaparafarmacia",
     "status": "agendado"
+  },
+  {
+    "id": "story-google-producao-carnaval-padaria",
+    "quando": "2027-01-30T17:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Sáb 30/01.",
+    "midias": [
+      "instagram/midia/stories-google/story-2027-01-30-producao-carnaval-padaria.jpg"
+    ]
   },
   {
     "id": "frase-janeiro-roxo-v2",
