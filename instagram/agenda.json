@@ -20,6 +20,16 @@
     "link": "https://www.instagram.com/p/DfSNk7WgOdT/"
   },
   {
+    "id": "destaque-depoimentos-v1-1",
+    "quando": "2026-11-04T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "publicado-manual",
+    "nota": "Destaque depoimentos, story 1. Já postado pela Jessica pelo app em 04/11/2026; a API não publica.",
+    "midias": [
+      "instagram/midia/destaques/destaque-depoimentos-v1-1.mp4"
+    ]
+  },
+  {
     "id": "carrossel-farmacia-reforma-tributaria-v1",
     "quando": "2026-11-04T14:30:00-03:00",
     "tipo": "carrossel",
@@ -256,16 +266,6 @@
     "legenda": "Canetas emagrecedoras na farmácia: com mais opções e genéricos, comprar errado custa caro.\n\nA expectativa do mercado é de alternativas mais baratas nos próximos anos. Produto caro parado na prateleira é dinheiro preso, e o valor dele pode cair.\n\nNo Prosystem, o relatório de dias sem giro mostra o que está parado para você comprar melhor em 2027.\n\nFale com um especialista pelo link da bio.",
     "tags": "#gestaodefarmacia #estoque #comprasnafarmacia #sistemaparafarmacia",
     "status": "agendado"
-  },
-  {
-    "id": "destaque-depoimentos-v1-1",
-    "quando": "2026-11-04T10:00:00-03:00",
-    "tipo": "stories",
-    "status": "publicado-manual",
-    "nota": "Destaque depoimentos, story 1. Já postado pela Jessica pelo app em 04/11/2026; a API não publica.",
-    "midias": [
-      "instagram/midia/destaques/destaque-depoimentos-v1-1.mp4"
-    ]
   },
   {
     "id": "farmacia-dia-do-diabetes-v2",

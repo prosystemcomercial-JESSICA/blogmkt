@@ -3,7 +3,7 @@
 // por dia; os stories saem às 17h no mesmo dia do post do Google, para os dois canais falarem do mesmo assunto.
 // A pausa de 23/12 a 02/01 segue a do feed: só Natal (25/12) e Feliz 2027 (31/12).
 // Formato 1080×1920, JPG. Zonas seguras: nada nos 250 px do alto nem nos 340 px de baixo.
-// A API não põe figurinha de link: onde o Google manda para o blog, a pílula diz "link na bio".
+// A API não põe figurinha de link: os 8 stories de LINK saem pelo app (manual); nos outros, "Leia no blog" vira "link na bio".
 // Uso (na raiz): node outputs/criativos/google-nov-jan/stories.js [id] [--agenda]
 //   --agenda grava as entradas em instagram/agenda.json (só as que ainda não estão lá) e copia as imagens.
 const fs = require('fs');
@@ -21,6 +21,19 @@ const url = (p) => 'file:///' + p.split(path.sep).join('/').replace(/ /g, '%20')
 
 const FORA = ['suporte-sistema-fim-de-ano', 'biometria-login-farmacia', 'planejamento-2027-padaria']; // dentro da pausa
 const PILULA = { 'Leia no blog': 'Leia no blog · link na bio', 'Avalie aqui no Google': 'Procure ProSystem no Google' };
+// Stories com figurinha de link: a API não põe a figurinha, então a Jessica posta estes pelo app (status manual).
+// A arte deixa livre a faixa de 1300 a 1580 px para a figurinha e troca a pílula por "Toque no link".
+// 22/01: o link é o de avaliação do Perfil da Empresa (Perfil > Pedir avaliações), que a Jessica copia no dia.
+const LINK = {
+  'reforma-tributaria-farmacia-2027': 'https://prosystemnet.com/blog/simples-nacional-2027-prazo-opcao-ibs-cbs-farmacia-padaria/',
+  'preco-pao-frances-ficha-tecnica': 'https://prosystemnet.com/blog/ficha-tecnica-padaria-padronizar-receitas-rendimento/',
+  'encomendas-natal-padaria': 'https://prosystemnet.com/padaria/',
+  'simples-nacional-2027-ibs-cbs': 'https://prosystemnet.com/blog/simples-nacional-2027-prazo-opcao-ibs-cbs-farmacia-padaria/',
+  'sobra-de-pao-padaria': 'https://prosystemnet.com/blog/controle-de-sobras-padaria-ajustar-producao/',
+  'sncr-receita-eletronica-controlados': 'https://prosystemnet.com/blog/sncr-receita-eletronica-controlados-farmacia-2026/',
+  'avaliacao-prosystem-google': 'link de avaliação do Perfil da Empresa no Google (Perfil > Pedir avaliações > copiar link)',
+  'producao-carnaval-padaria': 'https://prosystemnet.com/blog/controle-de-sobras-padaria-ajustar-producao/',
+};
 const SELO = { 'Farmácia': 'Farmácia', 'Padaria': 'Padaria', 'Os dois': 'Farmácia e padaria' };
 const S = [...JA, ...N].filter((c) => !FORA.includes(c.id)).sort((a, b) => a.data.localeCompare(b.data));
 
@@ -44,13 +57,16 @@ const AJUSTES = `
 .bloco h2{font-size:${px(100)};line-height:1.04}
 .bloco .fx{font-size:${px(40)};padding:${px(24)} ${px(40)}}
 .bloco .pl{font-size:${px(38)};padding:${px(22)} ${px(52)}}
+.lk .bloco{bottom:${px(640)}}
+.lk .tom{background:linear-gradient(180deg,rgba(var(--sb),.75) 0%,rgba(var(--sb),.1) 14%,rgba(var(--mar),.15) 28%,rgba(var(--mar),.88) 44%,rgba(var(--mar),.97) 58%,rgba(var(--mar),1) 100%)}
+.lk .ft{height:60%!important}
 `;
 
 function peca(c) {
   const base = `inset:0;width:100%;height:74%;object-position:${c.posicao}`;
   const tudo = typeof c.desfoque === 'number' ? `;filter:blur(${c.desfoque}px);transform:scale(1.04)` : '';
   const regiao = Array.isArray(c.desfoque) ? `<img class="ft" src="${img(c.foto)}" alt="" style="${base};z-index:1;filter:blur(9px);-webkit-mask-image:radial-gradient(circle ${c.desfoque[2] * 1.6}px at ${c.desfoque[0]}% ${c.desfoque[1]}%,#000 60%,transparent 100%)">` : '';
-  return `<div class="p ${c.tema} sob">
+  return `<div class="p ${c.tema} sob${LINK[c.id] ? ' lk' : ''}">
 <img class="ft" src="${img(c.foto)}" alt="" style="${base}${tudo}">${regiao}
 <div class="tom"></div>
 <i class="g" style="width:${px(340)};height:${px(340)};top:${px(-170)};left:${px(-140)};z-index:3"></i>
@@ -58,7 +74,7 @@ function peca(c) {
 <i class="g" style="width:${px(360)};height:${px(360)};bottom:${px(-190)};right:${px(-110)};z-index:3"></i>
 <i class="g" style="width:${px(260)};height:${px(260)};bottom:${px(-140)};left:${px(-80)};z-index:3"></i>
 <img class="lg" src="${LOGO}" alt="">
-<div class="bloco"><span class="selo">${SELO[c.seg]}</span><h2>${c.titulo}</h2><p class="fx">${c.faixa}</p><span class="pl">${PILULA[c.pilula] || c.pilula}</span></div>
+<div class="bloco"><span class="selo">${SELO[c.seg]}</span><h2>${c.titulo}</h2><p class="fx">${c.faixa}</p><span class="pl">${LINK[c.id] ? 'Toque no link ↓' : PILULA[c.pilula] || c.pilula}</span></div>
 </div>`;
 }
 const arquivo = (c) => `story-${c.data}-${c.id}.jpg`;
@@ -83,6 +99,7 @@ const arquivo = (c) => `story-${c.data}-${c.id}.jpg`;
       for (const e of document.querySelectorAll('.bloco > *')) {
         const q = e.getBoundingClientRect();
         if (q.left < 60 || q.right > 1020 || q.bottom > 1580 || q.top < 250) r.push('fora da zona segura: ' + e.textContent.slice(0, 40));
+        if (document.querySelector('.lk') && q.bottom > 1290) r.push('na faixa da figurinha de link: ' + e.textContent.slice(0, 40));
         if (q.top < lg.bottom + 40) r.push('perto do logo: ' + e.textContent.slice(0, 40));
       }
       return r;
@@ -96,19 +113,27 @@ const arquivo = (c) => `story-${c.data}-${c.id}.jpg`;
   if (args.includes('--agenda')) {
     fs.mkdirSync(MIDIA, { recursive: true });
     const agenda = JSON.parse(fs.readFileSync(AGENDA, 'utf8'));
-    const ja = new Set(agenda.map((x) => x.id));
     let n = 0;
     for (const c of S) {
       const id = `story-google-${c.id}`;
-      fs.copyFileSync(path.join(SAIDA, arquivo(c)), path.join(MIDIA, arquivo(c)));
-      if (ja.has(id)) continue;
-      agenda.push({ id, quando: `${c.data}T17:00:00-03:00`, tipo: 'stories', status: 'agendado',
-        nota: `Story no visual do Google, mesmo tema da postagem do Google de ${c.dia}.`, midias: [`instagram/midia/stories-google/${arquivo(c)}`] });
+      if (!LINK[c.id]) fs.copyFileSync(path.join(SAIDA, arquivo(c)), path.join(MIDIA, arquivo(c)));
+      const entrada = LINK[c.id]
+        ? { id, quando: `${c.data}T17:00:00-03:00`, tipo: 'stories', status: 'manual', link: LINK[c.id],
+          nota: `Story com figurinha de link: a Jessica posta pelo app neste dia (página dos stories do Google). Mesmo tema da postagem do Google de ${c.dia}.`,
+          midias: [`outputs/criativos/google-nov-jan/stories/${arquivo(c)}`] }
+        : { id, quando: `${c.data}T17:00:00-03:00`, tipo: 'stories', status: 'agendado',
+          nota: `Story no visual do Google, mesmo tema da postagem do Google de ${c.dia}.`, midias: [`instagram/midia/stories-google/${arquivo(c)}`] };
+      const i = agenda.findIndex((x) => x.id === id);
+      if (i >= 0) {
+        if (agenda[i].status === 'publicado' || JSON.stringify(agenda[i]) === JSON.stringify(entrada)) continue;
+        agenda[i] = entrada;
+      } else agenda.push(entrada);
+      if (LINK[c.id]) fs.rmSync(path.join(MIDIA, arquivo(c)), { force: true });
       n++;
     }
     agenda.sort((x, y) => x.quando.localeCompare(y.quando));
     fs.writeFileSync(AGENDA, JSON.stringify(agenda, null, 2) + '\n');
-    console.log(`agenda: ${n} stories novos`);
+    console.log(`agenda: ${n} stories novos ou alterados`);
   }
   console.log(problemas.length ? problemas.join('\n') : 'sem problema');
   console.log('stories:', (filtro ? S.filter((x) => x.id === filtro) : S).length);
