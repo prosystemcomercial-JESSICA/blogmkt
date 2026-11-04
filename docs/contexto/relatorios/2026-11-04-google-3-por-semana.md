@@ -52,7 +52,7 @@
 ## Pendente
 
 - **Jessica:**
-  - programar as 28 postagens no Perfil da Empresa; 06/11 e 07/11 são desta semana;
+  - ~~programar as 28 postagens no Perfil da Empresa~~: feito, a Jessica confirmou em 04/11/2026 que as 39 estão programadas até 30/01/2027;
   - preencher o horário especial das festas no perfil;
   - pedir e responder avaliações.
 - **Jessica:** confirmar se o painel de indicadores e a biometria estão disponíveis nos planos que ela vende.
