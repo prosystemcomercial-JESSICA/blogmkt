@@ -21,7 +21,7 @@
   },
   {
     "id": "destaque-depoimentos",
-    "quando": "2026-11-06T10:00:00-03:00",
+    "quando": "2026-11-05T10:00:00-03:00",
     "tipo": "stories",
     "nota": "Destaque depoimentos: stories pela API, na ordem. Depois a Jessica monta o destaque com a capa.",
     "midias": [
@@ -35,7 +35,7 @@
   },
   {
     "id": "destaque-suporte",
-    "quando": "2026-11-07T10:00:00-03:00",
+    "quando": "2026-11-06T10:00:00-03:00",
     "tipo": "stories",
     "nota": "Destaque suporte: stories pela API, na ordem. Depois a Jessica monta o destaque com a capa.",
     "midias": [
@@ -47,7 +47,7 @@
   },
   {
     "id": "destaque-integracoes",
-    "quando": "2026-11-08T10:00:00-03:00",
+    "quando": "2026-11-07T10:00:00-03:00",
     "tipo": "stories",
     "nota": "Destaque integracoes: stories sem link pela API, na ordem. Depois a Jessica posta pelo app o(s) story(s) com link [3] e monta o destaque com a capa.",
     "midias": [
@@ -58,7 +58,7 @@
   },
   {
     "id": "destaque-ferramentas",
-    "quando": "2026-11-09T10:00:00-03:00",
+    "quando": "2026-11-08T10:00:00-03:00",
     "tipo": "stories",
     "nota": "Destaque ferramentas: stories sem link pela API, na ordem. Depois a Jessica posta pelo app o(s) story(s) com link [33] e monta o destaque com a capa.",
     "midias": [
@@ -99,7 +99,7 @@
   },
   {
     "id": "destaque-segmentos",
-    "quando": "2026-11-10T10:00:00-03:00",
+    "quando": "2026-11-09T10:00:00-03:00",
     "tipo": "stories",
     "nota": "Destaque segmentos: stories pela API, na ordem. Depois a Jessica monta o destaque com a capa.",
     "midias": [
@@ -112,7 +112,7 @@
   },
   {
     "id": "destaque-quem-somos",
-    "quando": "2026-11-11T10:00:00-03:00",
+    "quando": "2026-11-10T10:00:00-03:00",
     "tipo": "stories",
     "nota": "Destaque quem-somos: stories sem link pela API, na ordem. Depois a Jessica posta pelo app o(s) story(s) com link [4] e monta o destaque com a capa.",
     "midias": [
