@@ -57,7 +57,27 @@ async function aguardar(id) {
 // Link público da imagem no repositório (que é público). O SHA evita cache de versão antiga.
 const link = (arq) => `https://raw.githubusercontent.com/${REPO}/${process.env.IMG_SHA || process.env.GITHUB_SHA || 'main'}/${arq}`;
 
+// Sequência de stories (destaques): publica na ordem, um por vez, e guarda o progresso em `feitos`,
+// para uma nova tentativa continuar de onde parou sem repetir story. MP4 vai como vídeo; JPG como imagem.
+// A figurinha de link não existe na API: esses stories ficam de fora e a Jessica posta pelo app.
+async function publicarStories(post) {
+  post.ids = post.ids || [];
+  for (let i = post.feitos || 0; i < post.midias.length; i++) {
+    const arq = post.midias[i];
+    const campo = arq.endsWith('.mp4') ? 'video_url' : 'image_url';
+    const criacao = (await api('POST', `/${IG}/media`, { media_type: 'STORIES', [campo]: link(arq) })).id;
+    await aguardar(criacao);
+    const { id } = await api('POST', `/${IG}/media_publish`, { creation_id: criacao });
+    post.ids.push(id);
+    post.feitos = i + 1;
+    fs.writeFileSync(AGENDA, JSON.stringify(agenda, null, 2) + '\n');
+    console.log(`  story ${i + 1}/${post.midias.length}: ${arq}`);
+  }
+  return { id: post.ids.at(-1), permalink: `https://www.instagram.com/stories/${conta.username}/` };
+}
+
 async function publicar(post) {
+  if (post.tipo === 'stories') return publicarStories(post);
   const legenda = post.legenda + (post.tags ? `\n\n${post.tags}` : '');
   let criacao;
   if (post.imagens.length === 1) {
@@ -83,8 +103,9 @@ console.log(`Conta: @${conta.username}`);
 if (TESTE) {
   let ok = true;
   for (const post of agenda.filter((p) => p.status === 'agendado')) {
-    const faltam = post.imagens.filter((a) => !fs.existsSync(path.join(PASTA, '..', a)));
-    console.log(`${post.id} (${post.quando}): ${post.imagens.length} imagem(ns)${faltam.length ? `, FALTAM: ${faltam.join(', ')}` : ''}`);
+    const arqs = post.midias || post.imagens;
+    const faltam = arqs.filter((a) => !fs.existsSync(path.join(PASTA, '..', a)));
+    console.log(`${post.id} (${post.quando}): ${arqs.length} arquivo(s)${faltam.length ? `, FALTAM: ${faltam.join(', ')}` : ''}`);
     if (faltam.length) ok = false;
   }
   const { quota_usage: usados } = (await api('GET', `/${IG}/content_publishing_limit`, { fields: 'quota_usage' })).data[0] || {};
