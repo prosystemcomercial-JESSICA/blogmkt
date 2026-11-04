@@ -908,7 +908,11 @@ Quer ver o lucro por produto na sua padaria? Fale com um especialista pelo link 
 
 #padaria #gestaodepadaria #panificacao #sistemaparapadaria
 
-**Texto alternativo:** Frase em laranja sobre fundo branco: pão bom vende, gestão boa faz sobrar.
+**Texto alternativo:** Frase em laranja sobre fundo branco: pão bom vende, gestão boa dá lucro.
+
+**Conferir antes de publicar:**
+
+- Refeita em 04/11: "faz sobrar" dava a entender pão sobrando e indo para o lixo.
 
 
 ### Seg 14/12: padaria-fechamento-caixa-v1
@@ -979,13 +983,15 @@ No Prosystem, o relatório de rentabilidade mostra o resultado geral e por produ
 
 Fale com um especialista pelo link da bio.
 
+Foto: N i c o l a (CC BY 2.0).
+
 #padaria #panetone #natal #sistemaparapadaria
 
-**Texto alternativo:** Panetone com açúcar por cima sobre um prato, com o título: panetone vende muito, quanto sobra em cada um?
+**Texto alternativo:** Dois panetones caseiros esfriando na grade, com luzes de Natal ao fundo, e o título: panetone vende muito, quanto sobra em cada um?
 
 **Conferir antes de publicar:**
 
-- Foto: CC0 (ver CREDITOS.md).
+- Foto trocada em 04/11 a pedido da Jessica. CC BY 2.0, crédito obrigatório: já está no fim da legenda.
 - O carrossel de lucro por produto (18/01) usa a mesma função.
 
 
@@ -1030,25 +1036,27 @@ Fale com um especialista pelo link da bio.
 
 ### Dom 20/12: padaria-horario-festas-v1
 
-Horário de funcionamento da padaria no Natal: o cliente que chega e encontra a porta fechada não volta tão cedo.
+Horário de funcionamento da padaria no Natal: um aviso claro evita porta fechada, cliente perdido e encomenda esquecida.
 
-4 lugares para atualizar ainda hoje:
+5 dicas para fazer o comunicado:
 
-1. Cartaz no balcão e na porta.
-2. Perfil da empresa no Google, com o horário especial de 24, 25, 31 e 1º.
-3. Instagram e status do WhatsApp.
-4. Recado para quem tem encomenda marcada.
+1. Escreva dia por dia: 24, 25 e 31 de dezembro e 1º de janeiro, com a hora de abrir e a de fechar.
+2. Diga também o que não muda, para ninguém achar que a padaria fecha a semana toda.
+3. Informe até quando dá para fazer pedido e o horário de retirada das encomendas.
+4. Use o mesmo texto em todos os lugares: cartaz no balcão e na porta, perfil da empresa no Google, Instagram, status do WhatsApp e recado direto para quem tem encomenda.
+5. Publique hoje e repita na véspera.
 
-E já anote o horário deste ano para repetir o que deu certo em 2027.
+Guarde o aviso deste ano para reaproveitar em 2027.
 
 Boas festas! Fale com um especialista pelo link da bio.
 
 #padaria #natal #encomendasdenatal #gestaodepadaria
 
-**Texto alternativo:** Cesta de pãezinhos coberta por um pano branco, com o título: véspera de Natal, avise o horário antes da fila.
+**Texto alternativo:** Cesta de pãezinhos coberta por um pano branco, com o título: horário diferente no Natal? Avise assim.
 
 **Conferir antes de publicar:**
 
+- Refeita em 04/11: agora traz dicas de como escrever o aviso, não só onde publicar.
 - Sem ferramenta na peça: é dica de rotina.
 
 
@@ -1368,20 +1376,21 @@ Salve este post e mostre para quem atende no balcão. Para conhecer nosso sistem
 
 ### Sáb 16/01: frase-contador-arquivos-v1
 
-Arquivos fiscais para o contador: todo mês a mesma mensagem pedindo XML, SPED e relatórios. Em 2027, com o imposto novo, a troca de arquivos fica ainda mais frequente.
+Arquivos fiscais para o contador: todo mês ele pede XML, SPED e relatórios. O pedido continua. O que muda é o trabalho para mandar. Em 2027, com o imposto novo, essa troca fica ainda mais frequente.
 
 Combine com a contabilidade, logo no começo do ano, o que ela precisa receber e quando.
 
-No Prosystem Fiscal, os XMLs, o SPED, o Sintegra e os relatórios vão de uma vez para o FTP da contabilidade.
+No Prosystem Fiscal, quando o contador pede, você envia os XMLs, o SPED, o Sintegra e os relatórios de uma vez para o FTP da contabilidade, sem procurar arquivo por arquivo.
 
 Fale com um especialista pelo link da bio.
 
 #contabilidade #reformatributaria #sistemaparafarmacia #sistemaparapadaria
 
-**Texto alternativo:** Frase em azul sobre fundo branco: seu contador ainda precisa pedir os arquivos? O Prosystem Fiscal envia XML, SPED e relatórios de uma vez.
+**Texto alternativo:** Frase em azul sobre fundo branco: o contador pediu os arquivos? Envie tudo de uma vez. No Prosystem Fiscal, XML, SPED e relatórios vão juntos para a contabilidade.
 
 **Conferir antes de publicar:**
 
+- Refeita em 04/11: o contador continua pedindo; a diferença é a facilidade de enviar.
 - Depende de a contabilidade ter FTP.
 - Função de artigo de 2020: confirmar com produto se o envio segue assim.
 

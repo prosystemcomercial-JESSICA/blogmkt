@@ -33,7 +33,7 @@ def borrar(im, caixas, raio):
 
 
 # Fotos novas, usadas inteiras.
-for nome in ("pao-frances", "paes-forma-prateleira", "paes-assadeira", "forno-pa"):
+for nome in ("pao-frances", "paes-forma-prateleira", "paes-assadeira", "forno-pa", "panetone-grade"):
     salvar(Image.open(ORIG / f"{nome}.jpg"), nome)
 
 # Farmacêutico no computador: os frascos ao fundo têm rótulo em inglês. A estante é desfocada.

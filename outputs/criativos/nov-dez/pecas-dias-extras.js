@@ -1,12 +1,12 @@
 // Peças que completam o feed com um post por dia, inclusive sábado e domingo (pedido da Jessica em 04/11/2026).
 // Os dias que já tinham post ficam como estão. A pausa de 23/12 a 02/01 continua, só com Natal e Ano Novo.
-// Todas são novas e aguardam a aprovação da Jessica: nenhuma está travada.
+// Aprovação da Jessica em 04/11/2026: 29 travadas. 13/12, 17/12, 20/12 e 16/01 foram refeitas e aguardam nova aprovação.
 const CTA = 'Fale com um especialista pelo link da bio.';
 const N = { nova: true, semMockup: true };
 
 module.exports = [
 // ---------------- Novembro ----------------
-{ ...N, data: 'Qui 05/11', seg: 'Padaria', id: 'padaria-perda-de-vendas-v1', tipo: 'comTela', tema: 'lar', fundo: 'bra', formato: 'Estático com tela',
+{ ...N, travada: true, data: 'Qui 05/11', seg: 'Padaria', id: 'padaria-perda-de-vendas-v1', tipo: 'comTela', tema: 'lar', fundo: 'bra', formato: 'Estático com tela',
   titulo: 'O cliente pediu. Não tinha. <b>Essa venda não aparece no caixa.</b>', fs: 66, alturaTitulo: 250, tela: 'perda-vendas-painel', faixa: 'No Prosystem, o motivo de cada item excluído vira um gráfico.', pilula: 'Leia a legenda',
   kw: 'perda de vendas na padaria',
   cap: `Perda de vendas na padaria é o dinheiro que nunca chega ao caixa: o cliente pediu, não tinha, e foi embora.\n\nO caixa mostra o que você vendeu. O que deixou de vender some sem explicação. Falta de produto, preço da concorrência, demora no atendimento: cada motivo pede uma ação diferente para 2027.\n\nNo Prosystem, quando um item é excluído da venda, o caixa registra o motivo. Depois, o relatório e o gráfico mostram onde a padaria mais perde.\n\n${CTA}`,
@@ -14,7 +14,7 @@ module.exports = [
   alts: ['Gráfico do Prosystem com as vendas perdidas por motivo: falta do produto, oferta da concorrência, consulta de preço, problema no pagamento e tempo de atendimento. Título: o cliente pediu, não tinha, essa venda não aparece no caixa.'],
   conferir: ['O gráfico é da base de conhecimento, com dados fictícios. Os motivos da tela são de uso geral, sem citar farmácia.', 'Produto: o motivo é pedido sempre que o item é excluído ou só quando a função está ligada?'] },
 
-{ ...N, data: 'Sex 06/11', seg: 'Farmácia', id: 'farmacia-sugestao-de-compras-v1', tipo: 'fotoPainel', tema: 'azul', formato: 'Foto com painel de vidro', foto: 'farmaceutico-computador',
+{ ...N, travada: true, data: 'Sex 06/11', seg: 'Farmácia', id: 'farmacia-sugestao-de-compras-v1', tipo: 'fotoPainel', tema: 'azul', formato: 'Foto com painel de vidro', foto: 'farmaceutico-computador',
   vidro: true, cantos: true, losangos: true, posicao: '62% 30%',
   titulo: 'Dezembro vende mais. <b>Seu pedido sai do histórico ou da memória?</b>', fs: 66, faixa: 'Sugestão de compras com estoque mínimo, máximo e média de venda.', pilula: 'Leia a legenda',
   kw: 'compras na farmácia',
@@ -23,7 +23,7 @@ module.exports = [
   alts: ['Farmacêutico no computador do balcão atendendo uma cliente, com o título: dezembro vende mais, seu pedido sai do histórico ou da memória?'],
   conferir: ['Foto de domínio público (Marinha dos EUA), com a estante desfocada para esconder os rótulos em inglês. Confira em tamanho real.', 'A sugestão depende de estoque correto: a legenda já diz isso.'] },
 
-{ ...N, data: 'Sáb 07/11', seg: 'Padaria', id: 'padaria-balanca-pao-frances-v1', tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', foto: 'pao-frances', pilula: 'Leia a legenda',
+{ ...N, travada: true, data: 'Sáb 07/11', seg: 'Padaria', id: 'padaria-balanca-pao-frances-v1', tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', foto: 'pao-frances', pilula: 'Leia a legenda',
   titulo: 'Pão francês se vende por quilo. <b>Sua balança está em dia?</b>', fs: 86,
   kw: 'balança da padaria',
   cap: `Balança da padaria em dia é dinheiro certo no caixa: desde 2006, o pão francês é vendido por quilo, e a balança decide o preço de cada saco.\n\n3 cuidados para o sábado de pão:\n\n1. A balança comercial passa por verificação periódica do Inmetro, em geral uma vez por ano. Guarde o comprovante.\n2. Deixe o preço do quilo visível para o cliente.\n3. Confira se o preço do quilo no caixa é o mesmo da etiqueta.\n\nAproveite e anote na agenda de 2027 a data da próxima verificação.\n\n${CTA}
@@ -33,7 +33,7 @@ Foto: Roosewelt Pinheiro/Agência Brasil (CC BY 3.0 BR).`,
   alts: ['Cesto cheio de pães franceses, com o título: pão francês se vende por quilo, sua balança está em dia?'],
   conferir: ['Venda por quilo: Portaria Inmetro 146/2006. Verificação periódica das balanças: Inmetro e Ipem do estado. Confirmar a periodicidade no estado antes de publicar.', 'Foto: CC BY 3.0 BR, crédito obrigatório: já está no fim da legenda.'] },
 
-{ ...N, data: 'Dom 08/11', seg: 'Farmácia', id: 'frase-farmacia-falta-de-produto-v1', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto',
+{ ...N, travada: true, data: 'Dom 08/11', seg: 'Farmácia', id: 'frase-farmacia-falta-de-produto-v1', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto',
   titulo: 'Remédio que falta <b>vira venda na farmácia ao lado.</b>', apoio: 'Anote o que o cliente pediu e você não tinha.',
   kw: 'falta de produto na farmácia',
   cap: `Falta de produto na farmácia não aparece no caixa, mas aparece no caixa da farmácia ao lado.\n\nNesta semana, peça para o balcão anotar cada item que o cliente pediu e não levou. No fim de sete dias, você vai saber o que precisa entrar no pedido de 2027.\n\nQuer que o sistema faça essa conta por você? ${CTA}`,
@@ -41,7 +41,7 @@ Foto: Roosewelt Pinheiro/Agência Brasil (CC BY 3.0 BR).`,
   alts: ['Frase em azul sobre fundo branco: remédio que falta vira venda na farmácia ao lado.'],
   conferir: [] },
 
-{ ...N, data: 'Qui 12/11', seg: 'Padaria', id: 'padaria-ticket-medio-v1', tipo: 'fotoPainel', tema: 'lar', formato: 'Foto com painel de vidro', foto: 'paes-forma-prateleira',
+{ ...N, travada: true, data: 'Qui 12/11', seg: 'Padaria', id: 'padaria-ticket-medio-v1', tipo: 'fotoPainel', tema: 'lar', formato: 'Foto com painel de vidro', foto: 'paes-forma-prateleira',
   vidro: true, cantos: true, losangos: true, posicao: '50% 50%',
   titulo: 'Seu cliente leva o pão. <b>E o que mais?</b>', fs: 84, faixa: 'Veja o ticket médio no painel do Prosystem. Versão Plus.', pilula: 'Leia a legenda',
   kw: 'ticket médio da padaria',
@@ -50,7 +50,7 @@ Foto: Roosewelt Pinheiro/Agência Brasil (CC BY 3.0 BR).`,
   alts: ['Pães redondos em prateleiras de uma padaria, com o título: seu cliente leva o pão, e o que mais?'],
   conferir: ['Painel de indicadores: só versão Plus.'] },
 
-{ ...N, data: 'Dom 15/11', seg: 'Os dois', id: 'frase-suporte-domingo-feriado-v1', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto',
+{ ...N, travada: true, data: 'Dom 15/11', seg: 'Os dois', id: 'frase-suporte-domingo-feriado-v1', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto',
   titulo: 'Hoje é domingo e feriado. <b>Sua loja abriu. E o suporte?</b>', apoio: 'O da ProSystem atende das 7h às 22h, inclusive sábado e domingo.', fs: 100,
   kw: 'suporte de sistema para farmácia e padaria',
   cap: `Suporte de sistema para farmácia e padaria precisa estar lá quando a loja está aberta. E hoje, domingo de Proclamação da República, muita loja abriu.\n\nNa ProSystem, o suporte é humanizado, com especialistas técnicos, das 7h às 22h, inclusive sábado e domingo. O primeiro contato é pelo WhatsApp: você manda áudio, texto ou print da tela.\n\nVai escolher o sistema da sua loja para 2027? Pergunte quem atende no domingo. ${CTA}`,
@@ -58,7 +58,7 @@ Foto: Roosewelt Pinheiro/Agência Brasil (CC BY 3.0 BR).`,
   alts: ['Frase em azul sobre fundo branco: hoje é domingo e feriado, sua loja abriu, e o suporte? O da ProSystem atende das 7h às 22h, inclusive sábado e domingo.'],
   conferir: ['A frase não promete atendimento em feriado que não cai em fim de semana: 15/11/2026 é domingo. Confirmar com a Jessica se o suporte atende também nos feriados de semana.', 'O carrossel do suporte sai em 09/11: os dois posts se completam.'] },
 
-{ ...N, data: 'Sex 20/11', seg: 'Padaria', id: 'padaria-producao-dezembro-v1', tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', foto: 'paes-assadeira', pilula: 'Leia a legenda',
+{ ...N, travada: true, data: 'Sex 20/11', seg: 'Padaria', id: 'padaria-producao-dezembro-v1', tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', foto: 'paes-assadeira', pilula: 'Leia a legenda',
   titulo: 'Dezembro vende mais. <b>Sua produção já sabe quanto?</b>', fs: 88,
   kw: 'produção da padaria no fim de ano',
   cap: `Produção da padaria no fim de ano: quem planeja pelo dezembro passado erra menos na fornada e na compra de insumo.\n\nFaça hoje a pergunta: quanto você vendeu em cada semana de dezembro de 2025? Com esse número, dá para combinar a escala, o pedido de farinha e a produção, sem sobra e sem falta. É também um bom começo para 2027.\n\nNa versão Plus do Prosystem, o painel de indicadores filtra as vendas por período e compara com o ano anterior.\n\n${CTA}
@@ -68,7 +68,7 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   alts: ['Padeiro segurando uma assadeira com pães redondos recém-assados, com o título: dezembro vende mais, sua produção já sabe quanto?'],
   conferir: ['O painel tem a visão "Comparativa" na tela da base. Produto: a comparação com o ano anterior está confirmada?', 'Foto: CC BY 2.0, crédito obrigatório: já está no fim da legenda.', '20/11 é feriado da Consciência Negra: a peça não cita a data.'] },
 
-{ ...N, data: 'Qui 26/11', seg: 'Farmácia', id: 'farmacia-metas-black-friday-v1', tipo: 'comTela', tema: 'azul', fundo: 'forte', formato: 'Estático com tela', foto: 'farmacia-corredor',
+{ ...N, travada: true, data: 'Qui 26/11', seg: 'Farmácia', id: 'farmacia-metas-black-friday-v1', tipo: 'comTela', tema: 'azul', fundo: 'forte', formato: 'Estático com tela', foto: 'farmacia-corredor',
   titulo: 'Amanhã é Black Friday. <b>Sua equipe sabe quanto falta para a meta?</b>', fs: 64, alturaTitulo: 230, tela: 'metas-subgrupo', faixa: 'No Prosystem, o vendedor vê a meta no ponto.', pilula: 'Leia a legenda',
   kw: 'metas de vendas na farmácia',
   cap: `Metas de vendas na farmácia funcionam quando a equipe vê o número no dia, e não só no fim do mês.\n\nAmanhã é Black Friday. Combine com o balcão qual grupo de produto merece atenção e acompanhe quanto falta ao longo do dia. É um bom ensaio para as metas de 2027.\n\nNo Prosystem, as metas podem ser por fabricante, grupo, subgrupo ou geral, e o vendedor vê quanto falta ao registrar o ponto.\n\n${CTA}`,
@@ -76,7 +76,7 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   alts: ['Corredor de farmácia e a tela de metas do Prosystem, com meta, venda e quanto falta por subgrupo, e o título: amanhã é Black Friday, sua equipe sabe quanto falta para a meta?'],
   conferir: ['A tela só mostra os subgrupos (genérico, ético e similar). As linhas com nome de fabricante ficaram de fora.', 'Foto de domínio público (Força Aérea dos EUA), desfocada para esconder rótulos em inglês.'] },
 
-{ ...N, data: 'Sáb 28/11', seg: 'Padaria', id: 'padaria-contas-a-pagar-v1', tipo: 'comTela', tema: 'lar', fundo: 'forte', formato: 'Estático com tela',
+{ ...N, travada: true, data: 'Sáb 28/11', seg: 'Padaria', id: 'padaria-contas-a-pagar-v1', tipo: 'comTela', tema: 'lar', fundo: 'forte', formato: 'Estático com tela',
   titulo: 'O 13º vence na segunda. <b>Quanto mais vence nesta semana?</b>', fs: 66, alturaTitulo: 230, tela: 'whats-contas-v2', faixa: 'Na versão Plus, o resumo das contas a pagar chega no seu WhatsApp.', pilula: 'Leia a legenda',
   kw: 'contas a pagar da padaria',
   cap: `Contas a pagar da padaria em dezembro: 13º, fornecedores de Natal e impostos chegam juntos.\n\nA primeira parcela do 13º vence na segunda, 30/11. Saber hoje quanto vence nos próximos cinco dias evita correria no banco e juros no começo de 2027.\n\nNa versão Plus do Prosystem, o aviso de contas a pagar chega no WhatsApp de quem você escolher, com o que vence hoje, amanhã, nos próximos 5 dias, no mês e o que está em atraso.\n\n${CTA}`,
@@ -84,7 +84,7 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   alts: ['Aviso de contas a pagar do Prosystem com os valores de hoje, amanhã, próximos 5 dias, mês atual e em atraso, e o título: o 13º vence na segunda, quanto mais vence nesta semana?'],
   conferir: ['A tela foi refeita em 04/11/2026 (tela-contas.js): mesmas linhas do aviso real, data do post e valores fictícios.', 'Mockup em notebook ou desktop, nunca em celular.'] },
 
-{ ...N, data: 'Dom 29/11', seg: 'Farmácia', id: 'frase-farmacia-quem-mexeu-no-preco-v1', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto',
+{ ...N, travada: true, data: 'Dom 29/11', seg: 'Farmácia', id: 'frase-farmacia-quem-mexeu-no-preco-v1', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto',
   titulo: 'Quem mexeu <b>nesse preço?</b>', apoio: 'No Prosystem, a auditoria registra quem alterou cada função protegida.', fs: 128,
   kw: 'controle de preço na farmácia',
   cap: `Controle de preço na farmácia: depois da Black Friday, sempre aparece um preço que ninguém lembra de ter mudado.\n\nAntes de virar o ano, confira os preços que entraram em promoção e veja se voltaram ao normal. E combine quem pode alterar preço em 2027.\n\nNo Prosystem, cada usuário tem os seus acessos, e a auditoria registra quem acessou ou alterou as funções protegidas.\n\n${CTA}`,
@@ -93,7 +93,7 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   conferir: ['Produto: a alteração de preço está entre as funções registradas pela auditoria?'] },
 
 // ---------------- Dezembro ----------------
-{ ...N, data: 'Sáb 05/12', seg: 'Padaria', id: 'padaria-recebimento-farinha-v1', tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', foto: 'farinha-trigo', pilula: 'Leia a legenda',
+{ ...N, travada: true, data: 'Sáb 05/12', seg: 'Padaria', id: 'padaria-recebimento-farinha-v1', tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', foto: 'farinha-trigo', pilula: 'Leia a legenda',
   titulo: 'A nota diz 10 sacos. <b>Chegaram 8. Quem percebe?</b>', fs: 90,
   kw: 'recebimento de mercadoria na padaria',
   cap: `Recebimento de mercadoria na padaria: em dezembro chega mais farinha, mais embalagem e mais caixa, e a conferência fica na correria.\n\nQuem recebe confere pela nota ou pela caixa? Se a pessoa já sabe o que a nota diz, ela tende a confirmar. A conferência às cegas, contando sem ver a nota, pega a diferença na hora.\n\nNo Prosystem, a conferência é feita sem mostrar a nota: o sistema aponta as divergências e não confirma o estoque enquanto houver diferença. Um bom hábito para levar para 2027.\n\n${CTA}`,
@@ -101,7 +101,7 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   alts: ['Farinha de trigo e espigas sobre uma mesa de madeira, com o título: a nota diz 10 sacos, chegaram 8, quem percebe?'],
   conferir: ['Função de artigo de 2020: confirmar com produto se a conferência segue assim.', 'A foto da farinha também abre o carrossel do trigo (11/11). São três semanas de distância.'] },
 
-{ ...N, data: 'Dom 06/12', seg: 'Farmácia', id: 'frase-farmacia-estoque-parado-v1', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto',
+{ ...N, travada: true, data: 'Dom 06/12', seg: 'Farmácia', id: 'frase-farmacia-estoque-parado-v1', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto',
   titulo: 'Estoque parado em dezembro <b>é dinheiro que não paga o 13º.</b>', apoio: 'Veja o que não vende há 30 dias e decida antes do balanço.', fs: 96,
   kw: 'estoque parado na farmácia',
   cap: `Estoque parado na farmácia é dinheiro que não volta para o caixa, justo no mês do 13º e das compras de fim de ano.\n\nSepare hoje a lista do que não vende há 30 dias. Dá para fazer promoção, trocar com o fornecedor ou simplesmente não comprar de novo em 2027.\n\nNo Prosystem, o relatório de dias sem giro mostra o que está parado e o caixa mostra os dias sem giro de cada item.\n\n${CTA}`,
@@ -109,7 +109,7 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   alts: ['Frase em azul sobre fundo branco: estoque parado em dezembro é dinheiro que não paga o 13º.'],
   conferir: [] },
 
-{ ...N, data: 'Sáb 12/12', seg: 'Farmácia', id: 'farmacia-lote-recolhimento-v1', tipo: 'fotoPainel', tema: 'azul', formato: 'Foto com painel de vidro', foto: 'conferindo-frasco-sem-rotulo',
+{ ...N, travada: true, data: 'Sáb 12/12', seg: 'Farmácia', id: 'farmacia-lote-recolhimento-v1', tipo: 'fotoPainel', tema: 'azul', formato: 'Foto com painel de vidro', foto: 'conferindo-frasco-sem-rotulo',
   vidro: true, soLaco: true, cantos: true, losangos: true, posicao: '50% 8%', painelTopo: 760,
   titulo: 'Se esse lote for recolhido, <b>você sabe para quem vendeu?</b>', fs: 66, faixa: 'O Prosystem guarda o lote de cada venda.', pilula: 'Leia a legenda',
   kw: 'controle de lote na farmácia',
@@ -119,14 +119,14 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   conferir: ['O rótulo do frasco, em inglês, foi desfocado. Confira em tamanho real.'] },
 
 { ...N, data: 'Dom 13/12', seg: 'Padaria', id: 'frase-padaria-gestao-v1', tipo: 'frase', tema: 'lar', formato: 'Frase de impacto',
-  titulo: 'Pão bom vende. <b>Gestão boa faz sobrar.</b>', apoio: 'Em 2027, olhe o lucro de cada produto, não só a venda.', fs: 120,
+  titulo: 'Pão bom vende. <b>Gestão boa dá lucro.</b>', apoio: 'Em 2027, olhe o lucro de cada produto, não só a venda.', fs: 120,
   kw: 'gestão de padaria',
   cap: `Gestão de padaria é o que transforma fila no balcão em dinheiro no fim do mês.\n\nEm dezembro, a padaria vende muito. Aproveite para anotar quais produtos puxaram a venda e quais deram lucro de verdade. Nem sempre são os mesmos, e essa lista é o começo do planejamento de 2027.\n\nQuer ver o lucro por produto na sua padaria? ${CTA}`,
   tags: '#padaria #gestaodepadaria #panificacao #sistemaparapadaria',
-  alts: ['Frase em laranja sobre fundo branco: pão bom vende, gestão boa faz sobrar.'],
-  conferir: [] },
+  alts: ['Frase em laranja sobre fundo branco: pão bom vende, gestão boa dá lucro.'],
+  conferir: ['Refeita em 04/11: "faz sobrar" dava a entender pão sobrando e indo para o lixo.'] },
 
-{ ...N, data: 'Ter 15/12', seg: 'Padaria', id: 'padaria-ponto-equipe-v1', tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', foto: 'forno-pa', pilula: 'Leia a legenda',
+{ ...N, travada: true, data: 'Ter 15/12', seg: 'Padaria', id: 'padaria-ponto-equipe-v1', tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', foto: 'forno-pa', pilula: 'Leia a legenda',
   titulo: 'A jornada muda nesta semana. <b>O ponto da equipe está no sistema?</b>', fs: 76,
   kw: 'controle de ponto na padaria',
   cap: `Controle de ponto na padaria fica mais importante com a nova jornada, que começa nesta semana: duas folgas e 42 horas.\n\nCom menos horas, cada entrada e saída conta. Ter o ponto no mesmo lugar das vendas ajuda a montar a escala de dezembro e a de 2027.\n\nNo Prosystem, o funcionário registra o ponto no login, a loja pode impedir a venda sem ponto registrado, e há relatórios por período. Para as regras da jornada, converse com seu contador e seu sindicato.\n\n${CTA}
@@ -136,15 +136,17 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   alts: ['Padeira colocando uma assadeira no forno, com o título: a jornada muda nesta semana, o ponto da equipe está no sistema?'],
   conferir: ['Não é consultoria trabalhista e não promete validade legal do ponto: manter a frase do contador e do sindicato.', 'Data da nova jornada: a Fenacon conta 16/12; parte da imprensa fala em 15/12. Por isso "nesta semana".', 'Foto: CC BY 2.0, crédito obrigatório: já está no fim da legenda.'] },
 
-{ ...N, data: 'Qui 17/12', seg: 'Padaria', id: 'padaria-lucro-panetone-v1', tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', foto: 'panetone-mesa', pilula: 'Leia a legenda',
+{ ...N, data: 'Qui 17/12', seg: 'Padaria', id: 'padaria-lucro-panetone-v1', tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', foto: 'panetone-grade', pilula: 'Leia a legenda',
   titulo: 'Panetone vende muito. <b>Quanto sobra em cada um?</b>', fs: 92,
   kw: 'lucro do panetone',
-  cap: `Lucro do panetone: ele vende muito em dezembro, mas a margem depende de quanto custaram o insumo, a embalagem e a hora de produção.\n\nFaça a conta de um panetone hoje, com o custo de hoje. Se a margem ficou apertada, ainda dá tempo de ajustar o preço ou o tamanho antes da semana do Natal. E guarde o número para o Natal de 2027.\n\nNo Prosystem, o relatório de rentabilidade mostra o resultado geral e por produto, com filtro dos que dão lucro ou prejuízo.\n\n${CTA}`,
-  tags: '#padaria #panetone #natal #sistemaparapadaria',
-  alts: ['Panetone com açúcar por cima sobre um prato, com o título: panetone vende muito, quanto sobra em cada um?'],
-  conferir: ['Foto: CC0 (ver CREDITOS.md).', 'O carrossel de lucro por produto (18/01) usa a mesma função.'] },
+  cap: `Lucro do panetone: ele vende muito em dezembro, mas a margem depende de quanto custaram o insumo, a embalagem e a hora de produção.\n\nFaça a conta de um panetone hoje, com o custo de hoje. Se a margem ficou apertada, ainda dá tempo de ajustar o preço ou o tamanho antes da semana do Natal. E guarde o número para o Natal de 2027.\n\nNo Prosystem, o relatório de rentabilidade mostra o resultado geral e por produto, com filtro dos que dão lucro ou prejuízo.\n\n${CTA}
 
-{ ...N, data: 'Sáb 19/12', seg: 'Farmácia', id: 'farmacia-sangria-natal-v1', tipo: 'comTela', tema: 'azul', fundo: 'forte', formato: 'Estático com tela',
+Foto: N i c o l a (CC BY 2.0).`,
+  tags: '#padaria #panetone #natal #sistemaparapadaria',
+  alts: ['Dois panetones caseiros esfriando na grade, com luzes de Natal ao fundo, e o título: panetone vende muito, quanto sobra em cada um?'],
+  conferir: ['Foto trocada em 04/11 a pedido da Jessica. CC BY 2.0, crédito obrigatório: já está no fim da legenda.', 'O carrossel de lucro por produto (18/01) usa a mesma função.'] },
+
+{ ...N, travada: true, data: 'Sáb 19/12', seg: 'Farmácia', id: 'farmacia-sangria-natal-v1', tipo: 'comTela', tema: 'azul', fundo: 'forte', formato: 'Estático com tela',
   titulo: 'Último sábado antes do Natal. <b>Quanto dinheiro tem na sua gaveta?</b>', fs: 66, alturaTitulo: 230, tela: 'sangria-bloqueio', faixa: 'O Prosystem avisa a sangria e bloqueia o caixa no valor que você definir.', pilula: 'Leia a legenda',
   kw: 'sangria de caixa na farmácia',
   cap: `Sangria de caixa na farmácia no fim de ano: com mais movimento, o dinheiro acumula na gaveta mais rápido do que parece.\n\nNo pico, ninguém lembra de tirar o excesso. Defina hoje o valor máximo da gaveta e quem faz a sangria, e entre em 2027 com essa regra.\n\nNo Prosystem, o caixa avisa quando chega a um valor e bloqueia as vendas em outro, até que a sangria seja feita.\n\n${CTA}`,
@@ -154,14 +156,26 @@ Foto: Jeremy Keith (CC BY 2.0).`,
 
 { ...N, data: 'Dom 20/12', seg: 'Padaria', id: 'padaria-horario-festas-v1', tipo: 'fotoPainel', tema: 'lar', formato: 'Foto com painel de vidro', foto: 'paezinhos-cesta',
   vidro: true, cantos: true, losangos: true, posicao: '50% 50%',
-  titulo: 'Véspera de Natal: <b>avise o horário antes da fila.</b>', fs: 74, faixa: 'Balcão, Google e Instagram com o mesmo horário.', pilula: 'Salve este post',
+  titulo: 'Horário diferente no Natal? <b>Avise assim.</b>', fs: 84, faixa: 'Dia por dia, encomendas e o mesmo texto em todo lugar.', pilula: 'Salve este post',
   kw: 'horário de funcionamento da padaria no Natal',
-  cap: `Horário de funcionamento da padaria no Natal: o cliente que chega e encontra a porta fechada não volta tão cedo.\n\n4 lugares para atualizar ainda hoje:\n\n1. Cartaz no balcão e na porta.\n2. Perfil da empresa no Google, com o horário especial de 24, 25, 31 e 1º.\n3. Instagram e status do WhatsApp.\n4. Recado para quem tem encomenda marcada.\n\nE já anote o horário deste ano para repetir o que deu certo em 2027.\n\nBoas festas! ${CTA}`,
-  tags: '#padaria #natal #encomendasdenatal #gestaodepadaria',
-  alts: ['Cesta de pãezinhos coberta por um pano branco, com o título: véspera de Natal, avise o horário antes da fila.'],
-  conferir: ['Sem ferramenta na peça: é dica de rotina.'] },
+  cap: `Horário de funcionamento da padaria no Natal: um aviso claro evita porta fechada, cliente perdido e encomenda esquecida.
 
-{ ...N, data: 'Ter 22/12', seg: 'Os dois', id: 'fim-de-ano-3-numeros-v1', tipo: 'comTela', tema: 'azul', fundo: 'bra', formato: 'Estático com tela',
+5 dicas para fazer o comunicado:
+
+1. Escreva dia por dia: 24, 25 e 31 de dezembro e 1º de janeiro, com a hora de abrir e a de fechar.
+2. Diga também o que não muda, para ninguém achar que a padaria fecha a semana toda.
+3. Informe até quando dá para fazer pedido e o horário de retirada das encomendas.
+4. Use o mesmo texto em todos os lugares: cartaz no balcão e na porta, perfil da empresa no Google, Instagram, status do WhatsApp e recado direto para quem tem encomenda.
+5. Publique hoje e repita na véspera.
+
+Guarde o aviso deste ano para reaproveitar em 2027.
+
+Boas festas! ${CTA}`,
+  tags: '#padaria #natal #encomendasdenatal #gestaodepadaria',
+  alts: ['Cesta de pãezinhos coberta por um pano branco, com o título: horário diferente no Natal? Avise assim.'],
+  conferir: ['Refeita em 04/11: agora traz dicas de como escrever o aviso, não só onde publicar.', 'Sem ferramenta na peça: é dica de rotina.'] },
+
+{ ...N, travada: true, data: 'Ter 22/12', seg: 'Os dois', id: 'fim-de-ano-3-numeros-v1', tipo: 'comTela', tema: 'azul', fundo: 'bra', formato: 'Estático com tela',
   titulo: 'Antes de fechar o ano, <b>olhe estes números.</b>', fs: 76, alturaTitulo: 200, tela: 'painel-totais', fotoCima: 'maos-digitando', faixa: 'Venda, rentabilidade e ticket médio no painel do Prosystem. Versão Plus.', pilula: 'Leia a legenda',
   kw: 'planejamento 2027 para farmácia e padaria',
   cap: `Planejamento 2027 para farmácia e padaria começa com três números de 2026: quanto vendeu, quanto sobrou e quanto cada cliente deixou no caixa.\n\nTire esses números antes das festas e guarde. Em janeiro, eles mostram se a loja cresceu, onde o lucro apertou e qual meta faz sentido para o novo ano.\n\nNa versão Plus do Prosystem, o painel de indicadores mostra o total de vendas, o CMV, a rentabilidade média, o ticket médio e os atendimentos do período.\n\nBoas festas! ${CTA}`,
@@ -170,7 +184,7 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   conferir: ['Último post antes da pausa (só Natal e Ano Novo até 03/01).', 'Painel de indicadores: só versão Plus. Os valores são fictícios, da base de conhecimento.'] },
 
 // ---------------- Janeiro ----------------
-{ ...N, data: 'Dom 03/01', seg: 'Padaria', id: 'padaria-preco-2027-v1', tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', foto: 'rolos-bandeja', pilula: 'Leia a legenda',
+{ ...N, travada: true, data: 'Dom 03/01', seg: 'Padaria', id: 'padaria-preco-2027-v1', tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', foto: 'rolos-bandeja', pilula: 'Leia a legenda',
   titulo: '2027 começou. <b>Seu preço acompanhou o custo?</b>', fs: 84,
   kw: 'preço de venda na padaria',
   cap: `Preço de venda na padaria em 2027: farinha, energia, embalagem e salários mudaram ao longo de 2026. E o preço do balcão?\n\nComece o ano refazendo a conta dos dez produtos que mais vendem. Se o custo subiu e o preço ficou, a margem foi embora sem ninguém ver. E o imposto novo, a CBS, começou a valer agora em janeiro: confirme com seu contador.\n\nNo Prosystem, a precificação coloca o custo de operar a loja na conta do preço de venda.\n\n${CTA}`,
@@ -178,7 +192,7 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   alts: ['Pães enrolados crus em uma assadeira perfurada, com o título: 2027 começou, seu preço acompanhou o custo?'],
   conferir: ['Foto do banco local da padaria (banco imagens/padaria), sem licença registrada. Confirmar o direito de uso.', 'A precificação também aparece no carrossel do trigo (11/11).'] },
 
-{ ...N, data: 'Ter 05/01', seg: 'Os dois', id: 'avisos-whatsapp-config-v1', tipo: 'comTela', tema: 'azul', fundo: 'forte', formato: 'Estático com tela',
+{ ...N, travada: true, data: 'Ter 05/01', seg: 'Os dois', id: 'avisos-whatsapp-config-v1', tipo: 'comTela', tema: 'azul', fundo: 'forte', formato: 'Estático com tela',
   titulo: 'O que você quer saber <b>sem ligar para a loja?</b>', fs: 74, alturaTitulo: 200, tela: 'whats-config', faixa: 'Escolha os avisos que chegam no WhatsApp. Versão Plus.', pilula: 'Fale com um especialista',
   kw: 'avisos no WhatsApp do sistema da loja',
   cap: `Avisos no WhatsApp do sistema da loja: em 2027, você não precisa estar no balcão para saber como foi o dia.\n\nResumo de vendas, vendas por vendedor, metas, fechamento de caixa, contas a pagar, produtos a vencer, compras, inventário e login. Você escolhe o que recebe e com que frequência: diário, por fechamento ou os dois.\n\nOs avisos fazem parte da versão Plus do Prosystem, para farmácia e padaria.\n\n${CTA}`,
@@ -186,7 +200,7 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   alts: ['Tela de configuração dos avisos do Prosystem por WhatsApp, com resumo de vendas, metas, fechamento de caixa, contas a pagar, produtos a vencer, compras, inventário e login. Título: o que você quer saber sem ligar para a loja?'],
   conferir: ['Só versão Plus.', 'Mockup em notebook ou desktop, nunca em celular.'] },
 
-{ ...N, data: 'Sáb 09/01', seg: 'Padaria', id: 'frase-padaria-cadastro-v1', tipo: 'frase', tema: 'lar', formato: 'Frase de impacto',
+{ ...N, travada: true, data: 'Sáb 09/01', seg: 'Padaria', id: 'frase-padaria-cadastro-v1', tipo: 'frase', tema: 'lar', formato: 'Frase de impacto',
   titulo: 'Janeiro é mais calmo. <b>Bom mês para arrumar o cadastro.</b>', apoio: 'Com o imposto novo, cada produto bem cadastrado vale dinheiro.', fs: 100,
   kw: 'cadastro de produtos na padaria',
   cap: `Cadastro de produtos na padaria virou assunto de dinheiro em 2027: com a reforma tributária, cada item pode ter uma regra diferente de imposto.\n\nAproveite o movimento menor de janeiro para revisar os produtos que mais vendem: descrição, unidade, preço e classificação fiscal. O que é feito na loja e o que é revenda precisam estar separados.\n\nConfirme as regras com seu contador. Quer ajuda com o cadastro no sistema? ${CTA}`,
@@ -194,7 +208,7 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   alts: ['Frase em laranja sobre fundo branco: janeiro é mais calmo, bom mês para arrumar o cadastro.'],
   conferir: ['Não detalhar alíquota nem classificação: a legenda manda ao contador.'] },
 
-{ ...N, data: 'Dom 10/01', seg: 'Farmácia', id: 'farmacia-perda-de-vendas-verao-v1', tipo: 'comTela', tema: 'azul', fundo: 'forte', formato: 'Estático com tela',
+{ ...N, travada: true, data: 'Dom 10/01', seg: 'Farmácia', id: 'farmacia-perda-de-vendas-verao-v1', tipo: 'comTela', tema: 'azul', fundo: 'forte', formato: 'Estático com tela',
   titulo: 'Verão: o protetor acabou. <b>O cliente foi para onde?</b>', fs: 70, alturaTitulo: 210, tela: 'perda-vendas-motivo', faixa: 'Ao excluir o item, o caixa pede o motivo. A venda perdida vira relatório.', pilula: 'Leia a legenda',
   kw: 'perda de vendas na farmácia',
   cap: `Perda de vendas na farmácia no verão: protetor solar, repelente e hidratação saem rápido, e a falta só aparece quando o cliente já foi embora.\n\nO caixa não registra a venda que não aconteceu. Mas dá para medir: falta do produto, preço da concorrência, problema no pagamento, demora no atendimento. Com o motivo anotado, você ajusta a compra de 2027 pelo que o cliente procurou.\n\nNo Prosystem, ao excluir um item, o caixa pede o motivo. O relatório e o gráfico mostram quanto e por que a farmácia deixou de vender.\n\n${CTA}`,
@@ -203,14 +217,20 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   conferir: ['A padaria recebeu a mesma função em 05/11, com o gráfico. Aqui entra a tela do motivo.'] },
 
 { ...N, data: 'Sáb 16/01', seg: 'Os dois', id: 'frase-contador-arquivos-v1', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto',
-  titulo: 'Seu contador <b>ainda precisa pedir os arquivos?</b>', apoio: 'O Prosystem Fiscal envia XML, SPED e relatórios de uma vez.', fs: 110,
+  titulo: 'O contador pediu os arquivos? <b>Envie tudo de uma vez.</b>', apoio: 'No Prosystem Fiscal, XML, SPED e relatórios vão juntos para a contabilidade.', fs: 110,
   kw: 'arquivos fiscais para o contador',
-  cap: `Arquivos fiscais para o contador: todo mês a mesma mensagem pedindo XML, SPED e relatórios. Em 2027, com o imposto novo, a troca de arquivos fica ainda mais frequente.\n\nCombine com a contabilidade, logo no começo do ano, o que ela precisa receber e quando.\n\nNo Prosystem Fiscal, os XMLs, o SPED, o Sintegra e os relatórios vão de uma vez para o FTP da contabilidade.\n\n${CTA}`,
-  tags: '#contabilidade #reformatributaria #sistemaparafarmacia #sistemaparapadaria',
-  alts: ['Frase em azul sobre fundo branco: seu contador ainda precisa pedir os arquivos? O Prosystem Fiscal envia XML, SPED e relatórios de uma vez.'],
-  conferir: ['Depende de a contabilidade ter FTP.', 'Função de artigo de 2020: confirmar com produto se o envio segue assim.'] },
+  cap: `Arquivos fiscais para o contador: todo mês ele pede XML, SPED e relatórios. O pedido continua. O que muda é o trabalho para mandar. Em 2027, com o imposto novo, essa troca fica ainda mais frequente.
 
-{ ...N, data: 'Dom 17/01', seg: 'Padaria', id: 'padaria-login-ferias-v1', tipo: 'fotoPainel', tema: 'lar', formato: 'Foto com painel de vidro', foto: 'croissants-bandeja',
+Combine com a contabilidade, logo no começo do ano, o que ela precisa receber e quando.
+
+No Prosystem Fiscal, quando o contador pede, você envia os XMLs, o SPED, o Sintegra e os relatórios de uma vez para o FTP da contabilidade, sem procurar arquivo por arquivo.
+
+${CTA}`,
+  tags: '#contabilidade #reformatributaria #sistemaparafarmacia #sistemaparapadaria',
+  alts: ['Frase em azul sobre fundo branco: o contador pediu os arquivos? Envie tudo de uma vez. No Prosystem Fiscal, XML, SPED e relatórios vão juntos para a contabilidade.'],
+  conferir: ['Refeita em 04/11: o contador continua pedindo; a diferença é a facilidade de enviar.', 'Depende de a contabilidade ter FTP.', 'Função de artigo de 2020: confirmar com produto se o envio segue assim.'] },
+
+{ ...N, travada: true, data: 'Dom 17/01', seg: 'Padaria', id: 'padaria-login-ferias-v1', tipo: 'fotoPainel', tema: 'lar', formato: 'Foto com painel de vidro', foto: 'croissants-bandeja',
   vidro: true, cantos: true, losangos: true, posicao: '50% 50%',
   titulo: 'Férias na equipe. <b>Senha emprestada no caixa?</b>', fs: 78, faixa: 'Cada um com seu login. A auditoria registra quem fez o quê.', pilula: 'Leia a legenda',
   kw: 'controle de acesso no caixa da padaria',
@@ -219,7 +239,7 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   alts: ['Croissants dourados em uma assadeira, com o título: férias na equipe, senha emprestada no caixa?'],
   conferir: ['A foto mostra o que a padaria vende, não o caixa: é a mesma lógica das outras peças de foto com painel.'] },
 
-{ ...N, data: 'Qui 21/01', seg: 'Farmácia', id: 'frase-farmacia-biometria-v1', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto',
+{ ...N, travada: true, data: 'Qui 21/01', seg: 'Farmácia', id: 'frase-farmacia-biometria-v1', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto',
   titulo: 'Senha emprestada <b>é assinatura emprestada.</b>', apoio: 'No Prosystem, a liberação pode ser feita com a digital de quem autoriza.', fs: 108,
   kw: 'biometria no sistema da farmácia',
   cap: `Biometria no sistema da farmácia: quando a senha do gerente circula pelo balcão, o desconto e o cancelamento ficam sem dono.\n\nA digital não se empresta. Com ela, a farmácia sabe quem entrou no sistema e quem autorizou cada operação sensível. Uma mudança simples para começar 2027 com o balcão mais seguro.\n\nNo Prosystem, o acesso e as liberações podem ser feitos por biometria.\n\n${CTA}`,
@@ -227,7 +247,7 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   alts: ['Frase em azul sobre fundo branco: senha emprestada é assinatura emprestada. No Prosystem, a liberação pode ser feita com a digital de quem autoriza.'],
   conferir: ['Novidade do artigo de 20/10/2026, sem tela na base. Confirmar com o Comercial se o leitor biométrico é vendido junto.'] },
 
-{ ...N, data: 'Sáb 23/01', seg: 'Farmácia', id: 'frase-farmacia-uso-continuo-v1', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto',
+{ ...N, travada: true, data: 'Sáb 23/01', seg: 'Farmácia', id: 'frase-farmacia-uso-continuo-v1', tipo: 'frase', tema: 'azul', formato: 'Frase de impacto',
   titulo: 'O cliente não lembra que o remédio vai acabar. <b>A sua farmácia pode lembrar.</b>', apoio: 'Uso contínuo no Prosystem: o balcão é avisado antes.', fs: 86,
   kw: 'cliente de uso contínuo',
   cap: `Cliente de uso contínuo é o cliente que volta todo mês, se a farmácia lembrar dele primeiro.\n\nQuem toma remédio todo dia raramente conta os comprimidos. Quando acaba, compra onde estiver mais perto. Avisar antes é cuidado com o cliente e venda garantida em 2027.\n\nNo Prosystem, o uso contínuo calcula a próxima compra pela posologia e avisa o balcão nos dias anteriores.\n\n${CTA}`,
@@ -235,7 +255,7 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   alts: ['Frase em azul sobre fundo branco: o cliente não lembra que o remédio vai acabar, a sua farmácia pode lembrar.'],
   conferir: ['O uso de dado de saúde do cliente exige cuidado com a LGPD: a legenda não fala em mensagem ao cliente.', 'O carrossel de uso contínuo saiu em 11/12.'] },
 
-{ ...N, data: 'Dom 24/01', seg: 'Os dois', id: 'notas-sefaz-cnpj-v1', tipo: 'fotoPainel', tema: 'azul', formato: 'Foto com painel de vidro', foto: 'teclado-azul',
+{ ...N, travada: true, data: 'Dom 24/01', seg: 'Os dois', id: 'notas-sefaz-cnpj-v1', tipo: 'fotoPainel', tema: 'azul', formato: 'Foto com painel de vidro', foto: 'teclado-azul',
   vidro: true, cantos: true, losangos: true, posicao: '50% 50%',
   titulo: 'Tem nota no seu CNPJ <b>que você nem viu?</b>', fs: 80, faixa: 'O Prosystem busca as notas na SEFAZ, faz o manifesto e dá entrada.', pilula: 'Leia a legenda',
   kw: 'manifesto de nota fiscal',
@@ -244,7 +264,7 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   alts: ['Mão sobre um teclado iluminado, com o título: tem nota no seu CNPJ que você nem viu?'],
   conferir: ['Função de artigo de 2020: confirmar a tela e o fluxo atuais com produto.', 'Crédito de imposto e prazos de manifesto ficam com o contador: a legenda não promete.'] },
 
-{ ...N, data: 'Ter 26/01', seg: 'Farmácia', id: 'farmacia-fidelimax-v1', tipo: 'comTela', tema: 'azul', fundo: 'forte', formato: 'Estático com tela',
+{ ...N, travada: true, data: 'Ter 26/01', seg: 'Farmácia', id: 'farmacia-fidelimax-v1', tipo: 'comTela', tema: 'azul', fundo: 'forte', formato: 'Estático com tela',
   titulo: 'Seu cliente volta por hábito <b>ou porque você deu um motivo?</b>', fs: 70, alturaTitulo: 210, tela: 'fidelimax-pontos', telaLarg: 780, faixa: 'Pontos e cashback no caixa, com o Fidelimax integrado ao Prosystem.', pilula: 'Leia a legenda',
   kw: 'programa de fidelidade para farmácia',
   cap: `Programa de fidelidade para farmácia: desconto para todo mundo não cria motivo para voltar. Ponto e cashback, sim.\n\nO cliente que junta pontos pensa na sua farmácia antes da próxima compra. E você passa a saber quem compra, com que frequência e o que leva. Bom ponto de partida para 2027.\n\nNo Prosystem, a integração com o Fidelimax pontua o cliente e faz o cashback direto no caixa.\n\n${CTA}`,
@@ -252,7 +272,7 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   alts: ['Mensagem do Prosystem no caixa: cliente pontuado com sucesso no programa Fidelimax. Título: seu cliente volta por hábito ou porque você deu um motivo?'],
   conferir: ['Fidelimax é parceiro: confirmar com o Comercial se a integração segue ativa e se pode ser citado.', 'A tela é pequena (374 px) e foi ampliada 2x: o texto também aparece ampliado logo abaixo.'] },
 
-{ ...N, data: 'Qua 27/01', seg: 'Padaria', id: 'frase-padaria-contagem-v1', tipo: 'frase', tema: 'lar', formato: 'Frase de impacto',
+{ ...N, travada: true, data: 'Qua 27/01', seg: 'Padaria', id: 'frase-padaria-contagem-v1', tipo: 'frase', tema: 'lar', formato: 'Frase de impacto',
   titulo: 'Quem conta o estoque em janeiro <b>compra melhor o ano todo.</b>', apoio: 'Estoque certo no sistema, pedido certo no fornecedor.', fs: 96,
   kw: 'inventário de estoque na padaria',
   cap: `Inventário de estoque na padaria: com o movimento menor de janeiro, é a hora de contar o que tem de verdade na loja.\n\nComece pelos insumos que mais pesam no custo: farinha, gordura, embalagem e bebidas de revenda. A diferença entre o sistema e a prateleira mostra onde está a perda e deixa a compra de 2027 mais certa.\n\nQuer fazer o balanço com o sistema? ${CTA}`,
@@ -260,7 +280,7 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   alts: ['Frase em laranja sobre fundo branco: quem conta o estoque em janeiro compra melhor o ano todo.'],
   conferir: ['Sem citar o app ContEstoque: não confirmado se segue disponível.'] },
 
-{ ...N, data: 'Qui 28/01', seg: 'Os dois', id: 'suporte-troca-de-sistema-v1', tipo: 'fotoPainel', tema: 'azul', formato: 'Foto com painel de vidro', foto: 'maos-teclado-mesa',
+{ ...N, travada: true, data: 'Qui 28/01', seg: 'Os dois', id: 'suporte-troca-de-sistema-v1', tipo: 'fotoPainel', tema: 'azul', formato: 'Foto com painel de vidro', foto: 'maos-teclado-mesa',
   vidro: true, cantos: true, losangos: true, posicao: '50% 50%',
   titulo: 'Trocar de sistema dá medo. <b>O que pesa é quem te atende depois.</b>', fs: 66, faixa: 'Suporte humanizado das 7h às 22h, inclusive sábado e domingo.', pilula: 'Fale com um especialista',
   kw: 'trocar o sistema da farmácia ou da padaria',
@@ -269,7 +289,7 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   alts: ['Mãos digitando em um teclado sobre a mesa, com o título: trocar de sistema dá medo, o que pesa é quem te atende depois.'],
   conferir: ['Provas usadas: +600 clientes e +16 anos (site) e o horário do suporte informado pela Jessica.'] },
 
-{ ...N, data: 'Sex 29/01', seg: 'Padaria', id: 'padaria-carnaval-producao-v1', tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', foto: 'padeiros-padaria', pilula: 'Leia a legenda',
+{ ...N, travada: true, data: 'Sex 29/01', seg: 'Padaria', id: 'padaria-carnaval-producao-v1', tipo: 'padariaFoto', tema: 'lar', formato: 'Padaria com foto', foto: 'padeiros-padaria', pilula: 'Leia a legenda',
   titulo: 'Fevereiro tem Carnaval. <b>A produção já está planejada?</b>', fs: 88,
   kw: 'planejamento da padaria no Carnaval',
   cap: `Planejamento da padaria no Carnaval: tem cidade que esvazia e tem bairro que lota. O que aconteceu na sua padaria no Carnaval do ano passado?\n\nOlhe as vendas dos dias de folia em 2026 antes de montar a escala e a produção de 2027. Assim não sobra pão na terça nem falta no sábado.\n\nNa versão Plus do Prosystem, o painel de indicadores filtra as vendas por período, dia a dia.\n\n${CTA}`,
@@ -277,7 +297,7 @@ Foto: Jeremy Keith (CC BY 2.0).`,
   alts: ['Padeiro e padeira sorrindo, com bandejas de massa e de folhados, com o título: fevereiro tem Carnaval, a produção já está planejada?'],
   conferir: ['Foto do banco local da padaria (banco imagens/padaria), sem licença registrada. Confirmar o direito de uso.', 'Modelos posando: o caderno prefere pessoas em ação e com aparência brasileira. Trocar a foto se preferir.', 'Carnaval de 2027: 6 a 10 de fevereiro.'] },
 
-{ ...N, data: 'Sáb 30/01', seg: 'Farmácia', id: 'farmacia-pre-vencidos-v1', tipo: 'fotoPainel', tema: 'azul', formato: 'Foto com painel de vidro', foto: 'prateleiras-recorte',
+{ ...N, travada: true, data: 'Sáb 30/01', seg: 'Farmácia', id: 'farmacia-pre-vencidos-v1', tipo: 'fotoPainel', tema: 'azul', formato: 'Foto com painel de vidro', foto: 'prateleiras-recorte',
   vidro: true, cantos: true, losangos: true, posicao: '50% 50%',
   titulo: 'Perto de vencer, ainda vende. <b>Vencido, é prejuízo.</b>', fs: 74, faixa: 'Na tela de venda do Prosystem, os pré-vencidos aparecem em destaque.', pilula: 'Leia a legenda',
   kw: 'produtos vencidos na farmácia',

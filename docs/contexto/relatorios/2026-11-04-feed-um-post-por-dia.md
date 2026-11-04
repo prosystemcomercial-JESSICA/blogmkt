@@ -44,3 +44,27 @@ A Jessica viu que, depois de 04/11, o próximo post era só em 09/11 (o carrosse
 
 ## Próxima sessão
 Leia o documento de aprovação, aplique as notas da Jessica em `pecas-dias-extras.js`. Depois rode `node outputs/criativos/nov-dez/gerar.js <id>` e, para a página, `galeria.js <saída> pendentes`, publicando na mesma URL. Skills: `relatorio-final`; leia o caderno de marca antes de mudar qualquer peça.
+
+---
+
+## Continuação (04/11/2026): aprovação da Jessica
+
+### Pedido
+"pronto, verifique o documento". A Jessica marcou cada peça no documento de aprovação.
+
+### Feito
+- **29 aprovadas** e travadas (`travada: true` em `pecas-dias-extras.js`).
+- **4 refeitas**, aguardando nova aprovação. As notas dela foram escritas no próprio campo Decisão, que corta o texto em 80 caracteres; duas chegaram cortadas e foram interpretadas.
+  - 13/12 (`frase-padaria-gestao-v1`). Nota: "ficou confuso, parece que vai sobrar pão e vai para o lixo". O título passou de "Gestão boa faz sobrar" para "Gestão boa dá lucro".
+  - 17/12 (`padaria-lucro-panetone-v1`). Nota: "mude essa foto, ela é feia". A foto agora é `panetone-grade.jpg`: dois panetones na grade, Wikimedia, N i c o l a, CC BY 2.0. O crédito foi para a legenda e para `fotos/CREDITOS.md`.
+  - 20/12 (`padaria-horario-festas-v1`). Nota: "fale sobre dicas de como fazer esse comunicado, não só na l…". Novo título: "Horário diferente no Natal? Avise assim.". A legenda traz 5 dicas de como escrever o aviso.
+  - 16/01 (`frase-contador-arquivos-v1`). Nota: "o contador precisa solicitar o arquivo, a diferença é a forma fácil em que o cli…". Novo título: "O contador pediu os arquivos? Envie tudo de uma vez." A legenda diz que o pedido continua e que o cliente envia tudo de uma vez.
+- `legendas.md` gerado de novo. Na página de revisão (versão 4) e no documento de aprovação, as 4 seções têm imagem nova, o pedido dela e um campo Decisão em branco.
+
+### Verificado
+- `gerar.js` completo rodou "sem estouro". Só as 4 imagens refeitas mudaram no git.
+- Vi as 4 peças novas lado a lado.
+
+### Pendente
+- A Jessica aprovar as 4 refeitas no documento.
+- Os itens de "Para confirmar antes de publicar" continuam abertos.
