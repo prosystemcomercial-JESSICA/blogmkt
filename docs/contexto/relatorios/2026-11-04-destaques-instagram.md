@@ -49,5 +49,11 @@ Jessica: "vamos criar alguns stories para colocarmos nos destaques do instagram,
 - Pedido: "me de o guia corretamente, por onde eu começo e tudo que posso fazer hoje, com passo a passo".
 - Feito: guia refeito por dia, começando por hoje (salvar capas, postar Contato 1 a 3 com link, criar o destaque, apagar "Redes Sociais"), com listas de marcar e os links para copiar dentro de cada dia. Agenda da API adiantada um dia: 05 a 10/11, às 10h. Mesmo link do guia.
 
+## Ritmo novo (mesmo dia)
+- Pedido: "ja postei hoje um depoimento, e os demais vai postando diariamente, assim conseguimos manter o destaque, e depois use mais os que estao la e vamos postar 2 por semana pelo menos"; depois: "coloque 4 por semana até o final de novembro, depois passe para 2 por semana".
+- Feito: agenda refeita com um story por entrada (seg/ter/qui/sáb em novembro; ter/qui depois), de 05/11/2026 a 15/04/2027; aberturas de cada destaque primeiro. Os 6 de link ficam `manual`. Guia refeito: hoje só capas (destaques existentes mantidos e renomeados), regra de "Destacar" em cada dia, calendário completo e os 6 de link.
+- Verificado: `publicar.mjs --teste` encontra os arquivos de todas as entradas.
+- Pendente (Jessica): qual dos 5 depoimentos novos ela já postou em 04/11, para tirar da agenda (o primeiro depoimento de cliente sai em 24/11). Repostagem de 2 por semana depois de 15/04/2027: agendar quando chegar perto.
+
 ## Próxima sessão
 Perguntar o que a Jessica aprovou. Ajuste vira v2: mude o sufixo `-v1` no gerador e gere de novo com `node outputs/criativos/destaques/gerar-destaques.js png <id>` (e `mp4 <id>` nas aberturas). Antes de criar peça nova, leia o caderno de marca.

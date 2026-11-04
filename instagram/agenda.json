@@ -20,106 +20,553 @@
     "link": "https://www.instagram.com/p/DfSNk7WgOdT/"
   },
   {
-    "id": "destaque-depoimentos",
+    "id": "destaque-quem-somos-v1-1",
     "quando": "2026-11-05T10:00:00-03:00",
     "tipo": "stories",
-    "nota": "Destaque depoimentos: stories pela API, na ordem. Depois a Jessica monta o destaque com a capa.",
+    "status": "agendado",
+    "nota": "Destaque quem-somos, story 1. Depois a Jessica adiciona ao destaque pelo app.",
     "midias": [
-      "instagram/midia/destaques/destaque-depoimentos-v1-1.mp4",
-      "instagram/midia/destaques/destaque-depoimentos-v1-2.jpg",
-      "instagram/midia/destaques/destaque-depoimentos-v1-3.jpg",
-      "instagram/midia/destaques/destaque-depoimentos-v1-4.jpg",
-      "instagram/midia/destaques/destaque-depoimentos-v1-5.jpg"
-    ],
-    "status": "agendado"
+      "instagram/midia/destaques/destaque-quem-somos-v1-1.mp4"
+    ]
   },
   {
-    "id": "destaque-suporte",
-    "quando": "2026-11-06T10:00:00-03:00",
-    "tipo": "stories",
-    "nota": "Destaque suporte: stories pela API, na ordem. Depois a Jessica monta o destaque com a capa.",
-    "midias": [
-      "instagram/midia/destaques/destaque-suporte-v1-1.mp4",
-      "instagram/midia/destaques/destaque-suporte-v1-2.jpg",
-      "instagram/midia/destaques/destaque-suporte-v1-3.jpg"
-    ],
-    "status": "agendado"
-  },
-  {
-    "id": "destaque-integracoes",
+    "id": "destaque-segmentos-v1-1",
     "quando": "2026-11-07T10:00:00-03:00",
     "tipo": "stories",
-    "nota": "Destaque integracoes: stories sem link pela API, na ordem. Depois a Jessica posta pelo app o(s) story(s) com link [3] e monta o destaque com a capa.",
+    "status": "agendado",
+    "nota": "Destaque segmentos, story 1. Depois a Jessica adiciona ao destaque pelo app.",
     "midias": [
-      "instagram/midia/destaques/destaque-integracoes-v1-1.mp4",
-      "instagram/midia/destaques/destaque-integracoes-v1-2.jpg"
-    ],
-    "status": "agendado"
+      "instagram/midia/destaques/destaque-segmentos-v1-1.mp4"
+    ]
   },
   {
-    "id": "destaque-ferramentas",
-    "quando": "2026-11-08T10:00:00-03:00",
-    "tipo": "stories",
-    "nota": "Destaque ferramentas: stories sem link pela API, na ordem. Depois a Jessica posta pelo app o(s) story(s) com link [33] e monta o destaque com a capa.",
-    "midias": [
-      "instagram/midia/destaques/destaque-ferramentas-v1-1.mp4",
-      "instagram/midia/destaques/destaque-ferramentas-v1-2.mp4",
-      "instagram/midia/destaques/destaque-ferramentas-v1-3.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-4.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-5.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-6.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-7.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-8.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-9.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-10.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-11.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-12.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-13.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-14.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-15.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-16.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-17.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-18.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-19.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-20.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-21.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-22.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-23.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-24.mp4",
-      "instagram/midia/destaques/destaque-ferramentas-v1-25.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-26.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-27.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-28.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-29.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-30.mp4",
-      "instagram/midia/destaques/destaque-ferramentas-v1-31.jpg",
-      "instagram/midia/destaques/destaque-ferramentas-v1-32.jpg"
-    ],
-    "status": "agendado"
-  },
-  {
-    "id": "destaque-segmentos",
+    "id": "destaque-ferramentas-v1-1",
     "quando": "2026-11-09T10:00:00-03:00",
     "tipo": "stories",
-    "nota": "Destaque segmentos: stories pela API, na ordem. Depois a Jessica monta o destaque com a capa.",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 1. Depois a Jessica adiciona ao destaque pelo app.",
     "midias": [
-      "instagram/midia/destaques/destaque-segmentos-v1-1.mp4",
-      "instagram/midia/destaques/destaque-segmentos-v1-2.jpg",
-      "instagram/midia/destaques/destaque-segmentos-v1-3.jpg",
-      "instagram/midia/destaques/destaque-segmentos-v1-4.jpg"
-    ],
-    "status": "agendado"
+      "instagram/midia/destaques/destaque-ferramentas-v1-1.mp4"
+    ]
   },
   {
-    "id": "destaque-quem-somos",
+    "id": "destaque-integracoes-v1-1",
     "quando": "2026-11-10T10:00:00-03:00",
     "tipo": "stories",
-    "nota": "Destaque quem-somos: stories sem link pela API, na ordem. Depois a Jessica posta pelo app o(s) story(s) com link [4] e monta o destaque com a capa.",
+    "status": "agendado",
+    "nota": "Destaque integracoes, story 1. Depois a Jessica adiciona ao destaque pelo app.",
     "midias": [
-      "instagram/midia/destaques/destaque-quem-somos-v1-1.mp4",
-      "instagram/midia/destaques/destaque-quem-somos-v1-2.mp4",
+      "instagram/midia/destaques/destaque-integracoes-v1-1.mp4"
+    ]
+  },
+  {
+    "id": "destaque-suporte-v1-1",
+    "quando": "2026-11-12T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque suporte, story 1. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-suporte-v1-1.mp4"
+    ]
+  },
+  {
+    "id": "destaque-depoimentos-v1-1",
+    "quando": "2026-11-14T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque depoimentos, story 1. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-depoimentos-v1-1.mp4"
+    ]
+  },
+  {
+    "id": "destaque-contato-v1-1",
+    "quando": "2026-11-16T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "manual",
+    "nota": "Story com figurinha de link: a Jessica posta pelo app neste dia (guia de postagem).",
+    "midias": [
+      "outputs/criativos/destaques/stories/destaque-contato-v1-1.png"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-2",
+    "quando": "2026-11-17T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 2. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-2.mp4"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-3",
+    "quando": "2026-11-19T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 3. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-3.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-4",
+    "quando": "2026-11-21T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 4. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-4.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-5",
+    "quando": "2026-11-23T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 5. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-5.jpg"
+    ]
+  },
+  {
+    "id": "destaque-depoimentos-v1-2",
+    "quando": "2026-11-24T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque depoimentos, story 2. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-depoimentos-v1-2.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-6",
+    "quando": "2026-11-26T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 6. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-6.jpg"
+    ]
+  },
+  {
+    "id": "destaque-quem-somos-v1-2",
+    "quando": "2026-11-28T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque quem-somos, story 2. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-quem-somos-v1-2.mp4"
+    ]
+  },
+  {
+    "id": "destaque-segmentos-v1-2",
+    "quando": "2026-11-30T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque segmentos, story 2. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-segmentos-v1-2.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-7",
+    "quando": "2026-12-01T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 7. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-7.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-8",
+    "quando": "2026-12-03T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 8. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-8.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-9",
+    "quando": "2026-12-08T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 9. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-9.jpg"
+    ]
+  },
+  {
+    "id": "destaque-integracoes-v1-2",
+    "quando": "2026-12-10T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque integracoes, story 2. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-integracoes-v1-2.jpg"
+    ]
+  },
+  {
+    "id": "destaque-suporte-v1-2",
+    "quando": "2026-12-15T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque suporte, story 2. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-suporte-v1-2.jpg"
+    ]
+  },
+  {
+    "id": "destaque-contato-v1-2",
+    "quando": "2026-12-17T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "manual",
+    "nota": "Story com figurinha de link: a Jessica posta pelo app neste dia (guia de postagem).",
+    "midias": [
+      "outputs/criativos/destaques/stories/destaque-contato-v1-2.png"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-10",
+    "quando": "2026-12-22T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 10. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-10.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-11",
+    "quando": "2026-12-24T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 11. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-11.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-12",
+    "quando": "2026-12-29T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 12. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-12.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-13",
+    "quando": "2026-12-31T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 13. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-13.jpg"
+    ]
+  },
+  {
+    "id": "destaque-depoimentos-v1-3",
+    "quando": "2027-01-05T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque depoimentos, story 3. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-depoimentos-v1-3.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-14",
+    "quando": "2027-01-07T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 14. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-14.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-15",
+    "quando": "2027-01-12T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 15. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-15.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-16",
+    "quando": "2027-01-14T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 16. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-16.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-17",
+    "quando": "2027-01-19T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 17. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-17.jpg"
+    ]
+  },
+  {
+    "id": "destaque-quem-somos-v1-3",
+    "quando": "2027-01-21T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque quem-somos, story 3. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
       "instagram/midia/destaques/destaque-quem-somos-v1-3.jpg"
-    ],
-    "status": "agendado"
+    ]
+  },
+  {
+    "id": "destaque-segmentos-v1-3",
+    "quando": "2027-01-26T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque segmentos, story 3. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-segmentos-v1-3.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-18",
+    "quando": "2027-01-28T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 18. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-18.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-19",
+    "quando": "2027-02-02T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 19. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-19.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-20",
+    "quando": "2027-02-04T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 20. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-20.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-21",
+    "quando": "2027-02-09T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 21. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-21.jpg"
+    ]
+  },
+  {
+    "id": "destaque-depoimentos-v1-4",
+    "quando": "2027-02-11T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque depoimentos, story 4. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-depoimentos-v1-4.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-22",
+    "quando": "2027-02-16T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 22. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-22.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-23",
+    "quando": "2027-02-18T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 23. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-23.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-24",
+    "quando": "2027-02-23T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 24. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-24.mp4"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-25",
+    "quando": "2027-02-25T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 25. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-25.jpg"
+    ]
+  },
+  {
+    "id": "destaque-integracoes-v1-3",
+    "quando": "2027-03-02T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "manual",
+    "nota": "Story com figurinha de link: a Jessica posta pelo app neste dia (guia de postagem).",
+    "midias": [
+      "outputs/criativos/destaques/stories/destaque-integracoes-v1-3.png"
+    ]
+  },
+  {
+    "id": "destaque-suporte-v1-3",
+    "quando": "2027-03-04T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque suporte, story 3. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-suporte-v1-3.jpg"
+    ]
+  },
+  {
+    "id": "destaque-contato-v1-3",
+    "quando": "2027-03-09T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "manual",
+    "nota": "Story com figurinha de link: a Jessica posta pelo app neste dia (guia de postagem).",
+    "midias": [
+      "outputs/criativos/destaques/stories/destaque-contato-v1-3.png"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-26",
+    "quando": "2027-03-11T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 26. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-26.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-27",
+    "quando": "2027-03-16T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 27. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-27.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-28",
+    "quando": "2027-03-18T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 28. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-28.jpg"
+    ]
+  },
+  {
+    "id": "destaque-quem-somos-v1-4",
+    "quando": "2027-03-23T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "manual",
+    "nota": "Story com figurinha de link: a Jessica posta pelo app neste dia (guia de postagem).",
+    "midias": [
+      "outputs/criativos/destaques/stories/destaque-quem-somos-v1-4.png"
+    ]
+  },
+  {
+    "id": "destaque-segmentos-v1-4",
+    "quando": "2027-03-25T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque segmentos, story 4. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-segmentos-v1-4.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-29",
+    "quando": "2027-03-30T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 29. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-29.jpg"
+    ]
+  },
+  {
+    "id": "destaque-depoimentos-v1-5",
+    "quando": "2027-04-01T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque depoimentos, story 5. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-depoimentos-v1-5.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-30",
+    "quando": "2027-04-06T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 30. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-30.mp4"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-31",
+    "quando": "2027-04-08T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 31. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-31.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-32",
+    "quando": "2027-04-13T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "agendado",
+    "nota": "Destaque ferramentas, story 32. Depois a Jessica adiciona ao destaque pelo app.",
+    "midias": [
+      "instagram/midia/destaques/destaque-ferramentas-v1-32.jpg"
+    ]
+  },
+  {
+    "id": "destaque-ferramentas-v1-33",
+    "quando": "2027-04-15T10:00:00-03:00",
+    "tipo": "stories",
+    "status": "manual",
+    "nota": "Story com figurinha de link: a Jessica posta pelo app neste dia (guia de postagem).",
+    "midias": [
+      "outputs/criativos/destaques/stories/destaque-ferramentas-v1-33.png"
+    ]
   }
 ]

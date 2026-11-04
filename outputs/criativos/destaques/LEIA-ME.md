@@ -18,21 +18,14 @@ Aguardando aprovação da Jessica.
 | 6 | Depoimentos | "Depoimentos" | 5 | 1 |
 | 7 | Contato | "Redes Sociais" | 3 | 1 |
 
-## Publicação (escolha da Jessica em 04/11/2026: API, um destaque por dia)
+## Publicação (decisão da Jessica em 04/11/2026)
 
-Os stories sem link estão em `instagram/agenda.json` (tipo `stories`, arquivos em `instagram/midia/destaques/`) e sobem pela API às 10h, na ordem (agenda adiantada em 04/11: Contato no mesmo dia, pela Jessica; API de 05 a 10/11). A ordem dos dias é invertida porque o destaque criado por último aparece primeiro no perfil:
+Um story por vez, para os destaques durarem: **4 por semana até 30/11** (seg, ter, qui e sáb) e **2 por semana a partir de dezembro** (ter e qui), sempre às 10h. O último sai em 15/04/2027. A primeira semana abre um story de cada destaque; o resto vai distribuído.
 
-| Dia | Destaque | API | Jessica pelo app |
-|---|---|---|---|
-| 04/11 | Contato | nada | Contato 1, 2 e 3 com link; cria o destaque; apaga "Redes Sociais" |
-| 05/11 | Depoimentos | 1 a 5 | cria o destaque; apaga o antigo |
-| 06/11 | Suporte | 1 a 3 | cria o destaque |
-| 07/11 | Integrações | 1 e 2 | Integrações 3 com link; cria o destaque; apaga o antigo |
-| 08/11 | Ferramentas | 1 a 32 | Ferramentas 33 com link; cria o destaque; apaga o antigo |
-| 09/11 | Segmentos | 1 a 4 | cria o destaque; apaga "Nossos Nichos" |
-| 10/11 | Quem somos | 1 a 3 | Quem somos 4 com link; cria o destaque; apaga os dois antigos |
-
-A API não cria destaque, não troca capa e não põe figurinha de link. Guia da Jessica com os arquivos, os links para copiar e as capas: https://claude.ai/artifact/1W8HvbsL5WdYmk9bP6yNR1
+- Agenda: `instagram/agenda.json`, uma entrada por story (`destaque-<grupo>-v1-<n>`). Os 6 com figurinha de link têm `status: manual`: a API ignora, a Jessica posta pelo app no dia marcado.
+- A Jessica **mantém os destaques que já existem** e só troca as capas (Nossos Nichos vira Segmentos, Redes Sociais vira Contato). Cada story novo ela coloca no destaque pelo app (Destacar). Suporte é criado em 12/11. "Quem Somos?" sai quando o Quem somos novo tiver 3 stories (21/01/2027).
+- Depois do último, a ideia dela é repostar 2 por semana os stories que já estão nos destaques (ainda não agendado).
+- Guia com capas, calendário, stories de link e passo a passo: https://claude.ai/artifact/1W8HvbsL5WdYmk9bP6yNR1
 
 ## Figurinha de link
 
