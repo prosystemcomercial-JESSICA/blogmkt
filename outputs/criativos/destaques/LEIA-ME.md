@@ -3,7 +3,7 @@
 Gerados por `gerar-destaques.js` (`node outputs/criativos/destaques/gerar-destaques.js [png|mp4|capas] [id]`).
 Aguardando aprovação da Jessica.
 
-- `stories/`: 27 stories em PNG de 1080×1920. A abertura de cada destaque também sai em MP4 (8 s), com animação; o último quadro é igual ao PNG. Suba o MP4 no lugar do PNG quando houver os dois.
+- `stories/`: 55 stories em PNG de 1080×1920. A abertura de cada destaque também sai em MP4 (8 s), com animação; o último quadro é igual ao PNG. Suba o MP4 no lugar do PNG quando houver os dois.
 - `capas/`: 7 capas de 1080×1080. O Instagram recorta em círculo; o desenho fica no centro.
 
 ## Ordem dos destaques
@@ -12,7 +12,7 @@ Aguardando aprovação da Jessica.
 |---|---|---|---|---|
 | 1 | Quem somos | "Quem somos" e "Quem Somos?" (eram dois) | 4 | 1 e 2 |
 | 2 | Segmentos | "Nossos Nichos" | 4 | 1 |
-| 3 | Ferramentas | "Ferramentas" | 5 | 1 |
+| 3 | Ferramentas | "Ferramentas" | 33 | 1, 2, 24 e 30 |
 | 4 | Integrações | "Integrações" | 3 | 1 |
 | 5 | Suporte | novo | 3 | 1 |
 | 6 | Depoimentos | "Depoimentos" | 5 | 1 |
@@ -25,12 +25,28 @@ Os stories abaixo deixam a faixa de 1300 a 1580px livre, logo abaixo da pílula 
 | Story | Link |
 |---|---|
 | Quem somos 4 | https://prosystemnet.com/linknabio |
+| Ferramentas 33 | WhatsApp do comercial |
 | Integrações 3 | WhatsApp do comercial |
 | Contato 1 | WhatsApp do comercial |
 | Contato 2 | https://prosystemnet.com/blog/ |
 | Contato 3 | https://prosystemnet.com/ebook/ |
 
 Nos outros stories, a figurinha é opcional. Se quiser usá-la, Segmentos 2 pode apontar para https://prosystemnet.com/sistema-para-farmacia/ e Segmentos 4 para https://prosystemnet.com/sistema-para-padaria/.
+
+## Ferramentas (ampliado em 04/11/2026)
+
+A Jessica pediu "mais sobre as ferramentas, todas que pudermos". O destaque passou de 5 para 33 stories, na ordem do dia da loja:
+
+- 1 abertura e 2 índice (as quatro partes).
+- 3 a 9: caixa e vendas (sangria obrigatória, registro de sangria, fechamento, motivo da exclusão, painel de perda de vendas, combos, entregas).
+- 10 a 15: estoque, preço e lucro (curva ABC e XYZ, produtos sem giro, painel de estoque, precificação, rentabilidade, análise de descontos).
+- 16 a 23: painéis, WhatsApp e clientes (painel de indicadores, ticket médio, metas, fechamento, contas a pagar, aviso de desconto, escolha dos avisos, Fidelimax).
+- 24: biometria (novidade).
+- 25 a 29: farmácia (uso contínuo, relatório de uso contínuo, scanner de receitas do Farmácia Popular, atenção farmacêutica, lista com SNGPC, PBM e outros).
+- 30 e 31: padaria, em laranja (pesagem no caixa e lista com mesas, produção e outros).
+- 32: fiscal e financeiro (lista). 33: convite com a figurinha de link.
+
+Telas muito finas (combos, metas, rentabilidade) levam o texto real da tela repetido em destaque, como no feed. Nenhum recurso novo foi inventado: tudo vem da LP, da tabela Planos 2025 ou de peças do feed.
 
 ## Fontes do conteúdo
 

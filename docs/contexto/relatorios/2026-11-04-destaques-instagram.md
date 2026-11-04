@@ -5,7 +5,7 @@ Jessica: "vamos criar alguns stories para colocarmos nos destaques do instagram,
 
 ## Feito
 - `outputs/criativos/destaques/gerar-destaques.js`: gera os stories (PNG 1080×1920), os vídeos (MP4 de 8 s, 30 qps) e as capas (1080×1080). Modos: `png`, `mp4`, `capas`, com filtro opcional por id.
-- `outputs/criativos/destaques/stories/`: 27 PNG e 8 MP4. `capas/`: 7 PNG.
+- `outputs/criativos/destaques/stories/`: 27 PNG e 8 MP4 (depois da ampliação: 55 PNG e 11 MP4). `capas/`: 7 PNG.
 - `outputs/criativos/destaques/LEIA-ME.md`: ordem dos destaques, o que cada um substitui, links das figurinhas, fontes do conteúdo e pontos em aberto.
 - Caderno de marca: tipo "Story de destaque" em `docs/design/caderno-de-marca/project/tipos-de-posts.md`.
 - Página de revisão para a Jessica: https://claude.ai/artifact/N2ThqYAUSZ2QAqXaWGRMLW (prévias reduzidas; os arquivos de verdade estão no repositório).
@@ -29,6 +29,13 @@ Jessica: "vamos criar alguns stories para colocarmos nos destaques do instagram,
 - Ícones das capas: manter ou trocar pela sigla no losango, como no link da bio.
 - Mockups das telas de Ferramentas e Quem somos 3, se ela quiser.
 - Ao publicar: colocar a figurinha de link conforme o `LEIA-ME.md`.
+
+## Ampliação de Ferramentas (mesmo dia)
+- Pedido: "quero mais sobre as ferramentas, vamos colocar todas que pudermos".
+- Feito: destaque Ferramentas de 5 para 33 stories (total 55), funções `ferr()` e `recursos()` no gerador; vídeos novos no índice (2), biometria (24) e pesagem na padaria (30). Ordem e conteúdo no `LEIA-ME.md`.
+- Verificado: conferência automática sem estouro nem texto fora da zona segura; folha de contato dos 33 olhada.
+- Decisões: só recursos com fonte (LP, tabela Planos 2025, peças do feed). Farmácia e padaria em stories separados, padaria em laranja; o índice cita os dois por ser institucional. Plano informado quando a fonte diz (Plus, Pro e Plus, Farma Plus). Biometria entra como "Novidade", como na LP.
+- Pendente: aprovação da Jessica; 33 stories é sequência longa, se ela preferir dá para dividir em dois destaques (ex.: "Ferramentas" e "Farmácia e padaria").
 
 ## Próxima sessão
 Perguntar o que a Jessica aprovou. Ajuste vira v2: mude o sufixo `-v1` no gerador e gere de novo com `node outputs/criativos/destaques/gerar-destaques.js png <id>` (e `mp4 <id>` nas aberturas). Antes de criar peça nova, leia o caderno de marca.
