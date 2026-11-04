@@ -69,3 +69,5 @@ Telas muito finas (combos, metas, rentabilidade) levam o texto real da tela repe
 - **Ícones das capas:** o caderno ainda não tem biblioteca de ícones aprovada. As capas usam ícones de traço (Lucide, licença livre) dentro do losango da marca. Se reprovar, a alternativa é a sigla no losango, como no link da bio.
 - **Telas:** os stories de Ferramentas e o Quem somos 3 mostram a tela real em cartão. Se você fizer o mockup (notebook ou desktop) e salvar em `outputs/criativos/nov-dez/mockups/<tela>.png`, ele entra no lugar ao gerar de novo.
 - **Quem somos e Segmentos falam de farmácia e padaria na mesma peça,** por serem institucionais. O story de padaria (Segmentos 4) é laranja, como manda o caderno.
+
+- Guia só dos 6 stories com link (para postar pelo app): https://claude.ai/artifact/AspHixJMaVMQ1NTVLQ6QFy (gerado por `guia-link/gerar.py`)
