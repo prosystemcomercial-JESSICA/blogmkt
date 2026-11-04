@@ -1073,7 +1073,7 @@ Tire esses números antes das festas e guarde. Em janeiro, eles mostram se a loj
 
 Na versão Plus do Prosystem, o painel de indicadores mostra o total de vendas, o CMV, a rentabilidade média, o ticket médio e os atendimentos do período.
 
-Voltamos a postar em 3 de janeiro. Boas festas! Fale com um especialista pelo link da bio.
+Boas festas! Fale com um especialista pelo link da bio.
 
 #planejamento2027 #gestaodefarmacia #gestaodepadaria #prosystem
 
@@ -1640,7 +1640,7 @@ Está pensando em trocar de sistema em 2027? Fale com um especialista pelo link 
 
 Planejamento da padaria no Carnaval: tem cidade que esvazia e tem bairro que lota. O que aconteceu na sua padaria no Carnaval do ano passado?
 
-Olhe as vendas dos dias de folia em 2026 antes de montar a escala e a produção de 2027. Assim você não sobra pão na terça nem falta no sábado.
+Olhe as vendas dos dias de folia em 2026 antes de montar a escala e a produção de 2027. Assim não sobra pão na terça nem falta no sábado.
 
 Na versão Plus do Prosystem, o painel de indicadores filtra as vendas por período, dia a dia.
 
