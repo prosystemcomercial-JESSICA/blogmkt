@@ -75,10 +75,11 @@
     "id": "story-google-reforma-tributaria-farmacia-2027",
     "quando": "2026-11-05T17:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
-    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Qui 05/11.",
+    "status": "manual",
+    "link": "https://prosystemnet.com/blog/simples-nacional-2027-prazo-opcao-ibs-cbs-farmacia-padaria/",
+    "nota": "Story com figurinha de link: a Jessica posta pelo app neste dia (página dos stories do Google). Mesmo tema da postagem do Google de Qui 05/11.",
     "midias": [
-      "instagram/midia/stories-google/story-2026-11-05-reforma-tributaria-farmacia-2027.jpg"
+      "outputs/criativos/google-nov-jan/stories/story-2026-11-05-reforma-tributaria-farmacia-2027.jpg"
     ]
   },
   {
@@ -249,10 +250,11 @@
     "id": "story-google-preco-pao-frances-ficha-tecnica",
     "quando": "2026-11-12T17:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
-    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Qui 12/11.",
+    "status": "manual",
+    "link": "https://prosystemnet.com/blog/ficha-tecnica-padaria-padronizar-receitas-rendimento/",
+    "nota": "Story com figurinha de link: a Jessica posta pelo app neste dia (página dos stories do Google). Mesmo tema da postagem do Google de Qui 12/11.",
     "midias": [
-      "instagram/midia/stories-google/story-2026-11-12-preco-pao-frances-ficha-tecnica.jpg"
+      "outputs/criativos/google-nov-jan/stories/story-2026-11-12-preco-pao-frances-ficha-tecnica.jpg"
     ]
   },
   {
@@ -535,10 +537,11 @@
     "id": "story-google-encomendas-natal-padaria",
     "quando": "2026-11-25T17:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
-    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Qua 25/11.",
+    "status": "manual",
+    "link": "https://prosystemnet.com/padaria/",
+    "nota": "Story com figurinha de link: a Jessica posta pelo app neste dia (página dos stories do Google). Mesmo tema da postagem do Google de Qua 25/11.",
     "midias": [
-      "instagram/midia/stories-google/story-2026-11-25-encomendas-natal-padaria.jpg"
+      "outputs/criativos/google-nov-jan/stories/story-2026-11-25-encomendas-natal-padaria.jpg"
     ]
   },
   {
@@ -1258,10 +1261,11 @@
     "id": "story-google-simples-nacional-2027-ibs-cbs",
     "quando": "2027-01-07T17:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
-    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Qui 07/01.",
+    "status": "manual",
+    "link": "https://prosystemnet.com/blog/simples-nacional-2027-prazo-opcao-ibs-cbs-farmacia-padaria/",
+    "nota": "Story com figurinha de link: a Jessica posta pelo app neste dia (página dos stories do Google). Mesmo tema da postagem do Google de Qui 07/01.",
     "midias": [
-      "instagram/midia/stories-google/story-2027-01-07-simples-nacional-2027-ibs-cbs.jpg"
+      "outputs/criativos/google-nov-jan/stories/story-2027-01-07-simples-nacional-2027-ibs-cbs.jpg"
     ]
   },
   {
@@ -1348,10 +1352,11 @@
     "id": "story-google-sobra-de-pao-padaria",
     "quando": "2027-01-12T17:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
-    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Ter 12/01.",
+    "status": "manual",
+    "link": "https://prosystemnet.com/blog/controle-de-sobras-padaria-ajustar-producao/",
+    "nota": "Story com figurinha de link: a Jessica posta pelo app neste dia (página dos stories do Google). Mesmo tema da postagem do Google de Ter 12/01.",
     "midias": [
-      "instagram/midia/stories-google/story-2027-01-12-sobra-de-pao-padaria.jpg"
+      "outputs/criativos/google-nov-jan/stories/story-2027-01-12-sobra-de-pao-padaria.jpg"
     ]
   },
   {
@@ -1392,10 +1397,11 @@
     "id": "story-google-sncr-receita-eletronica-controlados",
     "quando": "2027-01-14T17:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
-    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Qui 14/01.",
+    "status": "manual",
+    "link": "https://prosystemnet.com/blog/sncr-receita-eletronica-controlados-farmacia-2026/",
+    "nota": "Story com figurinha de link: a Jessica posta pelo app neste dia (página dos stories do Google). Mesmo tema da postagem do Google de Qui 14/01.",
     "midias": [
-      "instagram/midia/stories-google/story-2027-01-14-sncr-receita-eletronica-controlados.jpg"
+      "outputs/criativos/google-nov-jan/stories/story-2027-01-14-sncr-receita-eletronica-controlados.jpg"
     ]
   },
   {
@@ -1563,10 +1569,11 @@
     "id": "story-google-avaliacao-prosystem-google",
     "quando": "2027-01-22T17:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
-    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Sex 22/01.",
+    "status": "manual",
+    "link": "link de avaliação do Perfil da Empresa no Google (Perfil > Pedir avaliações > copiar link)",
+    "nota": "Story com figurinha de link: a Jessica posta pelo app neste dia (página dos stories do Google). Mesmo tema da postagem do Google de Sex 22/01.",
     "midias": [
-      "instagram/midia/stories-google/story-2027-01-22-avaliacao-prosystem-google.jpg"
+      "outputs/criativos/google-nov-jan/stories/story-2027-01-22-avaliacao-prosystem-google.jpg"
     ]
   },
   {
@@ -1710,10 +1717,11 @@
     "id": "story-google-producao-carnaval-padaria",
     "quando": "2027-01-30T17:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
-    "nota": "Story no visual do Google, mesmo tema da postagem do Google de Sáb 30/01.",
+    "status": "manual",
+    "link": "https://prosystemnet.com/blog/controle-de-sobras-padaria-ajustar-producao/",
+    "nota": "Story com figurinha de link: a Jessica posta pelo app neste dia (página dos stories do Google). Mesmo tema da postagem do Google de Sáb 30/01.",
     "midias": [
-      "instagram/midia/stories-google/story-2027-01-30-producao-carnaval-padaria.jpg"
+      "outputs/criativos/google-nov-jan/stories/story-2027-01-30-producao-carnaval-padaria.jpg"
     ]
   },
   {

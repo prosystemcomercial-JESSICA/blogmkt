@@ -117,3 +117,13 @@ Leia o documento de aprovação, aplique as notas da Jessica em `pecas-dias-extr
 
 ### Pendente
 - A Jessica ver os stories na página de revisão. O primeiro sai em 05/11, às 17h.
+
+### Stories com link (04/11/2026, "desenvolva tudo e vamos com força total")
+- Os 8 stories que pedem ação passam a sair pelo app, com a figurinha de link (`status: manual` e campo `link` em `agenda.json`):
+  - 05/11, 12/11, 07/01, 12/01, 14/01 e 30/01: artigos do blog;
+  - 25/11: página da padaria;
+  - 22/01: link de avaliação do Google, que a Jessica copia no Perfil da Empresa no dia.
+- Na arte desses 8, a pílula agora diz "Toque no link ↓", e a faixa de 1300 a 1580 px fica livre para a figurinha. `stories.js` confere essa faixa.
+- Os outros 28 continuam automáticos.
+- A página de revisão ganhou a seção "Postar pelo app", com os passos, as 8 imagens em tamanho cheio e os links com botão de copiar (versão 2).
+- Os 5 links foram conferidos com resposta 200. O artigo de encomendas de Natal ainda dá 404; por isso, 25/11 aponta para a página da padaria.
