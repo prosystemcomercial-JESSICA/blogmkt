@@ -61,3 +61,7 @@ Perguntar o que a Jessica aprovou. Ajuste vira v2: mude o sufixo `-v1` no gerado
 ## Atualização: depoimento postado à mão
 
 A Jessica postou o **Depoimentos 1** pelo app em 04/11. Na `instagram/agenda.json` a entrada `destaque-depoimentos-v1-1` virou `status: publicado-manual` (data 04/11), então a API não o publica de novo em 14/11. O guia de postagem mostra esse story como "Já postado". Os Depoimentos 2 a 5 continuam agendados (24/11, 05/01, 11/02, 01/04).
+
+## Atualização: caixa de marcar no calendário
+
+Pedido: "coloque um checkbox para que eu marque o que eu ja postei". O calendário do guia (https://claude.ai/artifact/1W8HvbsL5WdYmk9bP6yNR1, versão 5) ganhou a coluna **Postado**, com uma caixa por story (55). A linha marcada fica riscada e há um contador "X de 55 stories postados". O Depoimentos 1 já vem marcado. A marcação fica salva no navegador do aparelho onde ela marcar (localStorage), não sincroniza entre celular e computador. O gerador do guia fica fora do repositório (scratchpad da sessão).
