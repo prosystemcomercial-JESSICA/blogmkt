@@ -321,11 +321,12 @@
     "id": "destaque-contato-v1-1",
     "quando": "2026-11-16T10:00:00-03:00",
     "tipo": "stories",
-    "status": "manual",
-    "nota": "Story com figurinha de link: a Jessica posta pelo app neste dia (guia de postagem).",
+    "status": "publicado",
+    "nota": "Postado pela Jessica pelo app, com figurinha de link (05/11/2026).",
     "midias": [
       "outputs/criativos/destaques/stories/destaque-contato-v1-1.png"
-    ]
+    ],
+    "publicado_em": "2026-11-05"
   },
   {
     "id": "padaria-pix-caixa-v1",
@@ -989,11 +990,12 @@
     "id": "destaque-contato-v1-2",
     "quando": "2026-12-17T10:00:00-03:00",
     "tipo": "stories",
-    "status": "manual",
-    "nota": "Story com figurinha de link: a Jessica posta pelo app neste dia (guia de postagem).",
+    "status": "publicado",
+    "nota": "Postado pela Jessica pelo app, com figurinha de link (05/11/2026).",
     "midias": [
       "outputs/criativos/destaques/stories/destaque-contato-v1-2.png"
-    ]
+    ],
+    "publicado_em": "2026-11-05"
   },
   {
     "id": "padaria-lucro-panetone-v1",
@@ -1854,11 +1856,12 @@
     "id": "destaque-contato-v1-3",
     "quando": "2027-03-09T10:00:00-03:00",
     "tipo": "stories",
-    "status": "manual",
-    "nota": "Story com figurinha de link: a Jessica posta pelo app neste dia (guia de postagem).",
+    "status": "publicado",
+    "nota": "Postado pela Jessica pelo app, com figurinha de link (05/11/2026).",
     "midias": [
       "outputs/criativos/destaques/stories/destaque-contato-v1-3.png"
-    ]
+    ],
+    "publicado_em": "2026-11-05"
   },
   {
     "id": "destaque-ferramentas-v1-26",
