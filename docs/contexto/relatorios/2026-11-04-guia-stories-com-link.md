@@ -22,3 +22,11 @@ Jessica: "me de um arquivo guia apenas desses que preciso postar com link" (os 6
 
 ## Próxima sessão
 - No dia de cada um dos 6 stories, conferir se ela postou.
+
+## 05/11: todos os destaques organizados
+- **Pedido:** "um documento com todos os destaques organizados", depois "quero visual, com guia de postagem e as capas".
+- **Feito:** criei duas versões.
+  - Página visual: https://claude.ai/artifact/Xq91Wmb5YxHmcqecaETP8n, gerada por `outputs/criativos/destaques/guia-completo/gerar.py` a partir de `instagram/agenda.json`. Tem as capas (com link para salvar), as miniaturas dos 55 stories com data, hora e situação, e o guia de postagem. As miniaturas foram copiadas do artifact N2ThqYAUSZ2QAqXaWGRMLW.
+  - Documento em texto (Claude Docs): https://claude.ai/artifact/YXzK8fxJu2mAeUU9QVFk5Z.
+- **Verificado:** a contagem de 5 publicados, 47 para a API e 3 manuais veio da agenda em 05/11, às 10h20.
+- **Próxima sessão:** quando a situação mudar, rode o `gerar.py` de novo e republique a página no mesmo arquivo. A página não se atualiza sozinha.

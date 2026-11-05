@@ -71,3 +71,4 @@ Telas muito finas (combos, metas, rentabilidade) levam o texto real da tela repe
 - **Quem somos e Segmentos falam de farmácia e padaria na mesma peça,** por serem institucionais. O story de padaria (Segmentos 4) é laranja, como manda o caderno.
 
 - Guia só dos 6 stories com link (para postar pelo app): https://claude.ai/artifact/AspHixJMaVMQ1NTVLQ6QFy (gerado por `guia-link/gerar.py`)
+- Guia visual de todos os destaques (capas, stories, situação): https://claude.ai/artifact/Xq91Wmb5YxHmcqecaETP8n (`guia-completo/gerar.py`)
