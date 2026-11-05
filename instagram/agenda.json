@@ -1225,11 +1225,18 @@
     "id": "destaque-depoimentos-v1-3",
     "quando": "2027-01-05T10:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
+    "status": "publicado",
     "nota": "Destaque depoimentos, story 3. Depois a Jessica adiciona ao destaque pelo app.",
     "midias": [
       "instagram/midia/destaques/destaque-depoimentos-v1-3.jpg"
-    ]
+    ],
+    "ids": [
+      "18112432328123705"
+    ],
+    "feitos": 1,
+    "publicado_em": "2026-11-05T14:10:14.000Z",
+    "media_id": "18112432328123705",
+    "link": "https://www.instagram.com/stories/prosystemoficial/"
   },
   {
     "id": "avisos-whatsapp-config-v1",
