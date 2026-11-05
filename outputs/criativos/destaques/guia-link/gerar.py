@@ -12,7 +12,7 @@ S = [
     ("15/04/2027", "qui", "ferramentas-v1-33", "Ferramentas 33", "Ferramentas", "png", W + "Ol%C3%A1%21%20Vi%20as%20ferramentas%20no%20Instagram%20e%20quero%20ver%20o%20Prosystem%20no%20meu%20neg%C3%B3cio.", "Falar com um especialista"),
 ]
 
-POSTADOS = {"contato-v1-1", "contato-v1-2", "contato-v1-3"}  # Jessica postou em 05/11/2026
+POSTADOS = {"contato-v1-1", "contato-v1-2", "contato-v1-3"}  # Jessica postou em 04/11/2026
 cards = ""
 for d, w, k, n, dest, ext, l, t in S:
     passos = [
@@ -25,7 +25,7 @@ for d, w, k, n, dest, ext, l, t in S:
     ]
     li = "".join(f'<li><label><input type="checkbox" id="{k}-{i}"><span>{p}</span></label></li>' for i, p in enumerate(passos))
     rot = "Abrir vídeo para salvar" if ext == "mp4" else "Abrir imagem para salvar"
-    cards += f'''<article class="card{" feito" if k in POSTADOS else ""}"><header><div class="data"><b>{d[:5]}</b><span>{w} · {d[6:]}</span><i>{"11h" if k=="quem-somos-v1-4" else "10h"}</i></div><div><h2>{n}{"<em>Já postado em 05/11</em>" if k in POSTADOS else ""}</h2><p>Destaque: <b>{dest}</b></p></div></header>
+    cards += f'''<article class="card{" feito" if k in POSTADOS else ""}"><header><div class="data"><b>{d[:5]}</b><span>{w} · {d[6:]}</span><i>{"11h" if k=="quem-somos-v1-4" else "10h"}</i></div><div><h2>{n}{"<em>Já postado em 04/11</em>" if k in POSTADOS else ""}</h2><p>Destaque: <b>{dest}</b></p></div></header>
 <div class="corpo"><img src="p/destaque-{k}.jpg" alt="Story {n}" loading="lazy" width="540" height="960"><div class="info">
 <a class="baixar" href="{R}destaque-{k}.{ext}" target="_blank" rel="noopener">{rot}</a>
 <div class="campo"><span>Link da figurinha</span><div class="copiar"><code id="l-{k}">{l}</code><button type="button" data-copiar="l-{k}">Copiar</button></div></div>
