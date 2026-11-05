@@ -28,6 +28,14 @@ Antes de cada commit:
 - `docs/design/caderno-de-marca/project/` — design system e caderno de marca: leia `README.md`, `tipos-de-posts.md`,
   `producao.md` e `decisoes.md` antes de criar qualquer peça. Publicado em https://claude.ai/artifact/BB4fyaWHTFrY3ZX3J1yPuk.
 
+## Vídeo e motion
+
+- Qualquer pedido de motion, animação ou vídeo animado começa pela skill `motion-prosystem`.
+  Ela escolhe a skill certa (`motion-broll`, `hyperframes`, `explainer-*`, `video-use`, `clipify`, `shorts`)
+  e aplica o caderno de marca na animação.
+- Se a Jessica mandar um vídeo (arquivo, anexo, Downloads ou link), assista primeiro com `watch-video`.
+- As skills ficam em `~/.claude/skills`, fora do git.
+
 ## Site (prosystemnet.com)
 
 - WordPress na Hostinger, tema Hello Elementor + Elementor Pro, Yoast SEO.
