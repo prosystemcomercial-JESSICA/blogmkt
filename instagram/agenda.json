@@ -1925,11 +1925,13 @@
     "id": "destaque-quem-somos-v1-4",
     "quando": "2026-11-05T11:00:00-03:00",
     "tipo": "stories",
-    "status": "manual",
-    "nota": "Story com figurinha de link: a Jessica posta pelo app neste dia (guia de postagem).",
+    "status": "publicado",
+    "nota": "Story com figurinha de link: a Jessica posta pelo app neste dia (guia de postagem). Postado pela Jessica no app em 05/11.",
     "midias": [
       "outputs/criativos/destaques/stories/destaque-quem-somos-v1-4.png"
-    ]
+    ],
+    "publicado_em": "2026-11-05T14:00:00.000Z",
+    "link": "https://www.instagram.com/stories/prosystemoficial/"
   },
   {
     "id": "destaque-segmentos-v1-4",
