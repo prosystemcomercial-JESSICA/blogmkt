@@ -43,7 +43,7 @@ for k, nome, nota in GRUPOS:
             quando = f"{q:%d/%m/%Y} · {DIAS[q.weekday()]}"
             hora = f"{q.hour}h" + (f"{q.minute:02d}" if q.minute else "")
         extra = f'<a class="mini" href="{GUIA_LINK}" target="_blank" rel="noopener">Link e arquivo</a>' if e["status"] == "manual" else ""
-        cards += (f'<figure class="st {cls}"><img src="p/destaque-{k}-v1-{num(e)}.jpg" alt="Story {num(e)} de {nome}" loading="lazy" width="540" height="960">'
+        cards += (f'<figure class="st {cls}"><a href="https://raw.githubusercontent.com/prosystemcomercial-JESSICA/blogmkt/main/{e["midias"][0]}" target="_blank" rel="noopener" title="Abrir em tamanho real"><img src="p/destaque-{k}-v1-{num(e)}.jpg" alt="Story {num(e)} de {nome}" loading="lazy" width="540" height="960"></a>'
                   f'<figcaption><div class="l1"><span class="n">{num(e)}</span>{"<i>vídeo</i>" if video else ""}<b class="tag {cls}">{rot}</b></div>'
                   f'<div class="l2">{quando}{" · " + hora if hora else ""}</div>{extra}</figcaption></figure>')
     secoes += f'''<section class="grupo" id="{k}"><header><a href="{RAW}capas/capa-{k}-v1.png" target="_blank" rel="noopener" title="Abrir capa para salvar"><img src="p/capa-{k}-v1.jpg" alt="Capa {nome}" width="180" height="180"></a>
@@ -75,8 +75,8 @@ h2{margin:0;font-size:24px;font-weight:800}
 .grupo header{display:flex;gap:18px;align-items:center}.grupo header img{width:76px;height:76px;border-radius:50%;flex:none;box-shadow:0 0 0 3px var(--cartao),0 0 0 5px var(--linha)}
 .grupo header p{margin:2px 0 0;color:var(--apoio);font-size:15px;max-width:72ch}.grupo header .cont{font-weight:700;font-size:13px}
 .fila{display:flex;gap:14px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x proximity}
-.st{flex:none;margin:0;width:min(170px,44vw);scroll-snap-align:start;display:flex;flex-direction:column;gap:7px}
-.st img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:12px;display:block;background:var(--linha);box-shadow:0 8px 22px rgba(8,19,48,.14)}
+.st{flex:none;margin:0;width:min(200px,46vw);scroll-snap-align:start;display:flex;flex-direction:column;gap:7px}
+.st img{width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:12px;display:block;background:var(--linha);box-shadow:0 8px 22px rgba(8,19,48,.14)}
 .st.pub img{opacity:.55}
 .l1{display:flex;align-items:center;gap:6px;flex-wrap:wrap}.n{font-weight:800;font-size:15px}.l1 i{font-style:normal;font-size:11px;font-weight:700;color:var(--azul)}
 .l2{font-size:12px;color:var(--apoio);font-weight:700;font-variant-numeric:tabular-nums}
@@ -94,7 +94,7 @@ html = f'''<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta n
 <style>{CSS}</style></head><body>
 <header class="topo"><div class="in"><small>Instagram · @prosystemoficial · situação em {hoje}</small>
 <h1>Todos os <b>destaques</b></h1>
-<p>São 7 destaques e 55 stories, de 04/11/2026 a 15/04/2027. Toque numa capa para ir ao destaque. Os stories esmaecidos já foram publicados.</p>
+<p>São 7 destaques e 55 stories, de 04/11/2026 a 15/04/2027. Toque numa capa para ir ao destaque. Os stories esmaecidos já foram publicados. Toque num story para abrir em tamanho real.</p>
 <div class="nums"><span>{totais["publicado"]} publicados</span><span>{totais["agendado"]} a API posta</span><span>{totais["manual"]} você posta</span></div>
 <nav class="perfil" aria-label="Capas">{capas}</nav></div></header>
 <main class="in">

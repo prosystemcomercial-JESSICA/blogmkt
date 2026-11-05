@@ -49,7 +49,7 @@ main{display:flex;flex-direction:column;gap:22px;padding-block:28px 60px}
 .data b{font-size:24px;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}.data i{font-style:normal;font-weight:800;font-size:15px;margin-top:2px}.data span{font-size:12px;font-weight:700;text-transform:uppercase}
 h2{margin:0;font-size:21px;font-weight:800}.card header p{margin:2px 0 0;color:var(--apoio)}
 .corpo{display:grid;grid-template-columns:170px 1fr;gap:18px;align-items:start}
-.corpo img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:12px;display:block;background:var(--linha)}
+.corpo img{width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:12px;display:block;background:var(--linha)}
 .info{display:flex;flex-direction:column;gap:12px;min-width:0}
 .baixar{text-align:center;text-decoration:none;font-weight:800;font-size:14px;padding:10px;border-radius:10px;border:2px solid var(--azul);color:var(--azul)}
 .campo{display:flex;flex-direction:column;gap:5px}.campo>span{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--apoio)}
