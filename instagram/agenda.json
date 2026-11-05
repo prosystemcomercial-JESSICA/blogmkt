@@ -604,7 +604,7 @@
   },
   {
     "id": "destaque-quem-somos-v1-2",
-    "quando": "2026-11-28T10:00:00-03:00",
+    "quando": "2026-11-05T10:30:00-03:00",
     "tipo": "stories",
     "status": "agendado",
     "nota": "Destaque quem-somos, story 2. Depois a Jessica adiciona ao destaque pelo app.",
@@ -1547,7 +1547,7 @@
   },
   {
     "id": "destaque-quem-somos-v1-3",
-    "quando": "2027-01-21T10:00:00-03:00",
+    "quando": "2026-11-05T10:45:00-03:00",
     "tipo": "stories",
     "status": "agendado",
     "nota": "Destaque quem-somos, story 3. Depois a Jessica adiciona ao destaque pelo app.",
@@ -1892,7 +1892,7 @@
   },
   {
     "id": "destaque-quem-somos-v1-4",
-    "quando": "2027-03-23T10:00:00-03:00",
+    "quando": "2026-11-05T11:00:00-03:00",
     "tipo": "stories",
     "status": "manual",
     "nota": "Story com figurinha de link: a Jessica posta pelo app neste dia (guia de postagem).",

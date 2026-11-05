@@ -4,11 +4,11 @@ from pathlib import Path
 W = "https://wa.me/5527997521370?text="
 R = "https://raw.githubusercontent.com/prosystemcomercial-JESSICA/blogmkt/main/outputs/criativos/destaques/stories/"
 S = [
+    ("05/11/2026", "qui", "quem-somos-v1-4", "Quem somos 4", "Quem somos", "png", "https://prosystemnet.com/linknabio/", "Conhecer o Prosystem"),
     ("16/11/2026", "seg", "contato-v1-1", "Contato 1", "Contato (o antigo Redes Sociais)", "mp4", W + "Ol%C3%A1%21%20Vim%20pelo%20Instagram%20e%20quero%20falar%20com%20um%20especialista.", "Falar no WhatsApp"),
     ("17/12/2026", "qui", "contato-v1-2", "Contato 2", "Contato (o antigo Redes Sociais)", "png", "https://prosystemnet.com/blog/", "Ler o blog"),
     ("02/03/2027", "ter", "integracoes-v1-3", "Integrações 3", "Integrações", "png", W + "Ol%C3%A1%21%20Quero%20saber%20se%20o%20Prosystem%20integra%20com%20o%20programa%20que%20eu%20uso.", "Perguntar no WhatsApp"),
     ("09/03/2027", "ter", "contato-v1-3", "Contato 3", "Contato (o antigo Redes Sociais)", "png", "https://prosystemnet.com/ebook/", "Baixar o e-book"),
-    ("23/03/2027", "ter", "quem-somos-v1-4", "Quem somos 4", "Quem somos", "png", "https://prosystemnet.com/linknabio/", "Conhecer o Prosystem"),
     ("15/04/2027", "qui", "ferramentas-v1-33", "Ferramentas 33", "Ferramentas", "png", W + "Ol%C3%A1%21%20Vi%20as%20ferramentas%20no%20Instagram%20e%20quero%20ver%20o%20Prosystem%20no%20meu%20neg%C3%B3cio.", "Falar com um especialista"),
 ]
 
@@ -24,7 +24,7 @@ for d, w, k, n, dest, ext, l, t in S:
     ]
     li = "".join(f'<li><label><input type="checkbox" id="{k}-{i}"><span>{p}</span></label></li>' for i, p in enumerate(passos))
     rot = "Abrir vídeo para salvar" if ext == "mp4" else "Abrir imagem para salvar"
-    cards += f'''<article class="card"><header><div class="data"><b>{d[:5]}</b><span>{w} · {d[6:]}</span><i>10h</i></div><div><h2>{n}</h2><p>Destaque: <b>{dest}</b></p></div></header>
+    cards += f'''<article class="card"><header><div class="data"><b>{d[:5]}</b><span>{w} · {d[6:]}</span><i>{"11h" if k=="quem-somos-v1-4" else "10h"}</i></div><div><h2>{n}</h2><p>Destaque: <b>{dest}</b></p></div></header>
 <div class="corpo"><img src="p/destaque-{k}.jpg" alt="Story {n}" loading="lazy" width="540" height="960"><div class="info">
 <a class="baixar" href="{R}destaque-{k}.{ext}" target="_blank" rel="noopener">{rot}</a>
 <div class="campo"><span>Link da figurinha</span><div class="copiar"><code id="l-{k}">{l}</code><button type="button" data-copiar="l-{k}">Copiar</button></div></div>
@@ -71,7 +71,7 @@ html = f'''<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta n
 <title>Stories com Link</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&display=swap">
 <style>{CSS}</style></head><body>
-<header class="topo"><div class="in"><small>Instagram · Destaques</small><h1>Stories com <b>link</b></h1><p>Estes 6 stories levam figurinha de link, e a API não consegue colocá-la. No dia e na hora marcados (sempre às 10h, o mesmo horário dos stories da API), salve o arquivo, poste pelo app com a figurinha e coloque no destaque. Os itens que você marcar ficam salvos neste aparelho.</p></div></header>
+<header class="topo"><div class="in"><small>Instagram · Destaques</small><h1>Stories com <b>link</b></h1><p>Estes 6 stories levam figurinha de link, e a API não consegue colocá-la. No dia e na hora marcados (às 10h, como os stories da API; o Quem somos 4 é hoje às 11h, depois do 2 e do 3), salve o arquivo, poste pelo app com a figurinha e coloque no destaque. Os itens que você marcar ficam salvos neste aparelho.</p></div></header>
 <main class="in">{cards}</main>
 <script>{JS}</script></body></html>'''
 
