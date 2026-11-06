@@ -11,7 +11,7 @@ DIAS = ["seg", "ter", "qua", "qui", "sex", "sáb", "dom"]
 GRUPOS = [
     ("quem-somos", "Quem somos", "Usa o destaque Quem somos que já existe. A sequência inteira sai em 05/11. O antigo Quem Somos? pode sair depois."),
     ("segmentos", "Segmentos", "No destaque Nossos Nichos, troque a capa e mude o nome para Segmentos."),
-    ("ferramentas", "Ferramentas", "Usa o destaque Ferramentas que já existe. São 33 stories, na ordem do dia da loja."),
+    ("ferramentas", "Ferramentas", "Usa o destaque Ferramentas que já existe. São 33 stories, na ordem do dia da loja. Os 32 primeiros saíram pela API em 06/11; o 33, com link, você posta."),
     ("integracoes", "Integrações", "Usa o destaque Integrações que já existe."),
     ("suporte", "Suporte", "Destaque novo. Em 12/11, ao destacar o story 1, toque em Novo e dê o nome Suporte. Depois, troque a capa."),
     ("depoimentos", "Depoimentos", "Usa o destaque Depoimentos que já existe."),
