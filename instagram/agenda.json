@@ -169,11 +169,18 @@
     "id": "destaque-ferramentas-v1-1",
     "quando": "2026-11-09T10:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
+    "status": "publicado",
     "nota": "Destaque ferramentas, story 1. Depois a Jessica adiciona ao destaque pelo app.",
     "midias": [
       "instagram/midia/destaques/destaque-ferramentas-v1-1.mp4"
-    ]
+    ],
+    "ids": [
+      "18290640055288295"
+    ],
+    "feitos": 1,
+    "publicado_em": "2026-11-06T14:36:47.970Z",
+    "media_id": "18290640055288295",
+    "link": "https://www.instagram.com/stories/prosystemoficial/"
   },
   {
     "id": "carrossel-farmacia-suporte-v4",
