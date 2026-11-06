@@ -118,11 +118,18 @@
     "id": "story-google-sugestao-de-compras-farmacia",
     "quando": "2026-11-06T17:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
+    "status": "publicado",
     "nota": "Story no visual do Google, mesmo tema da postagem do Google de Sex 06/11.",
     "midias": [
       "instagram/midia/stories-google/story-2026-11-06-sugestao-de-compras-farmacia.jpg"
-    ]
+    ],
+    "ids": [
+      "18110373980237084"
+    ],
+    "feitos": 1,
+    "publicado_em": "2026-11-06T20:00:56.505Z",
+    "media_id": "18110373980237084",
+    "link": "https://www.instagram.com/stories/prosystemoficial/"
   },
   {
     "id": "destaque-segmentos-v1-1",
