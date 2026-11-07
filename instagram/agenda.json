@@ -167,11 +167,18 @@
     "id": "story-google-perda-de-vendas-padaria",
     "quando": "2026-11-07T17:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
+    "status": "publicado",
     "nota": "Story no visual do Google, mesmo tema da postagem do Google de Sáb 07/11.",
     "midias": [
       "instagram/midia/stories-google/story-2026-11-07-perda-de-vendas-padaria.jpg"
-    ]
+    ],
+    "ids": [
+      "17917918455496619"
+    ],
+    "feitos": 1,
+    "publicado_em": "2026-11-07T20:00:46.130Z",
+    "media_id": "17917918455496619",
+    "link": "https://www.instagram.com/stories/prosystemoficial/"
   },
   {
     "id": "frase-farmacia-falta-de-produto-v1",
