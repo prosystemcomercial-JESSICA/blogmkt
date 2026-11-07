@@ -135,11 +135,18 @@
     "id": "destaque-segmentos-v1-1",
     "quando": "2026-11-07T10:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
+    "status": "publicado",
     "nota": "Destaque segmentos, story 1. Depois a Jessica adiciona ao destaque pelo app.",
     "midias": [
       "instagram/midia/destaques/destaque-segmentos-v1-1.mp4"
-    ]
+    ],
+    "ids": [
+      "17894377035444584"
+    ],
+    "feitos": 1,
+    "publicado_em": "2026-11-07T13:01:45.220Z",
+    "media_id": "17894377035444584",
+    "link": "https://www.instagram.com/stories/prosystemoficial/"
   },
   {
     "id": "padaria-balanca-pao-frances-v1",
