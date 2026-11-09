@@ -236,11 +236,18 @@
     "id": "destaque-integracoes-v1-1",
     "quando": "2026-11-10T10:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
+    "status": "publicado",
     "nota": "Destaque integracoes, story 1. Depois a Jessica adiciona ao destaque pelo app.",
     "midias": [
       "instagram/midia/destaques/destaque-integracoes-v1-1.mp4"
-    ]
+    ],
+    "ids": [
+      "17943954864389105"
+    ],
+    "feitos": 1,
+    "publicado_em": "2026-11-09T18:29:07.054Z",
+    "media_id": "17943954864389105",
+    "link": "https://www.instagram.com/stories/prosystemoficial/"
   },
   {
     "id": "depoimento-krisley-v2",
@@ -964,11 +971,18 @@
     "id": "destaque-integracoes-v1-2",
     "quando": "2026-12-10T10:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
+    "status": "publicado",
     "nota": "Destaque integracoes, story 2. Depois a Jessica adiciona ao destaque pelo app.",
     "midias": [
       "instagram/midia/destaques/destaque-integracoes-v1-2.jpg"
-    ]
+    ],
+    "ids": [
+      "17961059400014278"
+    ],
+    "feitos": 1,
+    "publicado_em": "2026-11-09T18:29:20.868Z",
+    "media_id": "17961059400014278",
+    "link": "https://www.instagram.com/stories/prosystemoficial/"
   },
   {
     "id": "padaria-combos-v2",
