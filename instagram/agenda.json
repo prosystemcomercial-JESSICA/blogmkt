@@ -268,11 +268,18 @@
     "id": "story-google-prosystem-sistema-farmacia-padaria",
     "quando": "2026-11-10T17:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
+    "status": "publicado",
     "nota": "Story no visual do Google, mesmo tema da postagem do Google de Ter 10/11.",
     "midias": [
       "instagram/midia/stories-google/story-2026-11-10-prosystem-sistema-farmacia-padaria.jpg"
-    ]
+    ],
+    "ids": [
+      "17915894664501631"
+    ],
+    "feitos": 1,
+    "publicado_em": "2026-11-10T20:00:55.462Z",
+    "media_id": "17915894664501631",
+    "link": "https://www.instagram.com/stories/prosystemoficial/"
   },
   {
     "id": "carrossel-padaria-trigo-v1",
