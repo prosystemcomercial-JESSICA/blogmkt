@@ -305,11 +305,18 @@
     "id": "destaque-suporte-v1-1",
     "quando": "2026-11-12T10:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
+    "status": "publicado",
     "nota": "Destaque suporte, story 1. Depois a Jessica adiciona ao destaque pelo app.",
     "midias": [
       "instagram/midia/destaques/destaque-suporte-v1-1.mp4"
-    ]
+    ],
+    "ids": [
+      "17878335795582165"
+    ],
+    "feitos": 1,
+    "publicado_em": "2026-11-12T13:01:25.553Z",
+    "media_id": "17878335795582165",
+    "link": "https://www.instagram.com/stories/prosystemoficial/"
   },
   {
     "id": "padaria-ticket-medio-v1",
