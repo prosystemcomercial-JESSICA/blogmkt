@@ -378,11 +378,18 @@
     "id": "story-google-cartao-fidelidade-padaria",
     "quando": "2026-11-14T17:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
+    "status": "publicado",
     "nota": "Story no visual do Google, mesmo tema da postagem do Google de Sáb 14/11.",
     "midias": [
       "instagram/midia/stories-google/story-2026-11-14-cartao-fidelidade-padaria.jpg"
-    ]
+    ],
+    "ids": [
+      "17978085429139893"
+    ],
+    "feitos": 1,
+    "publicado_em": "2026-11-14T20:00:47.364Z",
+    "media_id": "17978085429139893",
+    "link": "https://www.instagram.com/stories/prosystemoficial/"
   },
   {
     "id": "frase-suporte-domingo-feriado-v1",
