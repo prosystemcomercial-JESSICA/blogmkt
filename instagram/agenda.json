@@ -468,11 +468,18 @@
     "id": "story-google-pix-fechamento-caixa-padaria",
     "quando": "2026-11-17T17:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
+    "status": "publicado",
     "nota": "Story no visual do Google, mesmo tema da postagem do Google de Ter 17/11.",
     "midias": [
       "instagram/midia/stories-google/story-2026-11-17-pix-fechamento-caixa-padaria.jpg"
-    ]
+    ],
+    "ids": [
+      "18117914963087025"
+    ],
+    "feitos": 1,
+    "publicado_em": "2026-11-17T20:01:27.900Z",
+    "media_id": "18117914963087025",
+    "link": "https://www.instagram.com/stories/prosystemoficial/"
   },
   {
     "id": "farmacia-quem-liberou-desconto-v1",
