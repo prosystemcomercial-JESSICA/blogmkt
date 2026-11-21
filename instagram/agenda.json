@@ -596,11 +596,18 @@
     "id": "story-google-auditoria-desconto-farmacia",
     "quando": "2026-11-21T17:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
+    "status": "publicado",
     "nota": "Story no visual do Google, mesmo tema da postagem do Google de Sáb 21/11.",
     "midias": [
       "instagram/midia/stories-google/story-2026-11-21-auditoria-desconto-farmacia.jpg"
-    ]
+    ],
+    "ids": [
+      "17913212418666302"
+    ],
+    "feitos": 1,
+    "publicado_em": "2026-11-21T20:00:41.143Z",
+    "media_id": "17913212418666302",
+    "link": "https://www.instagram.com/stories/prosystemoficial/"
   },
   {
     "id": "frase-antimicrobianos-v2",
