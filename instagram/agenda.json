@@ -665,11 +665,18 @@
     "id": "story-google-metas-de-vendas-farmacia",
     "quando": "2026-11-23T17:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
+    "status": "publicado",
     "nota": "Story no visual do Google, mesmo tema da postagem do Google de Seg 23/11.",
     "midias": [
       "instagram/midia/stories-google/story-2026-11-23-metas-de-vendas-farmacia.jpg"
-    ]
+    ],
+    "ids": [
+      "18132752249295914"
+    ],
+    "feitos": 1,
+    "publicado_em": "2026-11-23T20:00:50.190Z",
+    "media_id": "18132752249295914",
+    "link": "https://www.instagram.com/stories/prosystemoficial/"
   },
   {
     "id": "destaque-depoimentos-v1-2",
