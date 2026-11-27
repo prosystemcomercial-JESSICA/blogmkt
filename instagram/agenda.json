@@ -792,11 +792,18 @@
     "id": "story-google-black-friday-hoje-farmacia",
     "quando": "2026-11-27T17:00:00-03:00",
     "tipo": "stories",
-    "status": "agendado",
+    "status": "publicado",
     "nota": "Story no visual do Google, mesmo tema da postagem do Google de Sex 27/11.",
     "midias": [
       "instagram/midia/stories-google/story-2026-11-27-black-friday-hoje-farmacia.jpg"
-    ]
+    ],
+    "ids": [
+      "18190675330414141"
+    ],
+    "feitos": 1,
+    "publicado_em": "2026-11-27T20:00:47.943Z",
+    "media_id": "18190675330414141",
+    "link": "https://www.instagram.com/stories/prosystemoficial/"
   },
   {
     "id": "destaque-quem-somos-v1-2",
